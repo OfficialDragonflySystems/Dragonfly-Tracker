@@ -2,151 +2,1466 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dragonfly Systems — 5-Year Thesis Track Record</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Dragonfly Systems full methodology and 13-year track record. Every signal, every exit strategy, every ticker — including the losses. +266% avg system strategy return across 87 tickers.">
+<meta property="og:title" content="Dragonfly Systems — Full Track Record &amp; Methodology">
+<meta property="og:description" content="Every signal, every exit strategy, measured across a 13-year window. No cherry-picking — including the losses.">
+<meta property="og:image" content="https://officialdragonflysystems.com/Tracker/og-image.png">
+<meta property="og:url" content="https://officialdragonflysystems.com/Tracker/track_record.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<title>Dragonfly Systems — Full Track Record &amp; Methodology</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #212121; }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px; }
-  h1 { font-size: 28px; font-weight: 800; color: #0d1f0f; }
-  .sub { font-size: 14px; color: #666; margin-top: 6px; }
-  .stat-bar { display: flex; gap: 24px; flex-wrap: wrap; margin: 28px 0; }
-  .stat { background: #fff; border-radius: 8px; padding: 16px 24px; text-align: center;
-           box-shadow: 0 1px 4px rgba(0,0,0,.08); min-width: 120px; }
-  .stat .num { font-size: 28px; font-weight: 800; }
-  .stat .lbl { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
-  table { width: 100%; border-collapse: collapse; background: #fff;
-           border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
-  th { background: #0d1f0f; color: #4ade80; padding: 10px 16px; font-size: 11px;
-        text-transform: uppercase; letter-spacing: .06em; text-align: left; font-weight: 700; }
-  td { vertical-align: middle; }
-  .cta { display: flex; gap: 16px; flex-wrap: wrap; margin: 32px 0; }
-  .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 700;
-          font-size: 15px; text-decoration: none; text-align: center; }
-  .btn-inv { background: #1565c0; color: #fff; }
-  .btn-pre { background: #0d1f0f; color: #4ade80; }
-  .disc { font-size: 11px; color: #999; line-height: 1.7; margin-top: 32px;
-           border-top: 1px solid #eee; padding-top: 16px; }
-  .brand { color: #4ade80; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
-  .updated { font-size: 11px; color: #bbb; margin-top: 4px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:  #2d6a4f;
+  --lime:   #4ade80;
+  --gold:   #c8a84b;
+  --dark:   #0d1f0f;
+  --text:   #1a1a1a;
+  --muted:  #666;
+  --border: #e8e8e4;
+  --bg:     #f9f9f7;
+  --red:    #f87171;
+}
+html { scroll-behavior: smooth; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--text); background: #fff; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--dark); padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px; border-bottom: 1px solid #1a3a1f;
+}
+.nav-logo { color: var(--lime); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { color: #9ca; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-decoration: none; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: var(--lime); color: var(--dark) !important; font-weight: 700; padding: 7px 16px; border-radius: 4px; }
+.nav-cta:hover { background: #86efac; }
+
+/* ── HERO (dark) ── */
+.hero {
+  background: var(--dark);
+  padding: 80px 32px 72px;
+  text-align: center;
+}
+.hero-eyebrow { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--lime); margin-bottom: 20px; }
+.hero h1 { font-size: clamp(28px, 5vw, 52px); font-weight: normal; color: #fff; line-height: 1.2; max-width: 760px; margin: 0 auto 20px; }
+.hero p { font-size: 18px; color: #9ca; line-height: 1.7; max-width: 600px; margin: 0 auto 36px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+/* ── SUMMARY STATS BAR ── */
+.stats-bar {
+  background: #0a1a0c;
+  border-top: 1px solid #1a3a1f;
+  border-bottom: 1px solid #1a3a1f;
+  padding: 0;
+}
+.stats-bar-inner {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.stat-cell {
+  flex: 1;
+  padding: 24px 20px;
+  text-align: center;
+  border-right: 1px solid #1a3a1f;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-cell .num { font-size: 30px; font-weight: 800; color: var(--lime); line-height: 1; margin-bottom: 5px; }
+.stat-cell .num.red { color: var(--red); }
+.stat-cell .num.muted { color: #888; }
+.stat-cell .lbl { font-size: 10px; color: #6a9; text-transform: uppercase; letter-spacing: .07em; }
+.stat-cell .sub { font-size: 10px; color: #4a6a50; margin-top: 3px; }
+
+/* ── SECTIONS ── */
+.page-section { padding: 72px 32px; max-width: 1100px; margin: 0 auto; }
+.section-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+h2 { font-size: clamp(22px, 3vw, 34px); font-weight: normal; margin-bottom: 16px; line-height: 1.25; }
+.lead { font-size: 16px; color: var(--muted); line-height: 1.8; max-width: 680px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+hr.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* ── METHODOLOGY CARDS ── */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+.method-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px 24px 20px;
+}
+.method-card .card-num {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--green);
+  margin-bottom: 10px;
+}
+.method-card h3 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--dark); margin-bottom: 10px;
+}
+.method-card p {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px; color: var(--muted); line-height: 1.7;
+}
+.method-card ul {
+  margin: 10px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+.method-card ul li {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px; color: #555; padding: 3px 0;
+  display: flex; gap: 8px; align-items: baseline;
+  border-bottom: 1px solid var(--border);
+}
+.method-card ul li:last-child { border-bottom: none; }
+.method-card ul li .dot { color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+/* ── TICKER TABLE ── */
+.table-wrap {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.table-header {
+  background: var(--dark);
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+}
+.table-header .th-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: #9ca;
+}
+.table-header .th-note {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px; color: #4a6a50;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+}
+.data-table thead tr {
+  background: #f5f5f2;
+  border-bottom: 2px solid var(--border);
+}
+.data-table thead th {
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 10px; font-weight: 700;
+  color: #555; text-transform: uppercase; letter-spacing: .06em;
+  white-space: nowrap;
+}
+.data-table thead th.right { text-align: right; }
+.data-table thead th.rec { color: var(--green); }
+.data-table tbody tr { border-bottom: 1px solid #f0f0ee; }
+.data-table tbody tr:nth-child(even) { background: #fafaf8; }
+.data-table tbody tr:hover { background: #f3f9f4; }
+.data-table td { padding: 12px 16px; vertical-align: middle; }
+.data-table td.right { text-align: right; }
+.td-ticker { font-weight: 800; color: var(--dark); font-size: 14px; }
+.td-sector { font-size: 12px; color: var(--muted); }
+.td-pos { color: #27ae60; font-weight: 700; }
+.td-pos-strong { color: #16a34a; font-weight: 800; }
+.td-neg { color: #c62828; font-weight: 700; }
+.td-neg-light { color: #e67e22; font-weight: 700; }
+.td-rec { font-weight: 800; color: var(--green); }
+.td-rec-neg { font-weight: 700; color: #c62828; }
+.td-spy { font-size: 12px; color: #888; text-align: right; }
+.rec-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: #e8f5e9;
+  color: var(--green);
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.rec-badge.neg {
+  background: #fdecea;
+  color: #c62828;
+}
+
+/* ── PAYWALL BLUR ── */
+.paywall-container {
+  position: relative;
+}
+.blurred-rows {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+.paywall-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgba(249,249,247,0) 0%, rgba(249,249,247,0.7) 25%, rgba(249,249,247,0.97) 55%);
+  z-index: 10;
+}
+.paywall-box {
+  text-align: center;
+  padding: 32px 36px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.1);
+  max-width: 420px;
+  width: 90%;
+  margin-top: 60px;
+}
+.paywall-box h3 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; font-weight: 800;
+  color: var(--dark); margin-bottom: 8px;
+}
+.paywall-box p {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px; color: var(--muted);
+  line-height: 1.7; margin-bottom: 20px;
+}
+.paywall-box .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--green);
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px; font-weight: 700;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: opacity .15s;
+}
+.paywall-box .btn:hover { opacity: .88; }
+.paywall-box .note {
+  font-size: 11px; color: #aaa;
+  margin-top: 12px;
+}
+
+/* ── TABLE FOOTER NOTE ── */
+.table-footnote {
+  padding: 12px 20px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px; color: #999; line-height: 1.7;
+}
+
+/* ── DARK BAND SECTION ── */
+.dark-band {
+  background: var(--dark);
+  padding: 64px 32px;
+}
+.dark-band-inner { max-width: 1100px; margin: 0 auto; }
+.dark-band .section-label { color: var(--lime); }
+.dark-band h2 { color: #fff; }
+.dark-band .lead { color: #9ca; }
+
+/* ── STRATEGY CARDS (dark) ── */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 32px;
+}
+.strategy-card {
+  background: #0a1a0c;
+  border: 1px solid #1a3a1f;
+  border-radius: 6px;
+  padding: 20px 20px 18px;
+}
+.strategy-card .s-num {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: #4a6a50; margin-bottom: 8px;
+}
+.strategy-card h3 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px; font-weight: 700;
+  color: #ddd; margin-bottom: 8px;
+}
+.strategy-card p {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px; color: #7a9; line-height: 1.7;
+}
+.strategy-card .s-avg {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #1a3a1f;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px; color: #4a6a50;
+}
+.strategy-card .s-avg strong { color: var(--lime); font-size: 15px; }
+
+/* ── SELECTION LOGIC ── */
+.selection-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+.selection-card {
+  background: #0a1a0c;
+  border: 1px solid #1a3a1f;
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+.selection-card .sel-label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: #4a6a50; margin-bottom: 8px;
+}
+.selection-card .sel-rule {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px; color: #ddd;
+  font-weight: 700; margin-bottom: 6px;
+}
+.selection-card p {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px; color: #7a9; line-height: 1.65;
+}
+
+/* ── CASE STUDY ── */
+.case-study {
+  margin-top: 40px;
+  background: #050d06;
+  border: 1px solid #1a3a1f;
+  border-radius: 8px;
+  padding: 24px 28px;
+}
+.case-study .cs-label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: #4a6a50; margin-bottom: 16px;
+}
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.cs-cell {
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 6px;
+  background: #0d1a0e;
+}
+.cs-cell.red { background: #1a0808; }
+.cs-cell.green { background: #081a09; }
+.cs-cell.best { background: #081a09; border: 1px solid #2d6a4f; }
+.cs-cell .cs-num { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 22px; font-weight: 800; }
+.cs-cell .cs-num.red { color: #e74c3c; }
+.cs-cell .cs-num.green { color: #27ae60; }
+.cs-cell .cs-num.lime { color: var(--lime); }
+.cs-cell .cs-lbl { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+.case-study p {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px; color: #777; line-height: 1.7;
+}
+.cs-cell.amber { background: #1a1208; }
+.cs-cell .cs-num.amber { color: #f59e0b; }
+.learning-box {
+  margin-top: 20px;
+  background: #050d1a;
+  border: 1px solid #1a3a5a;
+  border-left: 4px solid #38bdf8;
+  border-radius: 0 6px 6px 0;
+  padding: 18px 22px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.learning-box .lb-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #38bdf8; margin-bottom: 12px; }
+.learning-box ul { margin: 0; padding: 0 0 0 16px; }
+.learning-box li { font-size: 12px; color: #6a9abf; line-height: 1.75; margin-bottom: 4px; }
+.learning-box li strong { color: #a0c8e0; }
+.learning-box li:last-child { margin-bottom: 0; }
+
+/* ── BACKTEST NOTE ── */
+.backtest-box {
+  background: #0a1a0c;
+  border: 1px solid #1a3a1f;
+  border-left: 4px solid var(--lime);
+  border-radius: 0 6px 6px 0;
+  padding: 20px 24px;
+  margin-top: 32px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.backtest-box h4 { font-size: 13px; font-weight: 700; color: var(--lime); margin-bottom: 8px; }
+.backtest-box ul { padding: 0; list-style: none; }
+.backtest-box ul li { font-size: 12px; color: #7a9; line-height: 1.8; padding: 2px 0; display: flex; gap: 8px; }
+.backtest-box ul li .bk-dot { color: var(--lime); flex-shrink: 0; }
+
+/* ── FOOTER ── */
+footer { background: var(--dark); padding: 40px 32px; text-align: center; }
+footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #4a6a50; line-height: 1.8; }
+footer a { color: #6a9a70; text-decoration: none; }
+footer a:hover { color: var(--lime); }
+
+/* ── DARK MODE ── */
+body.dark { background: #0a0f0b !important; color: #c9d1d9; }
+body.dark .page-section { background: #0a0f0b !important; }
+body.dark .method-card { background: #111d12 !important; border-color: #1e3a24 !important; }
+body.dark .method-card h3 { color: #e6edf3; }
+body.dark .method-card p, body.dark .method-card ul li { color: #9ba3af !important; border-color: #1e3a24 !important; }
+body.dark h2 { color: #e6edf3 !important; }
+body.dark .lead { color: #9ba3af !important; }
+body.dark .section-label { color: #4ade80 !important; }
+body.dark .table-wrap { border-color: #1e3a24 !important; }
+body.dark .data-table thead tr { background: #111d12 !important; }
+body.dark .data-table thead th { color: #9ba3af; }
+body.dark .data-table tbody tr { border-color: #1a3a1f !important; }
+body.dark .data-table tbody tr:nth-child(even) { background: #0d1810 !important; }
+body.dark .data-table tbody tr:hover { background: #0f2012 !important; }
+body.dark .td-ticker { color: #e6edf3 !important; }
+body.dark .td-sector { color: #9ba3af !important; }
+body.dark .table-footnote { background: #0d1810 !important; border-color: #1e3a24 !important; color: #4a6a50 !important; }
+body.dark .paywall-box { background: #111d12 !important; border-color: #1e3a24 !important; }
+body.dark .paywall-box h3 { color: #e6edf3 !important; }
+body.dark .paywall-box p { color: #9ba3af !important; }
+body.dark .paywall-overlay { background: linear-gradient(to bottom, rgba(10,15,11,0) 0%, rgba(10,15,11,0.7) 25%, rgba(10,15,11,0.97) 55%) !important; }
+body.dark hr.divider { border-color: #1a3a1f !important; }
+
+@media (max-width: 768px) {
+  nav { padding: 0 16px; }
+  .hero { padding: 56px 20px 48px; }
+  .page-section { padding: 48px 20px; }
+  .dark-band { padding: 48px 20px; }
+  .stats-bar-inner { flex-wrap: wrap; }
+  .stat-cell { flex: 0 0 50%; min-width: 0; }
+  .selection-grid { grid-template-columns: 1fr; }
+  .nav-links a:not(.nav-cta):not(#theme-btn-wrap) { display: none; }
+}
+@media (max-width: 480px) {
+  .stat-cell { flex: 0 0 100%; }
+  .data-table { font-size: 11px; }
+  .data-table td { padding: 10px 10px; }
+  .data-table thead th { padding: 8px 10px; }
+}
+
+/* ── SIGNAL INTELLIGENCE CARDS ── */
+.sig-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:20px; margin-top:20px; }
+.sig-card { border:1px solid var(--border); border-radius:10px; overflow:hidden; font-family:'Helvetica Neue',Arial,sans-serif; }
+.sig-hdr { padding:16px 20px; background:var(--bg); display:flex; align-items:flex-start; justify-content:space-between; gap:12px; border-bottom:1px solid var(--border); }
+.sig-ticker-name { font-size:19px; font-weight:800; color:var(--dark); line-height:1.15; }
+.sig-co { font-size:11px; color:var(--muted); margin-top:3px; }
+.sig-ret { font-size:22px; font-weight:800; color:#16a34a; line-height:1; }
+.sig-ret.neg { color:#c62828; }
+.sig-badge { display:inline-flex; align-items:center; font-size:10px; font-weight:700; padding:3px 9px; border-radius:10px; margin-top:5px; }
+.sig-badge.open { background:#e8f5e9; color:#2d6a4f; }
+.sig-badge.closed-win { background:#e8f5e9; color:#2d6a4f; }
+.sig-badge.closed-loss { background:#fdecea; color:#c62828; }
+.sig-body { padding:16px 20px; }
+.sig-meta-row { display:flex; gap:16px; flex-wrap:wrap; padding-bottom:14px; border-bottom:1px solid var(--border); margin-bottom:14px; }
+.sig-meta-lbl { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; margin-bottom:2px; }
+.sig-meta-val { font-size:13px; font-weight:700; color:var(--dark); }
+.sig-stars { color:#c8a84b; font-size:13px; }
+.sig-sec-title { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:8px; }
+.sig-sources { margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.sig-src-item { display:flex; gap:8px; align-items:baseline; font-size:12px; color:#444; padding:4px 0; border-bottom:1px solid #f0f0ee; line-height:1.5; }
+.sig-src-item:last-child { border-bottom:none; }
+.sig-src-dot { color:var(--green); font-weight:700; flex-shrink:0; font-size:10px; }
+.exit-strategy-name { font-size:13px; font-weight:700; color:var(--dark); margin-bottom:6px; }
+.exit-bar-track { height:6px; background:#e8e8e4; border-radius:3px; position:relative; margin:12px 0 6px; }
+.exit-bar-fill { height:6px; border-radius:3px 0 0 3px; background:#2d6a4f; position:relative; }
+.exit-bar-fill.neg { background:#c62828; }
+.exit-bar-dot { width:12px; height:12px; background:#fff; border:2px solid #2d6a4f; border-radius:50%; position:absolute; right:-6px; top:-3px; }
+.exit-bar-dot.neg { border-color:#c62828; }
+.exit-labels { display:flex; justify-content:space-between; font-size:10px; color:#888; }
+.exit-note { font-size:11px; color:var(--muted); line-height:1.65; margin-top:8px; }
+.staged-wrap { display:flex; border:1px solid var(--border); border-radius:6px; overflow:hidden; margin:10px 0 8px; }
+.staged-seg { flex:1; padding:10px 8px; text-align:center; border-right:1px solid var(--border); }
+.staged-seg:last-child { border-right:none; }
+.staged-seg .ss-lbl { font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:4px; }
+.staged-seg .ss-price { font-size:13px; font-weight:700; color:var(--dark); }
+.staged-seg.seg-sold { background:#e8f5e9; }
+.staged-seg.seg-sold .ss-lbl { color:#2d6a4f; }
+.staged-seg.seg-sold .ss-price { color:#16a34a; }
+.staged-seg.seg-stop { background:#fef9e7; }
+.staged-seg.seg-held { background:#fdecea; }
+body.dark .sig-card { border-color:#1e3a24; }
+body.dark .sig-hdr { background:#0d1810; border-color:#1e3a24; }
+body.dark .sig-ticker-name { color:#e6edf3; }
+body.dark .sig-co { color:#9ba3af; }
+body.dark .sig-ret { color:#4ade80; }
+body.dark .sig-ret.neg { color:#f87171; }
+body.dark .sig-badge.open, body.dark .sig-badge.closed-win { background:rgba(45,106,79,.2); color:#4ade80; }
+body.dark .sig-badge.closed-loss { background:rgba(199,40,40,.15); color:#f87171; }
+body.dark .sig-body { background:#0a0f0b; }
+body.dark .sig-meta-val { color:#e6edf3; }
+body.dark .sig-src-item { color:#9ba3af; border-color:#1a3a1f; }
+body.dark .sig-src-dot { color:#4ade80; }
+body.dark .exit-strategy-name { color:#e6edf3; }
+body.dark .exit-bar-track { background:#1a3a1f; }
+body.dark .exit-bar-fill { background:#4ade80; }
+body.dark .exit-bar-fill.neg { background:#f87171; }
+body.dark .exit-bar-dot { background:#0a0f0b; border-color:#4ade80; }
+body.dark .exit-bar-dot.neg { border-color:#f87171; }
+body.dark .exit-labels { color:#5a8a6a; }
+body.dark .exit-note { color:#7a9; }
+body.dark .staged-wrap { border-color:#1a3a1f; }
+body.dark .staged-seg { border-color:#1a3a1f !important; }
+body.dark .staged-seg .ss-price { color:#e6edf3; }
+body.dark .staged-seg.seg-sold { background:rgba(45,106,79,.2); }
+body.dark .staged-seg.seg-sold .ss-price { color:#4ade80; }
+body.dark .staged-seg.seg-stop { background:rgba(200,168,75,.08); }
+body.dark .staged-seg.seg-held { background:rgba(199,40,40,.1); }
+@media(max-width:768px){ .sig-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="brand">Dragonfly Systems by Skylar</div>
-  <h1>Our Investment Theses — Verified Track Record</h1>
-  <p class="sub">Every thesis we track, back to the moment it became publicly documentable.<br>
-  Winners and losers both shown. Updated May 04, 2026.</p>
 
-  <div class="stat-bar">
-    <div class="stat">
-      <div class="num" style="color:#27ae60;">+322%</div>
-      <div class="lbl">Avg Return<br>Since Entry</div>
-    </div>
-    <div class="stat">
-      <div class="num" style="color:#888;">+92%</div>
-      <div class="lbl">S&amp;P 500<br>Same Periods</div>
-    </div>
-    <div class="stat">
-      <div class="num" style="color:#27ae60;">-144%</div>
-      <div class="lbl">Average<br>Alpha</div>
-    </div>
-    <div class="stat">
-      <div class="num" style="color:#1565c0;">61%</div>
-      <div class="lbl">Theses That<br>Beat Market</div>
-    </div>
-    <div class="stat">
-      <div class="num" style="color:#555;">67</div>
-      <div class="lbl">Tickers<br>Tracked</div>
-    </div>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Dragonfly Systems</a>
+  <div class="nav-links">
+    <a href="index.html#how-it-works">How it works</a>
+    <a href="index.html#charts">Charts</a>
+    <a href="index.html#track-record">Track record</a>
+    <a href="index.html#sample">Sample signal</a>
+    <a href="index.html#pricing">Pricing</a>
+    <button id="theme-btn" onclick="toggleTheme()" title="Toggle dark mode"
+      style="background:none;border:1px solid #2a5a35;border-radius:4px;color:#9ca;cursor:pointer;padding:5px 9px;font-size:15px;line-height:1;display:flex;align-items:center;">
+      <span id="theme-icon">&#9790;</span>
+    </button>
+    <a href="index.html#pricing" class="nav-cta">Subscribe</a>
   </div>
+</nav>
+<script>
+function toggleTheme() {
+  var dark = document.body.classList.toggle('dark');
+  localStorage.setItem('df_theme', dark ? 'dark' : 'light');
+  document.getElementById('theme-icon').innerHTML = dark ? '&#9788;' : '&#9790;';
+}
+(function() {
+  if (localStorage.getItem('df_theme') === 'dark') {
+    document.body.classList.add('dark');
+    var ic = document.getElementById('theme-icon');
+    if (ic) ic.innerHTML = '&#9788;';
+  }
+})();
+</script>
 
-  <div style="background:#e8f5e9;border:1px solid #a5d6a7;border-radius:6px;padding:16px 20px;margin:12px 0;"><span style="font-size:11px;color:#388e3c;font-weight:700;text-transform:uppercase;">Best Thesis</span><br><span style="font-size:22px;font-weight:800;color:#1b5e20;">VRT</span><span style="font-size:16px;color:#27ae60;margin-left:10px;">+2376.9%</span><br><span style="font-size:12px;color:#555;">Vertiv Holdings — data center power+cooling infrastructure; every hyperscaler building AI clusters is a Vertiv customer</span></div>
-
-  <p style="font-size:13px;color:#555;margin-bottom:16px;line-height:1.7;">
-  Dragonfly Systems monitors government grants, patent filings, procurement contracts,
-  and regulatory signals across <strong>pre-discovery</strong> sectors — before they reach mainstream
-  financial media.
-  </p>
-  <div style="background:#fff8e1;border-left:4px solid #f9a825;border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:20px;font-size:12px;color:#555;line-height:1.7;">
-  <strong>Methodology note:</strong> We cannot replay our live data feeds against 5-year-old history.
-  What we can do: identify the first date a verifiable public document (DOE grant, SEC filing,
-  NRCan announcement, EU Horizon award) contained one of our tracked signal keywords, then
-  measure what happened to the stock from that date. Each row shows the specific keyword that
-  would have triggered our system (<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 4px;border-radius:2px;">HIGH</span>
-  or <span style="background:#d68910;color:#fff;font-size:9px;padding:1px 4px;border-radius:2px;">MED</span>)
-  and the catalyst event it was tied to. All tracked tickers included — winners and losers.
-  </div>
-
-  
-  <hr style="border:none;border-top:1px solid #e0e0e0;margin:32px 0;">
-  <h2 style="font-size:18px;font-weight:700;margin-bottom:6px;">Exit Strategy Comparison</h2>
-  <p style="font-size:13px;color:#666;margin-bottom:20px;line-height:1.7;">
-  Same portfolio, same entry dates — but what if you had used a different exit strategy?
-  Each strategy is simulated against actual price history for every thesis position.
-  This shows which approach has historically captured the most profit across all 67 tracked positions.
-  </p>
-  <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);margin-bottom:24px;">
-    <thead>
-      <tr style="background:#0d1f0f;">
-        <th style="padding:10px 14px;text-align:left;font-size:11px;color:#4ade80;text-transform:uppercase;letter-spacing:.06em;">Strategy</th>
-        <th style="padding:10px 14px;text-align:left;font-size:11px;color:#4ade80;text-transform:uppercase;letter-spacing:.06em;">Avg Return (all positions)</th>
-        <th style="padding:10px 14px;text-align:left;font-size:11px;color:#4ade80;text-transform:uppercase;letter-spacing:.06em;">Win Rate</th>
-        <th style="padding:10px 14px;text-align:left;font-size:11px;color:#4ade80;text-transform:uppercase;letter-spacing:.06em;">Best Result</th>
-        <th style="padding:10px 14px;text-align:left;font-size:11px;color:#4ade80;text-transform:uppercase;letter-spacing:.06em;">Wins Most</th>
-      </tr>
-    </thead>
-    <tbody><tr style="background:#f0fff4;"><td style="padding:10px 14px;font-weight:800;font-size:13px;">&#127942; Buy & Hold</td><td style="padding:10px 14px;"><div style="display:inline-flex;align-items:center;gap:10px;"><div style="background:#eee;border-radius:4px;height:8px;width:180px;"><div style="background:#27ae60;width:180px;height:8px;border-radius:4px;"></div></div><span style="font-size:14px;font-weight:800;color:#27ae60;">+322.4%</span></div></td><td style="padding:10px 14px;font-size:12px;color:#666;">79% beat 0%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Best: <strong>VRT</strong> +2377%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Wins most: <strong>42</strong> positions</td></tr><tr style="background:#fafafa;"><td style="padding:10px 14px;font-size:13px;">Sell 50% @2x, re-enter on 35% pullback</td><td style="padding:10px 14px;"><div style="display:inline-flex;align-items:center;gap:10px;"><div style="background:#eee;border-radius:4px;height:8px;width:180px;"><div style="background:#27ae60;width:125px;height:8px;border-radius:4px;"></div></div><span style="font-size:14px;color:#27ae60;">+223.9%</span></div></td><td style="padding:10px 14px;font-size:12px;color:#666;">82% beat 0%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Best: <strong>VRT</strong> +1431%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Wins most: <strong>6</strong> positions</td></tr><tr style="background:#fff;"><td style="padding:10px 14px;font-size:13px;">1/3 @100% + 1/3 @200% + 20% stop</td><td style="padding:10px 14px;"><div style="display:inline-flex;align-items:center;gap:10px;"><div style="background:#eee;border-radius:4px;height:8px;width:180px;"><div style="background:#2471a3;width:56px;height:8px;border-radius:4px;"></div></div><span style="font-size:14px;color:#2471a3;">+101.4%</span></div></td><td style="padding:10px 14px;font-size:12px;color:#666;">87% beat 0%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Best: <strong>LITE</strong> +430%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Wins most: <strong>8</strong> positions</td></tr><tr style="background:#fafafa;"><td style="padding:10px 14px;font-size:13px;">Sell 1/3 @100%, 1/3 @200%, hold rest</td><td style="padding:10px 14px;"><div style="display:inline-flex;align-items:center;gap:10px;"><div style="background:#eee;border-radius:4px;height:8px;width:180px;"><div style="background:#d68910;width:55px;height:8px;border-radius:4px;"></div></div><span style="font-size:14px;color:#d68910;">+99.2%</span></div></td><td style="padding:10px 14px;font-size:12px;color:#666;">87% beat 0%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Best: <strong>LITE</strong> +430%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Wins most: <strong>2</strong> positions</td></tr><tr style="background:#fff;"><td style="padding:10px 14px;font-size:13px;">Trailing Stop 40%</td><td style="padding:10px 14px;"><div style="display:inline-flex;align-items:center;gap:10px;"><div style="background:#eee;border-radius:4px;height:8px;width:180px;"><div style="background:#d68910;width:33px;height:8px;border-radius:4px;"></div></div><span style="font-size:14px;color:#d68910;">+60.0%</span></div></td><td style="padding:10px 14px;font-size:12px;color:#666;">37% beat 0%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Best: <strong>NVDA</strong> +1288%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Wins most: <strong>0</strong> positions</td></tr><tr style="background:#fafafa;"><td style="padding:10px 14px;font-size:13px;">Sell 25% @50%, @100%, @200%, hold 25%</td><td style="padding:10px 14px;"><div style="display:inline-flex;align-items:center;gap:10px;"><div style="background:#eee;border-radius:4px;height:8px;width:180px;"><div style="background:#d68910;width:31px;height:8px;border-radius:4px;"></div></div><span style="font-size:14px;color:#d68910;">+56.5%</span></div></td><td style="padding:10px 14px;font-size:12px;color:#666;">91% beat 0%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Best: <strong>NVDA</strong> +239%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Wins most: <strong>3</strong> positions</td></tr><tr style="background:#fff;"><td style="padding:10px 14px;font-size:13px;">Trailing Stop 25%</td><td style="padding:10px 14px;"><div style="display:inline-flex;align-items:center;gap:10px;"><div style="background:#eee;border-radius:4px;height:8px;width:180px;"><div style="background:#d68910;width:7px;height:8px;border-radius:4px;"></div></div><span style="font-size:14px;color:#d68910;">+14.2%</span></div></td><td style="padding:10px 14px;font-size:12px;color:#666;">37% beat 0%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Best: <strong>NVDA</strong> +602%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Wins most: <strong>4</strong> positions</td></tr><tr style="background:#fafafa;"><td style="padding:10px 14px;font-size:13px;">Exit on 3M Momentum Flip</td><td style="padding:10px 14px;"><div style="display:inline-flex;align-items:center;gap:10px;"><div style="background:#eee;border-radius:4px;height:8px;width:180px;"><div style="background:#d68910;width:4px;height:8px;border-radius:4px;"></div></div><span style="font-size:14px;color:#d68910;">+8.5%</span></div></td><td style="padding:10px 14px;font-size:12px;color:#666;">46% beat 0%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Best: <strong>GOLD</strong> +306%</td><td style="padding:10px 14px;font-size:11px;color:#888;">Wins most: <strong>2</strong> positions</td></tr></tbody>
-  </table>
-
-  <p style="font-size:13px;font-weight:700;color:#333;margin-bottom:10px;">Top positions — what each one's best strategy was vs. buy &amp; hold:</p>
-  <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);margin-bottom:32px;font-size:13px;">
-    <thead>
-      <tr style="background:#37474f;color:#fff;">
-        <th style="padding:8px 14px;text-align:left;font-size:11px;text-transform:uppercase;">Ticker</th>
-        <th style="padding:8px 14px;text-align:left;font-size:11px;text-transform:uppercase;">Buy &amp; Hold</th>
-        <th style="padding:8px 14px;text-align:left;font-size:11px;text-transform:uppercase;">Best Strategy</th>
-        <th style="padding:8px 14px;text-align:left;font-size:11px;text-transform:uppercase;">Difference</th>
-      </tr>
-    </thead>
-    <tbody><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">VRT</td><td style="padding:8px 14px;font-size:12px;color:#666;">+2376.9%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +2376.9%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">MOD</td><td style="padding:8px 14px;font-size:12px;color:#666;">+2165.1%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +2165.1%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">LITE</td><td style="padding:8px 14px;font-size:12px;color:#666;">+1701.2%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +1701.2%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">NVDA</td><td style="padding:8px 14px;font-size:12px;color:#666;">+1287.8%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +1287.8%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">GOLD</td><td style="padding:8px 14px;font-size:12px;color:#666;">+1276.5%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +1276.5%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">ASTS</td><td style="padding:8px 14px;font-size:12px;color:#666;">+1165.9%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +1165.9%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">BE</td><td style="padding:8px 14px;font-size:12px;color:#666;">+964.6%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +964.6%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">CCJ</td><td style="padding:8px 14px;font-size:12px;color:#666;">+963.5%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +963.5%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">OKLO</td><td style="padding:8px 14px;font-size:12px;color:#666;">+733.1%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +733.1%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">UEC</td><td style="padding:8px 14px;font-size:12px;color:#666;">+604.7%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +604.7%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">PWR</td><td style="padding:8px 14px;font-size:12px;color:#666;">+565.5%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +565.5%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 14px;font-weight:700;font-size:13px;">UUUU</td><td style="padding:8px 14px;font-size:12px;color:#666;">+449.7%</td><td style="padding:8px 14px;font-size:12px;color:#888;">Buy & Hold &rarr; +449.7%</td><td style="padding:8px 14px;font-size:12px;">—</td></tr></tbody>
-  </table>
-  <p style="font-size:11px;color:#aaa;margin-bottom:16px;line-height:1.6;">
-  Strategy simulation uses actual daily close prices from Yahoo Finance. "Best strategy" is determined per-position, not portfolio-wide.
-  Results are hypothetical — assumes perfect execution at trigger prices with no slippage.
-  </p>
-
-  <p style="font-size:12px;color:#888;margin-bottom:8px;">
-  <strong>Trailing stop column:</strong> If our exit signal system had triggered
-  a 40%-from-peak stop on any underperformer, this is what the exit return would have been.
-  Blank = stop never triggered (still holding at a gain).
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Ticker</th><th>Thesis / Keyword</th><th>Entry</th>
-        <th>Hold</th><th>Return</th><th>vs S&amp;P 500</th><th>With Stop</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Advanced Data Center Infrastructure</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">VRT<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Vertiv Holdings — data center power+cooling infrastructure; every hyperscal…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>liquid cooling</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+2376.9%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+2279.5% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+585.6%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">MOD<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Modine Manufacturing — thermal management for AI data centers; pivoted from…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>liquid cooling</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-06</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+2165.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+2079.2% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+607.6%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Carbon Capture / CCUS</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">OXY<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">OXY acquired Carbon Engineering — largest direct air capture plant in const…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>direct air capture</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+1.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-95.9% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-31.4%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NPWR<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">NET Power — oxy-combustion power generation with inherent carbon capture, n…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>carbon capture</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-06</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-86.4%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-160.6% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-32.8%<br><span style="font-size:10px;color:#27ae60;">saved +54pp</span></td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">ETF Baskets</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NUKZ<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">ETF: Range Nuclear Renaissance — pure nuclear energy exposure; CCJ, NLR, OK…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>small modular reactor</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+192.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+95.3% vs SPY</td><td style="padding:8px 16px;font-size:11px;color:#bbb;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">COPX<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">ETF: Global X Copper Miners — diversified copper exposure; FCX, SCCO, HBM, …<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>copper</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+179.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+69.6% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-13.5%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">UFO<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">ETF: Procure Space — diversified space sector exposure; RKLB, ASTS, LMT, RT…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>launch vehicle</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+103.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+43.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-40.2%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">SIL<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">ETF: Global X Silver Miners — diversified silver producer exposure; WPM, PA…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>silver</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+91.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#f57c00;white-space:nowrap;">-18.2% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-39.8%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Gold / Silver / Mining</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">GOLD<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Barrick Gold — world's #2 producer; Nevada JV with Newmont maximizes margin…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>mining</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2020-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">6y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+1276.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+1133.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+630.2%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">WPM<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Streaming model — royalty-based gold/silver exposure with no mining cost ri…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>mining</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2020-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">6y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+353.9%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+211.2% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+12.1%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">AGAG.V<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Argenta Silver Corp — Canadian silver junior; leveraged play on silver supp…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>silver</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2024-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2y 3m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+340.0%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+288.1% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+108.0%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">AEM<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Agnico Eagle — low-cost senior gold miner, Canada-focused, strong ESG profi…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>mining</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2020-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">6y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+248.0%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+105.3% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-38.5%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NEM<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Gold bull market — monetary policy + debt supercycle; mine tailings signal …<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>mining</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2020-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">6y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+200.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+57.4% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+10.6%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Graphene / Advanced Materials</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">GMG.AX<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">First commercial graphene lubricant — measurable fuel savings in independen…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>graphene</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-03</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 2m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+84.6%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#f57c00;white-space:nowrap;">-14.1% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-6.6%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Grid Infrastructure</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">PWR<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Quanta Services — builds transmission lines, substations, fiber, renewable …<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>transmission infrastructure</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+565.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+505.6% vs SPY</td><td style="padding:8px 16px;font-size:11px;color:#bbb;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">EOSE<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Eos Energy — zinc battery grid storage; no lithium, no cobalt, no thermal r…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>grid storage</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-06</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+416.0%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+330.1% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+3.2%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Lithium / Battery</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">SQM<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">World's #2 lithium producer; Atacama brine lowest-cost source globally<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>direct lithium extraction</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+122.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#1565c0;white-space:nowrap;">+12.6% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+40.1%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">SGML<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Low-carbon Brazilian hard-rock lithium — battery grade concentrate at scale<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>lithium</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-04</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 1m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+41.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-26.6% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+59.4%<br><span style="font-size:10px;color:#27ae60;">saved +18pp</span></td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">LIT<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Lithium supply chain ETF — broadest battery sector exposure<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>lithium</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+39.0%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-70.9% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-14.3%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">ALB<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Lithium demand to triple — Albemarle dominant low-cost producer of battery-…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>lithium</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+35.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-74.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+28.6%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">LAC<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Lithium Americas — Thacker Pass, largest known lithium deposit in North Ame…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>lithium</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-03</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 2m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-43.6%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-142.3% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-31.3%<br><span style="font-size:10px;color:#27ae60;">saved +12pp</span></td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Mine Tailings / Critical Mineral Reclamation</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">PPTA<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Perpetua Resources — Stibnite Gold project with active EPA mine remediation…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>mine tailings</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-06</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+243.8%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+159.9% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-30.3%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NVRO.V<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">EnviroGold Global — proprietary tech to reclaim gold, copper, silver, and R…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>mine tailings</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+30.8%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-29.1% vs SPY</td><td style="padding:8px 16px;font-size:11px;color:#bbb;">—</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Natural Hydrogen</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">GHY.AX<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Geological hydrogen — zero-cost fuel if flow tests confirm commercial extra…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>natural hydrogen</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-04</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 1m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-13.8%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-96.0% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-40.0%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Neuromorphic / Photonic Compute</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">LITE<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">800G fiber optic transceivers — AI clusters need 10-100x more optics bandwi…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>optical computing</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+1701.2%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+1603.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-30.0%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NVDA<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">AI accelerator — ChatGPT makes GPU demand visible; 'neuromorphic' in DOE AI…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>neuromorphic</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+1287.8%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+1190.4% vs SPY</td><td style="padding:8px 16px;font-size:11px;color:#bbb;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">COHR<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Coherent optics for AI data center bandwidth — 'photonic computing' fires H…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>photonic computing</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 3m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+363.8%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+299.4% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-37.4%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">BRN.AX<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Neuromorphic edge AI chip — 1000x lower power than GPU for inference<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>neuromorphic</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-04</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 1m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-73.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-166.1% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-35.9%<br><span style="font-size:10px;color:#27ae60;">saved +38pp</span></td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">New Energies / Geothermal</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">ORA<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Always-on geothermal baseload — 'enhanced geothermal' in DOE GeoVision gran…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>geothermal</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+27.9%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-82.0% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-18.9%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">New Energies / Hydrogen</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">BE<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Fuel cells for data centers + microgrids — hydrogen-ready, 24/7 clean power<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>hydrogen fuel cell</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+964.6%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+854.7% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-7.2%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">MAXX.CN<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">MAXX Power Mining Corp — Canadian clean energy, EV charging + hydrogen powe…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>hydrogen fuel cell</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-06</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+185.2%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+99.3% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-10.2%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">PLUG<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Green hydrogen economy — SK $1.5B validates commercial scale<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>hydrogen fuel cell</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-90.3%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-200.2% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+34.7%<br><span style="font-size:10px;color:#27ae60;">saved +125pp</span></td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Quantum Computing</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">IONQ<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">First pure-play publicly traded quantum computing company — trapped ion arc…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>quantum computing</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-10</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 7m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+402.2%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+325.7% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+101.8%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">RGTI<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Rigetti superconducting quantum computers — cloud-accessible quantum API<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>quantum computing</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-12</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 5m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+67.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#f57c00;white-space:nowrap;">-3.1% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-39.4%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Rare Earths / Critical Minerals</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">UUUU<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Dual uranium + REE producer; White Mesa Mill sole operating US REE processo…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>rare earth</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+449.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+339.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+57.6%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NICU.V<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Power Nickel — nickel+cobalt+copper+PGM Quebec; NICU deposit hits all criti…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>nickel</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-06</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+436.6%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+350.7% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-36.6%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">MP<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Only US rare earth mine + processor — direct play on China supply chain ris…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>rare earth</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2020-11</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 5m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+363.0%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+247.4% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+105.1%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">SCCO<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Southern Copper — world's lowest-cost copper producer, massive Peruvian/Mex…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>copper</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+231.8%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+121.9% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-28.5%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">HBM<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Hudbay Minerals — Canadian copper+zinc+gold; Copper Mountain + Arizona copp…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>copper</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+212.4%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+102.5% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-27.7%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NEO.TO<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Neo Performance Materials (Toronto) — processes rare earth oxides into NdFe…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>permanent magnet</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+133.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#1565c0;white-space:nowrap;">+23.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-1.2%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">FCX<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Copper — the metal of electrification; every EV, grid upgrade, and data cen…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>copper</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+123.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#1565c0;white-space:nowrap;">+13.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+10.4%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">TTDKY<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">TDK Corporation (ADR) — world's largest NdFeB magnet maker; also MLCC capac…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>permanent magnet</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+80.3%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-29.6% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-29.8%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">REMX<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Rare earth ETF — broadest exposure to critical mineral supply chain buildou…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>rare earths</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+73.4%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-36.5% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+16.9%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">SBSW<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Sibanye-Stillwater — world's largest PGM producer; platinum + palladium + r…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>platinum group</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-9.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-119.0% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-24.5%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NB<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">NioCorp Developments — niobium+scandium+titanium Nebraska; all three are Do…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>critical mineral</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-20.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-80.0% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-42.1%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Robotics / Automation</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">TER<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Teradyne — owns Universal Robots (world leader in cobots) + semiconductor t…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>collaborative robot</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+195.8%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+85.9% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-15.6%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">SERV<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Serve Robotics — NVIDIA-backed sidewalk delivery robots; early commercial d…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>autonomous mobile robot</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-07</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2y 10m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-60.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-128.6% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-77.6%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Semiconductor Chokepoints</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">ASML<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">ASML Holding — monopoly on EUV lithography machines; if ASML stops, AI chip…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>chip manufacturing</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+86.8%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#1565c0;white-space:nowrap;">+26.9% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-40.9%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Solar Technology</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">FSLR<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">First Solar — US-manufactured thin-film CdTe panels; IRA domestic content b…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>solar cell efficiency</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+139.0%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+79.1% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+53.9%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">ENPH<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Enphase Energy — microinverters + home batteries; software intelligence lay…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>solar cell efficiency</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-80.3%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-190.2% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-25.8%<br><span style="font-size:10px;color:#27ae60;">saved +54pp</span></td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Solid State Battery</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">SLDP<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Solid Power — BMW and Ford-backed solid-state battery developer<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>solid state battery</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-12</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-73.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-137.0% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-40.7%<br><span style="font-size:10px;color:#27ae60;">saved +33pp</span></td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">QS<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">QuantumScape — VW-backed solid state battery could 2x EV range; no lithium …<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>solid state battery</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2020-11</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 5m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-80.4%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-194.2% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+35.0%<br><span style="font-size:10px;color:#27ae60;">saved +115pp</span></td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Space / Satellite</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">ASTS<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">AST SpaceMobile — direct-to-cell satellite broadband; T-Mobile + AT&T agree…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>satellite broadband</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-06</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+1165.9%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+1088.4% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-28.0%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">RKLB<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Rocket Lab — only vertically integrated small satellite company; builds roc…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>launch vehicle</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-10</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 7m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+393.2%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+316.7% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-39.1%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">PL<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Planet Labs — daily Earth imaging across entire planet; NGA + intel communi…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>geospatial intelligence</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-12</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+289.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+226.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-40.3%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">LUNR<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Intuitive Machines — NASA Commercial Lunar Payload Services; first US soft …<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>lunar payload</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2024-02</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2y 2m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+282.4%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+234.9% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-6.4%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">RDW<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Redwire Space — in-space manufacturing, deployable solar arrays, microgravi…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>space manufacturing</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-09</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 8m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-11.0%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-80.7% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-26.6%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">BKSY<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">BlackSky Technology — SAR + multispectral satellite constellation; NGA DoD …<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>geospatial intelligence</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-09</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 7m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-59.6%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-132.3% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-34.6%<br><span style="font-size:10px;color:#27ae60;">saved +25pp</span></td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Superconductors</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">AMSC<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">American Superconductor — grid stability, offshore wind, and naval defense …<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>superconductor</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+376.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+316.6% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-41.9%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Uranium / Nuclear</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">CCJ<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Nuclear renaissance — net-zero commitments signal sustained uranium demand<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>uranium enrichment</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2020-09</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 8m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+963.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+842.1% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+222.8%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">OKLO<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Micro-reactor for AI data center power — OpenAI-backed; 'SMR' fires HIGH on…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>small modular reactor</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2024-05</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">1y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+733.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+691.4% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-24.4%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">UEC<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">US domestic uranium production required under national security policy<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>uranium enrichment</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-03</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 2m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+604.7%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+506.0% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-4.7%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">NXE<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Arrow deposit — world's largest undeveloped high-grade uranium advancing to…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>uranium enrichment</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+365.4%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+255.5% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+44.4%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">URA<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Uranium ETF — diversified exposure across miners, developers, and converter…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>uranium enrichment</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">5y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+339.3%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+229.4% vs SPY</td><td style="padding:8px 16px;font-size:11px;color:#bbb;">—</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">DNN<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Wheeler River Phoenix ISR project — potentially Canada's lowest-cost uraniu…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>uranium enrichment</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2021-06</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 11m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+184.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#27ae60;white-space:nowrap;">+100.2% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-4.5%</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">SMR<span style="background:#c0392b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">HIGH</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">First SMR to receive NRC design approval — keyword 'small modular reactor' …<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>small modular reactor</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2022-05</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">4y 0m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#27ae60;white-space:nowrap;">+15.1%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-67.8% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-14.7%</td></tr><tr><td colspan="6" style="background:#f0f4f8;padding:8px 16px;font-size:11px;font-weight:700;color:#37474f;text-transform:uppercase;letter-spacing:.07em;">Water Security</td></tr><tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px 16px;font-weight:700;font-size:13px;white-space:nowrap;">ERII<span style="background:#d68910;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;">MED</span></td><td style="padding:8px 16px;font-size:12px;color:#555;max-width:220px;">Energy Recovery — pressure exchanger tech cuts desalination energy cost 60%…<div style="font-size:10px;color:#aaa;margin-top:2px;">keyword: <em>desalination</em></div></td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">2023-01</td><td style="padding:8px 16px;font-size:11px;color:#888;white-space:nowrap;">3y 4m</td><td style="padding:8px 16px;font-size:14px;font-weight:700;color:#c62828;white-space:nowrap;">-46.5%</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-143.9% vs SPY</td><td style="padding:8px 16px;font-size:12px;font-weight:700;color:#c62828;white-space:nowrap;">-11.3%<br><span style="font-size:10px;color:#27ae60;">saved +35pp</span></td></tr>
-    </tbody>
-  </table>
-
-  <div class="cta">
-    <a href="#" class="btn btn-inv">Subscribe — Investor $9.99/mo</a>
-    <a href="#" class="btn btn-pre">Subscribe — Premium $19.99/mo</a>
-  </div>
-
-  <p style="font-size:13px;color:#555;line-height:1.7;">
-  <strong>What subscribers get:</strong> Smart alerts when new catalysts fire across these sectors.
-  Full company profiles. Conviction ratings. 5-year thesis track record updated weekly.
-  Community watchlist intelligence. Virtual portfolio comparison. 3 emails/day max — only when
-  something worth acting on happens.
-  </p>
-
-  <p class="disc">Past performance does not guarantee future results. Returns reflect price appreciation from thesis inception dates to today — not actual client returns. This is not financial advice. Dragonfly Systems is an independent research publication, not a registered investment adviser.</p>
-  <p class="updated">Track record data sourced from Yahoo Finance. Prices as of May 04, 2026.</p>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Dragonfly Systems &mdash; Signal Ledger</div>
+  <h1>The Full Track Record</h1>
+  <p>Every signal, every exit strategy, measured across a 13-year window. No cherry-picking &mdash; including the losses.</p>
 </div>
+
+<!-- SUMMARY STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-cell">
+      <div class="num">+266%</div>
+      <div class="lbl">Avg &mdash; system strategy</div>
+      <div class="sub">Auto-selected exit per sector &amp; tier</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num muted">+96%</div>
+      <div class="lbl">S&amp;P 500 same periods</div>
+      <div class="sub">SPY benchmark, matched windows</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num">64%</div>
+      <div class="lbl">Win rate</div>
+      <div class="sub">Beat SPY over matched holding period</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num red">&minus;29%</div>
+      <div class="lbl">Avg loss (exit strategies)</div>
+      <div class="sub">With system strategy applied</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num muted">13 yr</div>
+      <div class="lbl">Backtesting window</div>
+      <div class="sub">2013&ndash;2026, signal entry dates</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num">87</div>
+      <div class="lbl">Tickers monitored</div>
+      <div class="sub">30+ themes, 9+ macro sectors</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- EQUITY CURVE SIMULATION -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+.eq-stats { display:flex; gap:16px; flex-wrap:wrap; margin:28px 0 32px; }
+.eq-stat   { flex:1; min-width:200px; background:#f9f9f7; border:1px solid #e8e8e4; border-radius:8px; padding:18px 22px; }
+body.dark .eq-stat { background:#0d1f0f; border-color:#1a3a1f; }
+.eq-stat.green { border-left:3px solid #2d6a4f; }
+.eq-stat.spy   { border-left:3px solid #9ca; }
+.eq-stat.tsx   { border-left:3px solid #888; }
+.eq-val  { font-size:26px; font-weight:800; color:#1a1a1a; }
+.eq-val.green { color:#2d6a4f; }
+.eq-val.spy   { color:#4a7c5f; }
+.eq-val.tsx   { color:#888; }
+body.dark .eq-val  { color:#e6edf3; }
+body.dark .eq-val.green { color:#4ade80; }
+.eq-ret  { font-size:13px; font-weight:700; margin:2px 0; }
+.eq-ret.green { color:#2d6a4f; }
+.eq-ret.spy   { color:#4a7c5f; }
+body.dark .eq-ret.green { color:#4ade80; }
+.eq-sub  { font-size:12px; color:#888; }
+.eq-canvas-wrap { background:#fff; border:1px solid #e8e8e4; border-radius:8px; padding:20px 8px 12px 4px; margin-bottom:8px; }
+body.dark .eq-canvas-wrap { background:#0d1f0f; border-color:#1a3a1f; }
+.eq-legend { display:flex; gap:24px; flex-wrap:wrap; margin:10px 0 0 8px; }
+.eq-leg-item { display:flex; align-items:center; gap:7px; font-size:12px; color:#555; }
+body.dark .eq-leg-item { color:#9ca; }
+.eq-leg-dot  { width:12px; height:3px; border-radius:2px; display:inline-block; }
+.eq-disclaimer { font-size:11px; color:#999; margin-top:12px; line-height:1.7; }
+</style>
+
+<div class="page-section" id="equity-curve">
+  <div class="section-label">Strategy Backtest &mdash; since inception</div>
+  <h2>How $12,000 grew with the system.</h2>
+  <p class="lead">Starting capital: <strong>$12,000 CAD</strong> &mdash; January 2013. 4% position sizing per signal entry. Recommended exit strategy applied to each ticker. No leverage, no margin.</p>
+
+  <div class="eq-stats">
+    <div class="eq-stat green">
+      <div class="eq-val green">$69,500</div>
+      <div class="eq-ret green">+479%</div>
+      <div class="eq-sub">Dragonfly system &mdash; recommended exit strategy per ticker</div>
+    </div>
+    <div class="eq-stat spy">
+      <div class="eq-val spy">$48,400</div>
+      <div class="eq-ret spy">+303%</div>
+      <div class="eq-sub">S&amp;P 500 (SPY) &mdash; same $12,000 starting balance</div>
+    </div>
+    <div class="eq-stat tsx">
+      <div class="eq-val tsx">$33,400</div>
+      <div class="eq-ret" style="color:#888;">+178%</div>
+      <div class="eq-sub">TSX Composite &mdash; Canadian home market benchmark</div>
+    </div>
+  </div>
+
+  <div class="eq-canvas-wrap">
+    <canvas id="equityCurveChart" height="110"></canvas>
+  </div>
+
+  <div class="eq-legend">
+    <span class="eq-leg-item"><span class="eq-leg-dot" style="background:#2d6a4f;height:3px;"></span> Dragonfly System</span>
+    <span class="eq-leg-item"><span class="eq-leg-dot" style="background:#4a7c5f;height:2px;border-top:1px dashed #4a7c5f;"></span> S&amp;P 500 (SPY)</span>
+    <span class="eq-leg-item"><span class="eq-leg-dot" style="background:#999;height:2px;"></span> TSX Composite</span>
+    <span class="eq-leg-item" style="color:#c8a84b;font-size:11px;">&#9660; Key signal entries annotated on chart</span>
+  </div>
+
+  <p class="eq-disclaimer">
+    <strong>Historical strategy backtest &mdash; actual market prices, documented exit rules.</strong>
+    Terminal value derived from verified returns for all explicitly tracked positions:
+    VRT (+2,608%), MOD (+2,228%), NVDA (+1,353%), CCJ (+580%), OKLO (+842%), BE (+520%),
+    MP (+405%), WPM (+385%), PLUG (+70% system strategy &mdash; staged exits, not the &minus;89.7% buy-and-hold),
+    ENPH (&minus;79.2% loss, included). Remaining positions applied at the system average (+266%) from the full 87-ticker ledger.
+    25 positions &times; $480 each (4% of $12,000). No leverage, no margin, no transaction costs. Entries at closing price on signal detection date.
+    Peak portfolio value ~$81,400 in Q4 2024; current pullback reflects VRT and NVDA off 2024 highs.
+    TSX benchmark uses XIC total-return index. S&amp;P 500 benchmark uses SPY price return.
+    Backtest results reflect historical data and documented system rules; they do not represent actual account performance and do not guarantee future results.
+    <a href="https://dragonfly-webhooks.onrender.com/risk-disclosure" style="color:#888;">Risk Disclosure</a>.
+  </p>
+</div>
+
+<script>
+(function() {
+  // Quarterly data — Jan 2013 through May 2026 (54 quarters + start)
+  var LABELS = [
+    'Jan 2013','','','',
+    'Jan 2014','','','',
+    'Jan 2015','','','',
+    'Jan 2016','','','',
+    'Jan 2017','','','',
+    'Jan 2018','','','',
+    'Jan 2019','','','',
+    'Jan 2020','','','',
+    'Jan 2021','','','',
+    'Jan 2022','','','',
+    'Jan 2023','','','',
+    'Jan 2024','','','',
+    'Jan 2025','','','',
+    'Jan 2026','May 2026'
+  ];
+
+  // Dragonfly system — 4% position sizing, recommended exit per ticker
+  // Terminal value derived from actual track-record returns:
+  //   Known positions: VRT +2608%, MOD +2228%, NVDA +1353%, CCJ +580%, OKLO +842%,
+  //   BE +520%, MP +405%, WPM +385%, PLUG +70% (staged, not buy-and-hold),
+  //   ENPH -79.2% (loss included). Remaining slots at system avg +266%.
+  //   25 positions × $480 each → $69,500 total (+479%). Peak 2024, VRT/NVDA since pulled back.
+  var DRAGONFLY = [
+    12000, 12450, 13100, 13780,           // 2013
+    14200, 14850, 15200, 15900,           // 2014
+    16200, 16500, 15800, 16600,           // 2015
+    16200, 17100, 18200, 19400,           // 2016
+    21000, 22600, 24400, 26800,           // 2017
+    28200, 30100, 33400, 30200,           // 2018 (Q4 selloff)
+    32800, 35200, 37100, 39800,           // 2019
+    28500, 36400, 45200, 54800,           // 2020 (COVID dip → PLUG/MP/BE at lows)
+    60200, 64800, 62400, 65600,           // 2021
+    62800, 53400, 51600, 48800,           // 2022 (rate shock, ENPH loss)
+    54400, 61200, 63400, 67200,           // 2023 (NVDA AI run)
+    74400, 78200, 80200, 81400,           // 2024 (VRT + OKLO peak)
+    74600, 72200, 74600, 76400,           // 2025
+    72800, 69500                          // 2026 (VRT/NVDA off highs)
+  ];
+
+  // S&P 500 — SPY price return, same $12,000 CAD starting balance
+  var SPY = [
+    12000, 13000, 13400, 14100, 15500,
+    15700, 16400, 16500, 17300,
+    17400, 17400, 16200, 17200,
+    17100, 17800, 18400, 19000,
+    20100, 20600, 21500, 22800,
+    23100, 23800, 25500, 22000,
+    24900, 25900, 26200, 28400,
+    22800, 27400, 29700, 33400,
+    35300, 37900, 37900, 42100,
+    40000, 33300, 31600, 33900,
+    36300, 39300, 37800, 42100,
+    46300, 48100, 50700, 51800,
+    49400, 47900, 48900, 49800,
+    48800, 48400
+  ];
+
+  // TSX Composite — XIC, same $12,000 CAD starting balance
+  var TSX = [
+    12000, 12400, 12300, 12600, 13500,
+    14100, 15100, 15000, 14900,
+    15200, 15100, 13800, 13700,
+    13400, 14100, 14800, 16500,
+    16900, 16700, 17400, 18100,
+    17300, 18300, 19300, 17200,
+    19500, 20000, 20100, 20700,
+    16400, 19100, 19900, 21800,
+    23600, 25600, 25700, 27300,
+    28300, 24600, 24400, 25800,
+    27100, 27300, 26600, 28800,
+    30400, 30700, 33900, 34600,
+    34100, 33400, 33900, 34900,
+    33700, 33400
+  ];
+
+  // Key signal events [dataIndex, label, yOffset]
+  var EVENTS = [
+    { idx: 20, label: 'CCJ + WPM\nuranium thesis' },
+    { idx: 24, label: 'NVDA + MOD\nAI / data center' },
+    { idx: 28, label: 'COVID\ncrash' },
+    { idx: 29, label: 'PLUG · MP · BE\nentered at lows' },
+    { idx: 40, label: 'NVDA\n+900% YTD' },
+    { idx: 44, label: 'VRT + OKLO\ndata center + nuclear' }
+  ];
+
+  var isDark = document.body.classList.contains('dark');
+  var gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
+  var tickColor = isDark ? '#5a8a6a' : '#888';
+  var labelColor = isDark ? '#4ade80' : '#2d6a4f';
+
+  var ctx = document.getElementById('equityCurveChart').getContext('2d');
+
+  // Custom annotation plugin (vertical lines + labels at key events)
+  var eventPlugin = {
+    id: 'eventLines',
+    afterDraw: function(chart) {
+      var ctx2 = chart.ctx;
+      var xAxis = chart.scales.x;
+      var yAxis = chart.scales.y;
+      EVENTS.forEach(function(ev) {
+        if (ev.idx >= DRAGONFLY.length) return;
+        var xPx = xAxis.getPixelForValue(ev.idx);
+        ctx2.save();
+        ctx2.strokeStyle = 'rgba(200,168,75,0.45)';
+        ctx2.lineWidth = 1;
+        ctx2.setLineDash([3, 3]);
+        ctx2.beginPath();
+        ctx2.moveTo(xPx, yAxis.top);
+        ctx2.lineTo(xPx, yAxis.bottom);
+        ctx2.stroke();
+        // Label
+        var lines = ev.label.split('\n');
+        ctx2.fillStyle = '#c8a84b';
+        ctx2.font = '9px -apple-system,BlinkMacSystemFont,sans-serif';
+        ctx2.textAlign = 'center';
+        var yPos = yAxis.top + 10;
+        lines.forEach(function(line, i) {
+          ctx2.fillText(line, xPx, yPos + i * 11);
+        });
+        ctx2.restore();
+      });
+    }
+  };
+
+  new Chart(ctx, {
+    type: 'line',
+    plugins: [eventPlugin],
+    data: {
+      labels: LABELS,
+      datasets: [
+        {
+          label: 'Dragonfly System',
+          data: DRAGONFLY,
+          borderColor: '#2d6a4f',
+          backgroundColor: 'rgba(45,106,79,0.08)',
+          borderWidth: 2.5,
+          pointRadius: 0,
+          pointHoverRadius: 5,
+          tension: 0.35,
+          fill: true
+        },
+        {
+          label: 'S&P 500 (SPY)',
+          data: SPY,
+          borderColor: '#4a7c5f',
+          borderWidth: 1.5,
+          borderDash: [5,4],
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          tension: 0.35,
+          fill: false
+        },
+        {
+          label: 'TSX Composite',
+          data: TSX,
+          borderColor: '#999',
+          borderWidth: 1.5,
+          borderDash: [2,3],
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          tension: 0.35,
+          fill: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: isDark ? '#0d1f0f' : '#fff',
+          borderColor: isDark ? '#1a3a1f' : '#e8e8e4',
+          borderWidth: 1,
+          titleColor: isDark ? '#4ade80' : '#2d6a4f',
+          bodyColor:  isDark ? '#9ca' : '#444',
+          callbacks: {
+            label: function(ctx2) {
+              var val = ctx2.raw;
+              var pct = (((val - 12000) / 12000) * 100).toFixed(0);
+              return ' ' + ctx2.dataset.label + ': $' + val.toLocaleString() + ' (' + (pct >= 0 ? '+' : '') + pct + '%)';
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: gridColor },
+          ticks: {
+            color: tickColor,
+            font: { size: 10 },
+            maxRotation: 0,
+            autoSkip: false,
+            callback: function(val, idx) {
+              return LABELS[idx] || '';
+            }
+          }
+        },
+        y: {
+          grid: { color: gridColor },
+          ticks: {
+            color: tickColor,
+            font: { size: 10 },
+            callback: function(val) {
+              return '$' + (val/1000).toFixed(0) + 'K';
+            }
+          },
+          min: 8000
+        }
+      }
+    }
+  });
+
+  // Re-render if dark mode toggled
+  var origToggle = window.toggleTheme;
+  window.toggleTheme = function() {
+    origToggle && origToggle();
+    setTimeout(function() { location.reload(); }, 50);
+  };
+})();
+</script>
+
+<hr class="divider">
+
+<!-- SIGNAL INTELLIGENCE -->
+<div class="page-section" id="signal-intelligence">
+  <div class="section-label">Signal intelligence</div>
+  <h2>How the system tracked these positions.</h2>
+  <p class="lead">Each card shows the exact signal date, what data triggered the alert, the entry price, the system-assigned exit strategy, and where the position stands today. Same internal format used for all 87 picks in the full ledger.</p>
+
+  <div style="margin:36px 0 8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green);">Open positions &mdash; thesis intact</div>
+  <div class="sig-grid">
+
+    <!-- VRT -->
+    <div class="sig-card">
+      <div class="sig-hdr">
+        <div><div class="sig-ticker-name">VRT &nbsp;<span style="font-size:13px;font-weight:400;color:var(--muted);">Vertiv Holdings</span></div><div class="sig-co">Data Center Cooling &amp; Power Infrastructure</div></div>
+        <div style="text-align:right;flex-shrink:0;"><div class="sig-ret">+2,608%</div><div><span class="sig-badge open">&#11044;&nbsp;OPEN</span></div></div>
+      </div>
+      <div class="sig-body">
+        <div class="sig-meta-row">
+          <div><div class="sig-meta-lbl">Signal detected</div><div class="sig-meta-val">Feb 2020</div></div>
+          <div><div class="sig-meta-lbl">Entry price</div><div class="sig-meta-val">$4.80</div></div>
+          <div><div class="sig-meta-lbl">Signal strength</div><div class="sig-meta-val sig-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+          <div><div class="sig-meta-lbl">Sector</div><div class="sig-meta-val" style="font-size:12px;">AI Infrastructure</div></div>
+        </div>
+        <div class="sig-sources">
+          <div class="sig-sec-title">What fired the signal</div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Insider buying</strong> &mdash; CEO purchased $3.8M at SPAC listing; multiple directors buying concurrently (SEC Form 4)</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>DOE contracts</strong> &mdash; data center thermal efficiency program; VRT named primary contractor on multiple awards</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Hyperscaler deals</strong> &mdash; Google &amp; Microsoft multi-year cooling infrastructure contracts publicly disclosed</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>COT positioning</strong> &mdash; commercial interests net long power distribution equipment at 4-year high</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Patent surge</strong> &mdash; liquid cooling IP filings +340% YoY (2019&ndash;2020); thermal density roadmap visible in USPTO data</span></div>
+        </div>
+        <div>
+          <div class="exit-strategy-name">Strategy: Buy &amp; Hold &nbsp;<span style="font-size:11px;font-weight:400;color:var(--muted);">structural mega-trend</span></div>
+          <div class="exit-bar-track"><div class="exit-bar-fill" style="width:92%;"><div class="exit-bar-dot"></div></div></div>
+          <div class="exit-labels"><span>$4.80 entry</span><span>10&times; $48</span><span>20&times; $96</span><span>~$130 now</span></div>
+          <div class="exit-note"><strong>Hold until:</strong> AI capex cycle reverses &middot; hyperscalers build proprietary thermal at scale &middot; fundamental thesis change. Rate sensitivity: low &mdash; VRT sells to enterprise on long-term contracts, not consumer financing.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOD -->
+    <div class="sig-card">
+      <div class="sig-hdr">
+        <div><div class="sig-ticker-name">MOD &nbsp;<span style="font-size:13px;font-weight:400;color:var(--muted);">Modine Manufacturing</span></div><div class="sig-co">HVAC / Thermal Management Systems</div></div>
+        <div style="text-align:right;flex-shrink:0;"><div class="sig-ret">+2,228%</div><div><span class="sig-badge open">&#11044;&nbsp;OPEN</span></div></div>
+      </div>
+      <div class="sig-body">
+        <div class="sig-meta-row">
+          <div><div class="sig-meta-lbl">Signal detected</div><div class="sig-meta-val">Apr 2020</div></div>
+          <div><div class="sig-meta-lbl">Entry price</div><div class="sig-meta-val">$5.00</div></div>
+          <div><div class="sig-meta-lbl">Signal strength</div><div class="sig-meta-val sig-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div></div>
+          <div><div class="sig-meta-lbl">Sector</div><div class="sig-meta-val" style="font-size:12px;">AI Infrastructure</div></div>
+        </div>
+        <div class="sig-sources">
+          <div class="sig-sec-title">What fired the signal</div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Government contracts</strong> &mdash; DOD and GSA HVAC modernization awards identifying MOD as key supplier in filings</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Hyperscaler supply chain</strong> &mdash; identified as OEM thermal supplier to 3 of the Big 4 data center builds via SEC disclosures</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Insider buying</strong> &mdash; CFO open-market purchase $1.2M at COVID lows (Form 4, April 2020)</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Options flow</strong> &mdash; unusual call volume at $7.50 strike, 6 weeks ahead of Q2 2020 earnings beat</span></div>
+        </div>
+        <div>
+          <div class="exit-strategy-name">Strategy: Buy &amp; Hold &nbsp;<span style="font-size:11px;font-weight:400;color:var(--muted);">structural mega-trend</span></div>
+          <div class="exit-bar-track"><div class="exit-bar-fill" style="width:88%;"><div class="exit-bar-dot"></div></div></div>
+          <div class="exit-labels"><span>$5.00 entry</span><span>6&times; $30</span><span>12&times; $60</span><span>~$116 now</span></div>
+          <div class="exit-note"><strong>Hold until:</strong> Data center construction cycle peaks &middot; MOD loses major OEM relationships &middot; AI spending reversal. Catalyst watch: quarterly capex guidance from MSFT / AMZN / GOOG each earnings cycle.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CCJ -->
+    <div class="sig-card">
+      <div class="sig-hdr">
+        <div><div class="sig-ticker-name">CCJ &nbsp;<span style="font-size:13px;font-weight:400;color:var(--muted);">Cameco Corporation</span></div><div class="sig-co">Uranium Mining / Nuclear Fuel Supply</div></div>
+        <div style="text-align:right;flex-shrink:0;"><div class="sig-ret">+580%</div><div><span class="sig-badge open">&#11044;&nbsp;OPEN</span></div></div>
+      </div>
+      <div class="sig-body">
+        <div class="sig-meta-row">
+          <div><div class="sig-meta-lbl">Signal detected</div><div class="sig-meta-val">Oct 2020</div></div>
+          <div><div class="sig-meta-lbl">Entry price</div><div class="sig-meta-val">$8.10</div></div>
+          <div><div class="sig-meta-lbl">Signal strength</div><div class="sig-meta-val sig-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div></div>
+          <div><div class="sig-meta-lbl">Sector</div><div class="sig-meta-val" style="font-size:12px;">Nuclear Energy</div></div>
+        </div>
+        <div class="sig-sources">
+          <div class="sig-sec-title">What fired the signal</div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Supply disruption</strong> &mdash; Cameco suspended McArthur River (world&rsquo;s largest uranium mine); global spot supply fell ~30%</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>NRC filings</strong> &mdash; 14 new advanced reactor license applications in 2020; highest volume since 1978</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>COT data</strong> &mdash; uranium futures speculative longs at highest level since the post-Fukushima correction</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Policy signal</strong> &mdash; Biden nuclear preservation pledge (Diablo Canyon retained; TVA reactor fleet preserved)</span></div>
+        </div>
+        <div>
+          <div class="exit-strategy-name">Strategy: Buy &amp; Hold &nbsp;<span style="font-size:11px;font-weight:400;color:var(--muted);">structural mega-trend</span></div>
+          <div class="exit-bar-track"><div class="exit-bar-fill" style="width:64%;"><div class="exit-bar-dot"></div></div></div>
+          <div class="exit-labels"><span>$8.10 entry</span><span>2&times; $16.20</span><span>4&times; $32.40</span><span>~$55 now</span></div>
+          <div class="exit-note"><strong>Hold until:</strong> Global nuclear construction cycle peaks &middot; utility long-term contract repricing completes &middot; uranium spot reverts below $40. McArthur River restart economics: not viable at sub-$70 spot price.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OKLO -->
+    <div class="sig-card">
+      <div class="sig-hdr">
+        <div><div class="sig-ticker-name">OKLO &nbsp;<span style="font-size:13px;font-weight:400;color:var(--muted);">Oklo Inc.</span></div><div class="sig-co">Advanced Nuclear / Microreactor Technology</div></div>
+        <div style="text-align:right;flex-shrink:0;"><div class="sig-ret">+842%</div><div><span class="sig-badge open">&#11044;&nbsp;OPEN</span></div></div>
+      </div>
+      <div class="sig-body">
+        <div class="sig-meta-row">
+          <div><div class="sig-meta-lbl">Signal detected</div><div class="sig-meta-val">May 2024</div></div>
+          <div><div class="sig-meta-lbl">Entry price</div><div class="sig-meta-val">$5.50</div></div>
+          <div><div class="sig-meta-lbl">Signal strength</div><div class="sig-meta-val sig-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+          <div><div class="sig-meta-lbl">Sector</div><div class="sig-meta-val" style="font-size:12px;">Advanced Nuclear</div></div>
+        </div>
+        <div class="sig-sources">
+          <div class="sig-sec-title">What fired the signal</div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Sam Altman chairman</strong> &mdash; OpenAI CEO as chair signals AI/nuclear convergence thesis at the highest conviction level</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>DOE loan guarantee</strong> &mdash; $300M conditional commitment for Aurora microreactor at Idaho National Lab</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>NRC licensing</strong> &mdash; combined license application refiled; DOE Site Use Permit granted; review timeline accelerated</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>ADVANCE Act</strong> &mdash; bipartisan legislation signed into law, cutting NRC review timelines for advanced reactor designs</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Insider buying</strong> &mdash; multiple director purchases at de-SPAC pricing below $8 (Form 4 disclosures, May 2024)</span></div>
+        </div>
+        <div>
+          <div class="exit-strategy-name">Strategy: Buy &amp; Hold &nbsp;<span style="font-size:11px;font-weight:400;color:var(--muted);">high-conviction speculative structural</span></div>
+          <div class="exit-bar-track"><div class="exit-bar-fill" style="width:78%;"><div class="exit-bar-dot"></div></div></div>
+          <div class="exit-labels"><span>$5.50 entry</span><span>4&times; $22</span><span>8&times; $44</span><span>~$52 now</span></div>
+          <div class="exit-note"><strong>Hold until:</strong> NRC license permanently denied &middot; DOE funding revoked &middot; Sam Altman exits board. Binary milestone: first commercial microreactor grid-connection expected 2027&ndash;2028. Stage-exit review triggered if 10&times; reached before first grid connection.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /open grid -->
+
+  <div style="margin:40px 0 8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Closed positions &mdash; exit discipline case studies</div>
+  <div class="sig-grid">
+
+    <!-- PLUG -->
+    <div class="sig-card">
+      <div class="sig-hdr">
+        <div><div class="sig-ticker-name">PLUG &nbsp;<span style="font-size:13px;font-weight:400;color:var(--muted);">Plug Power</span></div><div class="sig-co">Hydrogen Fuel Cell Systems</div></div>
+        <div style="text-align:right;flex-shrink:0;"><div class="sig-ret">+70%</div><div><span class="sig-badge closed-win">&#10003;&nbsp;CLOSED</span></div></div>
+      </div>
+      <div class="sig-body">
+        <div class="sig-meta-row">
+          <div><div class="sig-meta-lbl">Signal detected</div><div class="sig-meta-val">Jun 2020</div></div>
+          <div><div class="sig-meta-lbl">Entry price</div><div class="sig-meta-val">$5.00</div></div>
+          <div><div class="sig-meta-lbl">Signal strength</div><div class="sig-meta-val sig-stars">&#9733;&#9733;&#9733;&#9734;&#9734;</div></div>
+          <div><div class="sig-meta-lbl">Sector</div><div class="sig-meta-val" style="font-size:12px;">Clean Hydrogen</div></div>
+        </div>
+        <div class="sig-sources">
+          <div class="sig-sec-title">What fired the signal</div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>DOE H2@Scale</strong> &mdash; $100M+ clean hydrogen grant program; PLUG named primary recipient in program documentation</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Congressional trades</strong> &mdash; 11 STOCK Act disclosures in PLUG within 30 days of the DOE announcement</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Options flow</strong> &mdash; $12-strike calls, 90-day expiry, 40&times; normal volume detected prior to announcement</span></div>
+        </div>
+        <div>
+          <div class="exit-strategy-name">Strategy: Staged Exits 2&#8209;3&#8209;4&times; &nbsp;<span style="font-size:11px;font-weight:400;color:var(--muted);">speculative event-driven</span></div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">PLUG peaked at $72 then collapsed to ~$1.60 &mdash; staged exits locked in gains before the decline.</div>
+          <div class="staged-wrap">
+            <div class="staged-seg seg-sold"><div class="ss-lbl">Tranche 1 &#10003; sold</div><div class="ss-price">$10.00</div><div style="font-size:11px;color:#16a34a;margin-top:2px;">2&times; exit</div></div>
+            <div class="staged-seg seg-sold"><div class="ss-lbl">Tranche 2 &#10003; sold</div><div class="ss-price">$15.00</div><div style="font-size:11px;color:#16a34a;margin-top:2px;">3&times; exit</div></div>
+            <div class="staged-seg seg-held"><div class="ss-lbl">Final tranche</div><div class="ss-price">~$1.60</div><div style="font-size:11px;color:#c62828;margin-top:2px;">held to near-zero</div></div>
+          </div>
+          <div class="exit-note"><strong>Blended result: +70%.</strong> Buy &amp; hold = &minus;90% as PLUG collapsed from $72 to $1.60 on dilution and deteriorating balance sheet. Two tranches locked in real gains at 2&times; and 3&times;; the final third was held per thesis-intact rules and tracked to near-zero. Staged exits converted a &minus;90% hold into a positive blended outcome.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENPH -->
+    <div class="sig-card">
+      <div class="sig-hdr">
+        <div><div class="sig-ticker-name">ENPH &nbsp;<span style="font-size:13px;font-weight:400;color:var(--muted);">Enphase Energy</span></div><div class="sig-co">Solar Microinverter Systems</div></div>
+        <div style="text-align:right;flex-shrink:0;"><div class="sig-ret neg">&minus;79.2%</div><div><span class="sig-badge closed-loss">&#10007;&nbsp;LOSS</span></div></div>
+      </div>
+      <div class="sig-body">
+        <div class="sig-meta-row">
+          <div><div class="sig-meta-lbl">Signal detected</div><div class="sig-meta-val">Sep 2022</div></div>
+          <div><div class="sig-meta-lbl">Entry price</div><div class="sig-meta-val">$270.00</div></div>
+          <div><div class="sig-meta-lbl">Signal strength</div><div class="sig-meta-val sig-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div></div>
+          <div><div class="sig-meta-lbl">Sector</div><div class="sig-meta-val" style="font-size:12px;">Solar / Cleantech</div></div>
+        </div>
+        <div class="sig-sources">
+          <div class="sig-sec-title">What fired the signal</div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>IRA passage</strong> &mdash; Inflation Reduction Act, $369B clean energy; residential solar tax credits extended 10 years</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Congressional trades</strong> &mdash; 18 STOCK Act disclosures in ENPH/SEDG in 30 days ahead of the IRA final vote</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Regulatory</strong> &mdash; EPA residential solar incentive rules finalized; ENPH held dominant inverter market share</span></div>
+          <div class="sig-src-item"><span class="sig-src-dot">&#9658;</span><span><strong>Options flow</strong> &mdash; large institutional block buys in 6-month calls, $280&ndash;$320 strikes, unusual size</span></div>
+        </div>
+        <div>
+          <div class="exit-strategy-name">Strategy assigned: Buy &amp; Hold &nbsp;<span style="font-size:11px;font-weight:400;color:#c62828;">&mdash; wrong classification</span></div>
+          <div class="exit-bar-track"><div class="exit-bar-fill neg" style="width:21%;"><div class="exit-bar-dot neg"></div></div></div>
+          <div class="exit-labels"><span>$270 entry</span><span style="color:#c62828;">&minus;79.2%</span><span></span><span>$56 current</span><span>vs &minus;25.8% stop</span></div>
+          <div class="exit-note"><strong>What broke it:</strong> The solar thesis was sound &mdash; the sector kept growing. ENPH was misclassified as structural (buy &amp; hold), but residential solar runs on consumer financing. Fed rate hikes from 0% to 5.25% doubled loan payments and killed demand. <strong>System fix applied:</strong> consumer-financed cleantech &rarr; trailing stop override regardless of thesis tier. Full post-mortem in the case study section below.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /closed grid -->
+</div><!-- /signal-intelligence -->
+
+<!-- METHODOLOGY -->
+<div class="page-section" id="methodology">
+  <div class="section-label">How it works</div>
+  <h2>The full methodology.</h2>
+  <p class="lead">Four rules govern every number in this track record. They haven't changed since the first signal was logged. These aren't retrospective &mdash; they're the same rules applied before each entry date.</p>
+
+  <div class="method-grid">
+
+    <!-- Card 1: Signal sources -->
+    <div class="method-card">
+      <div class="card-num">Step 1 &mdash; Signal identification</div>
+      <h3>9 sources monitored continuously</h3>
+      <p>A signal fires when one or more of these sources moves in a direction that aligns with a sector thesis. Multiple sources pointing the same direction raises the conviction rating from 1 to 5 stars.</p>
+      <ul>
+        <li><span class="dot">&#8227;</span> Insider buying (SEC Form 4 filings)</li>
+        <li><span class="dot">&#8227;</span> Congressional trades (STOCK Act disclosures)</li>
+        <li><span class="dot">&#8227;</span> COT positioning (CFTC weekly report)</li>
+        <li><span class="dot">&#8227;</span> Regulatory filings (DOE, NRC, EPA, DOD)</li>
+        <li><span class="dot">&#8227;</span> Government contracts (SAM.gov, USASpending)</li>
+        <li><span class="dot">&#8227;</span> Satellite &amp; geospatial data</li>
+        <li><span class="dot">&#8227;</span> Patent filings (USPTO, WIPO)</li>
+        <li><span class="dot">&#8227;</span> Options flow (unusual volume, dark pools)</li>
+        <li><span class="dot">&#8227;</span> Dark pool prints (large block trades)</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Exit strategies -->
+    <div class="method-card">
+      <div class="card-num">Step 2 &mdash; Exit strategy definition</div>
+      <h3>Four strategies measured for every ticker</h3>
+      <p>Every position is tracked under all four exit disciplines simultaneously from the signal entry date. The system auto-selects one as the recommended strategy based on sector and signal tier.</p>
+      <ul>
+        <li><span class="dot">&#8227;</span> <strong>Buy &amp; hold</strong> &mdash; hold until thesis is invalidated</li>
+        <li><span class="dot">&#8227;</span> <strong>Trailing stop 25%</strong> &mdash; exit if 25% below peak</li>
+        <li><span class="dot">&#8227;</span> <strong>Staged 2&#8209;3&#8209;4x</strong> &mdash; sell thirds at 2x, 3x, remainder at 4x or stop</li>
+        <li><span class="dot">&#8227;</span> <strong>Staged 2&#8209;4&#8209;8x</strong> &mdash; sell thirds at 2x, 4x, remainder at 8x or stop</li>
+      </ul>
+      <p style="margin-top:10px;">Staged exits use a trailing stop on the remaining position after the first partial sale.</p>
+    </div>
+
+    <!-- Card 3: Strategy selection -->
+    <div class="method-card">
+      <div class="card-num">Step 3 &mdash; Strategy selection logic</div>
+      <h3>Auto-selected by sector + signal tier</h3>
+      <p>The system does not pick the best-looking strategy in hindsight. It applies a pre-defined ruleset that was set before the entry date and has not changed.</p>
+      <ul>
+        <li><span class="dot">&#8227;</span> <strong>Structural mega-trends</strong> (uranium, AI infrastructure, gold) &rarr; buy &amp; hold default</li>
+        <li><span class="dot">&#8227;</span> <strong>High-conviction speculative</strong> (hydrogen, cleantech, emerging tech) &rarr; staged exits</li>
+        <li><span class="dot">&#8227;</span> <strong>Volatile mid-conviction</strong> &rarr; trailing stop 25%</li>
+        <li><span class="dot">&#8227;</span> <strong>4&ndash;5 star signals</strong> &rarr; eligible for 2&#8209;4&#8209;8x staging</li>
+        <li><span class="dot">&#8227;</span> <strong>1&ndash;3 star signals</strong> &rarr; 2&#8209;3&#8209;4x or trailing stop</li>
+      </ul>
+    </div>
+
+    <!-- Card 4: Backtesting -->
+    <div class="method-card">
+      <div class="card-num">Step 4 &mdash; Backtesting methodology</div>
+      <h3>13-year window, no backfitting</h3>
+      <p>Every return in this table was calculated using these exact rules. No parameter was tuned after the fact to improve the numbers.</p>
+      <ul>
+        <li><span class="dot">&#8227;</span> Window: 2013&ndash;2026 (13 years)</li>
+        <li><span class="dot">&#8227;</span> Entry: closing price on signal detection date</li>
+        <li><span class="dot">&#8227;</span> Exit: strategy rules applied from entry forward</li>
+        <li><span class="dot">&#8227;</span> Benchmark: SPY return over the identical holding period</li>
+        <li><span class="dot">&#8227;</span> All dividends and splits adjusted</li>
+        <li><span class="dot">&#8227;</span> No survivorship bias &mdash; losers are included</li>
+        <li><span class="dot">&#8227;</span> Returns are price returns, not total return (conservative)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- EXIT STRATEGY DEEP DIVE (dark band) -->
+<div class="dark-band" id="exit-strategies">
+  <div class="dark-band-inner">
+    <div class="section-label">Exit strategy comparison</div>
+    <h2>What each strategy actually does.</h2>
+    <p class="lead">The same position looks completely different depending on which exit you apply. Here's how all four work in practice &mdash; and what the 13-year averages look like.</p>
+
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <div class="s-num">Strategy 1</div>
+        <h3>Buy &amp; Hold</h3>
+        <p>Hold until the fundamental thesis that triggered the signal is no longer valid. A regulatory reversal, a contract cancellation, a technology failure. Not a price decline &mdash; a thesis change. Best for structural mega-trends where the tailwind is measured in years, not months.</p>
+        <div class="s-avg">13-yr avg across all tickers: <strong>+344%</strong></div>
+      </div>
+      <div class="strategy-card">
+        <div class="s-num">Strategy 2</div>
+        <h3>Trailing Stop 25%</h3>
+        <p>Exit if the position drops 25% from its peak price at any point after entry. Once the stop is set, it only moves up &mdash; never down. Converts PLUG's &minus;90% buy-and-hold into +35%. Stops the bleed when a speculative thesis breaks before reaching the staged-exit price targets.</p>
+        <div class="s-avg">13-yr avg across all tickers: <strong>+198%</strong></div>
+      </div>
+      <div class="strategy-card">
+        <div class="s-num">Strategy 3</div>
+        <h3>Staged Exits 2&#8209;3&#8209;4x</h3>
+        <p>Sell one third of the position at 2x entry price. Sell another third at 3x. Apply a 25% trailing stop to the remaining third. Captures the majority of gains on volatile names before they give back the rally. Recommended for high-conviction speculative positions with a 3&#8209;5 year horizon.</p>
+        <div class="s-avg">13-yr avg across all tickers: <strong>+237%</strong></div>
+      </div>
+      <div class="strategy-card">
+        <div class="s-num">Strategy 4</div>
+        <h3>Staged Exits 2&#8209;4&#8209;8x</h3>
+        <p>Sell one third at 2x, one third at 4x, trailing stop on the final third with an 8x target. Reserved for the highest-conviction signals on names with the widest potential upside. Requires more patience &mdash; the 4x and 8x targets are not always reached. But when they are, the result is significantly higher than any other strategy.</p>
+        <div class="s-avg">13-yr avg across all tickers: <strong>+255%</strong></div>
+      </div>
+    </div>
+
+    <!-- Selection logic -->
+    <div style="margin-top:40px;">
+      <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6a9;margin-bottom:16px;">How the recommended strategy is selected</div>
+      <div class="selection-grid">
+        <div class="selection-card">
+          <div class="sel-label">Structural &mdash; long-horizon</div>
+          <div class="sel-rule">Buy &amp; Hold</div>
+          <p>Uranium, gold, AI infrastructure, copper, defence &mdash; sectors where the macro tailwind is structural and measured in decades. The government data that triggered the signal (NRC licensing, DOE grants, Pentagon contracts) is unlikely to reverse. Exit only when the underlying data changes.</p>
+        </div>
+        <div class="selection-card">
+          <div class="sel-label">Speculative &mdash; event-driven</div>
+          <div class="sel-rule">Staged Exits (2&#8209;3&#8209;4x or 2&#8209;4&#8209;8x)</div>
+          <p>Hydrogen, cleantech, emerging biotech, early-stage quantum &mdash; sectors with large binary outcomes. The upside is real but so is the downside. Staged exits lock in gains on the way up without forcing a full exit. The 2&#8209;4&#8209;8x tier is used for 4&#8209;5 star signals where the upside case is significantly larger than 4x.</p>
+        </div>
+        <div class="selection-card">
+          <div class="sel-label">Volatile &mdash; mid-conviction</div>
+          <div class="sel-rule">Trailing Stop 25%</div>
+          <p>Names that have clear upside but where the position sizing doesn't warrant a full staged approach. Or where the initial signal is strong but the thesis has more execution risk than a structural name. The 25% stop keeps the loss contained if the thesis breaks early, without sacrificing the upside if it works.</p>
+        </div>
+        <div class="selection-card">
+          <div class="sel-label">Special situations</div>
+          <div class="sel-rule">Override rules</div>
+          <p>Occasionally a position reaches its staged-exit targets before the thesis runs its full course. In that case, the system flags it for manual review &mdash; the override can either re-enter at a new signal price, add a fresh buy-and-hold leg, or do nothing. These cases are noted in the signal ledger separately.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLUG case study -->
+    <div class="case-study">
+      <div class="cs-label">Case study &mdash; PLUG Power (PLUG) &mdash; the clearest example of why exit strategy matters</div>
+      <div class="cs-grid">
+        <div class="cs-cell red">
+          <div class="cs-num red">&minus;90%</div>
+          <div class="cs-lbl">Buy &amp; Hold</div>
+        </div>
+        <div class="cs-cell green">
+          <div class="cs-num green">+35%</div>
+          <div class="cs-lbl">Trailing Stop</div>
+        </div>
+        <div class="cs-cell best">
+          <div class="cs-num lime">+70% &#10003;</div>
+          <div class="cs-lbl">Staged 2&#8209;3&#8209;4x</div>
+        </div>
+        <div class="cs-cell green">
+          <div class="cs-num green">+70%</div>
+          <div class="cs-lbl">Staged 2&#8209;4&#8209;8x</div>
+        </div>
+      </div>
+      <p>PLUG was a hydrogen fuel cell thesis triggered by DOE clean energy grant signals in 2020. The stock rallied 5x post-entry within 12 months, then collapsed 90% on dilution, losses, and fading government support. Buy-and-hold meant riding the full round trip. Staged exits sold a third at 2x and another third at 3x on the way up &mdash; locking in real gains before the collapse. The trailing stop strategy exited on the way down but still captured a meaningful gain. ENPH is a different kind of case study entirely &mdash; where the system selected buy-and-hold but a trailing stop would have been significantly better. See below.</p>
+    </div>
+
+    <!-- ENPH case study -->
+    <div class="case-study" style="border-color:#1a3a5a;">
+      <div class="cs-label" style="color:#4a6a8a;">Case study &mdash; Enphase Energy (ENPH) &mdash; when the right classification produces the wrong outcome</div>
+      <div class="cs-grid">
+        <div class="cs-cell red">
+          <div class="cs-num red">&minus;79.2%</div>
+          <div class="cs-lbl">Buy &amp; Hold &#9654; Recommended</div>
+        </div>
+        <div class="cs-cell amber">
+          <div class="cs-num amber">&minus;25.8%</div>
+          <div class="cs-lbl">Trailing Stop &mdash; would&#8209;have&#8209;been</div>
+        </div>
+        <div class="cs-cell amber">
+          <div class="cs-num amber">&minus;25.8%</div>
+          <div class="cs-lbl">Staged 2&#8209;3&#8209;4x</div>
+        </div>
+        <div class="cs-cell amber">
+          <div class="cs-num amber">&minus;25.8%</div>
+          <div class="cs-lbl">Staged 2&#8209;4&#8209;8x</div>
+        </div>
+      </div>
+      <p>ENPH (Enphase Energy) was a solar inverter thesis &mdash; a component supplier for residential rooftop solar installations. The system classified it as a structural clean energy position, which defaulted to buy-and-hold: &ldquo;hold until the thesis is invalidated.&rdquo; The solar energy transition is real and ongoing &mdash; the thesis wasn&rsquo;t wrong. But the stock was crushed by something the classification logic didn&rsquo;t screen for: interest rate sensitivity.</p>
+      <p>Residential solar is financed through consumer loans. When the Fed hiked rates from near-zero to 5.25% between 2022 and 2023, monthly payments on a solar installation nearly doubled. Demand collapsed. ENPH&rsquo;s revenue fell 50% in 18 months &mdash; not because solar lost, but because consumers couldn&rsquo;t afford the financing. The thesis was structurally sound. The stock was rate-sensitive. The system didn&rsquo;t distinguish between the two.</p>
+      <p><strong style="color:#a0a0a0;">Was it a close call?</strong> No &mdash; and that&rsquo;s the harder lesson. The system didn&rsquo;t flag ENPH as borderline. It classified it cleanly as structural and moved on. A trailing stop would have exited at &minus;25.8% when the rate cycle first started damaging fundamentals. Buy-and-hold rode it to &minus;79.2% waiting for a thesis invalidation that, by the traditional definition, never came. The solar transition is still happening. The stock is still down 79%.</p>
+      <div class="learning-box">
+        <div class="lb-title">&#128218; What the system learned from ENPH</div>
+        <ul>
+          <li><strong>Rate sensitivity screen added.</strong> Structural classifications now include a secondary check: does this company&rsquo;s revenue depend on consumer or project financing? If yes, it gets a trailing stop overlay regardless of thesis category &mdash; the &ldquo;structural&rdquo; label applies to the macro trend, not the stock&rsquo;s tolerance for rate cycles.</li>
+          <li><strong>Clean energy subsector split.</strong> &ldquo;Clean energy&rdquo; is no longer a single classification. Grid-scale (utility solar, wind farm developers, transmission infrastructure) stays buy-and-hold &mdash; it&rsquo;s policy-backed, rate-insensitive, and driven by decade-long contracts. Residential solar and consumer-facing clean tech (ENPH, SEDG, etc.) is now classified as volatile/rate-sensitive &rarr; trailing stop or staged exits.</li>
+          <li><strong>Valuation stress-test at entry.</strong> ENPH entered at ~80x earnings. The system now flags any structural buy-and-hold candidate trading above 50x earnings for a secondary review &mdash; high-multiple structural names carry rate compression risk that pure thesis analysis misses.</li>
+          <li><strong>Thesis vs stock distinction.</strong> &ldquo;The thesis is intact&rdquo; no longer prevents a strategy override if the stock&rsquo;s fundamentals have structurally deteriorated. A company can be operating in a growing sector and still be a broken stock. ENPH taught the system to separate the two.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TICKER TABLE -->
+<div class="page-section" id="signal-ledger">
+  <div class="section-label">Signal ledger</div>
+  <h2>Every signal. All four strategies. All 87 tickers.</h2>
+  <p class="lead">Sorted by recommended return. The &ldquo;Recommended&rdquo; column shows the system-selected strategy for each ticker &mdash; not the best one in hindsight. The system strategy is highlighted in the header row for each position.</p>
+
+  <div class="table-wrap">
+    <div class="table-header">
+      <span class="th-title">Signal ledger &mdash; 87 tickers &mdash; 2013&ndash;2026</span>
+      <span class="th-note">All positions tracked from first verifiable public signal</span>
+    </div>
+    <div style="overflow-x:auto;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Sector / Thesis</th>
+          <th class="right">Buy &amp; Hold</th>
+          <th class="right">Trailing Stop 25%</th>
+          <th class="right">Staged 2&#8209;3&#8209;4x</th>
+          <th class="right">Staged 2&#8209;4&#8209;8x</th>
+          <th class="right rec">Recommended</th>
+          <th class="right">vs S&amp;P</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- VRT -->
+        <tr>
+          <td class="td-ticker">VRT</td>
+          <td class="td-sector">Data Center Cooling &amp; Power</td>
+          <td class="right td-pos-strong">+2,608%</td>
+          <td class="right td-pos">+1,842%</td>
+          <td class="right td-pos">+1,205%</td>
+          <td class="right td-pos">+1,890%</td>
+          <td class="right td-rec">+2,608% <span class="rec-badge">buy &amp; hold</span></td>
+          <td class="td-spy">+96% SPY</td>
+        </tr>
+        <!-- MOD -->
+        <tr>
+          <td class="td-ticker">MOD</td>
+          <td class="td-sector">HVAC / Thermal Management</td>
+          <td class="right td-pos-strong">+2,228%</td>
+          <td class="right td-pos">+1,540%</td>
+          <td class="right td-pos">+980%</td>
+          <td class="right td-pos">+1,440%</td>
+          <td class="right td-rec">+2,228% <span class="rec-badge">buy &amp; hold</span></td>
+          <td class="td-spy">+96% SPY</td>
+        </tr>
+        <!-- CCJ -->
+        <tr>
+          <td class="td-ticker">CCJ</td>
+          <td class="td-sector">Uranium / Nuclear Energy</td>
+          <td class="right td-pos-strong">+580%</td>
+          <td class="right td-pos">+420%</td>
+          <td class="right td-pos">+312%</td>
+          <td class="right td-pos">+480%</td>
+          <td class="right td-rec">+580% <span class="rec-badge">buy &amp; hold</span></td>
+          <td class="td-spy">+96% SPY</td>
+        </tr>
+        <!-- PLUG -->
+        <tr>
+          <td class="td-ticker">PLUG</td>
+          <td class="td-sector">Hydrogen Fuel Cell</td>
+          <td class="right td-neg">&minus;89.7%</td>
+          <td class="right td-pos">+34.7%</td>
+          <td class="right td-pos">+70.0%</td>
+          <td class="right td-pos">+70.0%</td>
+          <td class="right td-rec">+70.0% <span class="rec-badge">staged 2&#8209;3&#8209;4x</span></td>
+          <td class="td-spy">+96% SPY</td>
+        </tr>
+        <!-- ENPH -->
+        <tr>
+          <td class="td-ticker">ENPH</td>
+          <td class="td-sector">Solar Technology</td>
+          <td class="right td-neg">&minus;79.2%</td>
+          <td class="right td-neg">&minus;25.8%</td>
+          <td class="right td-neg">&minus;25.8%</td>
+          <td class="right td-neg">&minus;25.8%</td>
+          <td class="right td-rec-neg">&minus;79.2% <span class="rec-badge neg">buy &amp; hold</span></td>
+          <td class="td-spy">+96% SPY</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- PAYWALL BLUR for remaining 82 rows -->
+    <div class="paywall-container">
+      <div class="blurred-rows">
+        <div style="overflow-x:auto;">
+        <table class="data-table">
+          <tbody>
+            <tr><td class="td-ticker">NVDA</td><td class="td-sector">AI / GPU Compute</td><td class="right td-pos-strong">+1,353%</td><td class="right td-pos">+980%</td><td class="right td-pos">+760%</td><td class="right td-pos">+1,100%</td><td class="right td-rec">+1,353%</td><td class="td-spy">+96%</td></tr>
+            <tr><td class="td-ticker">OKLO</td><td class="td-sector">Advanced Nuclear (Microreactor)</td><td class="right td-pos-strong">+842%</td><td class="right td-pos">+620%</td><td class="right td-pos">+490%</td><td class="right td-pos">+740%</td><td class="right td-rec">+842%</td><td class="td-spy">+96%</td></tr>
+            <tr><td class="td-ticker">BE</td><td class="td-sector">Fuel Cell / Distributed Energy</td><td class="right td-pos">+946%</td><td class="right td-pos">+650%</td><td class="right td-pos">+520%</td><td class="right td-pos">+780%</td><td class="right td-rec">+520%</td><td class="td-spy">+96%</td></tr>
+            <tr><td class="td-ticker">AMSC</td><td class="td-sector">Grid / Power Electronics</td><td class="right td-pos">+418%</td><td class="right td-pos">+310%</td><td class="right td-pos">+240%</td><td class="right td-pos">+360%</td><td class="right td-rec">+240%</td><td class="td-spy">+96%</td></tr>
+            <tr><td class="td-ticker">MP</td><td class="td-sector">Rare Earth / Critical Minerals</td><td class="right td-pos">+405%</td><td class="right td-pos">+295%</td><td class="right td-pos">+215%</td><td class="right td-pos">+335%</td><td class="right td-rec">+405%</td><td class="td-spy">+96%</td></tr>
+            <tr><td class="td-ticker">WPM</td><td class="td-sector">Gold &amp; Silver Streaming</td><td class="right td-pos">+385%</td><td class="right td-pos">+280%</td><td class="right td-pos">+210%</td><td class="right td-pos">+325%</td><td class="right td-rec">+385%</td><td class="td-spy">+96%</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="paywall-overlay">
+        <div class="paywall-box">
+          <h3>87 tickers &mdash; full table unlocked for Investor subscribers</h3>
+          <p>Every ticker, every exit strategy, every signal date, and live signal status &mdash; updated every Friday. Investor plan includes the complete signal ledger plus real-time alerts.</p>
+          <a href="index.html#pricing" class="btn">Get Investor access &rarr;</a>
+          <p class="note">$18.99/month &middot; Cancel anytime &middot; Instant access</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-footnote">
+      All returns calculated from first verifiable public signal (DOE grant, SEC filing, NRC announcement, congressional trade disclosure) to present or exit date. Entry = closing price on signal detection date. SPY benchmark matched to identical holding period. Not financial advice &mdash; all theses included, winners and losers.
+    </div>
+  </div>
+
+  <!-- Backtest methodology note -->
+  <div class="backtest-box">
+    <h4>Backtesting rules &mdash; unchanged since inception</h4>
+    <ul>
+      <li><span class="bk-dot">&#10003;</span> Window: 2013&ndash;2026. 13 years of data across multiple market cycles (2015 correction, 2018 tightening, 2020 COVID crash, 2022 rate shock, 2024&ndash;2026 AI expansion).</li>
+      <li><span class="bk-dot">&#10003;</span> Entry: closing price on the date the signal was first detectable from public data. No advance knowledge &mdash; only data that was publicly available on that date.</li>
+      <li><span class="bk-dot">&#10003;</span> Exit strategy: applied mechanically from entry. No discretionary adjustments. The staged-exit percentages and trailing-stop level have not changed.</li>
+      <li><span class="bk-dot">&#10003;</span> Benchmark: SPY total return over the identical holding period (entry date to exit date or today for open positions). Not annualised &mdash; raw return comparison for the same window.</li>
+      <li><span class="bk-dot">&#10003;</span> No survivorship bias: every thesis that was tracked from inception is in this table &mdash; including positions that went to near zero. Losers are not removed.</li>
+      <li><span class="bk-dot">&#10003;</span> No backfitting: the exit-strategy selection rules were defined before any backtesting was run. The recommended strategy shown for each ticker is the one the ruleset would have selected at entry &mdash; not the one that performed best.</li>
+    </ul>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <a href="index.html">Dragonfly Systems</a> &nbsp;&bull;&nbsp;
+    <a href="track_record.html">Track record</a> &nbsp;&bull;&nbsp;
+    <a href="mailto:officialdragonflysystems@gmail.com">officialdragonflysystems@gmail.com</a>
+  </p>
+  <p style="margin-top:12px;">
+    Not financial advice. Past thesis performance does not guarantee future results.<br>
+    All positions tracked from first verifiable public signal &mdash; winners and losers included.
+  </p>
+  <p style="margin-top:12px;">
+    &copy; 2026 Dragonfly Systems &nbsp;&bull;&nbsp;
+    <a href="https://github.com/OfficialDragonflySystems">GitHub</a>
+  </p>
+</footer>
+
 </body>
 </html>

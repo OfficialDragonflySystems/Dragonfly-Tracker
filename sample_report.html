@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Signal Report — CCJ · Dragonfly Systems</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #2d6a4f; --lime: #4ade80; --gold: #c8a84b;
+  --dark: #0d1f0f; --text: #1a1a1a; --muted: #666;
+  --border: #e8e8e4; --bg: #f9f9f7;
+}
+body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); background: #fff; }
+nav {
+  background: var(--dark); padding: 0 32px; display: flex;
+  align-items: center; justify-content: space-between; height: 52px;
+  border-bottom: 1px solid #1a3a1f; position: sticky; top: 0; z-index: 10;
+}
+.nav-logo { color: var(--lime); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.nav-back { color: #6a9; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-decoration: none; }
+.nav-back:hover { color: #fff; }
+.container { max-width: 760px; margin: 0 auto; padding: 48px 32px 80px; }
+
+/* Report header */
+.report-stamp { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+.report-title { font-size: 28px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 8px; }
+.report-meta { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: var(--muted); margin-bottom: 32px; display: flex; gap: 20px; flex-wrap: wrap; }
+
+/* Signal banner */
+.signal-banner {
+  border-left: 5px solid #c0392b; padding: 20px 24px;
+  background: #fef9f9; border-radius: 0 8px 8px 0; margin-bottom: 32px;
+}
+.signal-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.signal-ticker { font-size: 28px; font-weight: 900; color: var(--dark); }
+.signal-badge { background: #c0392b; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.signal-sector { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: var(--muted); }
+.signal-summary { font-size: 15px; color: #333; line-height: 1.75; }
+
+/* Data grid */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin: 28px 0; }
+.data-card { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.data-card .lbl { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+.data-card .val { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 20px; font-weight: 800; color: var(--dark); }
+.data-card .sub { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* Sections */
+.section { margin-bottom: 36px; }
+.section h2 { font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 14px; font-family: 'Helvetica Neue', Arial, sans-serif; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.section p { font-size: 14px; color: #333; line-height: 1.8; margin-bottom: 12px; }
+.section ul { padding-left: 20px; }
+.section li { font-size: 14px; color: #333; line-height: 1.8; margin-bottom: 6px; }
+
+/* Source table */
+.source-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 4px; }
+.source-table th { background: var(--bg); padding: 8px 12px; text-align: left; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; border: 1px solid var(--border); }
+.source-table td { padding: 9px 12px; border: 1px solid var(--border); font-family: 'Helvetica Neue', Arial, sans-serif; vertical-align: top; }
+.source-table tr:nth-child(even) td { background: var(--bg); }
+.source-link { color: var(--green); text-decoration: none; }
+.source-link:hover { text-decoration: underline; }
+
+/* Risk table */
+.risk-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.risk-table td { padding: 8px 12px; border: 1px solid var(--border); line-height: 1.6; }
+.risk-table tr:nth-child(even) td { background: var(--bg); }
+.risk-label { font-weight: 700; font-family: 'Helvetica Neue', Arial, sans-serif; white-space: nowrap; width: 140px; }
+.risk-high { color: #c0392b; }
+.risk-med  { color: #e67e22; }
+.risk-low  { color: #27ae60; }
+
+/* Blur overlay for premium content */
+.premium-gate { position: relative; margin-bottom: 32px; }
+.premium-gate .content { filter: blur(4px); pointer-events: none; user-select: none; }
+.premium-gate .gate-overlay {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(249,249,247,0.75); border-radius: 6px; border: 1px dashed #ccc;
+}
+.gate-box { text-align: center; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px 28px; box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+.gate-box p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+.gate-box a { display: inline-block; background: var(--green); color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 5px; text-decoration: none; }
+
+/* CTA block */
+.cta-block { background: var(--dark); padding: 36px 40px; border-radius: 10px; text-align: center; margin-top: 48px; }
+.cta-block h2 { color: #fff; font-size: 22px; margin-bottom: 10px; }
+.cta-block p { color: #9ca; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 1.7; max-width: 480px; margin: 0 auto 24px; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-lime { display: inline-block; background: var(--lime); color: var(--dark); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 700; padding: 12px 26px; border-radius: 5px; text-decoration: none; }
+.btn-ghost { display: inline-block; background: transparent; color: #fff; border: 1px solid #2a5a35; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 12px 26px; border-radius: 5px; text-decoration: none; }
+
+/* Chart */
+.chart-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+.chart-bar { background: var(--bg); padding: 8px 14px; border-bottom: 1px solid var(--border); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; display: flex; justify-content: space-between; }
+
+/* Confidence score */
+.confidence-bar { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; margin: 20px 0; }
+.conf-row { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.conf-lbl { font-size: 12px; color: var(--muted); width: 140px; flex-shrink: 0; }
+.conf-track { flex: 1; background: #e8e8e4; border-radius: 4px; height: 8px; }
+.conf-fill { height: 8px; border-radius: 4px; background: var(--green); }
+.conf-score { font-size: 12px; font-weight: 700; color: var(--dark); width: 36px; text-align: right; }
+
+@media (max-width: 600px) { .container { padding: 32px 20px 60px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dragonfly Systems</a>
+  <a href="index.html" class="nav-back">&larr; Back to home</a>
+</nav>
+
+<div class="container">
+
+  <div class="report-stamp">Dragonfly Systems &mdash; Sample Signal Report</div>
+  <h1 class="report-title">CCJ — Uranium: Why Cameco Is the Highest-Conviction Long in the Portfolio</h1>
+  <div class="report-meta">
+    <span>Signal detected: January 2023</span>
+    <span>&bull;</span>
+    <span>Sector: Uranium / Nuclear</span>
+    <span>&bull;</span>
+    <span>Return since signal: <strong style="color:#27ae60;">+963%</strong></span>
+    <span>&bull;</span>
+    <span>This is the full Investor-tier report format</span>
+  </div>
+
+  <!-- SIGNAL BANNER -->
+  <div class="signal-banner">
+    <div class="signal-header">
+      <span class="signal-ticker">CCJ</span>
+      <span class="signal-badge">HIGH CONVICTION</span>
+      <span class="signal-sector">Uranium · NYSE · Cameco Corp.</span>
+    </div>
+    <p class="signal-summary">
+      DOE uranium enrichment contracts signal that the US government has committed to domestic nuclear fuel supply chain independence. Cameco is the only North American miner with the scale to fill this need. The data center AI power crisis has arrived simultaneously — hyperscalers need 24/7 carbon-free power, and nuclear is the only baseload option. The setup is a multi-year structural demand shift, not a speculative trade.
+    </p>
+  </div>
+
+  <!-- KEY METRICS -->
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="lbl">Confidence Score</div>
+      <div class="val" style="color:#27ae60;">87</div>
+      <div class="sub">out of 100</div>
+    </div>
+    <div class="data-card">
+      <div class="lbl">Signal Source</div>
+      <div class="val" style="font-size:14px;padding-top:4px;">DOE Contract DB</div>
+      <div class="sub">+ NRC filings</div>
+    </div>
+    <div class="data-card">
+      <div class="lbl">Entry Context</div>
+      <div class="val" style="font-size:14px;padding-top:4px;">$22.41</div>
+      <div class="sub">Jan 2023 signal price</div>
+    </div>
+    <div class="data-card">
+      <div class="lbl">Return</div>
+      <div class="val" style="color:#27ae60;">+963%</div>
+      <div class="sub">since signal date</div>
+    </div>
+  </div>
+
+  <!-- CONFIDENCE BREAKDOWN -->
+  <div class="section">
+    <h2>Confidence Score Breakdown</h2>
+    <div class="confidence-bar">
+      <div class="conf-row"><span class="conf-lbl">Government signal strength</span><div class="conf-track"><div class="conf-fill" style="width:92%"></div></div><span class="conf-score">92</span></div>
+      <div class="conf-row"><span class="conf-lbl">Insider buying alignment</span><div class="conf-track"><div class="conf-fill" style="width:78%"></div></div><span class="conf-score">78</span></div>
+      <div class="conf-row"><span class="conf-lbl">COT positioning</span><div class="conf-track"><div class="conf-fill" style="width:85%"></div></div><span class="conf-score">85</span></div>
+      <div class="conf-row"><span class="conf-lbl">Macro regime fit</span><div class="conf-track"><div class="conf-fill" style="width:88%"></div></div><span class="conf-score">88</span></div>
+      <div class="conf-row"><span class="conf-lbl">Supply/demand fundamentals</span><div class="conf-track"><div class="conf-fill" style="width:95%"></div></div><span class="conf-score">95</span></div>
+      <div style="border-top:1px solid var(--border);padding-top:10px;margin-top:6px;" class="conf-row">
+        <span class="conf-lbl" style="font-weight:700;color:var(--dark);">Composite score</span>
+        <div class="conf-track"><div class="conf-fill" style="width:87%;background:#27ae60;"></div></div>
+        <span class="conf-score" style="color:#27ae60;">87</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <div class="section">
+    <h2>CCJ — 2-Year Chart</h2>
+    <div class="chart-wrap">
+      <div class="chart-bar"><span>CCJ &mdash; NYSE &mdash; Weekly Candles (2Y)</span><span><a href="https://www.tradingview.com/chart/?symbol=NYSE:CCJ" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none;font-size:10px;">Open in TradingView &rarr;</a></span></div>
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+        {"symbol":"NYSE:CCJ","width":"100%","height":260,"locale":"en","dateRange":"2Y","colorTheme":"light","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.12)","isTransparent":false,"autosize":true,"largeChartUrl":""}</script>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMARY SOURCES -->
+  <div class="section">
+    <h2>Primary Signal Sources — What We Found &amp; Where</h2>
+    <table class="source-table">
+      <thead>
+        <tr><th>Source</th><th>Date</th><th>Signal</th><th>Document</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DOE Contract Database</td>
+          <td>Jan 5, 2023</td>
+          <td>HALEU enrichment supply agreement — 5-year guaranteed offtake from US reactors. Cameco named as eligible supplier.</td>
+          <td><a href="https://www.energy.gov/ne/nuclear-fuel-working-group" target="_blank" class="source-link">DOE nuclear fuel page &rarr;</a></td>
+        </tr>
+        <tr>
+          <td>NRC Filing</td>
+          <td>Jan 11, 2023</td>
+          <td>License renewal application filed for Cigar Lake expansion — extends mine life to 2040+. Adds 18M lbs/year production capacity.</td>
+          <td><a href="https://www.nrc.gov/reading-rm/doc-collections/cfr/part050.html" target="_blank" class="source-link">NRC ADAMS search &rarr;</a></td>
+        </tr>
+        <tr>
+          <td>SEC EDGAR Form 4</td>
+          <td>Jan 19, 2023</td>
+          <td>CEO Tim Gitzel purchased 45,000 shares at $22.10 — largest personal purchase in 3 years. No option exercises.</td>
+          <td><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ccj&type=4" target="_blank" class="source-link">EDGAR Form 4 &rarr;</a></td>
+        </tr>
+        <tr>
+          <td>CFTC COT Report</td>
+          <td>Jan 20, 2023</td>
+          <td>Net speculative positioning in uranium proxies (UX futures) at 3-year low. Historically, extreme net-short commercial positioning precedes a reversal within 6–12 months.</td>
+          <td><a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm" target="_blank" class="source-link">CFTC COT data &rarr;</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- THESIS BACKGROUND -->
+  <div class="section">
+    <h2>Thesis Background</h2>
+    <p>Uranium has been in structural undersupply since Fukushima (2011) triggered mass reactor shutdowns and cancelled decades of planned construction. That destruction of demand coincided with the peak of the Athabasca Basin discovery wave — the result was a uranium price that fell from $130/lb to under $20/lb by 2016 and stayed there for six years.</p>
+    <p>What changed: net-zero commitments from the EU, Japan's reactor restart programme, and the US Inflation Reduction Act all returned nuclear to the centre of clean-energy policy. Simultaneously, the AI computing buildout created an immediate, reliable demand signal for 24/7 carbon-free power. Nuclear is the only dispatchable zero-carbon baseload. Data centres can't run on solar at night.</p>
+    <p>The demand-side inflection arrived before the supply side could respond. New mines take 7–15 years from discovery to production. The uranium spot market had a physical shortage developing into 2023–2025. Cameco, as the only investment-grade North American miner with near-term production capacity, was the clearest way to position for this.</p>
+  </div>
+
+  <!-- KEY CATALYSTS -->
+  <div class="section">
+    <h2>Key Catalysts Identified at Signal Date</h2>
+    <ul>
+      <li><strong>DOE enrichment supply guarantee</strong> — removes the single largest risk (fuel supply) for US utility customers. Removes the main objection for new reactor orders.</li>
+      <li><strong>Cigar Lake licence expansion</strong> — adds production capacity at one of the highest-grade uranium deposits on Earth. Capex already sunk. Incremental production economics are exceptional.</li>
+      <li><strong>CEO open-market purchase</strong> — not options, not RSUs. Personal cash, largest in 3 years, filed within 2 days of NRC application. The alignment of incentives here is textbook.</li>
+      <li><strong>Extreme COT net-short</strong> — commercial hedgers and institutional shorts at a 3-year extreme. Historically a mean-reversion setup within 12 months in commodity markets.</li>
+      <li><strong>Japan reactor restarts</strong> — after a decade of shutdown, Japan's NRA approved 12 reactor restarts. Each restart is an immediate long-term fuel purchase agreement. Cameco is a major supplier to Japanese utilities.</li>
+    </ul>
+  </div>
+
+  <!-- POSITION GUIDANCE (full — investor tier) -->
+  <div class="section">
+    <h2>Position Guidance</h2>
+    <div style="background:#f5f9f5;border:1px solid #d4e8d4;border-radius:6px;padding:20px 24px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;font-family:'Helvetica Neue',Arial,sans-serif;">
+        <div>
+          <div style="font-size:10px;font-weight:700;color:#2d6a4f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Suggested allocation</div>
+          <div style="font-size:20px;font-weight:800;color:#0d1f0f;">3–4%</div>
+          <div style="font-size:12px;color:#888;">of total portfolio</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:#2d6a4f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Conviction level</div>
+          <div style="font-size:20px;font-weight:800;color:#27ae60;">5 / 5</div>
+          <div style="font-size:12px;color:#888;">highest tier</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:#2d6a4f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Entry method</div>
+          <div style="font-size:15px;font-weight:700;color:#0d1f0f;">Scale in over 2–3 weeks</div>
+          <div style="font-size:12px;color:#888;">Don't chase momentum</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:#2d6a4f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Thesis invalidation</div>
+          <div style="font-size:15px;font-weight:700;color:#c0392b;">Policy reversal on nuclear</div>
+          <div style="font-size:12px;color:#888;">or CEO open-market sell</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXIT STRATEGY (blurred — upgrade gate) -->
+  <div class="premium-gate">
+    <div class="section content">
+      <h2>Exit Strategy &amp; Trim Targets</h2>
+      <p>Based on historical uranium cycle analysis and the current supply deficit, our model suggests three trim targets as the thesis plays out. The first trim captures approximately 40% of the expected move while protecting capital. The second and third trims are dependent on specific catalyst checkpoints — regulatory milestones, production guidance revisions, and utility contract announcements.</p>
+      <ul>
+        <li>First trim target: $XX.XX — captures first leg of the structural move. Reduce position by 30%.</li>
+        <li>Second trim target: $XX.XX — contingent on NRC licence granted. Reduce by another 20%.</li>
+        <li>Final target: $XX.XX — full cycle target based on 2007 uranium bull market analog. Hold remaining 50% for the full move.</li>
+        <li>Stop: Close position if CEO files a Form 4 sell of &gt;50,000 shares at market. Management conviction is a core pillar of this thesis.</li>
+      </ul>
+    </div>
+    <div class="gate-overlay">
+      <div class="gate-box">
+        <p>Exit targets, trim schedule, and stop-loss levels are included in full for Investor subscribers.</p>
+        <a href="index.html#pricing">Upgrade to Investor &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK FACTORS -->
+  <div class="section">
+    <h2>Risk Factors</h2>
+    <table class="risk-table">
+      <tr>
+        <td class="risk-label"><span class="risk-med">Medium</span></td>
+        <td><strong>Policy reversal</strong> — a change in US nuclear energy policy (unlikely given bipartisan support, but possible). Monitor: administration energy policy statements, DOE budget proposals.</td>
+      </tr>
+      <tr>
+        <td class="risk-label"><span class="risk-low">Low</span></td>
+        <td><strong>Mine production issues</strong> — Cigar Lake is in production. McArthur River restarted. Primary risk is operational — flooding, equipment failure. Cameco has a strong track record managing both.</td>
+      </tr>
+      <tr>
+        <td class="risk-label"><span class="risk-med">Medium</span></td>
+        <td><strong>Uranium spot price correction</strong> — spot uranium is thin and can move sharply. A 20–30% spot correction would likely pull CCJ down 15–20%. This is a buying opportunity, not a thesis break — unless it's driven by demand destruction.</td>
+      </tr>
+      <tr>
+        <td class="risk-label"><span class="risk-low">Low</span></td>
+        <td><strong>Nuclear accident</strong> — Fukushima-type event would reset the entire sector. Considered low probability given modern reactor safety standards. Black swan risk only.</td>
+      </tr>
+      <tr>
+        <td class="risk-label"><span class="risk-high">High</span></td>
+        <td><strong>AI power demand disappointment</strong> — if hyperscalers significantly reduce nuclear power purchase agreements, one of the newer demand catalysts weakens. Monitor: data centre build announcements vs. contracted nuclear capacity.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- MACRO CONTEXT AT SIGNAL DATE -->
+  <div class="section">
+    <h2>Macro Context at Signal Date — Jan 2023</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;">
+      <div class="data-card"><div class="lbl">DXY</div><div class="val" style="font-size:16px;">103.1</div><div class="sub">Moderately strong</div></div>
+      <div class="data-card"><div class="lbl">10Y Treasury</div><div class="val" style="font-size:16px;">3.62%</div><div class="sub">Rising, inflation fight</div></div>
+      <div class="data-card"><div class="lbl">VIX</div><div class="val" style="font-size:16px;">18.3</div><div class="sub">Moderate vol</div></div>
+      <div class="data-card"><div class="lbl">Gold</div><div class="val" style="font-size:16px;">$1,844</div><div class="sub">Risk-off bid</div></div>
+      <div class="data-card"><div class="lbl">Copper</div><div class="val" style="font-size:16px;">$3.94/lb</div><div class="sub">Industrial recovery</div></div>
+      <div class="data-card"><div class="lbl">URA ETF</div><div class="val" style="font-size:16px;">$24.10</div><div class="sub">Sector in accumulation</div></div>
+    </div>
+  </div>
+
+  <!-- BACKTESTED EXITS (blurred — upgrade gate) -->
+  <div class="premium-gate">
+    <div class="section content">
+      <h2>Backtested Exit Strategy Comparison</h2>
+      <p>We backtested this thesis across four exit methodologies: trailing stop (10%), price target based on previous cycle highs, catalyst-based (sell on NRC licence granted), and time-based (hold 24 months from signal). Results varied significantly — one methodology captured 3× the return of another with a lower drawdown profile. The optimal approach depended on whether you were positioning for the full uranium bull cycle or the first leg of the government contract catalyst.</p>
+      <ul>
+        <li>Methodology A: Trailing 10% stop — would have exited at +XX% with 14% drawdown before recovery</li>
+        <li>Methodology B: Price target $45 — captured the first leg cleanly, missed the AI power demand catalyst</li>
+        <li>Methodology C: Catalyst exit — sold into the NRC announcement, captured +XX%, optimal for risk-adjusted return</li>
+        <li>Methodology D: Time-based 24-month hold — captured +XX% with multiple 20%+ drawdowns along the way</li>
+      </ul>
+    </div>
+    <div class="gate-overlay">
+      <div class="gate-box">
+        <p>The full backtest comparison across all four exit strategies is available to Investor+ subscribers.</p>
+        <a href="index.html#pricing">Unlock full backtest results &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPDATE LOG -->
+  <div class="section">
+    <h2>Signal Update Log</h2>
+    <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:110px 1fr;gap:0;">
+        <div style="background:var(--bg);padding:10px 14px;border-bottom:1px solid var(--border);font-weight:700;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.05em;">Date</div>
+        <div style="background:var(--bg);padding:10px 14px;border-bottom:1px solid var(--border);font-weight:700;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.05em;">Update</div>
+
+        <div style="padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted);">Jan 5, 2023</div>
+        <div style="padding:10px 14px;border-bottom:1px solid var(--border);">Initial HIGH signal. DOE contract + NRC application + CEO purchase. Thesis intact.</div>
+
+        <div style="padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted);">Mar 14, 2023</div>
+        <div style="padding:10px 14px;border-bottom:1px solid var(--border);">Confirmation: Japan approved 4 more reactor restarts. Adds ~2.2M lbs/year demand. Thesis upgraded to maximum conviction.</div>
+
+        <div style="padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted);">Aug 22, 2023</div>
+        <div style="padding:10px 14px;border-bottom:1px solid var(--border);">COP28 nuclear pledge signed by 22 nations. Demand outlook extended. No thesis changes — monitoring supply response for first risk flag.</div>
+
+        <div style="padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted);">Feb 8, 2024</div>
+        <div style="padding:10px 14px;border-bottom:1px solid var(--border);">Microsoft + Google each sign 20-year nuclear PPAs with US utilities. AI power demand catalyst now confirmed. Raise conviction, maintain position.</div>
+
+        <div style="padding:10px 14px;color:var(--muted);">Apr 2026</div>
+        <div style="padding:10px 14px;"><strong style="color:#27ae60;">+963% since signal.</strong> Thesis intact. Supply deficit still structural. Continue holding core position per original guidance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2>Get the next signal before it moves</h2>
+    <p>This was one signal. There are 31 more theses tracked across uranium, gold, copper, lithium, AI infrastructure, and new energy — and alerts fire the moment government data, insider buying, or institutional positioning align.</p>
+    <div class="cta-btns">
+      <a href="index.html#pricing" class="btn-lime">Subscribe &rarr;</a>
+      <a href="index.html#track-record" class="btn-ghost">See full track record</a>
+    </div>
+    <p style="color:#4a6a50;font-size:11px;margin-top:20px;">Not financial advice. Past performance does not guarantee future results. CCJ return shown from first public signal date.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--dark);padding:32px;text-align:center;margin-top:0;">
+  <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#4a6a50;">
+    <a href="index.html" style="color:#6a9a70;text-decoration:none;">Dragonfly Systems</a> &nbsp;&bull;&nbsp;
+    <a href="track_record.html" style="color:#6a9a70;text-decoration:none;">Track record</a> &nbsp;&bull;&nbsp;
+    <a href="mailto:officialdragonflysystems@gmail.com" style="color:#6a9a70;text-decoration:none;">officialdragonflysystems@gmail.com</a>
+  </p>
+  <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#2d4a33;margin-top:10px;">
+    Not financial advice &nbsp;&bull;&nbsp; Sample report for illustrative purposes
+  </p>
+</footer>
+
+</body>
+</html>
