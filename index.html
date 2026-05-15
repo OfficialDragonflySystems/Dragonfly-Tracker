@@ -375,20 +375,21 @@ function toggleTheme() {
       </div>
   </div>
 
-  <!-- ── INTELLIGENCE EFFICIENCY INDEX — purple macro signal, public -->
+  <!-- ── INTELLIGENCE EFFICIENCY INDEX — purple macro signal, public.
+       Hover any element → rich btip popup with the full explainer. -->
   <div class="iei-bar iei-bar-glow">
-    <span title="Intelligence Efficiency Index — how fast AI compute is advancing relative to its energy cost. Every metric here measures a different pressure point on that equation." style="font-size:9px;color:#a78bfa;text-transform:uppercase;letter-spacing:.12em;font-weight:700;flex-shrink:0;cursor:help;">IEI</span>
+    <span data-btip="iei" style="font-size:9px;color:#a78bfa;text-transform:uppercase;letter-spacing:.12em;font-weight:700;flex-shrink:0;cursor:help;">IEI ⓘ</span>
     <span style="color:#2d1f4a;">|</span>
-    <span class="iei-item" title="Composite score 0–100. Combines chip efficiency gains, nuclear pipeline, Jevons paradox intensity, and grid stress. Higher = more structural demand pressure building.">Score <span id="iei-score" class="iei-score" style="background:rgba(139,92,246,.15);color:#a78bfa;">—</span></span>
+    <span class="iei-item" data-btip="iei-score" style="cursor:help;">Score <span id="iei-score" class="iei-score" style="background:rgba(139,92,246,.15);color:#a78bfa;">—</span></span>
     <span style="color:#2d1f4a;">|</span>
-    <span class="iei-item" title="The latest AI chip generation leading the efficiency frontier. Each new generation resets the cost-per-FLOP curve.">Chip <span id="iei-gen" class="iei-val">—</span></span>
-    <span class="iei-item" title="Efficiency gain vs the previous chip generation (FLOPS per watt). Sustained 2–5x jumps per generation are unprecedented in industrial history."><span id="iei-delta" class="iei-val">—</span>%/gen</span>
+    <span class="iei-item" data-btip="iei-chip" style="cursor:help;">Chip <span id="iei-gen" class="iei-val">—</span></span>
+    <span class="iei-item" data-btip="iei-chip" style="cursor:help;"><span id="iei-delta" class="iei-val">—</span>%/gen</span>
     <span style="color:#2d1f4a;">|</span>
-    <span class="iei-item" title="Confirmed nuclear power purchase agreements signed by hyperscalers for dedicated AI data-center electricity. Real committed infrastructure spend, not projections.">Nuclear <span id="iei-nuke" class="iei-val">—</span></span>
+    <span class="iei-item" data-btip="iei-nuclear" style="cursor:help;">Nuclear <span id="iei-nuke" class="iei-val">—</span></span>
     <span style="color:#2d1f4a;">|</span>
-    <span class="iei-item" title="How many times more energy-efficient the human brain is vs the best current AI chip. The gap narrows as chips improve.">Bio Gap <span id="iei-bio" class="iei-val">—</span></span>
+    <span class="iei-item" data-btip="iei-bio" style="cursor:help;">Bio Gap <span id="iei-bio" class="iei-val">—</span></span>
     <span style="color:#2d1f4a;">|</span>
-    <span class="iei-item" title="Jevons Paradox — when something gets more efficient, total consumption rises because usage grows faster than the savings. ACTIVE = AI power consumption growing faster than chip-efficiency gains.">Jevons <span id="iei-jevons" class="iei-val">—</span></span>
+    <span class="iei-item" data-btip="iei-jevons" style="cursor:help;">Jevons <span id="iei-jevons" class="iei-val">—</span></span>
     <span style="margin-left:auto;display:flex;align-items:center;gap:4px;color:#5b4a7a;font-size:9px;flex-shrink:0;"><span style="width:5px;height:5px;border-radius:50%;background:#a78bfa;animation:pulse 2s infinite;display:inline-block;"></span>LIVE</span>
   </div>
 
@@ -442,6 +443,62 @@ function toggleTheme() {
 <script>
 (function(){
   var BAR_TIPS = {
+    iei: {
+      title: 'Intelligence Efficiency Index — Units of Intelligence per Unit of Energy',
+      rows: [
+        'IEI tracks the most important structural variable in markets right now: <b>how much intelligence (AI compute capability) we get for each unit of energy spent</b>. Every metric in this bar measures a different pressure point on that ratio.',
+        '<b>The thesis:</b> for the first time in history, intelligence-on-silicon is operating ~6 orders of magnitude faster than carbon-based (biological) intelligence — and chip efficiency keeps doubling. Whoever owns the energy supply for that compute owns the productivity gain.',
+        '<b>What it bull-cases:</b> uranium / nuclear (the power source hyperscalers are signing PPAs for), copper (every electric motor, data-center cooling, grid expansion), AI semiconductors (the efficiency frontier itself), and grid infrastructure (the bottleneck).',
+        '<b>What it bear-cases:</b> any business model that hasn\'t adapted to AI-driven productivity gains. Pure labor-cost businesses lose to compute-augmented competitors.',
+        '<b>Why this matters:</b> traditional macro metrics (CPI, GDP, employment) miss the AI capex wave entirely. IEI is the closest thing to a real-time gauge of the AI-energy thesis.'
+      ]
+    },
+    'iei-score': {
+      title: 'IEI Composite Score (0–100)',
+      rows: [
+        'Single number combining chip efficiency gains, hyperscaler nuclear pipeline, Jevons paradox intensity, and grid stress.',
+        '<b>0–30:</b> AI-energy thesis weak — efficiency gains slowing, infrastructure builds stalled.',
+        '<b>30–60:</b> moderate — thesis intact but no fresh catalysts.',
+        '<b>60–100:</b> strong structural demand pressure building — best environment for uranium / copper / semis / grid plays.',
+        '<b>Higher is BETTER for the thesis</b> — means more compute demand chasing constrained energy supply, which is the bull case for everything physical that supports the AI buildout.'
+      ]
+    },
+    'iei-chip': {
+      title: 'Chip — Latest AI Generation + Efficiency Gain',
+      rows: [
+        'The current frontier AI chip + its efficiency improvement (FLOPS per watt) vs the previous generation.',
+        '<b>Why it matters:</b> each generation resets the cost-per-intelligence curve. A 3× efficiency jump means 3× more useful AI for the same electricity bill — which simultaneously makes more applications viable (Jevons) AND lets data centers do more with less power per unit.',
+        '<b>Reference:</b> Moore\'s Law gave ~40% efficiency gains per generation. AI accelerators are running at 2–5× per generation. That\'s unprecedented in industrial history.',
+        '<b>Sustained &gt;100% per gen</b> = AI capability per dollar growing faster than any prior technology curve. Massively bullish for NVDA, AMD, AVGO, TSM, ASML, plus every business that scales on AI productivity.'
+      ]
+    },
+    'iei-nuclear': {
+      title: 'Nuclear — Confirmed Hyperscaler PPAs',
+      rows: [
+        'Power Purchase Agreements signed by hyperscalers (Amazon, Microsoft, Google, Oracle, Meta) specifically for AI data-center electricity. Measured in gigawatts of committed capacity.',
+        '<b>Why this is the real data:</b> these are SIGNED contracts with dollar amounts and specific reactors / sites — not press-release projections. Real committed infrastructure spend.',
+        '<b>What rising GW signals:</b> hyperscalers themselves are saying their AI buildouts need baseload nuclear power that the existing grid can\'t provide. This is the strongest fundamental signal for uranium miners (CCJ, NXE, UEC, DNN) and SMR developers (OKLO, SMR, NNE, LEU).',
+        '<b>Why now:</b> renewables alone can\'t supply 24/7/365 data-center loads. Nuclear is the only zero-carbon baseload. The pipeline started in 2024 and is accelerating.'
+      ]
+    },
+    'iei-bio': {
+      title: 'Bio Gap — Silicon vs Biological Intelligence Efficiency',
+      rows: [
+        'How many TIMES more energy-efficient the human brain is per unit of intelligence vs the best current AI chip. A shrinking gap means silicon is catching up to biology — and silicon never sleeps, can be replicated infinitely, and scales linearly with power.',
+        '<b>Today:</b> the gap is ~10,000× (the brain runs on 20 watts; equivalent AI capability burns megawatts).',
+        '<b>Trajectory:</b> at the current rate of chip-efficiency improvement, hardware reaches biological parity in ~12–14 years. After that, AI cognition becomes vastly cheaper than human cognition per task.',
+        '<b>Implication for investors:</b> the closer that gap gets, the more economically transformative AI becomes. Power demand for AI compute keeps rising because intelligence-per-dollar keeps falling.'
+      ]
+    },
+    'iei-jevons': {
+      title: 'Jevons Paradox — Efficiency Gains Increase Total Consumption',
+      rows: [
+        'Named for William Jevons (1865): when something gets more efficient, total consumption RISES — not falls — because new uses unlock faster than the savings accumulate.',
+        '<b>Why it matters here:</b> every time AI chips get more efficient, total AI compute demand grows faster than the efficiency saves. Result: ever-increasing aggregate power consumption for AI, despite per-chip efficiency gains.',
+        '<b>ACTIVE</b> = current efficiency curve is being out-paced by demand growth. The bull case for nuclear, copper, grid infrastructure.',
+        '<b>If it ever flips DORMANT</b> (efficiency exceeds demand) — that would be the bear signal. Hasn\'t happened in any decade since electricity was invented. AI is the most-Jevons technology ever measured.'
+      ]
+    },
     regime: {
       title: 'Market Regime — System Operating State',
       rows: [
