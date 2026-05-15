@@ -301,15 +301,15 @@ function toggleTheme() {
 <!-- LIVE MARKET BAR -->
 <div id="market-bar" style="border-bottom:1px solid #1a3a1f;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;">
 
-  <!-- ── CRYPTO MARKETS ROW ── dark navy, clearly separated -->
-  <div style="background:#090f1a;border-top:1px solid rgba(56,189,248,.18);padding:8px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+  <!-- ── CRYPTO MARKETS ROW ── dark navy, tightened gap so OCEAN fits on row 1 -->
+  <div style="background:#090f1a;border-top:1px solid rgba(56,189,248,.18);padding:8px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
       <span style="font-size:9px;color:#1e4a6a;text-transform:uppercase;letter-spacing:.12em;font-weight:700;">Crypto</span>
       <!-- Timeframe toggle (D/W/M/Y) — % changes below reflect the selected window -->
-      <span style="display:inline-flex;gap:2px;background:#0a1018;border-radius:8px;padding:2px;border:1px solid #1a2a3a;">
-        <button onclick="setCryptoTF('24h')" id="tf-24h" style="font-size:10px;padding:2px 8px;border:none;border-radius:6px;background:rgba(122,184,212,.22);color:#7ab8d4;font-weight:700;cursor:pointer;letter-spacing:.04em;">1D</button>
-        <button onclick="setCryptoTF('7d')"  id="tf-7d"  style="font-size:10px;padding:2px 8px;border:none;border-radius:6px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1W</button>
-        <button onclick="setCryptoTF('30d')" id="tf-30d" style="font-size:10px;padding:2px 8px;border:none;border-radius:6px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1M</button>
-        <button onclick="setCryptoTF('1y')"  id="tf-1y"  style="font-size:10px;padding:2px 8px;border:none;border-radius:6px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1Y</button>
+      <span style="display:inline-flex;gap:1px;background:#0a1018;border-radius:6px;padding:1px;border:1px solid #1a2a3a;">
+        <button onclick="setCryptoTF('24h')" id="tf-24h" style="font-size:9px;padding:2px 6px;border:none;border-radius:5px;background:rgba(122,184,212,.22);color:#7ab8d4;font-weight:700;cursor:pointer;letter-spacing:.04em;">1D</button>
+        <button onclick="setCryptoTF('7d')"  id="tf-7d"  style="font-size:9px;padding:2px 6px;border:none;border-radius:5px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1W</button>
+        <button onclick="setCryptoTF('30d')" id="tf-30d" style="font-size:9px;padding:2px 6px;border:none;border-radius:5px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1M</button>
+        <button onclick="setCryptoTF('1y')"  id="tf-1y"  style="font-size:9px;padding:2px 6px;border:none;border-radius:5px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1Y</button>
       </span>
       <span style="color:#0f2a3a;">|</span>
       <div data-btip="cryptofg" style="color:#5a8aaa;cursor:help;">Sentiment <span id="fg-val" style="font-weight:700;">—</span></div>
@@ -2530,54 +2530,20 @@ renderPlanPrices();
         </div>
       </div>
 
-      <!-- 750 -->
-      <div style="display:flex;gap:20px;align-items:flex-start;margin-bottom:24px;position:relative;">
-        <div style="width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--border);color:#888;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;z-index:1;">750</div>
-        <div style="padding-top:6px;">
-          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;">At 750 subscribers</div>
-          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Portfolio tracker</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;">Log what you actually bought and when. See your real returns next to what Dragonfly signalled and when. Over time you'll see whether you're capturing the full move, getting in late, or leaving gains behind — and exactly where the gap is.</div>
-        </div>
-      </div>
-
-      <!-- 1,000 -->
-      <div style="display:flex;gap:20px;align-items:flex-start;margin-bottom:24px;position:relative;">
-        <div style="width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--border);color:#888;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;z-index:1;">1K</div>
-        <div style="padding-top:6px;">
-          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;">At 1,000 subscribers</div>
-          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Focused newsletters by sector</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;">If you only invest in nuclear, or only follow AI infrastructure, you'll be able to subscribe to just that. Same research, same signals — filtered so your inbox only contains what's relevant to you personally.</div>
-        </div>
-      </div>
-
-      <!-- 1,500 -->
-      <div style="display:flex;gap:20px;align-items:flex-start;margin-bottom:24px;position:relative;">
-        <div style="width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--border);color:#888;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;z-index:1;">1.5K</div>
-        <div style="padding-top:6px;">
-          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;">At 1,500 subscribers</div>
-          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Executive buying clusters</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;">When a single executive buys shares it's interesting. When three or more executives at the same company all buy within 30 days of each other — that's rare, and historically one of the strongest signals available. We'll flag these as a separate high-priority alert.</div>
-        </div>
-      </div>
-
-      <!-- 2,000 -->
-      <div style="display:flex;gap:20px;align-items:flex-start;margin-bottom:24px;position:relative;">
-        <div style="width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--border);color:#888;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;z-index:1;">2K</div>
-        <div style="padding-top:6px;">
-          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;">At 2,000 subscribers</div>
-          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Direct data access for Premium members</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;">For Premium subscribers who want to plug Dragonfly signals directly into their own spreadsheets, tools, or automations — we'll open up the raw data feed via a simple API. Build whatever you want on top of it.</div>
-        </div>
-      </div>
-
-      <!-- FUTURE — Algo + institutional + further data -->
+      <!-- FUTURE — Algo + institutional + ideas above 500 subs we'll explore later -->
       <div style="display:flex;gap:20px;align-items:flex-start;margin-top:32px;padding-top:32px;border-top:1px dashed var(--border);position:relative;">
         <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1a3a2a,#2d6a4f);border:2px solid #4ade80;color:#4ade80;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;z-index:1;">&#9670;</div>
         <div style="padding-top:6px;">
           <div style="font-size:11px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:.07em;">Further out</div>
-          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Systematic trading signals + institutional packaging</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;">Dragonfly has been running its own quantitative trading infrastructure for several years alongside the research. When we're satisfied the track record is ready to share, we'll open access to its signals as a standalone subscription. Premium members will get first access at a founding rate. This is a completely separate product — different asset class, different execution, a higher bar to clear before we offer it to anyone.</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;margin-top:8px;">At larger scale we'll also explore packaging signals for professional investors — hedge funds, family offices, financial advisors — alongside additional alternative data feeds the research benefits from but doesn't yet justify on retail revenue alone. Pace and direction will be driven by what subscribers actually use and ask for.</div>
+          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">A few directions we're exploring</div>
+          <div style="font-size:13px;color:#666;line-height:1.6;">Pace and direction will be driven by what subscribers actually use and ask for. Some ideas already in flight or on deck:</div>
+          <ul style="font-size:13px;color:#666;line-height:1.6;margin-top:10px;padding-left:18px;">
+            <li><b>Systematic trading signals — separate subscription.</b> Dragonfly has been running its own quantitative trading infrastructure for several years alongside the research. When we're satisfied the track record is ready to share, we'll open access to its signals as a standalone product. Premium members get first access at a founding rate.</li>
+            <li style="margin-top:6px;"><b>Focused newsletters by sector.</b> Subscribe to just uranium, just AI, just copper — same research, filtered to what's relevant to you.</li>
+            <li style="margin-top:6px;"><b>Executive cluster-buying alerts.</b> When 3+ executives at the same company buy within 30 days — one of the strongest historical signals available — get a separate high-priority feed.</li>
+            <li style="margin-top:6px;"><b>Institutional packaging.</b> At larger scale we'll explore packaging signals for hedge funds, family offices, and financial advisors with the documentation they require.</li>
+            <li style="margin-top:6px;"><b>Additional alternative-data feeds.</b> Subscriber revenue funds new data sources that improve the signal — full institutional options flow, satellite imagery, supply-chain monitoring.</li>
+          </ul>
         </div>
       </div>
 
