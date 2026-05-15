@@ -248,6 +248,12 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
 .iei-score{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.06em;}
 .iei-item{font-size:11px;color:#9575cd;display:flex;align-items:center;gap:4px;cursor:help;}
 .iei-val{font-weight:700;color:#c4b5fd;}
+/* Silicon Cognition Index bar (the "cyan bar" — tracks AI capability output) */
+.sci-bar{background:#08141a;border-top:1px solid rgba(34,211,238,.3);border-bottom:1px solid rgba(34,211,238,.15);padding:8px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12px;}
+.sci-bar-glow{box-shadow:inset 0 1px 0 rgba(34,211,238,.12);}
+.sci-score{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.06em;background:rgba(34,211,238,.15);color:#22d3ee;}
+.sci-item{font-size:11px;color:#67e8f9;display:flex;align-items:center;gap:4px;cursor:help;}
+.sci-val{font-weight:700;color:#a5f3fc;}
 </style>
 </head>
 <body>
@@ -393,6 +399,26 @@ function toggleTheme() {
     <span style="margin-left:auto;display:flex;align-items:center;gap:4px;color:#5b4a7a;font-size:9px;flex-shrink:0;"><span style="width:5px;height:5px;border-radius:50%;background:#a78bfa;animation:pulse 2s infinite;display:inline-block;"></span>LIVE</span>
   </div>
 
+  <!-- ── SILICON COGNITION INDEX — cyan macro signal, public.
+       Tracks intelligence OUTPUT (vs IEI's efficiency framing). -->
+  <div class="sci-bar sci-bar-glow">
+    <span data-btip="sci" style="font-size:9px;color:#22d3ee;text-transform:uppercase;letter-spacing:.12em;font-weight:700;flex-shrink:0;cursor:help;">SCI ⓘ</span>
+    <span style="color:#1a3344;">|</span>
+    <span class="sci-item" data-btip="sci-mmlu">Frontier <span id="sci-mmlu" class="sci-score">—</span></span>
+    <span style="color:#1a3344;">|</span>
+    <span class="sci-item" data-btip="sci-cost">$/Mtok <span id="sci-cost" class="sci-val">—</span></span>
+    <span class="sci-item" data-btip="sci-cost"><span id="sci-cost-drop" class="sci-val">—</span>× cheaper</span>
+    <span style="color:#1a3344;">|</span>
+    <span class="sci-item" data-btip="sci-doubling">Doubling <span id="sci-doubling" class="sci-val">—</span></span>
+    <span style="color:#1a3344;">|</span>
+    <span class="sci-item" data-btip="sci-compute">Train <span id="sci-compute" class="sci-val">—</span></span>
+    <span style="color:#1a3344;">|</span>
+    <span class="sci-item" data-btip="sci-bio">Bio gap <span id="sci-bio" class="sci-val">—</span></span>
+    <span style="color:#1a3344;">|</span>
+    <span class="sci-item" data-btip="sci-inference">Inference <span id="sci-inference" class="sci-val">—</span></span>
+    <span style="margin-left:auto;display:flex;align-items:center;gap:4px;color:#4a6a7a;font-size:9px;flex-shrink:0;"><span style="width:5px;height:5px;border-radius:50%;background:#22d3ee;animation:pulse 2s infinite;display:inline-block;"></span>LIVE</span>
+  </div>
+
 </div>
 
 <!-- SECTOR DROPDOWN (fixed position, shown on ▸ click) -->
@@ -497,6 +523,70 @@ function toggleTheme() {
         '<b>Why it matters here:</b> every time AI chips get more efficient, total AI compute demand grows faster than the efficiency saves. Result: ever-increasing aggregate power consumption for AI, despite per-chip efficiency gains.',
         '<b>ACTIVE</b> = current efficiency curve is being out-paced by demand growth. The bull case for nuclear, copper, grid infrastructure.',
         '<b>If it ever flips DORMANT</b> (efficiency exceeds demand) — that would be the bear signal. Hasn\'t happened in any decade since electricity was invented. AI is the most-Jevons technology ever measured.'
+      ]
+    },
+    sci: {
+      title: 'Silicon Cognition Index — How Much Intelligence the World Has Access To',
+      rows: [
+        'IEI (purple bar) measures intelligence-<em>efficiency</em> — units of intelligence per unit of energy. SCI (this bar) measures the OUTPUT — <b>how much silicon-based intelligence the world has access to, and how fast it\'s growing</b>.',
+        '<b>The framing:</b> carbon-based intelligence (humans) has been measured for centuries — IQ tests, productivity per worker, GDP per capita. Silicon intelligence operates ~6 orders of magnitude faster, doesn\'t sleep, scales linearly with power, and can be replicated infinitely. SCI is the gauge nobody else surfaces.',
+        '<b>Why this matters for your portfolio:</b> if frontier capability flattens for 6+ months while AI capex keeps rising, that\'s the bear signal — your AI / nuclear / copper holdings are exposed. If capability keeps doubling every ~6 months, the thesis is alive and every dip is structural.',
+        '<b>What the metrics measure:</b> frontier model benchmark score (general reasoning capability), cost per million tokens (the price of intelligence), capability doubling rate, training compute scale, silicon-vs-biology efficiency gap, daily inference scale across the major providers.',
+        '<b>Refresh cadence:</b> monthly. Sources: published benchmark papers, public API pricing pages, industry-disclosed training-compute estimates.'
+      ]
+    },
+    'sci-mmlu': {
+      title: 'Frontier Capability — MMLU Benchmark',
+      rows: [
+        'MMLU (Massive Multitask Language Understanding) is the most-cited benchmark for general AI reasoning. Tests 57 subjects from US history to formal logic to medicine. % = correct answers out of multiple choice questions.',
+        '<b>Reference points:</b> Random guessing = 25%. Average human = ~35%. Expert human = ~89%. Frontier AI today = 92%+.',
+        '<b>What it tells you:</b> the headline number for "how smart is AI right now?". When this score keeps rising, AI-exposed businesses keep getting more valuable per dollar of compute spent.',
+        '<b>What\'s left:</b> MMLU is approaching ceiling. Newer benchmarks (GPQA, ARC-AGI, FrontierMath) measure capabilities MMLU can\'t — and frontier models still score 25-60% on those. The capability curve isn\'t done.'
+      ]
+    },
+    'sci-cost': {
+      title: 'Cost per Million Tokens — The Price of Intelligence',
+      rows: [
+        'How much it costs to run frontier AI on 1 million tokens of text (~750,000 words). Blended retail API pricing for the leading model.',
+        '<b>Trajectory:</b> dropped from ~\\$60/million in 2020 (GPT-3) to ~\\$3/million today. That\'s 20× cheaper while capability roughly doubled.',
+        '<b>Why this is the bull case:</b> falling cost × rising capability = exponential growth in the number of viable AI use cases. Every halving of cost unlocks a wave of applications that weren\'t economically possible at the old price.',
+        '<b>The Jevons connection:</b> cheaper intelligence doesn\'t lead to less spending on AI — it leads to more, because new applications come online faster than the cost savings accumulate. Confirmed bull for chip demand, power demand, infrastructure.'
+      ]
+    },
+    'sci-doubling': {
+      title: 'Capability Doubling Rate — Faster than Moore\'s Law',
+      rows: [
+        'Months between benchmark-equivalent capability levels. AI capability has been doubling every ~6 months.',
+        '<b>Reference:</b> Moore\'s Law (transistor count) doubled every ~24 months. AI capability is moving 4× faster than the fastest tech-progress curve in history.',
+        '<b>What sustains it:</b> three multiplicative compounding curves — chip efficiency (the IEI angle), training compute scale, and algorithmic improvements. Each contributes ~10× per generation; together they multiply.',
+        '<b>When to worry:</b> if the doubling rate slows to >18 months, that\'s the signal the curve is bending. So far every published frontier model has continued the trajectory.'
+      ]
+    },
+    'sci-compute': {
+      title: 'Training Compute Scale — FLOPS for the Biggest Model',
+      rows: [
+        'Total floating-point operations used to train the largest publicly-disclosed AI model. Best proxy for "how big is the biggest brain we\'re building".',
+        '<b>Trajectory:</b> 3×10²³ FLOPS (GPT-3, 2020) → 1.5×10²⁶ FLOPS today. <b>500× bigger</b> in 6 years.',
+        '<b>What this requires:</b> billions of dollars in GPU capex, gigawatts of power for the data center, copper for the interconnects, water for cooling, real estate for the buildings. <em>This</em> is the physical-economy driver behind the AI buildout.',
+        '<b>Why subscribers care:</b> every uranium, copper, semiconductor, and grid-infrastructure position in the portfolio is leveraged to this curve continuing. SCI is the gauge that tells you whether it is.'
+      ]
+    },
+    'sci-bio': {
+      title: 'Silicon-vs-Biology Efficiency Gap',
+      rows: [
+        'Orders of magnitude (powers of 10) that the human brain is more energy-efficient per unit of intelligence vs the best current AI chip. ~4 OOM today = the brain is ~10,000× more efficient.',
+        '<b>The trajectory:</b> the gap halves every ~2 years at the current chip-efficiency rate. At that pace, hardware reaches biological parity around <b>2040</b>.',
+        '<b>Implication after parity:</b> AI cognition becomes vastly cheaper than human cognition for any task that fits in an LLM\'s context. The economic value of "knowledge work" hours starts compressing toward the cost of running silicon — which keeps falling.',
+        '<b>Critically:</b> this is the gap AT EQUAL CAPABILITY. Silicon is already FASTER, more PARALLEL, more REPLICABLE, and NEVER TIRED. Parity in efficiency just removes the last remaining biological advantage.'
+      ]
+    },
+    'sci-inference': {
+      title: 'Daily Inference Scale — Tokens Served / Day',
+      rows: [
+        'Roughly how many tokens of text the major API providers (Anthropic, OpenAI, Google, Meta, plus open-source on hyperscaler GPUs) process per day combined. Order-of-magnitude estimate — providers don\'t publish exact numbers.',
+        '<b>YoY growth:</b> ~280% per year. Demand is growing faster than capacity expansion.',
+        '<b>What it bull-cases:</b> NVDA + AMD inference chips, every hyperscaler\'s revenue, data center REITs, power infrastructure, semiconductor equipment (ASML, AMAT, LRCX).',
+        '<b>Where the bottleneck is:</b> not silicon — power. This is why uranium signed PPAs spiked starting in 2024 (see Nuclear in the IEI bar above).'
       ]
     },
     regime: {
@@ -1267,17 +1357,57 @@ function toggleTheme() {
       .catch(function(){});
   }
 
+  // ── Silicon Cognition Index (the cyan bar) — public macro signal ──
+  function loadSCI(){
+    fetch(RENDER_API.replace('/api/market-data','/api/silicon-cognition'))
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        var setT = function(id, val){ var e = document.getElementById(id); if (e) e.textContent = val; };
+        if (d.frontier_capability){
+          var el = document.getElementById('sci-mmlu');
+          if (el) {
+            el.textContent = d.frontier_capability.mmlu_score + '%';
+          }
+        }
+        if (d.capability_per_dollar){
+          setT('sci-cost',      '$' + d.capability_per_dollar.cost_per_mtok_usd);
+          setT('sci-cost-drop', d.capability_per_dollar.cheaper_since_2020_factor);
+        }
+        if (d.doubling_rate_months != null){
+          setT('sci-doubling', '~' + d.doubling_rate_months + ' mo');
+        }
+        if (d.compute_scale){
+          // Format the FLOPS number in scientific notation
+          var f = d.compute_scale.training_flops;
+          var fStr;
+          if (f >= 1e26) fStr = (f/1e26).toFixed(1) + '×10²⁶';
+          else if (f >= 1e25) fStr = (f/1e25).toFixed(1) + '×10²⁵';
+          else if (f >= 1e24) fStr = (f/1e24).toFixed(1) + '×10²⁴';
+          else fStr = (f/1e23).toFixed(0) + '×10²³';
+          setT('sci-compute', fStr + ' FLOPS');
+        }
+        if (d.bio_gap){
+          setT('sci-bio', d.bio_gap.ratio.toLocaleString() + '×');
+        }
+        if (d.daily_inference){
+          setT('sci-inference', (d.daily_inference.tokens_billions / 1000).toFixed(1) + 'T tok/day');
+        }
+      })
+      .catch(function(){});
+  }
+
   // ── Boot sequence ──
   loadRates();             // fetch live exchange rates (USD/CAD/EUR/GBP)
   loadCrypto();            // instant — direct CoinGecko (all 4 timeframes)
   loadFearGreed();         // instant — direct alternative.me (crypto F&G)
   loadRender();            // VIX + sectors from Render; auto-retries
-  loadIEI();               // Intelligence Efficiency Index — public macro bar
+  loadIEI();               // Intelligence Efficiency Index — purple macro bar
+  loadSCI();               // Silicon Cognition Index — cyan macro bar
 
   // Refresh everything every 5 minutes
   setInterval(function(){ loadCrypto(); loadFearGreed(); loadRender(); }, 300000);
-  // IEI is cached server-side for 6h, so refresh every 30 min on the client is plenty.
-  setInterval(function(){ loadIEI(); }, 1800000);
+  // IEI + SCI are both cached server-side for 6h; refreshing every 30 min on the client is plenty.
+  setInterval(function(){ loadIEI(); loadSCI(); }, 1800000);
 })();
 </script>
 
