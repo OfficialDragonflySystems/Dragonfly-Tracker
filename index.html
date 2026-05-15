@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- sync rev: 2026-05-15 (force landing-page-sync workflow to copy IEI bar + crypto timeframe toggle to Dragonfly-Tracker) -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -241,6 +242,12 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
 .share-x  { background:#000;color:#fff; }
 .share-li { background:#0a66c2;color:#fff; }
 .share-cp { background:#f0f0ec;color:#333;border:1px solid #ddd; }
+/* Intelligence Efficiency Index bar (the "purple bar" — public macro signal) */
+.iei-bar{background:#0d0a14;border-top:1px solid rgba(139,92,246,.3);border-bottom:1px solid rgba(139,92,246,.15);padding:8px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12px;}
+.iei-bar-glow{box-shadow:inset 0 1px 0 rgba(139,92,246,.12);}
+.iei-score{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.06em;}
+.iei-item{font-size:11px;color:#9575cd;display:flex;align-items:center;gap:4px;cursor:help;}
+.iei-val{font-weight:700;color:#c4b5fd;}
 </style>
 </head>
 <body>
@@ -291,6 +298,13 @@ function toggleTheme() {
   <!-- ── CRYPTO MARKETS ROW ── dark navy, clearly separated -->
   <div style="background:#090f1a;border-top:1px solid rgba(56,189,248,.18);padding:8px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
       <span style="font-size:9px;color:#1e4a6a;text-transform:uppercase;letter-spacing:.12em;font-weight:700;">Crypto</span>
+      <!-- Timeframe toggle (D/W/M/Y) — % changes below reflect the selected window -->
+      <span style="display:inline-flex;gap:2px;background:#0a1018;border-radius:8px;padding:2px;border:1px solid #1a2a3a;">
+        <button onclick="setCryptoTF('24h')" id="tf-24h" style="font-size:10px;padding:2px 8px;border:none;border-radius:6px;background:rgba(122,184,212,.22);color:#7ab8d4;font-weight:700;cursor:pointer;letter-spacing:.04em;">1D</button>
+        <button onclick="setCryptoTF('7d')"  id="tf-7d"  style="font-size:10px;padding:2px 8px;border:none;border-radius:6px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1W</button>
+        <button onclick="setCryptoTF('30d')" id="tf-30d" style="font-size:10px;padding:2px 8px;border:none;border-radius:6px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1M</button>
+        <button onclick="setCryptoTF('1y')"  id="tf-1y"  style="font-size:10px;padding:2px 8px;border:none;border-radius:6px;background:transparent;color:#5a8aaa;font-weight:700;cursor:pointer;letter-spacing:.04em;">1Y</button>
+      </span>
       <span style="color:#0f2a3a;">|</span>
       <div data-btip="cryptofg" style="color:#5a8aaa;cursor:help;">Sentiment <span id="fg-val" style="font-weight:700;">—</span></div>
       <span style="color:#0f2a3a;">|</span>
@@ -359,6 +373,23 @@ function toggleTheme() {
         <span style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;animation:pulse 2s infinite;"></span>
         LIVE
       </div>
+  </div>
+
+  <!-- ── INTELLIGENCE EFFICIENCY INDEX — purple macro signal, public -->
+  <div class="iei-bar iei-bar-glow">
+    <span title="Intelligence Efficiency Index — how fast AI compute is advancing relative to its energy cost. Every metric here measures a different pressure point on that equation." style="font-size:9px;color:#a78bfa;text-transform:uppercase;letter-spacing:.12em;font-weight:700;flex-shrink:0;cursor:help;">IEI</span>
+    <span style="color:#2d1f4a;">|</span>
+    <span class="iei-item" title="Composite score 0–100. Combines chip efficiency gains, nuclear pipeline, Jevons paradox intensity, and grid stress. Higher = more structural demand pressure building.">Score <span id="iei-score" class="iei-score" style="background:rgba(139,92,246,.15);color:#a78bfa;">—</span></span>
+    <span style="color:#2d1f4a;">|</span>
+    <span class="iei-item" title="The latest AI chip generation leading the efficiency frontier. Each new generation resets the cost-per-FLOP curve.">Chip <span id="iei-gen" class="iei-val">—</span></span>
+    <span class="iei-item" title="Efficiency gain vs the previous chip generation (FLOPS per watt). Sustained 2–5x jumps per generation are unprecedented in industrial history."><span id="iei-delta" class="iei-val">—</span>%/gen</span>
+    <span style="color:#2d1f4a;">|</span>
+    <span class="iei-item" title="Confirmed nuclear power purchase agreements signed by hyperscalers for dedicated AI data-center electricity. Real committed infrastructure spend, not projections.">Nuclear <span id="iei-nuke" class="iei-val">—</span></span>
+    <span style="color:#2d1f4a;">|</span>
+    <span class="iei-item" title="How many times more energy-efficient the human brain is vs the best current AI chip. The gap narrows as chips improve.">Bio Gap <span id="iei-bio" class="iei-val">—</span></span>
+    <span style="color:#2d1f4a;">|</span>
+    <span class="iei-item" title="Jevons Paradox — when something gets more efficient, total consumption rises because usage grows faster than the savings. ACTIVE = AI power consumption growing faster than chip-efficiency gains.">Jevons <span id="iei-jevons" class="iei-val">—</span></span>
+    <span style="margin-left:auto;display:flex;align-items:center;gap:4px;color:#5b4a7a;font-size:9px;flex-shrink:0;"><span style="width:5px;height:5px;border-radius:50%;background:#a78bfa;animation:pulse 2s infinite;display:inline-block;"></span>LIVE</span>
   </div>
 
 </div>
@@ -1005,22 +1036,67 @@ function toggleTheme() {
     }
   });
 
-  // ── CRYPTO: fetch directly from Binance — no Render dependency, loads instantly ──
-  var CRYPTO_SYMS = ['BTC','ETH','SOL','FET','TAO','RNDR','LINK','GRT','IOTX','OCEAN','HBAR','SUI','FLUX','NMR','XRP','XLM','ADA','ALGO','AVAX','DOT','NEAR','APT'];
-  function loadCrypto(){
-    CRYPTO_SYMS.forEach(function(sym){
-      fetch(BINANCE + sym + 'USDT')
-        .then(function(r){ return r.json(); })
-        .then(function(d){
-          var el = document.getElementById('c-'+sym);
-          if(!el || !d.lastPrice) return;
-          var price = parseFloat(d.lastPrice);
-          var chg   = parseFloat(d.priceChangePercent);
-          _cryptoCache[sym] = {price:price, chg:chg};
-          el.innerHTML = '<span style="color:#9ca;">'+fmtPrice(price)+'</span>'
-            +' <span style="color:'+chgColor(chg)+';font-size:10px;">('+fmtChg(chg)+')</span>';
-        }).catch(function(){});
+  // ── CRYPTO: CoinGecko coins/markets — all 4 timeframes in one call ─────────
+  // Symbol → CoinGecko id. Reverse map used to route results back to chip IDs.
+  var CG_ID_TO_SYM = {
+    'bitcoin':'BTC', 'ethereum':'ETH', 'solana':'SOL', 'fetch-ai':'FET',
+    'bittensor':'TAO', 'render-token':'RNDR', 'chainlink':'LINK',
+    'the-graph':'GRT', 'iotex':'IOTX', 'ocean-protocol':'OCEAN',
+    'hedera-hashgraph':'HBAR', 'sui':'SUI', 'flux':'FLUX', 'numeraire':'NMR',
+    'ripple':'XRP', 'stellar':'XLM', 'cardano':'ADA', 'algorand':'ALGO',
+    'avalanche-2':'AVAX', 'polkadot':'DOT', 'near':'NEAR', 'aptos':'APT'
+  };
+  var CG_IDS = Object.keys(CG_ID_TO_SYM).join(',');
+  // Selected timeframe — '24h'/'7d'/'30d'/'1y'. Cached returns let toggle be free.
+  window._cryptoTF = window._cryptoTF || '24h';
+  window._cryptoCache = window._cryptoCache || _cryptoCache || {};
+
+  function _renderCryptoChip(sym) {
+    var el = document.getElementById('c-'+sym);
+    if (!el) return;
+    var d = window._cryptoCache[sym];
+    if (!d || d.price == null) { return; }
+    var ch = d[window._cryptoTF];
+    var lbl = {'24h':'1D','7d':'1W','30d':'1M','1y':'1Y'}[window._cryptoTF];
+    if (ch == null) {
+      el.innerHTML = '<span style="color:#9ca;">'+fmtPrice(d.price)+'</span>'
+        +' <span style="color:#5a8aaa;font-size:10px;">'+lbl+' —</span>';
+      return;
+    }
+    el.innerHTML = '<span style="color:#9ca;">'+fmtPrice(d.price)+'</span>'
+      +' <span style="color:'+chgColor(ch)+';font-size:10px;">'+lbl+' '+fmtChg(ch)+'</span>';
+  }
+  function setCryptoTF(tf) {
+    window._cryptoTF = tf;
+    ['24h','7d','30d','1y'].forEach(function(t){
+      var btn = document.getElementById('tf-'+t);
+      if (!btn) return;
+      btn.style.background = (t === tf) ? 'rgba(122,184,212,.22)' : 'transparent';
+      btn.style.color      = (t === tf) ? '#7ab8d4' : '#5a8aaa';
     });
+    Object.keys(window._cryptoCache).forEach(_renderCryptoChip);
+  }
+  function loadCrypto() {
+    var url = 'https://api.coingecko.com/api/v3/coins/markets'
+            + '?vs_currency=usd&ids=' + CG_IDS
+            + '&price_change_percentage=24h,7d,30d,1y';
+    fetch(url)
+      .then(function(r){ return r.json(); })
+      .then(function(arr){
+        (arr || []).forEach(function(c){
+          var sym = CG_ID_TO_SYM[c.id];
+          if (!sym) return;
+          window._cryptoCache[sym] = {
+            price: c.current_price,
+            '24h': c.price_change_percentage_24h_in_currency,
+            '7d':  c.price_change_percentage_7d_in_currency,
+            '30d': c.price_change_percentage_30d_in_currency,
+            '1y':  c.price_change_percentage_1y_in_currency
+          };
+          _renderCryptoChip(sym);
+        });
+      })
+      .catch(function(){});
   }
 
   // ── VIX-derived sentiment helper (used by loadRender) ──
@@ -1097,14 +1173,54 @@ function toggleTheme() {
   // ── Keep Render warm: ping every 14 min so it never goes cold ──
   setInterval(function(){ fetch(RENDER_API+'?ping=1').catch(function(){}); }, 840000);
 
+  // ── Intelligence Efficiency Index (the purple bar) — public macro signal ──
+  function loadIEI(){
+    fetch(RENDER_API.replace('/api/market-data','/api/intelligence-efficiency'))
+      .then(function(r){ return r.json(); })
+      .then(function(iei){
+        var setT = function(id, val){ var e = document.getElementById(id); if (e) e.textContent = val; };
+        if (iei.iei_score != null) {
+          var sc = document.getElementById('iei-score');
+          if (sc) {
+            sc.textContent = iei.iei_label + ' ' + iei.iei_score;
+            sc.style.color      = iei.iei_color;
+            sc.style.background = iei.iei_color + '22';
+            sc.style.border     = '1px solid ' + iei.iei_color + '44';
+          }
+        }
+        if (iei.chips) {
+          setT('iei-gen',   iei.chips.latest.gen);
+          setT('iei-delta', '+' + iei.chips.gen_delta_pct);
+        }
+        if (iei.nuclear) {
+          setT('iei-nuke', iei.nuclear.confirmed_gw + 'GW / ' + iei.nuclear.confirmed_cnt + ' PPAs');
+        }
+        if (iei.bio_gap) {
+          setT('iei-bio', iei.bio_gap.label);
+        }
+        if (iei.jevons) {
+          var jEl = document.getElementById('iei-jevons');
+          if (jEl) {
+            jEl.textContent  = iei.jevons.label;
+            jEl.style.color  = iei.jevons.color;
+            jEl.style.fontWeight = '700';
+          }
+        }
+      })
+      .catch(function(){});
+  }
+
   // ── Boot sequence ──
   loadRates();             // fetch live exchange rates (USD/CAD/EUR/GBP)
-  loadCrypto();            // instant — direct Binance
+  loadCrypto();            // instant — direct CoinGecko (all 4 timeframes)
   loadFearGreed();         // instant — direct alternative.me (crypto F&G)
   loadRender();            // VIX + sectors from Render; auto-retries
+  loadIEI();               // Intelligence Efficiency Index — public macro bar
 
   // Refresh everything every 5 minutes
   setInterval(function(){ loadCrypto(); loadFearGreed(); loadRender(); }, 300000);
+  // IEI is cached server-side for 6h, so refresh every 30 min on the client is plenty.
+  setInterval(function(){ loadIEI(); }, 1800000);
 })();
 </script>
 
@@ -1382,42 +1498,42 @@ function toggleTheme() {
       <div class="chart-card-label"><span>CCJ &mdash; Uranium / Cameco</span><a href="https://www.tradingview.com/chart/?symbol=NYSE:CCJ" target="_blank" rel="noopener">Full chart &rarr;</a></div>
       <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {"symbol":"NYSE:CCJ","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"light","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
+      {"symbol":"NYSE:CCJ","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"dark","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
     </div>
 
     <div class="chart-card">
       <div class="chart-card-label"><span>SMR &mdash; Nuclear Energy / NuScale</span><a href="https://www.tradingview.com/chart/?symbol=NYSE:SMR" target="_blank" rel="noopener">Full chart &rarr;</a></div>
       <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {"symbol":"NYSE:SMR","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"light","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
+      {"symbol":"NYSE:SMR","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"dark","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
     </div>
 
     <div class="chart-card">
       <div class="chart-card-label"><span>NVDA &mdash; AI / GPU Compute</span><a href="https://www.tradingview.com/chart/?symbol=NASDAQ:NVDA" target="_blank" rel="noopener">Full chart &rarr;</a></div>
       <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {"symbol":"NASDAQ:NVDA","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"light","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
+      {"symbol":"NASDAQ:NVDA","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"dark","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
     </div>
 
     <div class="chart-card">
       <div class="chart-card-label"><span>FCX &mdash; Copper / Freeport</span><a href="https://www.tradingview.com/chart/?symbol=NYSE:FCX" target="_blank" rel="noopener">Full chart &rarr;</a></div>
       <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {"symbol":"NYSE:FCX","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"light","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
+      {"symbol":"NYSE:FCX","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"dark","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
     </div>
 
     <div class="chart-card">
       <div class="chart-card-label"><span>WPM &mdash; Gold &amp; Silver / Wheaton</span><a href="https://www.tradingview.com/chart/?symbol=NYSE:WPM" target="_blank" rel="noopener">Full chart &rarr;</a></div>
       <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {"symbol":"NYSE:WPM","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"light","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
+      {"symbol":"NYSE:WPM","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"dark","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
     </div>
 
     <div class="chart-card">
       <div class="chart-card-label"><span>ALB &mdash; Lithium / Albemarle</span><a href="https://www.tradingview.com/chart/?symbol=NYSE:ALB" target="_blank" rel="noopener">Full chart &rarr;</a></div>
       <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {"symbol":"NYSE:ALB","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"light","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
+      {"symbol":"NYSE:ALB","width":"100%","height":220,"locale":"en","dateRange":"1Y","colorTheme":"dark","trendLineColor":"#2d6a4f","underLineColor":"rgba(45,106,79,0.1)","isTransparent":true,"autosize":true,"largeChartUrl":""}</script></div>
     </div>
 
   </div>
@@ -2200,33 +2316,14 @@ renderPlanPrices();
         </div>
       </div>
 
-      <!-- 2,500 -->
-      <div style="display:flex;gap:20px;align-items:flex-start;margin-bottom:24px;position:relative;">
-        <div style="width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--border);color:#888;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;z-index:1;">2.5K</div>
-        <div style="padding-top:6px;">
-          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;">At 2,500 subscribers</div>
-          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Pre-IPO and early-stage signals</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;">Some of the best setups happen before a company is even publicly listed, or right after — when insiders are locked out from selling and institutions are still building positions. We'll start tracking these in our sectors so you can be positioned early.</div>
-        </div>
-      </div>
-
-      <!-- 5,000 -->
-      <div style="display:flex;gap:20px;align-items:flex-start;position:relative;">
-        <div style="width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--border);color:#888;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;z-index:1;">5K</div>
-        <div style="padding-top:6px;">
-          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;">At 5,000 subscribers</div>
-          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Institutional access tier</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;">At this scale we'll offer a separate tier for professional investors — hedge funds, family offices, financial advisors. Same signals, packaged for institutional use with the documentation they require. One institutional client at this level is worth 50 retail subscriptions.</div>
-        </div>
-      </div>
-
-      <!-- FUTURE — Algo -->
+      <!-- FUTURE — Algo + institutional + further data -->
       <div style="display:flex;gap:20px;align-items:flex-start;margin-top:32px;padding-top:32px;border-top:1px dashed var(--border);position:relative;">
         <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1a3a2a,#2d6a4f);border:2px solid #4ade80;color:#4ade80;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;z-index:1;">&#9670;</div>
         <div style="padding-top:6px;">
-          <div style="font-size:11px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:.07em;">Future</div>
-          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Systematic trading signals — separate subscription</div>
+          <div style="font-size:11px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:.07em;">Further out</div>
+          <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Systematic trading signals + institutional packaging</div>
           <div style="font-size:13px;color:#666;line-height:1.6;">Dragonfly has been running its own quantitative trading infrastructure for several years alongside the research. When we're satisfied the track record is ready to share, we'll open access to its signals as a standalone subscription. Premium members will get first access at a founding rate. This is a completely separate product — different asset class, different execution, a higher bar to clear before we offer it to anyone.</div>
+          <div style="font-size:13px;color:#666;line-height:1.6;margin-top:8px;">At larger scale we'll also explore packaging signals for professional investors — hedge funds, family offices, financial advisors — alongside additional alternative data feeds the research benefits from but doesn't yet justify on retail revenue alone. Pace and direction will be driven by what subscribers actually use and ask for.</div>
         </div>
       </div>
 
