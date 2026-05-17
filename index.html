@@ -1815,7 +1815,7 @@ function toggleTheme() {
 
   </div>
   <p style="text-align:center;margin-top:20px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#bbb;">
-    Charts powered by <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:#888;">TradingView</a>. <b>87 published signals</b> across 30+ themes. <b>3,000+ tickers monitored</b> weekly across the US S&amp;P 1500 + 16 international markets. <b>Near-real-time insider cluster alerts</b> across US (SEC Form 4), Canada (SEDI), and Australia (ASX). Editorial news flow scanning ~20 free RSS sources across mining, energy, AI compute, biotech, and policy. Every signal mapped to investable public tickers — including downstream public proxies when the subject is private. <a href="#track-record" style="color:var(--green);">See full track record &rarr;</a>
+    Charts powered by <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:#888;">TradingView</a>. <b>3,000+ tickers monitored</b> weekly across the US S&amp;P 1500 + 16 international markets. <b>Near-real-time insider cluster alerts</b> across US (SEC Form 4), Canada (SEDI), and Australia (ASX). Editorial news flow scanning ~20 free RSS sources across mining, energy, AI compute, biotech, and policy. Every signal mapped to investable public tickers — including downstream public proxies when the subject is private. <b>Live track record begins May 2026</b> — see <a href="#live-track-record" style="color:var(--green);">live count &amp; commitments</a> below.
   </p>
 </section>
 
@@ -1825,8 +1825,22 @@ function toggleTheme() {
 <div class="record-section" id="track-record">
   <div class="record-inner">
     <div class="section-label">Track record</div>
-    <h2>Every thesis. Winners and losers both shown.</h2>
-    <p class="lead">We track from the first verifiable public signal — a DOE grant, an SEC filing, an NRC announcement. No backfitting. Updated every Friday.</p>
+    <h2>Backtest reference &amp; live track record.</h2>
+    <p class="lead">Two distinct things, presented separately. The backtest shows what our methodology would have flagged across 13 years of public data. The live track record begins now and accumulates one cryptographically-signed signal at a time.</p>
+
+    <!-- PREVIOUS RESULTS DISCLOSURE BANNER -->
+    <div style="background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(251,191,36,.02));border:1px solid rgba(251,191,36,.35);border-radius:10px;padding:18px 22px;margin:24px 0 32px;font-family:'Helvetica Neue',Arial,sans-serif;">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+        <span style="background:#fbbf24;color:#0d1f10;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:11px;">PREVIOUS RESULTS &middot; 2013&ndash;2026</span>
+        <span style="font-size:11px;color:#b8851a;font-weight:600;">Patterns our methodology flags &mdash; reference, not real-time predictions</span>
+      </div>
+      <p style="font-size:13.5px;color:#444;line-height:1.7;margin:0;">
+        The numbers and theses below show the kind of pattern Dragonfly's methodology surfaces &mdash; government filings, insider clusters, downstream beneficiary mapping. They are <em>reference examples</em> from 13 years of public catalysts. They have not been live-traded and they have not been recorded in real time. Anyone with a spreadsheet can show winners after the fact; we wouldn't pretend otherwise. <strong>Treat everything below this banner as illustrative of what we look for, not as a record we're asking you to trust.</strong>
+      </p>
+      <p style="font-size:13.5px;color:#444;line-height:1.7;margin:10px 0 0;">
+        The record we'll actually be judged on &mdash; the one anyone can independently verify &mdash; <strong>starts <a href="#live-track-record" style="color:#16a34a;font-weight:700;text-decoration:underline;">below &darr;</a></strong> from <strong>May 17, 2026 onward</strong>. Cryptographically signed at publish, anchored to Polygon / Base / Solana the moment we cross 50 paying subscribers. Every signal, winners and losers both, permanently recorded.
+      </p>
+    </div>
 
     <div class="record-stats">
       <div class="record-stat" style="border:2px solid #27ae60;">
@@ -2042,6 +2056,45 @@ function toggleTheme() {
     <p style="text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#999;margin-top:16px;">
       Not financial advice. Past performance does not guarantee future results. All theses included — winners and losers.
     </p>
+
+    <!-- ── LIVE TRACK RECORD — begins May 17, 2026 ── -->
+    <div id="live-track-record" style="margin:48px 0 0;padding:32px 28px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:14px;font-family:'Helvetica Neue',Arial,sans-serif;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+        <span style="background:#4ade80;color:#0d1f10;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:11px;">LIVE TRACK RECORD &middot; STARTS HERE</span>
+        <span style="font-size:11px;color:#7ec98a;letter-spacing:.05em;">Ed25519-signed at publish &middot; multi-chain anchored at 50 subs</span>
+      </div>
+      <h3 style="color:#fff;font-size:22px;font-weight:800;margin:0 0 10px;line-height:1.35;">The record we'll be judged on starts now.</h3>
+      <p style="color:#cfd8d0;font-size:14px;line-height:1.7;margin:0 0 22px;">
+        Every Dragonfly signal published from <strong>May 17, 2026</strong> onward is signed with our Ed25519 private key at publish time. Once we cross 50 paying subscribers we fund the chain wallets, and from that point every signal's hash is permanently anchored to Polygon, Base, and Solana within minutes of publish. No edits, no backfills, no cherry-picks. Future you can verify every single one.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:22px;">
+        <div style="background:rgba(0,0,0,.3);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:32px;font-weight:800;color:#4ade80;line-height:1;">1</div>
+          <div style="font-size:11px;color:#7ec98a;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:6px;">Signal published</div>
+          <div style="font-size:10px;color:#5a8a65;margin-top:3px;">First entry: AA &middot; May 17</div>
+        </div>
+        <div style="background:rgba(0,0,0,.3);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:32px;font-weight:800;color:#cfd8d0;line-height:1;">0</div>
+          <div style="font-size:11px;color:#7ec98a;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:6px;">Outcomes recorded</div>
+          <div style="font-size:10px;color:#5a8a65;margin-top:3px;">First check window: ~6 mo after publish</div>
+        </div>
+        <div style="background:rgba(0,0,0,.3);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:32px;font-weight:800;color:#cfd8d0;line-height:1;">0</div>
+          <div style="font-size:11px;color:#7ec98a;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:6px;">Anchored on-chain</div>
+          <div style="font-size:10px;color:#5a8a65;margin-top:3px;">Activates at 50 paying subs</div>
+        </div>
+        <div style="background:rgba(0,0,0,.3);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:32px;font-weight:800;color:#fff;line-height:1;">100%</div>
+          <div style="font-size:11px;color:#7ec98a;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:6px;">Will be shown</div>
+          <div style="font-size:10px;color:#5a8a65;margin-top:3px;">Winners AND losers, no curation</div>
+        </div>
+      </div>
+
+      <p style="color:#7ec98a;font-size:12px;line-height:1.7;margin:0;font-style:italic;">
+        This counter ticks forward as real signals accumulate. When you see it at 50+ signals with verified outcomes and on-chain anchors, that's the moment Dragonfly's claim of an auditable, tamper-proof track record has actually proven itself. Until then, judge us on what comes next &mdash; not what came before.
+      </p>
+    </div>
   </div>
 </div>
 
@@ -2721,28 +2774,28 @@ renderPlanPrices();
     <div>
       <div class="about-stats">
         <div class="about-stat">
-          <span class="key">System active since</span>
+          <span class="key">Methodology developed since</span>
           <span class="val">2020</span>
         </div>
         <div class="about-stat">
-          <span class="key">Tickers monitored</span>
-          <span class="val">87 (32 full write-ups)</span>
+          <span class="key">Tickers monitored weekly</span>
+          <span class="val">3,000+</span>
         </div>
         <div class="about-stat">
-          <span class="key">Signal sources</span>
-          <span class="val">9+ data feeds</span>
+          <span class="key">Insider feeds (live)</span>
+          <span class="val">US &middot; Canada &middot; Australia</span>
         </div>
         <div class="about-stat">
-          <span class="key">Track record updated</span>
-          <span class="val">Every Friday</span>
+          <span class="key">RSS sources scanned</span>
+          <span class="val">~20</span>
         </div>
         <div class="about-stat">
-          <span class="key">Avg return vs S&amp;P</span>
-          <span class="val">+202% alpha</span>
+          <span class="key">Live track record</span>
+          <span class="val">Begins May 2026</span>
         </div>
         <div class="about-stat">
-          <span class="key">Best thesis</span>
-          <span class="val">LITE +1,701%</span>
+          <span class="key">Auditability</span>
+          <span class="val">Ed25519 signed &middot; on-chain at 50 subs</span>
         </div>
       </div>
     </div>
@@ -2778,8 +2831,8 @@ renderPlanPrices();
     <h3 id="ep-title">Free signal alerts</h3>
     <p id="ep-subtitle" class="ep-sub">Government data, insider buying, congressional trades — fired as a signal the moment they align. No opinions, no hype. The same research institutions pay thousands for.</p>
     <div class="ep-proof">
-      <div><strong id="ep-proof-1-val">+266%</strong><span id="ep-proof-1-lbl">avg return</span></div>
-      <div><strong id="ep-proof-2-val">87</strong><span id="ep-proof-2-lbl">tickers tracked</span></div>
+      <div><strong id="ep-proof-1-val">3,000+</strong><span id="ep-proof-1-lbl">tickers monitored weekly</span></div>
+      <div><strong id="ep-proof-2-val">3</strong><span id="ep-proof-2-lbl">countries insider tracked</span></div>
       <div><strong>Basic</strong> <span id="ep-plan-price">from $9.99</span></div>
     </div>
     <input type="email" id="ep-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')epSubmit()">
@@ -2801,35 +2854,35 @@ renderPlanPrices();
       emoji:    '&#128209;',
       title:    'See what each tier actually sends you.',
       sub:      'One real signal shown three ways. We\'ll email you exactly what Basic, Investor, and Premium subscribers received the same day it fired. No pitch. Just the product.',
-      p1val:    '+266%', p1lbl: 'avg return',
-      p2val:    '87',    p2lbl: 'tickers tracked',
+      p1val:    '3,000+', p1lbl: 'tickers monitored',
+      p2val:    '3',      p2lbl: 'countries insider tracked',
       btn:      'Send me the tier comparison &rarr;',
       skip:     'No thanks, I\'ll keep watching Netflix'
     },
     B: {
       emoji:    '&#9749;',
       title:    'Less than a Starbucks a week.',
-      sub:      'One coffee order and you\'re in. Real-time alerts the moment insider buying, congressional trades, and government data all line up — the same signals institutional investors pay thousands for.',
-      p1val:    '+266%', p1lbl: 'avg return',
-      p2val:    '64%',   p2lbl: 'win rate',
+      sub:      'One coffee order and you\'re in. Real-time alerts the moment insider buying, government filings, and downstream catalysts all line up &mdash; the same kind of research institutional investors pay thousands for.',
+      p1val:    '3,000+', p1lbl: 'tickers monitored',
+      p2val:    '~20',    p2lbl: 'free signal sources',
       btn:      'Start for $9.99/mo &rarr;',
       skip:     'I\'d rather have the coffee'
     },
     C: {
       emoji:    '&#127902;',
       title:    'Less than Prime Video. More actionable.',
-      sub:      'Amazon charges more than this and all you get is shows. $9.99/mo gets you insider buying alerts, congressional trade signals, and government data — the moment they fire.',
-      p1val:    '+266%', p1lbl: 'avg return',
-      p2val:    '87',    p2lbl: 'tickers tracked',
+      sub:      'Amazon charges more than this and all you get is shows. $9.99/mo gets you insider-cluster alerts, government-filing signals, and downstream beneficiary mapping &mdash; the moment they fire.',
+      p1val:    '3,000+', p1lbl: 'tickers monitored',
+      p2val:    '3',      p2lbl: 'countries insider tracked',
       btn:      'Start for $9.99/mo &rarr;',
       skip:     'I\'ll stick with Prime'
     },
     D: {
       emoji:    '&#127987;',
-      title:    'Less than Disney+. Actual returns.',
-      sub:      'Disney+ is ~$14/mo for entertainment. This is $9.99/mo for the same research institutional investors pay thousands for — fired as a signal the moment it matters.',
-      p1val:    '+266%', p1lbl: 'avg return',
-      p2val:    '64%',   p2lbl: 'win rate',
+      title:    'Less than Disney+. Built to be verifiable.',
+      sub:      'Disney+ is ~$14/mo for entertainment. This is $9.99/mo for research that\'s cryptographically signed at publish &mdash; so the track record we build is one anyone can independently verify.',
+      p1val:    '3,000+', p1lbl: 'tickers monitored',
+      p2val:    'May 2026', p2lbl: 'live track record begins',
       btn:      'Start for $9.99/mo &rarr;',
       skip:     'Maybe another time'
     }
