@@ -1634,6 +1634,28 @@ function toggleTheme() {
       <p style="color:#8ab890;font-size:12.5px;line-height:1.6;margin:0;">Every published signal is signed with an Ed25519 private key at publish time. Anyone can independently verify what we said, exactly when we said it. Competitors can quietly edit history; we can't. <a href="#" style="color:#4ade80;text-decoration:none;font-weight:700;">How to verify &rarr;</a></p>
     </div>
 
+    <!-- 1b. On-chain anchoring -->
+    <div style="background:#0a1a0c;border:1px solid #1a3a1f;border-radius:10px;padding:20px;position:relative;">
+      <div style="position:absolute;top:14px;right:14px;font-size:9px;color:#4ade80;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);padding:2px 8px;border-radius:10px;letter-spacing:.05em;font-weight:700;">PUBLIC</div>
+      <div style="font-size:24px;margin-bottom:8px;">&#128279;</div>
+      <h3 style="color:#dff0df;font-size:15px;font-weight:800;margin-bottom:6px;">Anchored across multiple blockchains</h3>
+      <p style="color:#8ab890;font-size:12.5px;line-height:1.6;margin:0 0 12px;">The SHA-256 hash of every published signal is written to public blockchains at publish time. Even if our own servers vanished, the chain record proves what we said and when. No vendor lock-in, no trust in us required.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+        <span title="Polygon — cheap EVM, primary chain" style="display:inline-flex;align-items:center;gap:5px;background:rgba(130,71,229,.15);border:1px solid rgba(130,71,229,.4);color:#b09bf0;font-size:10px;font-weight:800;padding:3px 9px;border-radius:11px;letter-spacing:.04em;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#8247E5;display:inline-block;"></span>POLYGON
+        </span>
+        <span title="Base — Coinbase L2, TradFi-friendly" style="display:inline-flex;align-items:center;gap:5px;background:rgba(0,82,255,.15);border:1px solid rgba(0,82,255,.4);color:#7fa9ff;font-size:10px;font-weight:800;padding:3px 9px;border-radius:11px;letter-spacing:.04em;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#0052FF;display:inline-block;"></span>BASE
+        </span>
+        <span title="Solana — cheapest + fastest finality" style="display:inline-flex;align-items:center;gap:5px;background:rgba(20,241,149,.12);border:1px solid rgba(20,241,149,.4);color:#74e8b5;font-size:10px;font-weight:800;padding:3px 9px;border-radius:11px;letter-spacing:.04em;">
+          <span style="width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,#9945FF 0%,#14F195 100%);display:inline-block;"></span>SOLANA
+        </span>
+        <span title="SUI — coming once the Python SDK stabilizes" style="display:inline-flex;align-items:center;gap:5px;background:rgba(76,162,255,.08);border:1px dashed rgba(76,162,255,.4);color:#7aa9d4;font-size:10px;font-weight:700;padding:3px 9px;border-radius:11px;letter-spacing:.04em;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4CA2FF;opacity:.6;display:inline-block;"></span>SUI · SOON
+        </span>
+      </div>
+    </div>
+
     <!-- 2. Conviction score -->
     <div style="background:#0a1a0c;border:1px solid #1a3a1f;border-radius:10px;padding:20px;position:relative;">
       <div style="position:absolute;top:14px;right:14px;font-size:9px;color:#9ca;background:rgba(156,202,156,.1);border:1px solid rgba(156,202,156,.3);padding:2px 8px;border-radius:10px;letter-spacing:.05em;font-weight:700;">INVESTOR+</div>
