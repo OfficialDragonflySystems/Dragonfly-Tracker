@@ -1829,7 +1829,7 @@ function toggleTheme() {
     <p class="lead">Two distinct things, presented separately. The backtest shows what our methodology would have flagged across 13 years of public data. The live track record begins now and accumulates one cryptographically-signed signal at a time.</p>
 
     <!-- PREVIOUS RESULTS DISCLOSURE BANNER -->
-    <div style="background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(251,191,36,.02));border:1px solid rgba(251,191,36,.35);border-radius:10px;padding:18px 22px;margin:24px 0 32px;font-family:'Helvetica Neue',Arial,sans-serif;">
+    <div style="background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(251,191,36,.02));border:1px solid rgba(251,191,36,.35);border-radius:10px;padding:18px 22px;margin:24px 0 14px;font-family:'Helvetica Neue',Arial,sans-serif;">
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
         <span style="background:#fbbf24;color:#0d1f10;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:11px;">PREVIOUS RESULTS &middot; 2013&ndash;2026</span>
         <span style="font-size:11px;color:#b8851a;font-weight:600;">Patterns our methodology flags &mdash; reference, not real-time predictions</span>
@@ -1839,6 +1839,26 @@ function toggleTheme() {
       </p>
       <p style="font-size:13.5px;color:#444;line-height:1.7;margin:10px 0 0;">
         The record we'll actually be judged on &mdash; the one anyone can independently verify &mdash; <strong>starts <a href="#live-track-record" style="color:#16a34a;font-weight:700;text-decoration:underline;">below &darr;</a></strong> from <strong>May 17, 2026 onward</strong>. Cryptographically signed at publish, anchored to Polygon / Base / Solana the moment we cross 50 paying subscribers. Every signal, winners and losers both, permanently recorded.
+      </p>
+    </div>
+
+    <!-- METHODOLOGY RIGOR — what makes this backtest honest -->
+    <div style="background:#f3f9f4;border:1px solid #bde0c5;border-radius:10px;padding:18px 22px;margin:0 0 32px;font-family:'Helvetica Neue',Arial,sans-serif;">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
+        <span style="background:#16a34a;color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:11px;">METHODOLOGY</span>
+        <span style="font-size:11px;color:#166534;font-weight:600;">How the previous-results numbers are computed</span>
+      </div>
+      <p style="font-size:13px;color:#374151;line-height:1.7;margin:0 0 12px;">
+        Most "track records" you see in this industry are useless because of three quiet flaws &mdash; look-ahead bias, retrofitted entry criteria, and signal repainting. Dragonfly's previous-results numbers don't have any of them.
+      </p>
+      <ul style="font-size:13px;color:#374151;line-height:1.75;margin:0;padding-left:20px;">
+        <li style="margin-bottom:8px;"><strong style="color:#15803d;">Zero look-ahead.</strong> Every entry uses <em>only the data that was publicly available on the date of the catalyst</em>. Deciding whether VRT was a buy signal in April 2020 uses what was knowable on April 1, 2020 &mdash; not what happened later.</li>
+        <li style="margin-bottom:8px;"><strong style="color:#15803d;">Real triggers only.</strong> Every entry is anchored to a specific, dated public event &mdash; a DOE grant, an SEC Form 4 filing, an NRC licensing announcement, a Substantial Holder filing. The same trigger types the live system uses to fire alerts today. No discretionary "this looked great in retrospect" picks.</li>
+        <li style="margin-bottom:8px;"><strong style="color:#15803d;">Zero repainting.</strong> Entry dates, stop levels, and conviction tier are locked to the catalyst date and never adjusted afterward to look better. Losers stay losers. ENPH is in the table at &minus;79.2% precisely because we don't quietly delete the ones that didn't work.</li>
+        <li><strong style="color:#15803d;">Same exit framework as live.</strong> The "system strategy" returns come from the same auto-selected exit ladder (staged exits / trailing stop / buy &amp; hold) that live signals will use &mdash; not a post-hoc optimum chosen per ticker.</li>
+      </ul>
+      <p style="font-size:12px;color:#6b7280;line-height:1.7;margin:12px 0 0;font-style:italic;">
+        That doesn't make backtest numbers equivalent to live performance &mdash; nothing does. But it does mean the methodology you're reading about is the same one we'll use going forward, not a different system retrofitted to flatter old data.
       </p>
     </div>
 
