@@ -337,7 +337,7 @@ function toggleTheme() {
   </div>
 
   <!-- ── CRYPTO ROW 2: Payments + Layer 1 Alternatives ── -->
-  <div style="background:#090f1a;border-top:1px solid rgba(56,189,248,.06);padding:8px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+  <div style="background:#090f1a;border-top:1px solid rgba(56,189,248,.06);padding:8px 22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
       <span data-btip="cat-payments" style="font-size:9px;color:#1e4a6a;text-transform:uppercase;letter-spacing:.12em;font-weight:700;cursor:help;">Payments</span>
       <span style="color:#0f2a3a;">|</span>
       <div data-btip="xrp" style="color:#5a8aaa;cursor:help;">XRP <span id="c-XRP" style="color:#7ab8d4;font-weight:700;"></span></div>
@@ -2226,9 +2226,30 @@ function copyPageLink() {
   <h2 id="pricing-h2">Start at $9.99. Upgrade when it earns it.</h2>
   <p class="lead">No lock-in. Cancel any time. Annual plans save up to 3 months.</p>
 
+  <!-- ── FOUNDING 100 BANNER ──
+       Visible while we're under 100 paying subs. Anchors urgency
+       (price lift is concrete, not hypothetical), rewards early
+       believers, and gives every founding sub a 60-day Premium trial
+       so they see the whole product even on Basic. -->
+  <div id="founding-banner" style="background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);color:#fff;border-radius:8px;padding:22px 28px;margin:0 0 24px;font-family:'Helvetica Neue',Arial,sans-serif;max-width:720px;margin-left:auto;margin-right:auto;text-align:left;border:1px solid #2d5a35;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+      <span style="background:#fbbf24;color:#0d1f10;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:12px;">Founding 100</span>
+      <span style="font-size:11px;color:#9aaa9d;letter-spacing:.05em;">Early-believer pricing · permanent</span>
+    </div>
+    <div style="font-size:18px;font-weight:800;color:#fff;line-height:1.4;margin-bottom:8px;">
+      First 100 subscribers lock today's pricing — and get 60 days of Premium free.
+    </div>
+    <div style="font-size:13px;color:#cfd8d0;line-height:1.7;">
+      Once we hit 100 paid subscribers, Investor moves to <b>$33.99/mo</b> and Premium to <b>$63.99/mo</b>. Founding members stay at today's pricing <b>for the life of their account</b> — even if features are added later. On top of that, every founding member (any tier) gets a <b>60-day full Premium trial</b> so you can use the Trade Journal, pre-market brief, and weekly top-3 picks before deciding which tier to settle on long-term.
+    </div>
+    <div style="font-size:11px;color:#9aaa9d;margin-top:10px;letter-spacing:.03em;">No catch · No auto-charge for the upgrade · Cancel any time.</div>
+  </div>
+
   <div style="background:#f5f9f5;border:1px solid #d4e8d4;border-radius:6px;padding:20px 28px;margin:0 0 32px;font-family:'Helvetica Neue',Arial,sans-serif;max-width:640px;margin-left:auto;margin-right:auto;text-align:center;">
     <p style="font-size:14px;color:#444;line-height:1.8;margin:0;">
-      Less than a large Starbucks order. Less than Netflix. Less than Disney+.<br>
+      <b>Basic</b> — try the platform for less than a Starbucks order.<br>
+      <b>Investor</b> — less than Netflix. Less than a Spotify Family plan. Real-time signals + downstream tickers.<br>
+      <b>Premium</b> — less than a gym membership. Trade Journal, pre-market brief, weekly top-3 picks.<br>
       <span style="color:#888;font-size:13px;">Those give you entertainment. This gives you the same research institutional investors pay thousands for — the moment it matters.</span>
     </p>
   </div>
