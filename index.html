@@ -268,8 +268,8 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
     <a href="#sample">Sample signal</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#pricing">Pricing</a>
-    <a href="https://dragonfly-webhooks.onrender.com/intelligence" style="color:#4ade80;font-weight:700;border:1px solid rgba(74,222,128,.25);border-radius:4px;padding:4px 10px;font-size:12px;" title="The Distillery — visual data analytics">&#9830; The Distillery</a>
-    <a href="https://dragonfly-webhooks.onrender.com/signin" style="color:#9ca;font-size:13px;" title="Subscriber login">My Account</a>
+    <a href="https://tracker.officialdragonflysystems.com/intelligence" style="color:#4ade80;font-weight:700;border:1px solid rgba(74,222,128,.25);border-radius:4px;padding:4px 10px;font-size:12px;" title="The Distillery — visual data analytics">&#9830; The Distillery</a>
+    <a href="https://tracker.officialdragonflysystems.com/signin" style="color:#9ca;font-size:13px;" title="Subscriber login">My Account</a>
     <select id="currency-sel" onchange="setCurrency(this.value)" title="Display prices in your local currency">
       <option value="USD">$ USD</option>
       <option value="CAD">CA$ CAD</option>
@@ -996,7 +996,7 @@ function toggleTheme() {
 </script>
 <script>
 (function(){
-  var RENDER_API = 'https://dragonfly-webhooks.onrender.com/api/market-data';
+  var RENDER_API = 'https://tracker.officialdragonflysystems.com/api/market-data';
   var BINANCE    = 'https://api.binance.com/api/v3/ticker/24hr?symbol=';
   var FNG_API    = 'https://api.alternative.me/fng/';
 
@@ -2323,7 +2323,7 @@ function copyPageLink() {
 
 <script>
 (function(){
-  var FEED = 'https://dragonfly-webhooks.onrender.com/api/feed';
+  var FEED = 'https://tracker.officialdragonflysystems.com/api/feed';
   function timeAgo(dateStr) {
     var d = new Date(dateStr);
     var diff = (Date.now() - d.getTime()) / 1000;
@@ -2831,7 +2831,7 @@ renderPlanPrices();
       msg.style.display = 'block';
       return;
     }
-    window.location.href = 'https://dragonfly-webhooks.onrender.com/ref/' + encodeURIComponent(code);
+    window.location.href = 'https://tracker.officialdragonflysystems.com/ref/' + encodeURIComponent(code);
   }
   document.getElementById('ref-code-input').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') applyRefCode();
@@ -2901,9 +2901,9 @@ renderPlanPrices();
   <p style="margin-top:12px;">
     &copy; 2026 Dragonfly Systems &nbsp;&bull;&nbsp;
     <a href="https://github.com/OfficialDragonflySystems">GitHub</a> &nbsp;&bull;&nbsp;
-    <a href="https://dragonfly-webhooks.onrender.com/privacy">Privacy Policy</a> &nbsp;&bull;&nbsp;
-    <a href="https://dragonfly-webhooks.onrender.com/terms">Terms of Service</a> &nbsp;&bull;&nbsp;
-    <a href="https://dragonfly-webhooks.onrender.com/risk-disclosure">Risk Disclosure</a>
+    <a href="https://tracker.officialdragonflysystems.com/privacy">Privacy Policy</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/terms">Terms of Service</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/risk-disclosure">Risk Disclosure</a>
   </p>
 </footer>
 
@@ -3005,7 +3005,7 @@ renderPlanPrices();
     }
     var btn = document.getElementById('ep-btn');
     btn.textContent = 'Sending…'; btn.disabled = true;
-    fetch('https://dragonfly-webhooks.onrender.com/api/lead-capture', {
+    fetch('https://tracker.officialdragonflysystems.com/api/lead-capture', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: em, source: 'homepage_popup_' + _activeVariant.toLowerCase()})
@@ -3049,7 +3049,7 @@ renderPlanPrices();
 </script>
 <script>
 (function(){
-  fetch('https://dragonfly-webhooks.onrender.com/api/stats')
+  fetch('https://tracker.officialdragonflysystems.com/api/stats')
     .then(function(r){ return r.json(); })
     .then(function(d){
       var el = document.getElementById('sub-count-line');
@@ -3065,7 +3065,7 @@ renderPlanPrices();
 
 <script>
 (function(){
-  var _API = 'https://dragonfly-webhooks.onrender.com';
+  var _API = 'https://tracker.officialdragonflysystems.com';
   function _reportErr(msg, src) {
     try {
       navigator.sendBeacon(_API + '/api/log-error', JSON.stringify({message: String(msg).slice(0,400), source: src||'index'}));
