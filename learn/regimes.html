@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How market regimes work — Dragonfly Systems · Learn</title>
+<meta name="description" content="TRENDING, CHOPPY, CRISIS — what each market regime means, how VIX defines them, and why the same strategy can win in one and lose in another.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  .page{max-width:760px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:normal;line-height:1.15;margin-bottom:14px;color:#fff;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:36px;}
+
+  .article p{font-size:15.5px;color:var(--text);margin-bottom:18px;}
+  .article p:first-of-type{font-size:17px;color:#cfd8d0;}
+  .article h2{font-family:Georgia,serif;font-size:22px;font-weight:normal;color:#fff;margin:32px 0 14px;line-height:1.3;}
+  .article ul{margin:14px 0 18px 22px;}
+  .article li{font-size:15px;color:var(--text);margin-bottom:8px;}
+  .article em{color:#cfd8d0;}
+  .article strong{color:#fff;}
+
+  .regimes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0 26px;}
+  .regime{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;border-top:3px solid;}
+  .regime.trending{border-top-color:#4ade80;}
+  .regime.choppy  {border-top-color:#fbbf24;}
+  .regime.crisis  {border-top-color:#f87171;}
+  .regime h3{font-family:Georgia,serif;font-size:18px;font-weight:normal;line-height:1.3;color:#fff;margin-bottom:8px;}
+  .regime .vix-band{font-size:11px;color:var(--muted);margin-bottom:12px;font-family:'SF Mono',Menlo,Consolas,monospace;}
+  .regime p{font-size:13.5px;color:#cfd8d0;line-height:1.6;margin-bottom:10px;}
+  .regime p:last-child{margin-bottom:0;}
+  .regime .mood{font-size:11px;color:var(--muted);font-style:italic;margin-top:8px;}
+
+  .callout{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--lime);border-radius:7px;padding:18px 22px;margin:24px 0;}
+  .callout p{font-size:14px;color:var(--muted);margin:0;}
+  .callout strong{color:#fff;}
+
+  .example{background:rgba(0,0,0,.32);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:22px 0;}
+  .example .tag{display:inline-block;background:rgba(34,211,238,.14);color:#22d3ee;border:1px solid rgba(34,211,238,.35);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .example p{font-size:14px;color:#cfd8d0;margin-bottom:8px;}
+  .example p:last-child{margin-bottom:0;}
+
+  .next{margin-top:48px;padding:22px 24px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;}
+  .next .tag{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .next h3{font-size:14px;color:#fff;margin-bottom:8px;}
+  .next p{font-size:13.5px;color:#cfd8d0;margin-bottom:14px;}
+  .next a{display:inline-block;padding:9px 18px;background:var(--green);color:#fff;border-radius:6px;font-size:13px;font-weight:700;}
+
+  footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:60px;}
+  footer a{color:var(--lime);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Systems</a>
+  <a href="index.html" class="back">&larr; all articles</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">Concept · The Lens</div>
+  <h1>How market regimes work.</h1>
+  <div class="meta">~7 min read · Foundational</div>
+
+  <div class="article">
+    <p>A <strong>market regime</strong> is the market's current personality. The same strategy that prints money in one regime can lose for an entire year in another — not because the strategy is broken, but because it's running in the wrong environment. Regime awareness is the single most underappreciated lever in investing.</p>
+
+    <p>Most retail investors operate on a single mental model: "buy good companies." That works in some regimes and fails in others. The data Dragonfly tracks — and that institutions have tracked for decades — shows three distinct operating environments, each demanding a different posture.</p>
+
+    <h2>The three regimes</h2>
+
+    <p>Dragonfly classifies the market by reading <strong>VIX</strong> — the implied volatility of the S&amp;P 500, often called the "fear gauge." VIX rises when traders are willing to pay more for downside protection, falls when complacency sets in. It's a real-time temperature reading of risk appetite.</p>
+
+    <div class="regimes">
+      <div class="regime trending">
+        <h3>Trending</h3>
+        <div class="vix-band">VIX &lt; 16</div>
+        <p>Calm market. Directional moves stick. Insider buying signals get rewarded; convergent catalysts get followed through. Capital is willing to commit. Position sizes can be aggressive.</p>
+        <p class="mood">The market is paying attention.</p>
+      </div>
+      <div class="regime choppy">
+        <h3>Choppy</h3>
+        <div class="vix-band">VIX 16 – 25</div>
+        <p>Sideways or whipsaw market. Strong news still happens but it gets absorbed within days. Risk-on / risk-off flips daily. Defensive sizing; only the highest-conviction signals get taken. Most strategies are flat at best.</p>
+        <p class="mood">The market is distracted.</p>
+      </div>
+      <div class="regime crisis">
+        <h3>Crisis</h3>
+        <div class="vix-band">VIX &gt; 25</div>
+        <p>Forced-selling market. Fundamental analysis stops working — everyone is selling everything for liquidity reasons. Even good companies fall hard. Wait it out, or pick from the rubble afterward. Position sizes minimal.</p>
+        <p class="mood">The market is panicking.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Why VIX as the gauge?</strong> Because it's forward-looking. VIX is computed from the prices of S&amp;P 500 options — it's what traders are <em>paying</em> for protection right now, not a backward-looking volatility measure. When VIX spikes, it tells you what other traders are bracing for, not what already happened.</p>
+    </div>
+
+    <h2>The same news, three different outcomes</h2>
+
+    <p>Imagine a small-cap mining company announces a positive drill result. The same announcement, in three different regimes:</p>
+
+    <ul>
+      <li><strong>TRENDING</strong>: stock gaps up on the open, holds the gain through the week, attracts follow-on coverage. New highs by month-end. The thesis gets <em>credited</em> by the market.</li>
+      <li><strong>CHOPPY</strong>: stock gaps up at the open, fades by close, drifts sideways for weeks. The catalyst is real, but capital is hedged elsewhere. The market <em>acknowledges and ignores</em>.</li>
+      <li><strong>CRISIS</strong>: stock might gap up briefly but then sells off with everything else. Forced liquidation overwhelms fundamentals. The catalyst is <em>noise against panic</em>.</li>
+    </ul>
+
+    <p>Same news. Same fundamentals. Three different price paths. <em>That's regime mechanics.</em></p>
+
+    <h2>Hysteresis: the boundary problem</h2>
+
+    <p>If you classify the regime by reading VIX once and applying a hard cutoff at 16 or 25, you get whipsaw: VIX bobs across 16.5 a few times a day and the regime label flips constantly. That's useless. Real regime classification needs <strong>hysteresis</strong> — a deliberate dead band around each boundary so the regime only changes when VIX clearly crosses it.</p>
+
+    <p>Dragonfly's classifier uses a 1.0-point dead band:</p>
+    <ul>
+      <li>TRENDING → CHOPPY requires VIX ≥ 17.0 (not 16.5)</li>
+      <li>CHOPPY → TRENDING requires VIX &lt; 16.0</li>
+      <li>... → CRISIS requires VIX &gt; 25.5</li>
+      <li>CRISIS → CHOPPY requires VIX ≤ 24.5</li>
+    </ul>
+    <p>Plus <em>persistence</em>: the new regime has to hold for three consecutive 30-minute checks (90 minutes of clear data) before the regime label changes and subscribers get alerted. Without these guardrails, the regime indicator would be too noisy to act on.</p>
+
+    <h2>What this means for your decisions</h2>
+
+    <p>You don't need to memorize the boundaries. You need to internalize the framing:</p>
+
+    <ul>
+      <li>When VIX is low and the market is calm, <strong>your conviction can size up</strong>. New ideas get a real chance. Catalysts get rewarded.</li>
+      <li>When VIX is in the middle band, <strong>be selective</strong>. Only the cleanest convergent setups deserve capital. Most signals will fail to follow through — that's the regime, not the signal.</li>
+      <li>When VIX is high, <strong>preserve capital, watch, and shop the wreckage</strong>. Crisis regimes end. The recovery is where multi-year returns get made by people who had dry powder.</li>
+    </ul>
+
+    <div class="example">
+      <span class="tag">Worked example · March 2020</span>
+      <p>VIX hit 82 in March 2020 — the highest reading in history outside the 2008 financial crisis. Every stock fell, regardless of fundamentals. People who tried to "buy the dip" on March 12 got crushed on March 16. The crisis regime kept going.</p>
+      <p>The investors who made multi-year returns from that period weren't the heroes who timed the bottom — nobody timed it. They were the ones with cash on hand who started buying systematically from late March through May, accepting that they wouldn't get the exact low but would get something close enough. The regime broke around late April when VIX dropped back under 30. From there, every quality name was a multi-bagger over the next 18 months.</p>
+      <p>That's the actual lesson of regimes: most of the time, you operate normally. When the regime flips to crisis, you stop trying to be clever and just <em>have capital</em> when the regime flips back. Patience in the wrong regime is worth more than skill in the right one.</p>
+    </div>
+
+    <h2>What's on the dashboard</h2>
+
+    <p>Dragonfly displays the current regime at the top of every dashboard view. When the regime changes, Investor and Premium subscribers get an email — but only after the 90-minute persistence check confirms it's not whipsaw. You should rarely see a regime alert. When you do, it matters.</p>
+  </div>
+
+  <div class="next">
+    <span class="tag">Next concept</span>
+    <h3>Reading a conviction score</h3>
+    <p>Coming soon. The 0-100 conviction score, the six components that make it up, and how to weigh them when deciding whether to take a position. Walks through a real signal card line by line.</p>
+    <a href="index.html">Back to Learn &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Systems</a> &middot; <a href="index.html">All Learn articles</a> &middot; Built on signals. Not opinions.
+</footer>
+
+</body>
+</html>

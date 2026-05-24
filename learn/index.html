@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn — Dragonfly Systems</title>
+<meta name="description" content="Plain-English walkthroughs of every concept Dragonfly uses — catalysts, market regimes, conviction scoring, the math behind compounding, real inflation. Built for investors at every level.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  .page{max-width:980px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(30px,4.4vw,46px);font-weight:normal;line-height:1.15;margin-bottom:16px;}
+  .lead{font-size:16px;color:var(--muted);max-width:740px;margin-bottom:48px;line-height:1.7;}
+
+  .section-h{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px;transition:border-color .15s,transform .15s;display:flex;flex-direction:column;}
+  .card:hover{border-color:var(--lime);transform:translateY(-2px);}
+  .card a{color:inherit;text-decoration:none;}
+  .card .tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:10px;margin-bottom:10px;}
+  .tag-concept{background:rgba(74,222,128,.14);color:var(--lime);border:1px solid rgba(74,222,128,.35);}
+  .tag-tool{background:rgba(34,211,238,.14);color:#22d3ee;border:1px solid rgba(34,211,238,.35);}
+  .tag-soon{background:rgba(156,202,156,.1);color:var(--muted);border:1px solid rgba(156,202,156,.3);}
+  .card h2{font-family:Georgia,serif;font-size:18px;font-weight:normal;line-height:1.3;color:#fff;margin-bottom:8px;}
+  .card p{font-size:13px;color:var(--muted);line-height:1.6;flex:1;}
+  .card .arrow{display:inline-block;color:var(--lime);font-size:12px;font-weight:700;margin-top:12px;}
+  .card.soon{opacity:.55;pointer-events:none;cursor:default;}
+  .card.soon:hover{transform:none;border-color:var(--border);}
+
+  .promise{background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;padding:24px 28px;margin-top:48px;}
+  .promise .tag{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:12px;}
+  .promise p{font-size:14px;color:#cfd8d0;line-height:1.75;}
+
+  footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:60px;}
+  footer a{color:var(--lime);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Systems</a>
+  <a href="/" class="back">&larr; back to homepage</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">The Lens · Educational</div>
+  <h1>Learn the concepts. Use the tools.</h1>
+  <p class="lead">Every term Dragonfly uses, explained in plain English by people who remember what it was like to not know what they meant. No jargon left untranslated. No assumed knowledge. Walk through one a week and within a few months you'll read a Bloomberg headline the way a portfolio manager does.</p>
+
+  <div class="section-h">Concepts</div>
+  <div class="grid">
+
+    <a href="catalysts.html" class="card">
+      <span class="tag tag-concept">Concept</span>
+      <h2>What is a catalyst?</h2>
+      <p>Why some news moves stocks and most news doesn't. The difference between a real catalyst and noise — and why convergence is the actual signal.</p>
+      <span class="arrow">Read →</span>
+    </a>
+
+    <a href="regimes.html" class="card">
+      <span class="tag tag-concept">Concept</span>
+      <h2>How market regimes work</h2>
+      <p>TRENDING, CHOPPY, CRISIS — what each one means, how VIX defines them, and why the same strategy can win in one and lose in another. The single most underappreciated lever in investing.</p>
+      <span class="arrow">Read →</span>
+    </a>
+
+    <div class="card soon">
+      <span class="tag tag-soon">Coming soon</span>
+      <h2>Reading a conviction score</h2>
+      <p>Walk through a real Dragonfly signal card from headline to thesis to the 6-component breakdown — what each piece means and how to weigh them when deciding whether to take a position.</p>
+    </div>
+
+    <div class="card soon">
+      <span class="tag tag-soon">Coming soon</span>
+      <h2>Buy &amp; hold vs exit strategies</h2>
+      <p>We backtested every "smart exit" you can imagine — trailing stops, profit targets, time-based exits. The data was unambiguous. Here's what we found, and why we don't try to time exits anymore.</p>
+    </div>
+
+    <div class="card soon">
+      <span class="tag tag-soon">Coming soon</span>
+      <h2>Real inflation vs the official 3%</h2>
+      <p>What CPI actually measures (and what it leaves out), what alternative methodologies show, and why a 7% return at "official" inflation isn't the same as a 7% return at real-life inflation. Sourced.</p>
+    </div>
+
+    <div class="card soon">
+      <span class="tag tag-soon">Coming soon</span>
+      <h2>Decade-by-decade portfolio comparison</h2>
+      <p>What a 60/40 portfolio actually did from 1970–1980, 1980–1990, all the way to today. Bond returns. Real returns. The "lost decade" that wasn't really lost. Backtested with primary-source data.</p>
+    </div>
+  </div>
+
+  <div class="section-h">Interactive tools</div>
+  <div class="grid">
+
+    <a href="../cost_calculator.html" class="card">
+      <span class="tag tag-tool">Interactive</span>
+      <h2>What a subscription costs you</h2>
+      <p>Move the sliders. See what any recurring subscription (Netflix, Spotify, Dragonfly, anything) costs in opportunity-compounded dollars over 10/20/30 years. The math most pricing pages don't show.</p>
+      <span class="arrow">Open tool →</span>
+    </a>
+
+    <a href="../compounding_visualizer.html" class="card">
+      <span class="tag tag-tool">Interactive</span>
+      <h2>Compounding, visualized</h2>
+      <p>Watch the curve. Notice how the last decade of growth dwarfs the first four. The most important math in personal finance, finally shown instead of just described.</p>
+      <span class="arrow">Open tool →</span>
+    </a>
+
+  </div>
+
+  <div class="promise">
+    <span class="tag">The promise</span>
+    <p>This section will grow. Every concept Dragonfly references on a signal card, in an email, or on the dashboard gets its own plain-English article here. If you read something on the platform and don't know what it means, that's a bug — tell us. We'll write the explainer.</p>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Systems</a> &middot; Built on signals. Not opinions.
+</footer>
+
+</body>
+</html>
