@@ -143,8 +143,8 @@ h2 { font-size: clamp(22px, 3vw, 32px); font-weight: normal; margin-bottom: 16px
 
 /* ── FOOTER ── */
 footer { background: var(--dark); padding: 40px 32px; text-align: center; }
-footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #4a6a50; line-height: 1.8; }
-footer a { color: #6a9a70; text-decoration: none; }
+footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #9cc0a3; line-height: 1.8; }
+footer a { color: #4ade80; text-decoration: none; }
 footer a:hover { color: var(--lime); }
 
 /* Nav: drop the in-page section jump-links once they'd overflow the row —
@@ -199,10 +199,12 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
 #ep-email:focus { border-color:#2d6a4f;box-shadow:0 0 0 2px rgba(45,106,79,.15); }
 #ep-btn { width:100%;padding:13px;background:#2d6a4f;color:#4ade80;font-weight:700;font-size:15px;border:none;border-radius:5px;cursor:pointer;font-family:'Helvetica Neue',Arial,sans-serif; }
 #ep-btn:hover { background:#3a8060; }
-.ep-close { position:absolute;top:14px;right:18px;background:none;border:none;font-size:22px;color:#ccc;cursor:pointer;line-height:1; }
-.ep-close:hover { color:#888; }
-.ep-skip { display:block;margin-top:10px;font-size:12px;color:#ccc;cursor:pointer;font-family:'Helvetica Neue',Arial,sans-serif;text-decoration:underline; }
-.ep-fine { font-size:11px;color:#ccc;margin-top:8px;font-family:'Helvetica Neue',Arial,sans-serif; }
+.ep-close { position:absolute;top:14px;right:18px;background:none;border:none;font-size:22px;color:#888;cursor:pointer;line-height:1; }
+.ep-close:hover { color:#444; }
+/* Skip + fine-print were #ccc on #fff (~1.6:1 — fails every WCAG level).
+   Bumped to #666 on white (~5.7:1, AA). */
+.ep-skip { display:block;margin-top:10px;font-size:12px;color:#666;cursor:pointer;font-family:'Helvetica Neue',Arial,sans-serif;text-decoration:underline; }
+.ep-fine { font-size:11px;color:#666;margin-top:8px;font-family:'Helvetica Neue',Arial,sans-serif; }
 
 /* ── CHART SECTION ── */
 .chart-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:32px; }
@@ -234,10 +236,14 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
   font-family:'Helvetica Neue',Arial,sans-serif;
 }
 #evt-tip .tt-title { font-size:12px;font-weight:700;color:#4ade80;margin-bottom:9px;line-height:1.3; }
-#evt-tip .tt-row { font-size:11px;color:#8ab890;line-height:1.65;margin-bottom:3px; }
+/* Body rows lifted from #8ab890 → #b8d4be (~8.5:1 on #0c1d0f) so the
+   tooltip text reads cleanly without straining. */
+#evt-tip .tt-row { font-size:11px;color:#b8d4be;line-height:1.65;margin-bottom:3px; }
 #evt-tip .tt-row:last-child { margin-bottom:0; }
-#evt-tip .tt-row b { color:#c8e6c9; }
-#evt-tip .tt-row.tt-note { margin-top:7px;padding-top:7px;border-top:1px solid #1a3a1f;color:#4a6a50;font-size:10.5px; }
+#evt-tip .tt-row b { color:#e8f5ea; }
+/* Footer-note row was #4a6a50 (~3.5:1) — under WCAG AA. Lifted to
+   #9cc0a3 (~6.5:1) and font-size 11px to match the rest of the popup. */
+#evt-tip .tt-row.tt-note { margin-top:7px;padding-top:7px;border-top:1px solid #1a3a1f;color:#9cc0a3;font-size:11px; }
 
 /* ── SHARE BUTTONS ── */
 .share-row { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px; }
