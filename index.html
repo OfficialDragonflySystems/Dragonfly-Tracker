@@ -2186,9 +2186,24 @@ function toggleTheme() {
         <span style="font-size:11px;color:#7ec98a;letter-spacing:.05em;">Ed25519-signed at publish &middot; multi-chain anchored at 50 subs</span>
       </div>
       <h3 style="color:#fff;font-size:22px;font-weight:800;margin:0 0 10px;line-height:1.35;">The record we'll be judged on starts now.</h3>
-      <p style="color:#cfd8d0;font-size:14px;line-height:1.7;margin:0 0 22px;">
+      <p style="color:#cfd8d0;font-size:14px;line-height:1.7;margin:0 0 18px;">
         Every Dragonfly signal published from <strong>May 17, 2026</strong> onward is signed with our Ed25519 private key at publish time. Once we cross 50 paying subscribers we fund the chain wallets, and from that point every signal's hash is permanently anchored to Polygon, Base, and Solana &mdash; plus SUI once its Python SDK stabilizes &mdash; within minutes of publish. No edits, no backfills, no cherry-picks. Future you can verify every single one.
       </p>
+
+      <!-- Plain-English explainer — drops the jargon for readers who haven't
+           seen "Ed25519" or "on-chain anchoring" before. The point of the
+           tech isn't the tech; it's the fact that we can't quietly delete
+           losers or backdate winners. -->
+      <details style="background:rgba(0,0,0,.32);border:1px solid rgba(74,222,128,.18);border-radius:8px;padding:12px 16px;margin-bottom:22px;">
+        <summary style="cursor:pointer;color:#4ade80;font-size:12px;font-weight:700;letter-spacing:.04em;list-style:none;display:flex;align-items:center;gap:7px;">
+          <span style="font-size:14px;">&#9656;</span> What does that actually mean? (plain English)
+        </summary>
+        <div style="color:#cfd8d0;font-size:13px;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(74,222,128,.15);">
+          <p style="margin:0 0 10px;">Every time we publish a signal, our system generates a unique digital fingerprint of it &mdash; think of it like a wax seal on a letter. If anyone (including us) tries to edit the signal afterward, the seal breaks. Anyone can check.</p>
+          <p style="margin:0 0 10px;">Once we cross 50 paying subscribers, each fingerprint also gets permanently recorded onto public blockchains (Polygon, Base, Solana). That means the record exists in multiple places at once and survives even if our website disappears.</p>
+          <p style="margin:0;color:#a8c9ad;font-style:italic;">The point isn't the technology. The point is that we can't quietly delete losers or backdate winners &mdash; and you don't have to take our word for it.</p>
+        </div>
+      </details>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:22px;">
         <div style="background:rgba(0,0,0,.3);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:14px;text-align:center;">
@@ -3002,7 +3017,7 @@ renderPlanPrices();
     D: {
       emoji:    '&#127987;',
       title:    'Less than Disney+. Built to be verifiable.',
-      sub:      'Disney+ is ~$14/mo for entertainment. This is $9.99/mo for research that\'s cryptographically signed at publish &mdash; so the track record we build is one anyone can independently verify.',
+      sub:      'Disney+ is ~$14/mo for entertainment. This is $9.99/mo for research &mdash; and we don\'t expect you to just trust our past results (we wouldn\'t either). Every signal we publish gets a tamper-proof fingerprint the moment it\'s posted, so we can\'t quietly edit it later. Wins and losses both, on the record, forever. Judge us going forward.',
       p1val:    '3,000+', p1lbl: 'tickers monitored',
       p2val:    'May 2026', p2lbl: 'live track record begins',
       btn:      'Start for $9.99/mo &rarr;',
