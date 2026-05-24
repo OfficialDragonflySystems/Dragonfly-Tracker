@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decade-by-decade portfolio comparison — Dragonfly Systems · Learn</title>
+<meta name="description" content="What a 60/40 portfolio actually did from 1970–today, decade by decade. Real and nominal returns. The 'lost decade' that wasn't really lost. The decade everyone forgets. What it means for now.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  .page{max-width:780px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:normal;line-height:1.15;margin-bottom:14px;color:#fff;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:36px;}
+
+  .article p{font-size:15.5px;color:var(--text);margin-bottom:18px;}
+  .article p:first-of-type{font-size:17px;color:#cfd8d0;}
+  .article h2{font-family:Georgia,serif;font-size:22px;font-weight:normal;color:#fff;margin:32px 0 14px;line-height:1.3;}
+  .article h3{font-size:14px;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin:24px 0 10px;}
+  .article ul, .article ol{margin:14px 0 18px 22px;}
+  .article li{font-size:15px;color:var(--text);margin-bottom:8px;}
+  .article em{color:#cfd8d0;}
+  .article strong{color:#fff;}
+  .article code{font-family:'SF Mono',Menlo,Consolas,monospace;background:rgba(0,0,0,.4);color:#cfd8d0;padding:1px 6px;border-radius:3px;font-size:13px;}
+
+  .decade-table{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 0;margin:24px 0;overflow-x:auto;}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px;}
+  th{text-align:left;padding:10px 14px;background:rgba(0,0,0,.32);color:var(--muted);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border);}
+  th:first-child{padding-left:22px;}
+  th.num{text-align:right;}
+  td{padding:11px 14px;border-bottom:1px solid var(--border);}
+  td:first-child{padding-left:22px;font-family:Georgia,serif;font-weight:600;color:#fff;font-size:14px;}
+  tr:last-child td{border-bottom:none;}
+  td.num{text-align:right;font-family:'SF Mono',Menlo,Consolas,monospace;font-weight:700;}
+  td.pos{color:#4ade80;}
+  td.neg{color:#f87171;}
+  td.flat{color:var(--gold);}
+  td.note{font-family:'Helvetica Neue',Arial,sans-serif;font-weight:400;color:var(--muted);font-size:12.5px;}
+
+  .callout{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--lime);border-radius:7px;padding:18px 22px;margin:24px 0;}
+  .callout p{font-size:14px;color:var(--muted);margin:0;}
+  .callout strong{color:#fff;}
+
+  .example{background:rgba(0,0,0,.32);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:22px 0;}
+  .example .tag{display:inline-block;background:rgba(34,211,238,.14);color:#22d3ee;border:1px solid rgba(34,211,238,.35);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .example p{font-size:14px;color:#cfd8d0;margin-bottom:8px;}
+  .example p:last-child{margin-bottom:0;}
+
+  .next{margin-top:48px;padding:22px 24px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;}
+  .next .tag{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .next h3{font-size:14px;color:#fff;margin-bottom:8px;}
+  .next p{font-size:13.5px;color:#cfd8d0;margin-bottom:14px;}
+  .next a{display:inline-block;padding:9px 18px;background:var(--green);color:#fff;border-radius:6px;font-size:13px;font-weight:700;}
+
+  .sources{font-size:12px;color:var(--muted);line-height:1.7;margin-top:30px;padding-top:18px;border-top:1px solid var(--border);}
+  .sources strong{color:#dff0df;}
+
+  footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:60px;}
+  footer a{color:var(--lime);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Systems</a>
+  <a href="index.html" class="back">&larr; all articles</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">Concept · The Lens</div>
+  <h1>Decade-by-decade portfolio comparison.</h1>
+  <div class="meta">~8 min read · Historical context</div>
+
+  <div class="article">
+    <p>Every investor's experience is shaped by the decade they started investing in. The 1980s grew up "buy stocks, you can't lose." The 2000s grew up "stocks are dead, just hold cash." Both are wrong as general principles and right as descriptions of <em>their</em> decade. The data shows that long-run returns are remarkably consistent — but the variance between decades is enormous, and the regime you start in shapes what feels normal for the rest of your investing life.</p>
+
+    <p>This article walks through a classic <strong>60/40 portfolio</strong> (60% S&amp;P 500, 40% 10-year Treasuries, rebalanced annually) decade by decade from 1970 forward. Same allocation, same rules, six different worlds.</p>
+
+    <h2>The big table</h2>
+
+    <p>Approximate annualized total returns by decade. Equity numbers are S&amp;P 500 with dividends reinvested; bond numbers are the 10-year US Treasury total return; inflation is BLS CPI (with the caveats from <a href="inflation.html">the inflation article</a>). These are well-documented in Damodaran's NYU dataset and the Bogle / Bernstein references — round numbers, not third-decimal-precise.</p>
+
+    <div class="decade-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Decade</th>
+            <th class="num">Stocks</th>
+            <th class="num">Bonds</th>
+            <th class="num">60/40 nominal</th>
+            <th class="num">Inflation</th>
+            <th class="num">60/40 real</th>
+            <th>Defining condition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1970s</td>
+            <td class="num pos">+5.9%</td>
+            <td class="num pos">+5.5%</td>
+            <td class="num pos">+5.8%</td>
+            <td class="num neg">+7.4%</td>
+            <td class="num neg">−1.5%</td>
+            <td class="note">Stagflation, oil shocks, twin recessions</td>
+          </tr>
+          <tr>
+            <td>1980s</td>
+            <td class="num pos">+17.6%</td>
+            <td class="num pos">+12.6%</td>
+            <td class="num pos">+15.7%</td>
+            <td class="num neg">+5.1%</td>
+            <td class="num pos">+10.0%</td>
+            <td class="note">Volcker disinflation, great bull market</td>
+          </tr>
+          <tr>
+            <td>1990s</td>
+            <td class="num pos">+18.2%</td>
+            <td class="num pos">+8.0%</td>
+            <td class="num pos">+14.2%</td>
+            <td class="num neg">+3.0%</td>
+            <td class="num pos">+10.9%</td>
+            <td class="note">Tech boom + sustained low inflation</td>
+          </tr>
+          <tr>
+            <td>2000s</td>
+            <td class="num neg">−1.0%</td>
+            <td class="num pos">+6.3%</td>
+            <td class="num pos">+1.9%</td>
+            <td class="num neg">+2.6%</td>
+            <td class="num neg">−0.7%</td>
+            <td class="note">Two crashes (dot-com, GFC); "lost decade" for stocks</td>
+          </tr>
+          <tr>
+            <td>2010s</td>
+            <td class="num pos">+13.6%</td>
+            <td class="num pos">+3.8%</td>
+            <td class="num pos">+9.7%</td>
+            <td class="num neg">+1.8%</td>
+            <td class="num pos">+7.7%</td>
+            <td class="note">ZIRP, QE, longest-ever bull run</td>
+          </tr>
+          <tr>
+            <td>2020s so far</td>
+            <td class="num pos">~+12%</td>
+            <td class="num neg">~−1%</td>
+            <td class="num pos">~+7%</td>
+            <td class="num neg">~+4%</td>
+            <td class="num pos">~+3%</td>
+            <td class="note">COVID crash, AI boom, sticky inflation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Look at the column variance. The 1970s real return was <em>negative</em> for 10 straight years — your purchasing power shrank holding a balanced portfolio. The 1980s and 1990s each delivered ~10% <em>real</em> returns annually. The 2000s gave nothing in real terms — flat decade. The 2010s and 2020s have averaged ~7% real, close to the long-run mean. <strong>Same portfolio, six different outcomes.</strong></p>
+
+    <h2>The "lost decade" wasn't really lost</h2>
+
+    <p>The 2000s are the cautionary tale every investor under 40 has heard: "stocks did nothing for 10 years." That's true for the S&amp;P 500 alone — January 2000 to December 2009 the index went from ~1450 to ~1115, a -23% PRICE return before dividends. Even with dividends, total return was roughly -1% per year. Yes, the stock-only decade was lost.</p>
+
+    <p>But look at the 60/40 row: +1.9% nominal, -0.7% real. The bond half kept the diversified portfolio essentially flat in real terms. Not <em>good</em> — but not the disaster the stock-only story implies. And it was followed by the 2010s, which delivered +7.7% real annually for 10 straight years. <strong>A balanced portfolio held through the 2000s and into the 2010s ended up roughly where the historical average says it should have.</strong> Time horizon ate the lost decade for breakfast.</p>
+
+    <p>The lesson isn't "the 2000s were fine." It's: <em>any single decade can be terrible. The data justifying long-run investing requires you to hold across multiple decades.</em></p>
+
+    <div class="callout">
+      <p><strong>The corollary:</strong> if your investing horizon is genuinely 10 years or less, you cannot assume the long-run average. You might get a 1980s, you might get a 1970s. Plan for both. Position sizing should reflect the worst-decade scenario, not the long-run mean.</p>
+    </div>
+
+    <h2>The decade everyone forgets</h2>
+
+    <p>Ask any investor "what was the worst decade for stocks?" — most say the 2000s. The data says the <strong>1970s.</strong> The 2000s lost ~10% in real terms over the decade. The 1970s lost <strong>~50%</strong> in real terms for stocks (~5.9% nominal vs ~7.4% inflation × 10 years compounded).</p>
+
+    <p>Why does nobody talk about the 1970s? Because the people who lived through it as adult investors are mostly retired now, and the recovery period (the 1980s) was so good it overwrote the trauma. The 2000s feel worse because they're closer to memory and bookended by two violent crashes. But the silent purchasing-power destruction of the 1970s was historically far worse.</p>
+
+    <p>The structural cause was the same one that makes <a href="inflation.html">real inflation</a> the metric that matters: sustained 7%+ inflation eats nominal returns invisibly. Stocks weren't <em>down</em> in the 1970s — they were up nominally — but the bear market in <em>purchasing power</em> was severe. If that backdrop comes back, the experience of holding a "balanced portfolio" through it will feel very different from the experience of holding one through the 2010s.</p>
+
+    <h2>What this implies for now</h2>
+
+    <p>The 2020s so far look like a moderately above-average decade — but only halfway through. The current regime mix (sticky inflation around 3-4%, stocks delivering decent nominal returns, bonds <em>underperforming</em> as rates rose) doesn't map cleanly to any prior decade. The closest analog is probably <strong>the late 1960s</strong> — strong nominal stock returns, rising inflation, the bond market starting to break down — which led into the 1970s.</p>
+
+    <p>That isn't a prediction. Decades-ahead forecasting is a mug's game. The point is: the data tells you the <em>range</em> of plausible outcomes, not which one you'll get. A balanced portfolio held across the next decade could deliver anything from -2% real to +10% real, depending on which historical analog plays out. Both are normal.</p>
+
+    <h2>Three practical takeaways</h2>
+
+    <ol>
+      <li><strong>The long-run mean is real, but no single decade is the mean.</strong> Don't expect every year of your investing life to produce 7% real returns. Some decades will give you 10%, some will give you -2%. The mean is the average, not a forecast.</li>
+      <li><strong>Diversification is regime insurance.</strong> The 2000s would have been catastrophic for stocks-only; 60/40 made it tolerable. The 1970s would have been catastrophic for bonds-only; equities (even with negative real returns) didn't lose as much. Diversification isn't about maximizing return — it's about surviving the decade you don't see coming.</li>
+      <li><strong>Stay invested across decades.</strong> Selling at the bottom of the 2000s — when "stocks are dead" was the conventional wisdom — meant missing the 2010s. Selling at the bottom of the 1970s meant missing the 1980s. The hardest part of investing isn't picking the right thing; it's continuing to hold it through the decade where it looks like a mistake.</li>
+    </ol>
+
+    <div class="example">
+      <span class="tag">The investor's gravity test</span>
+      <p>A useful exercise: imagine you'd started investing in 1970 with $10,000 in a 60/40 portfolio, rebalanced annually, no contributions, no withdrawals. By the end of the 1970s your $10,000 is worth about $17,500 nominal — but in 1970 purchasing power, it's worth $8,600. <em>You lost real money for a decade.</em></p>
+      <p>If you sold here, you take the loss and never see the recovery. If you held, by 1990 your stake is worth ~$76,000 nominal / $25,000 in 1970 dollars — a tripling of real purchasing power. By 2000, ~$280,000 / $63,000 real. The 60/40 portfolio that "didn't work" in the 1970s turned $10,000 into 6× its real purchasing power in 30 years — IF the investor stayed.</p>
+      <p>The 1970s tested whether the investor could hold. Most couldn't. The ones who did were rewarded by the 1980s in a way that's now nearly mythic. That's the actual mechanism behind "patience is rewarded" — not divine right, but the simple fact that decades mean-revert and most people sell before the reversion.</p>
+    </div>
+
+    <div class="callout">
+      <p><strong>Bottom line:</strong> the historical record tells you what to expect from <em>multiple</em> decades, never from a single one. If your investing horizon is short, the decade matters enormously. If your horizon is long, the decade matters less because you'll experience several of them. Either way, the lesson is the same: <em>position sizing has to assume you'll get a 1970s at some point, and the discipline has to be sized to survive it.</em></p>
+    </div>
+
+    <div class="sources">
+      <strong>Sources:</strong> Aswath Damodaran's annual NYU dataset (the "Historical Returns" series at pages.stern.nyu.edu/~adamodar/) is the standard academic reference for US stock + bond returns by decade. John Bogle's <em>The Little Book of Common Sense Investing</em> and William Bernstein's <em>Four Pillars of Investing</em> walk through similar decadal comparisons with more historical context. Numbers above are rounded to typically-cited values; precision varies by source for the bond series in particular. 2020s figures are partial-decade and will update as it progresses.
+    </div>
+  </div>
+
+  <div class="next">
+    <span class="tag">The Lens</span>
+    <h3>You've read every Learn article we've published so far.</h3>
+    <p>If a concept you wanted explained isn't here, tell us — we'll write it. The Learn section grows as questions come in.</p>
+    <a href="index.html">All Learn articles &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Systems</a> &middot; <a href="index.html">All Learn articles</a> &middot; Built on signals. Not opinions.
+</footer>
+
+</body>
+</html>
