@@ -2193,10 +2193,14 @@ function toggleTheme() {
       <!-- Plain-English explainer — drops the jargon for readers who haven't
            seen "Ed25519" or "on-chain anchoring" before. The point of the
            tech isn't the tech; it's the fact that we can't quietly delete
-           losers or backdate winners. -->
+           losers or backdate winners. Header surfaces the two-word
+           shorthand ("Cryptographically Recorded") so readers learn the
+           term they can use to explain it to others. -->
       <details style="background:rgba(0,0,0,.32);border:1px solid rgba(74,222,128,.18);border-radius:8px;padding:12px 16px;margin-bottom:22px;">
-        <summary style="cursor:pointer;color:#4ade80;font-size:12px;font-weight:700;letter-spacing:.04em;list-style:none;display:flex;align-items:center;gap:7px;">
-          <span style="font-size:14px;">&#9656;</span> What does that actually mean? (plain English)
+        <summary style="cursor:pointer;color:#4ade80;font-size:12px;font-weight:700;letter-spacing:.04em;list-style:none;display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
+          <span style="font-size:14px;">&#9656;</span>
+          <span style="background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.35);padding:2px 8px;border-radius:11px;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;">Cryptographically Recorded</span>
+          <span style="color:#cfd8d0;font-weight:600;text-transform:none;letter-spacing:.02em;">&mdash; what does that actually mean? (plain English)</span>
         </summary>
         <div style="color:#cfd8d0;font-size:13px;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(74,222,128,.15);">
           <p style="margin:0 0 10px;">Every time we publish a signal, our system generates a unique digital fingerprint of it &mdash; think of it like a wax seal on a letter. If anyone (including us) tries to edit the signal afterward, the seal breaks. Anyone can check.</p>
