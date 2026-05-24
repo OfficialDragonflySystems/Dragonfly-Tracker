@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading a conviction score — Dragonfly Systems · Learn</title>
+<meta name="description" content="The 0-100 conviction score, walked through line by line. Seven components, three fragility penalties, one composite. How to read a Dragonfly signal card the way the analyst who wrote it would.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  .page{max-width:780px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:normal;line-height:1.15;margin-bottom:14px;color:#fff;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:36px;}
+  .meta .beta-tag{display:inline-block;font-size:9px;font-weight:800;color:var(--gold);background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.4);padding:2px 8px;border-radius:10px;letter-spacing:.06em;text-transform:uppercase;margin-left:6px;vertical-align:middle;}
+
+  .article p{font-size:15.5px;color:var(--text);margin-bottom:18px;}
+  .article p:first-of-type{font-size:17px;color:#cfd8d0;}
+  .article h2{font-family:Georgia,serif;font-size:22px;font-weight:normal;color:#fff;margin:32px 0 14px;line-height:1.3;}
+  .article h3{font-size:14px;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin:24px 0 10px;}
+  .article ol, .article ul{margin:14px 0 18px 22px;}
+  .article li{font-size:15px;color:var(--text);margin-bottom:8px;}
+  .article em{color:#cfd8d0;}
+  .article strong{color:#fff;}
+  .article code{font-family:'SF Mono',Menlo,Consolas,monospace;background:rgba(0,0,0,.4);color:#cfd8d0;padding:1px 6px;border-radius:3px;font-size:13px;}
+
+  .component-table{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin:24px 0;}
+  .ct-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);align-items:start;}
+  .ct-row:last-child{border-bottom:none;}
+  .ct-code{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;color:var(--lime);font-weight:700;min-width:24px;}
+  .ct-name{font-size:14px;color:#fff;font-weight:700;}
+  .ct-desc{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.55;}
+  .ct-weight{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12px;color:var(--gold);font-weight:700;text-align:right;align-self:start;white-space:nowrap;}
+
+  .penalty-table .ct-code{color:#f87171;}
+  .penalty-table .ct-weight{color:#f87171;}
+
+  .callout{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--lime);border-radius:7px;padding:18px 22px;margin:24px 0;}
+  .callout p{font-size:14px;color:var(--muted);margin:0;}
+  .callout strong{color:#fff;}
+
+  .scorecard{background:rgba(0,0,0,.32);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:24px 0;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:13px;color:#cfd8d0;line-height:1.6;white-space:pre;overflow-x:auto;}
+
+  .ranges{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:20px 0 24px;}
+  .range{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;border-top:3px solid;}
+  .range.high{border-top-color:#4ade80;}
+  .range.med {border-top-color:#fbbf24;}
+  .range.low {border-top-color:#9ca3af;}
+  .range-band{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12px;color:var(--muted);margin-bottom:4px;}
+  .range-label{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
+  .range-desc{font-size:12px;color:var(--muted);line-height:1.55;}
+
+  .next{margin-top:48px;padding:22px 24px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;}
+  .next .tag{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .next h3{font-size:14px;color:#fff;margin-bottom:8px;}
+  .next p{font-size:13.5px;color:#cfd8d0;margin-bottom:14px;}
+  .next a{display:inline-block;padding:9px 18px;background:var(--green);color:#fff;border-radius:6px;font-size:13px;font-weight:700;}
+
+  footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:60px;}
+  footer a{color:var(--lime);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Systems</a>
+  <a href="index.html" class="back">&larr; all articles</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">Concept · The Lens</div>
+  <h1>Reading a conviction score.</h1>
+  <div class="meta">~8 min read · Foundational <span class="beta-tag">Model · Beta · forward-verification</span></div>
+
+  <div class="article">
+    <p>Every Dragonfly signal carries a single number from <strong>0 to 100</strong> — the conviction score. It's the analyst's structural read on the thesis, expressed as one number so you can compare signals at a glance. This article walks through what's actually inside that number: seven components that <em>add</em> to it, three penalties that <em>subtract</em> from it, and how to read the hover-breakdown on any signal card.</p>
+
+    <p>This article is the user manual. The model itself is in <strong>Beta · forward-verification</strong> — we score every new signal at publish time and are accumulating live results to validate the model end-to-end. The math is documented; what we're proving out is the calibration.</p>
+
+    <h2>The seven components (the upside half)</h2>
+
+    <p>Each component is scored 0–10 on a fixed rubric. A higher score on a component means stronger evidence for that piece of the thesis. The components are <em>weighted</em> (some count more than others — the weights are tuned based on what historically predicts outcomes) and the weighted sum is your <strong>base conviction</strong>, in the 0–100 range.</p>
+
+    <div class="component-table">
+      <div class="ct-row">
+        <div class="ct-code">C1</div>
+        <div>
+          <div class="ct-name">Structural tailwind durability</div>
+          <div class="ct-desc">Is there a 5+ year structural tailwind behind this thesis (electrification, AI capex, energy transition, reshoring)? Single-product / single-event theses score low; multi-decade megatrend theses score high.</div>
+        </div>
+        <div class="ct-weight">24 max</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-code">C2</div>
+        <div>
+          <div class="ct-name">Primitive vs point-solution</div>
+          <div class="ct-desc">Is this company a foundational primitive (a platform, picks-and-shovels supplier, enabling layer whose TAM widens as the ecosystem grows) or a narrow point solution (one product, one use case)?</div>
+        </div>
+        <div class="ct-weight">16 max</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-code">C3</div>
+        <div>
+          <div class="ct-name">Operating leverage</div>
+          <div class="ct-desc">How much does each additional dollar of revenue drop straight to profit? High-fixed-cost businesses (semis, software, mining) get most of new revenue to the bottom line; low-leverage businesses (retail, services) don't.</div>
+        </div>
+        <div class="ct-weight">14 max</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-code">C4</div>
+        <div>
+          <div class="ct-name">Adjacency door-count</div>
+          <div class="ct-desc">How many distinct, credible adjacent markets could this company expand into from its current capabilities? Each "door" is an independent way the thesis can pay off. We count only credible doors, not fantasy.</div>
+        </div>
+        <div class="ct-weight">14 max</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-code">C5</div>
+        <div>
+          <div class="ct-name">Insider conviction</div>
+          <div class="ct-desc">Are executives and directors buying their own stock with their own money — and is the buying a cluster (multiple insiders) or a one-off? Cluster buying inside a narrow time window is one of the cleanest signals in markets.</div>
+        </div>
+        <div class="ct-weight">12 max</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-code">C6</div>
+        <div>
+          <div class="ct-name">Smart-money positioning</div>
+          <div class="ct-desc">Are institutions (13F filers, top hedge funds, sovereign wealth) accumulating or distributing? Net institutional flows over the last few quarters; quality of the holders, not just the count.</div>
+        </div>
+        <div class="ct-weight">10 max</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-code">C7</div>
+        <div>
+          <div class="ct-name">Re-rating catalyst inventory</div>
+          <div class="ct-desc">Count and quality of specific upcoming catalysts implied by the thesis — a named contract decision, a regulatory milestone, a capacity-online date, an earnings inflection. Vague "could get popular" doesn't count.</div>
+        </div>
+        <div class="ct-weight">10 max</div>
+      </div>
+    </div>
+
+    <p>The numbers on the right add to 100. That's the maximum a thesis could theoretically score on the upside half — if it maxed every component (no real thesis does — strong theses cluster in the 60–80 range, exceptional ones in the 80+ range).</p>
+
+    <h2>The three fragility penalties (the downside half)</h2>
+
+    <p>The components answer "what's good about this thesis?" The penalties answer "what could break it?" Each fragility is scored 0 to its max — and the penalty <em>subtracts directly from the conviction score</em> as a hard cap.</p>
+
+    <div class="component-table penalty-table">
+      <div class="ct-row">
+        <div class="ct-code">F1</div>
+        <div>
+          <div class="ct-name">Valuation extremity</div>
+          <div class="ct-desc">How far above sector norms is the stock trading on standard multiples? Expensive isn't automatically bad (great companies command a premium) — but extreme valuation means less margin for error and a higher probability that even good news disappoints.</div>
+        </div>
+        <div class="ct-weight">−30 max</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-code">F2</div>
+        <div>
+          <div class="ct-name">Financing dependence</div>
+          <div class="ct-desc">Does the company's REVENUE depend on customer financing — residential solar, consumer EVs, mortgage-like purchases? If yes, the business is rate-sensitive: every Fed hike shrinks the addressable market. We've seen this kill multi-year theses.</div>
+        </div>
+        <div class="ct-weight">−25 max</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-code">F3</div>
+        <div>
+          <div class="ct-name">Balance-sheet / dilution risk</div>
+          <div class="ct-desc">Is the company likely to raise capital before the thesis plays out? Burn-rate vs. cash on hand, debt due dates, history of dilutive raises. Dilution can break a thesis even when the company is otherwise executing.</div>
+        </div>
+        <div class="ct-weight">−25 max</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>How the cap works:</strong> the final score is <code>min(weighted_components, 100 − Σpenalties)</code>. So even a "perfect" 92-component thesis can be pulled down to 60 by a heavy financing-dependence penalty. The penalties model the <em>worst plausible outcome</em>, not the central case.</p>
+    </div>
+
+    <h2>The full formula in one line</h2>
+
+    <div class="scorecard">
+base   = Σ (component_score × component_weight) / 10
+cap    = 100 − (F1 + F2 + F3)
+final  = min(base, cap)
+
+# Optional later: × staleness_factor (dampens scores
+# from theses that haven't moved in &gt; 12 months)
+    </div>
+
+    <p>That's the entire model. No black box, no proprietary magic — just a weighted sum capped by fragility. The hover-breakdown on a Dragonfly signal card shows the three components that contributed the most to the final score, and any fragility penalty greater than zero.</p>
+
+    <h2>How to read a real card</h2>
+
+    <p>When you see a Dragonfly signal card, the layout from top to bottom is:</p>
+
+    <ol>
+      <li><strong>Ticker + signal strength (HIGH / MED)</strong> — the entry-level conviction grade. Decided by the analyst at publish.</li>
+      <li><strong>Conviction score (0–100) badge</strong> — colored green (80+), amber (60–79), or muted (&lt;60). Hover the badge to see the component breakdown.</li>
+      <li><strong>Sector + company name</strong> — for context and watchlist matching.</li>
+      <li><strong>Teaser sentence</strong> — the one-line "why now."</li>
+      <li><strong>Stop / target</strong> — suggested risk levels based on signal strength.</li>
+      <li><strong>Thesis paragraph (Investor+)</strong> — the actual analysis. What the convergent catalysts are; why we waited for them; what would break the thesis.</li>
+      <li><strong>Recommended strategy + rationale (Investor+)</strong> — the spotter's call on how to play it (full size at entry, scale in on pullbacks, defensive sizing only in CHOPPY regime, etc.).</li>
+    </ol>
+
+    <p>The conviction score is the headline; the breakdown is the explanation; the thesis is the substance; the strategy is the recommended play. Use them as a stack: <em>conviction tells you whether to look, thesis tells you whether to believe, strategy tells you how to execute</em>. None of them are an instruction. All of them are a lens.</p>
+
+    <h2>Reading the score bands</h2>
+
+    <div class="ranges">
+      <div class="range high">
+        <div class="range-band">80 — 100</div>
+        <div class="range-label">High conviction</div>
+        <div class="range-desc">Multiple components scoring 8+, no large fragility penalty. These are rare. Worth a serious look.</div>
+      </div>
+      <div class="range med">
+        <div class="range-band">60 — 79</div>
+        <div class="range-label">Medium conviction</div>
+        <div class="range-desc">Real thesis with some component(s) under-developed, OR a fragility penalty pulling a stronger thesis down. Read the breakdown.</div>
+      </div>
+      <div class="range low">
+        <div class="range-band">0 — 59</div>
+        <div class="range-label">Watch only</div>
+        <div class="range-desc">Worth tracking on a watchlist but not yet a publish-worthy thesis. Usually published only to document the convergence we're waiting for.</div>
+      </div>
+    </div>
+
+    <h2>The Beta caveat — taken seriously</h2>
+
+    <p>The model is rule-defined and the weights are tuned. What we don't know yet is how well the calibration holds in <em>live</em> signed-and-anchored data. Backtested calibration on historical data has the standard hindsight problem — the analyst writing the historical scores knows how the thesis turned out, even if they try to bracket it out. The only honest calibration is forward, signed at publish, on theses we haven't seen the outcome of yet.</p>
+
+    <p>That's why we anchor every published signal cryptographically (see <a href="/track_record.html">the live track record</a>) and why the conviction-score section on the homepage is the only thing labelled Beta. Once we've accumulated ~3 months of live signed data, we can evaluate whether the model's bands (high/med/low) actually map to subsequent outcome distributions. If they do, Beta comes off. If they don't, the weights get re-tuned in public.</p>
+  </div>
+
+  <div class="next">
+    <span class="tag">Next concept</span>
+    <h3>Buy &amp; hold vs exit strategies</h3>
+    <p>Coming soon. Our exhaustive backtest finding: trade management is value-destroying. Buy &amp; hold beat every clever exit strategy we tested. Why, by how much, and what we changed in response.</p>
+    <a href="index.html">Back to Learn &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Systems</a> &middot; <a href="index.html">All Learn articles</a> &middot; Built on signals. Not opinions.
+</footer>
+
+</body>
+</html>
