@@ -245,6 +245,66 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
    #9cc0a3 (~6.5:1) and font-size 11px to match the rest of the popup. */
 #evt-tip .tt-row.tt-note { margin-top:7px;padding-top:7px;border-top:1px solid #1a3a1f;color:#9cc0a3;font-size:11px; }
 
+/* ── LENS-TERM hover explainers — LENS_PRODUCT_VISION Phase 2.
+   Mark any beginner-unfriendly term with <span class="lens-term"
+   data-explainer="..."> ... </span>. Dotted underline signals "hover
+   me." Tooltip is plain English. Works on dark AND light sections
+   (the homepage mixes both). Mobile: tap-and-hold still triggers. */
+.lens-term {
+  border-bottom: 1px dotted currentColor;
+  text-decoration: none;
+  cursor: help;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.lens-term::after {
+  content: attr(data-explainer);
+  position: absolute;
+  bottom: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0d1f10;
+  color: #cfd8d0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.55;
+  padding: 9px 13px;
+  border-radius: 7px;
+  width: 270px;
+  white-space: normal;
+  border: 1px solid #2d6a4f;
+  box-shadow: 0 6px 20px rgba(0,0,0,.5);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .18s;
+  text-align: left;
+  letter-spacing: 0;
+}
+.lens-term::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #2d6a4f;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .18s;
+}
+.lens-term:hover::after,
+.lens-term:hover::before,
+.lens-term:focus::after,
+.lens-term:focus::before { opacity: 1; }
+@media (max-width: 600px) {
+  .lens-term::after { width: 220px; font-size: 11.5px; left: 0; transform: none; }
+  .lens-term::before { left: 20px; transform: none; }
+}
+
 /* ── SHARE BUTTONS ── */
 .share-row { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px; }
 .share-btn { display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:5px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:opacity .15s; }
@@ -1568,18 +1628,18 @@ function toggleTheme() {
   <!-- Educational positioning — LENS_PRODUCT_VISION §1. Inclusive second
        pillar: the data layer is for every investor willing to learn. -->
   <p style="font-style:italic;color:#a8c9ad;font-size:15px;margin-bottom:14px;max-width:680px;">Built for investors at every level — every term explained, every concept walked through, every signal shown with the math behind it.</p>
-  <p>Automated alerts when convergent catalysts fire — drill results, FDA milestones, contract awards, insider buying, government grants, institutional positioning — across critical minerals, energy & infrastructure, AI compute, biotech, and frontier resource plays. We show the data and the sources; you make the call.</p>
+  <p>Automated alerts when <span class="lens-term" data-explainer="A catalyst is a specific event that can move a stock — a drill result, an FDA approval, a government contract award, an insider buying shares. 'Convergent' means several of them point at the same company in the same week. Convergence is rare; that's why we wait for it.">convergent catalysts</span> fire — drill results, FDA milestones, contract awards, <span class="lens-term" data-explainer="When a company's own executives or directors buy its shares on the open market. They have to file the trade publicly within 2 days (SEC Form 4). Insiders sell for many reasons (taxes, diversification) but they only BUY for one: they think the stock is going up.">insider buying</span>, government grants, <span class="lens-term" data-explainer="Whether large institutional traders (hedge funds, pension funds, banks) are net long or net short via their futures contracts. Reported weekly by the CFTC. When 'smart money' tilts hard one direction, it often precedes a sector move.">institutional positioning</span> — across critical minerals, energy & infrastructure, AI compute, biotech, and frontier resource plays. We show the data and the sources; you make the call.</p>
 
   <div class="hero-stats">
     <div class="hero-stat" title="Average outperformance vs the S&P 500 over matched holding windows — portfolio return minus index return. Backtest figure; past performance does not guarantee future results.">
       <div class="num">+220%</div>
-      <div class="lbl">Average alpha over the S&amp;P 500</div>
+      <div class="lbl">Average <span class="lens-term" data-explainer="Alpha = how much you beat the market by. If the S&amp;P 500 returned +10% and your portfolio returned +25%, your alpha is +15 percentage points. Positive alpha = you outperformed; negative = you underperformed. The market is the benchmark, alpha is the score against it.">alpha</span> over the S&amp;P 500</div>
       <div style="font-size:9px;color:#3a5a40;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">+332% held &nbsp;&middot;&nbsp; +112% S&amp;P 500</div>
       <div id="sl-sys" style="display:none;margin-top:8px;background:#050d08;border:1px solid #1a3a1f;border-radius:4px;padding:10px 12px;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><div style="font-size:9px;color:#4ade80;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Best 10</div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">VRT</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+2,608%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">MOD</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+2,228%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">LITE</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,690%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">NVDA</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,353%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">PLTR</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,308%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">ASTS</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,162%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">CCJ</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+991%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">OKLO</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+842%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">GEV</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+702%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">UEC</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+644%</span></div></div><div><div style="font-size:9px;color:#f87171;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Worst 10</div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">ENPH</span><span style="color:#f87171;font-size:10px;font-weight:700;">-79.2%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">SERV</span><span style="color:#f87171;font-size:10px;font-weight:700;">-77.6%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">BRN.AX</span><span style="color:#f87171;font-size:10px;font-weight:700;">-71.8%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">AMSC</span><span style="color:#f87171;font-size:10px;font-weight:700;">-41.9%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">SLDP</span><span style="color:#f87171;font-size:10px;font-weight:700;">-40.7%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">PL</span><span style="color:#f87171;font-size:10px;font-weight:700;">-40.3%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">UFO</span><span style="color:#f87171;font-size:10px;font-weight:700;">-40.2%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">GHY.AX</span><span style="color:#f87171;font-size:10px;font-weight:700;">-40.0%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">SIL</span><span style="color:#f87171;font-size:10px;font-weight:700;">-39.8%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">RGTI</span><span style="color:#f87171;font-size:10px;font-weight:700;">-39.4%</span></div></div></div><div style="margin-top:6px;font-size:9px;color:#4a6a50;text-align:right;"><a href="track_record.html" style="color:#4a6a50;">full track record &rarr;</a></div></div>
     </div>
     <div class="hero-stat" title="Average return across all 87 tracked theses, held to thesis invalidation (buy-and-hold), over ~4.8-year average holding windows. Best: +2,608% (VRT). Worst: −89.7% (PLUG). Backtest — past performance does not guarantee future results.">
       <div class="num" style="color:#6a9a70;">+332%</div>
-      <div class="lbl">Overall return — buy-and-hold</div>
+      <div class="lbl">Overall return — <span class="lens-term" data-explainer="The simplest strategy: buy the stock when the signal fires, hold it through the entire thesis, sell when the thesis stops working. No mid-trade exits, no trimming, no stop-losses. Our research showed every &lsquo;smart exit&rsquo; strategy we tested gave back more than it saved.">buy-and-hold</span></div>
       <div style="font-size:9px;color:#3a5a40;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">Best: +2,608% (VRT) &nbsp;&middot;&nbsp; Worst: &minus;89.7% (PLUG)</div>
       <div id="sl-bh" style="display:none;margin-top:8px;background:#050d08;border:1px solid #1a3a1f;border-radius:4px;padding:10px 12px;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><div style="font-size:9px;color:#4ade80;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Best 10</div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">VRT</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+2,608%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">MOD</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+2,228%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">LITE</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,690%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">NVDA</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,353%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">PLTR</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,308%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">GOLD</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,292%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">ASTS</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+1,162%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">CCJ</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+991%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">BE</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+946%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">OKLO</span><span style="color:#4ade80;font-size:10px;font-weight:700;">+842%</span></div></div><div><div style="font-size:9px;color:#f87171;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Worst 10</div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">PLUG</span><span style="color:#f87171;font-size:10px;font-weight:700;">-89.7% <span style="color:#fbbf24;font-size:9px;">(System: +70.0%)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">NPWR</span><span style="color:#f87171;font-size:10px;font-weight:700;">-85.1%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">ENPH</span><span style="color:#f87171;font-size:10px;font-weight:700;">-79.2% <span style="color:#fbbf24;font-size:9px;">(System: -79.2%)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">QS</span><span style="color:#f87171;font-size:10px;font-weight:700;">-78.5%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">SLDP</span><span style="color:#f87171;font-size:10px;font-weight:700;">-74.3% <span style="color:#fbbf24;font-size:9px;">(System: -40.7%)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">BRN.AX</span><span style="color:#f87171;font-size:10px;font-weight:700;">-71.8%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">FLNC</span><span style="color:#f87171;font-size:10px;font-weight:700;">-61.3%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">SERV</span><span style="color:#f87171;font-size:10px;font-weight:700;">-59.7% <span style="color:#fbbf24;font-size:9px;">(System: -77.6%)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">BKSY</span><span style="color:#f87171;font-size:10px;font-weight:700;">-54.0%</span></div><div style="display:flex;justify-content:space-between;gap:8px;padding:2px 0;"><span style="color:#8ab890;font-size:10px;">ERII</span><span style="color:#f87171;font-size:10px;font-weight:700;">-43.7%</span></div></div></div><div style="margin-top:6px;font-size:9px;color:#4a6a50;text-align:right;"><a href="track_record.html" style="color:#4a6a50;">full track record &rarr;</a></div></div><div style="margin-top:5px;"><a href="javascript:void(0)" onclick="var p=document.getElementById('sl-bh');p.style.display=p.style.display==='none'?'block':'none';" style="font-size:9px;color:#4a6a50;text-decoration:none;">&#9660; best &amp; worst 10</a></div>
     </div>
@@ -1699,7 +1759,7 @@ function toggleTheme() {
         Conviction Score (0&ndash;100) with Reasoning
         <span style="display:inline-block;margin-left:6px;font-size:9px;font-weight:800;color:#fbbf24;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.4);padding:2px 7px;border-radius:9px;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;" title="The conviction model is in forward-verification — it scores every new signal at publish time and we're accumulating live results to validate the model end-to-end. Roughly 3 months of cryptographically-signed live data needed before Beta comes off.">Beta &middot; forward-verification</span>
       </h3>
-      <p style="color:#8ab890;font-size:12.5px;line-height:1.6;margin:0;">No black box. Every signal carries a 6-component breakdown: trigger pattern, COT positioning, regime alignment, technicals, volume, sector tailwind. Hover the score on any card to see <em>which three components moved the needle</em>, by how much, and why.</p>
+      <p style="color:#8ab890;font-size:12.5px;line-height:1.6;margin:0;">No black box. Every signal carries a 6-component breakdown: trigger pattern, <span class="lens-term" data-explainer="COT = Commitments of Traders. Weekly CFTC report showing whether large institutional traders are net long or net short futures contracts. 'Positioning' = which side they're leaning. Hard institutional tilt one way often precedes a sector move.">COT positioning</span>, <span class="lens-term" data-explainer="The market &lsquo;regime&rsquo; is its current operating state — TRENDING (calm, directional, position-sizing aggressive), CHOPPY (sideways, defensive), or CRISIS (high VIX, risk-off). Set by VIX with hysteresis to avoid whipsaw. Some signals only work in some regimes; alignment matters.">regime alignment</span>, technicals, volume, sector tailwind. Hover the score on any card to see <em>which three components moved the needle</em>, by how much, and why.</p>
     </div>
 
     <!-- 3. Relative Value Lens -->
@@ -2734,7 +2794,7 @@ renderPlanPrices();
         <div style="padding-top:6px;">
           <div style="font-size:11px;font-weight:700;color:#2d6a4f;text-transform:uppercase;letter-spacing:.07em;">Delivered early &mdash; live now</div>
           <div style="font-size:15px;font-weight:800;color:#0d1f0f;margin:2px 0;">Full account portal — watchlists, holdings, signal history</div>
-          <div style="font-size:13px;color:#666;line-height:1.6;">Built ahead of the 100-subscriber milestone. Your portal shows every signal ever matched to your watchlist tickers, how they've performed, your named watchlists (up to 10), your holdings tracker with optional entry prices and notes, referral progress, and notification preferences. Sign in once with a magic link — stays logged in on every device.</div>
+          <div style="font-size:13px;color:#666;line-height:1.6;">Built ahead of the 100-subscriber milestone. Your portal shows every signal ever matched to your watchlist tickers, how they've performed, your named watchlists (up to 10 lists per account — ticker capacity scales by tier: 3 / 12 / unlimited), your holdings tracker with optional entry prices and notes <span style="color:#888;font-weight:600;">(Investor+)</span>, referral progress, and notification preferences. Sign in once with a magic link — stays logged in on every device.</div>
         </div>
       </div>
 
