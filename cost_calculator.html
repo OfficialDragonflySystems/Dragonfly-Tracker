@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What a Subscription Is Really Costing You — Dragonfly Systems</title>
+<meta name="description" content="Free calculator: see what any recurring subscription is actually costing you over 10, 20, 30+ years — the inverted compounding most pricing pages don't show.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* Top nav */
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  /* Page wrap */
+  .page{max-width:880px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:normal;line-height:1.2;margin-bottom:14px;}
+  .lead{font-size:15px;color:var(--muted);max-width:680px;margin-bottom:36px;}
+
+  /* Calculator card */
+  .calc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:30px;margin-bottom:28px;}
+  .calc h2{font-family:Georgia,serif;font-size:20px;font-weight:normal;margin-bottom:24px;color:#fff;}
+  .input-row{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px;}
+  .input-group{flex:1;min-width:200px;}
+  .input-group label{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px;}
+  .input-group .val{display:block;font-family:Georgia,serif;font-size:26px;color:var(--lime);font-weight:normal;margin-bottom:6px;}
+  .input-group input[type=range]{width:100%;accent-color:var(--lime);}
+  .input-group .hint{font-size:11px;color:var(--muted);margin-top:4px;}
+
+  /* Presets */
+  .presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+  .preset{background:transparent;border:1px solid var(--border);color:var(--text);font-size:12px;padding:6px 12px;border-radius:18px;cursor:pointer;font-family:inherit;transition:all .15s;}
+  .preset:hover{border-color:var(--lime);color:var(--lime);}
+  .preset.active{background:rgba(74,222,128,.12);border-color:var(--lime);color:var(--lime);}
+
+  /* Output grid */
+  .output{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+  @media (max-width:640px){ .output{grid-template-columns:1fr;} }
+  .stat{background:rgba(0,0,0,.32);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center;}
+  .stat .lbl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
+  .stat .num{font-family:Georgia,serif;font-size:30px;font-weight:normal;line-height:1.1;margin-bottom:4px;}
+  .stat .sub{font-size:11px;color:var(--muted);}
+  .stat-spent .num{color:#f87171;}
+  .stat-invested .num{color:var(--lime);}
+  .stat-delta .num{color:#fbbf24;}
+
+  /* Methodology */
+  .methodology{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin-top:28px;}
+  .methodology h3{font-size:13px;font-weight:700;color:var(--lime);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;}
+  .methodology p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+  .methodology code{font-family:'SF Mono',Menlo,Consolas,monospace;background:rgba(0,0,0,.4);color:#cfd8d0;padding:1px 6px;border-radius:3px;font-size:12px;}
+
+  /* Honesty footer */
+  .honesty{margin-top:36px;padding:22px 24px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;}
+  .honesty .tag{display:inline-block;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.4);color:#fbbf24;font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .honesty p{font-size:13px;color:#cfd8d0;line-height:1.75;}
+  .honesty p + p{margin-top:10px;}
+
+  footer{text-align:center;padding:32px 24px;color:#9cc0a3;font-size:12px;border-top:1px solid var(--border);margin-top:40px;}
+  footer a{color:#4ade80;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Systems</a>
+  <a href="/" class="back">&larr; back to homepage</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">The Lens · Educational</div>
+  <h1>What a subscription is really costing you.</h1>
+  <p class="lead">Every recurring charge is also a recurring <em>opportunity cost</em>. The same dollars, invested instead of spent, would compound. This calculator shows the gap — over any time horizon, against any reasonable market return. Use it on us. Use it on every subscription you have.</p>
+
+  <div class="calc">
+    <h2>The calculator</h2>
+
+    <div class="presets" id="presets">
+      <button class="preset" data-price="9.99">Dragonfly Basic · $9.99</button>
+      <button class="preset" data-price="11.99">Spotify · $11.99</button>
+      <button class="preset" data-price="13.99">Disney+ · $13.99</button>
+      <button class="preset" data-price="15.49">Netflix · $15.49</button>
+      <button class="preset" data-price="15.99">HBO Max · $15.99</button>
+      <button class="preset" data-price="18.99">Dragonfly Investor · $18.99</button>
+      <button class="preset" data-price="36.99">Dragonfly Premium · $36.99</button>
+    </div>
+
+    <div class="input-row">
+      <div class="input-group">
+        <label for="cost">Monthly cost</label>
+        <span class="val" id="cost-val">$10.00</span>
+        <input type="range" id="cost" min="1" max="100" step="0.5" value="10">
+        <div class="hint">$1 to $100/mo</div>
+      </div>
+      <div class="input-group">
+        <label for="rate">Annual return rate</label>
+        <span class="val" id="rate-val">7%</span>
+        <input type="range" id="rate" min="0" max="15" step="0.5" value="7">
+        <div class="hint">S&amp;P 500 long-run avg is ~7% real (after inflation)</div>
+      </div>
+      <div class="input-group">
+        <label for="years">Time horizon</label>
+        <span class="val" id="years-val">30 years</span>
+        <input type="range" id="years" min="1" max="50" step="1" value="30">
+        <div class="hint">1 to 50 years</div>
+      </div>
+    </div>
+
+    <div class="output">
+      <div class="stat stat-spent">
+        <div class="lbl">Total spent</div>
+        <div class="num" id="out-spent">—</div>
+        <div class="sub">cost × months</div>
+      </div>
+      <div class="stat stat-invested">
+        <div class="lbl">If invested instead</div>
+        <div class="num" id="out-invested">—</div>
+        <div class="sub">compounded monthly</div>
+      </div>
+      <div class="stat stat-delta">
+        <div class="lbl">Opportunity cost</div>
+        <div class="num" id="out-delta">—</div>
+        <div class="sub">the real price</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="methodology">
+    <h3>How this works</h3>
+    <p>The math is the standard <em>future value of an ordinary annuity</em>: <code>FV = P × ((1+r)<sup>n</sup> − 1) / r</code> — where <code>P</code> is the monthly payment, <code>r</code> is the monthly return rate (annual ÷ 12), and <code>n</code> is the number of months.</p>
+    <p>The default 7% return is the rough long-run S&amp;P 500 real (post-inflation) average. Pre-inflation it's closer to 10%, but real-return numbers are what you actually live on. The opportunity-cost number assumes you would have invested in a broad index fund, not picked individual stocks.</p>
+    <p>This calculator is also a checkbox-honest argument <em>against</em> our own subscription if you don't get value. The $9.99/mo Basic tier costs ~$36k in opportunity over 30 years at 7%. If Dragonfly doesn't help you beat that, don't subscribe. The point of the Lens is to give you the tools to evaluate every claim — including ours.</p>
+  </div>
+
+  <div class="honesty">
+    <span class="tag">Honesty note</span>
+    <p>This calculator works on any subscription, not just ours. Run Netflix, Spotify, and your gym membership through it. Many monthly subscriptions cost more in opportunity-compounded dollars over a working lifetime than a used car. Most pricing pages won't show you this math because it isn't flattering to them. Ours does.</p>
+    <p>Of course, some subscriptions earn their cost back — that's the test. A $9.99/mo research subscription that helps you find one good position over 30 years can easily justify the opportunity cost. A $15/mo streaming service that mostly plays in the background? That's the one to question first.</p>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Systems</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var costEl    = document.getElementById('cost');
+  var rateEl    = document.getElementById('rate');
+  var yearsEl   = document.getElementById('years');
+  var costVal   = document.getElementById('cost-val');
+  var rateVal   = document.getElementById('rate-val');
+  var yearsVal  = document.getElementById('years-val');
+  var outSpent  = document.getElementById('out-spent');
+  var outInv    = document.getElementById('out-invested');
+  var outDelta  = document.getElementById('out-delta');
+  var presets   = document.getElementById('presets');
+
+  function fmt(n) {
+    if (n >= 1e6) return '$' + (n/1e6).toFixed(2) + 'M';
+    if (n >= 1e4) return '$' + (n/1e3).toFixed(1) + 'k';
+    return '$' + n.toLocaleString('en-US', {maximumFractionDigits: 0});
+  }
+
+  function recompute() {
+    var P  = parseFloat(costEl.value);      // monthly payment
+    var aR = parseFloat(rateEl.value)/100;  // annual rate
+    var Y  = parseInt(yearsEl.value, 10);   // years
+    var r  = aR / 12;                       // monthly rate
+    var n  = Y * 12;                        // months
+
+    var spent    = P * n;
+    var invested = (r > 0) ? P * ((Math.pow(1 + r, n) - 1) / r) : spent;
+    var delta    = invested - spent;
+
+    costVal.textContent  = '$' + P.toFixed(2);
+    rateVal.textContent  = aR * 100 + '%';
+    yearsVal.textContent = Y + ' year' + (Y === 1 ? '' : 's');
+
+    outSpent.textContent = fmt(spent);
+    outInv.textContent   = fmt(invested);
+    outDelta.textContent = fmt(delta);
+
+    // Highlight matching preset
+    var pCost = P.toFixed(2);
+    document.querySelectorAll('.preset').forEach(function(b){
+      b.classList.toggle('active', b.dataset.price === pCost);
+    });
+  }
+
+  costEl.addEventListener('input', recompute);
+  rateEl.addEventListener('input', recompute);
+  yearsEl.addEventListener('input', recompute);
+
+  presets.addEventListener('click', function(e){
+    var btn = e.target.closest('.preset');
+    if (!btn) return;
+    costEl.value = btn.dataset.price;
+    recompute();
+  });
+
+  recompute();
+})();
+</script>
+
+</body>
+</html>
