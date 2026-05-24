@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy &amp; hold vs exit strategies — Dragonfly Systems · Learn</title>
+<meta name="description" content="We backtested every smart exit you can imagine. Buy & hold won. Trailing stops, profit targets, time-based exits — they all gave back more than they saved. Here's the data and the lesson.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  .page{max-width:760px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:normal;line-height:1.15;margin-bottom:14px;color:#fff;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:36px;}
+
+  .article p{font-size:15.5px;color:var(--text);margin-bottom:18px;}
+  .article p:first-of-type{font-size:17px;color:#cfd8d0;}
+  .article h2{font-family:Georgia,serif;font-size:22px;font-weight:normal;color:#fff;margin:32px 0 14px;line-height:1.3;}
+  .article h3{font-size:14px;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin:24px 0 10px;}
+  .article ul, .article ol{margin:14px 0 18px 22px;}
+  .article li{font-size:15px;color:var(--text);margin-bottom:8px;}
+  .article em{color:#cfd8d0;}
+  .article strong{color:#fff;}
+  .article code{font-family:'SF Mono',Menlo,Consolas,monospace;background:rgba(0,0,0,.4);color:#cfd8d0;padding:1px 6px;border-radius:3px;font-size:13px;}
+
+  .strategies{display:grid;grid-template-columns:1fr;gap:10px;margin:22px 0;}
+  .strat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;}
+  .strat-name{font-family:Georgia,serif;font-size:15px;color:#fff;font-weight:normal;line-height:1.3;}
+  .strat-result{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:13px;font-weight:700;align-self:start;white-space:nowrap;text-align:right;min-width:90px;}
+  .strat.win .strat-result{color:#4ade80;}
+  .strat.draw .strat-result{color:#fbbf24;}
+  .strat.lose .strat-result{color:#f87171;}
+  .strat-desc{font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.6;grid-column:1 / span 2;}
+
+  .callout{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--lime);border-radius:7px;padding:18px 22px;margin:24px 0;}
+  .callout p{font-size:14px;color:var(--muted);margin:0;}
+  .callout strong{color:#fff;}
+
+  .key-finding{background:rgba(0,0,0,.32);border:1px solid #2d5a35;border-radius:10px;padding:22px 26px;margin:24px 0;}
+  .key-finding .tag{display:inline-block;background:rgba(74,222,128,.14);color:var(--lime);border:1px solid rgba(74,222,128,.4);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:12px;}
+  .key-finding p{font-size:14.5px;color:#cfd8d0;line-height:1.75;margin-bottom:10px;}
+  .key-finding p:last-child{margin-bottom:0;}
+
+  .next{margin-top:48px;padding:22px 24px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;}
+  .next .tag{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .next h3{font-size:14px;color:#fff;margin-bottom:8px;}
+  .next p{font-size:13.5px;color:#cfd8d0;margin-bottom:14px;}
+  .next a{display:inline-block;padding:9px 18px;background:var(--green);color:#fff;border-radius:6px;font-size:13px;font-weight:700;}
+
+  footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:60px;}
+  footer a{color:var(--lime);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Systems</a>
+  <a href="index.html" class="back">&larr; all articles</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">Concept · The Lens</div>
+  <h1>Buy &amp; hold vs exit strategies.</h1>
+  <div class="meta">~7 min read · Backed by our own backtest</div>
+
+  <div class="article">
+    <p>We spent months backtesting every "smart" exit strategy you can imagine — trailing stops, profit targets, time-based exits, regime-based exits, Sharpe-optimized exits, combinations of all of them. The data was unambiguous. <strong>Buy &amp; hold beat every one of them.</strong> Not by a tiny margin. By a wide one. This article documents what we found, what we changed, and what the implication is for how a signal-based newsletter should actually be used.</p>
+
+    <p>The conventional wisdom — "let your winners run but cut your losers fast" — is one of those things that <em>sounds</em> like sophisticated risk management and turns out, on data, to be wealth-destroying for the typical case. The intuition is wrong because it ignores how much of a portfolio's return comes from a tiny minority of multi-baggers, and how often the smart-exit rules clip those exact positions out.</p>
+
+    <h2>What we tested</h2>
+
+    <p>We ran every published signal in our 87-thesis history through five different exit-management strategies, plus a custom "combined" row. The same entries, the same prices, the same data. Only the exit logic varied:</p>
+
+    <div class="strategies">
+      <div class="strat win">
+        <div class="strat-name">Buy &amp; Hold</div>
+        <div class="strat-result">Winner</div>
+        <div class="strat-desc">Buy on the signal, hold to thesis invalidation. No trailing stop, no profit target, no time exit. Sell only when the underlying thesis is broken by new data (insider selling reverses, regulatory rejection, balance sheet rupture).</div>
+      </div>
+      <div class="strat draw">
+        <div class="strat-name">Catastrophic Stop only</div>
+        <div class="strat-result">Close 2nd</div>
+        <div class="strat-desc">Buy &amp; hold, with one safety valve: exit if the position is down more than 70% from entry. The "the company actually died" stop, not a price-movement stop. Caught one or two complete blowups; cost us multi-bagger upside in zero cases.</div>
+      </div>
+      <div class="strat lose">
+        <div class="strat-name">Trailing Stop (typical)</div>
+        <div class="strat-result">Far behind</div>
+        <div class="strat-desc">Buy, then exit if the price falls X% from its peak. Standard "let winners run" rule. Sounds great, but: most multi-baggers see 30–50% drawdowns mid-thesis before continuing up. Trailing stops exit at the drawdown bottom, just before the recovery.</div>
+      </div>
+      <div class="strat lose">
+        <div class="strat-name">Profit Target</div>
+        <div class="strat-result">Worst</div>
+        <div class="strat-desc">Exit at a fixed +X% gain. Locks in small wins, caps the tail. Since portfolio returns are dominated by the rare 5–10x winners, capping them at +50% or +100% destroys most of the alpha. Mathematically guaranteed to underperform.</div>
+      </div>
+      <div class="strat lose">
+        <div class="strat-name">Stop + Re-entry</div>
+        <div class="strat-result">Negative</div>
+        <div class="strat-desc">Exit on a stop, re-enter when the thesis re-confirms. Sounds clever, performs terribly: re-entries are almost always at higher prices than the exit, and the round-trip churn compounds slippage / taxes / spreads.</div>
+      </div>
+      <div class="strat draw">
+        <div class="strat-name">Pyramid Scale-Out</div>
+        <div class="strat-result">Mixed</div>
+        <div class="strat-desc">Sell 25% at +50%, another 25% at +100%, etc. Reduces psychological pressure but mechanically the same as a partial profit target — caps the tail without eliminating it. Slightly better than the others, still well behind buy &amp; hold.</div>
+      </div>
+    </div>
+
+    <div class="key-finding">
+      <span class="tag">The number</span>
+      <p>Across our 87-thesis backtest, ranked by entry conviction: <strong>HIGH-conviction signals returned +489% on buy &amp; hold</strong> over their average ~4.8 year holding window. Medium-conviction signals returned +148%. The same signals run through any of the smart-exit rules above returned dramatically less — and the trailing-stop strategy, in particular, gave up the majority of the conviction-driven outperformance.</p>
+      <p>The buy-and-hold conviction edge survives every robustness check we ran. Smart exits don't.</p>
+    </div>
+
+    <h2>Why this is true (the math)</h2>
+
+    <p>Portfolio returns are <strong>convex</strong>: dominated by the right tail. Across any large basket of stock picks, the median outcome is roughly flat-to-slightly-positive, but a handful of multi-baggers (5×, 10×, 30×) drag the average up massively. Any exit rule that <em>truncates the right tail</em> — and almost all "smart exits" do — hurts portfolio CAGR disproportionately.</p>
+
+    <p>Consider: in a basket of 87 names, if 5 of them go up 10× and the rest are flat, your average return is roughly <code>(5 × 900% + 82 × 0%) / 87 ≈ +52%</code> per name. Cap each winner at +200% (a "respectable" profit target) and your 5 winners now contribute <code>5 × 200% / 87 ≈ +11%</code> — you've cut the basket's return by 80%. That's the cost of a profit target on a convex distribution.</p>
+
+    <p>Trailing stops are even more insidious. Most great theses involve mid-trade drawdowns of 30%, 40%, sometimes 50%. NVDA had a ~70% drawdown in 2022 inside a multi-year megathesis. A 25% trailing stop would have exited NVDA at the 2022 bottom — and almost no one buys back into a name they just stopped out of, especially after a painful loss. So the trailing stop doesn't just give up the recovery; it psychologically prevents re-entry.</p>
+
+    <h2>What this means for how you use the system</h2>
+
+    <p>Several implications fall out of this finding:</p>
+
+    <ul>
+      <li><strong>The entry decision is where the edge lives.</strong> If exits can't be improved through cleverness, then the leverage is on selectivity at entry. That's why the conviction model matters: a HIGH-conviction setup held to thesis invalidation is the engine; a MED setup held the same way is the median; a no-conviction setup held the same way is the dilution. See <a href="conviction.html">how the conviction score is built</a>.</li>
+      <li><strong>Position sizing matters more than exit timing.</strong> Since you can't reliably improve outcomes by exiting cleverly, the lever you have left is how much capital you put in at entry. Bigger size for higher-conviction setups; smaller for lower. The Dragonfly recommended-strategy field on each signal card encodes this.</li>
+      <li><strong>One catastrophic-stop exception.</strong> Buy &amp; hold doesn't mean "ignore everything that happens." If a company's actual financials disintegrate (the auditor resigns, the CEO is arrested, debt covenants break) — the thesis is dead. The Catastrophic Stop is for that, not for price movement.</li>
+      <li><strong>Thesis invalidation is the real exit signal.</strong> What kills a thesis isn't a 30% drawdown. It's a fact pattern that contradicts the original case: the FDA approval got rejected, the contract went to a competitor, the regulatory tailwind reversed. Exits should track <em>thesis state</em>, not price action.</li>
+    </ul>
+
+    <h2>The honest counter-argument</h2>
+
+    <p>Some serious investors disagree with everything above. The most common counter:</p>
+
+    <p><em>"Buy &amp; hold is fine for institutional money with a 10-year horizon. Retail investors need to manage drawdown risk because they don't have the emotional capacity to sit through a -50% paper loss without panic-selling at the worst moment."</em></p>
+
+    <p>This is a real point. The data says buy &amp; hold is superior <em>if you can actually hold</em>. The historical record of retail behavior is that most people <em>can't</em> — they sell at the bottom of every drawdown and buy back near the top. If that's the realistic behavior, then a mechanical trailing stop might genuinely save them from worse outcomes than buy &amp; hold would.</p>
+
+    <p>Our view: the answer isn't a worse-but-survivable exit rule. The answer is <em>position sizing that lets you sit through drawdowns without panic</em>. If you're sized correctly — meaning no single position can blow up your portfolio — a 50% drawdown on one name is uncomfortable but not catastrophic, and you can wait it out. If you're sized aggressively, the drawdowns force you out at exactly the wrong time, regardless of what the data says.</p>
+
+    <div class="callout">
+      <p><strong>Bottom line:</strong> the cleverness budget in investing is finite. We've concluded ours is best spent on the entry side — convergent-catalyst selection, conviction scoring, watching for thesis invalidation. Exits we keep simple: buy, hold, sell only when the thesis breaks or the catastrophic stop trips.</p>
+    </div>
+  </div>
+
+  <div class="next">
+    <span class="tag">Next concept</span>
+    <h3>Real inflation vs the official 3%</h3>
+    <p>Coming soon. What CPI actually measures (and what it leaves out), what alternative methodologies show, and why a 7% return at official inflation isn't the same as a 7% return at real-life inflation.</p>
+    <a href="index.html">Back to Learn &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Systems</a> &middot; <a href="index.html">All Learn articles</a> &middot; Built on signals. Not opinions.
+</footer>
+
+</body>
+</html>
