@@ -1565,6 +1565,9 @@ function toggleTheme() {
 <div class="hero">
   <div class="hero-eyebrow">Investment Signal Alerts</div>
   <h1>Built on signals. Not opinions.</h1>
+  <!-- Educational positioning — LENS_PRODUCT_VISION §1. Inclusive second
+       pillar: the data layer is for every investor willing to learn. -->
+  <p style="font-style:italic;color:#a8c9ad;font-size:15px;margin-bottom:14px;max-width:680px;">Built for investors at every level — every term explained, every concept walked through, every signal shown with the math behind it.</p>
   <p>Automated alerts when convergent catalysts fire — drill results, FDA milestones, contract awards, insider buying, government grants, institutional positioning — across critical minerals, energy & infrastructure, AI compute, biotech, and frontier resource plays. We show the data and the sources; you make the call.</p>
 
   <div class="hero-stats">
@@ -1643,10 +1646,10 @@ function toggleTheme() {
 
 <hr class="divider">
 
-<!-- ── BUILT DIFFERENT — nine product moats not found in other newsletters ── -->
+<!-- ── BUILT DIFFERENT — twelve product moats not found in other newsletters ── -->
 <section id="moats" style="padding:48px 24px 32px;">
   <div class="section-label" style="text-align:center;">What makes Dragonfly different</div>
-  <h2 style="text-align:center;margin-bottom:14px;">Eleven things no other newsletter has.</h2>
+  <h2 style="text-align:center;margin-bottom:14px;">Twelve things no other newsletter has.</h2>
   <p class="lead" style="text-align:center;max-width:680px;margin:0 auto 32px;">
     Most newsletters give you a pick and a price target. Dragonfly gives you the tools to actually understand what you're holding, the math behind the call, and a verifiable record of every signal we've ever fired.
   </p>
@@ -1684,11 +1687,18 @@ function toggleTheme() {
       </div>
     </div>
 
-    <!-- 2. Conviction score -->
+    <!-- 2. Conviction score — Beta badge scoped narrowly to this model
+         (NOT the platform). LENS_PRODUCT_VISION §1 framing: "forward-
+         verification in progress" until ~3 months of live signed data
+         exists. Removes Beta from the conviction-score badge once Track
+         3a accumulates enough live observations to validate the model. -->
     <div style="background:#0a1a0c;border:1px solid #1a3a1f;border-radius:10px;padding:20px;position:relative;">
       <div style="position:absolute;top:14px;right:14px;font-size:9px;color:#9ca;background:rgba(156,202,156,.1);border:1px solid rgba(156,202,156,.3);padding:2px 8px;border-radius:10px;letter-spacing:.05em;font-weight:700;">INVESTOR+</div>
       <div style="font-size:24px;margin-bottom:8px;">&#128202;</div>
-      <h3 style="color:#dff0df;font-size:15px;font-weight:800;margin-bottom:6px;">Conviction Score (0&ndash;100) with Reasoning</h3>
+      <h3 style="color:#dff0df;font-size:15px;font-weight:800;margin-bottom:6px;">
+        Conviction Score (0&ndash;100) with Reasoning
+        <span style="display:inline-block;margin-left:6px;font-size:9px;font-weight:800;color:#fbbf24;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.4);padding:2px 7px;border-radius:9px;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;" title="The conviction model is in forward-verification — it scores every new signal at publish time and we're accumulating live results to validate the model end-to-end. Roughly 3 months of cryptographically-signed live data needed before Beta comes off.">Beta &middot; forward-verification</span>
+      </h3>
       <p style="color:#8ab890;font-size:12.5px;line-height:1.6;margin:0;">No black box. Every signal carries a 6-component breakdown: trigger pattern, COT positioning, regime alignment, technicals, volume, sector tailwind. Hover the score on any card to see <em>which three components moved the needle</em>, by how much, and why.</p>
     </div>
 
@@ -1783,6 +1793,18 @@ function toggleTheme() {
       <div>
         <div style="font-size:14px;font-weight:800;color:#dff0df;margin-bottom:4px;">&#128279; B2B API access</div>
         <div style="font-size:12px;color:#9ab098;line-height:1.6;">Programmatic access to the signal feed and conviction breakdowns for funds, family offices, and other newsletters that want to build on Dragonfly's research as a data layer.</div>
+      </div>
+      <!-- 12th moat — Portfolio Lens (Premium). LENS_PRODUCT_VISION.md §2.
+           Tagged with a visible PREMIUM pill so a reader scanning the grid
+           sees instantly which tier unlocks it. Copy is the spec verbatim. -->
+      <div>
+        <div style="font-size:14px;font-weight:800;color:#dff0df;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span style="background:rgba(200,168,75,.16);color:#c8a84b;border:1px solid rgba(200,168,75,.45);font-size:9.5px;font-weight:800;letter-spacing:.08em;padding:2px 8px;border-radius:11px;text-transform:uppercase;">Premium</span>
+          <span>&#128269; Your Portfolio, Through the Lens</span>
+        </div>
+        <div style="font-size:12px;color:#9ab098;line-height:1.6;">
+          Paste your holdings &mdash; no account linking, no read-only API key, nothing that touches your money. Get a one-page tailored read: conviction score on each position, sector concentration and hidden correlations, where your portfolio overlaps with current Dragonfly theses, and a monthly automatic re-evaluation as catalysts move. <b style="color:#dff0df;">The conviction model &mdash; applied to your actual money.</b> We never manage assets and we never see your account. You control everything.
+        </div>
       </div>
     </div>
   </div>
@@ -2464,6 +2486,14 @@ function copyPageLink() {
       Once we hit 100 paid subscribers, Investor moves to <b>$33.99/mo</b> and Premium to <b>$63.99/mo</b>. Founding members stay at today's pricing <b>for the life of their account</b> — even if features are added later. On top of that, every founding member (any tier) gets a <b>60-day full Premium trial</b> so you can use Compound (the trade journal), pre-market brief, and weekly top-3 picks before deciding which tier to settle on long-term.
     </div>
     <div style="font-size:11px;color:#9aaa9d;margin-top:10px;letter-spacing:.03em;">No catch · No auto-charge for the upgrade · Cancel any time.</div>
+  </div>
+
+  <!-- Future-date pricing notice — LENS_PRODUCT_VISION §1. Real urgency
+       (a planned mid-2027 update) without committing to a specific date
+       we'd then have to operationally enforce. -->
+  <div style="background:#0a1a0c;border:1px solid #1a3a1f;border-radius:7px;padding:14px 20px;margin:0 0 24px;font-family:'Helvetica Neue',Arial,sans-serif;max-width:680px;margin-left:auto;margin-right:auto;color:#9cc0a3;font-size:12.5px;line-height:1.7;text-align:left;">
+    <div style="font-size:10px;color:#7ec98a;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px;">Pricing notice</div>
+    <b style="color:#dff0df;">Lock in current pricing before mid-2027.</b> Subscriptions opened before our planned 2027 pricing update stay at today's rate <b>permanently</b>. We'll announce the exact date and the new rates 60–90 days before they take effect — no surprise charges, no auto-upgrade.
   </div>
 
   <div style="background:#f5f9f5;border:1px solid #d4e8d4;border-radius:6px;padding:20px 28px;margin:0 0 32px;font-family:'Helvetica Neue',Arial,sans-serif;max-width:640px;margin-left:auto;margin-right:auto;text-align:center;">
