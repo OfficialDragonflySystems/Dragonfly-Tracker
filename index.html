@@ -1210,6 +1210,10 @@ function toggleTheme() {
     });
     Object.keys(window._cryptoCache).forEach(_renderCryptoChip);
   }
+  // Expose so the inline onclick="setCryptoTF(...)" on the 1D/1W/1M/1Y
+  // buttons can reach it — this IIFE otherwise hides the symbol from
+  // the global scope, which is why the buttons were silently no-ops.
+  window.setCryptoTF = setCryptoTF;
   function loadCrypto() {
     // Server-side proxy — the licensed CoinGecko paid tier lives behind
     // /api/crypto; the browser never calls CoinGecko directly.
