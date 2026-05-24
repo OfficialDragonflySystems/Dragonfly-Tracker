@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real inflation vs the official 3% — Dragonfly Systems · Learn</title>
+<meta name="description" content="What CPI actually measures, what it leaves out, and why a 7% return at official inflation isn't the same as a 7% return at real-life inflation. Plain English, sourced methodology.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  .page{max-width:760px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:normal;line-height:1.15;margin-bottom:14px;color:#fff;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:36px;}
+
+  .article p{font-size:15.5px;color:var(--text);margin-bottom:18px;}
+  .article p:first-of-type{font-size:17px;color:#cfd8d0;}
+  .article h2{font-family:Georgia,serif;font-size:22px;font-weight:normal;color:#fff;margin:32px 0 14px;line-height:1.3;}
+  .article h3{font-size:14px;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin:24px 0 10px;}
+  .article ul, .article ol{margin:14px 0 18px 22px;}
+  .article li{font-size:15px;color:var(--text);margin-bottom:8px;}
+  .article em{color:#cfd8d0;}
+  .article strong{color:#fff;}
+  .article code{font-family:'SF Mono',Menlo,Consolas,monospace;background:rgba(0,0,0,.4);color:#cfd8d0;padding:1px 6px;border-radius:3px;font-size:13px;}
+
+  .source-table{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin:22px 0 26px;}
+  .source-row{padding:14px 0;border-bottom:1px solid var(--border);}
+  .source-row:last-child{border-bottom:none;}
+  .source-row .src-name{font-family:Georgia,serif;font-size:16px;color:#fff;font-weight:normal;line-height:1.3;margin-bottom:4px;}
+  .source-row .src-tag{display:inline-block;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:var(--gold);background:rgba(251,191,36,.1);padding:2px 8px;border-radius:10px;margin-bottom:6px;}
+  .source-row .src-desc{font-size:13.5px;color:var(--muted);line-height:1.6;}
+  .source-row .src-desc strong{color:#dff0df;}
+
+  .callout{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--lime);border-radius:7px;padding:18px 22px;margin:24px 0;}
+  .callout p{font-size:14px;color:var(--muted);margin:0;}
+  .callout strong{color:#fff;}
+
+  .example{background:rgba(0,0,0,.32);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:22px 0;}
+  .example .tag{display:inline-block;background:rgba(34,211,238,.14);color:#22d3ee;border:1px solid rgba(34,211,238,.35);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .example p{font-size:14px;color:#cfd8d0;margin-bottom:8px;}
+  .example p:last-child{margin-bottom:0;}
+
+  .next{margin-top:48px;padding:22px 24px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;}
+  .next .tag{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .next h3{font-size:14px;color:#fff;margin-bottom:8px;}
+  .next p{font-size:13.5px;color:#cfd8d0;margin-bottom:14px;}
+  .next a{display:inline-block;padding:9px 18px;background:var(--green);color:#fff;border-radius:6px;font-size:13px;font-weight:700;}
+
+  footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:60px;}
+  footer a{color:var(--lime);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Systems</a>
+  <a href="index.html" class="back">&larr; all articles</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">Concept · The Lens</div>
+  <h1>Real inflation vs the official 3%.</h1>
+  <div class="meta">~8 min read · Numeracy</div>
+
+  <div class="article">
+    <p>When the government says inflation was 3% last year, what does that actually mean? Not what most people think. <strong>CPI is a specific basket of goods, weighted in a specific way, computed with specific adjustments.</strong> Change any of those choices and the number changes — sometimes by a lot. This article walks through what the official number measures, what alternative methodologies show, and why your investing math depends on knowing which one you're using.</p>
+
+    <p>This matters because every return number you ever see is either <em>nominal</em> (before inflation) or <em>real</em> (after inflation). The cost calculator and compounding visualizer on this site use 7% as the default annual return — that's a <em>real</em> number, roughly the S&amp;P 500's long-run average <em>after</em> subtracting BLS CPI. If real-life inflation is actually higher than BLS CPI for your basket, the same nominal returns leave you with less purchasing power than the math suggests.</p>
+
+    <h2>What CPI actually measures</h2>
+
+    <p>The headline US inflation number is <strong>CPI-U</strong> — Consumer Price Index for All Urban Consumers — published monthly by the Bureau of Labor Statistics (BLS). It's a weighted basket of ~80,000 prices across eight major categories: housing, transportation, food, medical care, education and communication, recreation, apparel, and "other." Each category gets a weight based on what the average urban household spends, sampled from the Consumer Expenditure Survey.</p>
+
+    <p>Three things about this construction matter for understanding why people argue about it:</p>
+
+    <ul>
+      <li><strong>Substitution adjustment.</strong> When the price of one item rises, the methodology assumes consumers swap to a cheaper alternative — beef gets expensive, you eat more chicken. The basket isn't held constant. This makes the number lower than it would be with a fixed basket.</li>
+      <li><strong>Hedonic adjustment.</strong> When a product gets "better" (a phone has a faster processor, a TV has a higher resolution), part of the price increase is treated as paying for quality rather than inflation. Done across many categories, this also pulls the number down.</li>
+      <li><strong>Owners' Equivalent Rent (OER).</strong> Roughly a third of CPI weight is housing — but it's not measured by house prices. It's measured by what homeowners think their house would rent for. This typically lags actual home-price inflation by 12-18 months and dampens the number during property booms.</li>
+    </ul>
+
+    <p>None of these adjustments are conspiracies. Each has a defensible methodological rationale. But each also has the effect of producing a smoother, lower headline than a "what does life actually cost more this year?" survey would. <em>That gap is the entire argument.</em></p>
+
+    <h2>The alternative methodologies</h2>
+
+    <p>Several private indexes attempt to measure inflation differently. None is "the truth"; each is a different lens on the same question. The best practice is to know all three and read them together.</p>
+
+    <div class="source-table">
+      <div class="source-row">
+        <div class="src-tag">Chapwood Index</div>
+        <div class="src-name">The "what's actually in your cart" index</div>
+        <div class="src-desc">Tracks a fixed basket of <strong>500 frequently-purchased items</strong> across the 50 largest US metros — groceries, gas, insurance, utilities, restaurant meals, household goods. Crucially: <strong>no substitution and no hedonic adjustments.</strong> If beef goes up, the index goes up — it doesn't assume you switch to chicken. Historically reports inflation 7-13% per year while BLS CPI was 1.5-3%. Methodology and the full 500-item list are public on chapwoodindex.com.</div>
+      </div>
+      <div class="source-row">
+        <div class="src-tag">ShadowStats</div>
+        <div class="src-name">CPI computed with 1980 methodology</div>
+        <div class="src-desc">John Williams' index. Takes the current BLS data and re-applies the <strong>pre-1980 CPI methodology</strong> (before substitution + hedonic adjustments were introduced). Useful as a historical-continuity gauge: what would the CPI number look like if we hadn't changed how we measure it? Typically reports inflation roughly 4-6 percentage points higher than the current BLS number. Subscription-based access to the long series; methodology described publicly.</div>
+      </div>
+      <div class="source-row">
+        <div class="src-tag">Truflation</div>
+        <div class="src-name">Real-time price data from 30+ sources</div>
+        <div class="src-desc">Aggregates ~13 million prices daily from retail, real-estate, and commodity datasets. Updates every 10 seconds (vs. BLS's monthly cadence). Heavier weight on housing and food than CPI; lighter on the "other" residual. Public dashboard at truflation.com. Tends to land between BLS CPI and Chapwood — closer to CPI in calm regimes, closer to Chapwood when food + housing are spiking.</div>
+      </div>
+      <div class="source-row">
+        <div class="src-tag">Billion Prices Project (Cavallo / Rigobon, MIT)</div>
+        <div class="src-name">Academic web-scraping benchmark</div>
+        <div class="src-desc">A 2008-2017 research project that scraped daily prices from hundreds of online retailers across 60+ countries. Found that online-retailer CPI tracked official CPI <em>very closely</em> in most developed economies — meaning the headline number is roughly right when applied to the goods online retailers actually sell. Gaps showed up for the categories online retailers <em>don't</em> sell well (housing, services, healthcare). Project archived in 2017 but the academic papers are the gold-standard reference for cross-checking official statistics.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Honest read:</strong> the truth is somewhere in the convergence. BLS CPI is rigorous and consistent — useful as a benchmark — but it under-measures the inflation experienced by households heavy on housing, food, and services. Alternative indexes typically show 2-6 percentage points higher than BLS. The exact gap depends on your personal basket.</p>
+    </div>
+
+    <h2>Why this matters for your math</h2>
+
+    <p>The S&amp;P 500's nominal long-run total return is roughly 10% per year. After subtracting BLS CPI (~3% long-run), the <em>real</em> return is about 7%. That's where the 7% default on this site's calculators comes from. But:</p>
+
+    <ul>
+      <li>If your <em>personal</em> inflation rate is 5% rather than 3% (housing-heavy budget, urban metro, kids in private school), your real return is 5%, not 7%. Over 30 years that turns a projected $1M portfolio into roughly $700K of equivalent purchasing power.</li>
+      <li>If your personal inflation rate is 8% (Chapwood-level), your real return at 10% nominal is only 2% — barely better than parking the money in a high-yield savings account.</li>
+      <li>The <em>variance</em> matters too. CPI is smoothed; the actual cost of any given basket changes faster in either direction. Years where your wages don't keep up with your specific basket compound the gap.</li>
+    </ul>
+
+    <div class="example">
+      <span class="tag">Worked example · housing-heavy household</span>
+      <p>A subscriber lives in a major metro. ~40% of their take-home pay goes to rent or mortgage. Housing prices in that metro rose 8% over the year; BLS measures the same metro at ~4.5% via OER (smoothed); their personal experienced inflation on the housing line is therefore much higher than what hits the headline. Same person sees grocery and insurance lines rising similarly above CPI. Their <em>personal</em> inflation rate is closer to 7-8% even though the headline reads 3%.</p>
+      <p>Now run that household's investment math: at 10% nominal returns, BLS-CPI real is 7%, but their personal-basket real is 2-3%. The implication isn't that they shouldn't invest — investing at 2% real still compounds — it's that "I beat inflation" requires a much higher bar than the headline suggests, and the calculators on this site (defaulting to 7%) are overestimating their purchasing-power growth.</p>
+    </div>
+
+    <h2>What to do with this</h2>
+
+    <p>Three concrete steps:</p>
+
+    <ol>
+      <li><strong>Know which CPI number any return is measured against.</strong> "Real return" without specifying the deflator is half-information. The default in finance is BLS CPI; that's a reasonable benchmark but not the only one.</li>
+      <li><strong>Estimate your personal inflation rate.</strong> Track your actual spending for 3-6 months. Compare against the same categories a year later. The number you get is the one that matters for your purchasing-power math, not the BLS headline.</li>
+      <li><strong>Adjust the calculator defaults accordingly.</strong> If your personal inflation runs 5% (vs. BLS 3%), use 5% rather than 7% as the return rate on the <a href="../compounding_visualizer.html">compounding visualizer</a> — that gives you a more honest projection of <em>your</em> purchasing power 20-30 years out.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Bottom line:</strong> CPI is one specific way of measuring inflation. It's not wrong, but it's not the only number, and it's not necessarily <em>your</em> number. The official 3% is a useful benchmark for cross-period comparison and Fed policy; it's a less useful benchmark for the question "is my portfolio actually growing my purchasing power?" That question requires you to estimate your personal rate — and the calculators on this site will give you honest answers as long as you feed them an honest input.</p>
+    </div>
+  </div>
+
+  <div class="next">
+    <span class="tag">Next concept</span>
+    <h3>Decade-by-decade portfolio comparison</h3>
+    <p>Coming soon. What a 60/40 portfolio actually did from 1970-1980, 1980-1990, all the way to today. Bond returns. Real returns. The "lost decade" that wasn't really lost.</p>
+    <a href="index.html">Back to Learn &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Systems</a> &middot; <a href="index.html">All Learn articles</a> &middot; Built on signals. Not opinions.
+</footer>
+
+</body>
+</html>
