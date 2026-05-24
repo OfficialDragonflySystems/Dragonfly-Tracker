@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compounding, visualized — Dragonfly Systems</title>
+<meta name="description" content="Free interactive visualizer: see exactly how compounding works over 1-50 years. Move the sliders, see the curve. The most important math in personal finance, finally shown — not just described.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  .page{max-width:980px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:normal;line-height:1.2;margin-bottom:14px;}
+  .lead{font-size:15px;color:var(--muted);max-width:720px;margin-bottom:36px;}
+
+  .calc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:30px;margin-bottom:28px;}
+  .calc h2{font-family:Georgia,serif;font-size:20px;font-weight:normal;margin-bottom:22px;color:#fff;}
+  .input-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-bottom:22px;}
+  .input-group label{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px;}
+  .input-group .val{display:block;font-family:Georgia,serif;font-size:24px;color:var(--lime);font-weight:normal;margin-bottom:6px;}
+  .input-group input[type=range]{width:100%;accent-color:var(--lime);}
+  .input-group .hint{font-size:11px;color:var(--muted);margin-top:4px;}
+
+  /* Curve area */
+  .curve-wrap{position:relative;height:240px;background:rgba(0,0,0,.32);border:1px solid var(--border);border-radius:10px;padding:18px 16px 28px 56px;margin:18px 0 22px;overflow:hidden;}
+  .curve-wrap svg{display:block;width:100%;height:100%;}
+  .curve-area{fill:rgba(74,222,128,.18);}
+  .curve-line{fill:none;stroke:#4ade80;stroke-width:2;}
+  .contrib-area{fill:rgba(251,191,36,.14);}
+  .contrib-line{fill:none;stroke:#fbbf24;stroke-width:1.5;stroke-dasharray:4 4;}
+  .axis-label{fill:var(--muted);font-size:10px;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .curve-legend{display:flex;gap:18px;font-size:11px;color:var(--muted);margin-top:8px;flex-wrap:wrap;}
+  .curve-legend span{display:inline-flex;align-items:center;gap:6px;}
+  .swatch{width:14px;height:3px;border-radius:2px;display:inline-block;}
+  .swatch-grown{background:#4ade80;}
+  .swatch-contrib{background:#fbbf24;}
+
+  .output{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media (max-width:680px){ .output{grid-template-columns:repeat(2,1fr);} }
+  .stat{background:rgba(0,0,0,.32);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;}
+  .stat .lbl{font-size:9.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
+  .stat .num{font-family:Georgia,serif;font-size:24px;font-weight:normal;line-height:1.1;margin-bottom:4px;}
+  .stat .sub{font-size:10.5px;color:var(--muted);}
+  .stat-contrib .num{color:var(--gold);}
+  .stat-final .num{color:var(--lime);}
+  .stat-growth .num{color:#22d3ee;}
+  .stat-mult .num{color:#a78bfa;}
+
+  /* Presets */
+  .presets{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px;}
+  .preset{background:transparent;border:1px solid var(--border);color:var(--text);font-size:11.5px;padding:5px 11px;border-radius:18px;cursor:pointer;font-family:inherit;transition:all .15s;}
+  .preset:hover{border-color:var(--lime);color:var(--lime);}
+  .preset .pname{color:var(--muted);font-size:10px;display:block;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1px;}
+
+  .methodology{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin-top:28px;}
+  .methodology h3{font-size:13px;font-weight:700;color:var(--lime);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;}
+  .methodology p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+  .methodology p:last-child{margin-bottom:0;}
+  .methodology code{font-family:'SF Mono',Menlo,Consolas,monospace;background:rgba(0,0,0,.4);color:#cfd8d0;padding:1px 6px;border-radius:3px;font-size:12px;}
+
+  .insight{margin-top:28px;padding:22px 24px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;}
+  .insight .tag{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .insight p{font-size:13.5px;color:#cfd8d0;line-height:1.75;}
+  .insight p + p{margin-top:10px;}
+
+  footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:40px;}
+  footer a{color:var(--lime);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Systems</a>
+  <a href="/" class="back">&larr; back to homepage</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">The Lens · Educational</div>
+  <h1>Compounding, visualized.</h1>
+  <p class="lead">The single most important math in personal finance, finally shown instead of just described. Move the sliders. Watch the curve. Notice how the steepness in the last decade dwarfs the first four. That's compounding doing its job — and that's why every year you wait costs more than the last.</p>
+
+  <div class="calc">
+    <h2>The visualizer</h2>
+
+    <div class="presets" id="presets">
+      <button class="preset" data-init="0"     data-month="100"  data-rate="7"  data-yrs="40"><span class="pname">Start small</span>$0 + $100/mo · 7% · 40y</button>
+      <button class="preset" data-init="1000"  data-month="200"  data-rate="7"  data-yrs="30"><span class="pname">Default</span>$1k + $200/mo · 7% · 30y</button>
+      <button class="preset" data-init="5000"  data-month="500"  data-rate="7"  data-yrs="30"><span class="pname">Disciplined</span>$5k + $500/mo · 7% · 30y</button>
+      <button class="preset" data-init="10000" data-month="1000" data-rate="7"  data-yrs="25"><span class="pname">Aggressive</span>$10k + $1k/mo · 7% · 25y</button>
+      <button class="preset" data-init="1000"  data-month="200"  data-rate="10" data-yrs="30"><span class="pname">10% return</span>$1k + $200/mo · 10% · 30y</button>
+    </div>
+
+    <div class="input-grid">
+      <div class="input-group">
+        <label for="init">Starting amount</label>
+        <span class="val" id="init-val">$1,000</span>
+        <input type="range" id="init" min="0" max="100000" step="500" value="1000">
+        <div class="hint">$0 – $100,000</div>
+      </div>
+      <div class="input-group">
+        <label for="month">Monthly contribution</label>
+        <span class="val" id="month-val">$200</span>
+        <input type="range" id="month" min="0" max="5000" step="25" value="200">
+        <div class="hint">$0 – $5,000</div>
+      </div>
+      <div class="input-group">
+        <label for="rate">Annual return rate</label>
+        <span class="val" id="rate-val">7%</span>
+        <input type="range" id="rate" min="0" max="15" step="0.5" value="7">
+        <div class="hint">S&amp;P 500 long-run real avg ~7%</div>
+      </div>
+      <div class="input-group">
+        <label for="yrs">Time horizon</label>
+        <span class="val" id="yrs-val">30 years</span>
+        <input type="range" id="yrs" min="1" max="50" step="1" value="30">
+        <div class="hint">1 – 50 years</div>
+      </div>
+    </div>
+
+    <div class="curve-wrap">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" id="curve-svg">
+        <path class="curve-area"   id="curve-area"   d=""></path>
+        <path class="contrib-area" id="contrib-area" d=""></path>
+        <path class="contrib-line" id="contrib-line" d=""></path>
+        <path class="curve-line"   id="curve-line"   d=""></path>
+      </svg>
+    </div>
+    <div class="curve-legend">
+      <span><span class="swatch swatch-grown"></span> Total balance (compounded)</span>
+      <span><span class="swatch swatch-contrib"></span> Cumulative contributions (no growth)</span>
+    </div>
+
+    <div class="output" style="margin-top:22px;">
+      <div class="stat stat-contrib">
+        <div class="lbl">Total contributed</div>
+        <div class="num" id="out-contrib">—</div>
+        <div class="sub">your money in</div>
+      </div>
+      <div class="stat stat-final">
+        <div class="lbl">Final balance</div>
+        <div class="num" id="out-final">—</div>
+        <div class="sub">at end of horizon</div>
+      </div>
+      <div class="stat stat-growth">
+        <div class="lbl">Pure growth</div>
+        <div class="num" id="out-growth">—</div>
+        <div class="sub">earned, not contributed</div>
+      </div>
+      <div class="stat stat-mult">
+        <div class="lbl">Multiple</div>
+        <div class="num" id="out-mult">—</div>
+        <div class="sub">final ÷ contributed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="methodology">
+    <h3>How this works</h3>
+    <p>Two formulas:</p>
+    <p><code>FV<sub>lump</sub> = P × (1+r)<sup>n</sup></code> — your starting amount, compounded monthly over <code>n</code> months at monthly rate <code>r = annual ÷ 12</code>.</p>
+    <p><code>FV<sub>annuity</sub> = C × ((1+r)<sup>n</sup> − 1) / r</code> — your monthly contributions, also compounded monthly. The two are added together for the final balance.</p>
+    <p>The default 7% return is the rough long-run S&amp;P 500 <em>real</em> (post-inflation) return. Nominal is closer to 10%, but real-return numbers are what you actually live on. The curve here assumes you stay invested through every downturn — which is the part the math doesn't show but the historical record demands.</p>
+  </div>
+
+  <div class="insight">
+    <span class="tag">The big idea</span>
+    <p>Most of the final balance comes from <em>growth</em>, not from <em>contributions</em>. In the default setup ($1k + $200/mo for 30 years at 7%), you contribute $73,000 and end with ~$245,000 — meaning ~70% of what you have at year 30 was earned, not deposited. That's compounding doing the work, not your salary.</p>
+    <p>The same math also means starting late is brutally expensive. Drop the horizon from 40 years to 30 years and the final balance roughly halves, even though you only "skipped" 10 years of contributions worth ~$24,000. Time is the single most powerful input — more than the return rate, more than the monthly amount.</p>
+    <p>This is also why we built the <a href="cost_calculator.html">subscription cost calculator</a> as a companion: every recurring dollar spent is a recurring dollar that doesn't compound. Use both. The lens is the math.</p>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Systems</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var initEl   = document.getElementById('init');
+  var monthEl  = document.getElementById('month');
+  var rateEl   = document.getElementById('rate');
+  var yrsEl    = document.getElementById('yrs');
+  var initVal  = document.getElementById('init-val');
+  var monthVal = document.getElementById('month-val');
+  var rateVal  = document.getElementById('rate-val');
+  var yrsVal   = document.getElementById('yrs-val');
+  var oContrib = document.getElementById('out-contrib');
+  var oFinal   = document.getElementById('out-final');
+  var oGrowth  = document.getElementById('out-growth');
+  var oMult    = document.getElementById('out-mult');
+  var curveLine   = document.getElementById('curve-line');
+  var curveArea   = document.getElementById('curve-area');
+  var contribLine = document.getElementById('contrib-line');
+  var contribArea = document.getElementById('contrib-area');
+  var presets  = document.getElementById('presets');
+
+  function fmt(n) {
+    if (n >= 1e9) return '$' + (n/1e9).toFixed(2) + 'B';
+    if (n >= 1e6) return '$' + (n/1e6).toFixed(2) + 'M';
+    if (n >= 1e4) return '$' + (n/1e3).toFixed(1) + 'k';
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+  function fmtShort(n) {
+    if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
+    if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
+    if (n >= 1e3) return '$' + Math.round(n/1e3) + 'k';
+    return '$' + Math.round(n);
+  }
+
+  function recompute() {
+    var P  = parseFloat(initEl.value);
+    var C  = parseFloat(monthEl.value);
+    var aR = parseFloat(rateEl.value)/100;
+    var Y  = parseInt(yrsEl.value, 10);
+    var r  = aR / 12;
+    var n  = Y * 12;
+
+    // Build year-by-year curve for the SVG (yearly samples = Y+1 points)
+    var balancePts = [], contribPts = [];
+    var bal = P;
+    var contributed = P;
+    balancePts.push(bal);
+    contribPts.push(contributed);
+    for (var m = 1; m <= n; m++) {
+      bal = bal * (1 + r) + C;
+      contributed += C;
+      if (m % 12 === 0) {
+        balancePts.push(bal);
+        contribPts.push(contributed);
+      }
+    }
+
+    var final     = balancePts[balancePts.length - 1];
+    var totalIn   = contribPts[contribPts.length - 1];
+    var growth    = final - totalIn;
+    var mult      = totalIn > 0 ? final / totalIn : 0;
+
+    initVal.textContent  = fmt(P);
+    monthVal.textContent = fmt(C);
+    rateVal.textContent  = aR * 100 + '%';
+    yrsVal.textContent   = Y + ' year' + (Y === 1 ? '' : 's');
+
+    oContrib.textContent = fmt(totalIn);
+    oFinal.textContent   = fmt(final);
+    oGrowth.textContent  = fmt(growth);
+    oMult.textContent    = mult >= 100 ? '100×+' : mult.toFixed(1) + '×';
+
+    // SVG path generation — normalize x to [0,100], y inverted to [100,0]
+    var maxY = Math.max(final, totalIn) || 1;
+    var pts  = balancePts.length;
+
+    function pathFrom(arr, areaMode) {
+      if (pts < 2) return '';
+      var d = '';
+      for (var i = 0; i < pts; i++) {
+        var x = (i / (pts - 1)) * 100;
+        var y = 100 - (arr[i] / maxY) * 96;  // 4% top padding
+        d += (i === 0 ? 'M' : 'L') + x.toFixed(2) + ',' + y.toFixed(2) + ' ';
+      }
+      if (areaMode) {
+        d += 'L100,100 L0,100 Z';
+      }
+      return d;
+    }
+
+    curveLine.setAttribute('d',   pathFrom(balancePts, false));
+    curveArea.setAttribute('d',   pathFrom(balancePts, true));
+    contribLine.setAttribute('d', pathFrom(contribPts, false));
+    contribArea.setAttribute('d', pathFrom(contribPts, true));
+  }
+
+  ['init','month','rate','yrs'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', recompute);
+  });
+
+  presets.addEventListener('click', function(e){
+    var btn = e.target.closest('.preset');
+    if (!btn) return;
+    initEl.value  = btn.dataset.init;
+    monthEl.value = btn.dataset.month;
+    rateEl.value  = btn.dataset.rate;
+    yrsEl.value   = btn.dataset.yrs;
+    recompute();
+  });
+
+  recompute();
+})();
+</script>
+
+</body>
+</html>
