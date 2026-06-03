@@ -2024,7 +2024,7 @@ function toggleTheme() {
       <ul style="font-size:13px;color:#374151;line-height:1.75;margin:0;padding-left:20px;">
         <li style="margin-bottom:8px;"><strong style="color:#15803d;">Zero look-ahead.</strong> Every entry uses <em>only the data that was publicly available on the date of the catalyst</em>. Deciding whether VRT was a buy signal in April 2020 uses what was knowable on April 1, 2020 &mdash; not what happened later.</li>
         <li style="margin-bottom:8px;"><strong style="color:#15803d;">Real triggers only.</strong> Every entry is anchored to a specific, dated public event &mdash; a DOE grant, an SEC Form 4 filing, an NRC licensing announcement, a Substantial Holder filing. The same trigger types the live system uses to fire alerts today. No discretionary "this looked great in retrospect" picks.</li>
-        <li style="margin-bottom:8px;"><strong style="color:#15803d;">Zero repainting.</strong> Entry dates, stop levels, and conviction tier are locked to the catalyst date and never adjusted afterward to look better. Losers stay losers. ENPH is in the table at &minus;79.2% precisely because we don't quietly delete the ones that didn't work.</li>
+        <li style="margin-bottom:8px;"><strong style="color:#15803d;">Zero repainting.</strong> Entry dates, stop levels, and conviction tier are locked to the catalyst date and never adjusted afterward to look better. Losers stay losers. ENPH is in the table at &minus;58% precisely because we don't quietly delete the ones that didn't work.</li>
         <li><strong style="color:#15803d;">Same exit framework as live.</strong> The "system strategy" returns come from the same auto-selected exit ladder (staged exits / trailing stop / buy &amp; hold) that live signals will use &mdash; not a post-hoc optimum chosen per ticker.</li>
       </ul>
       <p style="font-size:12px;color:#6b7280;line-height:1.7;margin:12px 0 0;font-style:italic;">
@@ -2034,29 +2034,29 @@ function toggleTheme() {
 
     <div class="record-stats">
       <div class="record-stat" style="border:2px solid #27ae60;">
-        <div class="num" style="color:#27ae60;" id="bt-sys-avg">+90%</div>
-        <div class="lbl" style="color:#27ae60;font-weight:700;">Avg — system strategy</div>
-        <div style="font-size:9px;color:#aaa;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:4px;">Staged exits + trailing stop<br>selected per sector &amp; tier</div>
+        <div class="num" style="color:#27ae60;" id="bt-bh-avg">+362%</div>
+        <div class="lbl" style="color:#27ae60;font-weight:700;">Avg — buy &amp; hold</div>
+        <div style="font-size:9px;color:#aaa;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:4px;">Hold to thesis invalidation<br>no mid-trade exits</div>
       </div>
       <div class="record-stat">
-        <div class="num" style="color:#888;" id="bt-bh-avg">+362%</div>
-        <div class="lbl">Avg — buy &amp; hold</div>
-        <div style="font-size:9px;color:#aaa;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:4px;">No exits, hold forever<br>higher avg, higher risk</div>
+        <div class="num" style="color:#888;" id="bt-sys-avg">+90%</div>
+        <div class="lbl">Avg — with exits</div>
+        <div style="font-size:9px;color:#aaa;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:4px;">Auto-selected exit ladder<br>(staged / trailing / hold)</div>
       </div>
       <div class="record-stat">
-        <div class="num" style="color:#888;">+96%</div>
+        <div class="num" style="color:#888;">+117%</div>
         <div class="lbl">S&amp;P 500 same periods</div>
       </div>
       <div class="record-stat">
-        <div class="num" style="color:#27ae60;">53%</div>
-        <div class="lbl">Theses that beat market</div>
+        <div class="num" style="color:#27ae60;">63%</div>
+        <div class="lbl">Theses that beat the market</div>
       </div>
       <div class="record-stat">
         <div class="num" style="color:#1565c0;">2,400+</div>
         <div class="lbl">Tickers monitored</div>
       </div>
     </div>
-    <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#888;margin-top:-8px;margin-bottom:8px;">System strategy = auto-selected exit discipline per position (staged exits for volatile names, buy &amp; hold for structural mega-trends). Full comparison for every ticker in the <a href="track_record.html" style="color:var(--green);">track record &rarr;</a></p>
+    <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#888;margin-top:-8px;margin-bottom:8px;">We even tested an auto-selected exit ladder (staged exits / trailing stops / hold, chosen per position) &mdash; across all 87 theses it returned <strong>+90%</strong> vs <strong>+362%</strong> for simply holding. Exits trim the losers but cap the winners, and the winners carry the whole record. That is why we hold. Full per-ticker comparison in the <a href="track_record.html" style="color:var(--green);">track record &rarr;</a></p>
 
     <div class="best-box">
       <span class="ticker">VRT</span><span class="ret">+2,340%</span>
@@ -2067,7 +2067,7 @@ function toggleTheme() {
     <div style="margin:28px 0;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
       <div style="background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
         <div>
-          <span style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.1em;">Biggest losses — buy &amp; hold vs system strategy</span>
+          <span style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.1em;">Our biggest losers — shown honestly: buy &amp; hold vs tested exits (as of Jun 2026)</span>
         </div>
         <span style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#555;">All theses shown — winners and losers</span>
       </div>
@@ -2078,7 +2078,7 @@ function toggleTheme() {
             <th style="padding:10px 16px;text-align:left;font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;">Ticker</th>
             <th style="padding:10px 16px;text-align:left;font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;">Thesis</th>
             <th style="padding:10px 16px;text-align:right;font-size:11px;font-weight:700;color:#c62828;text-transform:uppercase;letter-spacing:.06em;">Buy &amp; Hold</th>
-            <th style="padding:10px 16px;text-align:right;font-size:11px;font-weight:700;color:#27ae60;text-transform:uppercase;letter-spacing:.06em;">System Strategy</th>
+            <th style="padding:10px 16px;text-align:right;font-size:11px;font-weight:700;color:#27ae60;text-transform:uppercase;letter-spacing:.06em;">With Exits</th>
             <th style="padding:10px 16px;text-align:left;font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;">Strategy Used</th>
           </tr>
         </thead>
@@ -2086,36 +2086,36 @@ function toggleTheme() {
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 16px;font-weight:800;color:#0d1f0f;">PLUG</td>
             <td style="padding:10px 16px;color:#666;font-size:12px;">Hydrogen fuel cell — DOE clean energy grants</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;89.7%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;87%</td>
             <td style="padding:10px 16px;text-align:right;font-weight:800;color:#27ae60;">+70.0%</td>
             <td style="padding:10px 16px;font-size:11px;color:#888;">Staged exits: sold thirds at 2x, 4x, 8x — locked in gains before collapse</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f0f0;background:#fafafa;">
             <td style="padding:10px 16px;font-weight:800;color:#0d1f0f;">QS</td>
             <td style="padding:10px 16px;color:#666;font-size:12px;">Solid-state batteries — DOE battery innovation</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;78.5%</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:800;color:#27ae60;">+69.1%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;75%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:800;color:#27ae60;">+69.0%</td>
             <td style="padding:10px 16px;font-size:11px;color:#888;">Staged exits: sold thirds at 2x, 4x, 8x — captured the early rally</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 16px;font-weight:800;color:#0d1f0f;">NPWR</td>
             <td style="padding:10px 16px;color:#666;font-size:12px;">Nuclear power — NRC licensing signals</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;85.1%</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#e67e22;">&minus;32.8%</td>
-            <td style="padding:10px 16px;font-size:11px;color:#888;">Staged exits: still a loss, but contained — saved 52 points vs buy &amp; hold</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;86%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#e67e22;">&minus;33.0%</td>
+            <td style="padding:10px 16px;font-size:11px;color:#888;">Staged exits: still a loss, but contained — saved 53 points vs buy &amp; hold</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f0f0;background:#fafafa;">
             <td style="padding:10px 16px;font-weight:800;color:#0d1f0f;">ERII</td>
             <td style="padding:10px 16px;color:#666;font-size:12px;">Water security — municipal infrastructure grants</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;43.7%</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#e67e22;">&minus;11.3%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;60%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#e67e22;">&minus;11.0%</td>
             <td style="padding:10px 16px;font-size:11px;color:#888;">Staged exits: smaller loss — partial exits locked in gains at 2x before decline</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 16px;font-weight:800;color:#0d1f0f;">ENPH</td>
             <td style="padding:10px 16px;color:#666;font-size:12px;">Solar technology — IRA renewable energy credits</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;79.2%</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;79.2%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;58%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;58%</td>
             <td style="padding:10px 16px;font-size:11px;color:#888;">Buy &amp; hold recommended — stock declined steadily without a strong early rally to capture</td>
           </tr>
         </tbody>
@@ -2402,7 +2402,7 @@ function toggleTheme() {
   <div style="text-align:center;margin-top:24px;">
     <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#bbb;margin-bottom:8px;">Share this research</p>
     <div class="share-row">
-      <a href="https://twitter.com/intent/tweet?text=Investment+signals+built+on+insider+buying%2C+congressional+trades+%26+government+data+%E2%80%94+not+opinions.+%2B266%25+avg+system+strategy+return.+87+tickers+monitored.&url=https%3A%2F%2Fofficialdragonflysystems.com"
+      <a href="https://twitter.com/intent/tweet?text=Investment+signals+built+on+insider+buying%2C+congressional+trades+%26+government+data+%E2%80%94+not+opinions.+%2B362%25+avg+buy+%26+hold+across+87+published+theses.+2%2C400%2B+tickers+monitored.&url=https%3A%2F%2Fofficialdragonflysystems.com"
          target="_blank" rel="noopener" class="share-btn share-x">&#120143; Twitter / X</a>
       <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fofficialdragonflysystems.com"
          target="_blank" rel="noopener" class="share-btn share-li">LinkedIn</a>
