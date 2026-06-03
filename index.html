@@ -3269,10 +3269,10 @@ renderPlanPrices();
     if(!picks.length)return;
     picks.sort(function(a,b){return b.bh-a.bh;});
     var n=picks.length, best=picks.slice(0,10), worst=picks.slice(Math.max(0,n-10)).reverse();
-    var avgBh=picks.reduce(function(s,p){return s+p.bh;},0)/n;
+    // bt-bh-avg stays FROZEN at the dated headline value (+362%, matches the hero) —
+    // do not overwrite it with the live figure or the same metric shows two numbers.
     var sv=picks.filter(function(p){return p.sys!=null;});
     var avgSys=sv.length?sv.reduce(function(s,p){return s+p.sys;},0)/sv.length:null;
-    setText('bt-bh-avg',pct(avgBh));
     if(avgSys!=null)setText('bt-sys-avg',pct(avgSys));
     var bh=rowsHtml(best,'#4ade80'), wh=rowsHtml(worst,'#f87171');
     setHtml('bt-best-bh',bh);setHtml('bt-worst-bh',wh);
