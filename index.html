@@ -2534,6 +2534,7 @@ function copyPageLink() {
   <div class="section-label">Pricing</div>
   <h2 id="pricing-h2">Start at $9.99. Upgrade when it earns it.</h2>
   <p class="lead">No lock-in. Cancel any time. Annual plans save up to 3 months.</p>
+  <p style="font-size:12.5px;color:#7ec98a;margin:-6px 0 0;font-family:'Helvetica Neue',Arial,sans-serif;">&#128274; We never sell your data &mdash; and we never even see your card. By subscribing you agree to our <a href="https://tracker.officialdragonflysystems.com/terms" target="_blank" rel="noopener" style="color:#4ade80;">Terms</a> &amp; <a href="https://tracker.officialdragonflysystems.com/risk-disclosure" target="_blank" rel="noopener" style="color:#4ade80;">Risk Disclosure</a>.</p>
 
   <!-- 30-day money-back guarantee strip — LENS Phase 4 conversion. Removes
        the "what if I don't like it" friction at the moment of decision.
@@ -3093,10 +3094,14 @@ renderPlanPrices();
       <div><strong>Basic</strong> <span id="ep-plan-price">from $9.99</span></div>
     </div>
     <input type="email" id="ep-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')epSubmit()">
+    <label for="ep-consent" style="display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:#6f9075;text-align:left;margin:11px 2px 6px;font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.45;cursor:pointer;">
+      <input type="checkbox" id="ep-consent" style="margin-top:2px;flex-shrink:0;accent-color:#4ade80;">
+      <span>I have read and agree to the <a href="https://tracker.officialdragonflysystems.com/terms" target="_blank" rel="noopener" style="color:#4ade80;">Terms</a>, <a href="https://tracker.officialdragonflysystems.com/risk-disclosure" target="_blank" rel="noopener" style="color:#4ade80;">Risk Disclosure</a> &amp; <a href="https://tracker.officialdragonflysystems.com/privacy" target="_blank" rel="noopener" style="color:#4ade80;">Privacy Policy</a>.</span>
+    </label>
     <button id="ep-btn" onclick="epSubmit()">Send me the tier comparison &rarr;</button>
     <div id="ep-msg" style="font-size:13px;margin-top:8px;min-height:18px;font-family:'Helvetica Neue',Arial,sans-serif;"></div>
     <span id="ep-skip" class="ep-skip" onclick="epClose()">No thanks, I'm not looking to improve my returns</span>
-    <p class="ep-fine">No spam &middot; Unsubscribe anytime &middot; Cancel anytime</p>
+    <p class="ep-fine">&#128274; We never sell your data &mdash; and we never even see your card &middot; Unsubscribe anytime</p>
   </div>
 </div>
 <script>
@@ -3201,12 +3206,16 @@ renderPlanPrices();
     if (!em || !em.includes('@') || !em.includes('.')) {
       msg.style.color = '#e57'; msg.textContent = 'Please enter a valid email address.'; return;
     }
+    var consent = document.getElementById('ep-consent');
+    if (consent && !consent.checked) {
+      msg.style.color = '#e57'; msg.textContent = 'Please tick the box to agree to the Terms first.'; return;
+    }
     var btn = document.getElementById('ep-btn');
     btn.textContent = 'Sending…'; btn.disabled = true;
     fetch('https://tracker.officialdragonflysystems.com/api/lead-capture', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({email: em, source: 'homepage_popup_' + _activeVariant.toLowerCase(), attr: _dfAttr()})
+      body: JSON.stringify({email: em, source: 'homepage_popup_' + _activeVariant.toLowerCase(), attr: _dfAttr(), consent: {accepted: true, ts: Date.now(), docs: 'terms+risk+privacy'}})
     }).then(function(r){
       if(!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
