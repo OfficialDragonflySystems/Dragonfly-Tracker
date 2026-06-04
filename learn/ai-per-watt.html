@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intelligence per watt — the number that picks the AI winners — Dragonfly Lens · Learn</title>
+<meta name="description" content="The AI race won't be won by the smartest model — it'll be won by whoever delivers intelligence the cheapest, and that comes down to energy. Here's the one metric that quietly reorders who makes money from the AI buildout.">
+<style>
+  :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+  a{color:var(--lime);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav{padding:14px 28px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+  nav .logo{font-family:Georgia,serif;font-size:18px;font-weight:800;color:var(--lime);letter-spacing:.04em;}
+  nav .back{font-size:12px;color:var(--muted);}
+
+  .page{max-width:760px;margin:0 auto;padding:56px 24px 80px;}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:normal;line-height:1.15;margin-bottom:14px;color:#fff;}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:36px;}
+
+  .article p{font-size:15.5px;color:var(--text);margin-bottom:18px;}
+  .article p:first-of-type{font-size:17px;color:#cfd8d0;}
+  .article h2{font-family:Georgia,serif;font-size:22px;font-weight:normal;color:#fff;margin:32px 0 14px;line-height:1.3;}
+  .article h3{font-size:14px;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin:24px 0 10px;}
+  .article ul, .article ol{margin:14px 0 18px 22px;}
+  .article li{font-size:15px;color:var(--text);margin-bottom:8px;}
+  .article em{color:#cfd8d0;}
+  .article strong{color:#fff;}
+  .article code{font-family:'SF Mono',Menlo,Consolas,monospace;background:rgba(0,0,0,.4);color:#cfd8d0;padding:1px 6px;border-radius:3px;font-size:13px;}
+
+  .chart{margin:26px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .chart img{display:block;width:100%;height:auto;}
+  .chart .cap{font-size:12px;color:var(--muted);padding:10px 16px;background:var(--card);border-top:1px solid var(--border);}
+
+  .layers{display:grid;grid-template-columns:1fr;gap:10px;margin:22px 0;}
+  .layer{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;}
+  .layer-name{font-family:Georgia,serif;font-size:15px;color:#fff;font-weight:normal;line-height:1.3;}
+  .layer-tag{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:11px;font-weight:700;align-self:start;white-space:nowrap;text-align:right;min-width:104px;}
+  .layer.bottleneck{border-left:3px solid var(--lime);}
+  .layer.bottleneck .layer-tag{color:#4ade80;}
+  .layer.normal .layer-tag{color:var(--muted);}
+  .layer-desc{font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.6;grid-column:1 / span 2;}
+
+  .callout{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--lime);border-radius:7px;padding:18px 22px;margin:24px 0;}
+  .callout p{font-size:14px;color:var(--muted);margin:0;}
+  .callout strong{color:#fff;}
+
+  .key-finding{background:rgba(0,0,0,.32);border:1px solid #2d5a35;border-radius:10px;padding:22px 26px;margin:24px 0;}
+  .key-finding .tag{display:inline-block;background:rgba(74,222,128,.14);color:var(--lime);border:1px solid rgba(74,222,128,.4);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:12px;}
+  .key-finding p{font-size:14.5px;color:#cfd8d0;line-height:1.75;margin-bottom:10px;}
+  .key-finding p:last-child{margin-bottom:0;}
+
+  .next{margin-top:48px;padding:22px 24px;background:linear-gradient(135deg,#0d1f10 0%,#1a3a1f 100%);border:1px solid #2d5a35;border-radius:10px;}
+  .next .tag{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.1em;padding:2px 8px;border-radius:10px;text-transform:uppercase;margin-bottom:10px;}
+  .next h3{font-size:14px;color:#fff;margin-bottom:8px;}
+  .next p{font-size:13.5px;color:#cfd8d0;margin-bottom:14px;}
+  .next a{display:inline-block;padding:9px 18px;background:var(--green);color:#fff;border-radius:6px;font-size:13px;font-weight:700;}
+
+  footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:60px;}
+  footer a{color:var(--lime);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Dragonfly Lens</a>
+  <a href="index.html" class="back">&larr; all articles</a>
+</nav>
+
+<div class="page">
+  <div class="eyebrow">Concept · The Lens</div>
+  <h1>The one number that will pick the AI winners.</h1>
+  <div class="meta">~6 min read · Intelligence per watt</div>
+
+  <div class="article">
+    <p>Everyone is arguing about the wrong question. Which model is smartest — GPT vs Gemini vs Claude vs the new open-source thing that topped a leaderboard this week? It makes good headlines. It's the wrong fight. <strong>The AI race won't be won by the smartest model. It'll be won by whoever delivers intelligence the cheapest</strong> — and "cheapest" comes down to one thing nobody can print on demand: electricity.</p>
+
+    <p>Here's the metric that, once you see it, you can't unsee — and why it quietly reorders who actually makes money from the biggest buildout of our lifetime.</p>
+
+    <h2>The constraint nobody put on the slide</h2>
+
+    <p>You can buy your way to a bigger model — order more chips, wire them together, train longer. Capital solves it. But those chips don't run on capital. They run on <strong>power</strong> — staggering amounts of it. And power is <em>physical</em>. You can't summon a gigawatt the way you can wire a billion dollars. Power plants take years. Transmission lines take longer. The grid is already creaking.</p>
+
+    <p>Think of it like this: <em>you can buy a fleet of supercars overnight, but you can't build the highways and gas stations overnight.</em> Right now the AI industry has a garage full of supercars and is discovering there's nowhere to drive them.</p>
+
+    <p>How real is this? In 2024, <strong>Microsoft signed a 20-year deal to restart a mothballed reactor at Three Mile Island</strong> — the site of America's worst nuclear accident — to help power its data centers. An 835-megawatt reactor, shut down since 2019, is being brought back from the dead specifically to feed AI. When the most valuable companies on Earth are reviving nuclear plants for compute, the bottleneck isn't a forecast. It's already here. The smartest people in the industry already know: <strong>the bottleneck isn't intelligence. It's watts.</strong></p>
+
+    <h2>The metric: intelligence per watt</h2>
+
+    <p>So here's the number that matters. Not "how smart is the model." It's: <strong>how much useful intelligence can you deliver per unit of energy — and per dollar spent building it?</strong></p>
+
+    <p>Call it <em>intelligence per watt per dollar.</em> The company that wins that equation wins the decade, because in a world where everyone has access to good-enough models, the one who serves them <strong>cheapest</strong> takes the market — and cheapest means most efficient with the scarce input, which is energy.</p>
+
+    <p>Notice we said <em>useful</em> intelligence, not raw output. A system that spits out a flood of mediocre answers cheaply isn't winning. The clean way to measure "useful" is to let the market do it: <strong>revenue per unit of power.</strong> If people pay for it, it was useful.</p>
+
+    <h2>You can't measure it directly — but one number gives it away</h2>
+
+    <p>The catch: no company reports "tokens per watt." You won't find it in an earnings release. But there's a number you <em>can</em> watch, and it's the whole story in disguise — <strong>the price of AI itself.</strong></p>
+
+    <div class="chart">
+      <img src="ai-price-chart.png" alt="The price of intelligence is collapsing — cost to run 1 million words of AI falling ~10x per year">
+      <div class="cap">The cost to reach a given level of AI capability has fallen roughly 10x per year. Source: a16z "LLMflation," Nov 2024.</div>
+    </div>
+
+    <p>The cost to match GPT-3's level dropped from about <strong>$60 to $0.06 per million words in three years</strong> — a thousand-fold collapse, roughly 10x cheaper every year. <strong>The falling price of AI <em>is</em> the efficiency curve, made visible.</strong> You don't need companies to confess their tokens-per-watt. You just watch what they charge — and the trajectory tells you who's winning the physics.</p>
+
+    <h2>Follow the bottleneck — this is where the money is</h2>
+
+    <p>Here's the move most investors miss. Because you can't cleanly tell which <em>model</em> will win — they leapfrog each other monthly — betting on the model is betting on a coin flip. So don't. Bet on the <strong>bottleneck</strong> instead, because the scarce input gets paid no matter which model is on top.</p>
+
+    <p>In a gold rush, you sell shovels. In <em>this</em> rush, the shovels are <strong>power and memory.</strong> Walk the chain and ask, at each link, "is this the scarce thing right now?":</p>
+
+    <div class="layers">
+      <div class="layer normal"><div class="layer-name">The foundry</div><div class="layer-tag">chokepoint</div><div class="layer-desc">Makes every advanced chip on Earth — one company, one un-hedgeable choke point. The geopolitical risk in the whole thesis.</div></div>
+      <div class="layer normal"><div class="layer-name">Compute silicon</div><div class="layer-tag">racing</div><div class="layer-desc">The chips. Improving on efficiency fast, but plentiful-ish — and the place everyone is already looking.</div></div>
+      <div class="layer bottleneck"><div class="layer-name">Memory + interconnect</div><div class="layer-tag">BOTTLENECK</div><div class="layer-desc">The pipes that feed the chips (high-bandwidth memory, networking). A starved chip burns power doing nothing — like an engine revving in neutral. Genuinely scarce today.</div></div>
+      <div class="layer bottleneck"><div class="layer-name">Power / energy</div><div class="layer-tag">THE CEILING</div><div class="layer-desc">The electricity to run it all. Nuclear, the grid, and the people who build both. The ultimate scaling limit — and where the most durable money sits.</div></div>
+      <div class="layer normal"><div class="layer-name">Cooling / data center</div><div class="layer-tag">tightening</div><div class="layer-desc">Every watt spent on air conditioning is a watt not spent thinking. Efficiency here is pure margin.</div></div>
+      <div class="layer normal"><div class="layer-name">Model software</div><div class="layer-tag">wildcard</div><div class="layer-desc">Algorithmic efficiency — tokens per FLOP. Where a clever trick can suddenly do far more with less, and reset the whole board overnight (see below).</div></div>
+      <div class="layer normal"><div class="layer-name">Hyperscaler / integrator</div><div class="layer-tag">full-stack</div><div class="layer-desc">The few giants who own the <em>whole</em> stack — custom silicon, their own data centers, their own models — and optimize it end to end for the best system-level tokens-per-watt.</div></div>
+    </div>
+
+    <p>The two links flashing red today — the genuine scarcity — are <strong>energy and memory.</strong> That's where the durable money is, because they win regardless of which model wins.</p>
+
+    <h2>The wildcard that can flip the board overnight</h2>
+
+    <p>One honest caveat, because the Lens shows you the risks too. The model layer is the wildcard. When <strong>DeepSeek trained a GPT-4-class model for a reported ~$6 million</strong> — against the ~$100 million GPT-4 is estimated to have cost, on roughly a tenth of the compute — and then served it at around 30x lower cost per token, it proved a <em>software</em> breakthrough can leapfrog brute force. It briefly spooked everyone long the "we'll need infinite chips forever" trade.</p>
+
+    <p>But here's the twist, and it's a 170-year-old idea called <strong>Jevons paradox</strong>: when you make something more efficient, people don't use <em>less</em> of it — they use <em>way more</em>, because now it's cheap enough for a thousand new uses. Cheaper steam engines burned more coal, not less. Cheaper intelligence won't shrink demand for power — it'll explode it. <strong>Efficiency doesn't shrink the pie. It eats the world.</strong></p>
+
+    <div class="key-finding">
+      <span class="tag">The takeaway</span>
+      <p><strong>Don't bet on the smartest model. Bet on the scarce input.</strong> Own the picks-and-shovels at the bottleneck — power and memory, today. They get paid no matter which model is on top.</p>
+      <p>And <strong>watch the price of AI as your signal:</strong> when it drops, efficiency just jumped — and Jevons says demand is about to chase it.</p>
+    </div>
+
+    <div class="callout">
+      <p><strong>Bottom line:</strong> the model leaderboard changes every week. The laws of thermodynamics don't. This is how the Dragonfly Lens reads the AI buildout — not the hype, the physics and the economics underneath it.</p>
+    </div>
+  </div>
+
+  <div class="next">
+    <span class="tag">Go deeper</span>
+    <h3>See the names behind each layer — and verify the calls yourself.</h3>
+    <p>The Lens tracks the full AI value chain — compute, memory, energy, and the bottleneck-solvers — and every signal we publish is cryptographically signed and timestamped, so you can check our record instead of trusting it.</p>
+    <a href="/">Explore the Lens &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dragonfly Lens</a> &middot; <a href="index.html">All Learn articles</a> &middot; Built on signals. Not opinions.
+</footer>
+
+</body>
+</html>
