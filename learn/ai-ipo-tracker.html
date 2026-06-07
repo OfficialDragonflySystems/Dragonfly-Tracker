@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI IPO Tracker — Dragonfly Lens</title>
+<meta name="description" content="Live tracker of the 2026 AI IPO wave — SpaceX, OpenAI, Anthropic, Cerebras, CoreWeave, Quantinuum. Candlesticks, the cycle overlay, share structure, lockup countdowns, and the historically-best way to get an entry.">
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#131823; --panel2:#1a2030; --ink:#e8edf6;
+    --muted:#93a0b5; --line:#26304a; --accent:#5eead4; --warn:#f6a96b; --bad:#f87171; --good:#6ee7a8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:980px;margin:0 auto;padding:32px 20px 80px;}
+  .kick{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;}
+  h1{font-size:34px;line-height:1.15;margin:.3em 0 .2em;}
+  h2{font-size:23px;margin:1.8em 0 .6em;border-bottom:1px solid var(--line);padding-bottom:.3em;}
+  .sub{color:var(--muted);font-size:18px;margin-top:0;}
+  table{width:100%;border-collapse:collapse;margin:1em 0;font-size:14px;}
+  th,td{padding:9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;}
+  td .tk{font-weight:700;color:var(--ink);}
+  td small{color:var(--muted);}
+  .bad{color:var(--bad);} .good{color:var(--good);} .warn{color:var(--warn);}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:1em 0;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;}
+  .card h3{margin:.1em 0 .1em;font-size:15px;}
+  .card .days{font-size:28px;font-weight:800;}
+  .card .lbl{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;}
+  .steps{counter-reset:s;list-style:none;padding:0;}
+  .steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);
+            border-radius:10px;padding:12px 14px 12px 52px;margin:8px 0;position:relative;}
+  .steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;
+            background:var(--accent);color:#06231e;border-radius:50%;display:grid;place-items:center;font-weight:800;}
+  .note{background:var(--panel2);border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 8px 8px 0;margin:1em 0;color:var(--muted);}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:3em;padding-top:1em;}
+  a{color:var(--accent);}
+  /* hover-explainers (real, web-only) */
+  .lens-term{border-bottom:1px dotted var(--accent);cursor:help;position:relative;white-space:nowrap;}
+  .lens-term .tip{visibility:hidden;opacity:0;position:absolute;bottom:150%;left:50%;transform:translateX(-50%);
+    width:250px;max-width:70vw;background:#0f1b14;color:var(--ink);border:1px solid var(--line);border-radius:8px;
+    padding:10px 12px;font-size:12.5px;line-height:1.5;z-index:20;transition:opacity .15s;white-space:normal;
+    box-shadow:0 8px 24px rgba(0,0,0,.5);font-weight:400;text-transform:none;letter-spacing:0;}
+  .lens-term:hover .tip{visibility:visible;opacity:1;}
+  /* drawdown bar */
+  .dd{height:6px;background:#3a1f22;border-radius:3px;margin-top:3px;overflow:hidden;}
+  .dd>i{display:block;height:6px;background:var(--bad);border-radius:3px;}
+  /* cycle timeline */
+  .cyc{display:flex;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin:1em 0 .4em;font-size:11px;}
+  .cyc>div{padding:10px 6px;text-align:center;color:#0b0e14;font-weight:700;line-height:1.2;}
+  .selrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:.6em 0;}
+  select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:14px;}
+  #tv-chart{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);min-height:430px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kick">Dragonfly Lens &middot; Live Tracker</div>
+  <h1>The AI IPO Wave</h1>
+  <p class="sub">The biggest cluster of mega-cap listings in history just formed. How they actually stack up &mdash; with candlesticks, the cycle overlay, and the historically-best way to get an entry.</p>
+  <div class="note" id="asof">Figures as of June 2026. Lockup countdowns + charts update live in your browser. Hover any <span class="lens-term">dotted term<span class="tip">Like this — hover any dotted term for a plain-English definition and why it matters.</span></span> for a plain-English explanation.</div>
+
+  <h2>How they stack up</h2>
+  <table>
+    <thead><tr><th>Company</th><th>Revenue (2025)</th><th>Profitable?</th><th>Valuation</th><th><span class="lens-term">P/Rev<span class="tip">Price-to-revenue: the company's value divided by a year of sales — how many years of revenue you're paying up front. Higher = pricier / more speculative.</span></span></th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tk">SpaceX</span> <small>SPCX</small></td><td>~$18.7B <small>(+33%)</small></td><td class="bad">No <small>(only Starlink profitable)</small></td><td>~$1.8T</td><td>~100&times;</td><td>Debuts Jun 12 2026</td></tr>
+      <tr><td><span class="tk">OpenAI</span></td><td>~$25&ndash;30B <span class="lens-term">run-rate<span class="tip">The latest month's sales × 12 — an optimistic annual snapshot that can overstate a fast-moving figure.</span></span></td><td class="bad">No &mdash; loses ~$1.22 per $1</td><td>$850B&ndash;$1T</td><td>~38&times;</td><td>Filed May 22 &middot; Q4 target</td></tr>
+      <tr><td><span class="tk">Anthropic</span></td><td>~$45B run-rate</td><td class="bad">No <small>(70% inference margin)</small></td><td>~$965B</td><td>~20&times;</td><td>Filed Jun 1 &middot; ~Oct target</td></tr>
+      <tr><td><span class="tk">CoreWeave</span> <small>CRWV</small></td><td>$5.13B <small>(+170%)</small></td><td class="bad">No &mdash; $1.17B loss</td><td>public</td><td>~10&times;</td><td>IPO'd Mar 2025</td></tr>
+      <tr><td><span class="tk">Cerebras</span> <small>CBRS</small></td><td>$510M <small>(+76%)</small></td><td class="bad">No &mdash; $76M loss*</td><td>~$23B</td><td>~45&times;</td><td>Priced ~May 2026</td></tr>
+      <tr><td><span class="tk">Quantinuum</span> <small>QNT</small></td><td>$30.9M <small>(+34%)</small></td><td class="bad">No &mdash; $193M loss</td><td>~$13B</td><td class="warn">~400&times;</td><td>IPO'd Jun 4 2026</td></tr>
+    </tbody>
+  </table>
+  <p style="color:var(--muted);font-size:13px">* Cerebras shows a GAAP profit, but it's a one-time accounting gain on a contract with its largest customer (G42). Strip it out and it lost ~$76M &mdash; on a customer base that is ~86% one region (UAE).</p>
+  <div class="note"><b>The throughline:</b> the revenue spread is ~1,000&times; &mdash; and <b>not one is profitable all-in.</b> That's the single biggest predictor of how an IPO ages.</div>
+
+  <h2>See it: the candlesticks</h2>
+  <p style="color:var(--muted)">Pick any name and watch the actual pattern — the pop, the lockup cliff, the fade. (Already-public names have full history; the just-listed and not-yet-priced ones show little or none.)</p>
+  <div class="selrow">
+    <label for="tv-symbol" style="color:var(--muted);font-size:13px">Chart:</label>
+    <select id="tv-symbol" onchange="loadTV(this.value)">
+      <optgroup label="This wave (public)">
+        <option value="NASDAQ:CRWV">CoreWeave (CRWV)</option>
+        <option value="NASDAQ:CBRS">Cerebras (CBRS)</option>
+        <option value="NASDAQ:QNT">Quantinuum (QNT)</option>
+      </optgroup>
+      <optgroup label="The receipts (history)">
+        <option value="NASDAQ:COIN">Coinbase (COIN) — −92%</option>
+        <option value="NASDAQ:RIVN">Rivian (RIVN) — −85%</option>
+        <option value="NYSE:SNOW">Snowflake (SNOW) — −70%</option>
+        <option value="NASDAQ:LYFT">Lyft (LYFT) — −85%</option>
+      </optgroup>
+      <optgroup label="The giants">
+        <option value="NASDAQ:META">Meta / Facebook (META)</option>
+        <option value="NASDAQ:AMZN">Amazon (AMZN)</option>
+        <option value="NASDAQ:NVDA">Nvidia (NVDA)</option>
+        <option value="NASDAQ:GOOGL">Google (GOOGL)</option>
+      </optgroup>
+    </select>
+  </div>
+  <div id="tv-chart"></div>
+
+  <h2>What history says — the receipts</h2>
+  <p>The actual record of the high-flying IPOs most like this wave:</p>
+  <table>
+    <thead><tr><th>IPO</th><th>IPO'd</th><th>Pop &rarr; peak</th><th>Fell from peak</th><th>To bottom</th></tr></thead>
+    <tbody id="receipts"></tbody>
+    <tfoot><tr style="font-weight:700"><td>Average</td><td>&mdash;</td><td>&mdash;</td><td class="bad">&asymp; &minus;74%</td><td>&asymp; 10 months</td></tr></tfoot>
+  </table>
+  <div class="note"><b>The average:</b> these gave back <b>~74% from their peak</b> and took <b>~10 months</b> to bottom — so the historically better entry was <b>~10&ndash;14 months later</b>, after the <span class="lens-term">lockup<span class="tip">A 90–180-day ban on insiders selling after an IPO. When it lifts, a flood of shares can hit the market and push the price down.</span></span> flood and the first couple of earnings resets. <b>But the legends came back:</b> Amazon survived −96%, Nvidia −90%, Meta −54% — and became giants. The lesson isn't "these are bad," it's that <b>the entry is everything.</b></div>
+
+  <h2>The cycle overlay — when, not just what</h2>
+  <p>The biggest disasters didn't crash because of the companies — they crashed because of <i>when</i> they listed. Snowflake, Coinbase &amp; Rivian all peaked at the <b>late-2021 liquidity top</b>, then cratered through <b>2022's Fed tightening</b> (also a midterm year). Where we sit now rhymes — and the lockups land into a historically <i>friendlier</i> 2027.</p>
+  <div class="cyc">
+    <div style="flex:2;background:#6ee7a8">2020&ndash;21<br>Liquidity flood &amp; froth peak</div>
+    <div style="flex:1;background:#f87171">2022<br>Fed tightening &middot; crash &middot; midterm</div>
+    <div style="flex:1.5;background:#5eead4">2023&ndash;25<br>Recovery</div>
+    <div style="flex:1;background:#f6a96b">2026<br>Late cycle &middot; midterm &middot; <b>the wave</b></div>
+    <div style="flex:1;background:#6ee7a8">2027<br>Pre-election &middot; historically strong</div>
+  </div>
+  <p style="color:var(--muted);font-size:13px">Midterm years average an <b>~18% intra-year drawdown</b> — the weakest of the 4-year cycle. The pre-election year (2027) is historically the <b>strongest</b> (S&amp;P ~+15% in the year after a midterm) — and that's exactly when these lockups expire. <span style="color:var(--accent)">Supply (lockups) vs. demand (cycle + index inclusion) plays out over a year.</span> <i>Cycle patterns are tendencies on a small sample, not laws.</i></p>
+
+  <h2>How the shares are split &mdash; the overhang</h2>
+  <p>These debuts <span class="lens-term">float<span class="tip">The slice of shares actually available to trade publicly. Insiders hold the rest — and the bigger that block, the bigger the wave of supply waiting at lockup.</span></span> only a sliver while insiders keep the rest. The bigger the retained stake, the bigger the supply wall when the ~180-day lockup lifts.</p>
+  <table>
+    <thead><tr><th>Name</th><th>Public float</th><th>Insiders can sell</th><th>Who holds the rest</th></tr></thead>
+    <tbody>
+      <tr><td class="tk">SpaceX</td><td class="bad">~5%</td><td>~Dec 2026</td><td>Musk ~84% of the vote (10&times; super-shares); ~95% retained</td></tr>
+      <tr><td class="tk">OpenAI</td><td>sliver (TBD)</td><td>~180d post-pricing</td><td>Microsoft 27% &middot; Foundation 26% &middot; employees 25% &middot; VCs 13%</td></tr>
+      <tr><td class="tk">Anthropic</td><td>sliver (TBD)</td><td>~180d post-pricing</td><td>Amazon 21% &middot; Google 15% &middot; founders/staff/VCs ~64%</td></tr>
+      <tr><td class="tk">Cerebras</td><td class="bad">~8%</td><td>~Nov 2026</td><td>founders + VCs + G42-linked</td></tr>
+      <tr><td class="tk">Quantinuum</td><td class="bad">~18%</td><td>~Dec 1 2026</td><td>Honeywell + Cambridge Quantum ~82% (Honeywell ~49% vote)</td></tr>
+    </tbody>
+  </table>
+  <p style="color:var(--muted);font-size:13px"><b>The cap table is the tell:</b> Coinbase came public as a <i>direct listing</i> (no lockup) and fell −92%; Google's fair Dutch-auction price barely dipped. The more concentrated the ownership and the frothier the debut, the harder the round-trip.</p>
+
+  <h2>Our read — where these could land</h2>
+  <p style="color:var(--muted);font-size:13px"><i>A scenario model, not a forecast and not advice. It applies the historical drawdown pattern + each company's multiple, profitability, and share structure. Reality will differ — and we'll track this against what actually happens.</i></p>
+  <table>
+    <thead><tr><th>Name</th><th>At</th><th>The structural tell</th><th>Scenario fall</th></tr></thead>
+    <tbody>
+      <tr><td class="tk">SpaceX</td><td>~100&times;</td><td>Starlink profitable + scaling; AI-infra pivot; Musk premium</td><td class="good"><b>mildest ~30&ndash;50%</b></td></tr>
+      <tr><td class="tk">Anthropic</td><td>~20&times;</td><td>Best margins + revenue leader; cheapest multiple</td><td>~30&ndash;55%</td></tr>
+      <tr><td class="tk">OpenAI</td><td>~38&times;</td><td>Loses $1.22/$1, being leapfrogged, big overhang</td><td class="bad">~50&ndash;70%</td></tr>
+      <tr><td class="tk">Cerebras</td><td>~45&times;</td><td>86% of revenue from one region (G42/UAE)</td><td class="bad">~50&ndash;75%</td></tr>
+      <tr><td class="tk">Quantinuum</td><td>~400&times;</td><td>Pre-revenue option; Honeywell ~82% = supply wall</td><td class="bad"><b>deepest ~60&ndash;85%</b></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Lockup-expiry watch</h2>
+  <p style="color:var(--muted)">The supply cliff. ~180 days after listing, insider shares unlock — historically a better entry than day one.</p>
+  <div class="cards" id="lockups"></div>
+
+  <h2>The ideal way to play it</h2>
+  <ol class="steps">
+    <li><b>Don't buy the day-one pop.</b> You're buying from flippers at peak euphoria.</li>
+    <li><b>Circle the lockup date</b> (above). That supply flush is historically a better entry than the prospectus.</li>
+    <li><b>Demand profitability &mdash; or a credible path.</b> The single biggest predictor of long-run returns.</li>
+    <li><b>Let it report 2&ndash;3 quarters first.</b> The first earnings prints reset the hype.</li>
+    <li><b>If you must own it early, size it like a call option</b> &mdash; small. A few become Amazon; most fade.</li>
+  </ol>
+
+  <div class="note">Every call we make is <b>timestamped and cryptographically signed</b> &mdash; so you can verify our record instead of trusting it. This page is entry #1 in that record: as these unlock, we'll mark our scenario read against what actually happened. The model leaderboard changes weekly. The math of an IPO doesn't.</div>
+
+  <p class="disc">Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Past performance does not guarantee future results. Tickers named are examples illustrating a framework, not recommendations to buy or sell. Charts via TradingView. Sources: company SEC filings &amp; earnings; Jay R. Ritter (Univ. of Florida) IPO statistics; a16z; press reporting (June 2026).</p>
+</div>
+
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+  // --- candlestick explorer ---
+  function loadTV(sym){
+    document.getElementById('tv-chart').innerHTML='';
+    new TradingView.widget({
+      autosize:false, width:'100%', height:430, symbol:sym, interval:'W', timezone:'Etc/UTC',
+      theme:'dark', style:'1', locale:'en', hide_side_toolbar:true, allow_symbol_change:true,
+      container_id:'tv-chart', backgroundColor:'#131823', gridColor:'rgba(38,48,74,0.5)'
+    });
+  }
+  loadTV('NASDAQ:CRWV');
+
+  // --- receipts table ---
+  var receipts = [
+    {n:"Facebook", d:"May '12", pop:"flat (fell day 1)", dd:54, bot:"~110 days*"},
+    {n:"Lyft", d:"Mar '19", pop:"+23% (day 1)", dd:85, bot:"never recovered"},
+    {n:"Snowflake", d:"Sep '20", pop:"+234% (14mo)", dd:70, bot:"~11 months"},
+    {n:"Coinbase", d:"Apr '21", pop:"peaked day 1", dd:92, bot:"~20 months"},
+    {n:"Rivian", d:"Nov '21", pop:"+130% (6 days)", dd:85, bot:"~6 months"},
+    {n:"CoreWeave", d:"Mar '25", pop:"+368% (84 days)", dd:55, bot:"unfolding"}
+  ];
+  var rb = document.getElementById("receipts");
+  receipts.forEach(function(r){
+    rb.innerHTML += "<tr><td class='tk'>"+r.n+"</td><td>"+r.d+"</td><td>"+r.pop+
+      "</td><td><b class='bad'>&minus;"+r.dd+"%</b><div class='dd'><i style='width:"+r.dd+"%'></i></div></td><td>"+r.bot+"</td></tr>";
+  });
+
+  // --- lockup countdowns ---
+  var lockups = [
+    {name:"SpaceX (SPCX)",    ipo:"2026-06-12", note:"Debuts Jun 12 2026"},
+    {name:"Quantinuum (QNT)", ipo:"2026-06-04", note:"IPO'd Jun 4 2026"},
+    {name:"Cerebras (CBRS)",  ipo:"2026-05-15", note:"Priced ~May 2026"},
+    {name:"CoreWeave (CRWV)", ipo:"2025-03-28", note:"Lockup already expired (-33%)"},
+    {name:"OpenAI",           ipo:null,         note:"Not priced yet — Q4 target"},
+    {name:"Anthropic",        ipo:null,         note:"Not priced yet — ~Oct target"}
+  ];
+  var box = document.getElementById("lockups"), now = new Date();
+  lockups.forEach(function(c){
+    var d = document.createElement("div"); d.className = "card";
+    var html = "<h3>"+c.name+"</h3>";
+    if(!c.ipo){ html += '<div class="days warn">TBD</div><div class="lbl">'+c.note+'</div>'; }
+    else {
+      var lock = new Date(c.ipo); lock.setDate(lock.getDate()+180);
+      var days = Math.round((lock - now)/86400000);
+      if(days > 0){ html += '<div class="days">'+days+'</div><div class="lbl">days to lockup &middot; '+lock.toISOString().slice(0,10)+'</div>'; }
+      else { html += '<div class="days good">PASSED</div><div class="lbl">'+c.note+'</div>'; }
+    }
+    d.innerHTML = html; box.appendChild(d);
+  });
+</script>
+</body>
+</html>
