@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Happens After the SpaceX IPO — Dragonfly Lens</title>
+<meta name="description" content="The SpaceX IPO isn't the finish line — it's the starting gun. The likely sequence next, and the full private pipeline waiting to follow: Cohere, Figure, Anduril, Shield AI, LeoLabs, fusion + more. Plain English, hover-to-define.">
+<meta property="og:title" content="What Happens After the SpaceX IPO — the next wave, mapped">
+<meta property="og:description" content="The IPO is the starting gun, not the finish line. The likely 3-act sequence next + the private pipeline waiting to follow — Cohere, Figure, Anduril, Shield AI, LeoLabs, fusion. Plain English.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/whats-next.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/whats-next-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Happens After the SpaceX IPO">
+<meta name="twitter:description" content="The starting gun, not the finish line. The 3-act sequence next + the private pipeline waiting — Cohere, Figure, Anduril, Shield AI, LeoLabs, fusion.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/whats-next-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(30px,5vw,46px);line-height:1.12;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .act{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 20px;margin:16px 0;}
+  .act .n{font-size:11px;font-weight:800;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;}
+  .act h3{margin:5px 0 6px;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .pill{display:inline-block;font-size:10px;font-weight:800;padding:2px 7px;border-radius:6px;}
+  .p-near{background:rgba(110,231,168,.16);color:var(--good);border:1px solid rgba(110,231,168,.4);}
+  .p-priv{background:rgba(167,139,250,.14);color:var(--purple);border:1px solid rgba(167,139,250,.4);}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Forward Look</div>
+  <h1>What Happens After the SpaceX IPO</h1>
+  <p class="lead">The biggest listing in history isn't the finish line &mdash; it's the <b>starting gun</b>. Here's the likely sequence that follows, and the full private pipeline lining up behind it. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 8, 2026 &middot; A forward look &mdash; this is a forecast, not fact. We flag the uncertainty throughout.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>Act 1 &mdash; the fade:</b> the recently-public AI names hit their <span class="def" data-d="A lockup is the 90-180 day period after an IPO when insiders can't sell. Its expiry floods the market with new shares and historically pressures the price down.">lockups</span>; the ~74% drawdown pattern gets tested in real time.</li>
+      <li><b>Act 2 &mdash; the window opens:</b> a successful SpaceX debut emboldens the private giants to file. Likely first: <b>Cohere, Pasqal, Lambda</b>, then the robotics + defense wave.</li>
+      <li><b>Act 3 &mdash; the rotation:</b> when the headline names get expensive, capital flows to the <span class="def" data-d="'Picks and shovels' = the suppliers and infrastructure that profit no matter which headline company wins — during a gold rush, sell shovels. Here: chips, tracking, energy, components.">picks-and-shovels</span> &mdash; chips, space-tracking, energy.</li>
+      <li><b>The edge:</b> almost all the best names are <b>still private</b>. The advantage goes to whoever has the pipeline mapped <i>before</i> the filings hit.</li>
+    </ul>
+  </div>
+
+  <h2>The likely sequence, in three acts</h2>
+  <div class="act">
+    <div class="n">Act 1 &middot; weeks to months</div>
+    <h3>The fade gets tested</h3>
+    <p>The AI names that already listed &mdash; Cerebras, Quantinuum, CoreWeave &mdash; reach their lockup-expiry windows (~Nov&ndash;Dec 2026). History says the real low often forms <i>here</i>, not on day one: recent tech IPOs round-tripped ~74% from their peak, bottoming ~10 months out. <b>This is the moment the "post-lockup entry beats day-one" thesis is proven or broken.</b></p>
+  </div>
+  <div class="act">
+    <div class="n">Act 2 &middot; months to ~1 year</div>
+    <h3>The window opens for the pipeline</h3>
+    <p>A clean SpaceX debut is a green light. The most IPO-ready private names move first &mdash; <b>Cohere</b> (CFO hired, "IPO soon"), <b>Pasqal</b> (<span class="def" data-d="A de-SPAC is when a private company goes public by merging with an already-listed blank-check shell (a SPAC), instead of a traditional IPO. Faster, but with its own risks.">de-SPAC</span> imminent), <b>Lambda</b> (active candidate) &mdash; followed by the marquee names if conditions hold (Anthropic, OpenAI, Figure, Anduril). <b>Each filing is a catalyst</b> for its whole sector's public comps.</p>
+  </div>
+  <div class="act">
+    <div class="n">Act 3 &middot; the full cycle</div>
+    <h3>Capital rotates to the picks-and-shovels</h3>
+    <p>When the headline IPOs get richly priced, money rotates to what's <i>cheaper and load-bearing</i>: the chip supply chain (Intel/Terafab, Howmet, HEICO), the space-traffic layer (LeoLabs, Rocket Lab), and the energy that powers all of it (uranium, nuclear, fusion). The boring infrastructure outlasts the hype.</p>
+  </div>
+
+  <h2>The pipeline, mapped</h2>
+  <p>This is the part nobody else publishes: the private companies most likely to follow, by readiness and sector. (Private names aren't buyable yet &mdash; an IPO is the event that changes that. Figures are reported/estimated; treat dates as <i>likely, not scheduled</i>.)</p>
+
+  <h3>Most IPO-ready (watch first)</h3>
+  <div class="tw"><table>
+    <tr><th>Company</th><th>Sector</th><th>Why it's next</th><th></th></tr>
+    <tr><td><b>Cohere</b></td><td>Enterprise AI</td><td>CFO hired; CEO says IPO "soon"</td><td><span class="pill p-near">near-term</span></td></tr>
+    <tr><td><b>Pasqal</b></td><td>Quantum</td><td>~$2B de-SPAC announced, closing 2026</td><td><span class="pill p-near">near-term</span></td></tr>
+    <tr><td><b>Lambda</b></td><td>AI cloud</td><td>Active IPO candidate; CoreWeave comp</td><td><span class="pill p-near">near-term</span></td></tr>
+    <tr><td><b>TAE Technologies</b></td><td>Fusion</td><td>Going public via DJT merger (~mid-2026)</td><td><span class="pill p-near">near-term</span></td></tr>
+    <tr><td><b>Anduril</b></td><td>Defense</td><td>The marquee defense-tech IPO-watch</td><td><span class="pill p-near">IPO-watch</span></td></tr>
+  </table></div>
+
+  <h3>The marquee follow-ons (the big names)</h3>
+  <div class="tw"><table>
+    <tr><th>Company</th><th>Sector</th><th>The draw</th><th></th></tr>
+    <tr><td><b>OpenAI / Anthropic</b></td><td>Frontier AI</td><td>The two most-watched private companies on Earth</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>Figure / Apptronik</b></td><td>Humanoid robots</td><td>The embodied-AI labor bet; valuations tripling</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>Shield AI</b></td><td>Defense autonomy</td><td>$12.7B; just won the Air Force CCA "AI pilot"</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>Mistral / Cohere</b></td><td>AI models</td><td>The credible challengers to OpenAI/Anthropic</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>Groq / Tenstorrent</b></td><td>AI chips</td><td>The Nvidia-challenger silicon</td><td><span class="pill p-priv">private</span></td></tr>
+  </table></div>
+
+  <h3>The picks-and-shovels (buyable today)</h3>
+  <div class="tw"><table>
+    <tr><th>Theme</th><th>Public names</th><th>Why</th></tr>
+    <tr><td><b>Chips / Terafab</b></td><td>INTC, ASML, AMAT</td><td>The fab build + every leading-edge tool</td></tr>
+    <tr><td><b>Aerospace supply</b></td><td>HWM, HEI, TDG</td><td>Scales with launch + satellite volume</td></tr>
+    <tr><td><b>Space tracking</b></td><td>RKLB, RDW</td><td>Constellations make SSA mandatory</td></tr>
+    <tr><td><b>Energy / power</b></td><td>CCJ, OKLO, SMR</td><td>The terawatt of compute needs electricity</td></tr>
+  </table></div>
+
+  <h2>How to think about it (a framework, not advice)</h2>
+  <ul>
+    <li><b>Map before the filing.</b> The edge in private-name investing is knowing the pipeline <i>before</i> the S-1 hits the wire. Build the watchlist now.</li>
+    <li><b>Let the lockups do the work.</b> For the names that already listed, the patient entry historically comes <i>after</i> the lockup flush, not on day one.</li>
+    <li><b>When the headliners get expensive, rotate.</b> The picks-and-shovels (chips, tracking, energy) are how the theme stays investable after the marquee names re-rate.</li>
+    <li><b>Respect the uncertainty.</b> IPO timing slips constantly, private valuations are marks not prices, and hype cycles overshoot in both directions.</li>
+  </ul>
+
+  <div class="flag"><b>The honest disclaimer on a forward look:</b> everything here is a <b>forecast</b>. Companies delay IPOs, cancel them, or get acquired instead; "near-term" can become "next year." We're mapping <i>probabilities and a pipeline</i>, not promising events. Re-check every name against primary sources before acting.</div>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">Stay ahead of the wave</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">We track the pipeline so you don't have to.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens maps the private giants <i>before</i> they file &mdash; plain English, every claim sourced. Get the next name before the crowd does.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/spacex-ipo.html">The SpaceX IPO, Explained</a> &middot; <a href="/learn/ai-ipo-tracker.html">The AI IPO Wave tracker</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc">Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. This is a forward-looking forecast as of June 8, 2026 &mdash; IPO timing, valuations, and outcomes are uncertain and will change. Private companies are not publicly tradeable. Verify every name against primary sources. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="share.js"></script>
+</body>
+</html>
