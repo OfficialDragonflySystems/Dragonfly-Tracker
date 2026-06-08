@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The SpaceX IPO, Explained — Dragonfly Lens</title>
+<meta name="description" content="The biggest IPO in history, explained from scratch — SpaceX, Starlink, the Tesla convergence, Terafab, Macrohard, and the full ripple effect of who profits and who's at risk. Every term hover-to-define. A plain-English reference.">
+<meta property="og:title" content="The SpaceX IPO, Explained — the biggest listing in history">
+<meta property="og:description" content="Plain-English, leave-no-stone-unturned breakdown of the SpaceX IPO and the Musk machine behind it — Starlink, Tesla, Terafab, Macrohard, and who profits up and down the chain.">
+<meta property="og:type" content="article">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(30px,5vw,46px);line-height:1.12;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;letter-spacing:.02em;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;}
+  li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  /* hover-to-define term */
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  /* callouts */
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;}
+  .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;}
+  .real b{color:var(--good);}
+  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:6px;vertical-align:middle;margin-left:4px;}
+  .t-conf{background:rgba(110,231,168,.16);color:var(--good);border:1px solid rgba(110,231,168,.4);}
+  .t-rep{background:rgba(246,169,107,.14);color:var(--warn);border:1px solid rgba(246,169,107,.4);}
+  .t-spec{background:rgba(248,113,113,.14);color:var(--bad);border:1px solid rgba(248,113,113,.4);}
+  /* tables */
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .pos{color:var(--good);}.neg{color:var(--bad);}
+  /* toc */
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 20px;margin:24px 0;font-size:14px;}
+  .toc b{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px;}
+  .toc a{display:inline-block;margin:3px 14px 3px 0;color:#cfe;}
+  .stat{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0;}
+  .stat .s{flex:1;min-width:130px;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:13px 15px;}
+  .stat .s .n{font-size:22px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums;}
+  .stat .s .l{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.35;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  .src{font-size:12px;color:var(--muted);}
+  .src a{color:#8fd;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Deep Dive</div>
+  <h1>The SpaceX IPO, Explained</h1>
+  <p class="lead">The biggest stock-market debut in history is days away. Here's the whole thing &mdash; in plain English, from scratch &mdash; including the Tesla convergence, the chip fab, the AI software project most people have never heard of, and a map of exactly who profits and who's in trouble. <b>Hover (or tap) any <span class="def" data-d="Like this — any underlined term shows a plain-English definition when you hover on a computer or tap on your phone. No jargon left unexplained.">underlined term</span> for a definition.</b></p>
+  <p class="byline">Dragonfly Lens &middot; Updated June 8, 2026 &middot; ~25 min read &middot; Built to be a reference, not a hot take.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The 60-second version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What:</b> SpaceX is going public on the <span class="def" data-d="The Nasdaq Stock Market — a major US stock exchange, home to most large tech companies (Apple, Nvidia, Microsoft).">Nasdaq</span> under the <span class="def" data-d="A ticker symbol is the short code you type to find a stock. SpaceX's will be SPCX.">ticker</span> <b>SPCX</b>, expected to first trade <b>~June 12, 2026</b>.</li>
+      <li><b>How big:</b> a target valuation around <b>$1.75 trillion</b>, raising about <b>$75 billion</b> &mdash; which would be the <b>largest IPO ever</b>, roughly 3&times; the previous record. <span class="tag t-rep">target</span></li>
+      <li><b>The honest catch:</b> independent analysts (Morningstar) peg fair value near <b>$780 billion</b> &mdash; about <b>48% below</b> the asking price. The number is contested, not settled.</li>
+      <li><b>What you're actually buying:</b> a profitable <b>satellite-internet</b> business (Starlink) and a fast-growing <b>defense</b> business&hellip; wrapped around a <b>cash-burning AI bet</b> (xAI) and some very early <b>chip + software moonshots</b> (Terafab, Macrohard) that the company's own filing calls unproven.</li>
+      <li><b>Who controls it:</b> Elon Musk keeps <b>82&ndash;85% of the voting power</b> with ~42% of the shares. Public investors get almost no say.</li>
+    </ul>
+  </div>
+
+  <div class="toc">
+    <b>What's inside</b>
+    <a href="#what">1. What SpaceX actually is</a>
+    <a href="#numbers">2. The numbers</a>
+    <a href="#ipo">3. How the IPO works</a>
+    <a href="#worth">4. Is it worth $1.75T?</a>
+    <a href="#tesla">5. The Tesla convergence</a>
+    <a href="#mt">6. Terafab &amp; Macrohard</a>
+    <a href="#traj">7. Bull / base / bear</a>
+    <a href="#ripple">8. Who profits, who's at risk</a>
+    <a href="#report">9. The tech-IPO report card</a>
+    <a href="#playbook">10. How to think about entry</a>
+    <a href="#glossary">Glossary</a>
+  </div>
+
+  <h2 id="what">1. What SpaceX actually is (it's not just rockets)</h2>
+  <p>Most people picture SpaceX as a rocket company. That's the smallest part of the story now. It's really five businesses stacked together:</p>
+  <ul>
+    <li><b>Launch</b> &mdash; the <span class="def" data-d="Reusable rockets: instead of throwing the rocket away after one flight (the old way), SpaceX lands and re-flies them, which slashes the cost of reaching orbit. This is the core advantage no rival has matched.">reusable-rocket</span> business (Falcon 9, the in-development Starship). SpaceX launched a record <b>165+ times in 2025</b> &mdash; roughly <b>85% of all US launches</b> and more than the rest of the world combined. <span class="tag t-conf">confirmed</span></li>
+    <li><b>Starlink</b> &mdash; <span class="def" data-d="A constellation is a large group of satellites working together. Starlink is ~10,000+ small satellites in low orbit beaming internet to the ground, anywhere on Earth.">satellite internet</span>. This is the cash engine: <b>~10.3 million customers</b> and the <b>only consistently profitable</b> part of the company.</li>
+    <li><b>Starshield</b> &mdash; the defense version of Starlink (spy/secure satellites for the government). Small but fast-growing, with a fresh <b>$2.29 billion</b> US Space Force contract tied to missile defense. <span class="tag t-conf">confirmed</span></li>
+    <li><b>xAI</b> &mdash; Musk's artificial-intelligence company (the <span class="def" data-d="Grok is xAI's chatbot/large language model, a competitor to ChatGPT. A large language model (LLM) is an AI trained on huge amounts of text to answer questions and write.">Grok</span> chatbot). SpaceX <b>bought xAI in February 2026</b>, folding a ~$250B AI business inside the rocket company.</li>
+    <li><b>The moonshots</b> &mdash; <b>Terafab</b> (a chip factory) and <b>Macrohard</b> (an AI software project). More on these below &mdash; they're the parts almost nobody understands, and the parts the company hypes hardest.</li>
+  </ul>
+  <p>So when you buy SPCX, you're not buying a rocket company. You're buying a <span class="def" data-d="A conglomerate is one company that owns many different businesses. Here: launch + internet + defense + AI + chips, all under Musk.">conglomerate</span> &mdash; with one foot in proven, profitable infrastructure and the other in expensive, unproven frontier bets.</p>
+
+  <h2 id="numbers">2. The numbers (in plain English)</h2>
+  <div class="stat">
+    <div class="s"><div class="n">$18.7B</div><div class="l">2025 revenue (+33% vs 2024)</div></div>
+    <div class="s"><div class="n">&minus;$4.9B</div><div class="l">2025 net loss (mostly from xAI)</div></div>
+    <div class="s"><div class="n">$11.4B</div><div class="l">Starlink revenue (61% of total)</div></div>
+    <div class="s"><div class="n">$4.4B</div><div class="l">Starlink operating profit (the only profitable unit)</div></div>
+  </div>
+  <p>Read those four boxes together and the story is clear: <b>Starlink makes real money, and almost everything else spends it.</b> The company brought in $18.7&nbsp;billion but still lost ~$4.9&nbsp;billion overall &mdash; because the newly-absorbed AI business (xAI) burned roughly <b>$6.4 billion</b> on its own, and SpaceX spent about <b>$20.7 billion</b> on <span class="def" data-d="Capital expenditure (capex) = money spent building long-lived things: factories, satellites, rockets, data centers. High capex means a company is investing heavily for the future but consuming cash now.">capex</span> building rockets, satellites and AI infrastructure. <span class="tag t-conf">from the S-1</span></p>
+  <div class="flag"><b>Watch the trend underneath the growth:</b> Starlink's <span class="def" data-d="ARPU = Average Revenue Per User: how much money the company makes per customer. Falling ARPU means each new customer pays less — growth is coming partly from cutting prices.">revenue per customer</span> is <b>falling</b> &mdash; from about $99/month (2023) to ~$66/month (early 2026). Subscribers are up huge, but the company is partly buying that growth with lower prices.</div>
+  <p class="src">Source: SpaceX <span class="def" data-d="An S-1 is the detailed legal document a company files with the SEC (the US markets regulator) before going public. It's the single most honest source on a company — it must disclose the risks.">S-1 filing</span> (filed May 20, 2026) and reporting on it &mdash; <a href="https://pitchbook.com/news/articles/6-charts-spacexs-s-1-financials" target="_blank" rel="noopener">PitchBook</a>, <a href="https://www.mostlymetrics.com/p/spacex-ipo-s1-breakdown" target="_blank" rel="noopener">MostlyMetrics</a>.</p>
+
+  <h2 id="ipo">3. How the IPO actually works</h2>
+  <div class="tw"><table>
+    <tr><th>Thing</th><th>Detail</th></tr>
+    <tr><td><b>Ticker / exchange</b></td><td><b>SPCX</b> on the Nasdaq</td></tr>
+    <tr><td><b>First trade</b></td><td>~June 12, 2026 (priced after close June 11) <span class="tag t-rep">target</span></td></tr>
+    <tr><td><b>Price</b></td><td>~$135/share &mdash; a <span class="def" data-d="A fixed-price IPO sets one price for everyone in advance, instead of the usual range that gets finalized on pricing night.">fixed price</span>, not a range <span class="tag t-rep">reported</span></td></tr>
+    <tr><td><b>Raise</b></td><td>~$75 billion (~556M shares)</td></tr>
+    <tr><td><b>Where the money goes</b></td><td><span class="def" data-d="An all-primary offering means every share sold is newly created and the cash goes to the company itself — no early investors or insiders are cashing out in this deal.">All-primary</span> &mdash; all proceeds go to SpaceX; no insiders selling <span class="tag t-conf">confirmed</span></td></tr>
+    <tr><td><b>Control</b></td><td><span class="def" data-d="Dual-class shares: insiders hold a special class with extra votes (here 10 votes each) while the public gets 1 vote each. It lets a founder keep control with a minority of the economics.">Dual-class</span> &mdash; Musk keeps <b>82&ndash;85% of votes</b> with ~42% of equity <span class="tag t-conf">confirmed</span></td></tr>
+    <tr><td><b>Retail access</b></td><td>Direct via Robinhood, SoFi (no minimum), Fidelity ($2,000), Schwab ($100k). Allocations limited.</td></tr>
+    <tr><td><b>Lockup</b></td><td><span class="def" data-d="A lockup is a 90–180 day period after the IPO during which insiders and early investors are barred from selling. When it expires, a wave of new shares can hit the market and push the price down — historically a key moment.">Lockup</span> ~90&ndash;180 days (so ~Sept&ndash;Dec 2026) <span class="tag t-rep">exact date unconfirmed</span></td></tr>
+  </table></div>
+  <p>Two things to internalize. First, because it's <b>all-primary</b>, this raise is SpaceX fueling itself &mdash; not insiders cashing out (a healthier signal). Second, the <b>dual-class structure</b> means SpaceX is a <span class="def" data-d="A 'Controlled Company' under Nasdaq rules is one where a single person/group holds majority voting power. It's allowed to skip several normal investor-protection rules (like having an independent board majority).">&ldquo;Controlled Company&rdquo;</span>: you're a passenger, not a co-pilot. If you don't trust Musk's capital allocation, there is no governance lever to pull.</p>
+
+  <h2 id="worth">4. Is it actually worth $1.75 trillion?</h2>
+  <p>This is the question, and the honest answer is: <b>nobody agrees.</b></p>
+  <div class="stat">
+    <div class="s"><div class="n">$1.75T</div><div class="l">IPO target valuation</div></div>
+    <div class="s"><div class="n">~$780B</div><div class="l">Morningstar's fair-value estimate (&minus;48%)</div></div>
+    <div class="s"><div class="n">~94&times;</div><div class="l">Price-to-revenue at the target (extremely high)</div></div>
+  </div>
+  <p>At $1.75&nbsp;trillion you'd be paying about <b>94 times annual revenue</b> &mdash; a multiple normally reserved for tiny hyper-growth software, not a capital-heavy company that lost ~$5&nbsp;billion last year. The independent research firm <b>Morningstar</b> publicly values SpaceX near <b>$780&nbsp;billion</b> &mdash; less than half the asking price &mdash; and called the share structure a long list of <span class="def" data-d="Shareholder-unfriendly = terms that favor insiders over public investors: extra-vote shares, no say on the board, limits on suing, etc. SpaceX's filing has several.">&ldquo;unfriendly&rdquo;</span> terms.</p>
+  <div class="flag"><b>The reference-grade takeaway:</b> the $1.75T figure is a <b>seller's target during peak hype</b>, not an agreed value. Treat any single valuation number &mdash; including the bullish ones &mdash; as a claim to be checked, not a fact.</div>
+
+  <h2 id="tesla">5. The Tesla convergence (why this is really about Musk's whole empire)</h2>
+  <p>You can't understand SpaceX in 2026 without Tesla, because Musk is quietly welding his companies into one machine. Here's Tesla by the numbers first, because half the SpaceX story now runs through it.</p>
+  <h3>Tesla, briefly (most recent quarter, Q1 2026)</h3>
+  <div class="tw"><table>
+    <tr><th>Metric</th><th>Q1 2026</th><th>What it tells you</th></tr>
+    <tr><td>Revenue</td><td class="num"><b>$22.4B</b> (+16% YoY)</td><td>Still growing, but missed expectations</td></tr>
+    <tr><td>Gross margin</td><td class="num">21.1%</td><td>Improved &mdash; but partly on one-time warranty/tariff items</td></tr>
+    <tr><td>Net income</td><td class="num">$477M</td><td>Thin for a company valued in the trillions</td></tr>
+    <tr><td>Cash</td><td class="num">$44.7B</td><td>Fortress balance sheet &mdash; the real strength</td></tr>
+    <tr><td>Vehicle deliveries</td><td class="num neg">358k (&minus;14% vs Q4)</td><td>FY2025 fell 8.6% &mdash; <b>2nd straight down year</b></td></tr>
+    <tr><td>Energy storage</td><td class="num">8.8 GWh</td><td>Fastest-growing segment, but lumpy</td></tr>
+  </table></div>
+  <p>The Tesla debate in one line: <b>the car business is shrinking, so the trillion-dollar valuation rests entirely on the &ldquo;<span class="def" data-d="Optionality = value that exists only if a future bet pays off. Tesla's price assumes its robotaxi, humanoid robot (Optimus), AI chips and energy business will become huge — none proven yet.">optionality</span>&rdquo;</b> &mdash; robotaxis, the Optimus humanoid robot, in-house AI chips, and energy. As of mid-2026 the robotaxi fleet is <b>~20&ndash;39 cars</b> in Austin and Optimus revenue is roughly zero. The bull case is &ldquo;these become enormous.&rdquo; The bear case is &ldquo;you're paying a ~350&times; <span class="def" data-d="P/E (price-to-earnings) ratio = stock price divided by per-share profit. A high P/E means investors are paying a lot for each dollar of current earnings, betting on big future growth. ~350× is extremely high.">P/E</span> for a car company selling fewer cars.&rdquo;</p>
+  <h3>How the companies are folding together <span class="tag t-conf">confirmed via the S-1</span></h3>
+  <ul>
+    <li><b>Feb 2, 2026:</b> SpaceX <b>bought xAI</b> outright (all-stock). xAI/Grok is now a SpaceX division.</li>
+    <li><b>Tesla is now a SpaceX shareholder:</b> Tesla's ~$2B xAI investment auto-converted into SpaceX stock (it owns &lt;1% of SpaceX).</li>
+    <li><b>They trade with each other:</b> SpaceX bought up to <b>$697M of Tesla Megapack batteries</b> and ~$131M of Tesla vehicles.</li>
+    <li><b>They build together:</b> Tesla + SpaceX jointly run <b>Terafab</b> (chips) and <b>Macrohard</b> (software).</li>
+  </ul>
+  <div class="flag"><b>On the &ldquo;Tesla&ndash;SpaceX merger&rdquo;:</b> there is <b>no official merger</b>. Reporting frames a combined ~$3.4T &ldquo;empire,&rdquo; and betting markets put a formal merger at only ~5% by mid-2026 but ~50% by 2027. The convergence is already <b>real operationally</b> (shared ownership, purchases, projects); the legal merger is <b>speculation</b>. <span class="tag t-spec">speculative</span></div>
+
+  <h2 id="mt">6. Terafab &amp; Macrohard &mdash; the parts nobody knows</h2>
+  <h3>Terafab &mdash; the chip factory</h3>
+  <p>Announced March 21, 2026, <b>Terafab</b> is a giant <span class="def" data-d="A semiconductor fab (fabrication plant) is a factory that physically manufactures computer chips. They cost tens of billions and are the hardest, most capital-intensive facilities in tech — only a few companies on Earth can build leading-edge ones.">chip fab</span> being built near Austin, Texas by Tesla + SpaceX, with <b>Intel</b> joining in April 2026 as the manufacturing partner (using Intel's cutting-edge <span class="def" data-d="Intel 14A is Intel's next-generation 1.4-nanometer chip-manufacturing process — the smallest, most advanced way to print transistors. Smaller = faster and more efficient chips.">14A process</span>). The pitch: make Tesla's <b>AI5</b> chips (for self-driving and the Optimus robot) and special <span class="def" data-d="Radiation-hardened chips are built to survive the radiation of space, which destroys normal electronics. SpaceX wants them for AI data centers in orbit.">&ldquo;non-terrestrial&rdquo; chips</span> for AI data centers <i>in space</i>. The stated goal is absurdly large: <b>one terawatt of computing power per year</b>.</p>
+  <p>Cost estimates range wildly: a <b>$25B</b> headline at announcement &rarr; SpaceX's own filing says <b>$55B</b> to start and up to <b>$119B</b> for all phases.</p>
+  <div class="flag"><b>The bear view, which you should hear:</b> tech outlet <i>Electrek</i> called Terafab a project that &ldquo;<b>reeks of desperation</b>&rdquo; &mdash; arguing it conveniently attaches Tesla's <b>declining</b> car business to SpaceX's hot IPO. Their math: 1&nbsp;million wafers/month would be ~70% of <span class="def" data-d="TSMC (Taiwan Semiconductor) is the world's largest and most advanced chip manufacturer — it makes the chips for Apple, Nvidia and most of tech. Matching a big fraction of its output from scratch is extraordinarily hard.">TSMC's</span> entire global output &mdash; from companies that have <b>never built a chip</b>. And crucially&hellip;</div>
+  <div class="flag"><b>&hellip;the S-1 admits it isn't real yet.</b> Per SpaceX's own filing, Terafab (and Macrohard) are in &ldquo;<b>very early stages</b>&rdquo; with <b>no financial terms, no IP rights, and no binding commitments</b> &mdash; &ldquo;neither Tesla nor Intel are obligated to remain.&rdquo; Treat Terafab as a <b>vision</b>, not a factory. <span class="tag t-spec">non-binding per S-1</span></div>
+  <h3>Macrohard &mdash; the AI that wants to clone software companies</h3>
+  <p><b>Macrohard</b> (a deliberate joke on &ldquo;Microsoft&rdquo;) is a Tesla&ndash;xAI project to build software entirely from cooperating AI <span class="def" data-d="An AI agent is software that can take actions on its own — clicking, typing, using other programs — to complete tasks, rather than just answering a question.">agents</span>. The idea: point Grok (as the &ldquo;brain&rdquo;) plus a Tesla-built agent that watches a screen and controls a mouse/keyboard, and have it <b>replicate what entire software companies do</b>. Musk's framing is a direct shot at Microsoft.</p>
+  <div class="flag"><b>Reality check:</b> the <span class="def" data-d="A trademark filing registers a brand name. It signals intent — but a registered name is not a product. Anyone can trademark an idea years before (or without ever) shipping it.">trademark</span> was filed Aug 2025; the project was unveiled March 2026. There is <b>no product, no revenue, and no customers</b> &mdash; it's a stated capability with no public demonstration. The technology (AI that reliably operates software like a human) is genuinely unproven across the whole industry. <span class="tag t-spec">vision-stage</span></div>
+  <h3>Why these matter anyway: the vertical stack</h3>
+  <p>Even if Terafab and Macrohard are years early, they reveal the <b>strategy</b> &mdash; a single, self-contained loop Musk is trying to own end to end:</p>
+  <p style="text-align:center;font-size:14px;color:#cfe;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:15px;">
+  <b>Chips</b> (Terafab) &rarr; <b>AI models</b> (xAI / Grok) &rarr; <b>AI software</b> (Macrohard) &rarr; <b>robots &amp; cars</b> (Tesla / Optimus) &rarr; <b>energy</b> (Megapack) &rarr; <b>space &amp; internet</b> (SpaceX / Starlink) &rarr; <i>back to chips</i>
+  </p>
+  <p>If even half of it works, it threatens <b>Microsoft</b> (software), <b>TSMC</b> (chips), <b>Nvidia</b> (AI hardware) and the big cloud providers at once. That ambition is exactly why the IPO commands attention &mdash; and exactly why the risk is enormous.</p>
+
+  <h2 id="traj">7. The trajectory: bull, base, bear</h2>
+  <div class="box">
+    <h3 style="margin-top:0;color:var(--good);">&#9650; Bull case</h3>
+    <p style="margin:6px 0;">Starlink keeps compounding (tens of thousands more satellites, global demand); defense becomes critical national infrastructure (the <b>$2.29B</b> &ldquo;<span class="def" data-d="Golden Dome is a proposed US space-based missile-defense shield. SpaceX won a $2.29B contract for its data-network backbone — a large, recurring, hard-to-displace government revenue stream.">Golden Dome</span>&rdquo; deal, with the program ceiling raised to $13B); the launch monopoly widens with Starship; and the AI/orbital-compute bet becomes the trillion-dollar option on top.</p>
+    <h3 style="color:var(--warn);">&#9644; Base case</h3>
+    <p style="margin:6px 0;">A great infrastructure company (internet + launch + defense) growing 25&ndash;35%/yr, eventually profitable as xAI losses are reined in &mdash; worth a lot, but not obviously $1.75T on day one. The AI moonshots stay optional.</p>
+    <h3 style="color:var(--bad);">&#9660; Bear case</h3>
+    <p style="margin:6px 0;">Key-man risk (Musk's 82&ndash;85% control, his politics flagged as a business risk in the filing); relentless cash burn ($20.7B capex, AI losing billions); real competition (<b>Amazon's Kuiper/Leo</b>, <b>AST SpaceMobile</b>); and regulation (FAA launch limits, FCC spectrum fights, and <span class="def" data-d="Kessler syndrome: a chain reaction where colliding satellites create debris that causes more collisions, potentially making whole orbits unusable. Regulators cited it in over 1,000 mostly-opposed comments on SpaceX's orbital plans.">orbital-debris</span> backlash). At 94&times; revenue, a lot has to go right.</p>
+  </div>
+
+  <h2 id="ripple">8. The ripple effect: who profits, who's at risk</h2>
+  <p>This is where it gets investable. A company this big doesn't rise alone &mdash; it drags whole supply chains up and pushes incumbents down. Here's the map. <b>Important:</b> the cleanest pure-plays are often <b>private</b> (no ticker you can buy); we flag those clearly.</p>
+
+  <h3>&#9650; Upstream &mdash; who builds the picks and shovels</h3>
+  <div class="tw"><table>
+    <tr><th>Name</th><th>Ticker</th><th>Why it benefits</th></tr>
+    <tr><td><b>Intel</b></td><td>INTC</td><td>The <b>single cleanest confirmed winner</b> &mdash; named Terafab foundry partner. <span class="tag t-conf">confirmed</span></td></tr>
+    <tr><td><b>Howmet Aerospace</b></td><td>HWM</td><td>Titanium &amp; superalloy launch structures, fasteners</td></tr>
+    <tr><td><b>HEICO</b></td><td>HEI</td><td>Satellite thermal/electronic components &mdash; scales with sat count</td></tr>
+    <tr><td><b>Karman, TransDigm, Loar</b></td><td>KRMN, TDG, LOAR</td><td>Engineered aerospace/defense parts <span class="tag t-rep">inferred</span></td></tr>
+    <tr><td><b>Advanced Mfg. Co. of America</b></td><td>PRIVATE</td><td>Ex-SpaceX-led rollup of US defense manufacturers (sensors, hydraulics, avionics). Not tradeable.</td></tr>
+  </table></div>
+
+  <h3>&#9650; Second-order &mdash; the power to run it all</h3>
+  <p>Terafab's &ldquo;one terawatt of compute&rdquo; and the broader AI build need <b>staggering amounts of electricity</b>. Texas grid demand could quadruple by 2032. That spotlights <span class="def" data-d="Uranium is the fuel for nuclear power. SMR = Small Modular Reactor, a new, smaller, factory-built nuclear plant designed to power data centers directly.">uranium &amp; nuclear</span>: miners <b>CCJ, UEC, UUUU, NXE</b>, enricher <b>LEU</b>, and reactor builders <b>OKLO, SMR, NNE</b>. (These ride the whole AI-power wave; Terafab is additive demand, not a signed contract.) <span class="tag t-rep">indirect</span></p>
+
+  <h3>&#9650; Space tracking &mdash; the traffic-control layer</h3>
+  <p>More satellites = more near-misses. <b>Starlink alone ran ~300,000 collision-avoidance maneuvers in 2025</b> (+50% YoY). That makes <span class="def" data-d="SSA = Space Situational Awareness: tracking every object in orbit and predicting collisions, so satellites can dodge. As constellations grow, this becomes mandatory infrastructure.">space-traffic tracking</span> mandatory. Public: <b>Rocket Lab (RKLB)</b> &mdash; real $816M + $90M defense/tracking contracts; <b>Redwire (RDW)</b> &mdash; record backlog. Private pure-plays: <b>LeoLabs</b> (radar) and <b>Slingshot</b> (optical) &mdash; the best expressions, but not tradeable.</p>
+
+  <h3>&#9660; Downstream &mdash; who's in trouble</h3>
+  <div class="tw"><table>
+    <tr><th>At risk</th><th>Ticker</th><th>Why</th></tr>
+    <tr><td><b>GEO satellite operators</b></td><td>VSAT, SATS</td><td><b>Highest-conviction losers.</b> One industry peer said its <span class="def" data-d="GEO = geostationary orbit, ~36,000 km up, where old big-dish satellites sit. They're slower (high latency) than Starlink's low orbit. The legacy consumer-broadband model is being displaced.">GEO</span> consumer value is now &ldquo;zero.&rdquo; EchoStar already sold $17B of spectrum to Starlink.</td></tr>
+    <tr><td><b>Phone carriers</b></td><td>T, VZ, TMUS</td><td>Forced into an unprecedented joint venture (May 2026) to pool spectrum and defend against <span class="def" data-d="Direct-to-cell: satellites that talk straight to a normal phone, no special dish — Starlink can text/call where there's no tower. A direct threat to carriers' rural coverage premium.">Starlink direct-to-cell</span>.</td></tr>
+    <tr><td><b>Legacy launch</b></td><td>(private)</td><td>ULA, Arianespace, Blue Origin &mdash; out-priced by reusability</td></tr>
+    <tr><td><b>Space insurers</b></td><td>&mdash;</td><td>Premiums reportedly up ~400%; some crowded orbits heading toward &ldquo;uninsurable&rdquo; <span class="tag t-spec">speculative</span></td></tr>
+  </table></div>
+
+  <div class="real"><b>The synthesis:</b> the single cleanest <i>confirmed public</i> beneficiary is <b>Intel</b> (the Terafab partner). The cleanest <i>at-risk</i> cohort is <b>legacy GEO satellite operators</b> (VSAT, SATS) and, more slowly, the <b>phone carriers</b>. The highest-leverage pure-plays (AMCA, LeoLabs, Slingshot) are <b>private</b> &mdash; which is part of why a SpaceX listing matters: it cracks the window open for the whole private space complex to follow.</p></div>
+
+  <h2 id="report">9. The tech-IPO report card (history rhymes)</h2>
+  <p>The single most useful thing before any hot IPO is to look at what happened to the last batch. The pattern is remarkably consistent: a <b>day-one pop</b>, months of euphoria, then a <b>brutal drop</b> &mdash; and, for the <i>survivors</i>, enormous long-run gains <b>if you bought the wreckage, not the hype</b>.</p>
+  <div class="tw"><table>
+    <tr><th>Company</th><th>IPO</th><th>Then &rarr; worst drop</th><th>Where it stands today</th></tr>
+    <tr><td><b>Amazon</b></td><td>1997</td><td class="num neg">&minus;96% (dot-com bust)</td><td class="pos">Up ~1,800&times; from IPO &mdash; survivors compound</td></tr>
+    <tr><td><b>Facebook (Meta)</b></td><td>2012</td><td class="num neg">&minus;54% in months</td><td class="pos">Up &gt;10&times; &mdash; the post-crash buyers won</td></tr>
+    <tr><td><b>Nvidia</b></td><td>1999</td><td class="num neg">&minus;90% (multiple times)</td><td class="pos">Among the most valuable firms on Earth</td></tr>
+    <tr><td><b>Coinbase</b></td><td>2021</td><td class="num neg">&minus;92%</td><td>Recovered hard &mdash; but only for those who held/added</td></tr>
+    <tr><td><b>Snowflake</b></td><td>2020</td><td class="num neg">&minus;70%</td><td>Still below its hype peak years later</td></tr>
+    <tr><td><b>Rivian</b></td><td>2021</td><td class="num neg">&minus;85%+</td><td>Cautionary tale &mdash; hype &gt; fundamentals</td></tr>
+    <tr><td><b>Lyft</b></td><td>2019</td><td class="num neg">&minus;85%</td><td>Never recovered its IPO price</td></tr>
+    <tr><td><b>CoreWeave</b></td><td>2025</td><td class="num neg">&minus;55%</td><td>The most recent AI-IPO round-trip</td></tr>
+  </table></div>
+  <p>Across recent high-profile tech IPOs, the average drawdown from the early peak was roughly <b>&minus;74%</b>, bottoming around <b>10 months</b> after listing &mdash; which, not coincidentally, is right around when <b>lockups expire</b> and insider selling peaks. The lesson isn't &ldquo;avoid&rdquo; &mdash; it's that <b>day-one is almost never the entry</b>, and the <i>business quality</i> (Amazon vs Lyft) decides whether the dip is an opportunity or a trap.</p>
+
+  <h2 id="playbook">10. How to think about entry (not advice &mdash; a framework)</h2>
+  <ul>
+    <li><b>Separate the engine from the option.</b> You're buying a real internet+defense business <i>and</i> an unproven AI moonshot. Decide which one you actually believe in &mdash; the price assumes both work.</li>
+    <li><b>Respect the lockup.</b> History says the meaningful low often comes <b>after</b> the ~90&ndash;180 day lockup, not on day one.</li>
+    <li><b>The S-1 is your friend.</b> SpaceX's own filing flags the AI/orbital story as unproven and the governance as founder-controlled. When the company itself hedges, believe it.</li>
+    <li><b>Mind the contested number.</b> $1.75T is a target; Morningstar says ~$780B. The gap <i>is</i> the risk.</li>
+    <li><b>If you can't buy it, map it.</b> The ripple names (Intel, the supply chain, the at-risk GEO operators) are how the theme trades for everyone shut out of the allocation.</li>
+  </ul>
+
+  <div class="box" style="margin-top:30px;">
+    <h3 style="margin-top:0;">Our read, in one paragraph</h3>
+    <p style="margin-bottom:2px;">SpaceX is a genuinely historic company opening a genuinely new frontier &mdash; and the IPO is being priced for the dream, not the proof. The <b>cash engine (Starlink + defense) is real and excellent</b>; the <b>AI/chip/orbital stack is a high-variance option the company itself calls unproven</b>; and the <b>price (~$1.75T) is contested by half</b>. If history rhymes, the patient story beats the day-one story. We're watching it as the catalyst that re-rates the entire space complex &mdash; the supply chain, the tracking layer, and the dozens of private names waiting in line behind it.</p>
+  </div>
+
+  <h2 id="glossary">Glossary (everything in one place)</h2>
+  <div class="box" style="font-size:14px;">
+    <p style="margin:6px 0;"><b>IPO</b> &mdash; Initial Public Offering: the first time a private company sells shares to the public on a stock exchange.</p>
+    <p style="margin:6px 0;"><b>S-1</b> &mdash; the detailed disclosure a company files with the SEC before its IPO; the most honest document about its risks.</p>
+    <p style="margin:6px 0;"><b>Valuation</b> &mdash; what the whole company is judged to be worth (share price &times; number of shares).</p>
+    <p style="margin:6px 0;"><b>Dual-class shares</b> &mdash; insiders hold extra-vote shares so a founder keeps control with a minority of the economics.</p>
+    <p style="margin:6px 0;"><b>Lockup</b> &mdash; the 90&ndash;180 days after an IPO when insiders can't sell; its expiry often pressures the price.</p>
+    <p style="margin:6px 0;"><b>Capex</b> &mdash; money spent building long-lived assets (factories, satellites); heavy capex burns cash now for future capacity.</p>
+    <p style="margin:6px 0;"><b>ARPU</b> &mdash; average revenue per user; falling ARPU means growth is coming partly from price cuts.</p>
+    <p style="margin:6px 0;"><b>P/E ratio</b> &mdash; price divided by per-share earnings; high P/E = paying a lot for current profit on a growth bet.</p>
+    <p style="margin:6px 0;"><b>Starlink</b> &mdash; SpaceX's satellite-internet constellation; its profit engine.</p>
+    <p style="margin:6px 0;"><b>xAI / Grok</b> &mdash; Musk's AI company and its chatbot, now owned by SpaceX.</p>
+    <p style="margin:6px 0;"><b>Terafab</b> &mdash; the proposed Tesla/SpaceX/Intel chip factory (very early stage).</p>
+    <p style="margin:6px 0;"><b>Macrohard</b> &mdash; a Tesla&ndash;xAI project to build software from AI agents (vision stage, no product).</p>
+    <p style="margin:6px 0;"><b>GEO vs LEO</b> &mdash; geostationary orbit (high, slow, old) vs low-Earth orbit (low, fast, Starlink). LEO is displacing GEO for consumer internet.</p>
+    <p style="margin:6px 0;"><b>SSA</b> &mdash; Space Situational Awareness: tracking orbital objects to avoid collisions.</p>
+    <p style="margin:6px 0;"><b>Kessler syndrome</b> &mdash; a runaway chain of satellite collisions that could make an orbit unusable.</p>
+  </div>
+
+  <p class="disc">Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Every figure here is drawn from public filings and reporting as of June 8, 2026 and is labeled <span class="tag t-conf">confirmed</span>, <span class="tag t-rep">reported</span>, or <span class="tag t-spec">speculative</span> &mdash; verify against primary sources (the SpaceX S-1 / 424B prospectus, SEC EDGAR, and company filings) before acting. Pricing, dates, and the valuation are targets that can change at pricing. Past performance does not guarantee future results. We may discuss companies we are watching; nothing here is a recommendation to buy or sell.</p>
+  <p class="src">Primary sources: SpaceX S-1 (SEC EDGAR, filed May 20 2026) &middot; <a href="https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html" target="_blank" rel="noopener">CNBC</a> &middot; <a href="https://www.morningstar.com/stocks/spacex-ipo-investors-long-list-unfriendly-shareholder-policies" target="_blank" rel="noopener">Morningstar</a> &middot; <a href="https://pitchbook.com/news/articles/6-charts-spacexs-s-1-financials" target="_blank" rel="noopener">PitchBook</a> &middot; <a href="https://electrek.co/2026/05/20/spacex-s1-tesla-terafab-macrohard-not-done-deal/" target="_blank" rel="noopener">Electrek (Terafab/Macrohard)</a> &middot; <a href="https://spacenews.com/spacex-wins-2-29-billion-space-force-contract-for-military-data-network/" target="_blank" rel="noopener">SpaceNews</a> &middot; <a href="https://www.cnbc.com/2026/04/22/tesla-tsla-q1-2026-earnings-report.html" target="_blank" rel="noopener">CNBC (Tesla Q1 2026)</a>.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<!-- hover/tap-to-define -->
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="share.js"></script>
+</body>
+</html>
