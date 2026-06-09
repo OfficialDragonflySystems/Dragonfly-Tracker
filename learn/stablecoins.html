@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stripe, Tempo &amp; the Stablecoin Land Grab — Dragonfly Lens</title>
+<meta name="description" content="A $92B private company is quietly building the rails for a new money system. What Stripe + Tempo actually are, why 'stablecoins as payment rails' matters, who profits — and how to separate the real thesis from the viral hype. Plain English, hover-to-define.">
+<meta property="og:title" content="Stripe, Tempo &amp; the Stablecoin Land Grab — who controls the new money rails">
+<meta property="og:description" content="Stripe built its own blockchain and is letting any merchant print a dollar. The 'AWS for money' thesis — what's real, what's hype, and who profits. Plain English.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/stablecoins.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/stablecoins-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stripe, Tempo &amp; the Stablecoin Land Grab">
+<meta name="twitter:description" content="Stripe built its own blockchain and is letting any merchant print a dollar. What's real, what's hype, who profits.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/stablecoins-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:540px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Deep Dive</div>
+  <h1>Stripe, Tempo &amp; the Stablecoin Land Grab</h1>
+  <p class="lead">A ~$92 billion company you can't buy just built its own blockchain &mdash; and is letting any business <b>print its own dollar</b>. Here's what's actually happening, who profits, and how to tell the real thesis from the viral hype. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 8, 2026 &middot; The facts, sourced &mdash; and clearly separated from the speculation.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What:</b> <b>Stripe</b> (the payments giant, ~$1.4T/yr) bought a <span class="def" data-d="A stablecoin is a crypto token pegged 1:1 to a real currency — usually the US dollar. It moves money instantly, globally, and cheaply, without a bank in the middle. The 'useful' corner of crypto.">stablecoin</span> company (Bridge, $1.1B) + a wallet company (Privy), built its own blockchain (<b>Tempo</b>), and launched <b>Open Issuance</b> &mdash; letting any of its ~4M merchants mint their own stablecoin.</li>
+      <li><b>Why it's a big deal:</b> Stripe now controls the <i>whole stack</i> of digital money. Insiders call it <b>"the AWS for money."</b></li>
+      <li><b>The honest part:</b> the business facts are real and important. The viral <i>"it's a Kushner/Trump plot to build a private central bank"</i> framing is <b>editorial speculation</b>, not established fact. We'll separate the two.</li>
+      <li><b>How to play it:</b> Stripe + Tempo are <b>private</b>. The buyable proxies are <b>CRCL, COIN, PYPL, V, MA</b>.</li>
+    </ul>
+  </div>
+
+  <h2>First, what's a stablecoin? (plain English)</h2>
+  <p>A <b>stablecoin</b> is a digital token worth exactly $1, backed by $1 of real reserves. It's the part of crypto that's actually <i>useful for money</i>: you can send it anywhere on Earth in seconds, for cents, 24/7, with no bank in the middle. The market is already ~<b>$300 billion</b> and growing fast &mdash; mostly used for cross-border payments and as the cash layer of crypto trading.</p>
+  <p>The pitch: stablecoins could become the <b>default rails for moving money globally</b> &mdash; faster and cheaper than the bank/card system built in the 1970s. Whoever owns those rails owns a piece of every transaction.</p>
+
+  <h2>What Stripe actually did</h2>
+  <p>Over ~15 months, Stripe assembled the entire stablecoin stack:</p>
+  <ul>
+    <li><b>Bought Bridge</b> ($1.1B) &mdash; <span class="def" data-d="The plumbing that lets a business issue, hold, and move stablecoins without becoming a crypto company itself. Bridge is the 'issuance + orchestration' layer.">stablecoin infrastructure</span>.</li>
+    <li><b>Bought Privy</b> &mdash; crypto <span class="def" data-d="Software that holds the keys to digital money for a user or business, ideally invisibly (no seed phrases). The on-ramp that makes stablecoins usable by normal people.">wallets</span>.</li>
+    <li><b>Built Tempo</b> with <span class="def" data-d="Paradigm is one of the top crypto venture firms. Its co-founder Matt Huang is Tempo's CEO — a rare case of a VC running the company it incubated.">Paradigm</span> &mdash; a <span class="def" data-d="A layer-1 (L1) is a base blockchain network (like Ethereum or Solana). Tempo is a new L1 built specifically for payments: 100,000+ transactions/sec, settlement in under a second.">layer-1 blockchain</span> built for payments (100K+ TPS, instant settlement, now live).</li>
+    <li><b>Launched Open Issuance</b> &mdash; <b>any merchant can mint its own stablecoin</b> on Tempo, interoperable 1-for-1 with others. <b>Klarna</b> already launched one.</li>
+  </ul>
+  <div class="real"><b>Why "AWS for money" is the right metaphor:</b> just as <span class="def" data-d="Amazon Web Services lets any company spin up servers/computing on demand instead of building a data center. Stripe is doing the same for currency: spin up your own money rails on demand.">Amazon Web Services</span> let anyone spin up computing on demand, Stripe is letting anyone spin up a <i>currency and payment rail</i> on demand. That's a genuinely new primitive &mdash; and Stripe sits underneath all of it, controlling issuance &rarr; wallets &rarr; blockchain &rarr; settlement.</div>
+
+  <h2>The honest part: facts vs. the viral story</h2>
+  <p>A widely-shared video frames this as a coordinated political plot &mdash; <i>"the Kushner/Ludnick/Whitcomb/Trump network building a private central bank, manufacturing adoption, wake up."</i> Let's be precise about what's <b>fact</b> and what's <b>narrative</b>:</p>
+  <div class="real"><b>Confirmed facts:</b> Stripe did buy Bridge + Privy and build Tempo. Open Issuance is real (Klarna used it). Tempo's $500M Series A (at a $5B valuation) <i>was</i> led by <b>Thrive Capital</b> &mdash; the firm of <b>Joshua Kushner</b> &mdash; with Greenoaks. Matt Huang of Paradigm is CEO.</div>
+  <div class="flag"><b>Speculation, not fact:</b> the leap from "Joshua Kushner's fund invested" to <i>"this is a coordinated administration scheme to privatize the money supply"</i> is the <b>video creator's narrative</b> &mdash; not something the filings or reporting establish. VCs invest in hot infrastructure all the time; that's their job. <b>Invest on (or watch) the business thesis. Do not invest on the conspiracy.</b> When a story leans this hard on a political web, that's usually a tell to slow down, not speed up.</div>
+
+  <h2>Who profits, who's at risk</h2>
+  <div class="tw"><table>
+    <tr><th>Name</th><th>Ticker</th><th>Angle</th></tr>
+    <tr><td><b>Stripe</b></td><td>PRIVATE</td><td>The platform owner &mdash; a marquee eventual IPO. Not buyable yet.</td></tr>
+    <tr><td><b>Tempo</b></td><td>PRIVATE</td><td>The blockchain rails. Not buyable yet.</td></tr>
+    <tr><td><b>Circle</b></td><td>CRCL</td><td>Public issuer of <span class="def" data-d="USD Coin — the #2 stablecoin, run by Circle. Earns money on the interest from the dollars held in reserve. The cleanest listed pure-play on stablecoins.">USDC</span>; the cleanest listed pure-play. Both rival to and validated by Stripe's push.</td></tr>
+    <tr><td><b>Coinbase</b></td><td>COIN</td><td>USDC partner (shares reserve income) + largest US crypto exchange.</td></tr>
+    <tr><td><b>PayPal</b></td><td>PYPL</td><td>Issues PYUSD + huge merchant base &mdash; both a beneficiary and a name <i>at risk</i> of disruption.</td></tr>
+    <tr><td><b>Visa / Mastercard</b></td><td>V / MA</td><td>The incumbents stablecoins could disintermediate &mdash; <i>but</i> both are racing to integrate them. Watch which way it cuts.</td></tr>
+    <tr><td><b>Banks / remittance</b></td><td>—</td><td>Cross-border remittance (e.g. Western Union) and correspondent banking are the most directly threatened.</td></tr>
+  </table></div>
+
+  <h2>The real question</h2>
+  <p>The video's one good line: the debate stops being <i>"is crypto money?"</i> and becomes <b>"whose money runs on crypto?"</b> That's the actual land grab. The contenders: Circle (USDC), Tether (USDT), PayPal (PYUSD), bank consortiums, and now <b>Stripe/Tempo with the platform play</b> &mdash; letting a thousand stablecoins bloom and taking a cut of all of them. Regulation (US <span class="def" data-d="Recent US legislation creating federal rules for dollar-backed stablecoins — the legal green light that turned stablecoins from a grey area into a sanctioned payment instrument banks and fintechs can build on.">stablecoin law</span>) just turned this from a grey area into a sanctioned market, which is <i>why</i> everyone's moving at once.</p>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">Cut through the hype</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">We separate the signal from the story.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens breaks down what's real, what's hype, and who profits &mdash; in plain English, every claim sourced and flagged. So you act on facts, not viral narratives.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/spacex-ipo.html">The SpaceX IPO</a> &middot; <a href="/learn/whats-next.html">What's Next</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc">Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Facts as of June 8, 2026, drawn from public reporting; verify against primary sources before acting. Stripe and Tempo are private and not publicly tradeable. Claims attributed to a third-party video are labeled as such and are not endorsed. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="share.js"></script>
+</body>
+</html>
