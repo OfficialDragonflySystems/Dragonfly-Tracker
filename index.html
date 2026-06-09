@@ -42,12 +42,12 @@ body { font-family: Georgia, 'Times New Roman', serif; color: var(--text); backg
 /* ── NAV ── */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: var(--dark); padding: 0 32px;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 56px; border-bottom: 1px solid #1a3a1f;
+  background: var(--dark); padding: 10px 24px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 9px;
+  border-bottom: 1px solid #1a3a1f;
 }
-.nav-logo { color: var(--lime); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
-.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-logo { color: var(--lime); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; justify-content: center; }
 .nav-links a { color: #9ca; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-decoration: none; }
 .nav-links a:hover { color: #fff; }
 .nav-cta { background: var(--lime); color: var(--dark) !important; font-weight: 700; padding: 7px 16px; border-radius: 4px; }
@@ -153,8 +153,8 @@ footer a:hover { color: var(--lime); }
 @media (max-width: 600px) {
   .hero-stat { padding: 16px 20px; }
   .hero-stat .num { font-size: 24px; }
-  nav { padding: 0 16px; }
-  .nav-links { gap: 12px; }
+  nav { padding: 9px 12px 7px; }
+  .nav-links { gap: 11px; }
   section { padding: 48px 20px; }
   .record-section { padding: 48px 20px; }
   .hero { padding: 56px 20px 52px; }
