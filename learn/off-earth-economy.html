@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Off-Earth Economy — Dragonfly Lens</title>
+<meta name="description" content="Compute, mining, and manufacturing are starting to leave the planet. The map of the off-Earth economy — orbital data centers, lunar resources, in-space manufacturing — the realistic timeline, and who's building it. Plain English, hover-to-define.">
+<meta property="og:title" content="The Off-Earth Economy — how compute, mining & manufacturing leave the planet">
+<meta property="og:description" content="The next frontier isn't a destination — it's an economy. Orbital data centers, lunar mining, in-space manufacturing: the convergence, the realistic timeline, and who's building it. Plain English.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/off-earth-economy.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/off-earth-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Off-Earth Economy">
+<meta name="twitter:description" content="Compute, mining & manufacturing are leaving the planet. The convergence, the timeline, and who's building it — Starcloud, AstroForge, Interlune, SpaceX.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/off-earth-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(30px,5vw,46px);line-height:1.12;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .layer{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 20px;margin:16px 0;}
+  .layer .n{font-size:11px;font-weight:800;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .pill{display:inline-block;font-size:10px;font-weight:800;padding:2px 7px;border-radius:6px;}
+  .p-pub{background:rgba(110,231,168,.16);color:var(--good);border:1px solid rgba(110,231,168,.4);}
+  .p-priv{background:rgba(167,139,250,.14);color:var(--purple);border:1px solid rgba(167,139,250,.4);}
+  .when{display:flex;gap:0;margin:18px 0;flex-wrap:wrap;}
+  .when .c{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin:5px;}
+  .when .c .t{font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;}
+  .when .c p{font-size:13px;margin:6px 0 0;color:#cfd8e6;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Frontier Thesis</div>
+  <h1>The Off-Earth Economy</h1>
+  <p class="lead">The next frontier isn't a place &mdash; it's an <b>economy</b>. Three things are starting to leave the planet at once: <b>compute, mining, and manufacturing</b>. Here's how they fit together, who's building it, and the honest timeline. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 8, 2026 &middot; A long-horizon thesis &mdash; mostly 2030s&ndash;40s. We flag the uncertainty throughout.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>Why now:</b> two things that never existed before now do &mdash; <b>cheap launch</b> (Starship) and <b>autonomous robotics</b> (AI). Together they make off-Earth economics work for the first time.</li>
+      <li><b>What's leaving:</b> <b>compute</b> (orbital &amp; lunar data centers), <b>mining</b> (lunar water/Helium-3, asteroid metals), and <b>manufacturing</b> (solar &amp; structures built from space materials).</li>
+      <li><b>The key insight:</b> these aren't three trends &mdash; they're <b>one loop</b>. You mine space materials to <i>build</i> in space to <i>power</i> compute in space.</li>
+      <li><b>The honest part:</b> this is a <b>2030s&ndash;40s</b> story, mostly private and pre-revenue. It's a <i>trajectory</i> to track, not a "buy now."</li>
+    </ul>
+  </div>
+
+  <h2>Why now &mdash; the two unlocks</h2>
+  <p>People have dreamed about space industry for 50 years. It failed every time (remember the 2010s asteroid-mining startups that went bankrupt?) for one reason: the <b>economics never worked</b>. Two things just changed that.</p>
+  <ul>
+    <li><b>Cheap launch.</b> <span class="def" data-d="SpaceX's fully-reusable rocket. If it works at scale, the cost to put a kilogram in orbit could fall ~10-100x — the single biggest lever on whether anything in space is economic.">Starship</span> aims to cut the cost of reaching orbit by 10&ndash;100&times;. When launch is cheap, everything downstream becomes possible.</li>
+    <li><b>Autonomous robotics.</b> <span class="def" data-d="AI that lets machines prospect, mine, build, and operate in space with no humans on site — removing the most expensive and dangerous part of doing anything off-Earth.">AI-driven autonomy</span> removes the need for humans on site &mdash; the most expensive, dangerous part. Robots that can prospect, extract, and build on their own.</li>
+  </ul>
+  <p>Cheap launch <i>plus</i> AI autonomy is the combination the 2010s never had. That's why this decade is genuinely different &mdash; not hype, just two enabling technologies finally arriving at once.</p>
+
+  <h2>The three layers leaving Earth</h2>
+  <div class="layer">
+    <div class="n">Layer 1 &middot; Compute</div>
+    <h3>Data centers in orbit, then on the Moon</h3>
+    <p>AI's bottleneck is <b>power and cooling</b> &mdash; both effectively unlimited in space (endless solar, the cold of the void as a heat sink). It's already started: <b>Starcloud</b> <span class="def" data-d="In Dec 2025 Starcloud trained an AI model on Nvidia H100 GPUs aboard a satellite — the first hard proof that real AI workloads can run in orbit, not just a concept.">trained an AI model in orbit in Dec 2025</span>. Next stop is the Moon: Musk's vision is using a lunar <span class="def" data-d="A mass driver (or railgun) is an electromagnetic catapult. On the Moon — no atmosphere, 1/6 gravity — it could fling cargo or compute into deep space with no rocket at all.">mass driver</span> to fling compute into deep space without rockets, scaling to a claimed <b>1,000+ terawatts</b> of AI compute a year.</p>
+  </div>
+  <div class="layer">
+    <div class="n">Layer 2 &middot; Mining</div>
+    <h3>Resources, extracted in space</h3>
+    <p>You can't ship everything from Earth &mdash; so you mine where you are. The near-term reality is <span class="def" data-d="In-Situ Resource Utilization — using materials found on the Moon or an asteroid (water, metals, oxygen) on site, instead of launching them from Earth. The key to making space self-sustaining.">ISRU</span>: lunar water &rarr; rocket fuel, regolith &rarr; oxygen and metals. <b>Interlune</b> targets lunar <span class="def" data-d="Helium-3 is a rare isotope, scarce on Earth but present in lunar soil, valuable for quantum computing/cryogenics (and someday fusion). A high-value 'specialty export' that could be economic to ship back.">Helium-3</span>; <b>AstroForge</b> is already flying <span class="def" data-d="Sending a spacecraft to survey an asteroid's composition before any mining — the essential first step. AstroForge's Brokkr-2 orbited a metallic near-Earth asteroid in 2026.">asteroid-prospecting missions</span>. (Bringing bulk metals <i>back to Earth</i> is the hard, far-off part &mdash; see the timeline.)</p>
+  </div>
+  <div class="layer">
+    <div class="n">Layer 3 &middot; Manufacturing</div>
+    <h3>Building <i>in</i> space, <i>from</i> space</h3>
+    <p>The payoff of mining is making things on site: solar panels, the <span class="def" data-d="Radiators dump waste heat. In space there's no air to carry heat away, so data centers and habitats need huge radiators — ideally manufactured from local material rather than launched.">radiators</span> that cool the data centers, habitat structures &mdash; all from lunar material instead of launching them. This closes the loop and is what lets the whole thing <b>scale beyond anything possible from Earth</b>.</p>
+  </div>
+
+  <h2>The convergence (the part nobody connects)</h2>
+  <p>Here's the insight that ties it together: <b>these three layers are one machine.</b></p>
+  <p style="text-align:center;font-size:15px;color:#cfe;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:16px;">
+  <b>Cheap launch</b> (SpaceX) gets you there &rarr; <b>AI robots</b> mine the Moon &rarr; <b>manufacturing</b> turns that material into solar + radiators &rarr; which <b>power compute</b> in space &rarr; whose value justifies more launch. <i>A self-reinforcing loop.</i>
+  </p>
+  <p>That's Elon's actual argument for going to the Moon <i>before</i> Mars: it's the nearest place you can close that loop and scale it. Each piece makes the others economic. No single company owns it &mdash; which is exactly why mapping the whole chain matters.</p>
+
+  <h2>The honest timeline</h2>
+  <div class="when">
+    <div class="c"><div class="t">Now &ndash; 5 yrs</div><p>Demos &amp; proofs: orbital AI training (done), asteroid prospecting (flying), lunar water-ice extraction (NASA, 2025), Helium-3 offtake deals.</p></div>
+    <div class="c"><div class="t">~10 yrs (mid-2030s)</div><p>First <i>operational</i> orbital data centers + lunar ISRU (water&rarr;fuel) + specialty exports. The in-space economy <i>starts</i>.</p></div>
+    <div class="c"><div class="t">20&ndash;30 yrs</div><p>Integrated off-Earth economy: lunar manufacturing + compute at scale; mass drivers; the 1,000-TW vision &mdash; <i>if</i> the loop closes.</p></div>
+  </div>
+  <div class="flag"><b>Read this honestly:</b> almost every pure-play here is <b>private, pre-revenue, and high-variance</b>, and the boldest claims (1,000 TW, asteroid riches) are <b>decades out and may never happen</b>. This is a <i>trajectory to track</i> &mdash; each demo that works de-risks the thesis a little &mdash; not a buy-it-today trade. We flag it now so you see it coming, not so you chase it.</div>
+
+  <h2>Who's building it</h2>
+  <div class="tw"><table>
+    <tr><th>Layer</th><th>Name</th><th>What they do</th><th></th></tr>
+    <tr><td><b>Compute</b></td><td>Starcloud</td><td>Orbital data centers; trained AI in space ('25); ~$1.1B</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>Compute</b></td><td>Lonestar / SpaceX</td><td>Lunar data backup; SpaceX "non-terrestrial" chips (Terafab)</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>Mining</b></td><td>AstroForge</td><td>Asteroid prospecting &amp; refining (flying now)</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>Mining</b></td><td>Interlune</td><td>Lunar ISRU + Helium-3 specialty exports</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>Logistics</b></td><td>TransAstra</td><td>Space logistics + resource harvesting</td><td><span class="pill p-priv">private</span></td></tr>
+    <tr><td><b>The enabler</b></td><td>SpaceX (SPCX)</td><td>Starship = the cheap launch that makes it all possible</td><td><span class="pill p-pub">IPO ~Jun 12</span></td></tr>
+    <tr><td><b>Public proxies</b></td><td>LUNR, RKLB, NVDA</td><td>Lunar infrastructure, launch, the chips that fly</td><td><span class="pill p-pub">public</span></td></tr>
+  </table></div>
+  <p>The pattern you'll notice: <b>the pure-plays are private and early; the buyable names are the enablers and the picks-and-shovels.</b> That's how every frontier starts &mdash; you can't buy the dream yet, so you buy the shovels and watch the pipeline.</p>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">See it before the crowd</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">We map the frontier early.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens connects the threads &mdash; compute, space, energy, AI &mdash; into theses you can act on, in plain English, fully sourced. Years before they're obvious.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">Related: <a href="/learn/spacex-ipo.html">The SpaceX IPO, Explained</a> &middot; <a href="/learn/whats-next.html">What's Next</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc">Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. This is a long-horizon, forward-looking thesis as of June 8, 2026 &mdash; timelines are uncertain, many claims are speculative, and most companies named are private and not publicly tradeable. Verify every name against primary sources. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="share.js"></script>
+</body>
+</html>
