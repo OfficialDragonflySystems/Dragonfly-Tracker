@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The SpaceX IPO Aftermath: The Mechanics Nobody's Pricing — Dragonfly Lens</title>
+<meta name="description" content="SPCX lists June 12 — but the moves that matter come AFTER. Nasdaq-100 fast-track inclusion (~day 15) forces index funds to buy, a tiny float sets up a squeeze, the S&P 500 sits out, and a lockup flood is coming in ~3-6 months. The supply-and-demand timeline of the biggest IPO ever, in plain English.">
+<meta property="og:title" content="The SpaceX IPO Aftermath — the index-inclusion & lockup mechanics nobody's pricing">
+<meta property="og:description" content="SPCX lists June 12, but the real moves come after: forced index-fund buying ~day 15, a tiny float, the S&P sitting out, and a lockup flood months later. Plain English.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/spacex-ipo-aftermath.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/spacex-ipo-aftermath-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The SpaceX IPO Aftermath — the mechanics nobody's pricing">
+<meta name="twitter:description" content="SPCX lists June 12, but the real moves come after: forced index buying, a tiny float, a lockup flood months later.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/spacex-ipo-aftermath-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .tl{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 64px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step .d{position:absolute;left:14px;top:14px;width:40px;text-align:center;color:var(--accent);font-weight:800;font-size:11px;line-height:1.2;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Deep Dive</div>
+  <h1>The SpaceX IPO Aftermath: The Mechanics Nobody's Pricing</h1>
+  <p class="lead">SPCX lists June 12 &mdash; but the moves that <i>matter</i> come after. Forced index-fund buying, a tiny float, the S&amp;P 500 sitting on the sidelines, and a supply flood months out. The supply-and-demand timeline of the biggest IPO ever &mdash; in plain English. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 9, 2026 &middot; Mechanics, not a prediction. Every claim sourced.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The listing isn't the event.</b> SPCX starts trading June 12. The move that forces buying comes ~15 trading days later.</li>
+      <li><b>Shock 1 &mdash; index inclusion (~day 15):</b> if it qualifies, SPCX gets <span class="def" data-d="Nasdaq's rule that lets a very large new company join the Nasdaq-100 index outside the normal once-a-year reshuffle — as soon as ~15 trading days after it starts trading.">fast-tracked into the Nasdaq-100</span>, and every fund that tracks it (QQQ, 401k index money) must buy &mdash; regardless of price.</li>
+      <li><b>The twist:</b> a tiny <span class="def" data-d="The shares actually available to trade. Musk + insiders keep most of SpaceX, so only a small slice floats at IPO — which makes the stock easy to squeeze in either direction.">float</span> + forced buyers = squeeze risk. But it's the most-telegraphed inclusion ever, so traders <b>front-run</b> it.</li>
+      <li><b>The S&amp;P 500 &mdash; the bigger 401k pool &mdash; can't buy yet</b> (it needs profits; SpaceX loses billions).</li>
+      <li><b>Shock 2, the one nobody's pricing:</b> the <span class="def" data-d="A rule that bars insiders and early investors from selling for a set period after the IPO (often 90-180 days). When it expires, a flood of new shares can hit the market at once.">lockup</span> expires in ~3-6 months &mdash; a supply flood that often does the opposite of the IPO pop.</li>
+    </ul>
+  </div>
+
+  <h2>Two events, not one</h2>
+  <p>SpaceX prices around June 11 and starts trading on Nasdaq ~<b>June 12, 2026</b> under <b>SPCX</b> &mdash; ~$135/share, a ~<b>$1.75 trillion</b> valuation, the <b>biggest IPO in history</b> (3x+ the previous record). But <i>listing on the exchange</i> doesn't force anyone to buy. The events that create mechanical demand &mdash; and later, mechanical supply &mdash; come after, on a schedule you can map in advance.</p>
+
+  <div class="tl">
+    <div class="step"><span class="d">DAY 1</span><b>IPO &amp; listing.</b> Retail + institutional demand meets a thin supply of shares. The headline pop &mdash; driven by hype and scarcity, not index rules.</div>
+    <div class="step"><span class="d">~DAY 15</span><b>Nasdaq-100 fast-track inclusion</b> (if it qualifies). Index funds <i>must</i> buy. The first wave of price-blind demand.</div>
+    <div class="step"><span class="d">WEEKS&nbsp;1-8</span><b>Options list + volatility.</b> Once listed <span class="def" data-d="Contracts to buy/sell the stock at a set price. Heavy options trading on a thin float can amplify moves sharply in both directions (dealers hedging feeds the trend).">options</span> amplify the moves &mdash; a thin float plus heavy options is a recipe for violent swings.</div>
+    <div class="step"><span class="d">~DAY 90-180</span><b>Lockup expiry.</b> Insiders &amp; early backers can finally sell. The float can multiply overnight &mdash; a supply shock that often reverses the early run.</div>
+  </div>
+
+  <h2>Shock 1: index inclusion forces buying (~day 15)</h2>
+  <p>This is the part you asked about. Nasdaq's <b>fast-track rule</b> lets a company this large join the <span class="def" data-d="The index of the 100 biggest non-financial companies on Nasdaq. Tracked by huge funds like QQQ — when a stock joins, those funds are required to buy it.">Nasdaq-100</span> as soon as ~15 trading days after IPO, instead of waiting for the annual December reshuffle. The moment it's in, every fund that tracks the index &mdash; <b>QQQ</b> (~$300B+), the other Nasdaq-100 trackers, and a big slice of <span class="def" data-d="Retirement accounts. Much of the 'Nasdaq' exposure in 401ks is held via QQQ or Nasdaq-100 index funds — which buy a new index member automatically.">401k index money</span> &mdash; has to buy SPCX at its index weight. They buy <b>regardless of valuation</b>, because their mandate is to match the index, not to judge it.</p>
+  <div class="real"><b>Your instinct was right:</b> millions of people will end up owning SpaceX without ever choosing to &mdash; because they own a Nasdaq index fund. That's "deterministic demand": billions of dollars of buying that has nothing to do with whether $1.75T is a fair price.</div>
+
+  <h2>The twist most people miss: it's the float, not the $1.75T</h2>
+  <p>Index weight is based on the <span class="def" data-d="Market value counting only the shares that actually trade freely — not the ones Musk and insiders are holding. SpaceX's float will be a small fraction of its $1.75T total.">float-adjusted market cap</span>, not the headline $1.75T. SpaceX will float only a small slice; Musk and insiders keep the rest. So two things are true at once:</p>
+  <div class="flag"><b>Cuts both ways:</b>
+    <ul style="margin:8px 0 0;">
+      <li><b>Smaller forced-buying dollars</b> than the $1.75T cap implies &mdash; the index weight is on the float, which is thin.</li>
+      <li><b>But a thin float + a wall of forced buyers = a squeeze.</b> Few available shares, lots of must-buy demand &rarr; price can gap up <i>and</i> whip around violently.</li>
+      <li><b>And it's all telegraphed.</b> This is the most-anticipated inclusion in history, so traders buy <i>ahead</i> of the date and sell <i>into</i> the index funds &mdash; classic "buy the rumor, sell the inclusion." The index pop has shrunk over the years precisely because everyone front-runs it.</li>
+    </ul>
+  </div>
+
+  <h2>Why the S&amp;P 500 &mdash; the bigger pool &mdash; sits this out</h2>
+  <p>Here's the distinction that trips people up. The <span class="def" data-d="The 500-large-cap index that most retirement/401k money actually tracks — a far bigger pool than the Nasdaq-100. But it has an entry requirement the Nasdaq-100 doesn't.">S&amp;P 500</span> is the much larger 401k vehicle &mdash; but it requires <b>profitability</b> to join (a sum of recent quarters in the black). SpaceX is reportedly losing <b>billions</b>. So the S&amp;P 500's enormous index-fund demand is <b>gated until SpaceX turns profitable</b> &mdash; which could be years, or never on a GAAP basis. The near-term forced buying is Nasdaq-100 only; the bigger wave may never come on schedule.</p>
+
+  <h2>Shock 2: the lockup flood (the one nobody's pricing)</h2>
+  <p>The IPO floats a small slice. But in ~<b>90&ndash;180 days</b>, the <b>lockup</b> expires and insiders + early investors can finally sell. On a stock where only a sliver traded, the float can <b>multiply overnight</b> &mdash; turning the early scarcity (which drove the pop) into a glut. Many high-flying IPOs make their high near inclusion and their <i>low</i> around lockup expiry. If you only watch the first 30 days, you miss the bigger supply event coming right behind it.</p>
+
+  <h2>The ripple: a $1.75T IPO drains the rest of the market</h2>
+  <p>One more effect almost nobody connects: to buy the biggest IPO ever, funds and investors have to <b>sell something else</b>. Markets sold off globally in the days <i>before</i> the IPO partly on exactly this &mdash; "funding the trade." So SPCX's arrival can pressure <b>other</b> growth, space, and AI names as capital rotates in. The IPO isn't just a SPCX story; it's a liquidity event for the whole market.</p>
+
+  <h2>The honest net read</h2>
+  <div class="real"><b>This is a mechanic, not a forecast.</b> You have a thin float meeting a demand shock (retail + Nasdaq-100 inclusion ~day 15), smart money front-running the date, the S&amp;P 500's bigger pool stuck on the sidelines until profits show up, and a lockup supply flood waiting ~3-6 months out. That's a setup for a <b>sharp move and high volatility</b> &mdash; in <i>both</i> directions &mdash; not a guaranteed melt-up. Knowing the schedule of forced buyers and sellers is the edge; predicting the price is not.</div>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">Know the mechanics, not the hype</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">We map who's forced to buy &mdash; and when they're forced to sell.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens explains the plumbing behind the headlines &mdash; index rules, floats, lockups &mdash; in plain English, every claim sourced. So you trade the schedule, not the hype.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/spacex-ipo.html">The SpaceX IPO, Explained</a> &middot; <a href="/learn/whats-next.html">What's Next</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc"><b>Sources:</b> IPO price/date/valuation &mdash; <a href="https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html" rel="nofollow">CNBC</a>, <a href="https://www.bloomberg.com/graphics/2026-spacex-ipo-stock-market-nasdaq-listings/" rel="nofollow">Bloomberg</a>; market sell-off ahead of the IPO &mdash; <a href="https://fortune.com/2026/06/08/stocks-ai-bubble-spacex-ipo/" rel="nofollow">Fortune</a>; SpaceX losses &amp; Musk ownership &mdash; <a href="https://www.cnbc.com/2026/05/20/spacex-ipo-live-updates.html" rel="nofollow">CNBC</a>. Nasdaq-100 fast-track (~15 trading days) and S&amp;P 500 profitability rules are standard index-methodology procedures; inclusion is conditional on float/liquidity screens and is not guaranteed.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Facts as of June 2026; verify against primary sources before acting. SPCX is named to explain index/lockup mechanics, not as a buy or sell recommendation. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="share.js"></script>
+</body>
+</html>
