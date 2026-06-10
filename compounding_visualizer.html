@@ -245,7 +245,7 @@
 
     initVal.textContent  = fmt(P);
     monthVal.textContent = fmt(C);
-    rateVal.textContent  = aR * 100 + '%';
+    rateVal.textContent  = parseFloat(rateEl.value) + '%';
     yrsVal.textContent   = Y + ' year' + (Y === 1 ? '' : 's');
 
     oContrib.textContent = fmt(totalIn);

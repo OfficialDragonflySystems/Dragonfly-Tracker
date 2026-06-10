@@ -180,7 +180,7 @@
     var delta    = invested - spent;
 
     costVal.textContent  = '$' + P.toFixed(2);
-    rateVal.textContent  = aR * 100 + '%';
+    rateVal.textContent  = parseFloat(rateEl.value) + '%';
     yearsVal.textContent = Y + ' year' + (Y === 1 ? '' : 's');
 
     outSpent.textContent = fmt(spent);
