@@ -325,19 +325,23 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
 .sci-item{font-size:11px;color:#67e8f9;display:flex;align-items:center;gap:4px;cursor:help;}
 .sci-val{font-weight:700;color:#a5f3fc;}
 
-/* Mobile: the market/IEI/SCI bars collapse by default so first load isn't a
-   wall of tickers (2026-06-12). A slim toggle expands them; choice persists in
-   localStorage (acts as a compact-vs-full "view mode" preference on phones).
-   Desktop is unaffected. */
-.bars-mobile-toggle{display:none;}
+/* Live-data bars are collapsible on ALL viewports (2026-06-12): a slim toggle
+   strip controls the crypto/regime/IEI/SCI stack. Defaults: desktop OPEN
+   (unchanged look), mobile CLOSED (calm first load). Choice persists in
+   localStorage - a compact-vs-full view preference per device. */
+#market-bar,.iei-bar,.sci-bar{display:none;}
+body.bars-open #market-bar{display:block;}
+body.bars-open .iei-bar,body.bars-open .sci-bar{display:flex;}
+.bars-mobile-toggle{display:flex;align-items:center;justify-content:center;gap:6px;
+  background:#0d1410;border-bottom:1px solid #1a3a1f;color:#7ec98a;
+  font:600 11px 'Helvetica Neue',Arial,sans-serif;padding:8px 12px;cursor:pointer;
+  letter-spacing:.05em;user-select:none;}
+.bars-mobile-toggle:hover{color:#b8e6c0;}
 @media (max-width:600px){
-  #market-bar,.iei-bar,.sci-bar{display:none;}
-  body.bars-open #market-bar{display:block;}
-  body.bars-open .iei-bar,body.bars-open .sci-bar{display:flex;}
-  .bars-mobile-toggle{display:flex;align-items:center;justify-content:center;gap:6px;
-    background:#0d1410;border-bottom:1px solid #1a3a1f;color:#7ec98a;
-    font:600 11px 'Helvetica Neue',Arial,sans-serif;padding:8px 12px;cursor:pointer;
-    letter-spacing:.05em;user-select:none;}
+  /* Mobile stack fixes: hero stats 2-up instead of a long column; signal cards
+     stack vertically instead of squeezing a 3-col grid. */
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .af-card{grid-template-columns:1fr;gap:8px 0;}
 }
 </style>
 </head>
@@ -398,7 +402,10 @@ function toggleBars(){
     open ? 'Hide live market data &#9652;' : 'Show live market data &#9662;';
 }
 (function(){
-  if (localStorage.getItem('df_bars') === 'open') {
+  // Default: open on desktop (>600px), closed on mobile. Stored choice wins.
+  var stored = localStorage.getItem('df_bars');
+  var open = stored ? (stored === 'open') : (window.innerWidth > 600);
+  if (open) {
     document.body.classList.add('bars-open');
     var l = document.getElementById('bars-toggle-label');
     if (l) l.innerHTML = 'Hide live market data &#9652;';
