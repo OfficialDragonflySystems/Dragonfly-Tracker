@@ -324,6 +324,21 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
 .sci-score{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.06em;background:rgba(34,211,238,.15);color:#22d3ee;}
 .sci-item{font-size:11px;color:#67e8f9;display:flex;align-items:center;gap:4px;cursor:help;}
 .sci-val{font-weight:700;color:#a5f3fc;}
+
+/* Mobile: the market/IEI/SCI bars collapse by default so first load isn't a
+   wall of tickers (2026-06-12). A slim toggle expands them; choice persists in
+   localStorage (acts as a compact-vs-full "view mode" preference on phones).
+   Desktop is unaffected. */
+.bars-mobile-toggle{display:none;}
+@media (max-width:600px){
+  #market-bar,.iei-bar,.sci-bar{display:none;}
+  body.bars-open #market-bar{display:block;}
+  body.bars-open .iei-bar,body.bars-open .sci-bar{display:flex;}
+  .bars-mobile-toggle{display:flex;align-items:center;justify-content:center;gap:6px;
+    background:#0d1410;border-bottom:1px solid #1a3a1f;color:#7ec98a;
+    font:600 11px 'Helvetica Neue',Arial,sans-serif;padding:8px 12px;cursor:pointer;
+    letter-spacing:.05em;user-select:none;}
+}
 </style>
 </head>
 <body>
@@ -337,7 +352,9 @@ body.dark #ep-email { background: #0a0f0b !important; border-color: #1e3a24 !imp
     <a href="#track-record" class="nav-sec">Track record</a>
     <a href="#sample" class="nav-sec">Sample signal</a>
     <a href="#roadmap" class="nav-sec">Roadmap</a>
-    <a href="/learn/" class="nav-sec">Learn</a>
+    <!-- Learn is a real page, not an in-page anchor: it must SURVIVE the mobile
+         .nav-sec cull (it's the content front door; was invisible on phones). -->
+    <a href="/learn/" style="color:#4ade80;font-size:13px;font-weight:700;">Learn</a>
     <a href="#pricing" class="nav-sec">Pricing</a>
     <a href="https://tracker.officialdragonflysystems.com/intelligence" style="color:#4ade80;font-weight:700;border:1px solid rgba(74,222,128,.25);border-radius:4px;padding:4px 10px;font-size:12px;" title="The Distillery — visual data analytics">&#9830; The Distillery</a>
     <a href="https://tracker.officialdragonflysystems.com/signin" style="color:#9ca;font-size:13px;" title="Subscriber login">My Account</a>
@@ -365,6 +382,26 @@ function toggleTheme() {
     document.body.classList.add('dark');
     var ic = document.getElementById('theme-icon');
     if (ic) ic.innerHTML = '&#9788;';
+  }
+})();
+</script>
+
+<!-- Mobile-only toggle: bars collapse by default on phones; choice persists. -->
+<div class="bars-mobile-toggle" id="bars-toggle" onclick="toggleBars()">
+  <span id="bars-toggle-label">Show live market data &#9662;</span>
+</div>
+<script>
+function toggleBars(){
+  var open = document.body.classList.toggle('bars-open');
+  localStorage.setItem('df_bars', open ? 'open' : 'closed');
+  document.getElementById('bars-toggle-label').innerHTML =
+    open ? 'Hide live market data &#9652;' : 'Show live market data &#9662;';
+}
+(function(){
+  if (localStorage.getItem('df_bars') === 'open') {
+    document.body.classList.add('bars-open');
+    var l = document.getElementById('bars-toggle-label');
+    if (l) l.innerHTML = 'Hide live market data &#9652;';
   }
 })();
 </script>
