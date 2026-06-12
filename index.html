@@ -148,8 +148,24 @@ footer a { color: #4ade80; text-decoration: none; }
 footer a:hover { color: var(--lime); }
 
 /* Nav: drop the in-page section jump-links once they'd overflow the row —
-   keeps the logo, account links and the Subscribe CTA always reachable. */
+   keeps the logo, account links and the Subscribe CTA always reachable.
+   2026-06-12: the culled links move into a hamburger menu instead of vanishing
+   (mobile users had no path to How it works / Charts / Track record / etc). */
 @media (max-width: 880px) { .nav-sec { display: none; } }
+.nav-burger{display:none;}
+.nav-menu{display:none;}
+@media (max-width: 880px){
+  .nav-burger{display:flex;align-items:center;justify-content:center;background:none;
+    border:1px solid #2a5a35;border-radius:4px;color:#9ca;cursor:pointer;
+    padding:5px 9px;font-size:15px;line-height:1;}
+  body.menu-open .nav-menu{display:flex;flex-direction:column;position:absolute;
+    top:100%;left:0;right:0;background:#0d1410;border-bottom:1px solid #2a5a35;
+    box-shadow:0 12px 24px rgba(0,0,0,.45);z-index:60;}
+  .nav-menu a{padding:13px 22px;color:#cfe3d4;font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14px;text-decoration:none;border-top:1px solid #16241a;}
+  .nav-menu a:active{background:#13241a;}
+  nav{position:relative;}
+}
 @media (max-width: 600px) {
   .hero-stat { padding: 16px 20px; }
   .hero-stat .num { font-size: 24px; }
@@ -373,6 +389,16 @@ body.bars-open .iei-bar,body.bars-open .sci-bar{display:flex;}
       <span id="theme-icon">&#9790;</span>
     </button>
     <a href="#pricing" class="nav-cta">Subscribe</a>
+    <button class="nav-burger" onclick="document.body.classList.toggle('menu-open')" title="Menu" aria-label="Menu">&#9776;</button>
+  </div>
+  <div class="nav-menu" onclick="document.body.classList.remove('menu-open')">
+    <a href="#how-it-works">How it works</a>
+    <a href="#charts">Charts</a>
+    <a href="#track-record">Track record</a>
+    <a href="#sample">Sample signal</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/learn/" style="color:#4ade80;font-weight:700;">Learn &rarr;</a>
   </div>
 </nav>
 <script>
