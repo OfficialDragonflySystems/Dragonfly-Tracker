@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Did AMD Just Kill the AI Subscription? The Honest Version of Local AI — Dragonfly Lens</title>
+<meta name="description" content="A mini PC ran a 235-billion-parameter AI model with no cloud, and the internet declared subscriptions dead. The chip is real and the demo is real — but here's what 'killed subscriptions' leaves out, and who actually profits from AI moving to the edge. Plain English, every number sourced.">
+<meta property="og:title" content="Did AMD Just Kill the AI Subscription? The Honest Version of Local AI">
+<meta property="og:description" content="A mini PC ran a 235B model with no cloud. The chip is real, the demo is real — but here's what the hype leaves out, and who actually profits from AI moving to the edge.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/local-ai.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/local-ai-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Did AMD Just Kill the AI Subscription?">
+<meta name="twitter:description" content="A mini PC ran a 235B model with no cloud. The chip is real — but here's what 'killed subscriptions' leaves out, and who actually profits.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/local-ai-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Myth vs. Reality</div>
+  <h1>Did AMD Just Kill the AI Subscription?</h1>
+  <p class="lead">A computer that fits in one hand ran a <b>235-billion-parameter</b> AI model live &mdash; no cloud, no data center, no monthly bill &mdash; and the internet immediately declared the subscription era over. The chip is real. The demo is real. <b>The conclusion is half-right and half-hype</b>, and the gap between them is where the actual opportunity is. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 16, 2026 &middot; What &ldquo;local AI killed the cloud&rdquo; leaves out &mdash; and who profits from the part that's true.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What's real:</b> AMD's <span class="def" data-d="The Ryzen AI Max+ 395, codenamed Strix Halo — a single chip combining a CPU, a big GPU, and an AI accelerator, wired to up to 128GB of shared memory. Designed to run AI on a desktop instead of in a data center.">Strix Halo</span> mini PC genuinely ran a 235B model on your desk. That was impossible on consumer hardware a year ago.</li>
+      <li><b>What's hype:</b> &ldquo;it killed subscriptions.&rdquo; The model only fits because of three asterisks the viral posts skip &mdash; and it runs at <b>~11 words a second</b>, not cloud speed.</li>
+      <li><b>The honest framing:</b> local AI just got <i>good enough to matter</i> for a huge set of jobs. It did <b>not</b> become a cloud-killer. They split by use-case, they don't fight to the death.</li>
+      <li><b>The opportunity:</b> the shift to the edge is a <b>memory story</b> first. Whether AI runs in the cloud or on your desk, the same chain gets paid &mdash; and now it gets paid <i>twice</i>.</li>
+      <li><b>Where it genuinely changes the game:</b> privacy, fixed cost, and sovereignty &mdash; the cases where &ldquo;nobody can take it away&rdquo; is worth more than raw speed.</li>
+    </ul>
+  </div>
+
+  <h2>What actually happened</h2>
+  <p>At CES 2026, AMD's CEO held up a mini PC and ran <b>Qwen3-235B</b> &mdash; a 235-billion-parameter model &mdash; live, entirely on the device. The hardware is the <b>Ryzen AI Max+ 395</b>: 16 CPU cores, a big integrated GPU, a 50+ <span class="def" data-d="Trillions of Operations Per Second — a rough measure of an AI accelerator's raw speed. Higher is faster, but it's only one part of the story; memory size often matters more for big models.">TOPS</span> AI accelerator, and up to <b>128GB of unified memory</b>. That last number is the trick. A top gaming card (RTX 5090) has 32GB; this has <i>four times</i> the memory the model can live in &mdash; which is exactly what a giant model needs. For a machine that costs roughly <b>$1,500&ndash;2,500</b>, that's a genuine milestone. <b>Credit where due: this was not possible on a consumer device a year ago.</b></p>
+
+  <h2>The three asterisks the hype skips</h2>
+  <p>Now the honest mechanics &mdash; because &ldquo;runs a 235B model&rdquo; is doing a lot of quiet work:</p>
+  <div class="stack">
+    <div class="step"><b>It's a mixture-of-experts &mdash; only ~22B of the 235B run at once.</b> <span class="def" data-d="A model design where only a small fraction of the total parameters ('experts') activate for any given word. So a '235B model' only does ~22B worth of work per token — which is the real reason it fits on a small machine.">Mixture-of-experts (MoE)</span> means the model is 235B on paper but only fires ~22 billion parameters per word. That's <i>why</i> it fits. Calling it &ldquo;a 235B model on a mini PC&rdquo; is true but flattering &mdash; the active workload is a tenth of that.</div>
+    <div class="step"><b>It's heavily compressed.</b> To squeeze in, the model is <span class="def" data-d="Shrinking a model by storing its numbers at lower precision (e.g. 3-bit instead of 16-bit). It saves enormous memory but costs some accuracy — the model gets a little 'dumber' and blurrier.">quantized</span> down to about 3-bit precision (~101GB). That's real compression with a real quality cost &mdash; it's not the full-fat model the cloud serves.</div>
+    <div class="step"><b>It runs at ~11 tokens per second.</b> That's roughly <b>11 words a second</b> &mdash; fine for a chat, painful for anything long, and a fraction of what a cloud endpoint delivers. Usable, not fast.</div>
+    <div class="step"><b>It can't <i>train</i> anything.</b> This is <span class="def" data-d="Running an already-built model to get answers. The opposite is 'training' — actually building or improving the model, which still requires data-center-scale compute the cloud provides.">inference</span> only. Building or fine-tuning frontier models still needs the data center. The cloud's hardest job didn't move at all.</div>
+  </div>
+  <div class="flag"><b>So is the subscription dead?</b> No. What died is the idea that you <i>must</i> rent the cloud for <i>every</i> task. For a quick private chat or a coding assistant, a local box is now genuinely good enough. For the fastest, smartest, full-precision frontier model &mdash; and for training anything &mdash; the cloud still wins, and isn't close. &ldquo;Killed subscriptions&rdquo; is a headline; <b>&ldquo;local AI crossed the good-enough line for a big slice of tasks&rdquo;</b> is the true, and still huge, version.</div>
+
+  <h2>Cloud vs. local &mdash; the honest split</h2>
+  <p>They're not enemies. They're tools for different jobs, and the line is finally clear:</p>
+  <div class="tw"><table>
+    <tr><th>Job</th><th>Winner</th><th>Why</th></tr>
+    <tr><td>Fastest, smartest answer (frontier model)</td><td><b>Cloud</b></td><td>Full precision, hundreds of tokens/sec, the biggest models. Local can't match it.</td></tr>
+    <tr><td>Training / fine-tuning a model</td><td><b>Cloud</b></td><td>Still needs data-center scale. Didn't move.</td></tr>
+    <tr><td>Private / confidential work</td><td><b>Local</b></td><td>Nothing leaves the machine &mdash; the killer feature for law, health, finance.</td></tr>
+    <tr><td>High-volume, predictable workloads</td><td><b>Local</b></td><td>Pay once for hardware vs. metered per-token forever. The math flips at scale.</td></tr>
+    <tr><td>Offline / sovereign / &ldquo;can't be cut off&rdquo;</td><td><b>Local</b></td><td>No vendor, no outage, no policy change can take it away.</td></tr>
+  </table></div>
+
+  <h2>The opportunity: it's a memory story first</h2>
+  <p>Here's the Lens angle the &ldquo;cloud is dead&rdquo; crowd misses entirely. The thing that made this demo possible wasn't a faster chip &mdash; it was <b>128GB of fast memory sitting right next to the processor</b>. <span class="def" data-d="A design where the CPU and GPU share one big pool of fast memory instead of having separate, smaller pools. It's why a model that needs lots of memory can run on a small machine — and it's the real unlock here.">Unified memory</span> is the unlock. And that points straight at who profits:</p>
+  <div class="tw"><table>
+    <tr><th>Who benefits</th><th>How</th></tr>
+    <tr><td><b>The memory chain</b> (Micron, SK Hynix, Samsung)</td><td>Local AI is <i>memory-hungry</i> by definition. Every AI PC sold is more high-speed DRAM &mdash; the same <a href="picks-and-shovels.html">memory bottleneck</a> that feeds cloud GPUs, now selling into a second market.</td></tr>
+    <tr><td><b>AMD</b> (and the unified-memory pioneers)</td><td>Strix Halo is the proof of concept; Apple's M-series did unified memory first; Qualcomm is pushing it on phones. The architecture, not the brand, is the winner.</td></tr>
+    <tr><td><b>Edge-device makers</b></td><td>A whole new product category &mdash; the &ldquo;personal AI appliance&rdquo; &mdash; from mini-PC builders to laptop OEMs.</td></tr>
+    <tr><td><b>Open-source inference tools</b> (Ollama, llama.cpp)</td><td>Not directly investable, but they're the rails. Watch them as the adoption signal.</td></tr>
+    <tr><td><b>At risk:</b> pure metered-inference resellers</td><td>Businesses whose only product is reselling cloud API calls for commodity tasks. The frontier and training stay safe; the easy middle gets squeezed.</td></tr>
+  </table></div>
+  <div class="real"><b>The insight that ties it together:</b> the shovel gets paid either way. Whether AI runs in a hyperscaler's data center <i>or</i> on ten million desks, it runs on <b>chips and memory the same supply chain makes</b> &mdash; and the edge wave means that chain now sells into <i>two</i> markets instead of one. You don't have to bet on cloud-vs-local. You bet on the memory and silicon that <i>both</i> require. Same lesson as every <a href="picks-and-shovels.html">picks-and-shovels</a> map: own the bottleneck, not the brand.</div>
+
+  <h2>Where it genuinely changes the game</h2>
+  <p>Set the hype aside &mdash; here's where local AI is a real structural shift, not a gadget:</p>
+  <ul>
+    <li><b>Regulated industries.</b> Law, healthcare, finance &mdash; anyone who legally <i>can't</i> send client data to a third party. &ldquo;Nothing leaves the machine&rdquo; isn't a nice-to-have; it's the whole ballgame. This is the clearest near-term adoption wedge.</li>
+    <li><b>Cost at scale.</b> A founder running thousands of routine AI calls a day stops watching a token meter. Fixed hardware cost beats metered cloud once volume is steady &mdash; the spreadsheet flips.</li>
+    <li><b>Sovereignty.</b> Nations and enterprises that want AI <i>they</i> control &mdash; no foreign vendor, no kill-switch, no policy change &mdash; can now run capable models in-house. The same logic driving <a href="picks-and-shovels.html">sovereign supply chains</a> applies to sovereign compute.</li>
+    <li><b>Resilience.</b> The AI that keeps working when the subscription lapses, the network drops, or the vendor changes the rules. &ldquo;Can't be taken away&rdquo; is a feature money will pay for.</li>
+  </ul>
+
+  <h2>The trajectory &mdash; and the moonshot</h2>
+  <p>Today's local AI is inference-only, compressed, and slow-ish. The honest question is whether those limits hold. The arrows mostly point one way:</p>
+  <div class="box">
+    <p style="margin-top:0;"><b style="color:var(--good)">Faster edge silicon</b> <span style="color:var(--good);font-size:11px;font-weight:800;text-transform:uppercase;">emerging</span> &mdash; NPUs are climbing from ~50 TOPS toward hundreds. Each generation narrows the ~11-tokens-a-second gap. Local won't match the cloud's best, but &ldquo;fast enough&rdquo; keeps moving up.</p>
+    <p><b style="color:var(--accent)">Smaller models that punch above their weight</b> <span style="color:var(--good);font-size:11px;font-weight:800;text-transform:uppercase;">emerging</span> &mdash; better mixture-of-experts and smarter compression mean tomorrow's 30B model matches today's 200B. The model side is racing <i>down</i> in size as fast as the hardware races up in capability.</p>
+    <p style="margin-bottom:0;"><b style="color:var(--accent)">On-device training</b> <span style="color:var(--warn);font-size:11px;font-weight:800;text-transform:uppercase;">moonshot</span> &mdash; the day your machine can <i>fine-tune</i> a model on your own data, locally, the last big reason to rent the cloud (for many users) falls. Far off, but it's the line that would truly redraw the map &mdash; a personal AI that learns only from you and answers only to you.</p>
+  </div>
+  <div class="real"><b>The honest tag:</b> none of this kills the cloud &mdash; the frontier and training stay there for years. But the direction is unmistakable: more of the <i>everyday</i> work moves to the edge each year. The first credible <b>on-device fine-tuning</b> at consumer scale is the signal to watch &mdash; that's the moment &ldquo;local AI&rdquo; stops being a cheaper option and starts being a different category.</div>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">&ldquo;It killed the cloud&rdquo; is a headline. The memory it runs on is the trade.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens takes the hype apart into what's real, what's overstated, and who quietly profits either way. Plain English, every claim sourced and flagged.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/ai-per-watt.html">Intelligence per watt</a> &middot; <a href="/learn/picks-and-shovels.html">The picks behind the picks</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Can you really run a 235B AI model locally?</b> Yes &mdash; on the right hardware (128GB unified memory) and with caveats: it's a mixture-of-experts (only ~22B active at a time), heavily compressed, and runs at ~11 tokens/sec. Impressive and usable, but not the full-precision cloud experience.</p>
+    <p><b>Is local AI as good as ChatGPT or Claude?</b> Not for the hardest tasks. Cloud frontier models are faster and smarter. Local AI is &ldquo;good enough&rdquo; for many everyday and private uses &mdash; and unbeatable when the data legally can't leave your machine.</p>
+    <p style="margin-bottom:0;"><b>Should I cancel my AI subscription?</b> Probably not yet &mdash; but the option is real now. The honest tradeoff: local wins on privacy, fixed cost, and control; cloud wins on speed, the smartest models, and zero hardware. Many will end up using both.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Can you really run a 235B AI model locally?","acceptedAnswer":{"@type":"Answer","text":"Yes, on hardware with about 128GB of unified memory, with caveats: it is a mixture-of-experts model (only ~22B parameters active at a time), heavily compressed (quantized), and runs around 11 tokens per second. Impressive and usable, but not the full-precision cloud experience."}},
+  {"@type":"Question","name":"Is local AI as good as ChatGPT or Claude?","acceptedAnswer":{"@type":"Answer","text":"Not for the hardest tasks. Cloud frontier models are faster and smarter. Local AI is good enough for many everyday and private uses, and unbeatable when the data legally cannot leave your machine."}},
+  {"@type":"Question","name":"Should I cancel my AI subscription because of local AI?","acceptedAnswer":{"@type":"Answer","text":"Probably not yet, but the option is now real. Local AI wins on privacy, fixed cost, and control; cloud wins on speed, the smartest models, and no hardware to buy. Many users will end up using both."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>Ryzen AI Max+ 395 / Strix Halo specs (16 cores, Radeon 8060S, 50+ TOPS NPU, up to 128GB unified memory), Qwen3-235B-A22B demo, MoE ~22B active, Q3 quantization ~101GB, ~11 tokens/sec</b> &mdash; <a href="https://www.techtimes.com/articles/318353/20260614/local-ai-inference-mini-pc-now-runs-235b-models-amd-ryzen-ai-max-395-vs-cloud-costs.htm" rel="nofollow">TechTimes</a>, <a href="https://pasqualepillitteri.it/en/news/5058/ryzen-ai-max-395-235b-model-local-mini-pc" rel="nofollow">local-model teardown</a>, <a href="https://www.amd.com/en/developer/resources/technical-articles/2025/amd-ryzen-ai-max-395--a-leap-forward-in-generative-ai-performanc.html" rel="nofollow">AMD</a>; <b>~$1,499 mini-PC pricing &amp; memory-vs-GPU comparison</b> &mdash; <a href="https://imfounder.com/science-tech/ai/amd-ryzen-ai-max-395-kills-nvidias-ai-box/" rel="nofollow">imFounder</a>, <a href="https://www.notebookcheck.net/Powerful-gaming-mini-PC-arrives-with-16-core-Ryzen-AI-Max-395-Strix-Halo-APU-and-128-GB-RAM.1107434.0.html" rel="nofollow">Notebookcheck</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Specs and performance figures are as reported by the sources above and depend heavily on model, quantization, and configuration &mdash; verify against primary sources before acting. Company names illustrate the supply chain, not buy recommendations. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
