@@ -10,9 +10,9 @@
   // ---- styles ----
   var css = document.createElement('style');
   css.textContent =
-    '#dl-listen{position:fixed;right:16px;bottom:16px;z-index:9998;display:flex;align-items:center;gap:8px;' +
-    'background:#0e1620;border:1px solid #2d5a35;border-radius:30px;padding:8px 8px 8px 14px;' +
-    'box-shadow:0 8px 26px rgba(0,0,0,.5);font:600 13.5px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;}' +
+    '#dl-listen{display:inline-flex;align-items:center;gap:8px;margin:2px 0 22px;' +
+    'background:#0e1620;border:1px solid #2d5a35;border-radius:30px;padding:7px 9px 7px 13px;' +
+    'box-shadow:0 4px 14px rgba(0,0,0,.35);font:600 13.5px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;}' +
     '#dl-listen button{cursor:pointer;border:none;background:none;color:#dff0df;font:inherit;display:flex;align-items:center;gap:7px;padding:0;}' +
     '#dl-listen .dl-main{color:#4ade80;}' +
     '#dl-listen .dl-ic{width:24px;height:24px;border-radius:50%;background:rgba(74,222,128,.16);border:1px solid #4ade80;' +
@@ -30,7 +30,10 @@
     '<button class="dl-toggle"><span class="dl-ic">&#9658;</span><span class="dl-main">Listen</span></button>' +
     '<span class="dl-prog">0%</span>' +
     '<button class="dl-x" title="Stop">&#10005;</button>';
-  document.body.appendChild(bar);
+  // place it right under the byline (fall back to the headline, then top of article)
+  var anchor = wrap.querySelector('.byline') || wrap.querySelector('h1');
+  if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(bar, anchor.nextSibling);
+  else wrap.insertBefore(bar, wrap.firstChild);
 
   var toggle = bar.querySelector('.dl-toggle');
   var ic = bar.querySelector('.dl-ic');
