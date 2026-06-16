@@ -114,6 +114,8 @@
   <p>So when you read &ldquo;Amazon's data centers used 2.5 billion gallons,&rdquo; the number sounds enormous &mdash; but at 0.12 L/kWh it's a <i>fraction</i> of what the same compute would consume at a worse site, and Amazon says it returned <b>3 gallons for every 4 it used</b> back to local communities, putting it ~75% of the way to a &ldquo;water-positive&rdquo; pledge by 2030. Context turns a scary headline into a boring &mdash; and encouraging &mdash; one.</p>
   <div class="flag"><b>The honest caveat &mdash; don't let the good number fool you either:</b> a low <i>average</i> hides bad <i>specific sites</i>. A company can post a great global WUE while one of its desert campuses still evaporates potable water from a stressed aquifer. Averages comfort; <b>watersheds bite.</b> The right unit of worry is the single facility in the single river basin &mdash; not the corporate sustainability report.</div>
 
+  <div class="flag"><b>The viral number, decoded:</b> you've probably seen <i>&ldquo;AI data centers used 264 billion gallons in 2025&rdquo;</i> (or ~1 trillion liters) making the rounds. That's an industry-wide <b>estimate</b> that bundles in <b>indirect</b> water &mdash; mostly the water used to <i>generate the electricity</i>, often off-site &mdash; so it's a withdrawal-style figure, not direct on-site use. Amazon's own <i>reported</i> direct number was 2.5 billion gallons. Both can be &ldquo;true&rdquo; &mdash; they're measuring different things. The tell, every time: <b>ask whether a scary water number is direct consumption or quietly includes power-generation water.</b></div>
+
   <h2>So &mdash; is it actually &ldquo;wasted&rdquo;? The verdict</h2>
   <p>Put plainly, in three honest buckets:</p>
   <div class="tw"><table>
@@ -155,6 +157,24 @@
     <p style="margin-bottom:0;"><b style="color:var(--accent)">Seasonal heat banking</b> <span style="color:var(--good);font-size:11px;font-weight:800;text-transform:uppercase;">emerging</span> &mdash; store summer waste heat underground (in aquifers or boreholes) and pull it back out to heat a city in winter. Already real at small scale; the moonshot is doing it at hyperscale so a data center becomes a <b>year-round thermal battery</b> for the town it sits in.</p>
   </div>
   <div class="real"><b>The honest tag:</b> none of these change the 2026 math &mdash; closed-loop + cold siting + recycled water is what's actually working today. The moonshots are the &ldquo;why the water panic has a ceiling&rdquo; layer. Track them: the first data center that ships drinking water out the back door is the day the &ldquo;AI drinks the planet&rdquo; story dies for good.</div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Why do data centers use so much water?</b> Mostly to stay cool. Evaporating water is a cheap way to dump heat &mdash; but it's optional. Air and closed-loop cooling use almost none; the water-heavy sites chose to trade water for a lower electricity bill.</p>
+    <p><b>Do AI data centers pollute water?</b> Generally not in a toxic sense &mdash; cooling water isn't chemically fouled. The real issues are <i>local depletion</i> (drawing from a stressed supply) and, where water returns warmer, mild <span class="def" data-d="Warming a river or lake enough to stress the fish and ecosystems living in it.">thermal</span> effects. Closed-loop designs sidestep both.</p>
+    <p><b>Is the water reused?</b> Increasingly, yes. Closed-loop systems recirculate the same coolant indefinitely, and many operators now run on recycled / non-potable water and return most of what they withdraw.</p>
+    <p><b>How much water does a single AI prompt use?</b> Honestly: it depends on the site, and the popular &ldquo;a bottle per prompt&rdquo; figure is a rough estimate, not a measurement. At an efficient closed-loop or air-cooled data center, one query's <i>direct</i> water use rounds to near zero.</p>
+    <p style="margin-bottom:0;"><b>Can the waste heat be turned back into electricity?</b> A little, and not economically yet &mdash; the heat is low-grade (great for warming buildings, too cool to spin a turbine). Today's real win is reusing it as <i>heat</i> (district heating, greenhouses); turning it back into power is a moonshot.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Why do data centers use so much water?","acceptedAnswer":{"@type":"Answer","text":"Mostly for cooling. Evaporating water is a cheap way to dump heat, but it is optional - air and closed-loop cooling use almost none."}},
+  {"@type":"Question","name":"Do AI data centers pollute water?","acceptedAnswer":{"@type":"Answer","text":"Generally not in a toxic sense; cooling water is not chemically fouled. The real issues are local depletion in stressed areas and mild thermal effects, both of which closed-loop designs sidestep."}},
+  {"@type":"Question","name":"Is the water used by data centers reused?","acceptedAnswer":{"@type":"Answer","text":"Increasingly yes. Closed-loop systems recirculate the same coolant indefinitely, and many operators run on recycled or non-potable water and return most of what they withdraw."}},
+  {"@type":"Question","name":"How much water does a single AI prompt use?","acceptedAnswer":{"@type":"Answer","text":"It depends on the site. The popular 'a bottle per prompt' figure is a rough estimate, not a measurement; at an efficient closed-loop or air-cooled data center a single query's direct water use rounds to near zero."}},
+  {"@type":"Question","name":"Can data center waste heat be converted back into electricity?","acceptedAnswer":{"@type":"Answer","text":"Only a little, and not economically yet - the heat is low-grade, good for warming buildings but too cool to spin a turbine. The practical win today is reusing it as heat via district heating or greenhouses."}}
+  ]}
+  </script>
 
   <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
     <div class="kick">See past the scary headline</div>
