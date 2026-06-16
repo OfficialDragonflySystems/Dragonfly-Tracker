@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Humanoid Robot Race Is Really an Actuator-Cost Race — Dragonfly Lens</title>
+<meta name="description" content="Everyone watches the AI brain. The thing that actually decides which humanoid robot wins is the body's cost — and 56% of that is the actuators. The gearbox, the screw, the magnet. Who really profits from the robot boom, plain English, every number sourced.">
+<meta property="og:title" content="The Humanoid Robot Race Is Really an Actuator-Cost Race">
+<meta property="og:description" content="The AI brain gets the headlines, but 56% of a humanoid robot's cost is the actuators. The gearbox, the screw, the magnet — and who really profits.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/robot-actuators.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/robot-actuators-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Humanoid Robot Race Is Really an Actuator-Cost Race">
+<meta name="twitter:description" content="56% of a humanoid robot's cost is the actuators — the gearbox, the screw, the magnet. The headline is the AI; the bottleneck is the body.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/robot-actuators-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:5px;vertical-align:middle;}
+  .t-lead{background:rgba(110,231,168,.14);color:var(--good);border:1px solid rgba(110,231,168,.4);}
+  .t-emerg{background:rgba(94,234,212,.13);color:var(--accent);border:1px solid rgba(94,234,212,.4);}
+  .t-priv{background:rgba(167,139,250,.14);color:var(--purple);border:1px solid rgba(167,139,250,.4);}
+  .t-hype{background:rgba(248,113,113,.13);color:var(--bad);border:1px solid rgba(248,113,113,.4);}
+  .t-spof{background:rgba(251,191,36,.13);color:var(--gold);border:1px solid rgba(251,191,36,.4);}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Contrarian Deep Dive</div>
+  <h1>The Humanoid Robot Race Is Really an Actuator-Cost Race</h1>
+  <p class="lead">Every headline about humanoid robots is about the <i>brain</i> &mdash; the AI, the demos, the dancing. But the thing that actually decides which robot wins is far more boring: <b>the cost of the body.</b> And more than half of that body cost is one unglamorous part &mdash; the <span class="def" data-d="The 'muscle' of a robot joint: a motor plus a gearbox that turns fast, weak spinning into slow, strong motion. A humanoid has dozens of them, and they're the single biggest cost in the machine.">actuator</span>. This is the race that matters. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 16, 2026 &middot; The pick isn't the robot. It's the part inside the joint.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The headline lies a little:</b> the AI brain gets the attention, but a humanoid robot is mostly a <i>cost</i> problem, and the cost is in the body.</li>
+      <li><b>The number that settles it:</b> Morgan Stanley estimates <b>actuators are ~56% of the bill of materials</b> on Tesla's Optimus &mdash; more than the battery, the brain, and the sensors combined.</li>
+      <li><b>So the real pick</b> is the part inside the actuator: the precision <span class="def" data-d="A gearbox that reduces a motor's fast spin into slow, powerful joint motion with almost no slack. The two main types — strain-wave ('harmonic') and roller-screw — are made by very few companies.">gearbox</span>, the <span class="def" data-d="A screw-and-roller mechanism that turns a motor's spin into a strong straight push/pull — used in the most powerful robot joints. Made by a tiny group of suppliers.">roller screw</span>, and the magnet. Same lesson as our <a href="picks-and-shovels.html">picks-behind-the-picks</a> map.</li>
+      <li><b>The whole game is getting that 56% cheaper.</b> Optimus reportedly costs $50&ndash;80K to build today; the target is $20&ndash;30K. Closing that gap <i>is</i> an actuator-cost race &mdash; and China is already undercutting on price.</li>
+      <li><b>The honest catch:</b> the biggest robot makers want to build actuators <i>in-house</i>, which is a real headwind for the merchant suppliers. We map who wins and who's at risk.</li>
+    </ul>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);"><b>Legend:</b> <span class="tag t-lead">Leader</span> established &middot; <span class="tag t-emerg">Emerging</span> small/early &middot; <span class="tag t-priv">Private</span> not public &middot; <span class="tag t-hype">Hype</span> story&gt;revenue &middot; <span class="tag t-spof">SPOF</span> single point of failure.</p>
+
+  <h2>The part everyone gets backwards</h2>
+  <p>Ask anyone what makes a humanoid robot hard and they'll say &ldquo;the AI.&rdquo; That's the exciting part, and it's genuinely hard. But it's not where the <i>money</i> goes. A robot has to physically move &mdash; lift, balance, grip &mdash; and that takes dozens of actuators, each a precision motor-and-gearbox package that has to be strong, light, quiet, and durable all at once. Build those cheaply enough and you have a product. Don't, and you have an expensive science demo. <b>The brain decides what the robot does; the actuators decide whether anyone can afford it.</b></p>
+
+  <h2>The one number: 56%</h2>
+  <p>Here's the breakdown that reframes the whole sector. Morgan Stanley's teardown of Tesla's <b>Optimus</b> puts the total <span class="def" data-d="Bill of Materials — the summed cost of every physical part in a product, before assembly, testing, and overhead. The raw 'parts cost.'">bill of materials</span> around <b>$55,000</b>, and the single biggest bucket isn't the computer or the battery:</p>
+  <div class="tw"><table>
+    <tr><th>Cost bucket</th><th>Share of the robot</th><th>What it is</th></tr>
+    <tr><td><b>Actuators</b></td><td><b>~56%</b></td><td>The motors + gearboxes in every joint. The dominant cost, by far.</td></tr>
+    <tr><td>Legs / locomotion</td><td>~$21K of the $55K</td><td>The most actuator-dense part of the body &mdash; walking is brutally hard on hardware.</td></tr>
+    <tr><td>The harmonic gearbox alone</td><td>~30% (single biggest part)</td><td>The strain-wave reducer inside the rotary actuators &mdash; the highest-cost individual component.</td></tr>
+    <tr><td>Brain, sensors, battery, frame</td><td>the remaining ~44%</td><td>Everything the headlines talk about &mdash; together still less than the actuators.</td></tr>
+  </table></div>
+  <div class="real"><b>Why this is the whole thesis:</b> if 56% of the cost is actuators, then the path to a cheap robot runs straight through actuator cost &mdash; and the companies that make the precision parts inside them have <i>pricing power the robot brands don't</i>. You don't have to guess which humanoid wins. You can invest in the part <i>every</i> humanoid needs, no matter whose logo is on the chest.</div>
+
+  <h2>What's actually inside an actuator (the real picks)</h2>
+  <p>Crack one open and you find a short list of hard-to-make parts &mdash; the same deep chokepoints we flagged in the supply-chain map:</p>
+  <div class="stack">
+    <div class="step"><b>The strain-wave (&ldquo;harmonic&rdquo;) reducer</b> &mdash; the gearbox in rotary joints. Made well by very few: <b>Harmonic Drive</b> (~85% of the strain-wave segment) and Japan's Nabtesco. <i>The single most expensive part in the robot.</i></div>
+    <div class="step"><b>The planetary roller screw</b> &mdash; turns spin into a powerful straight push for the strongest joints. Morgan Stanley pegs each one at <b>$1,350&ndash;$2,700</b>, and a robot needs roughly <b>14 of them</b>. Made by a tiny group (Switzerland's GSA + Rollvis, now owned by Germany's Schaeffler).</div>
+    <div class="step"><b>The NdFeB magnet</b> &mdash; the rare-earth magnet inside every motor. China dominates it, and a magnet export curb <i>already delayed Optimus</i> in 2025. The deepest dependency of all.</div>
+    <div class="step"><b>The frameless motor + encoder + controller</b> &mdash; the electronics that make the joint precise. More commoditized, but still real content for motion-control specialists.</div>
+  </div>
+
+  <h2>The cost-down race, in real numbers</h2>
+  <p>This is where it gets competitive &mdash; and where the &ldquo;own the gearbox&rdquo; thesis meets some honest friction. Look at the spread:</p>
+  <div class="tw"><table>
+    <tr><th>Robot</th><th>Price / cost</th><th>The signal</th></tr>
+    <tr><td><b>Tesla Optimus</b></td><td>~$50&ndash;80K to build; <b>$20&ndash;30K target</b> at scale</td><td>The entire business case depends on driving the actuator cost down. Gen-3 production targeted to start 2026.</td></tr>
+    <tr><td><b>Unitree G1</b> (China)</td><td>from <b>~$13,500</b></td><td>Already a fraction of Optimus's <i>cost</i> &mdash; winning on price and on data (cheap robots get deployed, and deployment trains better models).</td></tr>
+    <tr><td><b>Unitree R1</b> (China)</td><td>just under <b>$6,000</b></td><td>Upper-body-focused, ultra-light. The price floor keeps dropping.</td></tr>
+  </table></div>
+  <div class="flag"><b>The honest tension &mdash; two real risks to the simple &ldquo;buy the gearbox makers&rdquo; trade:</b>
+    <ul style="margin:8px 0 0;">
+      <li><b>China is undercutting the Japanese duopoly.</b> Suzhou Green Harmonic (~25% share) already supplies Tesla and is targeting ~60% of the Optimus reducer market at <b>30&ndash;40% below</b> Japanese prices. Great for cheap robots; a margin threat to the incumbent leaders.</li>
+      <li><b>The biggest OEMs want to build actuators in-house.</b> Tesla designs its own; a vertically-integrated giant is a <i>customer you lose</i>, not one you keep. The merchant-supplier thesis works best for the <i>long tail</i> of robot makers who can't build their own.</li>
+    </ul>
+  </div>
+
+  <h2>Who profits (and who's exposed)</h2>
+  <div class="tw"><table>
+    <tr><th>Name</th><th>Flag</th><th>The role &amp; the catch</th></tr>
+    <tr><td><b>Harmonic Drive</b> (6324)</td><td><span class="tag t-lead">Leader</span> <span class="tag t-spof">SPOF</span></td><td>~85% of strain-wave reducers &mdash; the purest play on the single biggest part. Catch: Chinese price competition on the way.</td></tr>
+    <tr><td><b>Nabtesco</b> (6268)</td><td><span class="tag t-lead">Leader</span></td><td>The other reducer leader (RV-type, heavier joints). Diversified into industrial robots already.</td></tr>
+    <tr><td><b>Schaeffler</b> (owns GSA + Rollvis)</td><td><span class="tag t-lead">Leader</span></td><td>Rolled up the Swiss roller-screw makers &mdash; the public way into the $1,350&ndash;2,700-each screw. Big, diversified (so diluted exposure).</td></tr>
+    <tr><td><b>Allient</b> (ALNT)</td><td><span class="tag t-emerg">Emerging</span></td><td>US motion-control pure-play &mdash; motors/controllers content, smaller and more concentrated.</td></tr>
+    <tr><td><b>NdFeB magnet / rare-earth chain</b></td><td><span class="tag t-spof">SPOF</span></td><td>The deepest dependency &mdash; see the <a href="picks-and-shovels.html">minerals map</a>. China-controlled; already delayed Optimus once.</td></tr>
+    <tr><td><b>The OEMs</b> &mdash; Tesla, Figure, Unitree</td><td><span class="tag t-hype">Hype</span></td><td>Figure ~$39B and pre-revenue; Unitree filing to IPO. Headline names, highest expectations, most likely to integrate actuators away from suppliers.</td></tr>
+  </table></div>
+
+  <h2>The opportunity layer &mdash; what could reset the whole cost curve</h2>
+  <p>Every line above assumes today's actuator design. These would <i>change the design</i> &mdash; and whoever cracks one resets the 56%. Credible fixes first, then the clearly-labeled moonshots.</p>
+  <div class="box">
+    <p style="margin-top:0;"><b style="color:var(--good)">Cheaper, &ldquo;good-enough&rdquo; actuators</b> <span style="color:var(--good);font-size:11px;font-weight:800;text-transform:uppercase;">emerging</span> &mdash; the Chinese-supplier path: not better than Japanese precision, just 30&ndash;40% cheaper and close enough for most jobs. This is the most likely near-term cost reset, and it favors <i>volume</i> robots over premium ones.</p>
+    <p><b style="color:var(--accent)">Magnet-free motors</b> <span style="color:var(--good);font-size:11px;font-weight:800;text-transform:uppercase;">emerging</span> &mdash; designs that cut the rare-earth NdFeB magnet out entirely (see <a href="picks-and-shovels.html">Niron-style iron-nitride magnets</a>). If they work at robot scale, they route <i>around</i> the China magnet chokepoint that already delayed Optimus.</p>
+    <p style="margin-bottom:0;"><b style="color:var(--accent)">Artificial muscle</b> <span style="color:var(--warn);font-size:11px;font-weight:800;text-transform:uppercase;">moonshot</span> &mdash; replace the rigid motor-and-gearbox joint with soft, fluid-filled or electro-active fibers that contract like real muscle (the <a href="human-machine.html">1,000-fiber approach</a> we covered separately). It would make the strain-wave reducer &mdash; today's single most expensive part &mdash; partly obsolete. Early, but the prize is the entire 56%.</p>
+  </div>
+  <div class="real"><b>The honest tag:</b> none of these change the 2026 build sheet &mdash; today the reducer and the roller screw are the cost, and the leaders that make them have real pricing power right now. The moonshots are your early-warning system: the first credible artificial-muscle or magnet-free actuator at scale is the signal that the incumbent gearbox moat has a ceiling.</div>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">Follow the cost, not the hype</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">The robot that wins is the one that gets the body cheap enough.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens follows every boom to the part it actually depends on &mdash; here, the gearbox inside the joint. Plain English, every claim flagged and sourced.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/picks-and-shovels.html">The picks behind the picks</a> &middot; <a href="/learn/human-machine.html">The human-machine decade</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc"><b>Sources:</b> <b>Optimus bill of materials ~$55K, actuators ~56%, legs ~$21K, harmonic reducer ~30% single biggest part, roller screws $1,350&ndash;2,700 each &times;14, Suzhou Green Harmonic ~25% share / 30&ndash;40% cheaper</b> &mdash; Morgan Stanley analysis via <a href="https://cryptobriefing.com/tesla-optimus-robot-build-cost-breakdown/" rel="nofollow">Crypto Briefing</a> and component breakdowns at <a href="https://optimusk.blog/blog/tesla-optimus-hardware-specs/" rel="nofollow">Optimus hardware specs</a>; <b>Optimus $20&ndash;30K target / $50&ndash;80K build cost, Gen-3 2026 production</b> &mdash; <a href="https://www.techtimes.com/articles/318071/20260609/tesla-turning-its-model-s-line-optimus-robot-factorygen-3-targets-2026-production-start.htm" rel="nofollow">TechTimes</a>, <a href="https://standardbots.com/blog/tesla-robot" rel="nofollow">Standard Bots</a>; <b>Unitree G1 ~$13,500, R1 ~$6,000</b> &mdash; <a href="https://blog.robozaps.com/b/unitree-g1-review" rel="nofollow">Robozaps</a>, <a href="https://www.automate.org/robotics/industry-insights/unitrees-55-pound-humanoid-costs-6-000-can-cartwheel" rel="nofollow">A3 Automate</a>, <a href="https://interestingengineering.com/ai-robotics/china-unitree-humanoid-robot" rel="nofollow">Interesting Engineering</a>; <b>NdFeB magnet curbs delaying Optimus</b> &mdash; <a href="https://www.cnbc.com/2025/04/23/teslas-optimus-hit-by-chinas-rare-earth-restrictions-says-musk.html" rel="nofollow">CNBC</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Cost estimates are third-party teardowns (notably Morgan Stanley) and change as designs and prices move &mdash; verify against primary sources before acting. Tickers illustrate the supply chain, not buy recommendations. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
