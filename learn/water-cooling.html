@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do AI Data Centers Really "Waste" Water? The Honest Map — Dragonfly Lens</title>
+<meta name="description" content="'AI is draining our water' is half true and half myth. The honest version: it depends entirely on the cooling method and the location. The best operators now use almost none — and the heat they reject is becoming a product. Plain English, hover-to-define, every number sourced.">
+<meta property="og:title" content="Do AI Data Centers Really 'Waste' Water?">
+<meta property="og:description" content="Half true, half myth. It depends entirely on the cooling method and the watershed. The best operators use almost none — and the rejected heat is becoming a product. The honest map.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/water-cooling.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/water-cooling-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Do AI Data Centers Really 'Waste' Water?">
+<meta name="twitter:description" content="Half true, half myth — it depends on the cooling method and the watershed. The best operators use almost none, and the rejected heat is becoming a product.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/water-cooling-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Myth vs. Reality</div>
+  <h1>Do AI Data Centers Really &ldquo;Waste&rdquo; Water?</h1>
+  <p class="lead">You've seen the headline: <i>&ldquo;ChatGPT drinks a bottle of water every time you talk to it.&rdquo;</i> It's half true and half myth &mdash; and the half that's true isn't true everywhere. The honest answer depends almost entirely on <b>two things: how the building is cooled, and where it sits.</b> Get those right and a data center uses almost no water at all. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 16, 2026 &middot; Separating the real problem from the viral one.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The myth:</b> &ldquo;Every data center guzzles water and it's gone forever.&rdquo; Too blunt to be true.</li>
+      <li><b>The reality:</b> water use ranges from <b>nearly zero to a lot</b> depending on the cooling method. Same company, two sites, can differ 10&times;.</li>
+      <li><b>The honest concern:</b> it's not a global water shortage &mdash; water isn't destroyed. It's a <b>local</b> one: evaporating <i>drinking</i> water in a <i>dry, stressed</i> region is a real problem. The technology isn't the villain; <b>siting and source</b> are.</li>
+      <li><b>The numbers:</b> the best operator (Amazon) now reports <b>0.12 liters per kWh</b> &mdash; about 7&times; better than the industry average and a fraction of a worse-sited rival.</li>
+      <li><b>The flip:</b> the heat they reject is starting to become a <b>product</b> &mdash; heating homes, greenhouses, even making fresh water. One industry's waste is another's input.</li>
+    </ul>
+  </div>
+
+  <h2>First, the trick the scary headlines play</h2>
+  <p>Almost every alarming water stat blurs two completely different words:</p>
+  <div class="box">
+    <p style="margin-top:0;"><b>Withdrawal</b> = water a facility <i>borrows</i> from a source, most of which flows right back (cooled and returned to the river or treatment plant). Big number, small impact.</p>
+    <p style="margin-bottom:0;"><b>Consumption</b> = water that <i>leaves</i> the local system, almost always by <span class="def" data-d="Turning liquid water into vapor to carry heat away — the same way sweating cools you. The vapor goes into the atmosphere, so it leaves the local watershed even though it isn't 'destroyed.'">evaporating</span> into the air. Smaller number, but this is the one that actually matters locally.</p>
+  </div>
+  <p>And here's the part the doom-posts skip: <b>evaporated water isn't destroyed.</b> It rejoins the water cycle and falls as rain &mdash; just somewhere else, on someone else's schedule. So &ldquo;wasted&rdquo; is the wrong frame globally. The legitimate worry is <b>local and immediate</b>: if a data center evaporates treated drinking water in Arizona during a drought, that water is gone <i>from that community</i> this year, even if it rains in Ohio next month. Hold that distinction &mdash; it's the whole article.</p>
+
+  <h2>The one dial that decides everything: how it's cooled</h2>
+  <p>A data center is, physically, a giant pile of heat that has to go somewhere. There are three main ways to move it &mdash; and they trade water against electricity in completely different ways.</p>
+  <div class="stack">
+    <div class="step"><b>Air / &ldquo;free&rdquo; cooling</b> &mdash; just blow outside air across the servers with fans. <b>Water used: almost none.</b> Works great in cool climates; struggles when it's hot out. Amazon now does this <b>~90% of the year</b>.</div>
+    <div class="step"><b>Evaporative cooling</b> &mdash; let water evaporate to dump heat (like a swamp cooler). <b>Cheap on electricity, expensive on water</b> &mdash; this is the &ldquo;water hog,&rdquo; burning roughly <b>1&ndash;9 liters per kWh</b>. It's what the scary stats are really about, and operators switch to it on the hottest days.</div>
+    <div class="step"><b>Closed-loop liquid cooling</b> &mdash; the same coolant circulates in a sealed loop forever, like a car radiator. <b>Water used: near zero</b> after the initial fill. The trade-off: it leans more on electricity (chillers). This is where the AI rack is heading &mdash; see <a href="ai-per-watt.html">the per-watt thesis</a>.</div>
+  </div>
+  <div class="real"><b>The mental model that cuts through all of it:</b> water and electricity are a <b>see-saw</b>. You can cool with water (evaporate it &mdash; cheap power, high water) or cool with electricity (run chillers &mdash; low water, more power). There is no free lunch; there's a dial. &ldquo;Zero-water&rdquo; data centers are real &mdash; they just paid for it in kilowatts. The honest question is never &ldquo;does it use water?&rdquo; but &ldquo;which knob did they turn, and was that the right call <i>for this location</i>?&rdquo;</div>
+
+  <h2>The actual numbers (and why Amazon looks so good)</h2>
+  <p>Water efficiency is measured as <span class="def" data-d="Water Usage Effectiveness — liters of water consumed per kilowatt-hour of IT energy. Lower is better. The water-world cousin of PUE (the electricity-efficiency metric).">WUE</span> &mdash; liters of water per kWh of computing. Lower is better. Here's where the big three actually landed in 2025:</p>
+  <div class="tw"><table>
+    <tr><th>Operator</th><th>WUE (L/kWh) 2025</th><th>What they're doing</th></tr>
+    <tr><td><b>Amazon (AWS)</b></td><td><b>0.12</b></td><td>~90% outside-air cooling, evaporative only on the hottest days. ~7&times; better than industry average. Total ~2.5 billion gallons across all data centers.</td></tr>
+    <tr><td><b>Microsoft</b></td><td><b>0.27</b></td><td>Down from 0.30 in 2024; new designs are <b>closed-loop, zero-evaporation</b> (fill once, then no ongoing water).</td></tr>
+    <tr><td><b>Google</b></td><td><b>~1.15</b></td><td>Higher &mdash; more evaporative cooling, often in warmer/cheaper-power regions. The honest laggard of the three.</td></tr>
+    <tr><td>Industry average</td><td><b>0.84</b> (some cite ~1.8)</td><td>Wide spread; a poorly-sited evaporative site can run several liters per kWh.</td></tr>
+  </table></div>
+  <p>So when you read &ldquo;Amazon's data centers used 2.5 billion gallons,&rdquo; the number sounds enormous &mdash; but at 0.12 L/kWh it's a <i>fraction</i> of what the same compute would consume at a worse site, and Amazon says it returned <b>3 gallons for every 4 it used</b> back to local communities, putting it ~75% of the way to a &ldquo;water-positive&rdquo; pledge by 2030. Context turns a scary headline into a boring &mdash; and encouraging &mdash; one.</p>
+  <div class="flag"><b>The honest caveat &mdash; don't let the good number fool you either:</b> a low <i>average</i> hides bad <i>specific sites</i>. A company can post a great global WUE while one of its desert campuses still evaporates potable water from a stressed aquifer. Averages comfort; <b>watersheds bite.</b> The right unit of worry is the single facility in the single river basin &mdash; not the corporate sustainability report.</div>
+
+  <h2>So &mdash; is it actually &ldquo;wasted&rdquo;? The verdict</h2>
+  <p>Put plainly, in three honest buckets:</p>
+  <div class="tw"><table>
+    <tr><th>Situation</th><th>Is water meaningfully &ldquo;lost&rdquo;?</th><th>Honest read</th></tr>
+    <tr><td>Closed-loop or air-cooled, anywhere</td><td><b>No</b> &mdash; negligible consumption</td><td>The water angle is a non-story here. Watch the <i>electricity</i> instead.</td></tr>
+    <tr><td>Evaporative, in a wet/cool region using non-potable water</td><td><b>Barely</b></td><td>Water returns to a basin that has it to spare. Low concern.</td></tr>
+    <tr><td>Evaporative, in a <b>hot/dry</b> region using <b>treated drinking water</b></td><td><b>Yes &mdash; locally, and this is the real issue</b></td><td>This is the legitimate grievance behind the headlines. It's a <b>siting and sourcing</b> failure, not an inevitability of AI.</td></tr>
+  </table></div>
+  <p>That's the whole truth in one table: <b>the technology isn't the problem &mdash; putting the wrong cooling method in the wrong place, drawing the wrong kind of water, is.</b> Which is exactly why the fix is already underway, and it's an investable trend rather than a moral panic.</p>
+
+  <h2>How it's getting fixed (the part nobody rage-shares)</h2>
+  <ul>
+    <li><b>Closed-loop is becoming the default</b> for new AI builds &mdash; Microsoft's newest designs lose <i>zero</i> water to evaporation, cutting <b>125+ million liters per facility per year</b>.</li>
+    <li><b>Drink the water nobody wants:</b> recycled wastewater, industrial gray water, even seawater &mdash; instead of treated drinking water. This single switch defuses most of the legitimate complaint.</li>
+    <li><b>Air cooling wherever the climate allows</b> &mdash; the reason &ldquo;build it where it's cold&rdquo; (Nordics, Canada) is suddenly a serious strategy (more on that below).</li>
+    <li><b>&ldquo;Water-positive&rdquo; commitments</b> with real projects behind them &mdash; replenishing more than they consume. Verify the projects, not just the pledge, but the direction is right.</li>
+  </ul>
+
+  <h2>The reframe: that heat isn't garbage &mdash; it's inventory</h2>
+  <p>Here's where the Lens looks at the same fact everyone else does and sees the opposite. A data center's entire job, thermodynamically, is to turn electricity into heat. The industry treats that heat as a <i>problem to throw away</i>. But low-grade heat is exactly what enormous parts of the economy <b>pay money for.</b> You asked the right question: what's the largest, most useful <span class="def" data-d="Anywhere you can dump unwanted heat — the atmosphere, a river, the ocean, the ground, or a system that actually wants the heat (like a district heating network).">heatsink</span> &mdash; and can the heat do work on the way out? It already is:</p>
+  <div class="tw"><table>
+    <tr><th>Where the heat goes</th><th>What it does</th><th>Real example (2025&ndash;26)</th></tr>
+    <tr><td><b>District heating</b> (the winner)</td><td>Piped warm water heats whole neighborhoods &mdash; the waste becomes a sellable product</td><td>Meta's Odense, Denmark site feeds <b>~45 MW / 100,000+ MWh/yr</b> into the grid &mdash; enough for <b>~6,900 homes</b>. Microsoft + VEKS delivering heat this 2025&ndash;26 season. Stockholm's &ldquo;Open District Heating&rdquo; pays data centers for it.</td></tr>
+    <tr><td><b>Greenhouses &amp; agriculture</b></td><td>Warm a greenhouse year-round &mdash; food grown on what was literally exhaust (your idea, and it's real)</td><td>Nordic and Dutch pilots heating greenhouses next to data centers; aquaculture (warm-water fish farming) is the same trick.</td></tr>
+    <tr><td><b>Buildings &amp; pools</b></td><td>Radiant floor heating, hot water, swimming pools &mdash; low-temperature uses are a near-perfect match</td><td>UK and EU sites heating municipal pools and offices off server exhaust.</td></tr>
+    <tr><td><b>Rivers / lakes / ocean</b> (the dumb heatsink)</td><td>Just dump it &mdash; vast capacity, but does no useful work and risks <span class="def" data-d="Warming a body of water enough to harm the fish and ecosystems living in it. The reason you can't just pour unlimited heat into a river.">thermal pollution</span></td><td>China's <b>undersea data centers</b> use the ocean as a giant heatsink &mdash; huge capacity, but the heat is wasted, not used.</td></tr>
+  </table></div>
+  <div class="flag"><b>The honest physics &mdash; why this isn't already everywhere:</b> data-center heat is <b>low-grade</b> (~30&ndash;45&deg;C / 85&ndash;115&deg;F). It's wonderful for warming homes and greenhouses, but too cool to spin a turbine or run high-temperature industry without a <span class="def" data-d="A device that moves heat from cooler to warmer — like a fridge run backwards — to 'upgrade' lukewarm waste heat to a useful temperature. Costs electricity to run.">heat pump</span> to upgrade it. And you can only sell heat where there's a <b>pipe network and a customer nearby</b> &mdash; which is why Scandinavia (cold + dense district-heating grids) leads and sprawl-built US suburbs lag. The opportunity is real; the constraint is <b>plumbing and geography</b>, not physics.</div>
+
+  <h2>The Lens insight: stack the problems so they cancel</h2>
+  <p>Read the three problems together &mdash; they solve each other:</p>
+  <div class="real"><b>One site can flip every &ldquo;waste&rdquo; into a product.</b> Build in a <b>cold climate</b> (air cooling &rarr; near-zero water, the water problem disappears). Run it <b>closed-loop</b> (no evaporation &rarr; no local depletion). Then <b>capture the reject heat</b> and sell it into a district network or greenhouse (the heat problem becomes revenue). The same decision &mdash; <i>go where it's cold and pipe the heat to someone who wants it</i> &mdash; defuses the water story <i>and</i> monetizes the heat story at once. That's not a moonshot. Meta and Microsoft are doing pieces of it right now. The edge is spotting which operators design for it on purpose versus which ones bolt &ldquo;sustainability&rdquo; on for the press release.</div>
+
+  <h2>The moonshots &mdash; closing the loop entirely</h2>
+  <p>These would do more than reduce the footprint &mdash; they'd turn the data center into a net <i>contributor</i> of heat, power, or even water. Clearly speculative, flagged as such, and included because the first credible one is a signal worth catching early.</p>
+  <div class="box">
+    <p style="margin-top:0;"><b style="color:var(--accent)">Waste heat &rarr; fresh water</b> <span style="color:var(--warn);font-size:11px;font-weight:800;text-transform:uppercase;">moonshot</span> &mdash; the poetic loop: use the rejected heat to run <span class="def" data-d="Distillation/absorption desalination driven by low-grade heat instead of high electricity — evaporate salt water with waste warmth, condense it clean.">thermal desalination</span>, so a coastal data center <i>produces</i> drinking water as a by-product. The thing accused of draining water could become a water <i>source</i>. Early pilots exist; economics are the hurdle.</p>
+    <p><b style="color:var(--accent)">Heat &rarr; electricity recapture</b> <span style="color:var(--warn);font-size:11px;font-weight:800;text-transform:uppercase;">moonshot</span> &mdash; <span class="def" data-d="Materials that turn a temperature difference directly into electricity (thermoelectrics), or that capture infrared heat as power (thermophotovoltaics). Today's versions are too inefficient at low temperatures to pay off.">thermoelectric / thermophotovoltaic</span> materials that claw a slice of the waste heat back as usable power. Too inefficient at these low temperatures today &mdash; but a breakthrough would shave the electricity side of the see-saw without touching water at all.</p>
+    <p style="margin-bottom:0;"><b style="color:var(--accent)">Seasonal heat banking</b> <span style="color:var(--good);font-size:11px;font-weight:800;text-transform:uppercase;">emerging</span> &mdash; store summer waste heat underground (in aquifers or boreholes) and pull it back out to heat a city in winter. Already real at small scale; the moonshot is doing it at hyperscale so a data center becomes a <b>year-round thermal battery</b> for the town it sits in.</p>
+  </div>
+  <div class="real"><b>The honest tag:</b> none of these change the 2026 math &mdash; closed-loop + cold siting + recycled water is what's actually working today. The moonshots are the &ldquo;why the water panic has a ceiling&rdquo; layer. Track them: the first data center that ships drinking water out the back door is the day the &ldquo;AI drinks the planet&rdquo; story dies for good.</div>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">See past the scary headline</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">The viral version and the true version are rarely the same trade.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens takes the panic apart into what's real, what's local, and what's already being solved &mdash; then asks who profits from the fix. Plain English, every claim sourced and flagged.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/power-bottleneck.html">The real AI bottleneck is the wire</a> &middot; <a href="/learn/ai-per-watt.html">Intelligence per watt</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc"><b>Sources:</b> <b>Amazon WUE 0.12 L/kWh, ~7&times; industry average, 2.5B gallons 2025, ~90% air cooling, 3-of-4 gallons returned, 75% to water-positive 2030</b> &mdash; <a href="https://www.aboutamazon.com/news/sustainability/amazon-data-center-water-usage" rel="nofollow">Amazon Sustainability</a>, <a href="https://www.networkworld.com/article/4184250/amazon-claims-its-data-centers-are-7x-more-water-efficient-than-the-industry-average.html" rel="nofollow">Network World</a>, <a href="https://www.techradar.com/pro/amazon-reveals-exactly-how-much-water-its-data-centers-used-last-year-and-claims-its-2-5-billion-gallons-puts-it-below-the-industry-average" rel="nofollow">TechRadar</a>; <b>Microsoft 0.27 L/kWh, closed-loop zero-evaporation, 125M L/facility saved; Google ~1.15; industry avg 0.84&ndash;1.8; evaporative 1&ndash;9 L/kWh; closed-loop near-zero</b> &mdash; <a href="https://introl.com/blog/water-usage-efficiency-wue-ai-data-center-cooling-guide-2025" rel="nofollow">Introl WUE guide 2025</a>, <a href="https://dgtlinfra.com/data-center-water-usage/" rel="nofollow">Dgtl Infra</a>, <a href="https://www.techtarget.com/searchdatacenter/tip/How-to-manage-data-center-water-usage-sustainably" rel="nofollow">TechTarget</a>; <b>withdrawal vs. consumption distinction</b> &mdash; <a href="https://rsmetrics.com/the-role-of-water/" rel="nofollow">RS Metrics</a>; <b>heat reuse &mdash; Meta Odense ~45 MW / ~6,900 homes, Microsoft+VEKS Denmark 2025&ndash;26, Stockholm Open District Heating</b> &mdash; <a href="https://www.ramboll.com/en-us/projects/energy/meta-surplus-heat-to-district-heating" rel="nofollow">Ramboll</a>, <a href="https://local.microsoft.com/blog/datacenter_heat_repurposed/" rel="nofollow">Microsoft Local</a>, <a href="https://www.weforum.org/stories/2025/06/sustainable-data-centre-heating/" rel="nofollow">World Economic Forum</a>, <a href="https://eu-mayors.ec.europa.eu/en/news/stockholm-sweden-heat-recovery-data-centres" rel="nofollow">EU Covenant of Mayors</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Figures as of 2025&ndash;26 reporting from the sources cited above &mdash; verify against primary sources before acting. Company names illustrate the supply chain, not buy recommendations. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="share.js"></script>
+</body>
+</html>

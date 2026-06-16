@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Picks Behind the Picks — Who the AI Buildout Really Depends On — Dragonfly Lens</title>
+<meta name="description" content="Everyone owns the picks-and-shovels names. We went one layer deeper: who the shovel-makers themselves depend on. The single-point-of-failure suppliers under chips, robots, magnets and satellites — and the cap-table signal that spots them early. Plain English, every name flagged.">
+<meta property="og:title" content="The Picks Behind the Picks — Who the AI Buildout Really Depends On">
+<meta property="og:description" content="Everyone owns the obvious shovels. We mapped who the shovel-makers depend on — the single-point-of-failure suppliers one layer below the AI trade, and how to spot them before the crowd.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/picks-and-shovels.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/picks-and-shovels-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Picks Behind the Picks">
+<meta name="twitter:description" content="Everyone owns the obvious shovels. We mapped who the shovel-makers themselves depend on — and how to spot them early.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/picks-and-shovels-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:5px;vertical-align:middle;}
+  .t-lead{background:rgba(110,231,168,.14);color:var(--good);border:1px solid rgba(110,231,168,.4);}
+  .t-emerg{background:rgba(94,234,212,.13);color:var(--accent);border:1px solid rgba(94,234,212,.4);}
+  .t-priv{background:rgba(167,139,250,.14);color:var(--purple);border:1px solid rgba(167,139,250,.4);}
+  .t-hype{background:rgba(248,113,113,.13);color:var(--bad);border:1px solid rgba(248,113,113,.4);}
+  .t-spof{background:rgba(251,191,36,.13);color:var(--gold);border:1px solid rgba(251,191,36,.4);}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(251,191,36,.14);border:1px solid var(--gold);color:var(--gold);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; The Deepest Deep Dive</div>
+  <h1>The Picks Behind the Picks</h1>
+  <p class="lead">&ldquo;Sell shovels in a gold rush&rdquo; is the oldest advice in investing &mdash; which is exactly why the obvious shovels (NVIDIA, TSMC, the cooling names) are already crowded. So we asked the question almost nobody asks: <b>who do the shovel-makers themselves depend on?</b> One layer down lives a handful of companies the entire AI, robotics and space buildout quietly cannot function without. This is the map. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 16, 2026 &middot; A research map, not a buy list. Every name needs your own verification &mdash; see the honest note at the end.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The real chokepoints are one layer deeper than retail thinks:</b> not the GPU but the <i>substrate, the HBM test machine, the EUV mask-inspection tool</i>; not the robot but the <i>gearbox and the screw</i>; not the mine but the <i>refinery</i>.</li>
+      <li><b>The single best early signal:</b> when a strategic giant (NVIDIA, AMD, Samsung, Shell) puts <b>money on a startup's cap table</b>, it's telling you where its own supply chain is fragile. Its <i>absence</i> is a red flag.</li>
+      <li><b>The deepest truth:</b> a handful of <span class="def" data-d="Single Point Of Failure — one supplier, one factory, or one country that, if it stopped, would halt an entire industry. The most dangerous and most valuable spot in any supply chain.">single points of failure</span> sit under <i>multiple</i> industries at once. Rare-earth <b>separation</b> (not mining) is China-dominated and feeds magnets, EVs, robots, and defense simultaneously.</li>
+      <li><b>This is a map to study, not a list to buy.</b> Many of the most interesting names are pre-revenue or private; government money de-risks <i>survival</i>, not <i>returns</i>. Use it with our <a href="#xray">x-ray framework</a>.</li>
+    </ul>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);"><b>Legend:</b> <span class="tag t-lead">Leader</span> established, real revenue &middot; <span class="tag t-emerg">Emerging</span> small-cap / early &middot; <span class="tag t-priv">Private</span> not yet public &middot; <span class="tag t-hype">Hype</span> narrative running ahead of revenue &middot; <span class="tag t-spof">SPOF</span> single point of failure.</p>
+
+  <h2>The one idea: go one layer below the obvious shovel</h2>
+  <p>When a trade gets crowded, the edge isn't in the famous name &mdash; it's in the unglamorous supplier the famous name can't live without. Everyone knows NVIDIA makes the GPU. Far fewer know that every advanced GPU needs a special <span class="def" data-d="The fiberglass-and-resin board that a chip sits on, carrying thousands of electrical connections between the chip and the rest of the computer. Advanced AI chips need exotic, hard-to-make substrates — a quiet bottleneck.">substrate</span> from a tiny club of Japanese makers, must be stacked with <span class="def" data-d="High-Bandwidth Memory — stacks of memory chips bonded right next to the GPU to feed it data fast. Made by only three companies, and each stack must be tested on machines from essentially one supplier.">HBM</span> that only three firms produce, and must be <span class="def" data-d="Checking every stacked memory chip works before it ships — done on machines from essentially one dominant maker (Advantest). A hidden gate on the entire AI memory supply.">tested</span> on machines from essentially one company. <b>That's where the scarcity &mdash; and the pricing power &mdash; actually lives.</b></p>
+  <div class="real"><b>The cap-table tell:</b> the fastest way to find these hidden chokepoints is to watch where the giants invest <i>defensively</i>. When NVIDIA, AMD and Intel <i>all</i> back the same optical-interconnect startup, they're not being generous &mdash; they're insuring against a part of their own roadmap they can't yet build. Follow the strategic money and it draws you a map of the industry's own fears. We cover how to read this in <a href="#xray">the x-ray section</a>.</div>
+
+  <h2>Layer 1 &mdash; the silicon itself (everyone's first stop)</h2>
+  <p>This is the most-watched layer, so the edge here is narrow &mdash; but you have to see it to find what's beneath it. The famous names, then the ones hiding behind them:</p>
+  <div class="tw"><table>
+    <tr><th>Role</th><th>The known names</th><th>The chokepoint beneath (less-watched)</th></tr>
+    <tr><td><b>Make the chip</b></td><td>TSMC, Samsung <span class="tag t-lead">Leader</span></td><td>ASML <span class="tag t-spof">SPOF</span> &mdash; the <i>only</i> maker of <span class="def" data-d="Extreme Ultraviolet lithography — the room-sized machines that print the tiniest chip features. ASML of the Netherlands is the sole maker on Earth. No ASML, no advanced chips.">EUV</span> machines on Earth.</td></tr>
+    <tr><td><b>Inspect the masks</b></td><td>&mdash;</td><td><b>Lasertec</b> <span class="tag t-spof">SPOF</span> &mdash; near-monopoly on EUV photomask inspection. A tool the whole industry needs and almost nobody names.</td></tr>
+    <tr><td><b>Cut &amp; stack the wafers</b></td><td>&mdash;</td><td><b>Disco</b> (dicing/grinding &mdash; gates HBM and advanced packaging), <b>Advantest</b> <span class="tag t-spof">SPOF</span> (HBM test), <b>Besi</b> (hybrid bonding; AMAT owns a stake).</td></tr>
+    <tr><td><b>The board under the chip</b></td><td>&mdash;</td><td><b>Ibiden</b> <span class="tag t-spof">SPOF</span> &mdash; the &ldquo;hidden CoWoS,&rdquo; an advanced-substrate maker most investors have never heard of; Shinko, Unimicron, AT&amp;S alongside.</td></tr>
+    <tr><td><b>The raw wafer &amp; the resist</b></td><td>&mdash;</td><td>Shin-Etsu / SUMCO (silicon-wafer duopoly), JSR / Inpria + <b>Entegris</b> (EUV photoresist <span class="tag t-spof">SPOF</span>) &mdash; the chemicals without which the machines print nothing.</td></tr>
+  </table></div>
+  <div class="flag"><b>The honest read on the GPU challengers:</b> the &ldquo;NVIDIA killers&rdquo; are mostly a graveyard with a few survivors. <b>Cerebras</b> <span class="tag t-emerg">Emerging</span> is public with real revenue but dangerously concentrated in one customer. <b>Tenstorrent</b> <span class="tag t-priv">Private</span> (led by legendary chip architect <b>Jim Keller</b>) and <b>d-Matrix</b> (Microsoft-backed) are the credible privates. <b>Etched</b> <span class="tag t-hype">Hype</span> raised billions on a transformer-only chip with little shipped. Groq got absorbed; SambaNova did a down-round. The pattern: <b>a famous founder buys survival, not success.</b></div>
+
+  <h2>Layer 2 &mdash; memory, interconnect &amp; the optical future</h2>
+  <p>A GPU with nothing to feed it is an expensive paperweight. The plumbing that moves data is its own bottleneck stack &mdash; and this is where NVIDIA itself has been quietly buying insurance.</p>
+  <div class="tw"><table>
+    <tr><th>Role</th><th>Names</th><th>The tell</th></tr>
+    <tr><td><b>HBM memory</b></td><td>SK Hynix (#1), Micron (MU &mdash; cleanest US-listed), Samsung <span class="tag t-lead">Leader</span></td><td>Reportedly sold out into 2027. Test gated by Advantest <span class="tag t-spof">SPOF</span>.</td></tr>
+    <tr><td><b>Optical interconnect</b></td><td>Broadcom (AVGO), Marvell (MRVL), Coherent (COHR), Lumentum (LITE) <span class="tag t-lead">Leader</span></td><td>NVIDIA took ~$2B stakes in <i>both</i> COHR and LITE &mdash; a flashing arrow at where it sees fragility.</td></tr>
+    <tr><td><b>The networking shovel</b></td><td><b>Amphenol</b> (APH) <span class="tag t-lead">Leader</span>, Arista (ANET), Fabrinet (FN)</td><td>APH = arguably the best risk-adjusted &ldquo;shovel&rdquo; here &mdash; the connector spine, diversified, less hype.</td></tr>
+    <tr><td><b>The deepest laser part</b></td><td>&mdash;</td><td><span class="def" data-d="Indium phosphide — an exotic semiconductor wafer that every high-speed data-center laser is built on. A tiny, deep supply layer under the entire optical-networking boom.">InP wafers</span> <span class="tag t-spof">SPOF</span> &mdash; gates every optical transceiver. The pick under the optical picks.</td></tr>
+    <tr><td><b>Frontier optics (private)</b></td><td><b>Ayar Labs</b> <span class="tag t-priv">Private</span> (backed by NVIDIA + AMD + Intel &mdash; the rare trifecta), Eliyan (AMD/Arm/Meta), Lightmatter <span class="tag t-priv">Private</span></td><td>The trifecta cap table <i>is</i> the thesis &mdash; three rivals all de-risking the same part.</td></tr>
+  </table></div>
+  <div class="flag"><b>Where the hype lives in this layer:</b> some &ldquo;photonic computing&rdquo; names trade at hundreds of times sales on pre-product stories, and at least one startup's founders were flagged for having no semiconductor track record at all. <b>The cap-table test sorts them instantly:</b> Ayar has the trifecta; the hype names have retail enthusiasm. <span class="tag t-hype">Hype</span> Watch for: extreme price-to-sales, no strategic chipmaker on the cap table, founders new to the field.</div>
+
+  <h2>Layer 3 &mdash; power &amp; cooling (we mapped these separately)</h2>
+  <p>The electricity and heat layer is so large it has its own deep dives. The short version, with the verdict that surprised us:</p>
+  <ul>
+    <li><b>Power delivery</b> is the binding constraint &mdash; transformers with 4-year waits, grid interconnect. Full map: <a href="power-bottleneck.html">The Real AI Bottleneck Isn't Chips, It's the Wire</a> (ETN, PWR, GEV, VRT).</li>
+    <li><b>Cooling verdict:</b> <span class="def" data-d="Cooling that pumps liquid through a metal plate sitting directly on the chip — now the mainstream choice for AI racks. 'Immersion' (dunking whole servers in fluid) turned out to be the niche, not the future.">cold-plate (direct-to-chip)</span> <b>won the AI rack; immersion is a secondary niche.</b> The proof is in the M&amp;A &mdash; every billion-dollar cooling acquisition (Eaton/Boyd, Ecolab/CoolIT, Schneider/Motivair) was cold-plate. Public leaders: <b>Vertiv (VRT)</b>, <b>nVent (NVT)</b>, <b>Modine (MOD)</b>.</li>
+    <li><b>The deepest cooling SPOF:</b> the <span class="def" data-d="Specialized non-conductive coolant fluids used in liquid cooling. A handful of chemical companies make them — and several are ALSO equity investors in cooling startups, which is the consistent tell.">dielectric-fluid</span> makers (Shell, Castrol, Solvay, Honeywell) <span class="tag t-spof">SPOF</span> &mdash; who are <i>both</i> suppliers and equity backers. And the water angle is mostly a myth: <a href="water-cooling.html">Do data centers really waste water?</a></li>
+  </ul>
+
+  <h2>Layer 4 &mdash; the materials, robots &amp; satellites (where the deepest picks hide)</h2>
+  <p>This is the least-watched, most-chokepoint-dense layer of all &mdash; and the one with the clearest single message: <b>the bottleneck is almost never the mine or the robot. It's the refining, the gear, and the magnet.</b></p>
+
+  <h3>Minerals &mdash; refining is the moat, and China owns it</h3>
+  <p>The world has plenty of rare-earth <i>ore</i>. What it lacks is the dirty, capital-intensive step of <span class="def" data-d="Chemically pulling individual rare-earth elements apart from each other and from the rock — the hard, polluting, expensive step. China runs ~90% of the world's capacity, which is the real bottleneck (not mining).">separation and refining</span>, where China runs ~90% of capacity (and ~98% of gallium, a chip material).</p>
+  <div class="tw"><table>
+    <tr><th>Name</th><th>Flag</th><th>The role &amp; the catch</th></tr>
+    <tr><td><b>MP Materials (MP)</b></td><td><span class="tag t-lead">Leader</span></td><td>The US rare-earth flagship; DoD is its largest holder. But priced for perfection &mdash; insiders selling.</td></tr>
+    <tr><td><b>Lynas (LYC)</b></td><td><span class="tag t-spof">SPOF</span></td><td>The <i>only</i> at-scale heavy-rare-earth separator outside China. Structurally strategic.</td></tr>
+    <tr><td><b>Centrus (LEU)</b></td><td><span class="tag t-spof">SPOF</span></td><td>HALEU nuclear-fuel enrichment &mdash; gates the small reactors meant to power AI. Russia is the only other commercial source.</td></tr>
+    <tr><td><b>Sunresin</b> (China)</td><td><span class="tag t-spof">SPOF</span></td><td>The deep one: makes the <span class="def" data-d="A specialized plastic bead that grabs specific metal ions out of solution — the quiet chemistry behind extracting gallium and rare earths. One Chinese firm dominates it.">chelating resin</span> behind ~90% of gallium extraction. A pick under the pick under the chip.</td></tr>
+    <tr><td><b>Niron Magnetics</b></td><td><span class="tag t-priv">Private</span></td><td>Rare-earth-<i>free</i> magnets &mdash; backed by GM, Stellantis, Samsung. If it works, it routes <i>around</i> the whole China magnet chokepoint. The kind of solver we watch for.</td></tr>
+  </table></div>
+  <p style="font-size:13px;color:var(--muted);">Also on the radar: <b>Freeport (FCX)</b> for copper (real cash flow, rare here), and a cluster of emerging US names &mdash; USAR, Energy Fuels (UUUU), Perpetua (PPTA, antimony), NioCorp &mdash; that are mostly pre-revenue policy plays. Solvers: <b>Redwood Materials</b> (battery urban-mining, founded by ex-Tesla CTO <b>JB Straubel</b>), Lilac (lithium), Phoenix Tailings.</p>
+
+  <h3>Robotics &mdash; the edge is in the gearbox, not the humanoid</h3>
+  <p>The humanoid-robot OEMs get the headlines and the hype. But every one of them needs precision parts from a tiny set of suppliers &mdash; and that's where the durable scarcity is.</p>
+  <div class="tw"><table>
+    <tr><th>The part</th><th>Who makes it</th><th>Why it's the real pick</th></tr>
+    <tr><td><b>Precision reducers</b> (the joint gearbox)</td><td>Harmonic Drive (~strain-wave leader), Nabtesco <span class="tag t-spof">SPOF</span></td><td>Two firms dominate the gears every robot arm needs. Hard to replicate, decades of know-how.</td></tr>
+    <tr><td><b>Roller screws</b> (linear muscle)</td><td>Rollvis + GSA &mdash; Swiss duopoly <span class="tag t-priv">Private</span> <span class="tag t-spof">SPOF</span></td><td>Even tighter than reducers. A constraint most investors have never heard of.</td></tr>
+    <tr><td><b>NdFeB magnets</b></td><td>China-dominated <span class="tag t-spof">SPOF</span></td><td>Already <i>delayed Tesla's Optimus.</i> The magnet is the bottleneck, not the AI.</td></tr>
+    <tr><td><b>The OEMs themselves</b></td><td>Figure <span class="tag t-hype">Hype</span> ($39B+ pre-revenue), Tesla Optimus, Agility, Unitree</td><td>Best-funded OEMs build actuators <i>in-house</i> &mdash; a headwind for merchant suppliers, so read each carefully.</td></tr>
+  </table></div>
+
+  <h3>Space &mdash; the bottleneck is rad-hard chips and reaction wheels</h3>
+  <p>Same pattern a third time. Not the rocket, not the satellite &mdash; the obscure component the satellite can't fly without.</p>
+  <div class="tw"><table>
+    <tr><th>The deep part</th><th>Who / status</th><th>The tell</th></tr>
+    <tr><td><b>Rad-hard chips</b> (survive space radiation)</td><td>BAE, Honeywell, Microchip, Frontgrade <span class="tag t-spof">SPOF</span></td><td>Only ~3 US &ldquo;Trusted Foundry&rdquo; sites, none new since the 1990s. A genuine choke.</td></tr>
+    <tr><td><b>Reaction wheels / star-trackers</b></td><td>Blue Canyon (owned by RTX) <span class="tag t-spof">SPOF</span></td><td>Capacity expanding +400% &mdash; the clearest &ldquo;demand is real&rdquo; signal in the sector.</td></tr>
+    <tr><td><b>Launch &amp; imaging</b></td><td>Rocket Lab (RKLB), Planet (PL &mdash; rare profitable) <span class="tag t-lead">Leader</span></td><td>RKLB's Neutron rocket still unflown &mdash; execution risk priced as certainty.</td></tr>
+    <tr><td><b>The hype tier</b></td><td>AST SpaceMobile (ASTS), and a 2021&ndash;24 SPAC graveyard (Virgin Orbit, Momentus, Terran) <span class="tag t-hype">Hype</span></td><td>The cautionary pattern: story-stocks that ran out of runway before revenue.</td></tr>
+  </table></div>
+
+  <h2 id="deepest">The deepest layer: who the picks <i>themselves</i> rely on</h2>
+  <p>Strip everything back and a handful of single points of failure sit beneath <i>multiple</i> industries at once. These are the true &ldquo;picks behind the picks&rdquo; &mdash; the places where one disruption cascades across the whole map. This is the list worth taping to the wall:</p>
+  <div class="stack">
+    <div class="step"><b>Rare-earth separation (~90% China)</b> &mdash; sits under magnets, EVs, robots <i>and</i> defense simultaneously. The single most cross-cutting chokepoint on Earth.</div>
+    <div class="step"><b>Gallium extraction know-how</b> (~98% China; the Sunresin resin underneath it) &mdash; a chip material with a chemistry monopoly two layers deep.</div>
+    <div class="step"><b>HALEU enrichment</b> (Russia the only other commercial source) &mdash; gates the small modular reactors that are supposed to power AI. The energy fix has its own fuel bottleneck.</div>
+    <div class="step"><b>NdFeB magnets</b> &mdash; already proven it can delay a flagship robot. Under every motor, actuator and EV.</div>
+    <div class="step"><b>Precision reducers + the Swiss roller-screw duopoly</b> &mdash; under every humanoid robot ever shipped.</div>
+    <div class="step"><b>Rad-hard fabs</b> &mdash; 3 US sites, none new since the 1990s. Under every satellite and defense system.</div>
+    <div class="step"><b>InP wafers + HBM test machines (Advantest)</b> &mdash; under the entire optical-networking and AI-memory boom.</div>
+    <div class="step"><b>China as a single geography</b> &mdash; the meta-risk: one export-control action hits minerals, magnets <i>and</i> robotics at once. The current trade truce reportedly expires late 2026 &mdash; a date worth watching.</div>
+  </div>
+  <div class="real"><b>Why this list is the whole point:</b> the obvious shovels (NVIDIA, TSMC) have hundreds of analysts. These eight have almost none &mdash; yet a shock to any one of them ripples through every famous name above it. <b>Concentration this deep is both the biggest risk in the market and the least-priced.</b> You don't have to <i>buy</i> any of it. But if you don't <i>know</i> it's there, you don't actually understand what you own.</div>
+
+  <h2 id="xray">How to use this map without getting burned</h2>
+  <p>A map of chokepoints is dangerous in the wrong hands &mdash; it's a list of exciting stories, and exciting stories are where retail money goes to die. Three rules keep it honest:</p>
+  <ol>
+    <li><b>The cap-table test first.</b> Before the narrative, ask: <i>does a strategic giant have skin in this?</i> Real strategic money (a chipmaker, an automaker, an energy major) is hard to fake and means an expert insider sees the same fragility you do. Its absence on a hot name is the loudest red flag there is.</li>
+    <li><b>Government money de-risks survival, not returns.</b> Most Western &ldquo;solution&rdquo; names live on policy and grants. That keeps the lights on; it does not guarantee the stock works. Don't confuse &ldquo;strategically important&rdquo; with &ldquo;good investment.&rdquo;</li>
+    <li><b>&ldquo;Sold out / supercycle&rdquo; is both real demand and cycle-top language.</b> The same words (HBM, substrates) were said right before previous gluts. Demand being real does not mean the price is right.</li>
+  </ol>
+  <p>We're building the full version of this into its own piece &mdash; <b>how to read a private or emerging company's true integrity, backers and trajectory before Wall Street can</b> (the &ldquo;x-ray&rdquo; framework). It's the natural companion to this map: this tells you <i>where</i> to look; that tells you <i>how</i> to judge what you find.</p>
+
+  <h2>What we might still be missing (no tunnel vision)</h2>
+  <p>The honest risk with a map like this is <b>falling in love with the supply side.</b> A few deliberate blind-spot checks we keep running:</p>
+  <ul>
+    <li><b>The demand side could blink.</b> Every chokepoint above assumes the AI buildout keeps compounding. If it doesn't, the deepest, most-concentrated names fall hardest. We hold that tension explicitly in <a href="ai-malinvestment.html">the malinvestment scorecard</a>.</li>
+    <li><b>The solver could erase the chokepoint.</b> Niron's rare-earth-free magnet, a synthetic substrate, a new enrichment method &mdash; any real breakthrough turns a moat into a melting ice cube. The chokepoint and its solver are two sides of the same watchlist.</li>
+    <li><b>The boring middle.</b> Between the deep picks and the famous names sit the unglamorous compounders &mdash; connectors, testing, fasteners, maintenance &mdash; that capture the buildout with a fraction of the drama. Often the best risk-adjusted way in.</li>
+  </ul>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">We trace the chain to the bottom</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">The edge isn't the famous shovel. It's the part the shovel can't be built without.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens follows every trade one layer deeper than the headline &mdash; to where the real scarcity, and the real risk, actually sit. Plain English, every claim flagged and sourced.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/power-bottleneck.html">The wire, not the watt</a> &middot; <a href="/learn/water-cooling.html">The water myth</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc"><b>A serious honest note &mdash; read this:</b> this page is a <b>research map condensed from multiple deep-dive passes</b>, not a set of recommendations and not a buy list. Market shares, cap-table backers, and &ldquo;sole supplier&rdquo; claims <i>change</i> &mdash; treat every specific figure here as a <b>starting point to verify yourself</b>, not as confirmed fact. Many names are private, pre-revenue, or thinly traded; some will fail. The flags (<span class="tag t-hype">Hype</span>, <span class="tag t-spof">SPOF</span>) are our editorial read, not ratings. Strategic-investor backing reduces the odds a company <i>dies</i>; it does not make the stock go up. Nothing here is personalized investment advice &mdash; Dragonfly Lens is not a registered investment advisor. Tickers illustrate the supply chain, not buy recommendations. Do your own work, size for the chance you're wrong, and never confuse an interesting story with a good investment. Facts as of June 2026.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="share.js"></script>
+</body>
+</html>
