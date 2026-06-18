@@ -1273,10 +1273,10 @@ function toggleBars(){
       <div style="font-size:9px;color:#3a5a40;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">+380% held &nbsp;&middot;&nbsp; +117% S&amp;P 500</div>
       <div id="sl-sys" style="display:none;margin-top:8px;background:#050d08;border:1px solid #1a3a1f;border-radius:4px;padding:10px 12px;"><div style="font-size:9px;color:#4a6a50;margin-bottom:6px;">Best &amp; worst 10 &middot; live &middot; current prices</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><div style="font-size:9px;color:#4ade80;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Best 10</div><div id="bt-best-sys">&mdash;</div></div><div><div style="font-size:9px;color:#f87171;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Worst 10</div><div id="bt-worst-sys">&mdash;</div></div></div><div style="margin-top:6px;font-size:9px;color:#4a6a50;text-align:right;"><a href="track_record.html" style="color:#4a6a50;">full track record &rarr;</a></div></div>
     </div>
-    <div class="hero-stat" title="Average return across all 87 tracked theses, held to thesis invalidation (buy-and-hold), over ~4.8-year average holding windows. Best: +2,505% (MOD). Worst: −87% (PLUG). Backtest — past performance does not guarantee future results.">
+    <div class="hero-stat" title="Average return across all 87 tracked theses, held to thesis invalidation (buy-and-hold), over ~4.8-year average holding windows. Best: +2,505% (MOD). Worst: −92% (PLUG). Backtest — past performance does not guarantee future results.">
       <div class="num" style="color:#6a9a70;">+380%</div>
       <div class="lbl">Overall return — <span class="lens-term" data-explainer="The simplest strategy: buy the stock when the signal fires, hold it through the entire thesis, sell when the thesis stops working. No mid-trade exits, no trimming, no stop-losses. Our research showed every &lsquo;smart exit&rsquo; strategy we tested gave back more than it saved.">buy-and-hold</span></div>
-      <div style="font-size:9px;color:#3a5a40;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">Best: +2,505% (MOD) &nbsp;&middot;&nbsp; Worst: &minus;87% (PLUG)</div>
+      <div style="font-size:9px;color:#3a5a40;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">Best: +2,505% (MOD) &nbsp;&middot;&nbsp; Worst: &minus;92% (PLUG)</div>
       <div id="sl-bh" style="display:none;margin-top:8px;background:#050d08;border:1px solid #1a3a1f;border-radius:4px;padding:10px 12px;"><div style="font-size:9px;color:#4a6a50;margin-bottom:6px;">Best &amp; worst 10 &middot; live &middot; current prices</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><div style="font-size:9px;color:#4ade80;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Best 10</div><div id="bt-best-bh">&mdash;</div></div><div><div style="font-size:9px;color:#f87171;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Worst 10</div><div id="bt-worst-bh">&mdash;</div></div></div><div style="margin-top:6px;font-size:9px;color:#4a6a50;text-align:right;"><a href="track_record.html" style="color:#4a6a50;">full track record &rarr;</a></div></div><div style="margin-top:5px;"><a href="javascript:void(0)" onclick="var p=document.getElementById('sl-bh');p.style.display=p.style.display==='none'?'block':'none';" style="font-size:9px;color:#4a6a50;text-decoration:none;">&#9660; best &amp; worst 10</a></div>
     </div>
     <div class="hero-stat">
@@ -1292,8 +1292,8 @@ function toggleBars(){
       <div class="num">83%</div>
       <div class="lbl">Win rate &mdash; 72 of 87 made money</div>
     </div>
-    <div class="hero-stat" title="The worst single position in the backtest — PLUG (hydrogen fuel cell): rallied ~5x post-entry, then collapsed on dilution. We show the losers, not just the winners. Backtest figure — past performance does not guarantee future results.">
-      <div class="num" style="color:#f87171;">&minus;87%</div>
+    <div class="hero-stat" title="The worst single position in the backtest — PLUG (hydrogen fuel cell): rose after entry, then collapsed on dilution. We show the losers, not just the winners. Backtest figure — past performance does not guarantee future results.">
+      <div class="num" style="color:#f87171;">&minus;92%</div>
       <div class="lbl">Worst single position</div>
       <div style="font-size:9px;color:#6a3030;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">PLUG &middot; we show losers too</div>
     </div>
@@ -1666,7 +1666,7 @@ function toggleBars(){
       <ul style="font-size:13px;color:#374151;line-height:1.75;margin:0;padding-left:20px;">
         <li style="margin-bottom:8px;"><strong style="color:#15803d;">Zero look-ahead.</strong> Every entry uses <em>only the data that was publicly available on the date of the catalyst</em>. Deciding whether VRT was a buy signal in April 2020 uses what was knowable on April 1, 2020 &mdash; not what happened later.</li>
         <li style="margin-bottom:8px;"><strong style="color:#15803d;">Real triggers only.</strong> Every entry is anchored to a specific, dated public event &mdash; a DOE grant, an SEC Form 4 filing, an NRC licensing announcement, a Substantial Holder filing. The same trigger types the live system uses to fire alerts today. No discretionary "this looked great in retrospect" picks.</li>
-        <li style="margin-bottom:8px;"><strong style="color:#15803d;">Zero repainting.</strong> Entry dates, stop levels, and conviction tier are locked to the catalyst date and never adjusted afterward to look better. Losers stay losers. ENPH is in the table at &minus;58% precisely because we don't quietly delete the ones that didn't work.</li>
+        <li style="margin-bottom:8px;"><strong style="color:#15803d;">Zero repainting.</strong> Entry dates, stop levels, and conviction tier are locked to the catalyst date and never adjusted afterward to look better. Losers stay losers. ENPH is in the table at &minus;72% precisely because we don't quietly delete the ones that didn't work.</li>
         <li><strong style="color:#15803d;">Same exit framework as live.</strong> The "system strategy" returns come from the same auto-selected exit ladder (staged exits / trailing stop / buy &amp; hold) that live signals will use &mdash; not a post-hoc optimum chosen per ticker.</li>
       </ul>
       <p style="font-size:12px;color:#6b7280;line-height:1.7;margin:12px 0 0;font-style:italic;">
@@ -1728,7 +1728,7 @@ function toggleBars(){
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 16px;font-weight:800;color:#0d1f0f;">PLUG</td>
             <td style="padding:10px 16px;color:#666;font-size:12px;">Hydrogen fuel cell — DOE clean energy grants</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;87%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;92%</td>
             <td style="padding:10px 16px;text-align:right;font-weight:800;color:#27ae60;">+70.0%</td>
             <td style="padding:10px 16px;font-size:11px;color:#888;">Staged exits: sold thirds at 2x, 4x, 8x — locked in gains before collapse</td>
           </tr>
@@ -1756,8 +1756,8 @@ function toggleBars(){
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 16px;font-weight:800;color:#0d1f0f;">ENPH</td>
             <td style="padding:10px 16px;color:#666;font-size:12px;">Solar technology — IRA renewable energy credits</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;58%</td>
-            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;58%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;72%</td>
+            <td style="padding:10px 16px;text-align:right;font-weight:700;color:#c62828;">&minus;72%</td>
             <td style="padding:10px 16px;font-size:11px;color:#888;">Buy &amp; hold recommended — stock declined steadily without a strong early rally to capture</td>
           </tr>
         </tbody>
