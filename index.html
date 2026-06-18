@@ -1273,10 +1273,10 @@ function toggleBars(){
       <div style="font-size:9px;color:#3a5a40;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">+380% held &nbsp;&middot;&nbsp; +117% S&amp;P 500</div>
       <div id="sl-sys" style="display:none;margin-top:8px;background:#050d08;border:1px solid #1a3a1f;border-radius:4px;padding:10px 12px;"><div style="font-size:9px;color:#4a6a50;margin-bottom:6px;">Best &amp; worst 10 &middot; live &middot; current prices</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><div style="font-size:9px;color:#4ade80;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Best 10</div><div id="bt-best-sys">&mdash;</div></div><div><div style="font-size:9px;color:#f87171;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Worst 10</div><div id="bt-worst-sys">&mdash;</div></div></div><div style="margin-top:6px;font-size:9px;color:#4a6a50;text-align:right;"><a href="track_record.html" style="color:#4a6a50;">full track record &rarr;</a></div></div>
     </div>
-    <div class="hero-stat" title="Average return across all 87 tracked theses, held to thesis invalidation (buy-and-hold), over ~4.8-year average holding windows. Best: +2,505% (MOD). Worst: −92% (PLUG). Backtest — past performance does not guarantee future results.">
+    <div class="hero-stat" title="Average return across all 87 tracked theses, held to thesis invalidation (buy-and-hold), over ~4.8-year average holding windows. Best: +2,505% peak / +2,310% now (MOD). Worst: −92% (PLUG). Backtest — past performance does not guarantee future results.">
       <div class="num" style="color:#6a9a70;">+380%</div>
       <div class="lbl">Overall return — <span class="lens-term" data-explainer="The simplest strategy: buy the stock when the signal fires, hold it through the entire thesis, sell when the thesis stops working. No mid-trade exits, no trimming, no stop-losses. Our research showed every &lsquo;smart exit&rsquo; strategy we tested gave back more than it saved.">buy-and-hold</span></div>
-      <div style="font-size:9px;color:#3a5a40;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">Best: +2,505% (MOD) &nbsp;&middot;&nbsp; Worst: &minus;92% (PLUG)</div>
+      <div style="font-size:9px;color:#3a5a40;margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;">Best: +2,505% peak &rarr; +2,310% now (MOD) &nbsp;&middot;&nbsp; Worst: &minus;92% (PLUG)</div>
       <div id="sl-bh" style="display:none;margin-top:8px;background:#050d08;border:1px solid #1a3a1f;border-radius:4px;padding:10px 12px;"><div style="font-size:9px;color:#4a6a50;margin-bottom:6px;">Best &amp; worst 10 &middot; live &middot; current prices</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><div style="font-size:9px;color:#4ade80;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Best 10</div><div id="bt-best-bh">&mdash;</div></div><div><div style="font-size:9px;color:#f87171;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">Worst 10</div><div id="bt-worst-bh">&mdash;</div></div></div><div style="margin-top:6px;font-size:9px;color:#4a6a50;text-align:right;"><a href="track_record.html" style="color:#4a6a50;">full track record &rarr;</a></div></div><div style="margin-top:5px;"><a href="javascript:void(0)" onclick="var p=document.getElementById('sl-bh');p.style.display=p.style.display==='none'?'block':'none';" style="font-size:9px;color:#4a6a50;text-decoration:none;">&#9660; best &amp; worst 10</a></div>
     </div>
     <div class="hero-stat">
@@ -1769,35 +1769,36 @@ function toggleBars(){
     </div>
 
     <div class="portfolio-grid">
+      <div style="grid-column:1/-1;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#6a9a70;margin-bottom:4px;">Returns shown <strong>peak &rarr; current</strong> &mdash; both verified from price history (as of Jun 2026). We show the round trip, not just the high.</div>
       <div class="portfolio-card">
         <h3>Uranium / Nuclear</h3>
         <div class="tickers">CCJ &middot; NXE &middot; UEC &middot; DNN &middot; SMR &middot; OKLO &middot; UUUU</div>
-        <div class="perf">CCJ +963% &middot; OKLO +769% &middot; UEC +628%</div>
+        <div class="perf">CCJ +1,083% &rarr; +832% &middot; OKLO +1,961% &rarr; +596% &middot; UEC +850% &rarr; +439%</div>
       </div>
       <div class="portfolio-card">
         <h3>Gold / Silver / Mining</h3>
         <div class="tickers">WPM &middot; NEM &middot; AEM &middot; B</div>
-        <div class="perf">WPM +371% &middot; NEM +203% &middot; B +178%</div>
+        <div class="perf">WPM +497% &rarr; +355% &middot; NEM +264% &rarr; +193% &middot; B +178%</div>
       </div>
       <div class="portfolio-card">
         <h3>Copper / Critical Minerals</h3>
         <div class="tickers">FCX &middot; SCCO &middot; MP &middot; REMX &middot; UUUU</div>
-        <div class="perf">MP +402% &middot; FCX +184%</div>
+        <div class="perf">MP +585% &rarr; +323% &middot; FCX +184% &rarr; +173%</div>
       </div>
       <div class="portfolio-card">
         <h3>Lithium / Battery</h3>
         <div class="tickers">ALB &middot; SQM &middot; SGML &middot; LIT &middot; QS &middot; SLDP</div>
-        <div class="perf">SQM +96% &middot; SGML +6%</div>
+        <div class="perf">SQM +138% &rarr; +101% &middot; SGML +173% &rarr; &minus;5%</div>
       </div>
       <div class="portfolio-card">
         <h3>AI / Photonics / Compute</h3>
         <div class="tickers">NVDA &middot; VRT &middot; LITE &middot; COHR &middot; IONQ</div>
-        <div class="perf">NVDA +1,458% &middot; VRT +2,424% &middot; COHR +501%</div>
+        <div class="perf">NVDA +1,549% &rarr; +1,333% &middot; VRT +2,739% &rarr; +2,297% &middot; COHR +501% &rarr; +433%</div>
       </div>
       <div class="portfolio-card">
         <h3>New Energy</h3>
         <div class="tickers">BE &middot; PLUG &middot; ORA &middot; AMSC &middot; NPWR</div>
-        <div class="perf">BE +1,010% &middot; AMSC +364%</div>
+        <div class="perf">BE +1,028% &rarr; +944% &middot; AMSC +505% &rarr; +264%</div>
       </div>
     </div>
 
