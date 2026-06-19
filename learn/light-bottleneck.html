@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Next Bottleneck Isn't Silicon. It's Light. — Dragonfly Lens</title>
+<meta name="description" content="For 50 years, AI's limit was 'more transistors.' That era is ending. The real wall now is moving data between chips — and the energy it burns. The fix is light. Here's why co-packaged optics is the most important hardware shift of the decade, who profits, and an honest moonshot ladder. Plain English, every claim sourced.">
+<meta property="og:title" content="The Next Bottleneck Isn't Silicon. It's Light.">
+<meta property="og:description" content="The wall moved from transistors to data movement and power. Most chip energy now goes to shuttling data, not computing it. The fix — and the next great trade — is light.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/light-bottleneck.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/light-bottleneck-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Next Bottleneck Isn't Silicon. It's Light.">
+<meta name="twitter:description" content="The wall moved from transistors to data movement. The fix is light — co-packaged optics. Who profits, plain English, moonshots honestly labeled.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/light-bottleneck-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; The Next Bottleneck</div>
+  <h1>The Next Bottleneck Isn't Silicon. It's Light.</h1>
+  <p class="lead">For half a century, making AI faster meant one thing: more transistors on a chip. That era is quietly ending &mdash; not because we ran out of ideas, but because the bottleneck <i>moved</i>. The thing slowing AI down now isn't the math. It's <b>moving the data between chips</b>, and the staggering amount of energy that takes. The fix is the oldest trick in physics: send it as <b>light</b>. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 19, 2026 &middot; Why the data center's future is written in photons &mdash; and who builds them.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What's real:</b> on a modern AI chip, <b>most of the energy is spent moving data around</b>, not doing the math. The bottleneck is data movement and power &mdash; not transistor count.</li>
+      <li><b>The fix:</b> <span class="def" data-d="Putting the optical engine — the part that turns electrical signals into light — directly onto the chip package, instead of off to the side. It lets chips talk to each other with light right where the data is, slashing the energy and distance penalty of copper.">co-packaged optics</span> / silicon photonics &mdash; chips that talk to each other with <b>light instead of copper wires</b>.</li>
+      <li><b>Why it matters:</b> it removes the copper wall &mdash; bigger clusters, far lower energy per answer. It <b>raises the ceiling</b>, so the sector grows <i>bigger</i>, not smaller.</li>
+      <li><b>The opportunity:</b> the optics supply chain &mdash; switch silicon, the lasers, and the photonics pure-plays. The data center's nervous system is being rewired in light.</li>
+      <li><b>The honest line:</b> this is the <i>real</i> near-term shift. The flashier ideas &mdash; optical computing, superconductors, quantum &mdash; are further out, and we label each honestly below.</li>
+    </ul>
+  </div>
+
+  <h2>The bottleneck already moved</h2>
+  <p>Here's the thing almost no one outside the industry has internalized: <span class="def" data-d="The observation that transistor counts double roughly every two years, driving 50 years of computing gains. It has slowed dramatically — shrinking transistors is hitting physical limits — so the easy gains now come from elsewhere.">Moore's Law</span> &mdash; the engine that made chips relentlessly faster &mdash; has slowed to a crawl. Shrinking transistors keeps getting harder and costlier. So the gains now come from a different place. And when engineers measure where the <i>energy</i> actually goes on a modern AI chip, the answer is surprising: <b>far more is burned shuttling data &mdash; from memory to processor, and from chip to chip &mdash; than doing the actual calculations.</b></p>
+  <p>That flips the whole problem. The question stopped being &ldquo;how do we compute faster?&rdquo; and became <b>&ldquo;how do we move data faster and cheaper?&rdquo;</b> There are two walls:</p>
+  <div class="tw"><table>
+    <tr><th>The wall</th><th>What it is</th><th>Why it hurts</th></tr>
+    <tr><td><b>The memory wall</b></td><td>Getting data from memory into the processor fast enough</td><td>The chip sits idle waiting for data &mdash; addressed by <a href="picks-and-shovels.html">HBM stacked memory</a> and in-memory compute</td></tr>
+    <tr><td><b>The interconnect wall</b></td><td>Moving data between chips, and across the cluster</td><td>Copper wires lose speed and waste energy over distance &mdash; the wall <b>light</b> is built to smash</td></tr>
+  </table></div>
+
+  <h2>Why light beats copper</h2>
+  <p>Today, chips mostly talk to each other over copper. Copper is fine for short hops, but it has two brutal limits: the faster you push data through it, the more <span class="def" data-d="Energy lost as heat when pushing electrical signals through wire. The faster and farther you send data over copper, the more power you burn just on the transmission — energy that does no computing.">signal it loses to heat</span>, and the farther you send it, the worse it gets. As AI clusters grow to tens of thousands of chips that must act as one machine, copper becomes the chokepoint. Light doesn't have those limits in the same way:</p>
+  <div class="stack">
+    <div class="step"><b>More data, less energy.</b> A beam of light can carry enormous amounts of data using a fraction of the power copper needs &mdash; and it barely degrades over distance. That directly attacks the &ldquo;most energy goes to data movement&rdquo; problem.</div>
+    <div class="step"><b>Chips can sit farther apart and still act as one.</b> Optical links let you build a bigger, tighter cluster &mdash; more GPUs behaving as a single giant machine &mdash; which is exactly what training the next frontier model needs.</div>
+    <div class="step"><b>Co-packaged optics puts the laser <i>on</i> the chip.</b> Instead of converting to light off to the side (losing energy at every hop), the optical engine sits right on the chip package &mdash; the data leaves as light almost immediately. This is the shift rolling out now.</div>
+    <div class="step"><b>It grows the ceiling, not just the efficiency.</b> Because optics removes the interconnect wall, it makes a <i>bigger</i> cluster possible at all. The result isn't &ldquo;same AI, less power&rdquo; &mdash; it's &ldquo;bigger AI becomes buildable.&rdquo; The demand expands to fill it.</div>
+  </div>
+  <div class="real"><b>The plain-English version:</b> the data center is getting a nervous system made of light. Copper is the old wiring that overheats and chokes at scale; fiber and on-chip lasers are the upgrade. When the headline says &ldquo;a new optical switch,&rdquo; what it means is &ldquo;the AI cluster just got permission to grow bigger.&rdquo;</div>
+
+  <h2>The real near-term winners</h2>
+  <p>This is where the Lens earns its keep &mdash; separating the shipping-now layer from the science project. Co-packaged optics and silicon photonics are <b>real and ramping</b>, and the supply chain is identifiable:</p>
+  <div class="tw"><table>
+    <tr><th>Layer</th><th>Who plays</th><th>What they sell</th></tr>
+    <tr><td><b>Optical switching silicon</b></td><td>NVIDIA, Broadcom, Marvell</td><td>The switch + DSP chips that route light through the cluster &mdash; NVIDIA is building co-packaged optical switches directly into its networking</td></tr>
+    <tr><td><b>The lasers &amp; optical components</b></td><td>Coherent, Lumentum, Fabrinet</td><td>The actual light sources, modulators, and assembly &mdash; the &ldquo;arms dealers&rdquo; of photonics, paid no matter whose switch wins</td></tr>
+    <tr><td><b>Photonics pure-plays</b></td><td>Lightmatter, Ayar Labs, Celestial AI, POET</td><td>Startups built entirely around moving (or computing with) light &mdash; higher risk, higher torque to the theme</td></tr>
+    <tr><td><b>Advanced packaging</b></td><td>TSMC (CoWoS), Intel, Corning</td><td>The packaging &mdash; including <span class="def" data-d="Using glass instead of organic resin as the base layer a chip package is built on. Flatter, more stable, and better for the precise alignment optical components need.">glass substrates</span> &mdash; that lets optics and chips sit together precisely</td></tr>
+  </table></div>
+  <div class="flag"><b>The honest caveat:</b> &ldquo;optics&rdquo; is a layer, not a single stock. The switch makers, the laser makers, and the pure-plays have very different risk profiles. The durable exposure is the <i>arms dealers</i> &mdash; the laser and component suppliers who get paid regardless of which architecture wins &mdash; the same <a href="picks-and-shovels.html">picks-and-shovels</a> logic as everywhere else.</div>
+
+  <h2>The moonshot ladder &mdash; honestly labeled</h2>
+  <p>Beyond moving data with light sits a row of ideas that range from &ldquo;promising&rdquo; to &ldquo;don't bet the thesis on it.&rdquo; We rank them so the hype can't:</p>
+  <div class="box">
+    <p style="margin-top:0;"><b style="color:var(--accent)">Optical computing</b> <span style="color:var(--good);font-size:11px;font-weight:800;text-transform:uppercase;">emerging</span> &mdash; doing the matrix math <i>in light itself</i>, not just moving it. Real physics, real companies (Lightmatter, Lightelligence), unproven at scale. The step beyond optical <i>interconnect</i>.</p>
+    <p><b style="color:var(--accent)">Neuromorphic &amp; in-memory compute</b> <span style="color:var(--good);font-size:11px;font-weight:800;text-transform:uppercase;">emerging</span> &mdash; brain-like, ultra-low-power chips, and doing math inside the memory array. Promising, repeatedly hyped, still mostly niche.</p>
+    <p><b style="color:var(--warn)">Room-temperature superconductors</b> <span style="color:var(--warn);font-size:11px;font-weight:800;text-transform:uppercase;">moonshot</span> &mdash; would change <i>everything</i> (grid, magnets, compute) by moving electricity with zero loss. Also a graveyard of false claims (remember LK-99). Treat any announcement as guilty until peer-reviewed.</p>
+    <p><b style="color:var(--warn)">2D-material &amp; carbon-nanotube transistors</b> <span style="color:var(--warn);font-size:11px;font-weight:800;text-transform:uppercase;">moonshot</span> &mdash; the post-silicon transistor itself. A decade-plus horizon.</p>
+    <p style="margin-bottom:0;"><b style="color:var(--bad)">Quantum &ldquo;for AI&rdquo;</b> <span style="color:var(--bad);font-size:11px;font-weight:800;text-transform:uppercase;">category error</span> &mdash; quantum computers help optimization, simulation, and cryptography. They do <b>not</b> train large language models. Anyone selling quantum as an AI-compute disruptor is confusing two different machines.</p>
+  </div>
+  <div class="real"><b>The light thread runs deeper than chips:</b> even the most durable <i>storage</i> breakthrough is optical &mdash; Microsoft's Project Silica writes data into ordinary glass with <span class="def" data-d="Lasers that fire pulses lasting quadrillionths of a second — precise enough to etch microscopic data points deep inside glass without cracking it.">femtosecond lasers</span>, packing ~2 million books onto a coaster-sized disc that lasts an estimated 10,000 years. DNA storage (insane density, archival, cost-gated) is the further moonshot. The pattern keeps repeating: when computing hits a wall, the breakthrough tends to arrive as light.</div>
+
+  <h2>The Lens synthesis</h2>
+  <p>Step back and every one of these &mdash; optics, packaging, memory, even the <a href="cpu-comeback.html">CPU comeback</a> &mdash; does the same thing: it <b>removes a bottleneck, which lets the system get bigger or cheaper, which expands demand to fill the new room.</b> A breakthrough doesn't shrink the AI buildout; it makes an already-exponential thing grow <i>faster</i>. That's why the durable bet never changes shape.</p>
+  <div class="real"><b>Own the bottleneck-solvers, not the brand of the week.</b> The specific winning chip will change three times this decade. The need for <b>more light, more memory bandwidth, and more clean power</b> will not. Optics is simply the next bottleneck the market is forced to pay to break &mdash; the same picks-and-shovels lesson, one layer deeper, written in photons.</div>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">The race stopped being about transistors. It's about light now.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens maps where the real bottleneck sits &mdash; and who gets paid to break it &mdash; while labeling the moonshots as moonshots. Plain English, every claim sourced.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/power-bottleneck.html">The power bottleneck</a> &middot; <a href="/learn/picks-and-shovels.html">The picks behind the picks</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Why is &ldquo;light&rdquo; the next bottleneck in computing?</b> Because the bottleneck moved. On a modern AI chip, more energy is spent moving data between chips and memory than doing the actual math. Copper wires waste power and lose signal over distance, so the industry is switching to optics &mdash; sending data as light &mdash; which carries more data using far less energy.</p>
+    <p><b>What is co-packaged optics?</b> Putting the optical engine (the part that turns electrical signals into light) directly onto the chip package, instead of off to the side. It lets chips communicate with light right where the data is, cutting the energy and distance penalty of copper &mdash; the most important near-term hardware shift in AI.</p>
+    <p style="margin-bottom:0;"><b>Will optical or quantum computing replace today's chips?</b> Optical <i>interconnect</i> (moving data with light) is real and ramping now. Optical <i>computing</i> (doing math in light) is emerging but unproven at scale. Quantum is a different machine entirely &mdash; useful for optimization and simulation, not for training AI models. Don't conflate them.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Why is light the next bottleneck in computing?","acceptedAnswer":{"@type":"Answer","text":"Because the bottleneck moved from computation to data movement. On a modern AI chip, more energy is spent moving data between chips and memory than doing the actual math. Copper wires waste power and lose signal over distance, so the industry is switching to optics — sending data as light — which carries more data using far less energy."}},
+  {"@type":"Question","name":"What is co-packaged optics?","acceptedAnswer":{"@type":"Answer","text":"Co-packaged optics means putting the optical engine, which turns electrical signals into light, directly onto the chip package instead of off to the side. It lets chips communicate with light right where the data is, cutting the energy and distance penalty of copper. It is considered the most important near-term hardware shift in AI infrastructure."}},
+  {"@type":"Question","name":"Will optical or quantum computing replace today's chips?","acceptedAnswer":{"@type":"Answer","text":"Optical interconnect, moving data with light, is real and ramping now. Optical computing, doing math in light, is emerging but unproven at scale. Quantum computing is a different machine entirely, useful for optimization, simulation and cryptography, not for training AI models. They should not be conflated."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>Co-packaged optics / silicon photonics as the interconnect-and-energy fix; data movement dominating chip energy budgets</b> &mdash; industry technical reporting and vendor disclosures (NVIDIA co-packaged optical networking, Broadcom/Marvell optical DSP &amp; switch silicon, Coherent/Lumentum/Fabrinet optical components, Lightmatter/Ayar Labs/Celestial AI/POET photonics). <b>Microsoft Project Silica glass storage (~2M books on borosilicate glass, ~10,000-year durability, femtosecond-laser write)</b> &mdash; <a href="https://www.nature.com/articles/d41586-026-00502-2" rel="nofollow">Nature</a>, <a href="https://www.livescience.com/technology/computing/microsoft-can-now-store-data-for-10-000-years-on-everyday-glass-thanks-to-laser-breakthrough" rel="nofollow">Live Science</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Technologies described are at varying maturity, clearly labeled; emerging and moonshot items are unproven and may not commercialize. Company names illustrate the supply chain, not buy recommendations. Verify against primary sources before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
