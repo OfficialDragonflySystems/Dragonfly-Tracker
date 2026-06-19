@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is Sodium-Ion the End of the Lithium Trade? — Dragonfly Lens</title>
+<meta name="description" content="CATL just called sodium batteries 'mainstream-ready,' signed a 60 GWh deal, and watched material costs halve. Sodium is 300x cheaper than lithium and 1,000x more abundant — so the 'lithium is doomed' takes wrote themselves. The honest version is more precise and more useful: it's the end of lithium's grip on grid storage, not the end of lithium. Who wins, who loses, plain English, sourced.">
+<meta property="og:title" content="Is Sodium-Ion the End of the Lithium Trade?">
+<meta property="og:description" content="Sodium is 300x cheaper than lithium and CATL says it's mainstream-ready. But the honest answer isn't 'lithium is dead' — it's a segmentation story: grid storage vs premium EVs. Who wins, who loses.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/sodium-ion.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/sodium-ion-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Is Sodium-Ion the End of the Lithium Trade?">
+<meta name="twitter:description" content="Sodium is 300x cheaper than lithium and CATL says it's mainstream-ready. The honest answer isn't 'lithium is dead' — it's grid storage vs premium EVs.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/sodium-ion-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Myth vs. Reality</div>
+  <h1>Is Sodium-Ion the End of the Lithium Trade?</h1>
+  <p class="lead">CATL &mdash; the world's largest battery maker &mdash; just called sodium batteries <b>&ldquo;mainstream-ready,&rdquo;</b> signed a <b>60 GWh</b> order, and watched its material costs roughly <b>halve</b>. Sodium is about <b>300&times; cheaper</b> than lithium and <b>1,000&times; more abundant</b>. So the &ldquo;lithium is doomed&rdquo; takes wrote themselves. The honest version is more precise &mdash; and far more useful for actually positioning. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 19, 2026 &middot; Not &ldquo;lithium is dead&rdquo; &mdash; a segmentation story. Who wins, who loses.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What's real:</b> CATL's first sodium-ion grid-storage systems ship in 2026, it landed a 60 GWh deal, and sodium-ion costs are falling fast. Sodium at ~$0.05/kg vs lithium ~$15/kg is a genuine, structural cost edge.</li>
+      <li><b>The catch nobody leads with:</b> sodium-ion holds <i>less energy per pound</i>. It's heavier and bulkier for the same storage &mdash; which matters enormously in a car, and not at all in a stationary box on the ground.</li>
+      <li><b>So the honest verdict:</b> it's the end of lithium's grip on <b>cheap grid storage</b> &mdash; <b>not</b> the end of lithium. Premium EVs still need lithium's energy density.</li>
+      <li><b>The opportunity:</b> the action is the <b>segmentation</b> &mdash; sodium takes the cost-sensitive stationary market, lithium keeps the density-sensitive mobile market. Trade the split, not the headline.</li>
+      <li><b>The under-the-radar winner:</b> cheaper storage of <i>any</i> chemistry accelerates solar + wind + the grid &mdash; which loops straight back to the <a href="power-bottleneck.html">AI power buildout</a>.</li>
+    </ul>
+  </div>
+
+  <h2>What actually happened</h2>
+  <p>Sodium-ion isn't new &mdash; it's been &ldquo;five years away&rdquo; for a decade. What changed is that the economics finally crossed the line:</p>
+  <div class="stack">
+    <div class="step"><b>CATL says it's mainstream-ready.</b> The largest battery manufacturer on Earth is shipping sodium-ion grid-storage systems in 2026 and signed a <b>60 GWh</b> order &mdash; the kind of scale that turns a lab curiosity into a real product line.</div>
+    <div class="step"><b>The cost is collapsing.</b> The key ingredient (hard-carbon anode) is falling from ~60&ndash;70k yuan/tonne in 2024 toward ~35&ndash;40k in 2026, and sodium-ion cell prices are tracking toward roughly half of today's by 2030. Cost-down is the whole game.</div>
+    <div class="step"><b>The raw material is almost free and everywhere.</b> Sodium is ~1,000&times; more abundant than lithium and ~300&times; cheaper per kilogram. You can't be held hostage by a <a href="picks-and-shovels.html">supply chokepoint</a> on a material that's in table salt.</div>
+    <div class="step"><b>It's also safer and tougher in the cold.</b> Sodium-ion handles low temperatures better and is less prone to thermal runaway &mdash; real advantages for outdoor grid storage in cold climates.</div>
+  </div>
+
+  <h2>The catch the hype skips: energy density</h2>
+  <p>Here's the physics the &ldquo;lithium is dead&rdquo; posts leave out. A battery's job is to pack energy into weight and space, and lithium is simply <i>better</i> at it. Sodium-ion holds meaningfully <span class="def" data-d="How much energy a battery stores per unit of weight (and volume). Higher density = lighter battery for the same range. Lithium beats sodium here, which is why it stays king for cars and phones.">less energy per pound</span> than lithium. That single fact decides where each one wins:</p>
+  <div class="tw"><table>
+    <tr><th>Use case</th><th>What it cares about</th><th>Winner</th></tr>
+    <tr><td>Grid / stationary storage</td><td><b>Cost</b> &mdash; the battery sits on the ground; weight is irrelevant</td><td><b>Sodium-ion</b> (cheaper wins)</td></tr>
+    <tr><td>Budget / short-range EVs, scooters</td><td>Cost, durability, cold tolerance</td><td><b>Sodium-ion</b> (encroaching)</td></tr>
+    <tr><td>Premium, long-range EVs</td><td><b>Energy density</b> &mdash; every pound is range</td><td><b>Lithium</b> (density wins)</td></tr>
+    <tr><td>Phones, laptops, drones</td><td>Maximum energy in minimum space</td><td><b>Lithium</b> (no contest)</td></tr>
+  </table></div>
+  <div class="flag"><b>So is lithium &ldquo;doomed&rdquo;?</b> No &mdash; but a piece of its growth story is. Lithium was counting on owning <i>both</i> EVs <b>and</b> the exploding grid-storage market. Sodium-ion just walked into the second room. Lithium demand still grows with EVs; it just loses its monopoly on the cheapest stationary storage.</div>
+
+  <h2>Who wins, who loses</h2>
+  <div class="tw"><table>
+    <tr><th>Who</th><th>Impact</th></tr>
+    <tr><td><b>Sodium-ion supply chain</b></td><td>CATL and the sodium/hard-carbon makers &mdash; a brand-new product line scaling into a huge market.</td></tr>
+    <tr><td><b>Lithium grid-storage demand</b></td><td>Most exposed. Cheap LFP lithium aimed at stationary storage now has a structurally cheaper rival. The grid-storage growth leg of the lithium thesis softens.</td></tr>
+    <tr><td><b>High-density EV lithium</b></td><td>Largely <b>safe</b> &mdash; premium range still needs lithium's density. The auto-grade demand isn't going to sodium soon.</td></tr>
+    <tr><td><b>Renewables + the grid</b></td><td><b>Quiet winner.</b> Cheaper storage of any chemistry makes solar and wind more viable &mdash; which feeds the AI power buildout. A rising tide.</td></tr>
+    <tr><td><b>Lithium miners broadly</b></td><td>Mixed. The EV demand story holds; the &ldquo;lithium for everything&rdquo; premium narrows. The honest read isn't doom &mdash; it's a haircut on one growth leg.</td></tr>
+  </table></div>
+
+  <h2>The Lens angle</h2>
+  <div class="real"><b>Trade the segmentation, not the headline.</b> &ldquo;Sodium kills lithium&rdquo; is a clean story and a wrong one. The accurate, investable read: <b>two chemistries now split the market by physics</b> &mdash; sodium owns cost-sensitive stationary storage, lithium keeps density-sensitive mobility. The mistake is pricing all lithium as if it loses everything; the opportunity is knowing <i>which</i> lithium exposure (grid-storage vs. premium-EV) is actually threatened. And the second-order winner is the one nobody's posting about: <b>cheaper storage accelerates the renewables that help feed AI's power hunger</b> &mdash; the same <a href="power-bottleneck.html">power bottleneck</a> we keep coming back to.</div>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">&ldquo;Sodium kills lithium&rdquo; is a headline. &ldquo;Physics splits the market&rdquo; is the trade.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens takes the hype apart into what's real, what's overstated, and which exposure actually wins or loses. Plain English, every claim sourced and flagged.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/power-bottleneck.html">The power bottleneck</a> &middot; <a href="/learn/picks-and-shovels.html">The picks behind the picks</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Will sodium-ion batteries replace lithium?</b> Not broadly. Sodium-ion is cheaper and uses abundant materials, but it stores less energy per pound. So it wins where cost matters and weight doesn't &mdash; grid/stationary storage and budget short-range vehicles &mdash; while lithium keeps premium long-range EVs and electronics, where energy density is everything.</p>
+    <p><b>Is sodium-ion the end of the lithium trade?</b> No &mdash; but it dents one growth leg. Lithium was set to own both EVs and the booming grid-storage market; sodium-ion is taking a chunk of the second. Lithium demand still grows with EVs; it just loses its monopoly on the cheapest stationary storage.</p>
+    <p style="margin-bottom:0;"><b>Why is sodium-ion suddenly viable in 2026?</b> Cost. CATL declared it mainstream-ready, signed a 60 GWh deal, and key material costs are roughly halving. With sodium at ~$0.05/kg versus lithium ~$15/kg, the economics finally beat lithium for applications that don't need maximum energy density.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Will sodium-ion batteries replace lithium?","acceptedAnswer":{"@type":"Answer","text":"Not broadly. Sodium-ion is cheaper and uses abundant materials, but it stores less energy per pound. It wins where cost matters and weight does not, such as grid and stationary storage and budget short-range vehicles, while lithium keeps premium long-range EVs and electronics where energy density is everything."}},
+  {"@type":"Question","name":"Is sodium-ion the end of the lithium trade?","acceptedAnswer":{"@type":"Answer","text":"No, but it dents one growth leg. Lithium was positioned to own both EVs and the booming grid-storage market, and sodium-ion is taking a share of the second. Lithium demand still grows with EVs; it loses its monopoly on the cheapest stationary storage."}},
+  {"@type":"Question","name":"Why is sodium-ion suddenly viable in 2026?","acceptedAnswer":{"@type":"Answer","text":"Cost. CATL declared sodium-ion mainstream-ready, signed a 60 GWh deal, and key material costs are roughly halving. With sodium around $0.05 per kilogram versus lithium around $15 per kilogram, the economics finally beat lithium for applications that do not need maximum energy density."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>CATL first sodium-ion storage systems shipping 2026, 60 GWh deal, &ldquo;mainstream-ready&rdquo;; hard-carbon anode ~60&ndash;70k&rarr;35&ndash;40k yuan/tonne; cell price ~RMB 0.52&rarr;0.25/Wh by 2030; sodium ~1,000&times; more abundant and ~300&times; cheaper than lithium</b> &mdash; <a href="https://carnewschina.com/2026/06/05/catl-to-deliver-first-sodium-ion-storage-systems-in-september-as-material-costs-halve/" rel="nofollow">CarNewsChina</a>, <a href="https://electrek.co/2026/04/27/catl-sodium-ion-battery-60gwh-energy-storage-deal/" rel="nofollow">Electrek</a>, <a href="https://www.pv-magazine.com/2026/04/20/a-closer-look-at-catls-new-sodium-ion-battery/" rel="nofollow">pv magazine</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Figures are as reported by the sources above and depend on chemistry and configuration. Company names illustrate a market shift, not buy recommendations. Verify against primary sources before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
