@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Read a Dividend Without Getting Trapped — Dragonfly Lens</title>
+<meta name="description" content="A 12% yield looks like free money. It's usually a warning. The highest dividend yields are almost always the market screaming that a cut is coming. Here's how to tell a dividend you can trust from a trap — the four checks (and the one filter that does the most work). Plain English.">
+<meta property="og:title" content="How to Read a Dividend Without Getting Trapped">
+<meta property="og:description" content="A 12% yield isn't free money — it's usually a warning. The four checks that separate a dividend you can trust from a trap, and the one filter that does the most work.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/dividend-traps.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/dividend-traps-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Read a Dividend Without Getting Trapped">
+<meta name="twitter:description" content="A 12% yield isn't free money — it's usually a warning. The four checks that separate a trustworthy dividend from a trap.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/dividend-traps-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; The Skill</div>
+  <h1>How to Read a Dividend Without Getting Trapped</h1>
+  <p class="lead">A <b>12% yield</b> looks like free money. It's usually a warning. The very highest yields are almost always the market <i>screaming</i> that a dividend is about to be cut &mdash; and the investors who chase the biggest number are the ones who get hurt. Here's how to tell a dividend you can <i>trust</i> from one that's a trap, using the same checks we built into our Income screen. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 19, 2026 &middot; Why the highest yield is usually the worst one &mdash; and the four checks that protect you.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The trap:</b> yield = dividend &divide; price. When a stock <i>crashes</i>, the yield <i>spikes</i> &mdash; so the highest yields are often dying companies, not generous ones.</li>
+      <li><b>Check 1 &mdash; sane yield:</b> look in a band (~3.5&ndash;8%), not at the maximum. A 12%+ yield is a red flag, not a prize.</li>
+      <li><b>Check 2 &mdash; can they afford it?</b> the <span class="def" data-d="The share of a company's earnings (or cash flow) paid out as dividends. Under ~75% means there's a cushion; over 100% means they're paying out more than they earn — unsustainable.">payout ratio</span> should leave a cushion.</li>
+      <li><b>Check 3 &mdash; track record:</b> years of paying and <i>growing</i> the dividend, with no recent cut.</li>
+      <li><b>Check 4 &mdash; the trend gate:</b> is the price above its <b>200-day average</b>? A falling price is the market voting against the dividend. This one filter does the most work.</li>
+      <li><b>The takeaway:</b> rank by <i>quality</i>, not yield. The yield is the <b>last</b> thing to look at, not the first.</li>
+    </ul>
+  </div>
+
+  <h2>Why the highest yield is a trap</h2>
+  <p>Start with the formula, because it explains everything: <b>dividend yield = annual dividend &divide; share price.</b> Notice what's on the bottom. If a company keeps its dividend the same but its <i>stock falls 50%</i>, its yield <b>doubles</b> &mdash; not because it got more generous, but because the price collapsed. So a sky-high yield is very often the market pricing in a problem you haven't read about yet.</p>
+  <div class="flag"><b>The dividend trap, in one sentence:</b> by the time a yield looks irresistible, the market has usually already decided the dividend is in danger. The yield isn't high because the payout is great &mdash; it's high because the <i>price</i> is falling toward a cut. Chasing the biggest number is how you buy the cut right before it happens.</div>
+
+  <h2>The four checks that protect you</h2>
+  <p>None of these is exotic. Together they filter out almost every trap:</p>
+  <div class="stack">
+    <div class="step"><b>1. A sane yield band &mdash; not the maximum.</b> Healthy income lives roughly in the <b>3.5&ndash;8%</b> range. Below that isn't really &ldquo;income&rdquo;; above it is usually distress. The instant you find yourself excited by a 10%+ yield, slow down &mdash; that's the trap's bait.</div>
+    <div class="step"><b>2. Can they actually afford it?</b> Check the payout ratio: is the dividend comfortably covered by earnings and <span class="def" data-d="The cash a business has left after running and maintaining itself. A dividend paid out of real free cash flow is far safer than one funded by debt or by selling assets.">free cash flow</span>? Under ~75% leaves a cushion. Over 100% means they're paying out more than they make &mdash; borrowing to keep up appearances. <i>(One nuance: REITs and pipelines look like they pay &gt;100% of earnings because they're measured on cash flow, not earnings &mdash; judge those on their own cash metric.)</i></div>
+    <div class="step"><b>3. A track record, not a promise.</b> Has the company <i>paid and raised</i> its dividend for years &mdash; through recessions &mdash; or is the high yield brand-new? A long streak with no recent cut is a company that treats the dividend as sacred. A recent cut is a company that already showed you it will cut again.</div>
+    <div class="step"><b>4. The trend gate &mdash; is the price above its 200-day average?</b> The <span class="def" data-d="A line showing the average closing price over the last 200 days. Price above it = the stock is in an uptrend; below it = a downtrend. A simple, powerful read on whether the market is buying or fleeing.">200-day moving average</span> is the simplest read on whether the market is buying the story or running from it. A dividend stock in a steady <i>downtrend</i> is the market voting, with real money, that something is wrong &mdash; often before the bad news is public.</div>
+  </div>
+
+  <h2>The one that does the most work</h2>
+  <div class="real"><b>If you only keep one filter, keep the trend gate.</b> Almost every catastrophic dividend trap &mdash; the 10% yielder that cut and then fell another 60% &mdash; was in a clear downtrend <i>before</i> the cut. Refusing to own a high-yielder while its price is below its 200-day average doesn't catch every problem, but it sidesteps the worst of them, because a falling price is the market's early-warning system. Yield tells you what you're <i>promised</i>; the trend tells you whether the market <i>believes it</i>.</div>
+
+  <h2>Putting it together: rank by quality, not yield</h2>
+  <p>The mistake almost everyone makes is sorting a list of stocks by yield, highest first, and buying the top. That sorts the <i>traps</i> to the top. The fix is to flip the order of operations:</p>
+  <div class="tw"><table>
+    <tr><th>Step</th><th>What you're doing</th></tr>
+    <tr><td><b>1. Filter first</b></td><td>Throw out anything that fails the four checks &mdash; out-of-band yield, no coverage, recent cut, or a downtrend. Most of the list disappears, and that's the point.</td></tr>
+    <tr><td><b>2. Then rank by quality</b></td><td>Among the survivors, rank by a blend of yield <i>plus</i> payout cushion, dividend-growth streak, and trend strength &mdash; <b>not yield alone</b>.</td></tr>
+    <tr><td><b>3. Watch for the cut</b></td><td>A dividend is a living thing. If a holding cuts, or breaks its downtrend rule, it leaves the list &mdash; no loyalty, no hoping.</td></tr>
+  </table></div>
+  <p>That's exactly the discipline behind our <b>Income watchlist</b> &mdash; it filters on these four checks and ranks by an honest quality score, so the names that rise to the top are the dividends you can <i>trust</i>, not just the biggest numbers.</p>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">Income you can trust beats income that looks impressive</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">The highest yield is usually the worst one. We rank by quality, not by the number.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">The Dragonfly Income watchlist screens every name on coverage, track record, and trend &mdash; and shows the misses too. Plain English, honest scoring.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/reading-a-company.html">How to read a company</a> &middot; <a href="/learn/exits.html">When to sell</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Is a high dividend yield good or bad?</b> It depends entirely on <i>why</i> it's high. Yield is dividend divided by price, so a high yield often means the price has crashed &mdash; which usually means the market expects a dividend cut. The highest yields are frequently traps. A sustainable, covered yield in the ~3.5&ndash;8% range is far safer than a 12% one.</p>
+    <p><b>What is a dividend trap?</b> A stock whose yield looks irresistibly high because its price is falling toward a dividend cut. You buy for the income, the company cuts the dividend, and the price falls further &mdash; you lose on both. The four checks (sane yield, payout coverage, track record, and an uptrend) exist to avoid exactly this.</p>
+    <p style="margin-bottom:0;"><b>What's the single best filter for dividend safety?</b> The trend gate &mdash; only consider a dividend stock trading above its 200-day moving average. A falling price is the market's early warning that something is wrong, often before the news is public. It won't catch everything, but it sidesteps the worst traps.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Is a high dividend yield good or bad?","acceptedAnswer":{"@type":"Answer","text":"It depends on why it's high. Yield is the dividend divided by the share price, so a high yield often means the price has crashed, which usually signals the market expects a dividend cut. The highest yields are frequently traps. A sustainable, covered yield in roughly the 3.5 to 8 percent range is far safer than a 12 percent one."}},
+  {"@type":"Question","name":"What is a dividend trap?","acceptedAnswer":{"@type":"Answer","text":"A dividend trap is a stock whose yield looks irresistibly high because its price is falling toward a dividend cut. You buy for the income, the company cuts the dividend, and the price falls further, so you lose on both. Four checks help avoid it: a sane yield band, payout coverage, a track record of paying and raising, and the stock trading in an uptrend."}},
+  {"@type":"Question","name":"What is the single best filter for dividend safety?","acceptedAnswer":{"@type":"Answer","text":"The trend gate: only consider a dividend stock trading above its 200-day moving average. A falling price is the market's early warning that something is wrong, often before the news is public. It will not catch every problem, but it sidesteps the worst dividend traps."}}
+  ]}
+  </script>
+
+  <p class="disc">Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. The checks described are a risk-screening framework, not a guarantee &mdash; dividends can be cut without warning, and any screen can be wrong. Do your own research and verify a company's filings before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
