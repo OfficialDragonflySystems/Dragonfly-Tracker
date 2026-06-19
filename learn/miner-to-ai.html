@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Miners Quietly Becoming AI Landlords — Dragonfly Lens</title>
+<meta name="description" content="A bitcoin miner just signed a $220M deal to run AI for Bell Canada and Cohere. It's the clearest sign yet of a quiet rotation: crypto miners with cheap power and ready data centers are turning into AI compute landlords — while the market still prices some like hash machines. Who's really pivoting, who's just saying it, and the honest risks. Plain English, every number sourced.">
+<meta property="og:title" content="The Miners Quietly Becoming AI Landlords">
+<meta property="og:description" content="A bitcoin miner just signed a $220M deal to run AI for Bell + Cohere. The quiet rotation from hash machines to AI compute landlords — who's really pivoting, and the honest risks.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/miner-to-ai.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/miner-to-ai-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Miners Quietly Becoming AI Landlords">
+<meta name="twitter:description" content="A bitcoin miner signed a $220M deal to run AI for Bell + Cohere. The rotation from hash machines to AI landlords — who's real, who's pumping, plain English.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/miner-to-ai-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; The Pivot Being Mispriced</div>
+  <h1>The Miners Quietly Becoming AI Landlords</h1>
+  <p class="lead">A <span class="def" data-d="A company that runs warehouses of specialized computers solving math puzzles to earn bitcoin. The business is feast-or-famine, tied to the bitcoin price and the every-four-years 'halving' that cuts the reward.">bitcoin miner</span> just signed a <b>$220 million</b> deal to run AI for Bell Canada and Cohere. That's not a crypto story &mdash; it's the clearest sign yet of a quiet rotation: the miners sitting on cheap power and ready-built data centers are turning into <b>AI compute landlords</b>, while the market still prices some of them like the hash machines they used to be. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 19, 2026 &middot; The rotation from hash machines to AI landlords &mdash; who's real, who's pumping.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What's real:</b> HIVE Digital's compute arm signed a <b>3-year, ~$220M</b> deal to run Cohere's AI on Bell Canada's network &mdash; 2,304 NVIDIA GB200 GPUs, adding ~$70M of recurring revenue. Stock jumped ~10%.</li>
+      <li><b>The rotation:</b> bitcoin miners have the two things AI is starving for &mdash; <b>cheap power and existing data centers</b>. The smart ones are converting from mining a volatile commodity into <b>renting contracted compute</b>.</li>
+      <li><b>Why it matters:</b> a miner that pulls this off <b>re-rates</b> &mdash; from a boom-bust hashprice stock into a company with predictable, contracted revenue. Different multiple, different business.</li>
+      <li><b>The opportunity:</b> a small basket is making this turn. What separates the winners is boring and measurable: <b>contracted revenue, power cost, cooling, and balance sheet.</b></li>
+      <li><b>The honest caveat:</b> the press releases are <i>pumped</i>, and the GPUs are often funded with dilutive debt. Lead with the revenue number, not the rhetoric.</li>
+    </ul>
+  </div>
+
+  <h2>What actually happened</h2>
+  <p>On June 18, 2026, HIVE Digital &mdash; a company most people still file under &ldquo;crypto miner&rdquo; &mdash; announced through its BUZZ HPC subsidiary a <b>three-year, roughly $220 million</b> contract to provide AI compute for <b>Cohere</b> (Canada's enterprise AI model company) running on <b>Bell Canada's</b> network. The hardware: <b>2,304 NVIDIA GB200</b> chips, liquid-cooled, deployed at Bell's facility in Merritt, British Columbia, expected live late-2026 into 2027. HIVE says it adds about <b>$70 million in annual recurring revenue</b>, pushing its contracted compute revenue past $100 million. The stock rose roughly 10% on the news.</p>
+  <div class="flag"><b>Read the press release with one eye closed.</b> The contract is real and verifiable. The <i>framing</i> around it &mdash; executive quotes about &ldquo;a decade of asymmetric returns&rdquo; &mdash; is stock promotion, not analysis. The discipline: anchor on the number you can check ($70M recurring revenue), and treat the adjectives as noise.</div>
+
+  <h2>Why miners are becoming AI landlords</h2>
+  <p>This isn't a gimmick &mdash; it's economic gravity. The thing throttling the AI buildout is <a href="power-bottleneck.html">power and the data centers to put it in</a>. Guess who already has both:</p>
+  <div class="stack">
+    <div class="step"><b>They sit on cheap, often stranded power.</b> Miners spent years hunting the cheapest electricity on Earth &mdash; the single biggest input AI compute needs. That power contract is suddenly worth far more pointed at GPUs than at hashing.</div>
+    <div class="step"><b>They already own the hard part: the building.</b> Permitted sites, grid connections, cooling, and electrical buildout take <i>years</i>. Miners have them now &mdash; a head start measured in years over anyone breaking ground today.</div>
+    <div class="step"><b>The day job got harder.</b> Bitcoin's <span class="def" data-d="A scheduled event roughly every four years that cuts the reward miners earn in half. It squeezes margins and pushes miners to find new uses for their power and machines.">halving</span> keeps squeezing mining margins. Repurposing that power and real estate into contracted AI revenue is the obvious escape hatch.</div>
+    <div class="step"><b>The re-rate is the whole prize.</b> A pure miner trades on the bitcoin price and hashprice &mdash; volatile, commodity, feast-or-famine. A company with <span class="def" data-d="Revenue locked in by multi-year contracts. Investors pay a much higher multiple for predictable contracted revenue than for volatile commodity earnings — that gap is the 're-rate.'">contracted recurring revenue</span> trades like an infrastructure business. Same company, very different valuation.</div>
+  </div>
+
+  <h2>The honest split: who's really pivoting vs. who's just saying it</h2>
+  <p>&ldquo;We're pivoting to AI&rdquo; is the most overused sentence in the sector right now, so the Lens job is to separate the ones with real contracts from the ones with a press release. A basket is in motion &mdash; HIVE/BUZZ (this deal), plus <b>IREN, Core Scientific, Cipher, Applied Digital, TeraWulf</b> &mdash; and four boring questions sort the winners from the noise:</p>
+  <div class="tw"><table>
+    <tr><th>The question</th><th>Why it decides everything</th></tr>
+    <tr><td><b>Contracted revenue?</b></td><td>Real signed AI revenue (with named, creditworthy customers) vs. a roadmap slide. This is the scoreboard &mdash; check it every quarter.</td></tr>
+    <tr><td><b>Power cost &amp; efficiency?</b></td><td>Cheap, clean power and a low <span class="def" data-d="Power Usage Effectiveness — how much total energy a data center burns per unit that reaches the chips. Lower is better; it's the efficiency moat.">PUE</span> are the durable moat. The whole pitch is &ldquo;convert cheap energy into intelligence.&rdquo;</td></tr>
+    <tr><td><b>Cooling capability?</b></td><td>AI racks run hot &mdash; liquid cooling is table stakes now. A miner that can't cool a GB200 rack can't play.</td></tr>
+    <tr><td><b>Balance sheet?</b></td><td>GPUs cost a fortune. Who can fund them <i>without</i> crippling dilution? This is the hidden separator (HIVE funded part of this deal with a convertible note).</td></tr>
+  </table></div>
+  <div class="flag"><b>The trap:</b> a soaring stock on a vague &ldquo;AI partnership&rdquo; with no dollar figure, no named customer, and a balance sheet that needs constant share issuance to buy chips. The announcement pumps the stock; the economics never show up. Demand the contract, not the headline.</div>
+
+  <h2>The Lens angle: it's the same bottleneck, one layer down</h2>
+  <p>Step back and the miner pivot is the <i>same trade</i> as every other piece of the AI buildout, just wearing a crypto costume. It sits on four of our coverage spines at once:</p>
+  <ul>
+    <li><b>Sovereign AI.</b> This exact deal is a <i>Canadian</i> stack &mdash; Bell's network, Cohere's models, kept on Canadian soil. The same &ldquo;own your compute, don't rent it from a foreign giant&rdquo; logic driving <a href="picks-and-shovels.html">sovereign supply chains</a>.</li>
+    <li><b>The compute buildout.</b> GB200 rack-scale capacity, supply-constrained. Every megawatt a miner converts is a megawatt of demand someone was scrambling to find.</li>
+    <li><b>The thermal bottleneck.</b> Liquid-cooled, efficiency-obsessed &mdash; the <a href="ai-per-watt.html">intelligence-per-watt</a> thesis in the wild.</li>
+    <li><b>Energy &rarr; intelligence.</b> The literal business model is &ldquo;turn cheap (often renewable) power into AI compute.&rdquo; The miners with the cleanest, cheapest electrons win.</li>
+  </ul>
+  <div class="real"><b>The insight that ties it together:</b> don't buy the &ldquo;crypto miner&rdquo; label &mdash; price the <i>asset</i>. The durable thing a miner owns isn't a hashrate; it's <b>cheap power plus a ready data center</b>, which is the single scarcest combination in AI right now. The market is still valuing some of them on the old business while the new one signs contracts. That gap &mdash; old multiple, new revenue &mdash; is the entire opportunity. Same <a href="picks-and-shovels.html">picks-and-shovels</a> lesson: own the bottleneck, not the brand.</div>
+
+  <h2>The risks &mdash; named, not buried</h2>
+  <ul>
+    <li><b>Dilution.</b> GPUs are bought with debt and stock. A &ldquo;great&rdquo; AI contract funded by relentless share issuance can leave existing holders worse off. Watch the share count, not just the revenue.</li>
+    <li><b>Execution.</b> Mining a coin and running enterprise-grade AI uptime for a Bell or a hyperscaler are different sports. Not every miner can deliver the reliability a serious customer demands.</li>
+    <li><b>Customer quality.</b> A contract with Cohere/Bell is worth far more than one with a speculative crypto-adjacent tenant. Read <i>who</i> is paying.</li>
+    <li><b>The pump.</b> This is a hype-saturated corner of the market. The honest names will be the ones publishing <i>contracted revenue numbers</i> quarter after quarter &mdash; the fakers won't.</li>
+  </ul>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">Don't price the &ldquo;crypto miner.&rdquo; Price the cheap power and the ready data center.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens separates the miners with real AI contracts from the ones with a press release &mdash; and names the risks out loud. Plain English, every claim sourced and flagged.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/power-bottleneck.html">The power bottleneck</a> &middot; <a href="/learn/picks-and-shovels.html">The picks behind the picks</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Why are bitcoin miners pivoting to AI?</b> Because they already own the two scarcest inputs in AI: cheap power and ready-built, grid-connected data centers. As bitcoin mining margins get squeezed by the halving, repurposing that power and real estate into contracted AI compute is far more valuable &mdash; and it re-rates the stock from a volatile commodity play to an infrastructure business.</p>
+    <p><b>Is the HIVE / Bell / Cohere deal real?</b> Yes. HIVE's BUZZ HPC arm signed a ~3-year, ~$220M contract for AI compute (2,304 NVIDIA GB200 GPUs) serving Cohere on Bell Canada's network, expected to add ~$70M in annual recurring revenue, going live late-2026 to early-2027. The contract is real; the promotional language around it should be discounted.</p>
+    <p style="margin-bottom:0;"><b>Which miners are turning into AI compute companies?</b> A basket is in motion &mdash; HIVE, IREN, Core Scientific, Cipher, Applied Digital, TeraWulf among them. What separates winners from press-release pivots: real contracted revenue with named customers, low power cost, liquid-cooling capability, and a balance sheet that can fund GPUs without heavy dilution.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Why are bitcoin miners pivoting to AI?","acceptedAnswer":{"@type":"Answer","text":"Because they already own the two scarcest inputs in AI: cheap power and ready-built, grid-connected data centers. As bitcoin mining margins get squeezed by the halving, repurposing that power and real estate into contracted AI compute is far more valuable, and it re-rates the stock from a volatile commodity play toward a predictable infrastructure business."}},
+  {"@type":"Question","name":"Is the HIVE, Bell and Cohere AI deal real?","acceptedAnswer":{"@type":"Answer","text":"Yes. HIVE Digital's BUZZ HPC subsidiary signed a roughly three-year, ~$220 million contract for AI compute using 2,304 NVIDIA GB200 GPUs, serving Cohere on Bell Canada's network, expected to add about $70 million in annual recurring revenue and go live from late 2026 into 2027. The contract is real; the promotional language around it should be discounted."}},
+  {"@type":"Question","name":"Which bitcoin miners are turning into AI compute companies?","acceptedAnswer":{"@type":"Answer","text":"A basket is in motion, including HIVE, IREN, Core Scientific, Cipher, Applied Digital and TeraWulf. What separates real pivots from press-release pivots is contracted revenue with named customers, low power cost, liquid-cooling capability, and a balance sheet that can fund GPUs without heavy shareholder dilution."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>HIVE / BUZZ HPC ~$220M, 3-year AI compute deal with Bell Canada + Cohere; 2,304 NVIDIA GB200 GPUs; ~$70M ARR; ~10% stock move; Merritt BC; live late-2026/early-2027</b> &mdash; <a href="https://www.coindesk.com/markets/2026/06/18/hive-shares-jumps-10-on-usd220m-canada-sovereign-ai-infrastructure-deal" rel="nofollow">CoinDesk</a>, <a href="https://www.theblock.co/post/405234/bitcoin-miner-hive-220-million-ai-gpu-deal-bell-expects-70-million-annual-revenue" rel="nofollow">The Block</a>, <a href="https://www.hpcwire.com/off-the-wire/buzz-hpc-lands-220m-ai-infrastructure-deal-with-bell-canada-and-cohere/" rel="nofollow">HPCwire</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Figures are as reported by the sources above. Company names illustrate a sector rotation, not buy recommendations &mdash; miner-to-AI pivots carry real execution, dilution, and hype risk; verify contracted-revenue claims against primary filings before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
