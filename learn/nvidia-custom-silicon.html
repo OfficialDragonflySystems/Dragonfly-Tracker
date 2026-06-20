@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nvidia's Biggest Threat Is Its Own Customers — Dragonfly Lens</title>
+<meta name="description" content="Amazon and Google — two of Nvidia's biggest customers — are now building and selling their own AI chips. That sounds like Nvidia's problem. But the company that designs those custom chips, and the single factory that makes every chip in the story, get paid no matter who wins. Bet the bottleneck, not the horse. Plain English, every number sourced.">
+<meta property="og:title" content="Nvidia's Biggest Threat Is Its Own Customers">
+<meta property="og:description" content="The cloud giants are building their own AI chips to escape Nvidia. The quiet winners are the designer (Broadcom) and the factory (TSMC) underneath them all. Bet the bottleneck, not the horse.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/nvidia-custom-silicon.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/nvidia-custom-silicon-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nvidia's Biggest Threat Is Its Own Customers">
+<meta name="twitter:description" content="Amazon and Google are building their own AI chips. The real winners are the designer (Broadcom) and the factory (TSMC) underneath them all. Plain English.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/nvidia-custom-silicon-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; The Bottleneck Behind the Chip War</div>
+  <h1>Nvidia's Biggest Threat Is Its Own Customers</h1>
+  <p class="lead">The companies that buy the most Nvidia chips &mdash; Amazon, Google, Meta &mdash; are now building <b>their own</b> AI chips, and starting to sell them. That sounds like a problem for Nvidia. But the company that <i>designs</i> those in-house chips, and the single factory that <i>makes</i> every chip in the story, get paid no matter who wins. <b>Don't bet on which chip wins &mdash; bet on the bottleneck underneath all of them.</b> <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; June 20, 2026 &middot; The custom-silicon shift &mdash; and who actually gets paid.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What's real:</b> Amazon's CEO says there's &ldquo;a good chance&rdquo; it sells its <b>Trainium</b> AI chips beyond AWS. Google already sells its <b>TPU</b> chips externally &mdash; Anthropic signed up for <i>up to a million</i> of them.</li>
+      <li><b>The shift:</b> the cloud giants are escaping Nvidia by rolling their own <span class="def" data-d="Application-Specific Integrated Circuit — a chip built to do ONE job extremely well and cheaply, instead of a general-purpose chip that does everything.">custom chips</span>. Custom-chip shipments are growing ~45% a year &mdash; roughly <b>3&times; the pace of GPUs.</b></li>
+      <li><b>But Nvidia isn't dying:</b> it still holds ~70&ndash;80% of the market and owns AI <span class="def" data-d="Training = teaching the AI model: done once, hugely expensive, needs the most powerful flexible chips. Nvidia's stronghold.">training</span>. The land up for grabs is <span class="def" data-d="Inference = using the trained model to answer you: done billions of times forever, where cost-per-answer is everything. Where custom chips shine.">inference</span>.</li>
+      <li><b>The opportunity (the Lens angle):</b> whoever wins the chip war, the <b>designer</b> (Broadcom/Marvell, ~95% of custom-chip design) and the <b>factory</b> (TSMC, makes them all) get paid. <b>Bet the bottleneck, not the horse.</b></li>
+      <li><b>The honest caveat:</b> Amazon's headline &ldquo;$50B&rdquo; chip figure is <i>hypothetical</i>, external sales are early-stage talks, and Nvidia's software moat is real. The story is a slow share-shift, not a collapse.</li>
+    </ul>
+  </div>
+
+  <h2>What actually happened</h2>
+  <p>In 2026 a quieter story started rewriting the AI trade &mdash; and it came from Nvidia's own best customers. Amazon's CEO Andy Jassy said there's &ldquo;a good chance&rdquo; the company begins selling its <b>Trainium</b> AI chips to outside companies &ldquo;in the next couple of years.&rdquo; Amazon's custom-silicon business already crossed a <b>$20 billion</b> annual run-rate, growing at a triple-digit pace.</p>
+  <p>Google is further ahead: it has sold so much of its <b>TPU</b> chip capacity to outsiders &mdash; Anthropic alone contracted for <i>up to a million</i> chips in a ~$40B deal, with Meta and others lining up &mdash; that its own researchers are reportedly queuing for what's left. The customers are becoming the competitors.</p>
+  <div class="flag"><b>Read the headline number with one eye closed.</b> You'll see &ldquo;Amazon's chip business could be worth $50 billion.&rdquo; That's a <i>hypothetical</i> &mdash; what the unit <i>would</i> run-rate at if it sold chips like a merchant chipmaker. Actual external sales today are early-stage talks, not revenue. Anchor on what's verifiable (the $20B run-rate, the Google&ndash;Anthropic contract); treat the rest as projection.</div>
+
+  <h2>The plain-English version</h2>
+  <p>Why build your own chip at all? Because the big clouds do the <i>same</i> AI task billions of times a day &mdash; answering chatbot prompts &mdash; and for one repetitive job, a purpose-built chip crushes a do-everything one.</p>
+  <div class="real"><b>The bread machine, not the kitchen.</b> An Nvidia GPU is a full kitchen &mdash; it can cook anything. A <span class="def" data-d="Application-Specific Integrated Circuit — a chip designed for one job. Cheaper, faster, and lower-power than a general chip, as long as you only ever do that one job.">custom AI chip (ASIC)</span> is a bread machine: it only makes bread, but if all you do is bake bread all day, it's cheaper, faster, and sips power. For the giants running the same query a billion times, that's a <b>40&ndash;65% lower</b> cost-of-ownership. So they each built their own: Google's <b>TPU</b>, Amazon's <b>Trainium</b>, Meta's <b>MTIA</b>, Microsoft's <b>Maia</b>.</div>
+  <p>But there's a split that decides how far this goes:</p>
+  <div class="stack">
+    <div class="step"><b>Training is Nvidia's fortress.</b> Teaching a model is done once, costs a fortune, and needs the most flexible, powerful chips &mdash; plus Nvidia's software (<span class="def" data-d="Nvidia's software layer that developers have built on for ~15 years. Switching off it is painful — a real, durable moat that custom chips don't have.">CUDA</span>) that everyone already builds on. Custom chips barely dent this.</div>
+    <div class="step"><b>Inference is the open field.</b> <i>Using</i> the model &mdash; answering you &mdash; happens billions of times, forever, and there cost-per-answer is everything. This is where the bread machines win, and it's the <i>bigger</i> market over time: you train once, but you answer forever.</div>
+    <div class="step"><b>That's why the share math is scary &mdash; and slow.</b> Nvidia still has ~70&ndash;80% of AI-chip revenue. But custom chips are ~15&ndash;20% and growing ~45% a year (~3&times; GPUs). Some analysts think Nvidia's <i>inference</i> share could slide from 90%+ toward 20&ndash;30% by 2028. A share-shift at the margin, over years &mdash; not a cliff.</div>
+  </div>
+
+  <h2>The opportunity: who gets paid no matter who wins</h2>
+  <p>Most coverage asks &ldquo;is Nvidia in trouble?&rdquo; That's the wrong question &mdash; it's a horse race, and horse races are hard to call. The Lens question is: <b>who gets paid regardless of which horse wins?</b></p>
+  <div class="tw"><table>
+    <tr><th>The layer</th><th>Who</th><th>Why they win either way</th></tr>
+    <tr><td><b>The designer</b></td><td>Broadcom, Marvell</td><td>Amazon and Google don't design these chips alone &mdash; they co-design them with Broadcom and Marvell, who hold an estimated <b>~95%</b> of the custom-chip design market (Broadcom ~70%). Every TPU and MTIA runs through them. The more the giants roll their own to escape Nvidia, <b>the more they pay Broadcom.</b></td></tr>
+    <tr><td><b>The factory</b></td><td>TSMC</td><td>Nvidia's chips, Google's TPUs, Amazon's Trainium, Broadcom's designs &mdash; <b>every one is physically made by TSMC</b>, on the same scarce leading-edge lines. It doesn't matter whose logo is on the chip. There is one factory that matters.</td></tr>
+    <tr><td><b>The moonshot 🌙</b></td><td>Interconnect &amp; packaging</td><td><i>Clearly speculative.</i> If custom silicon really eats inference, the next scarce thing is getting chips to <i>talk to each other</i> (networking) and the <span class="def" data-d="Advanced packaging stitches multiple chips and memory stacks into one module — increasingly the hard, scarce step now that single chips can't get much bigger.">advanced packaging</span> that stitches them together. Early, unproven &mdash; we'd only act on data.</td></tr>
+  </table></div>
+  <div class="real"><b>The insight that ties it together:</b> in a gold rush where everyone buys shovels from the same store, <b>own the store.</b> The GPU-vs-custom-chip fight is loud and uncertain &mdash; but the value also flows to the layer <i>underneath</i> it: the firm that designs the custom chips, and the foundry that makes all of them. Same <a href="picks-and-shovels.html">picks-and-shovels</a> lesson we keep landing on: own the bottleneck, not the brand.</div>
+
+  <h2>The risks &mdash; named, not buried</h2>
+  <ul>
+    <li><b>Nvidia is not dying.</b> ~70&ndash;80% share, ownership of training, and the CUDA software moat are all real. This is a margin shift over years; the doom headlines overshoot.</li>
+    <li><b>The numbers are spun.</b> The &ldquo;$50B&rdquo; Amazon figure is hypothetical; external chip sales are talks, not contracts. Lead with what's signed.</li>
+    <li><b>The bottleneck cuts both ways.</b> &ldquo;Own TSMC&rdquo; also means owning a <i>single</i> factory in a geopolitically tense location. The concentration that makes it powerful is the same thing that makes it fragile.</li>
+    <li><b>Not advice.</b> This is how we read the chain, not a recommendation. Company names illustrate a structural shift, not buy calls &mdash; do your own work and size to your own risk.</li>
+  </ul>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">Don't bet on which chip wins. Bet on the bottleneck underneath them all.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens maps the AI buildout as one connected chain &mdash; and finds the layer where the value actually pools. Plain English, every claim sourced and flagged.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/picks-and-shovels.html">The picks behind the picks</a> &middot; <a href="/learn/ai-per-watt.html">Intelligence per watt</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Are Amazon and Google really selling their own AI chips?</b> Google already sells its TPU chips to outside customers (Anthropic contracted for up to a million; Meta and others are lining up). Amazon's CEO says there's &ldquo;a good chance&rdquo; it sells its Trainium chips beyond AWS in the next couple of years, though those external sales are still early-stage talks. Amazon's custom-silicon business already runs at a ~$20B annual rate.</p>
+    <p><b>Is Nvidia in trouble?</b> Not in the &ldquo;collapse&rdquo; sense. Nvidia still holds roughly 70&ndash;80% of AI-accelerator revenue, dominates model training, and has a real software moat in CUDA. What's shifting is <i>inference</i> &mdash; the high-volume &ldquo;using the model&rdquo; work &mdash; where cheaper custom chips are taking share at the margin over the next few years.</p>
+    <p style="margin-bottom:0;"><b>Who actually benefits from the custom-chip boom?</b> The clearest beneficiaries sit underneath the chip-brand fight: the co-designers of those custom chips (Broadcom and Marvell hold ~95% of that market) and the foundry that manufactures every chip in the story (TSMC). Whoever wins the GPU-vs-custom-chip race, the designer and the factory get paid &mdash; the picks behind the picks.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Are Amazon and Google really selling their own AI chips?","acceptedAnswer":{"@type":"Answer","text":"Google already sells its TPU chips to outside customers, with Anthropic contracting for up to a million and Meta and others lining up. Amazon's CEO says there is a good chance it sells its Trainium chips beyond AWS in the next couple of years, though those external sales are still early-stage talks. Amazon's custom-silicon business already runs at roughly a 20 billion dollar annual rate."}},
+  {"@type":"Question","name":"Is Nvidia in trouble from custom AI chips?","acceptedAnswer":{"@type":"Answer","text":"Not in a collapse sense. Nvidia still holds roughly 70 to 80 percent of AI accelerator revenue, dominates model training, and has a real software moat in CUDA. What is shifting is inference, the high-volume work of using a trained model, where cheaper custom chips are taking share at the margin over the next few years."}},
+  {"@type":"Question","name":"Who benefits most from the custom AI chip boom?","acceptedAnswer":{"@type":"Answer","text":"The clearest beneficiaries sit underneath the chip-brand fight: the co-designers of the custom chips, where Broadcom and Marvell hold about 95 percent of the market, and the foundry that manufactures every chip in the story, TSMC. Whoever wins the GPU versus custom-chip race, the designer and the factory get paid."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>Amazon exploring external Trainium sales; Jassy &ldquo;good chance&rdquo; comment; ~$20B custom-silicon run-rate; ~$50B standalone framing</b> &mdash; <a href="https://techcrunch.com/2026/06/18/amazon-hopes-to-challenge-nvidia-more-directly-by-selling-its-ai-chips/" rel="nofollow">TechCrunch</a>, <a href="https://www.fool.com/investing/2026/06/18/amazon-may-start-selling-its-custom-ai-chips-to-ou/" rel="nofollow">Motley Fool</a>, <a href="https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-amazon-chips-business-q1-2026-earnings" rel="nofollow">aboutamazon.com</a>. <b>Google selling TPUs externally; Anthropic / Meta deals</b> &mdash; <a href="https://finance.yahoo.com/markets/stocks/article/google-to-sell-tpu-chips-to-select-customers-in-latest-shot-at-nvidia-214900221.html" rel="nofollow">Yahoo Finance</a>, <a href="https://newsletter.semianalysis.com/p/tpuv7-google-takes-a-swing-at-the" rel="nofollow">SemiAnalysis</a>. <b>Nvidia ~70&ndash;80% share; custom ASICs ~45%/yr (~3&times; GPUs); 40&ndash;65% TCO advantage; Broadcom+Marvell ~95% of custom co-design</b> &mdash; <a href="https://siliconanalysts.com/analysis/nvidia-ai-accelerator-market-share-2024-2026" rel="nofollow">Silicon Analysts</a>, <a href="https://www.tomshardware.com/tech-industry/semiconductors/custom-ai-asics-examined-from-broadcom-to-mtia" rel="nofollow">Tom's Hardware</a>, <a href="https://introl.com/blog/custom-silicon-inflection-2026-hyperscaler-asics-nvidia-gpu" rel="nofollow">Introl</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Figures are as reported by the sources above and were accurate at publication. Company names illustrate a structural shift in the AI compute supply chain, not buy recommendations &mdash; verify against primary filings before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
