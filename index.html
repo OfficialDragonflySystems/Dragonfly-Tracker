@@ -428,9 +428,10 @@ function toggleBars(){
     open ? 'Hide live market data &#9652;' : 'Show live market data &#9662;';
 }
 (function(){
-  // Default: open on desktop (>600px), closed on mobile. Stored choice wins.
+  // Default: COLLAPSED for everyone — a cleaner, calmer first impression (the dense
+  // live-market bars are opt-in via "Show live market data"). A stored choice wins.
   var stored = localStorage.getItem('df_bars');
-  var open = stored ? (stored === 'open') : (window.innerWidth > 600);
+  var open = stored ? (stored === 'open') : false;
   if (open) {
     document.body.classList.add('bars-open');
     var l = document.getElementById('bars-toggle-label');
