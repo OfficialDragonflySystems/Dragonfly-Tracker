@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Early: Why Time Is Your Biggest Edge - Dragonfly Lens</title>
+<meta name="description" content="The biggest secret in investing isn't a hot stock - it's time. Move the sliders and watch a small monthly habit become a retirement. Plain English, with the real accounts that make it happen.">
+<meta property="og:title" content="Start Early: Why Time Is Your Biggest Edge">
+<meta property="og:description" content="A small monthly habit, started young, becomes a retirement - because of compounding. Move the sliders and see it for yourself.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/start-early.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/start-early-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Start Early: Why Time Is Your Biggest Edge">
+<meta name="twitter:description" content="A small monthly habit, started young, becomes a retirement. Move the sliders and see compounding for yourself.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/start-early-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:760px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(22px,3.4vw,29px);font-weight:400;margin:42px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .calc{background:var(--panel);border:1px solid #25463b;border-radius:16px;padding:22px;margin:18px 0;}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0;flex-wrap:wrap;}
+  .row label{font-size:14px;color:var(--ink);font-weight:600;}
+  .row .sub{font-size:11px;color:var(--muted);font-weight:400;}
+  input[type=range]{width:100%;accent-color:var(--lime);height:26px;}
+  .ctrl{flex:1;min-width:240px;}
+  .val{font-family:Georgia,serif;font-size:18px;color:var(--lime);font-weight:700;min-width:90px;text-align:right;}
+  select{background:#070b10;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:14px;}
+  .out{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;border-radius:14px;padding:20px;margin-top:18px;text-align:center;}
+  .big{font-family:Georgia,serif;font-size:clamp(34px,8vw,54px);font-weight:400;color:#fff;line-height:1.05;}
+  .bar{display:flex;height:26px;border-radius:7px;overflow:hidden;margin:16px 0 6px;border:1px solid var(--line);}
+  .bar .c{background:#2d6a4f;} .bar .g{background:var(--lime);}
+  .legend{display:flex;gap:16px;justify-content:center;font-size:12px;color:var(--muted);flex-wrap:wrap;}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle;}
+  .wait{background:rgba(246,169,107,.08);border:1px solid rgba(246,169,107,.35);border-radius:10px;padding:12px 15px;margin-top:14px;font-size:14px;color:#f6c89b;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  ul{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; The Edge Nobody Teaches You</div>
+  <h1>Start Early: Why Time Beats Money</h1>
+  <p class="lead">The biggest secret in investing isn't a hot stock &mdash; it's <b>time</b>. A small habit, started young, quietly becomes a fortune. Don't take our word for it. <b>Move the sliders.</b></p>
+
+  <!-- ── CALCULATOR ── -->
+  <div class="calc">
+    <div class="row">
+      <div class="ctrl">
+        <label>I'll invest <span class="val" id="amt-v">$50</span> / month</label>
+        <input type="range" id="amt" min="10" max="1000" step="10" value="50" oninput="calc()">
+      </div>
+    </div>
+    <div class="row">
+      <div class="ctrl">
+        <label>Starting at age <span class="val" id="start-v">18</span></label>
+        <input type="range" id="start" min="0" max="60" step="1" value="18" oninput="calc()">
+      </div>
+    </div>
+    <div class="row">
+      <div class="ctrl">
+        <label>Until age <span class="val" id="retire-v">65</span></label>
+        <input type="range" id="retire" min="20" max="75" step="1" value="65" oninput="calc()">
+      </div>
+    </div>
+    <div class="row">
+      <label>Assumed yearly return
+        <span class="sub def" data-d="How much your money grows per year on average. ~7% is a common long-run estimate for a broad stock-market index fund after inflation-ish - some years much higher, some negative. Nothing is guaranteed.">(what's this?)</span>
+      </label>
+      <select id="rate" onchange="calc()">
+        <option value="5">5% (cautious)</option>
+        <option value="7" selected>7% (historical average)</option>
+        <option value="10">10% (optimistic)</option>
+      </select>
+    </div>
+
+    <div class="out">
+      <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;">You could have</div>
+      <div class="big" id="out-fv">$0</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px;" id="out-sub">by retirement</div>
+      <div class="bar"><div class="c" id="bar-c" style="width:50%;"></div><div class="g" id="bar-g" style="width:50%;"></div></div>
+      <div class="legend">
+        <span><span class="dot" style="background:#2d6a4f;"></span>You put in <b id="out-contrib" style="color:#cfe3cf;">$0</b></span>
+        <span><span class="dot" style="background:var(--lime);"></span>Growth (you didn't lift a finger) <b id="out-growth" style="color:#cfe3cf;">$0</b></span>
+      </div>
+      <div class="wait" id="out-wait"></div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:-2px;">Illustration only &mdash; real returns vary year to year and aren't guaranteed. The <i>point</i> is the shape, not the exact number.</p>
+
+  <h2>Why a little money becomes a lot</h2>
+  <p>It's one idea: <span class="def" data-d="Earning returns on your past returns, not just on the money you put in. Year 1 your $100 earns $7. Year 2 you earn on $107, not $100. The gap looks tiny early and enormous later.">compounding</span> &mdash; your money earns money, and then <i>that</i> money earns money too. It's a snowball. Early on it barely moves. Decades later it's an avalanche &mdash; and most of the avalanche is growth you never paid for.</p>
+  <p>That's why <b>time beats money</b>. Someone who invests a little from 18 usually ends up ahead of someone who invests a lot starting at 35 &mdash; even if the late starter puts in <i>more total cash</i>. The early starter had the one thing you can't buy back: <b>years</b>.</p>
+  <div class="flag"><b>The cruel twist:</b> the cost of waiting is invisible. Skipping it doesn't hurt today &mdash; it just quietly removes a big chunk of your future self's money. Starting <i>now</i>, even tiny, is the whole game.</div>
+
+  <h2>How to actually do this (the real accounts)</h2>
+  <p>We're a research and education service &mdash; not a bank or a fund. But here are the real, boring, powerful tools that make the chart above happen. The hard part isn't picking them; it's <b>starting</b>.</p>
+  <ul>
+    <li><b>A <span class="def" data-d="A retirement account where your money grows TAX-FREE for decades, and you pay no tax when you withdraw in retirement. A teen with a summer job (earned income) can have one - often the single best account to start young.">Roth IRA</span></b> &mdash; if you (or your teen) have any earned income. Tax-free growth for 40+ years. Possibly the best head-start account that exists.</li>
+    <li><b>A <span class="def" data-d="A 'set it and forget it' fund that automatically holds a sensible mix and gets more conservative as your target date nears. Pick the year near your retirement and contribute - it handles the rest.">target-date fund</span></b> &mdash; the closest thing to "open it and ignore it for 30 years."</li>
+    <li><b>A low-cost <span class="def" data-d="A fund that simply owns a big basket of the whole market (e.g. the S&P 500) instead of betting on individual stocks. Cheap, diversified, and historically the thing that produces the ~7% in the calculator.">index fund</span></b> &mdash; cheap, diversified, the workhorse behind that 7%.</li>
+    <li><b>For a kid:</b> a <b>custodial account</b> (UTMA) or a <b>529</b> (for education) lets a parent start the snowball before the child can.</li>
+  </ul>
+  <p>The move: open <i>one</i> of these, set a small automatic monthly transfer, pick a target-date or index fund, and let time do the work. That's it. That's the whole secret the calculator just showed you.</p>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;text-align:center;">
+    <div class="kick">The earlier you start, the less you need</div>
+    <p style="color:var(--muted);max-width:560px;margin:8px auto 18px;">Dragonfly Lens explains money in plain English &mdash; markets, investing, and what's coming next &mdash; so you can actually understand it and start.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Learn with us &rarr;</a>
+    <div style="margin-top:18px;font-size:13px;color:var(--muted);"><a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Is $50/month really worth it?</b> Yes &mdash; started young, that small habit can grow into hundreds of thousands by retirement, because most of the final amount is compounding growth, not your contributions. The exact figure varies with returns, but the shape always favors starting early.</p>
+    <p><b>I'm not a teenager &mdash; is it too late?</b> No. The best time was years ago; the second best is today. The calculator shows the cost of waiting precisely so you start now instead of later.</p>
+    <p style="margin-bottom:0;"><b>Where do I actually put the money?</b> For most people starting out: a Roth IRA (if you have earned income) holding a low-cost target-date or index fund, with a small automatic monthly contribution. Educational info, not personalized advice &mdash; confirm what fits your situation.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Is investing $50 a month really worth it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Started young, a small monthly habit can grow into hundreds of thousands of dollars by retirement, because most of the final amount comes from compounding growth rather than your contributions. The exact figure depends on returns, but the math always rewards starting early."}},
+  {"@type":"Question","name":"Is it too late to start investing if I am not young?","acceptedAnswer":{"@type":"Answer","text":"No. The best time to start was years ago; the second best time is today. Starting later means you rely more on contributions and less on time, but starting now still beats waiting - the cost of waiting only grows."}},
+  {"@type":"Question","name":"Where should a beginner actually put the money?","acceptedAnswer":{"@type":"Answer","text":"For most beginners: a Roth IRA, if you have earned income, holding a low-cost target-date fund or broad index fund, funded by a small automatic monthly contribution. This is educational information, not personalized advice."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>How the calculator works:</b> it compounds your monthly contribution monthly at the chosen annual rate from your start age to your end age (future value of a monthly annuity). Real-world returns are volatile and not guaranteed; this is an illustration of how compounding behaves, not a prediction. Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor, bank, or broker-dealer. Account types (Roth IRA, 529, UTMA, target-date funds) are described in general terms - eligibility and rules vary; verify your own situation before acting.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+function fmt(v){ return '$' + Math.round(v).toLocaleString(); }
+function calc(){
+  var P = +document.getElementById('amt').value || 0;
+  var startAge = +document.getElementById('start').value || 0;
+  var retire = +document.getElementById('retire').value || 65;
+  var R = (+document.getElementById('rate').value || 7) / 100;
+  // keep retire above start
+  if (retire <= startAge){ retire = startAge + 1; }
+  document.getElementById('amt-v').textContent = '$' + P;
+  document.getElementById('start-v').textContent = startAge;
+  document.getElementById('retire-v').textContent = retire;
+  var years = retire - startAge;
+  var n = years * 12;
+  var r = R / 12;
+  var fv = r > 0 ? P * ((Math.pow(1+r, n) - 1) / r) : P * n;
+  var contrib = P * n;
+  var growth = Math.max(0, fv - contrib);
+  document.getElementById('out-fv').textContent = fmt(fv);
+  document.getElementById('out-sub').textContent = 'by age ' + retire + ' (' + years + ' years of investing ' + fmt(P) + '/mo)';
+  document.getElementById('out-contrib').textContent = fmt(contrib);
+  document.getElementById('out-growth').textContent = fmt(growth);
+  var cpct = fv > 0 ? Math.round(contrib / fv * 100) : 50;
+  document.getElementById('bar-c').style.width = cpct + '%';
+  document.getElementById('bar-g').style.width = (100 - cpct) + '%';
+  // cost of waiting 10 years (only meaningful if there's room)
+  var w = document.getElementById('out-wait');
+  if (years > 10){
+    var n2 = (years - 10) * 12;
+    var fv2 = r > 0 ? P * ((Math.pow(1+r, n2) - 1) / r) : P * n2;
+    w.style.display = 'block';
+    w.innerHTML = 'Wait just <b>10 years</b> to start? You would end with about <b>' + fmt(fv - fv2) + ' less</b> - that is the price of waiting.';
+  } else {
+    w.style.display = 'none';
+  }
+}
+calc();
+</script>
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
