@@ -60,7 +60,7 @@
   gtag('config', 'G-TED3ERB140');
 </script>
 </head>
-<body>
+<body data-track="blockchain" data-track-total="5">
 <nav class="top">
   <a href="/" class="logo">&#9671; Dragonfly Lens</a>
   <a href="/learn/" class="back">&larr; all explainers</a>
@@ -105,7 +105,7 @@
   </ul>
 
   <!-- ── QUIZ ── -->
-  <div class="quiz">
+  <div class="quiz" data-quiz="blockchain-basics">
     <h3>&#127918; Test your blockchain IQ</h3>
     <p style="font-size:13px;color:var(--muted);margin:0 0 6px;">Four quick questions. Pick an answer for each, then hit the button.</p>
     <div class="q" data-a="1">
@@ -132,8 +132,8 @@
       <button onclick="pick(this)">They love meme coins</button>
       <button onclick="pick(this)">They want to avoid taxes</button>
     </div>
-    <button class="go" onclick="grade()">See my score</button>
-    <div id="quiz-result"></div>
+    <button class="go" onclick="gradeQuiz(this)">See my score</button>
+    <div class="quiz-result" id="quiz-result"></div>
   </div>
 
   <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;text-align:center;">
@@ -163,38 +163,7 @@
   <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
 </footer>
 
-<script>
-function pick(btn){
-  var q = btn.closest('.q');
-  var bs = q.querySelectorAll('button');
-  for (var i=0;i<bs.length;i++){ bs[i].classList.remove('sel'); }
-  btn.classList.add('sel');
-}
-function grade(){
-  var qs = document.querySelectorAll('#quiz .q');
-  var score = 0;
-  for (var j=0;j<qs.length;j++){
-    var q = qs[j];
-    var bs = q.querySelectorAll('button');
-    var correct = +q.getAttribute('data-a');
-    var sel = q.querySelector('button.sel');
-    for (var i=0;i<bs.length;i++){
-      bs[i].classList.remove('right','wrong');
-      if (i === correct) bs[i].classList.add('right');
-      else if (bs[i] === sel) bs[i].classList.add('wrong');
-    }
-    if (sel){
-      var idx = -1;
-      for (var k=0;k<bs.length;k++){ if (bs[k]===sel) idx=k; }
-      if (idx === correct) score++;
-    }
-  }
-  var ranks = ['Blockchain Rookie','Getting the Idea','Solid Grasp','Sharp','Blockchain Brain'];
-  var rank = ranks[Math.min(score, ranks.length-1)];
-  var trophy = (score === qs.length) ? ' \u{1F3C6}' : '';
-  document.getElementById('quiz-result').innerHTML = 'You scored <b>' + score + ' / ' + qs.length + '</b> - <b style="color:#4ade80;">' + rank + '</b>' + trophy + '. Correct answers are highlighted in green above.';
-}
-</script>
+
 <script>
 (function(){
   var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
@@ -207,6 +176,7 @@ function grade(){
   document.addEventListener('scroll',hide,true);
 })();
 </script>
+<script src="learn-game.js"></script>
 <script src="listen.js"></script>
 <script src="share.js"></script>
 </body>

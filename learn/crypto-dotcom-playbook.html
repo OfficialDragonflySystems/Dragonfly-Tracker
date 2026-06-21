@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dotcom Playbook for Crypto - Telling Real From Junk - Dragonfly Lens</title>
+<meta name="description" content="In 1999 hundreds of internet companies went public on hype. Most went to zero - a few became giants. Crypto is the same shape. Here's the plain-English checklist for telling the rare real projects from the ~95% that will be worth nothing, plus a quiz.">
+<meta property="og:title" content="The Dotcom Playbook for Crypto">
+<meta property="og:description" content="The internet was real; most internet stocks were junk. Blockchain is real; most coins are junk. Here's the 5-point checklist for spotting the few that last - plain English, plus a quiz.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/crypto-dotcom-playbook.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/crypto-dotcom-playbook-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Dotcom Playbook for Crypto">
+<meta name="twitter:description" content="Most 1999 dotcoms died; the internet didn't. Most coins will die; blockchain won't. Here's the checklist for telling them apart. Plain English + a quiz.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/crypto-dotcom-playbook-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:760px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(22px,3.4vw,29px);font-weight:400;margin:42px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  ul{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  .quiz{background:linear-gradient(160deg,#0d1320,#0a1018);border:1px solid #2d3b66;border-radius:16px;padding:22px;margin:26px 0;}
+  .quiz h3{font-size:18px;color:#fff;margin-bottom:4px;}
+  .q{margin:18px 0;}
+  .q p{font-weight:700;color:var(--ink);margin:0 0 8px;}
+  .q button{display:block;width:100%;text-align:left;background:#0e1620;border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:10px 13px;margin:6px 0;font-size:14px;cursor:pointer;transition:all .12s;}
+  .q button:hover{border-color:var(--accent);}
+  .q button.sel{border-color:var(--purple);background:rgba(167,139,250,.12);}
+  .q button.right{border-color:var(--lime);background:rgba(74,222,128,.14);}
+  .q button.wrong{border-color:var(--bad);background:rgba(248,113,113,.12);}
+  .quiz .go{background:var(--lime);color:#06231e;font-weight:800;border:none;border-radius:9px;padding:11px 22px;font-size:15px;cursor:pointer;margin-top:6px;}
+  #quiz-result{margin-top:14px;font-size:15px;color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body data-track="blockchain" data-track-total="5">
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Blockchain Foundations (5 of 5)</div>
+  <h1>The Dotcom Playbook for Crypto</h1>
+  <p class="lead">We have one job left in this series: a practical way to tell the rare real crypto project from the roughly 95% that will be worth nothing. The good news is we don't need a crystal ball &mdash; we have a map, and it's already 25 years old. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+
+  <h2>1999, all over again</h2>
+  <p>In 1999, the internet was clearly going to change the world. So money poured into anything with ".com" in the name. Hundreds of companies <span class="def" data-d="Initial Public Offering - the first time a company sells its shares to the public. In 1999 dozens of barely-formed internet companies did this on hype alone, then collapsed.">IPO'd</span> on little more than a logo and a pitch deck. Most of them &mdash; <b>Pets.com, Webvan, Pets.com's many cousins</b> &mdash; went to zero within a couple of years.</p>
+  <p>But a few did not. <b>Amazon</b> survived the crash and became a giant. <b>Google</b> arrived a little later and reshaped the planet. The lesson is the one almost everyone gets backwards: <b>the internet was not fake. Most internet stocks were just overpriced junk.</b> Those are two completely different statements.</p>
+  <div class="real"><b>The whole frame in one sentence:</b> blockchain is to crypto what the internet was to dotcom stocks. The technology is real and probably the future of how money and assets move &mdash; and most of the individual coins riding on it will still be worth roughly nothing in ten years. The skill is telling those two apart.</div>
+
+  <h2>The playbook: 5 questions that separate signal from noise</h2>
+  <p>When we look at any crypto project at the Lens, we judge it the way we'd judge any business: <b>is it trustworthy, and is it genuinely needed?</b> Here is how that breaks down into five plain questions.</p>
+
+  <p><b>1. Real users and real usage &mdash; not just price.</b> The first question is never "is the price up?" It's "<b>is anyone actually using this?</b>" Real projects have people doing real things on them every day &mdash; sending payments, building apps, trading actual goods. If the only activity is people buying the token hoping to sell it higher, that's not a business. That's a <span class="def" data-d="A trade where the only reason to buy is the belief that someone else will pay more later. There's no underlying use or earnings - just the hope of a 'greater fool' down the line.">greater-fool game</span>.</p>
+
+  <p><b>2. Does it solve a real problem, better or cheaper?</b> Amazon was genuinely better than driving to a store. Ask the same of any coin: does this do something people need <b>better, faster, or cheaper than the old way?</b> "It's on the blockchain" is not an answer. Plenty of things work fine in a normal database. The real ones replace a slow, expensive middleman with something clearly better.</p>
+
+  <p><b>3. Value capture &mdash; does it actually earn, or just sell tokens?</b> A real business takes in more value than it gives away. Many crypto projects survive only by <b>printing and selling new tokens</b> &mdash; which quietly dilutes everyone who already holds them. Look at the <span class="def" data-d="The rules for how a token is created, distributed, and used - how many exist, who got them, how new ones are made, and whether holding it earns anything. Bad tokenomics quietly funnel value to insiders.">tokenomics</span>: does the project earn fees from real activity, or is it just funding itself by minting more coins?</p>
+
+  <p><b>4. Trust, track record, and transparency.</b> Who is behind it? Is the code <span class="def" data-d="Anyone can read and inspect the project's code, and outside experts have reviewed it for flaws. The opposite is a closed, unaudited project run by people you can't name - a classic setup for a rug pull.">open and audited</span>, or closed and unexplained? Has the team delivered before, or is it an anonymous founder and a wall of hype? This is the same question that gives a dollar its value: <b>trust.</b> No trust, no value &mdash; no matter how exciting the chart looks.</p>
+
+  <p><b>5. Survives a bust.</b> This is the Amazon test. The dotcom crash wiped out the junk and left the real businesses standing &mdash; with their users intact. The crypto projects that matter are the ones that <b>come out the other side of a brutal crash still being used.</b> Hype evaporates in a downturn; genuine usefulness doesn't. A bear market is the most honest audit there is.</p>
+
+  <h2>Red flags: the tells of the junk 95%</h2>
+  <div class="flag"><b>Read this twice.</b> If you see these, walk away &mdash; they are the fingerprints of the projects that go to zero: <b>promises of guaranteed returns</b> (no honest investment guarantees anything); <b>influencer pumping</b> (paid hype dressed up as insight); <b>"number go up" as the entire thesis</b> (no use, no earnings, just momentum); <b>anonymous teams</b> who can vanish with the money; and <b>tokenomics that mostly enrich insiders</b> while regular buyers hold the bag.</div>
+  <p>None of these are subtle once you know to look for them. The hard part is emotional, not analytical: the junk projects are usually the <i>loudest</i> and the most exciting, precisely because hype is all they have. The real ones are often quietly busy building.</p>
+
+  <h2>Problems are opportunities</h2>
+  <p>Here's the optimistic flip side. Every weakness in this market is a business waiting to be built &mdash; that's the mindset we carry everywhere:</p>
+  <ul>
+    <li><b>95% is junk</b> &rarr; opportunity: trustworthy ratings and plain-English screening tools that help normal people avoid the landmines (a big part of what we do).</li>
+    <li><b>Telling real from fake is hard</b> &rarr; opportunity: the firm that builds an honest, transparent scorecard for projects earns deep trust.</li>
+    <li><b>Hype drowns out substance</b> &rarr; opportunity: patient, evidence-first coverage that gets <i>more</i> valuable every time a hyped coin collapses.</li>
+    <li><b>Crashes scare people off</b> &rarr; opportunity: whoever calmly explains which projects survived a bust, and why, becomes the trusted guide for the next cycle.</li>
+  </ul>
+
+  <h2>The honest bottom line</h2>
+  <p>Even with this whole checklist, <b>most projects will still fail.</b> The dotcom era proved that even smart, careful people backed plenty of losers; the winners were rare and far from obvious at the time. So the realistic posture is humility: assume you'll be wrong often, <b>size any position so a total loss wouldn't hurt you,</b> and let the survivors prove themselves over years, not weeks. The checklist tilts the odds. It does not remove the risk.</p>
+
+  <!-- QUIZ -->
+  <div class="quiz" data-quiz="crypto-dotcom-playbook">
+    <h3>&#127918; Test your dotcom-playbook IQ</h3>
+    <p style="font-size:13px;color:var(--muted);margin:0 0 6px;">Four quick questions. Pick an answer for each, then hit the button.</p>
+    <div class="q" data-a="2">
+      <p>1. What's the right lesson from the 1999 dotcom boom?</p>
+      <button onclick="pick(this)">The internet was a scam from the start</button>
+      <button onclick="pick(this)">Every internet company eventually won</button>
+      <button onclick="pick(this)">The internet was real, but most internet stocks were overpriced junk</button>
+    </div>
+    <div class="q" data-a="1">
+      <p>2. What's the first question to ask about a crypto project?</p>
+      <button onclick="pick(this)">Is the price going up fast?</button>
+      <button onclick="pick(this)">Is anyone actually using it?</button>
+      <button onclick="pick(this)">Are famous influencers promoting it?</button>
+    </div>
+    <div class="q" data-a="0">
+      <p>3. Which of these is a classic red flag?</p>
+      <button onclick="pick(this)">Promises of guaranteed returns</button>
+      <button onclick="pick(this)">Open-source, audited code</button>
+      <button onclick="pick(this)">A named team with a track record</button>
+    </div>
+    <div class="q" data-a="2">
+      <p>4. What does the "survives a bust" test tell you?</p>
+      <button onclick="pick(this)">The project has the most exciting marketing</button>
+      <button onclick="pick(this)">Its price never falls</button>
+      <button onclick="pick(this)">It comes out of a brutal crash still being used - hype dies, usefulness doesn't</button>
+    </div>
+    <button class="go" onclick="gradeQuiz(this)">See my score</button>
+    <div class="quiz-result"></div>
+  </div>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;text-align:center;">
+    <div class="kick">You finished the series</div>
+    <p style="color:var(--muted);max-width:560px;margin:8px auto 16px;">That's the whole Blockchain Foundations track &mdash; what blockchain is, tokenization, the agent economy, and now the dotcom playbook. Dragonfly Lens explains money and what's coming next so you actually understand it.</p>
+    <a href="/learn/" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">All explainers &rarr;</a>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>If most crypto goes to zero, why bother at all?</b> Because a few projects won't - just like a few 1999 dotcoms became giants. The point isn't to avoid the whole space; it's to apply a checklist so you're holding the rare real ones, not the loud junk, and to size positions assuming you'll still be wrong often.</p>
+    <p><b>What's the single fastest red flag?</b> A promise of guaranteed returns. No honest investment guarantees anything. Pair that with anonymous founders and "number go up" as the only thesis, and you're almost certainly looking at one of the 95%.</p>
+    <p style="margin-bottom:0;"><b>How do I judge a project without being technical?</b> Ask plain-business questions: Is anyone using it? Does it solve a real problem cheaper? Does it earn, or just sell tokens? Who's behind it, and is it open? Would it survive a crash? Trustworthy plus genuinely needed - that's the test.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"If most crypto goes to zero, why bother at all?","acceptedAnswer":{"@type":"Answer","text":"Because a few projects will not, just as a few 1999 dotcom companies became giants while most failed. The point is not to avoid the space entirely; it is to apply a checklist so you hold the rare real projects rather than the loud junk, and to size positions assuming you will still be wrong often."}},
+  {"@type":"Question","name":"What is the single fastest crypto red flag?","acceptedAnswer":{"@type":"Answer","text":"A promise of guaranteed returns. No honest investment guarantees anything. Paired with anonymous founders and a thesis that is only number-go-up, that is almost certainly one of the roughly 95 percent of projects that will be worth nothing."}},
+  {"@type":"Question","name":"How do I judge a crypto project without being technical?","acceptedAnswer":{"@type":"Answer","text":"Ask plain-business questions: Is anyone actually using it? Does it solve a real problem cheaper or better? Does it earn fees or just sell new tokens? Who is behind it and is the code open and audited? Would it survive a brutal crash with users intact? Trustworthy plus genuinely needed is the test."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources / further reading:</b> the dotcom crash of 2000-2002 wiped out the large majority of internet IPOs (Pets.com, Webvan and many others) while survivors like Amazon endured; this is well documented market history. The crypto comparison is an analogy for thinking, not a prediction about any specific token. Educational research, not personalized or investment advice. Dragonfly Lens is not a registered investment advisor. Crypto assets are extremely volatile and many tokens are worthless or fraudulent - this explains a way of thinking, it does not endorse any token or project.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="learn-game.js"></script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
