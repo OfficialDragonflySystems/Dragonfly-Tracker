@@ -21,7 +21,11 @@
   h1{font-family:Georgia,serif;font-size:clamp(30px,4.4vw,46px);font-weight:normal;line-height:1.15;margin-bottom:16px;}
   .lead{font-size:16px;color:var(--muted);max-width:740px;margin-bottom:48px;line-height:1.7;}
 
-  .section-h{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+  .section-h{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border);scroll-margin-top:80px;}
+  .secnav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px;}
+  .secnav a{font-size:12px;font-weight:700;color:var(--lime);background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);border-radius:20px;padding:6px 14px;text-decoration:none;}
+  .secnav a.go{color:#06231e;background:var(--lime);border-color:var(--lime);font-weight:800;}
+  .secnav a:hover{background:rgba(74,222,128,.2);}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
   .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px;transition:border-color .15s,transform .15s;display:flex;flex-direction:column;}
@@ -65,11 +69,26 @@
   <h1>Learn the concepts. Use the tools.</h1>
   <p class="lead">Every term Dragonfly uses, explained in plain English by people who remember what it was like to not know what they meant. No jargon left untranslated. No assumed knowledge. Walk through one a week and within a few months you'll read a Bloomberg headline the way a portfolio manager does.</p>
 
-  <div class="section-h">Concepts</div>
+  <div class="secnav">
+    <a href="start-here.html" class="go">&#9655; Start here</a>
+    <a href="#concepts">Concepts</a>
+    <a href="#tools">Interactive tools</a>
+    <a href="#deep-dives">Deep dives</a>
+    <a href="#trackers">Live trackers</a>
+  </div>
+
+  <div class="section-h" id="concepts">Concepts</div>
   <div class="grid">
 
+    <a href="start-here.html" class="card" style="border-color:#3fae6a;background:rgba(74,222,128,.05);">
+      <span class="tag tag-concept">Start here &middot; Read this first</span>
+      <h2>What Dragonfly Lens is &amp; how it helps you</h2>
+      <p>New here? In two minutes &mdash; what we are, what you get, why it exists, and how it helps you understand your money and invest in your future. Calm, honest, plain English.</p>
+      <span class="arrow">Start here &rarr;</span>
+    </a>
+
     <a href="start-early.html" class="card" style="border-color:#2d5a35;">
-      <span class="tag tag-concept">Start here &middot; Interactive</span>
+      <span class="tag tag-concept">Interactive</span>
       <h2>Start Early: why time beats money</h2>
       <p>The biggest secret in investing isn't a hot stock &mdash; it's time. Move the sliders and watch a small monthly habit become a retirement. The one explainer to send anyone who hasn't started yet.</p>
       <span class="arrow">Try the calculator &rarr;</span>
@@ -160,7 +179,7 @@
     </a>
   </div>
 
-  <div class="section-h">Interactive tools</div>
+  <div class="section-h" id="tools">Interactive tools</div>
   <div class="grid">
 
     <a href="../cost_calculator.html" class="card">
@@ -179,7 +198,7 @@
 
   </div>
 
-  <div class="section-h">Deep dives</div>
+  <div class="section-h" id="deep-dives">Deep dives</div>
   <div class="grid">
 
     <a href="nvidia-custom-silicon.html" class="card" style="border-color:#2d5a35;">
@@ -345,7 +364,7 @@
 
   </div>
 
-  <div class="section-h">Live trackers &amp; the archive</div>
+  <div class="section-h" id="trackers">Live trackers &amp; the archive</div>
   <div class="grid">
 
     <a href="ai-ipo-tracker.html" class="card">
