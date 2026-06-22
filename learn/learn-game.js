@@ -46,7 +46,10 @@
       if (!state.tracks[track][path]){ state.tracks[track][path] = 1; save(state); }
       var total = +document.body.getAttribute('data-track-total') || 0;
       var done = Object.keys(state.tracks[track]).length;
-      if (total && done >= total) badge('track_'+track, capitalize(track)+' complete');
+      if (total && done >= total && !state.badges['track_'+track]){
+        badge('track_'+track, capitalize(track)+' complete');
+        celebrate(capitalize(track) + ' Foundations: complete', 'You finished all ' + total + ' lessons. That is real understanding - the kind most people never get the chance to build. Well done.');
+      }
     }
   }
   function capitalize(s){ return (s||'').charAt(0).toUpperCase() + (s||'').slice(1); }
@@ -109,6 +112,21 @@
     t.style.cssText = 'position:fixed;left:50%;bottom:60px;transform:translateX(-50%);z-index:1001;background:#1a3a1f;color:#4ade80;border:1px solid #2d6a4f;border-radius:20px;padding:8px 16px;font:700 13px -apple-system,Segoe UI,Arial,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.5);opacity:0;transition:opacity .25s;';
     document.body.appendChild(t); setTimeout(function(){ t.style.opacity='1'; }, 20);
     setTimeout(function(){ t.style.opacity='0'; setTimeout(function(){ t.remove(); }, 300); }, 2200);
+  }
+  function celebrate(title, sub){
+    if (document.getElementById('dlg-cel')) return;
+    var o = document.createElement('div'); o.id = 'dlg-cel';
+    o.style.cssText = 'position:fixed;inset:0;z-index:2000;background:rgba(4,7,11,.82);display:flex;align-items:center;justify-content:center;padding:20px;';
+    var card = document.createElement('div');
+    card.style.cssText = 'background:linear-gradient(160deg,#0f1b16,#0d1320);border:1px solid #2d5a35;border-radius:18px;max-width:420px;padding:30px 26px;text-align:center;color:#e9eef6;font:16px/1.6 -apple-system,Segoe UI,Arial,sans-serif;box-shadow:0 14px 50px rgba(0,0,0,.7);';
+    card.innerHTML = '<div style="font-size:46px;margin-bottom:6px;">\u{1F3C5}</div><div style="font-family:Georgia,serif;font-size:24px;color:#fff;margin-bottom:8px;">' + title + '</div><div style="color:#93a3b8;font-size:14px;margin-bottom:18px;">' + sub + '</div>';
+    var sh = document.createElement('button'); sh.textContent = 'Share'; sh.style.cssText = 'background:#5eead4;color:#06231e;font-weight:800;border:none;border-radius:9px;padding:10px 18px;font-size:14px;cursor:pointer;margin:0 6px;';
+    sh.onclick = function(){ var txt = title + ' on Dragonfly Lens.'; var url = location.origin + '/learn/'; if (navigator.share){ navigator.share({title:'Dragonfly Lens', text:txt, url:url}).catch(function(){}); } else if (navigator.clipboard){ navigator.clipboard.writeText(txt + ' ' + url); sh.textContent = 'Copied!'; } };
+    var cl = document.createElement('button'); cl.textContent = 'Close'; cl.style.cssText = 'background:#1a2440;color:#cfd8ea;border:1px solid #2d3b66;border-radius:9px;padding:10px 18px;font-size:14px;cursor:pointer;margin:0 6px;';
+    cl.onclick = function(){ o.remove(); };
+    card.appendChild(sh); card.appendChild(cl); o.appendChild(card);
+    o.addEventListener('click', function(e){ if (e.target === o) o.remove(); });
+    document.body.appendChild(o);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ render(); pageVisit(); });
