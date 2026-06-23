@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Map - See Your Whole Financial Picture</title>
+<meta name="description" content="Map your whole financial life in one place: paychecks in, expenses out, and your accounts (chequing, savings, TFSA, investments, dividends). See your monthly surplus, your net worth trajectory, and how hard your money is working - free, plain English, nothing saved.">
+<meta property="og:title" content="Money Map - Your Whole Financial Picture">
+<meta property="og:description" content="Paychecks, expenses, and every account in one view. See your monthly surplus and your net-worth trajectory.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/money-map.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/money-map-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Money Map - Your Whole Financial Picture">
+<meta name="twitter:description" content="Paychecks, expenses, and every account in one view. See your surplus and net-worth trajectory.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/money-map-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#c8a84b;--bad:#f87171;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:860px;margin:0 auto;padding:30px 18px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(28px,5vw,42px);line-height:1.13;font-weight:400;margin:10px 0 12px;}
+  .lead{font-size:17px;color:var(--muted);margin:12px 0 18px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0;}
+  .card h2{font-size:15px;font-weight:800;margin-bottom:2px;}
+  .sub{font-size:12px;color:var(--muted);margin-bottom:10px;}
+  .ln{display:flex;gap:6px;margin:6px 0;align-items:center;}
+  .lab{flex:1;min-width:80px;}
+  input,select{background:#0a1018;border:1px solid var(--line);border-radius:7px;color:var(--ink);padding:7px 9px;font-size:13px;font-weight:600;}
+  input.num{width:92px;text-align:right;} select.sel{width:108px;} input.gr{width:62px;text-align:right;} input.al{width:58px;text-align:right;}
+  .del{background:transparent;border:none;color:var(--bad);font-weight:800;font-size:16px;cursor:pointer;padding:0 4px;}
+  .add{background:transparent;border:1px dashed var(--line);color:var(--accent);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;margin-top:4px;}
+  .hd{display:flex;gap:6px;font-size:9px;color:#5a6a7a;text-transform:uppercase;letter-spacing:.06em;padding:0 2px;}
+  .hd .lab{flex:1;}
+  .snap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:6px 0;}
+  @media(max-width:560px){.snap{grid-template-columns:1fr;}}
+  .stat{background:#0a1018;border:1px solid var(--line);border-radius:10px;padding:12px;}
+  .stat .l{font-size:11px;color:var(--muted);} .stat .v{font-size:21px;font-weight:800;margin-top:2px;}
+  .big{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;}
+  canvas{width:100%;height:230px;display:block;margin-top:6px;}
+  .row2{display:flex;align-items:center;gap:10px;font-size:13px;margin-top:6px;}
+  .disc{color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:28px;padding-top:16px;line-height:1.6;}
+  .cta{display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:11px 22px;border-radius:9px;margin:6px 4px;}
+  .cta.ghost{background:transparent;color:var(--accent);border:1px solid rgba(94,234,212,.4);}
+  footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TED3ERB140');</script>
+</head>
+<body>
+<nav class="top"><a href="/" class="logo">&#9671; Dragonfly Lens</a><a href="/learn/" class="back">&larr; all explainers</a></nav>
+
+<div class="wrap">
+  <div class="kick">Interactive &middot; The whole picture</div>
+  <h1>Money Map</h1>
+  <p class="lead">Your whole financial life in one view: <b>money in</b> (paychecks), <b>money out</b> (expenses), and <b>where it sits</b> (chequing, savings, TFSA, investments, dividends). See your monthly surplus and exactly where your net worth is headed. Nothing is saved &mdash; it all stays in your browser.</p>
+
+  <div class="card">
+    <h2>1. Money coming in</h2>
+    <div class="sub">Your paychecks and any other recurring income.</div>
+    <div class="hd"><span class="lab">Source</span><span style="width:92px;text-align:right;">Amount</span><span style="width:108px;">How often</span><span style="width:22px;"></span></div>
+    <div id="inc"></div>
+    <button class="add" onclick="addInc()">+ Add income</button>
+  </div>
+
+  <div class="card">
+    <h2>2. Money going out</h2>
+    <div class="sub">Recurring monthly expenses &mdash; rent or mortgage, food, transport, bills, anything.</div>
+    <div class="hd"><span class="lab">Expense</span><span style="width:92px;text-align:right;">$ / month</span><span style="width:22px;"></span></div>
+    <div id="exp"></div>
+    <button class="add" onclick="addExp()">+ Add expense</button>
+  </div>
+
+  <div class="card big">
+    <h2>Your monthly snapshot</h2>
+    <div class="snap">
+      <div class="stat"><div class="l">Coming in</div><div class="v" id="mInc" style="color:var(--lime);">$0</div></div>
+      <div class="stat"><div class="l">Going out</div><div class="v" id="mExp" style="color:var(--bad);">$0</div></div>
+      <div class="stat"><div class="l">Left to save / invest</div><div class="v" id="surplus">$0</div></div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);" id="allocNote"></div>
+  </div>
+
+  <div class="card">
+    <h2>3. Your accounts</h2>
+    <div class="sub">Each account: what's in it now, the growth you expect, and how much of your monthly surplus you put in. (Chequing usually 0% growth / 0% in; investments grow ~7%.)</div>
+    <div class="hd"><span class="lab">Account</span><span style="width:92px;text-align:right;">Balance</span><span style="width:62px;text-align:right;">Grow %</span><span style="width:58px;text-align:right;">% in</span><span style="width:22px;"></span></div>
+    <div id="acc"></div>
+    <button class="add" onclick="addAcc()">+ Add account</button>
+  </div>
+
+  <div class="card big">
+    <h2>Where you're headed</h2>
+    <div class="row2"><span>Project</span><input type="number" id="yrs" value="20" min="1" max="50" style="width:70px;text-align:right;"> <span>years</span></div>
+    <div class="snap" style="margin-top:10px;">
+      <div class="stat"><div class="l">Net worth now</div><div class="v" id="nowNet" style="font-size:18px;">$0</div></div>
+      <div class="stat"><div class="l">Net worth in <span id="yl">20</span> yrs</div><div class="v" id="futNet" style="color:var(--lime);">$0</div></div>
+      <div class="stat"><div class="l">Money working for you then</div><div class="v" id="passive" style="color:var(--gold);font-size:18px;">$0</div></div>
+    </div>
+    <canvas id="chart" width="800" height="230"></canvas>
+    <div style="font-size:10px;color:#5a6a7a;margin-top:4px;">Your combined net worth over time &mdash; growth plus what you keep adding from your surplus.</div>
+  </div>
+
+  <div class="card" style="text-align:center;">
+    <div class="kick">Make the investing part real</div>
+    <p style="color:var(--muted);max-width:560px;margin:8px auto 12px;font-size:14px;">Once you know your surplus, plan the income it can buy and find the reliable payers behind it.</p>
+    <a class="cta" href="dividend-planner.html">Dividend Income Planner &rarr;</a>
+    <a class="cta ghost" href="/">Open the app</a>
+  </div>
+
+  <p class="disc">Educational planning tool, not financial advice. It compounds the simple assumptions you enter (growth rates, contributions) annually; real life varies, returns aren't guaranteed, and it ignores taxes and inflation unless you bake them into your numbers. Use it to build intuition for your trajectory. Nothing you type is sent anywhere or stored &mdash; it lives only in this browser tab. Dragonfly Lens is not a registered investment advisor.</p>
+</div>
+
+<footer><a href="/learn/">&larr; All explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.</footer>
+
+<script>
+var INC = [{l:'Paycheck', a:2000, f:26}];
+var EXP = [{l:'Rent / mortgage', a:1500},{l:'Food & groceries', a:600},{l:'Transport', a:300},{l:'Bills & other', a:450}];
+var ACC = [{l:'Chequing', b:3000, g:0, al:0},{l:'Savings', b:5000, g:3, al:15},{l:'TFSA', b:10000, g:7, al:40},{l:'Investments', b:8000, g:7, al:35}];
+var FREQ = [['Weekly',52],['Biweekly',26],['Semi-monthly',24],['Monthly',12],['Yearly',1]];
+
+function $(id){ return document.getElementById(id); }
+function money(n){ return '$' + Math.round(n).toLocaleString(); }
+
+function renderInc(){
+  $('inc').innerHTML = INC.map(function(x,i){
+    var opts = FREQ.map(function(f){ return '<option value="'+f[1]+'"'+(f[1]===x.f?' selected':'')+'>'+f[0]+'</option>'; }).join('');
+    return '<div class="ln"><input class="lab" value="'+x.l+'" onchange="INC['+i+'].l=this.value">'
+      + '<input class="num" type="number" value="'+x.a+'" onchange="INC['+i+'].a=+this.value||0;calc()">'
+      + '<select class="sel" onchange="INC['+i+'].f=+this.value;calc()">'+opts+'</select>'
+      + '<button class="del" onclick="INC.splice('+i+',1);renderInc();calc()">&times;</button></div>';
+  }).join('');
+}
+function renderExp(){
+  $('exp').innerHTML = EXP.map(function(x,i){
+    return '<div class="ln"><input class="lab" value="'+x.l+'" onchange="EXP['+i+'].l=this.value">'
+      + '<input class="num" type="number" value="'+x.a+'" onchange="EXP['+i+'].a=+this.value||0;calc()">'
+      + '<button class="del" onclick="EXP.splice('+i+',1);renderExp();calc()">&times;</button></div>';
+  }).join('');
+}
+function renderAcc(){
+  $('acc').innerHTML = ACC.map(function(x,i){
+    return '<div class="ln"><input class="lab" value="'+x.l+'" onchange="ACC['+i+'].l=this.value">'
+      + '<input class="num" type="number" value="'+x.b+'" onchange="ACC['+i+'].b=+this.value||0;calc()">'
+      + '<input class="gr" type="number" value="'+x.g+'" onchange="ACC['+i+'].g=+this.value||0;calc()">'
+      + '<input class="al" type="number" value="'+x.al+'" onchange="ACC['+i+'].al=+this.value||0;calc()">'
+      + '<button class="del" onclick="ACC.splice('+i+',1);renderAcc();calc()">&times;</button></div>';
+  }).join('');
+}
+function addInc(){ INC.push({l:'Income', a:1000, f:12}); renderInc(); calc(); }
+function addExp(){ EXP.push({l:'Expense', a:200}); renderExp(); calc(); }
+function addAcc(){ ACC.push({l:'Account', b:0, g:5, al:0}); renderAcc(); calc(); }
+
+function calc(){
+  var mInc = INC.reduce(function(s,x){ return s + x.a * x.f / 12; }, 0);
+  var mExp = EXP.reduce(function(s,x){ return s + x.a; }, 0);
+  var surplus = mInc - mExp;
+  $('mInc').textContent = money(mInc);
+  $('mExp').textContent = money(mExp);
+  $('surplus').textContent = money(surplus);
+  $('surplus').style.color = surplus >= 0 ? '#4ade80' : '#f87171';
+  var allocSum = ACC.reduce(function(s,x){ return s + (x.al||0); }, 0);
+  $('allocNote').textContent = surplus < 0
+    ? 'You are spending more than you earn by ' + money(-surplus) + '/mo. Trim expenses or grow income before investing.'
+    : (allocSum > 100 ? 'You have allocated ' + allocSum + '% of your surplus - more than 100%. Trim it back.'
+      : 'You are putting ' + allocSum + '% of your surplus to work; the other ' + (100 - allocSum) + '% builds up as cash.');
+
+  var yrs = Math.max(1, Math.min(50, +$('yrs').value || 20));
+  var bb = ACC.map(function(a){ return a.b; });
+  var nowNet = bb.reduce(function(s,b){ return s + b; }, 0);
+  var series = [nowNet];
+  for (var y = 1; y <= yrs; y++){
+    for (var j = 0; j < ACC.length; j++){
+      var contrib = Math.max(0, surplus) * ((ACC[j].al||0) / 100) * 12;
+      bb[j] = bb[j] * (1 + (ACC[j].g||0) / 100) + contrib;
+    }
+    series.push(bb.reduce(function(s,b){ return s + b; }, 0));
+  }
+  var passiveAnnual = 0;
+  for (var k = 0; k < ACC.length; k++){ passiveAnnual += bb[k] * ((ACC[k].g||0) / 100); }
+  $('nowNet').textContent = money(nowNet);
+  $('futNet').textContent = money(series[series.length-1]);
+  $('passive').textContent = money(passiveAnnual / 12) + '/mo';
+  $('yl').textContent = yrs;
+  drawChart(series);
+}
+
+function drawChart(s){
+  var c = $('chart'), ctx = c.getContext('2d'), W = c.width, H = c.height, pad = 44;
+  ctx.clearRect(0,0,W,H);
+  var mx = Math.max.apply(null, s) || 1, n = s.length - 1;
+  function x(i){ return pad + (W-pad-8) * (i/n); }
+  function y(v){ return H-22 - (H-22-8) * (v/mx); }
+  ctx.strokeStyle = '#22303f'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(pad,8); ctx.lineTo(pad,H-22); ctx.lineTo(W-4,H-22); ctx.stroke();
+  ctx.fillStyle = '#5a6a7a'; ctx.font = '10px sans-serif';
+  ctx.fillText(money(mx), 2, 12); ctx.fillText('$0', 2, H-24);
+  ctx.fillText('now', pad-6, H-8); ctx.fillText('yr '+n, W-30, H-8);
+  ctx.beginPath();
+  for (var i=0;i<s.length;i++){ var px=x(i),py=y(s[i]); if(i===0)ctx.moveTo(px,py); else ctx.lineTo(px,py); }
+  ctx.lineTo(x(n), H-22); ctx.lineTo(x(0), H-22); ctx.closePath();
+  ctx.fillStyle = 'rgba(74,222,128,.12)'; ctx.fill();
+  ctx.strokeStyle = '#4ade80'; ctx.lineWidth = 2.5; ctx.beginPath();
+  for (var j=0;j<s.length;j++){ var qx=x(j),qy=y(s[j]); if(j===0)ctx.moveTo(qx,qy); else ctx.lineTo(qx,qy); }
+  ctx.stroke();
+}
+
+renderInc(); renderExp(); renderAcc();
+$('yrs').addEventListener('input', calc);
+$('chart').width = Math.min(800, document.querySelector('.wrap').clientWidth - 32);
+window.addEventListener('resize', function(){ $('chart').width = Math.min(800, document.querySelector('.wrap').clientWidth - 32); calc(); });
+calc();
+</script>
+<script src="learn-game.js"></script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
