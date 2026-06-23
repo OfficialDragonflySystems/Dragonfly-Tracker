@@ -113,10 +113,12 @@
     </div>
   </div>
 
-  <div class="card" style="text-align:center;">
-    <div class="kick">Ready to pick the actual stocks?</div>
-    <p style="color:var(--muted);max-width:560px;margin:8px auto 12px;font-size:14px;">The <b>Dividend Explorer</b> (in the app) shows which stocks pay most reliably, which months they pay, and flags yield traps &mdash; so you can build the portfolio behind your plan.</p>
-    <a class="cta" href="/">Open the app &rarr;</a>
+  <div class="card">
+    <h2>Your path: example names for this style</h2>
+    <div class="sub">Real payers that fit the style you picked &mdash; <b>examples to learn from, not picks</b>. Build your own basket and vet each one's reliability + safety flag before buying.</div>
+    <div id="basket" style="margin:6px 0 8px;"></div>
+    <p style="color:var(--muted);font-size:13px;margin:8px 0 10px;">The <b>Dividend Explorer</b> (in the app) shows which of these pay most reliably, which months they pay, and flags yield traps &mdash; so you can build the actual portfolio behind your plan and aim to hit (or beat) your goal.</p>
+    <a class="cta" href="/">Find &amp; vet these in the Explorer &rarr;</a>
   </div>
 
   <p class="disc">This is an educational planning tool, not advice or a guarantee. It uses the simple assumptions you pick (yield, dividend growth, price growth) compounded annually; real markets vary year to year, dividends can be cut, and taxes apply (hold income in tax-advantaged accounts where you can). The point is to build intuition for your trajectory &mdash; not a promise of returns. Dragonfly Lens is not a registered investment advisor.</p>
@@ -137,12 +139,25 @@ var state = { arch: 'steady', freq: 'monthly' };
 function $(id){ return document.getElementById(id); }
 function money(n){ n = Math.round(n); return '$' + n.toLocaleString(); }
 
+// Example names per style (real reliable payers we cover) - the "path", not picks.
+var BASKETS = {
+  steady:   ['KO','PEP','JNJ','PG','MCD','MMM','DUK','O','TXN','ADP'],
+  balanced: ['ABBV','VZ','T','ET','EPD','MPLX','ARCC','MAIN'],
+  high:     ['AGNC','NLY','ORC','PSEC','FSK','ORCC','DX']
+};
+function renderBasket(){
+  var box = $('basket'); if (!box) return;
+  box.innerHTML = (BASKETS[state.arch] || []).map(function(t){
+    return '<span style="display:inline-block;background:#0a1018;border:1px solid var(--line);border-radius:14px;padding:4px 11px;margin:3px;font-size:12px;font-weight:700;">'+t+'</span>';
+  }).join('');
+}
 function renderArch(){
   $('arch').innerHTML = ARCH.map(function(a){
     var on = a[0] === state.arch ? ' on' : '';
     return '<div class="ac'+on+'" onclick="state.arch=\''+a[0]+'\';renderArch();calc();">'
       + '<b>'+a[1]+'</b><div class="y">'+a[2].toFixed(1)+'%</div><div class="d">'+a[5]+'</div></div>';
   }).join('');
+  renderBasket();
 }
 function renderFreq(){
   $('freq').innerHTML = FREQ.map(function(f){
