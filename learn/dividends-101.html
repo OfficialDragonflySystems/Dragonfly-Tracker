@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dividends 101 - Getting Paid to Own Stocks (Plain English)</title>
+<meta name="description" content="What a dividend actually is, what yield really means (and why a high one is often a warning), the one date that matters (ex-dividend), reinvesting and the snowball, growth vs high yield, and the tax angle - all in plain English, with a quiz.">
+<meta property="og:title" content="Dividends 101 - Getting Paid to Own Stocks">
+<meta property="og:description" content="Dividends, ex-dates, yield traps, reinvesting, and taxes - explained like you're smart but new. Plus a quiz.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/dividends-101.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/dividends-101-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dividends 101 - Getting Paid to Own Stocks">
+<meta name="twitter:description" content="Dividends, ex-dates, yield traps, reinvesting, and taxes - plain English + a quiz.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/dividends-101-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#c8a84b;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:760px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(22px,3.4vw,29px);font-weight:400;margin:42px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  ul{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  .quiz{background:linear-gradient(160deg,#0d1320,#0a1018);border:1px solid #2d3b66;border-radius:16px;padding:22px;margin:26px 0;}
+  .quiz h3{font-size:18px;color:#fff;margin-bottom:4px;}
+  .q{margin:18px 0;} .q p{font-weight:700;color:var(--ink);margin:0 0 8px;}
+  .q button{display:block;width:100%;text-align:left;background:#0e1620;border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:10px 13px;margin:6px 0;font-size:14px;cursor:pointer;transition:all .12s;}
+  .q button:hover{border-color:var(--accent);}
+  .q button.sel{border-color:var(--purple);background:rgba(167,139,250,.12);}
+  .q button.right{border-color:var(--lime);background:rgba(74,222,128,.14);}
+  .q button.wrong{border-color:var(--bad);background:rgba(248,113,113,.12);}
+  .quiz .go{background:var(--lime);color:#06231e;font-weight:800;border:none;border-radius:9px;padding:11px 22px;font-size:15px;cursor:pointer;margin-top:6px;}
+  .quiz-result{margin-top:14px;font-size:15px;color:#fff;}
+  .cta{display:block;background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;border-radius:16px;padding:22px;margin:30px 0;text-align:center;}
+  .cta a{display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:11px 24px;border-radius:9px;text-decoration:none;font-size:15px;margin:5px;}
+  .cta a.ghost{background:transparent;color:var(--accent);border:1px solid rgba(94,234,212,.4);}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TED3ERB140');</script>
+</head>
+<body data-track="income" data-track-total="3">
+<nav class="top"><a href="/" class="logo">&#9671; Dragonfly Lens</a><a href="/learn/" class="back">&larr; all explainers</a></nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Income foundations</div>
+  <h1>Dividends 101: getting paid to own stocks</h1>
+  <p class="lead">Some companies hand a slice of their profits to the people who own them &mdash; that's a <span class="def" data-d="A cash payment a company sends to its shareholders, usually every quarter, out of its profits. You own a slice of the company, so you get a slice of the cash.">dividend</span>. It's one of the calmest ways to make your money work for you. Here's everything you need, in plain English. <b>Hover or tap any <span class="def" data-d="Underlined terms show a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+
+  <h2>What a dividend actually is</h2>
+  <p>When you buy a share, you own a tiny piece of a real business. If that business makes money, it can do two things with the profit: <b>reinvest it</b> to grow, or <b>pay some back to owners</b> as a dividend. Most mature, steady companies do both. So a dividend is simply <b>your cut of the profits</b>, usually paid in cash four times a year.</p>
+  <div class="real"><b>The quiet magic:</b> you get paid just for <i>holding</i> &mdash; you don't have to sell anything or time the market. Own good payers, sit still, collect cash. That's it.</div>
+
+  <h2>Yield &mdash; and why a high one is often a warning</h2>
+  <p>The <span class="def" data-d="The yearly dividend divided by the share price. $2/yr of dividends on a $50 stock = a 4% yield. It moves every day because the PRICE moves.">yield</span> tells you how much income you get for your money: yearly dividend &divide; price. A $50 stock paying $2/year yields 4%.</p>
+  <div class="flag"><b>The #1 beginner trap:</b> chasing the highest yield. A yield is high either because the dividend is genuinely big&hellip; or because <b>the price has crashed on fear the dividend is about to be cut.</b> A 14% yield often means the market expects a cut. <b>Reliability beats yield.</b> Look at how long they've paid without ever cutting, not just the headline number.</div>
+
+  <h2>The one date that matters: ex-dividend</h2>
+  <p>To get a dividend, you must own the stock <b>before</b> its <span class="def" data-d="The cut-off date. You must already own the shares the day BEFORE the ex-dividend date to receive the next dividend. Buy on or after it, and that payment goes to the previous owner.">ex-dividend date</span>. Buy even one day too late and the next payment goes to whoever owned it before you. (You don't need to do anything fancy &mdash; just know that buying right before an ex-date doesn't get you a "free" dividend; the price typically drops by about the dividend amount that day.)</p>
+
+  <h2>Reinvesting: the snowball</h2>
+  <p>You can take dividends as cash, or <span class="def" data-d="Automatically using your dividends to buy more shares (a DRIP - Dividend ReInvestment Plan). Those new shares pay their own dividends, which buy even more shares - the snowball.">reinvest</span> them to buy more shares. Reinvested dividends buy shares that pay <i>their own</i> dividends &mdash; which buy more shares again. Over decades that snowball does most of the heavy lifting. Early on you barely notice it; later it dwarfs your own deposits.</p>
+
+  <h2>Growth vs. high yield (no free lunch)</h2>
+  <p>Two honest flavors of dividend stock:</p>
+  <ul>
+    <li><b>Dividend growers</b> &mdash; lower yield now (say 2&ndash;4%), but they <i>raise</i> the dividend every year. Your income (and usually the price) climbs over time. Best for long horizons.</li>
+    <li><b>High-yielders</b> &mdash; big income now (8%+: REITs, BDCs), but little growth and more risk of a cut. Best for income you need <i>today</i>.</li>
+  </ul>
+  <div class="real"><b>The rule of thumb:</b> total return tends to even out &mdash; high yield trades growth for income, and vice versa. There's no magic 10%-yield-that's-also-safe-and-growing. Pick the mix that fits <i>your</i> timeline.</div>
+
+  <h2>One thing the tax man cares about</h2>
+  <p>Dividends are usually taxable. "Qualified" dividends (most big US companies) are taxed at lower rates; "ordinary" ones (often REITs/BDCs) at your normal rate. The easy win: <b>hold dividend payers inside tax-advantaged accounts</b> (a Roth IRA, etc.) where the income can grow and compound without the yearly tax drag. Not tax advice &mdash; just the lever most people miss.</p>
+
+  <!-- QUIZ -->
+  <div class="quiz" data-quiz="dividends-101">
+    <h3>&#127918; Test your dividend IQ</h3>
+    <p style="font-size:13px;color:var(--muted);margin:0 0 6px;">Four quick ones. Pick an answer for each, then hit the button.</p>
+    <div class="q" data-a="1"><p>1. A dividend is&hellip;</p>
+      <button onclick="pick(this)">A loan you pay the company</button>
+      <button onclick="pick(this)">Your share of the company's profits, paid in cash</button>
+      <button onclick="pick(this)">A discount on buying more shares</button></div>
+    <div class="q" data-a="2"><p>2. A 14% yield most often means&hellip;</p>
+      <button onclick="pick(this)">A great safe deal &mdash; buy it</button>
+      <button onclick="pick(this)">Nothing, yield doesn't matter</button>
+      <button onclick="pick(this)">The market expects a cut &mdash; be careful</button></div>
+    <div class="q" data-a="0"><p>3. To receive the next dividend, you must own it&hellip;</p>
+      <button onclick="pick(this)">Before the ex-dividend date</button>
+      <button onclick="pick(this)">On payment day, any time</button>
+      <button onclick="pick(this)">For at least a full year</button></div>
+    <div class="q" data-a="1"><p>4. Reinvesting dividends (a DRIP) works because&hellip;</p>
+      <button onclick="pick(this)">The company pays you extra to do it</button>
+      <button onclick="pick(this)">New shares pay their own dividends &mdash; the snowball</button>
+      <button onclick="pick(this)">It avoids all taxes</button></div>
+    <button class="go" onclick="gradeQuiz(this)">See my score</button>
+    <div class="quiz-result"></div>
+  </div>
+
+  <div class="cta">
+    <div class="kick">Now put it to work</div>
+    <p style="color:var(--muted);max-width:560px;margin:8px auto 14px;">Plan the income you want, then find the reliable payers behind it.</p>
+    <a href="dividend-planner.html">Plan your income &rarr;</a>
+    <a href="/" class="ghost">Open the Dividend Explorer</a>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>How often are dividends paid?</b> Usually quarterly (4x a year) for US stocks; some pay monthly. The explorer shows each one's schedule.</p>
+    <p><b>Is a higher yield better?</b> Not by itself. A very high yield often signals the market expects a cut. Reliability - years paid without a gap - matters more than the headline yield.</p>
+    <p style="margin-bottom:0;"><b>Should I reinvest or take the cash?</b> If you don't need the income yet, reinvesting (a DRIP) compounds far faster over time. If you need income now, take the cash.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How often are dividends paid?","acceptedAnswer":{"@type":"Answer","text":"Most US dividend stocks pay quarterly (four times a year); some pay monthly. Each stock's schedule is shown in the dividend explorer."}},
+  {"@type":"Question","name":"Is a higher dividend yield better?","acceptedAnswer":{"@type":"Answer","text":"Not on its own. A very high yield often means the market expects the dividend to be cut. Reliability - how many years a company has paid without a gap - matters more than the headline yield."}},
+  {"@type":"Question","name":"Should I reinvest dividends or take the cash?","acceptedAnswer":{"@type":"Answer","text":"If you do not need the income yet, reinvesting dividends (a DRIP) compounds much faster over time because the new shares pay their own dividends. If you need income now, take the cash."}}
+  ]}
+  </script>
+
+  <p class="disc">Educational, plain-English research &mdash; not personalized or investment advice, and not tax advice. Dividends can be cut; yields are not guaranteed; taxes vary by country and account. Dragonfly Lens is not a registered investment advisor.</p>
+</div>
+
+<footer><a href="/learn/">&larr; All explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="learn-game.js"></script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
