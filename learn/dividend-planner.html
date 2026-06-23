@@ -128,10 +128,12 @@
 
 <script>
 // Portfolio archetypes: [key, label, yield%, dividend-growth%, price-growth%, note]
+// [key, label, yield %, growth %, note] - 'growth' = how fast the dividend AND price
+// rise together (so yield stays ~constant, which is how it works in reality).
 var ARCH = [
-  ['steady','Steady', 3.5, 6, 4, 'Aristocrats: lower yield, strong raises. Most reliable.'],
-  ['balanced','Balanced', 5.0, 3, 3, 'A blend of yield and growth.'],
-  ['high','High-yield', 8.0, 1, 1, 'REITs/BDCs: big income now, little growth, more risk.']
+  ['steady','Steady', 3.5, 6, 'Aristocrats: lower yield, strong raises. Most reliable.'],
+  ['balanced','Balanced', 5.0, 3.5, 'A blend of yield and growth.'],
+  ['high','High-yield', 8.0, 1, 'REITs/BDCs: big income now, little growth, more risk.']
 ];
 var FREQ = [['weekly','Weekly',52],['biweekly','Biweekly',26],['monthly','Monthly',12],['none','One-time',0]];
 var state = { arch: 'steady', freq: 'monthly' };
@@ -155,7 +157,7 @@ function renderArch(){
   $('arch').innerHTML = ARCH.map(function(a){
     var on = a[0] === state.arch ? ' on' : '';
     return '<div class="ac'+on+'" onclick="state.arch=\''+a[0]+'\';renderArch();calc();">'
-      + '<b>'+a[1]+'</b><div class="y">'+a[2].toFixed(1)+'%</div><div class="d">'+a[5]+'</div></div>';
+      + '<b>'+a[1]+'</b><div class="y">'+a[2].toFixed(1)+'%</div><div class="d">'+a[4]+'</div></div>';
   }).join('');
   renderBasket();
 }
@@ -166,31 +168,32 @@ function renderFreq(){
   }).join('');
 }
 
-function project(yield_, divG, priceG, reinvest){
+function project(yield_, growth, reinvest){
   var start = +$('start').value || 0;
   var dep = +$('dep').value || 0;
   var yrs = Math.max(1, Math.min(60, +$('yrs').value || 1));
   var perYr = (FREQ.filter(function(f){ return f[0]===state.freq; })[0] || [0,0,12])[2];
   var annualDep = dep * perYr;
+  // Yield stays ~constant because price tracks the (growing) dividend. Income = value
+  // x yield, so it rises as the portfolio grows. 'growth' lifts both dividend + price.
   var val = start, paidOut = 0, series = [start];
   for (var y = 1; y <= yrs; y++){
-    val += annualDep;                                   // this year's contributions
-    var incomeRate = (yield_/100) * Math.pow(1 + divG/100, y - 1);   // dividend per $ grows
-    var income = val * incomeRate;
+    val += annualDep;
+    var income = val * (yield_/100);
     if (reinvest) val += income; else paidOut += income;
-    val *= (1 + priceG/100);                            // price appreciation
+    val *= (1 + growth/100);
     series.push(val);
   }
-  var finalIncome = val * (yield_/100) * Math.pow(1 + divG/100, yrs - 1);
+  var finalIncome = val * (yield_/100);
   return { series: series, val: val, monthly: finalIncome/12, paidOut: paidOut, annualDep: annualDep, start: start, yrs: yrs };
 }
 
 function calc(){
   var a = ARCH.filter(function(x){ return x[0]===state.arch; })[0];
-  var yld=a[2], divG=a[3], priceG=a[4];
+  var yld=a[2], growth=a[3];
   var rIn = $('reinv').checked;
-  var withRe = project(yld, divG, priceG, true);
-  var noRe   = project(yld, divG, priceG, false);
+  var withRe = project(yld, growth, true);
+  var noRe   = project(yld, growth, false);
   var shown  = rIn ? withRe : noRe;
 
   $('yl').textContent = shown.yrs;
@@ -205,7 +208,7 @@ function calc(){
   var needed = goal>0 ? (goal*12)/(yld/100) : 0;
   var reachYr = null;
   for (var i=0;i<shown.series.length;i++){
-    var inc = shown.series[i]*(yld/100)*Math.pow(1+divG/100, Math.max(0,i-1));
+    var inc = shown.series[i]*(yld/100);
     if (goal>0 && inc/12 >= goal){ reachYr = i; break; }
   }
   $('goalline').innerHTML = goal>0
@@ -213,10 +216,10 @@ function calc(){
        + (reachYr!==null ? 'Your plan reaches it in about <b style="color:#c8a84b;">'+reachYr+' year'+(reachYr===1?'':'s')+'</b>.' : 'Your current plan does not quite get there in '+shown.yrs+' years &mdash; try a bigger deposit, more years, or a higher-yield style.'))
     : '';
 
-  drawChart(withRe.series, noRe.series, goal, yld, divG);
+  drawChart(withRe.series, noRe.series, goal, yld);
 }
 
-function drawChart(s1, s2, goal, yld, divG){
+function drawChart(s1, s2, goal, yld){
   var c = $('chart'), ctx = c.getContext('2d');
   var W = c.width, H = c.height, pad = 34;
   ctx.clearRect(0,0,W,H);
