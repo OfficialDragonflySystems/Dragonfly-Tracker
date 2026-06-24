@@ -87,6 +87,7 @@
       <div class="stat"><div class="l">Left to save / invest</div><div class="v" id="surplus">$0</div></div>
     </div>
     <div style="font-size:11px;color:var(--muted);" id="allocNote"></div>
+    <div style="margin-top:9px;padding-top:9px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);">Safety net: <span id="emNote">&mdash;</span> <span style="color:#5a6a7a;font-size:10px;white-space:nowrap;">(target <input type="number" id="em-target" value="3" min="0" max="24" style="width:42px;text-align:right;padding:2px 4px;font-size:11px;"> mo)</span></div>
   </div>
 
   <div class="card">
@@ -124,6 +125,10 @@
       <label style="display:flex;align-items:center;gap:7px;cursor:pointer;"><input type="checkbox" id="infl-on" style="width:auto;"> Show in today's dollars</label>
       <input type="number" id="infl-rate" value="2.5" step="0.1" style="width:56px;text-align:right;"> <span style="font-size:12px;color:var(--muted);">% inflation</span>
     </div>
+    <div class="row2" style="margin-top:6px;">
+      <label style="display:flex;align-items:center;gap:7px;cursor:pointer;"><input type="checkbox" id="stress-on" style="width:auto;"> Stress test: what if a crash hits?</label>
+    </div>
+    <div id="stressNote" style="font-size:11px;color:var(--gold);margin-top:5px;line-height:1.5;"></div>
     <div class="snap" style="margin-top:10px;">
       <div class="stat"><div class="l">Net worth now</div><div class="v" id="nowNet" style="font-size:18px;">$0</div></div>
       <div class="stat"><div class="l">Net worth in <span id="yl">20</span> yrs</div><div class="v" id="futNet" style="color:var(--lime);">$0</div></div>
@@ -148,6 +153,30 @@
       <div id="freedomGap" style="font-size:11px;color:var(--muted);margin-top:5px;"></div>
     </div>
     <div id="freedomCover" style="font-size:12px;color:var(--accent);margin-top:11px;line-height:1.5;"></div>
+    <div style="margin-top:13px;padding-top:12px;border-top:1px solid var(--line);">
+      <div style="font-size:12px;font-weight:800;color:var(--text);">Coast-FI <span style="font-weight:400;color:var(--muted);font-size:11px;">&mdash; the &ldquo;you can stop&rdquo; milestone</span></div>
+      <div class="sub" style="margin:4px 0 7px;">Years until you'd want the option to retire: <input type="number" id="yrs-ret" value="30" min="1" max="60" style="width:50px;text-align:right;padding:3px 5px;font-size:12px;"></div>
+      <div class="stat" style="display:inline-block;"><div class="l">Coast number</div><div class="v" id="coastNum" style="font-size:18px;color:var(--accent);">$0</div></div>
+      <div id="coastNote" style="font-size:11px;color:var(--muted);margin-top:7px;line-height:1.5;"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <details>
+      <summary style="font-size:14px;font-weight:800;color:var(--accent);cursor:pointer;">Go deeper (optional) &mdash; your time, and lifestyle creep</summary>
+      <div style="margin-top:13px;">
+        <h2 style="font-size:14px;">Money is hours of your life</h2>
+        <div class="sub" style="margin-top:4px;">Hours you work per week: <input type="number" id="hpw" value="40" min="1" max="120" style="width:50px;text-align:right;padding:3px 5px;font-size:12px;">. Your real hourly worth: <b id="lifeHourly" style="color:var(--gold);">$0/hr</b>.</div>
+        <div style="font-size:12px;color:var(--muted);margin:7px 0;line-height:1.55;">Your living costs take about <b id="lifeExp" style="color:var(--ink);">&mdash;</b> of your life. Once you hit your freedom number, your money buys that time back &mdash; it works the hours so you don't have to.</div>
+        <div style="margin-top:8px;font-size:13px;">What would something cost in life-hours? $<input type="number" id="life-cost" placeholder="amount" style="width:96px;text-align:right;padding:5px 7px;font-size:13px;"> <span id="lifeCostOut" style="font-size:12px;color:var(--accent);font-weight:700;margin-left:6px;"></span></div>
+      </div>
+      <div style="margin-top:16px;padding-top:13px;border-top:1px solid var(--line);">
+        <h2 style="font-size:14px;">The lifestyle-creep test</h2>
+        <div class="sub" style="margin-top:4px;">The silent freedom-killer: when income rises and you spend the raise, your freedom number rises too &mdash; so you never catch it.</div>
+        <div style="margin-top:7px;font-size:13px;">Say you get a raise of $<input type="number" id="raise" placeholder="0" style="width:84px;text-align:right;padding:5px 7px;font-size:13px;">/mo:</div>
+        <div id="creepNote" style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.55;"></div>
+      </div>
+    </details>
   </div>
 
   <div class="card" style="text-align:center;">
@@ -266,8 +295,9 @@ function _mmImport(asOne){
   renderAcc(); calc();
 }
 
-function projectNet(years, baseInvest){
-  // net worth (assets - debts) per year: monthly debt paydown + cleared-payment->investing snowball
+function projectNet(years, baseInvest, shockYear, shockPct){
+  // net worth (assets - debts) per year: monthly debt paydown + cleared-payment->investing snowball.
+  // Optional one-time market crash (shockPct%) on growth-bearing accounts in shockYear (stress test).
   var bb = ACC.map(function(a){ return a.b; });
   var db = DEBT.map(function(d){ return {b:(d.b||0), r:(d.r||0)}; });
   var debtNow = DEBT.reduce(function(s,x){ return s + (x.b||0); }, 0);
@@ -286,6 +316,9 @@ function projectNet(years, baseInvest){
     var invest = baseInvest + freed;
     for (var j = 0; j < ACC.length; j++){
       bb[j] = bb[j] * (1 + (ACC[j].g||0)/100) + invest * ((ACC[j].al||0)/100) * 12;
+    }
+    if (shockYear && y === shockYear && shockPct){
+      for (var sj = 0; sj < ACC.length; sj++){ if ((ACC[sj].g||0) > 0) bb[sj] *= (1 - shockPct/100); }
     }
     var owe = db.reduce(function(s,x){ return s + x.b; }, 0);
     out.push(bb.reduce(function(s,b){ return s + b; }, 0) - owe);
@@ -353,6 +386,70 @@ function calc(){
       : money(freedomNum - nowNet) + ' to go.';
     $('freedomCover').textContent = 'Right now your investments throw off about ' + money(passiveNowAnnual/12) + '/mo - covering ' + cover + '% of your ' + money(mExp) + '/mo living costs.';
   }
+
+  // ---- Coast-FI (the "you can stop adding" milestone) ----
+  var yrsRet = Math.max(1, Math.min(60, +($('yrs-ret') && $('yrs-ret').value) || 30));
+  var allocW = ACC.reduce(function(s,a){ return s + (a.al||0); }, 0);
+  var gPort = allocW > 0 ? ACC.reduce(function(s,a){ return s + (a.al||0)*(a.g||0); }, 0) / allocW : 7;
+  var gReal = Math.max(0.5, gPort - (inflOn ? inflR : 0));
+  var coastNum = freedomNum / Math.pow(1 + gReal/100, yrsRet);
+  if ($('coastNum')){
+    $('coastNum').textContent = money(coastNum);
+    $('coastNote').innerHTML = nowNet >= coastNum
+      ? '<b style="color:var(--lime);">You have hit Coast-FI.</b> Even if you never invest another dollar, your savings should grow into your freedom number in ~' + yrsRet + ' years. The hard part is done - now you just cover today.'
+      : 'Reach <b>' + money(coastNum) + '</b> (you are ' + money(coastNum - nowNet) + ' away) and you could stop adding new money - growth alone would carry you to freedom in ~' + yrsRet + ' years.';
+  }
+
+  // ---- Emergency fund (months of expenses in cash) ----
+  var cashTotal = ACC.reduce(function(s,a){ return s + ((/cheq|sav|cash|emerg|hysa|money\s*market/i.test(a.l) || (a.g||0) <= 1) ? a.b : 0); }, 0);
+  var emMonths = mExp > 0 ? cashTotal / mExp : 0;
+  var emTarget = Math.max(0, +($('em-target') && $('em-target').value) || 3);
+  if ($('emNote')){
+    var emOk = emMonths >= emTarget;
+    $('emNote').innerHTML = '<span style="color:' + (emOk ? 'var(--lime)' : 'var(--gold)') + ';font-weight:800;">' + emMonths.toFixed(1) + ' months</span> in cash'
+      + (emOk ? ' - solid.' : ' - aim ' + emTarget + '-6 (' + money(Math.max(0, emTarget*mExp - cashTotal)) + ' more) before investing heavily.');
+  }
+
+  // ---- Life energy (money = hours of your life) ----
+  var hpw = Math.max(1, +($('hpw') && $('hpw').value) || 40);
+  var hourly = mInc * 12 / (hpw * 52);
+  if ($('lifeHourly')){
+    $('lifeHourly').textContent = '$' + hourly.toFixed(2) + '/hr';
+    $('lifeExp').textContent = hourly > 0 ? Math.round(mExp / hourly) + ' hours/mo' : '-';
+    var costV = +($('life-cost') && $('life-cost').value) || 0;
+    var hrs = hourly > 0 ? costV / hourly : 0;
+    $('lifeCostOut').textContent = costV > 0
+      ? '$' + costV.toLocaleString() + ' = ' + (hrs >= 80 ? (hrs/40).toFixed(1) + ' weeks' : hrs.toFixed(1) + ' hours') + ' of your life'
+      : '';
+  }
+
+  // ---- Bad-timing stress test (sequence-of-returns crash) ----
+  if ($('stressNote')){
+    if ($('stress-on') && $('stress-on').checked){
+      var crashAt = (yToFree > 0 && yToFree <= 55) ? yToFree : Math.min(yrs, 20);
+      var pjS = projectNet(60, baseInvest, crashAt, 35);
+      var yToFreeS = -1;
+      for (var sy = 0; sy < pjS.series.length; sy++){ if (freedomNum > 0 && disc(pjS.series[sy], sy) >= freedomNum){ yToFreeS = sy; break; } }
+      var delay = (yToFreeS >= 0 && yToFree >= 0) ? (yToFreeS - yToFree) : null;
+      $('stressNote').innerHTML = 'A <b>35% crash</b> right as you reach freedom (year ' + crashAt + ') would '
+        + (delay === null ? 'push freedom past 60 years.' : (delay <= 0 ? 'barely set you back.' : 'set you back about <b>' + delay + ' year' + (delay>1?'s':'') + '</b>.'))
+        + ' The fix: keep <b>1-2 years of expenses in cash</b> near retirement so you never have to sell into a crash.';
+    } else { $('stressNote').innerHTML = ''; }
+  }
+
+  // ---- Lifestyle-creep guard (bank vs spend the raise) ----
+  if ($('creepNote')){
+    var raise = +($('raise') && $('raise').value) || 0;
+    if (raise > 0){
+      var pjBank = projectNet(60, baseInvest + raise);
+      var yBank = -1;
+      for (var by = 0; by < pjBank.series.length; by++){ if (freedomNum > 0 && disc(pjBank.series[by], by) >= freedomNum){ yBank = by; break; } }
+      var sooner = (yBank >= 0 && yToFree >= 0) ? (yToFree - yBank) : null;
+      var newFreedom = (annualExp + raise*12) / (swr/100);
+      $('creepNote').innerHTML = 'BANK it: freedom comes ' + (sooner && sooner > 0 ? '<b style="color:var(--lime);">~' + sooner + ' year' + (sooner>1?'s':'') + ' sooner</b>' : 'sooner') + '.'
+        + ' SPEND it (creep): your number climbs to <b style="color:var(--gold);">' + money(newFreedom) + '</b> (+' + money(newFreedom - freedomNum) + ') and retreats from you.';
+    } else { $('creepNote').innerHTML = ''; }
+  }
 }
 
 function drawChart(s){
@@ -376,7 +473,7 @@ function drawChart(s){
 }
 
 renderInc(); renderExp(); renderAcc(); renderDebt();
-['infl-on','infl-rate','swr'].forEach(function(id){ var el = $(id); if (el) el.addEventListener('input', calc); });
+['infl-on','infl-rate','swr','yrs-ret','em-target','hpw','life-cost','stress-on','raise'].forEach(function(id){ var el = $(id); if (el) el.addEventListener('input', calc); });
 var _cf = $('csv-file');
 if (_cf) _cf.addEventListener('change', function(e){
   var f = e.target.files[0]; if (!f) return;
