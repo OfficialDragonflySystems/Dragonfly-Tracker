@@ -95,6 +95,18 @@
     <div class="hd"><span class="lab">Account</span><span style="width:92px;text-align:right;">Balance</span><span style="width:62px;text-align:right;">Grow %</span><span style="width:58px;text-align:right;">% in</span><span style="width:22px;"></span></div>
     <div id="acc"></div>
     <button class="add" onclick="addAcc()">+ Add account</button>
+    <details style="margin-top:11px;">
+      <summary style="font-size:12px;color:var(--accent);cursor:pointer;font-weight:700;">Import from a statement (CSV) &mdash; stays in your browser</summary>
+      <div style="margin-top:8px;">
+        <div class="sub">Paste a CSV export from your broker or bank (a column of names/tickers + a column of values/balances), or pick a file. It is parsed right here on your device &mdash; <b>nothing is uploaded or saved.</b></div>
+        <textarea id="csv-in" rows="4" placeholder="Symbol,Market Value&#10;AAPL,5200&#10;KO,3100" style="width:100%;background:#0a1018;border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:8px;font-size:12px;font-family:monospace;"></textarea>
+        <div style="display:flex;gap:8px;margin-top:6px;align-items:center;flex-wrap:wrap;">
+          <input type="file" id="csv-file" accept=".csv,text/csv,text/plain" style="font-size:11px;color:var(--muted);">
+          <button class="add" onclick="_mmParseCSV()">Parse</button>
+        </div>
+        <div id="csv-msg" style="font-size:11px;color:var(--muted);margin-top:7px;line-height:1.5;"></div>
+      </div>
+    </details>
   </div>
 
   <div class="card big">
@@ -126,6 +138,7 @@ var INC = [{l:'Paycheck', a:2000, f:26}];
 var EXP = [{l:'Rent / mortgage', a:1500},{l:'Food & groceries', a:600},{l:'Transport', a:300},{l:'Bills & other', a:450}];
 var ACC = [{l:'Chequing', b:3000, g:0, al:0},{l:'Savings', b:5000, g:3, al:15},{l:'TFSA', b:10000, g:7, al:40},{l:'Investments', b:8000, g:7, al:35}];
 var FREQ = [['Weekly',52],['Biweekly',26],['Semi-monthly',24],['Monthly',12],['Yearly',1]];
+var _imp = [];
 
 function $(id){ return document.getElementById(id); }
 function money(n){ return '$' + Math.round(n).toLocaleString(); }
@@ -158,6 +171,60 @@ function renderAcc(){
 function addInc(){ INC.push({l:'Income', a:1000, f:12}); renderInc(); calc(); }
 function addExp(){ EXP.push({l:'Expense', a:200}); renderExp(); calc(); }
 function addAcc(){ ACC.push({l:'Account', b:0, g:5, al:0}); renderAcc(); calc(); }
+
+function _mmCells(l, delim){
+  var out = [], cur = '', q = false;
+  for (var i = 0; i < l.length; i++){
+    var c = l[i];
+    if (c === '"') q = !q;
+    else if (c === delim && !q){ out.push(cur); cur = ''; }
+    else cur += c;
+  }
+  out.push(cur);
+  return out.map(function(s){ return s.trim().replace(/^"|"$/g, ''); });
+}
+function _mmParseCSV(){
+  var raw = $('csv-in').value || '';
+  var msg = $('csv-msg');
+  if (!raw.trim()){ msg.textContent = 'Paste a CSV (or pick a file) first.'; return; }
+  var lines = raw.split(/\r?\n/).filter(function(l){ return l.trim(); });
+  if (lines.length < 2){ msg.textContent = 'Need a header row plus at least one data row.'; return; }
+  var delim = (lines[0].indexOf('\t') >= 0) ? '\t' : ((lines[0].indexOf(';') >= 0 && lines[0].indexOf(',') < 0) ? ';' : ',');
+  var hdr = _mmCells(lines[0], delim).map(function(h){ return h.toLowerCase(); });
+  var labelI = -1, valI = -1;
+  for (var i = 0; i < hdr.length; i++){
+    if (labelI < 0 && /name|account|description|symbol|security|holding|ticker/.test(hdr[i])) labelI = i;
+    if (valI < 0 && /market value|market_value|value|balance|amount|total|equity|worth/.test(hdr[i])) valI = i;
+  }
+  if (labelI < 0) labelI = 0;
+  if (valI < 0){ msg.textContent = 'Could not find a value column - make sure one header says Value, Balance, Market Value, or Amount.'; return; }
+  _imp = [];
+  for (var r = 1; r < lines.length; r++){
+    var cc = _mmCells(lines[r], delim);
+    var lab = (cc[labelI] || '').trim();
+    var v = parseFloat((cc[valI] || '').replace(/[$,\s]/g, ''));
+    if (lab && isFinite(v) && v !== 0) _imp.push([lab, v]);
+  }
+  if (!_imp.length){ msg.textContent = 'No usable rows found - check the columns.'; return; }
+  var total = _imp.reduce(function(s, x){ return s + x[1]; }, 0);
+  msg.innerHTML = 'Found <b>' + _imp.length + '</b> rows totaling <b>$' + Math.round(total).toLocaleString() + '</b>. Nothing left your browser.'
+    + '<div style="margin-top:7px;display:flex;gap:6px;flex-wrap:wrap;">'
+    + '<button class="add" onclick="_mmImport(true)">Add as one account ($' + Math.round(total).toLocaleString() + ')</button>'
+    + '<button class="add" onclick="_mmImport(false)">Add each separately (' + _imp.length + ')</button></div>';
+}
+function _mmImport(asOne){
+  if (!_imp.length) return;
+  if (asOne){
+    var total = _imp.reduce(function(s, x){ return s + x[1]; }, 0);
+    ACC.push({l:'Imported', b:Math.round(total), g:6, al:0});
+  } else {
+    _imp.forEach(function(x){ ACC.push({l:x[0].slice(0,18), b:Math.round(x[1]), g:0, al:0}); });
+  }
+  _imp = [];
+  $('csv-in').value = '';
+  $('csv-msg').textContent = 'Imported - now set the growth % and the % of surplus for each new account.';
+  renderAcc(); calc();
+}
 
 function calc(){
   var mInc = INC.reduce(function(s,x){ return s + x.a * x.f / 12; }, 0);
@@ -214,6 +281,13 @@ function drawChart(s){
 }
 
 renderInc(); renderExp(); renderAcc();
+var _cf = $('csv-file');
+if (_cf) _cf.addEventListener('change', function(e){
+  var f = e.target.files[0]; if (!f) return;
+  var rd = new FileReader();
+  rd.onload = function(){ $('csv-in').value = rd.result; };
+  rd.readAsText(f);
+});
 $('yrs').addEventListener('input', calc);
 $('chart').width = Math.min(800, document.querySelector('.wrap').clientWidth - 32);
 window.addEventListener('resize', function(){ $('chart').width = Math.min(800, document.querySelector('.wrap').clientWidth - 32); calc(); });
