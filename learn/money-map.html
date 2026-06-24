@@ -109,16 +109,29 @@
     </details>
   </div>
 
+  <div class="card">
+    <h2>4. What you owe</h2>
+    <div class="sub">Debts &mdash; credit card, car loan, student loan, mortgage. Put the balance, its interest rate, and what you pay each month. As each debt clears, its payment <b>automatically rolls into your investing</b> (the snowball) &mdash; leave this empty if you're debt-free.</div>
+    <div class="hd"><span class="lab">Debt</span><span style="width:92px;text-align:right;">Balance</span><span style="width:62px;text-align:right;">Rate %</span><span style="width:58px;text-align:right;">$ / mo</span><span style="width:22px;"></span></div>
+    <div id="debt"></div>
+    <button class="add" onclick="addDebt()">+ Add debt</button>
+  </div>
+
   <div class="card big">
     <h2>Where you're headed</h2>
     <div class="row2"><span>Project</span><input type="number" id="yrs" value="20" min="1" max="50" style="width:70px;text-align:right;"> <span>years</span></div>
+    <div class="row2" style="margin-top:8px;flex-wrap:wrap;">
+      <label style="display:flex;align-items:center;gap:7px;cursor:pointer;"><input type="checkbox" id="infl-on" style="width:auto;"> Show in today's dollars</label>
+      <input type="number" id="infl-rate" value="2.5" step="0.1" style="width:56px;text-align:right;"> <span style="font-size:12px;color:var(--muted);">% inflation</span>
+    </div>
     <div class="snap" style="margin-top:10px;">
       <div class="stat"><div class="l">Net worth now</div><div class="v" id="nowNet" style="font-size:18px;">$0</div></div>
       <div class="stat"><div class="l">Net worth in <span id="yl">20</span> yrs</div><div class="v" id="futNet" style="color:var(--lime);">$0</div></div>
       <div class="stat"><div class="l">Money working for you then</div><div class="v" id="passive" style="color:var(--gold);font-size:18px;">$0</div></div>
     </div>
     <canvas id="chart" width="800" height="230"></canvas>
-    <div style="font-size:10px;color:#5a6a7a;margin-top:4px;">Your combined net worth over time &mdash; growth plus what you keep adding from your surplus.</div>
+    <div style="font-size:10px;color:#5a6a7a;margin-top:4px;">Your <b>net worth</b> over time (assets minus debts) &mdash; growth, plus what you keep adding from your surplus, plus the debt payments that free up as you pay things off.</div>
+    <div id="inflNote" style="font-size:10px;color:var(--accent);margin-top:3px;"></div>
   </div>
 
   <div class="card" style="text-align:center;">
@@ -128,7 +141,7 @@
     <a class="cta ghost" href="/">Open the app</a>
   </div>
 
-  <p class="disc">Educational planning tool, not financial advice. It compounds the simple assumptions you enter (growth rates, contributions) annually; real life varies, returns aren't guaranteed, and it ignores taxes and inflation unless you bake them into your numbers. Use it to build intuition for your trajectory. Nothing you type is sent anywhere or stored &mdash; it lives only in this browser tab. Dragonfly Lens is not a registered investment advisor.</p>
+  <p class="disc">Educational planning tool, not financial advice. It compounds the simple assumptions you enter (growth rates, contributions, debt rates) and pays your debts down month by month, rolling each freed payment into investing; it can also show everything in today's dollars (inflation). Real life varies, returns aren't guaranteed, and it still simplifies taxes &mdash; use it to build intuition for your trajectory, not as a precise forecast. Nothing you type is sent anywhere or stored &mdash; it lives only in this browser tab. Dragonfly Lens is not a registered investment advisor.</p>
 </div>
 
 <footer><a href="/learn/">&larr; All explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.</footer>
@@ -137,6 +150,7 @@
 var INC = [{l:'Paycheck', a:2000, f:26}];
 var EXP = [{l:'Rent / mortgage', a:1500},{l:'Food & groceries', a:600},{l:'Transport', a:300},{l:'Bills & other', a:450}];
 var ACC = [{l:'Chequing', b:3000, g:0, al:0},{l:'Savings', b:5000, g:3, al:15},{l:'TFSA', b:10000, g:7, al:40},{l:'Investments', b:8000, g:7, al:35}];
+var DEBT = [];  // {l, b:balance, r:rate%, p:$/mo}
 var FREQ = [['Weekly',52],['Biweekly',26],['Semi-monthly',24],['Monthly',12],['Yearly',1]];
 var _imp = [];
 
@@ -168,9 +182,19 @@ function renderAcc(){
       + '<button class="del" onclick="ACC.splice('+i+',1);renderAcc();calc()">&times;</button></div>';
   }).join('');
 }
+function renderDebt(){
+  $('debt').innerHTML = DEBT.map(function(x,i){
+    return '<div class="ln"><input class="lab" value="'+x.l+'" onchange="DEBT['+i+'].l=this.value">'
+      + '<input class="num" type="number" value="'+x.b+'" onchange="DEBT['+i+'].b=+this.value||0;calc()">'
+      + '<input class="gr" type="number" value="'+x.r+'" onchange="DEBT['+i+'].r=+this.value||0;calc()">'
+      + '<input class="al" type="number" value="'+x.p+'" onchange="DEBT['+i+'].p=+this.value||0;calc()">'
+      + '<button class="del" onclick="DEBT.splice('+i+',1);renderDebt();calc()">&times;</button></div>';
+  }).join('');
+}
 function addInc(){ INC.push({l:'Income', a:1000, f:12}); renderInc(); calc(); }
 function addExp(){ EXP.push({l:'Expense', a:200}); renderExp(); calc(); }
 function addAcc(){ ACC.push({l:'Account', b:0, g:5, al:0}); renderAcc(); calc(); }
+function addDebt(){ DEBT.push({l:'Credit card', b:5000, r:19.99, p:200}); renderDebt(); calc(); }
 
 function _mmCells(l, delim){
   var out = [], cur = '', q = false;
@@ -229,35 +253,60 @@ function _mmImport(asOne){
 function calc(){
   var mInc = INC.reduce(function(s,x){ return s + x.a * x.f / 12; }, 0);
   var mExp = EXP.reduce(function(s,x){ return s + x.a; }, 0);
-  var surplus = mInc - mExp;
+  var mDebt = DEBT.reduce(function(s,x){ return s + (x.p||0); }, 0);
+  var mOut = mExp + mDebt;
+  var surplus = mInc - mOut;
   $('mInc').textContent = money(mInc);
-  $('mExp').textContent = money(mExp);
+  $('mExp').textContent = money(mOut);
   $('surplus').textContent = money(surplus);
   $('surplus').style.color = surplus >= 0 ? '#4ade80' : '#f87171';
   var allocSum = ACC.reduce(function(s,x){ return s + (x.al||0); }, 0);
+  var dnote = mDebt > 0 ? ' (going-out includes ' + money(mDebt) + '/mo in debt payments)' : '';
   $('allocNote').textContent = surplus < 0
-    ? 'You are spending more than you earn by ' + money(-surplus) + '/mo. Trim expenses or grow income before investing.'
-    : (allocSum > 100 ? 'You have allocated ' + allocSum + '% of your surplus - more than 100%. Trim it back.'
-      : 'You are putting ' + allocSum + '% of your surplus to work; the other ' + (100 - allocSum) + '% builds up as cash.');
+    ? 'You are spending more than you earn by ' + money(-surplus) + '/mo' + dnote + '. Trim expenses or grow income before investing.'
+    : ((allocSum > 100 ? 'You have allocated ' + allocSum + '% of your surplus - more than 100%. Trim it back.'
+      : 'You are putting ' + allocSum + '% of your surplus to work; the other ' + (100 - allocSum) + '% builds up as cash.') + dnote);
 
   var yrs = Math.max(1, Math.min(50, +$('yrs').value || 20));
+  var baseInvest = Math.max(0, surplus);          // monthly investable before the debt snowball
   var bb = ACC.map(function(a){ return a.b; });
-  var nowNet = bb.reduce(function(s,b){ return s + b; }, 0);
+  var db = DEBT.map(function(d){ return {b:(d.b||0), r:(d.r||0)}; });
+  var debtNow = DEBT.reduce(function(s,x){ return s + (x.b||0); }, 0);
+  var nowNet = bb.reduce(function(s,b){ return s + b; }, 0) - debtNow;
   var series = [nowNet];
   for (var y = 1; y <= yrs; y++){
-    for (var j = 0; j < ACC.length; j++){
-      var contrib = Math.max(0, surplus) * ((ACC[j].al||0) / 100) * 12;
-      bb[j] = bb[j] * (1 + (ACC[j].g||0) / 100) + contrib;
+    for (var mo = 0; mo < 12; mo++){           // pay debts down monthly (interest + payment)
+      for (var d = 0; d < db.length; d++){
+        if (db[d].b > 0){
+          var nb = db[d].b * (1 + (db[d].r/100)/12) - (DEBT[d].p||0);
+          db[d].b = nb > 0 ? nb : 0;
+        }
+      }
     }
-    series.push(bb.reduce(function(s,b){ return s + b; }, 0));
+    var freed = 0;                              // cleared debts: their payment rolls into investing
+    for (var f = 0; f < db.length; f++){ if (db[f].b <= 0) freed += (DEBT[f].p||0); }
+    var invest = baseInvest + freed;
+    for (var j = 0; j < ACC.length; j++){
+      bb[j] = bb[j] * (1 + (ACC[j].g||0)/100) + invest * ((ACC[j].al||0)/100) * 12;
+    }
+    var owe = db.reduce(function(s,x){ return s + x.b; }, 0);
+    series.push(bb.reduce(function(s,b){ return s + b; }, 0) - owe);
   }
   var passiveAnnual = 0;
-  for (var k = 0; k < ACC.length; k++){ passiveAnnual += bb[k] * ((ACC[k].g||0) / 100); }
+  for (var k = 0; k < ACC.length; k++){ passiveAnnual += bb[k] * ((ACC[k].g||0)/100); }
+
+  var inflOn = $('infl-on') && $('infl-on').checked;
+  var inflR = +($('infl-rate') && $('infl-rate').value) || 0;
+  function disc(v, yr){ return inflOn ? v / Math.pow(1 + inflR/100, yr) : v; }
+  var shown = series.map(function(v,i){ return disc(v, i); });
+
   $('nowNet').textContent = money(nowNet);
-  $('futNet').textContent = money(series[series.length-1]);
-  $('passive').textContent = money(passiveAnnual / 12) + '/mo';
+  $('futNet').textContent = money(shown[shown.length-1]);
+  $('passive').textContent = money(disc(passiveAnnual/12, yrs)) + '/mo';
   $('yl').textContent = yrs;
-  drawChart(series);
+  var inote = $('inflNote');
+  if (inote) inote.textContent = inflOn ? 'Shown in today\'s dollars (' + inflR + '% inflation) - what it would actually buy now.' : '';
+  drawChart(shown);
 }
 
 function drawChart(s){
@@ -280,7 +329,8 @@ function drawChart(s){
   ctx.stroke();
 }
 
-renderInc(); renderExp(); renderAcc();
+renderInc(); renderExp(); renderAcc(); renderDebt();
+['infl-on','infl-rate'].forEach(function(id){ var el = $(id); if (el) el.addEventListener('input', calc); });
 var _cf = $('csv-file');
 if (_cf) _cf.addEventListener('change', function(e){
   var f = e.target.files[0]; if (!f) return;
