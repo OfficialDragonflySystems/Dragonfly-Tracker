@@ -33,8 +33,8 @@
     }
   })();
 
-  function award(pts, reason){ state.xp = (state.xp||0) + pts; save(state); render(); toast('+'+pts+' XP' + (reason ? ' - '+reason : '')); }
-  function badge(key, label){ if (state.badges[key]) return; state.badges[key] = {label:label, at:Date.now()}; save(state); render(); toast('Badge unlocked: '+label+' \u{1F3C5}'); }
+  function award(pts, reason){ state.xp = (state.xp||0) + pts; save(state); render(); if (state.gameOn) toast('+'+pts+' XP' + (reason ? ' - '+reason : '')); }
+  function badge(key, label){ if (state.badges[key]) return; state.badges[key] = {label:label, at:Date.now()}; save(state); if (state.gameOn){ render(); toast('Badge unlocked: '+label+' \u{1F3C5}'); } }
 
   function pageVisit(){
     var path = location.pathname, t = dstr();
@@ -89,10 +89,25 @@
       + (state.streak > 1 ? '<span style="color:#fbbf24;">\u{1F525}' + state.streak + '</span>' : '')
       + '</div>';
   }
+  // Serious-by-default: the game is OFF unless the user opts in (state.gameOn === true).
+  // When off we show only a tiny, low-key toggle; XP still accrues silently in the background.
+  function toggleHtml(){
+    return '<div id="dlg-toggle" title="Turn on the optional learning game (XP, badges, streaks)" '
+      + 'style="position:fixed;left:14px;bottom:14px;z-index:999;width:28px;height:28px;border-radius:50%;'
+      + 'background:rgba(13,19,32,.5);border:1px solid #1a2440;display:flex;align-items:center;justify-content:center;'
+      + 'cursor:pointer;font-size:13px;opacity:.4;transition:opacity .2s;" '
+      + 'onmouseover="this.style.opacity=\'1\'" onmouseout="this.style.opacity=\'.4\'">\u{1F3AE}</div>';
+  }
   function render(){
-    var c = document.getElementById('dlg-chip');
-    if (c) c.outerHTML = chipHtml(); else { var d = document.createElement('div'); d.innerHTML = chipHtml(); document.body.appendChild(d.firstChild); }
-    var chip = document.getElementById('dlg-chip'); if (chip) chip.onclick = panel;
+    var c = document.getElementById('dlg-chip'); if (c) c.remove();
+    var t = document.getElementById('dlg-toggle'); if (t) t.remove();
+    if (state.gameOn === true){
+      var d = document.createElement('div'); d.innerHTML = chipHtml(); document.body.appendChild(d.firstChild);
+      var chip = document.getElementById('dlg-chip'); if (chip) chip.onclick = panel;
+    } else {
+      var e = document.createElement('div'); e.innerHTML = toggleHtml(); document.body.appendChild(e.firstChild);
+      var tg = document.getElementById('dlg-toggle'); if (tg) tg.onclick = function(){ state.gameOn = true; save(state); render(); };
+    }
   }
   function panel(){
     var ex = document.getElementById('dlg-panel'); if (ex){ ex.remove(); return; }
@@ -104,7 +119,8 @@
     p.innerHTML = '<div style="font-weight:800;font-size:15px;">Your progress</div>'
       + '<div style="font-size:12px;color:#93a3b8;margin:4px 0 10px;">Level ' + lvl + ' ' + rankFor(lvl) + ' - ' + state.xp + ' XP' + (state.streak > 1 ? ' - \u{1F525} ' + state.streak + '-day streak' : '') + '</div>'
       + '<div style="font-size:11px;font-weight:700;color:#a78bfa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Badges</div>' + badges
-      + '<div style="font-size:11px;color:#93a3b8;margin-top:12px;line-height:1.5;">Earn XP by reading explainers and acing quizzes. Saved on this device - your eyes only.</div>';
+      + '<div style="font-size:11px;color:#93a3b8;margin-top:12px;line-height:1.5;">Earn XP by reading explainers and acing quizzes. Saved on this device - your eyes only.</div>'
+      + '<div style="margin-top:12px;border-top:1px solid #1a2440;padding-top:9px;text-align:right;"><span onclick="DLGame.off()" style="font-size:11px;color:#93a3b8;cursor:pointer;">Turn off learning game &times;</span></div>';
     document.body.appendChild(p);
   }
   function toast(msg){
@@ -114,6 +130,7 @@
     setTimeout(function(){ t.style.opacity='0'; setTimeout(function(){ t.remove(); }, 300); }, 2200);
   }
   function celebrate(title, sub){
+    if (!state.gameOn) return;  // serious mode: no celebration modal
     if (document.getElementById('dlg-cel')) return;
     var o = document.createElement('div'); o.id = 'dlg-cel';
     o.style.cssText = 'position:fixed;inset:0;z-index:2000;background:rgba(4,7,11,.82);display:flex;align-items:center;justify-content:center;padding:20px;';
@@ -131,5 +148,9 @@
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ render(); pageVisit(); });
   else { render(); pageVisit(); }
-  window.DLGame = { award: award, badge: badge };
+  window.DLGame = {
+    award: award, badge: badge,
+    on:  function(){ state.gameOn = true;  save(state); render(); },
+    off: function(){ state.gameOn = false; save(state); var p = document.getElementById('dlg-panel'); if (p) p.remove(); render(); }
+  };
 })();

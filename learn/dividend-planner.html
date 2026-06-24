@@ -39,7 +39,7 @@
   .segs{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px;}
   .seg{flex:1;min-width:64px;padding:8px 4px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--muted);font-size:12px;font-weight:700;cursor:pointer;text-align:center;}
   .seg.on{background:rgba(74,222,128,.14);border-color:var(--lime);color:var(--lime);}
-  .arch{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px;}
+  .arch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;}
   @media(max-width:560px){.arch{grid-template-columns:1fr;}}
   .ac{border:1px solid var(--line);border-radius:10px;padding:11px;cursor:pointer;background:#0a1018;}
   .ac.on{border-color:var(--lime);background:rgba(74,222,128,.06);}
@@ -118,7 +118,7 @@
     <div class="sub">Real payers that fit the style you picked &mdash; <b>examples to learn from, not picks</b>. Build your own basket and vet each one's reliability + safety flag before buying.</div>
     <div id="basket" style="margin:6px 0 8px;"></div>
     <p style="color:var(--muted);font-size:13px;margin:8px 0 10px;">The <b>Dividend Explorer</b> (in the app) shows which of these pay most reliably, which months they pay, and flags yield traps &mdash; so you can build the actual portfolio behind your plan and aim to hit (or beat) your goal.</p>
-    <a class="cta" href="/">Find &amp; vet these in the Explorer &rarr;</a>
+    <a class="cta" href="https://tracker.officialdragonflysystems.com/app#dividends">Find &amp; vet these in the Explorer &rarr;</a>
   </div>
 
   <p class="disc">This is an educational planning tool, not advice or a guarantee. It uses the simple assumptions you pick (yield, dividend growth, price growth) compounded annually; real markets vary year to year, dividends can be cut, and taxes apply (hold income in tax-advantaged accounts where you can). The point is to build intuition for your trajectory &mdash; not a promise of returns. Dragonfly Lens is not a registered investment advisor.</p>
@@ -133,7 +133,8 @@
 var ARCH = [
   ['steady','Steady', 3.5, 6, 'Aristocrats: lower yield, strong raises. Most reliable.'],
   ['balanced','Balanced', 5.0, 3.5, 'A blend of yield and growth.'],
-  ['high','High-yield', 8.0, 1, 'REITs/BDCs: big income now, little growth, more risk.']
+  ['high','High-yield', 8.0, 1, 'REITs/BDCs: big income now, little growth, more risk.'],
+  ['mine','Your average', 4.0, 4, 'Your REAL yield - from the dividends you actually collect. Type it (it is your "Yield on cost" in the income view) for a trajectory built on your own numbers.']
 ];
 var FREQ = [['weekly','Weekly',52],['biweekly','Biweekly',26],['monthly','Monthly',12],['none','One-time',0]];
 var state = { arch: 'steady', freq: 'monthly' };
@@ -149,6 +150,10 @@ var BASKETS = {
 };
 function renderBasket(){
   var box = $('basket'); if (!box) return;
+  if (state.arch === 'mine'){
+    box.innerHTML = '<span style="font-size:12px;color:var(--muted);">This is <b>your own portfolio</b> &mdash; the dividends you already collect. Manage these in the app\'s income view; use the Explorer below to find names that fit your target and risk.</span>';
+    return;
+  }
   box.innerHTML = (BASKETS[state.arch] || []).map(function(t){
     return '<span style="display:inline-block;background:#0a1018;border:1px solid var(--line);border-radius:14px;padding:4px 11px;margin:3px;font-size:12px;font-weight:700;">'+t+'</span>';
   }).join('');
@@ -156,10 +161,28 @@ function renderBasket(){
 function renderArch(){
   $('arch').innerHTML = ARCH.map(function(a){
     var on = a[0] === state.arch ? ' on' : '';
+    if (a[0] === 'mine'){
+      return '<div class="ac'+on+'" onclick="if(state.arch!==\'mine\'){state.arch=\'mine\';renderArch();calc();}">'
+        + '<b>'+a[1]+'</b>'
+        + '<div class="y"><input id="myyield" type="number" step="0.1" min="0" value="'+a[2].toFixed(1)+'" onclick="event.stopPropagation();" oninput="setMine(this.value)" style="width:56px;background:#0a1018;border:1px solid var(--line);border-radius:6px;color:var(--gold);font-size:16px;font-weight:800;text-align:center;padding:2px 3px;">%</div>'
+        + '<div class="d">'+a[4]+'</div></div>';
+    }
     return '<div class="ac'+on+'" onclick="state.arch=\''+a[0]+'\';renderArch();calc();">'
       + '<b>'+a[1]+'</b><div class="y">'+a[2].toFixed(1)+'%</div><div class="d">'+a[4]+'</div></div>';
   }).join('');
   renderBasket();
+}
+// Update the "Your average" yield from its inline input WITHOUT rebuilding the grid
+// (which would steal focus mid-type). Manually move the selection highlight to it.
+function setMine(v){
+  var y = parseFloat(v); if (!(isFinite(y) && y >= 0)) return;
+  for (var i = 0; i < ARCH.length; i++) if (ARCH[i][0] === 'mine') ARCH[i][2] = y;
+  state.arch = 'mine';
+  var cards = $('arch').querySelectorAll('.ac');
+  for (var k = 0; k < cards.length; k++) cards[k].classList.remove('on');
+  if (cards.length) cards[cards.length - 1].classList.add('on');  // 'mine' is the last card
+  renderBasket();
+  calc();
 }
 function renderFreq(){
   $('freq').innerHTML = FREQ.map(function(f){
@@ -240,6 +263,17 @@ function drawChart(s1, s2, goal, yld){
   line(s1, '#4ade80');   // reinvest
 }
 
+// If opened from the app's income view with ?yield=X.X, preload "Your average" with the
+// user's real yield-on-cost and select it - a trajectory built on their actual numbers.
+(function(){
+  try {
+    var my = parseFloat(new URLSearchParams(location.search).get('yield'));
+    if (isFinite(my) && my > 0){
+      for (var i = 0; i < ARCH.length; i++) if (ARCH[i][0] === 'mine') ARCH[i][2] = my;
+      state.arch = 'mine';
+    }
+  } catch(e){}
+})();
 renderArch(); renderFreq();
 ['goal','start','dep','yrs','reinv'].forEach(function(id){ $(id).addEventListener('input', calc); });
 window.addEventListener('resize', function(){ var c=$('chart'); c.width = Math.min(780, c.parentNode.clientWidth-36); calc(); });
