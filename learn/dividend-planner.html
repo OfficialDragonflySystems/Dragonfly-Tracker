@@ -242,22 +242,30 @@ function calc(){
   drawChart(withRe.series, noRe.series, goal, yld);
 }
 
+function shortMoney(n){ n = Math.round(n); var a = Math.abs(n); if (a >= 1e6) return '$' + (n/1e6).toFixed(1).replace(/\.0$/,'') + 'M'; if (a >= 1e3) return '$' + Math.round(n/1e3) + 'k'; return '$' + n; }
 function drawChart(s1, s2, goal, yld){
   var c = $('chart'), ctx = c.getContext('2d');
-  var W = c.width, H = c.height, pad = 34;
+  var W = c.width, H = c.height, pad = 48;
   ctx.clearRect(0,0,W,H);
   var maxV = Math.max.apply(null, s1.concat(s2)) || 1;
   var n = s1.length - 1;
   function x(i){ return pad + (W-pad-8) * (i/n); }
   function y(v){ return H-22 - (H-22-8) * (v/maxV); }
-  // axes
+  // Y-axis gridlines + $ value labels (5 ticks) - so the curve shows real numbers, not just a shape
+  ctx.font = '10px sans-serif'; ctx.textAlign = 'left';
+  for (var t = 0; t <= 5; t++){
+    var val = maxV * t/5, gy = y(val);
+    ctx.strokeStyle = 'rgba(255,255,255,.05)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(pad, gy); ctx.lineTo(W-4, gy); ctx.stroke();
+    ctx.fillStyle = '#7e8ea0'; ctx.fillText(shortMoney(val), 3, gy + 3);
+  }
+  // axes + x labels
   ctx.strokeStyle = '#22303f'; ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(pad,8); ctx.lineTo(pad,H-22); ctx.lineTo(W-4,H-22); ctx.stroke();
-  ctx.fillStyle = '#5a6a7a'; ctx.font = '10px sans-serif';
-  ctx.fillText(money(maxV), 2, 12); ctx.fillText('$0', 2, H-24);
-  ctx.fillText('yr 0', pad-6, H-8); ctx.fillText('yr '+n, W-32, H-8);
-  // goal line (value needed)
-  if (goal>0){ var need = (goal*12)/(yld/100); if (need<=maxV){ var gy=y(need); ctx.strokeStyle='#c8a84b'; ctx.setLineDash([4,4]); ctx.beginPath(); ctx.moveTo(pad,gy); ctx.lineTo(W-4,gy); ctx.stroke(); ctx.setLineDash([]); } }
+  ctx.fillStyle = '#7e8ea0';
+  ctx.fillText('yr 0', pad-2, H-7); ctx.textAlign = 'right'; ctx.fillText('yr '+n, W-4, H-7); ctx.textAlign = 'left';
+  // goal line + label
+  if (goal>0){ var need = (goal*12)/(yld/100); if (need<=maxV){ var ggy=y(need); ctx.strokeStyle='#c8a84b'; ctx.setLineDash([4,4]); ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(pad,ggy); ctx.lineTo(W-4,ggy); ctx.stroke(); ctx.setLineDash([]); ctx.fillStyle='#c8a84b'; ctx.textAlign='right'; ctx.fillText('goal '+shortMoney(need), W-6, ggy-3); ctx.textAlign='left'; } }
   function line(s, color){ ctx.strokeStyle=color; ctx.lineWidth=2.5; ctx.beginPath(); for(var i=0;i<s.length;i++){ var px=x(i),py=y(s[i]); if(i===0)ctx.moveTo(px,py); else ctx.lineTo(px,py);} ctx.stroke(); }
   line(s2, '#5a8aaa');   // no reinvest
   line(s1, '#4ade80');   // reinvest
