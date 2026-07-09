@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Data Center That Feeds You: A Practical Blueprint - Dragonfly Lens</title>
+<meta name="description" content="AI data centers dump gigawatts of low-grade heat into the sky while greenhouses next door burn gas to stay warm. A practical, numbers-first design for pairing them - the loop, the crops, the economics, the risks - and why regulators just made it inevitable.">
+<meta property="og:title" content="The Data Center That Feeds You: A Practical Blueprint">
+<meta property="og:description" content="One side's waste is exactly the other side's fuel. The practical design for pairing AI data centers with greenhouses - loop, crops, economics, risks.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/green-data-center.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/green-data-center-card.png">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Data Center That Feeds You">
+<meta name="twitter:description" content="A practical blueprint for pairing AI data centers with greenhouses - the loop, the crops, the economics, the risks.">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#c8a84b;--warn:#fbbf24;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:720px;margin:0 auto;padding:32px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(27px,5vw,40px);line-height:1.14;font-weight:400;margin:10px 0 10px;}
+  .lead{font-size:18px;color:var(--muted);margin:12px 0 24px;line-height:1.6;}
+  h2{font-size:20px;font-weight:800;margin:30px 0 8px;color:var(--ink);}
+  h3{font-size:15px;font-weight:800;margin:18px 0 4px;color:var(--accent);}
+  p{margin:12px 0;}
+  b,strong{color:#fff;}
+  ul,ol{margin:12px 0 12px 20px;} li{margin:7px 0;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:22px 0;}
+  .box h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:8px;}
+  .flow{background:#0a1018;border:1px solid var(--line);border-radius:10px;padding:14px;margin:16px 0;font-family:ui-monospace,Consolas,monospace;font-size:13px;line-height:1.9;color:var(--accent);overflow-x:auto;white-space:pre;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);}
+  th{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.05em;}
+  .warnbox{background:rgba(251,191,36,.06);border:1px solid #3a2d1a;border-radius:12px;padding:14px 16px;margin:20px 0;}
+  .warnbox h4{color:var(--warn);font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .disc{color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:34px;padding-top:16px;line-height:1.6;}
+  footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TED3ERB140');</script>
+</head>
+<body>
+<nav class="top"><a href="/" class="logo">&#9671; Dragonfly Lens</a><a href="/learn/" class="back">&larr; all explainers</a></nav>
+
+<div class="wrap">
+  <div class="kick">Deep dive &middot; Practical blueprint</div>
+  <h1>The Data Center That Feeds You</h1>
+  <p class="lead">Right now, AI data centers dump <b>gigawatts of heat into the sky</b> through cooling towers &mdash; while greenhouses, sometimes in the same county, <b>burn natural gas</b> to stay warm. One side's waste is <em>exactly</em> the other side's fuel. Here's the practical design for pairing them &mdash; the loop, the crops, the numbers, the honest risks &mdash; and why regulators just made this inevitable.</p>
+
+  <h2>The physics that makes it work (and why nobody did it sooner)</h2>
+  <p>A data center converts nearly <b>every watt of electricity into heat.</b> A 10&nbsp;MW facility is, thermally, a 10&nbsp;MW furnace running 24/7/365. The catch: it's <b>low-grade heat</b> &mdash; roughly <b>30&ndash;40&deg;C</b> from air-cooled racks, <b>45&ndash;60&deg;C</b> if the chips are liquid-cooled. That's too cool to make electricity or drive industry, which is why it's historically been thrown away.</p>
+  <p>But a greenhouse wants its air at <b>18&ndash;24&deg;C</b> and its root zone around <b>20&deg;C</b> &mdash; and in a cold climate, heating is <b>20&ndash;40% of a greenhouse's operating cost.</b> Low-grade heat isn't a defect to a greenhouse. It's the product. The pairing was always thermodynamically obvious; what changed is that AI made data-center heat <em>enormous and everywhere</em>, and regulators started demanding it be reused.</p>
+
+  <h2>The blueprint</h2>
+
+  <h3>1. Site: co-location or nothing</h3>
+  <p>Low-grade heat cannot be shipped &mdash; it loses its value within a kilometer or two of pipe. So the design rule is brutal and simple: <b>the greenhouse sits next door</b> (ideally sharing a fence line), in a <b>cold climate with cheap, clean power</b> &mdash; think Quebec, the Nordics, the northern U.S. Cold climate maximizes the value of the heat; cheap clean power is what brought the data center there anyway. Rural-edge sites win twice: land for glass, and a community that gains a farm instead of just a power hog.</p>
+
+  <h3>2. The loop: the greenhouse IS the cooling system</h3>
+  <div class="flow">  [ AI racks, liquid-cooled ]
+        |  water out ~45-60&deg;C
+        v
+  [ heat exchanger + thermal storage tank ]
+        |  supply ~40-50&deg;C            night/day buffer
+        v
+  [ greenhouse: under-bench + perimeter radiant loops ]
+        |  water returns ~25-30&deg;C  (heat absorbed by plants/air)
+        v
+  [ back to the data center as PRE-CHILLED coolant ]</div>
+  <p>This is the part most write-ups miss: done right, it's not charity &mdash; <b>the greenhouse replaces part of the data center's cooling plant.</b> Water comes back cooler than it left. The DC spends less on chillers; the greenhouse spends almost nothing on heat. <em>That's</em> the yin-yang: each side is the other's missing organ.</p>
+  <ul>
+    <li><b>Liquid cooling (direct-to-chip) is the unlock.</b> At 45&ndash;60&deg;C water, you can heat a greenhouse directly through a simple heat exchanger. Air-cooled 30&ndash;35&deg;C exhaust works too but usually needs a <b>heat pump</b> boost (still cheap: you're lifting 10&ndash;15&deg;C, not 40).</li>
+    <li><b>Thermal storage tank</b> (insulated water) buffers the mismatch: the DC makes heat flat-out 24/7; the greenhouse wants most of it on winter nights. A day-scale tank smooths it.</li>
+    <li><b>Backup boiler stays installed.</b> The greenhouse must survive a DC maintenance window; the DC must survive greenhouse downtime (a dry cooler as bypass). Neither side bets its life on the other &mdash; they just save money when both run, which is nearly always.</li>
+  </ul>
+
+  <h3>3. Sizing: how much glass per megawatt?</h3>
+  <p>Rough, honest arithmetic for a cold climate: a heated greenhouse needs on the order of <b>300&ndash;500&nbsp;kWh of heat per m&sup2; per year</b>. One MW of IT load produces ~8,760&nbsp;MWh of heat a year. Even capturing only part of it usefully:</p>
+  <table>
+    <tr><th>Data center size</th><th>Greenhouse it can heat (approx)</th><th>What that grows</th></tr>
+    <tr><td>1 MW (edge/AI node)</td><td>~1&ndash;2 hectares</td><td>~500&ndash;1,000 tonnes of tomatoes/yr</td></tr>
+    <tr><td>10 MW (regional)</td><td>~10&ndash;20 ha</td><td>a serious commercial grow operation</td></tr>
+    <tr><td>100 MW (AI campus)</td><td>~100+ ha potential</td><td>district heating + greenhouse cluster</td></tr>
+  </table>
+  <p class="lead" style="font-size:14px;margin-top:4px;">Treat these as order-of-magnitude planning numbers &mdash; climate, capture efficiency, and glass type move them a lot. The point: <b>even one modest AI building can heat a farm.</b></p>
+
+  <h3>4. Crops: boring on purpose</h3>
+  <p>Grow what commercial greenhouses already make money on &mdash; <b>tomatoes, cucumbers, peppers, leafy greens, strawberries</b> &mdash; not vertical-farm exotics. Two upgrades fit the design especially well:</p>
+  <ul>
+    <li><b>Low-light-tolerant varieties and efficiency research</b> reduce the <em>other</em> big cost (supplemental LED lighting) &mdash; heat from next door + less lighting demand attacks both cost lines at once. (This research is young; treat it as an improving tailwind, not a foundation.)</li>
+    <li><b>CO&#8322; enrichment:</b> plants grow measurably faster with more CO&#8322;. If the campus has any on-site combustion or CO&#8322; capture (one West Virginia proposal pipes captured CO&#8322; from hydrogen production to its greenhouses), the "waste" becomes plant food twice over.</li>
+  </ul>
+
+  <h3>5. Who runs what (the part that kills these projects)</h3>
+  <p>The graveyard of indoor-ag startups (AppHarvest et al.) teaches one lesson: <b>tech companies should not run farms.</b> The structure that works:</p>
+  <ul>
+    <li>The <b>DC operator</b> sells (or gives) heat under a simple long-term energy-services agreement &mdash; it's a cooling solution to them, with revenue as a bonus.</li>
+    <li>An <b>experienced greenhouse grower</b> owns and runs the grow operation. Dutch and Canadian growers have done profitable glasshouse ag for decades.</li>
+    <li>A <b>municipality or co-op</b> can anchor it: local food + local jobs + a data center that gives something back.</li>
+  </ul>
+
+  <h2>Why the economics actually close now</h2>
+  <ul>
+    <li><b>Regulation:</b> Germany now <b>mandates</b> heat reuse for new data centers &mdash; 10% from July 2026, 20% by 2028. The EU is moving the same way. What was PR is becoming a permit condition.</li>
+    <li><b>The NIMBY unlock (the underrated one):</b> communities everywhere are fighting data centers. A campus that heats the town's greenhouses &mdash; or its homes, as Microsoft and Fortum are doing for 250,000 people in Finland &mdash; flips the town meeting from opposition to invitation. <b>In the AI buildout, faster permitting is worth more than the heat.</b></li>
+    <li><b>It's already operating:</b> QScale's L&eacute;vis, Quebec campus is designed to feed surplus heat to neighboring greenhouses; SAI.TECH runs a greenhouse demo in Ohio; Microsoft's underwater-server experiments proved the reliability math years ago. This blueprint is assembled from working parts, not invented.</li>
+    <li><b>Food security bonus:</b> cold countries import an absurd share of winter vegetables. Heat that would've been vented becomes local winter food &mdash; the kind of "extra useful" that voters, and increasingly regulators, reward.</li>
+  </ul>
+
+  <div class="warnbox">
+    <h4>&#9888; The honest limits</h4>
+    <ul style="margin:4px 0 0 18px;">
+      <li><b>Heat is pennies next to compute.</b> The DC's motive is cooling savings + permits + ESG, not heat profit. Design around that reality &mdash; don't build a business case that needs heat revenue to matter to the operator.</li>
+      <li><b>Co-location is unforgiving.</b> No adjacent land, no project. This is for new builds and edge sites, not retrofits downtown.</li>
+      <li><b>Growers must be growers.</b> The greenhouse side lives or dies on agricultural operating skill; the tech side cannot substitute for it.</li>
+      <li><b>Investable pure-plays barely exist yet.</b> QScale and Panthalassa are private; the public exposure today is utilities like Fortum and DC operators with reuse mandates. This is a <em>theme to track</em>, not a ticker to chase.</li>
+    </ul>
+  </div>
+
+  <h2>The bigger pattern (our actual thesis)</h2>
+  <p>Space data centers, ocean data centers, nuclear-powered data centers, greenhouse-paired data centers &mdash; strip the venue away and it's all the <b>same trade: whoever solves power and cooling for AI wins.</b> The greenhouse pairing is special because it's the only one where the solution <em>also feeds people</em> &mdash; waste turned into warmth turned into food. Not every good idea needs a rocket.</p>
+  <p><b>Bet the bottleneck, not the venue.</b></p>
+
+  <p class="disc">Educational, not investment advice, and the engineering figures are order-of-magnitude planning numbers &mdash; real projects need real thermal engineering. Dragonfly Lens is not a registered investment advisor. Sources include EESI, InformationWeek, RESET, Hortinergy, and project announcements from Microsoft/Fortum, QScale, and SAI.TECH (2025&ndash;2026).</p>
+</div>
+
+<footer><a href="/learn/">&larr; All explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.</footer>
+<script src="learn-game.js"></script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
