@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nobody Knows the Price: Value, Uncertainty, and Not Fooling Yourself - Dragonfly Lens</title>
+<meta name="description" content="A backtest glowed with a Sharpe ratio of 40. We deleted it on purpose. What Mises, Knight, Hayek, Mandelbrot, Taleb, Keynes, Soros, and even the efficient-market crowd teach about why markets humble the confident - and why the real edge is discipline, not a secret formula.">
+<meta property="og:title" content="Nobody Knows the Price: What Great Economists Teach About Not Fooling Yourself">
+<meta property="og:description" content="We built a strategy that backtested at a Sharpe of 40. We deleted it. Eight thinkers explain why - and why honest discipline beats any glowing number.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/nobody-knows-the-price.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/nobody-knows-the-price-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nobody Knows the Price: What Great Economists Teach About Not Fooling Yourself">
+<meta name="twitter:description" content="We built a strategy that backtested at a Sharpe of 40. We deleted it. Here's why - and what it means for reading any too-good number.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/nobody-knows-the-price-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Investing Mindset</div>
+  <h1>Nobody Knows the Price</h1>
+  <p class="lead">A backtest glows on the screen with a <span class="def" data-d="A score for risk-adjusted return: how much reward you earned per unit of wobble. Higher looks better. A Sharpe above ~3 is rare and elite; above ~5, professionals assume something is broken or overfit, not brilliant.">Sharpe ratio</span> so high a professional would assume it&rsquo;s broken. A headline announces an AI that returned some eye-watering number last year. Both whisper the same seductive lie: <b>the future is a machine, and someone found the lever.</b> We know the pull of that lie &mdash; because we recently built one ourselves. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; July 31, 2026 &middot; A mindset, not a forecast.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The confession:</b> one of our own models backtested at a <b>Sharpe of 40</b>, winning <b>74%</b> of its trades. We deleted it &mdash; because when we split the results by era, the magic turned out to be corrupted data and a fading edge.</li>
+      <li><b>The lesson is 80&ndash;100 years old.</b> Mises, Knight, and Hayek explained why no backtest can promise the future; Mandelbrot and Taleb explained why the numbers themselves mislead; even the efficient-market crowd agrees real edge is rare and fleeting.</li>
+      <li><b>The through-line:</b> there is no objective &ldquo;true price&rdquo; a market owes you, and most of investing is <b>unmeasurable uncertainty</b>, not measurable risk. A backtest quietly pretends otherwise.</li>
+      <li><b>The turn:</b> if certainty is impossible, the edge isn&rsquo;t a secret formula &mdash; <b>it&rsquo;s discipline.</b> Judge against a coin flip, correct for how many things you tried, trust forward results over pretty ones, and believe the instrument over the headline.</li>
+    </ul>
+  </div>
+
+  <h2>We deleted our best strategy on purpose</h2>
+  <p>One of our own trading models backtested at a Sharpe ratio of <b>40</b>, winning <b>74%</b> of its trades. On paper it was the best thing we&rsquo;d ever built &mdash; several times better than the boldest &ldquo;AI beat the market&rdquo; headline you&rsquo;ll ever read. We deleted it.</p>
+  <p>When we broke the results out year by year, the miracle dissolved. Two years of the underlying price data were <b>corrupted</b> &mdash; individual bars showed the market moving a hundred times more than physically possible &mdash; and those two junk years happened to produce the strategy&rsquo;s biggest &ldquo;wins.&rdquo; Strip them out and the edge kept shrinking, until this year it turned <i>negative</i>. The Sharpe-40 wasn&rsquo;t a discovery. It was a mirror reflecting our own hope back at us.</p>
+  <p>That experience is the whole essay &mdash; and it was described, precisely, decades before we were born.</p>
+
+  <h2>Mises: there is no &ldquo;true price&rdquo;</h2>
+  <p><b>Ludwig von Mises</b> taught that <span class="def" data-d="The Austrian idea that value isn't a property inside an object - it exists only in the mind of a person choosing, right now, at the margin. Nothing is worth a fixed amount; it's worth what someone will give up for it in this moment.">value is subjective</span>: it doesn&rsquo;t live inside a thing, it lives in the mind of a person choosing, at a moment, at the margin. Water is worthless by a river and priceless in a desert. There is no objective &ldquo;true value&rdquo; that a price is obligated to return to &mdash; which is exactly why a market can stay &ldquo;wrong&rdquo; far longer than your model expects.</p>
+  <p>His sharper point cuts straight through modern quant finance. Mises split uncertainty in two:</p>
+  <ul>
+    <li><b><span class="def" data-d="You know the full distribution of outcomes, like a roulette wheel or a dice roll. You can't predict the next result, but you know the odds exactly, and they never change.">Class probability</span></b> &mdash; you know the whole deck. Roulette. You can&rsquo;t call the next spin, but you know the odds exactly, forever.</li>
+    <li><b><span class="def" data-d="A one-off, never-repeated event where you know some of the factors but there is no real 'frequency' to measure - because it only happens once. Most of economic and market life is this kind.">Case probability</span></b> &mdash; a one-off event. You know some of the factors, but there is no &ldquo;frequency&rdquo; to compute, because it happens once and never repeats.</li>
+  </ul>
+  <p>Markets are overwhelmingly <b>case</b> probability &mdash; and here is the trap: <b>a backtest secretly assumes <i>class</i> probability.</b> It treats the future as more draws from the same deck. But the deck gets reshuffled: regimes change, data has flaws, the world stops resembling your sample. Our Sharpe-40 wasn&rsquo;t a measurement of the odds. It was a roulette wheel painted onto a first date.</p>
+
+  <h2>Knight: profit is the reward for the risk you can&rsquo;t measure</h2>
+  <p><b>Frank Knight</b> gave this its formal, respected name in 1921. <b>Risk</b> is measurable and insurable (class probability). <span class="def" data-d="Knightian uncertainty: the unmeasurable kind, where you can't even write down the odds. Named for economist Frank Knight, 1921. His claim: real profit is payment for facing THIS, not the tame, quantifiable kind.">Uncertainty</span> is not (case probability). And here is the line every trader should tattoo somewhere: <b>profit is the reward for bearing true, unmeasurable uncertainty</b> &mdash; not for bearing quantifiable risk, which competition prices down to nothing.</p>
+  <div class="flag"><b>Read that backwards and it stings:</b> if your edge is fully captured in a number, the market has probably already eaten it. The durable rewards sit in the fog the spreadsheet can&rsquo;t reach &mdash; which is precisely the fog a backtest pretends isn&rsquo;t there.</div>
+
+  <h2>Hayek: no model holds what the market knows</h2>
+  <p><b>Friedrich Hayek</b> &mdash; Mises&rsquo;s student &mdash; explained <i>why</i> a price is so hard to beat: it is a single number silently summarizing the dispersed, un-writable-down knowledge of millions of people. No model, however elaborate, contains that. In his Nobel lecture he named the modern disease directly: <a href="https://www.nobelprize.org/prizes/economic-sciences/1974/hayek/lecture/" rel="nofollow"><span class="def" data-d="Hayek's 1974 Nobel lecture. Its argument: economies and markets are too complex for anyone to forecast with the precision they claim - and dressing guesses up in equations doesn't make them knowledge.">&ldquo;the pretense of knowledge&rdquo;</span></a> &mdash; dressing up guesses about human behavior in the costume of physics.</p>
+  <p>A glowing backtest is the pretense of knowledge in its purest form. So is any &ldquo;AI has solved markets.&rdquo; The honest move Hayek leaves you is not to forecast harder &mdash; it&rsquo;s to <b>read prices</b>, the market&rsquo;s own information system, instead of your own narrative.</p>
+
+  <h2>Mandelbrot: the math itself is wilder than the model</h2>
+  <p><b>Benoit Mandelbrot</b> spent decades showing that market returns are <b>not</b> the gentle bell curve that most risk models and Sharpe ratios assume. Real markets have <span class="def" data-d="Fat tails: extreme moves (crashes and melt-ups) happen far more often than the tidy bell-curve math predicts. The rare disaster isn't as rare as the model says - and it's usually what decides whether you survive.">fat tails</span> &mdash; the rare, violent move is far more common than the equations predict. A Sharpe ratio measures an <i>average calm</i>; markets pay their bills in sudden storms. Every metric built on the bell curve is quietly under-counting the day that ends the fund.</p>
+
+  <h2>Taleb: the track record is fooling you</h2>
+  <p><b>Nassim Taleb</b> put a modern face on all of it. Across thousands of parallel possible histories, <i>someone</i> posts a spectacular year by luck alone &mdash; and that someone gets the magazine cover. This is <span class="def" data-d="Survivorship bias: you only see the winners who are still standing, never the identical-looking players who blew up and vanished. It makes luck look like skill.">survivorship bias</span> and being <b>fooled by randomness</b>: a single dazzling year is noise, not signal, and a track record with no visible risk of ruin is <i>hiding</i> the ruin, not avoiding it.</p>
+  <div class="flag"><b>Taleb&rsquo;s one rule beneath all the others:</b> first, don&rsquo;t blow up. Which is why &ldquo;a huge return last year, announced with confidence&rdquo; should <i>lower</i> your certainty, not raise it &mdash; the same skepticism we turned on our own Sharpe-40. Genuinely durable edge rarely advertises; more often it goes quiet.</div>
+
+  <h2>Keynes &amp; Soros: you&rsquo;re guessing what others will guess</h2>
+  <p>Two more voices, from very different chairs, sharpen the point that price is a moving human agreement, not a fact. <b>John Maynard Keynes</b> &mdash; a brilliant, occasionally wiped-out investor himself &mdash; described the market as a <span class="def" data-d="Keynes's 1936 image: a newspaper contest where you win by picking the faces OTHERS will pick, not the ones you find prettiest. Investing, he said, is guessing what the average opinion expects the average opinion to be.">&ldquo;beauty contest&rdquo;</span>: you don&rsquo;t win by picking the best company, you win by guessing what <i>everyone else</i> will decide is the best company. His other line is the one that outlives every model: <b>&ldquo;the market can stay irrational longer than you can stay solvent.&rdquo;</b></p>
+  <p><b>George Soros</b> &mdash; a practitioner, not a professor &mdash; called the feedback loop <span class="def" data-d="Soros's idea: prices and fundamentals feed back on each other. A rising price can change the reality it's supposedly measuring (cheaper capital, more confidence), which pushes the price further. So there's no stable 'correct' value to converge to.">reflexivity</span>: prices don&rsquo;t just <i>reflect</i> reality, they <i>bend</i> it &mdash; a soaring stock lowers a company&rsquo;s cost of capital, which improves the fundamentals, which lifts the stock. There is no fixed equilibrium underneath for a backtest to anchor to. The ground itself moves when you step on it.</p>
+
+  <h2>The steel-man: even the efficient-market crowd agrees</h2>
+  <p>You don&rsquo;t have to be an Austrian or a contrarian to reach the same humility. <b>Eugene Fama&rsquo;s</b> <span class="def" data-d="Efficient Market Hypothesis: the mainstream view that prices already bake in available information, so consistently beating the market is extraordinarily hard. Won Fama a Nobel. We treat it as the null hypothesis to disprove, not an enemy to dunk on.">Efficient Market Hypothesis</span> &mdash; the establishment&rsquo;s cornerstone &mdash; says prices already reflect what&rsquo;s knowable, so persistent edge is <i>rare and fleeting by construction.</i> We take that seriously as our <b>null hypothesis</b>: we assume we have no edge until forward reality proves otherwise. That&rsquo;s not pessimism. It&rsquo;s the only honest place to start.</p>
+
+  <h2>The opportunity hiding in the humility</h2>
+  <p>Here is the turn, and it&rsquo;s the most useful part. If markets are case-probability, fat-tailed, reflexive, and already efficient &mdash; and if track records lie &mdash; that sounds like despair. It&rsquo;s the opposite. It means <b>the edge was never a secret formula. The edge is discipline.</b></p>
+  <div class="real">
+    <b>The rules that actually protect capital &mdash; the ones we run on ourselves:</b>
+    <ul style="margin-bottom:2px;">
+      <li>Judge every strategy against a <span class="def" data-d="Our core test: shuffle the strategy's own trades at random thousands of times to build a 'lucky twin,' then ask whether the real strategy beats it. If it doesn't clearly clear the coin flip, it has no demonstrated edge - no matter how nice the raw return looks.">coin-flip twin</span>, not by its raw return.</li>
+      <li>Correct for how many strategies you <i>tried</i> before celebrating the one that &ldquo;worked&rdquo; &mdash; test a thousand things and the best one looks brilliant by luck alone.</li>
+      <li>Trust <b>forward, out-of-sample</b> results over any in-sample number, however beautiful.</li>
+      <li>When your own instrument flashes red beneath a green headline, <b>believe the instrument.</b></li>
+    </ul>
+  </div>
+  <p>That discipline is exactly what let us delete our Sharpe-40 fantasy before it deleted our capital. It&rsquo;s the same lens we&rsquo;d turn on any &ldquo;an AI has solved markets&rdquo; claim, ours or anyone&rsquo;s: <i>interesting &mdash; now show me the forward record, the risk of ruin, and the independent proof.</i> Not as an attack on anyone. As the price of not fooling ourselves.</p>
+  <p><b>Nobody knows the price.</b> Anyone who tells you they&rsquo;ve solved it is offering the one thing markets never award: certainty.</p>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">Honest numbers, plain English</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">We&rsquo;d rather show you the strategy we deleted than the one we&rsquo;re selling.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens is built on the opposite of the &ldquo;51% AI&rdquo; pitch &mdash; every claim sourced, fact kept separate from hope, and the losers reported alongside the winners.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/ai-malinvestment.html">The Austrian Lens on the AI Build-Out</a> &middot; <a href="/learn/regimes.html">Why Strategies Stop Working</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc"><b>Sources &amp; further reading:</b> <b>Mises on subjective value and class-vs-case probability</b> &mdash; <i>Human Action</i> (1949), <a href="https://mises.org/library/human-action-0" rel="nofollow">Mises Institute</a>; <b>Knight on risk vs. uncertainty</b> &mdash; <i>Risk, Uncertainty and Profit</i> (1921); <b>Hayek, &ldquo;The Pretense of Knowledge&rdquo;</b> (Nobel lecture, 1974) &mdash; <a href="https://www.nobelprize.org/prizes/economic-sciences/1974/hayek/lecture/" rel="nofollow">NobelPrize.org</a>; <b>Mandelbrot on fat tails</b> &mdash; <i>The (Mis)Behavior of Markets</i> (2004); <b>Taleb on randomness, survivorship, and ruin</b> &mdash; <i>Fooled by Randomness</i> (2001), <i>The Black Swan</i> (2007); <b>Keynes&rsquo;s &ldquo;beauty contest&rdquo;</b> &mdash; <i>The General Theory</i> (1936), ch. 12; <b>Soros on reflexivity</b> &mdash; <i>The Alchemy of Finance</i> (1987); <b>Fama&rsquo;s Efficient Market Hypothesis</b> &mdash; &ldquo;Efficient Capital Markets&rdquo; (1970), Nobel 2013. The deflated-Sharpe / multiple-testing correction we use to &ldquo;correct for how many you tried&rdquo; follows Bailey &amp; Lopez de Prado.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. The Sharpe-40 example is our own internal research; specifics are simplified for illustration. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
