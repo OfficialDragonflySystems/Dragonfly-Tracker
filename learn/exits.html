@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buy &amp; hold vs exit strategies — Dragonfly Lens · Learn</title>
-<meta name="description" content="We backtested every smart exit you can imagine. Buy & hold won. Trailing stops, profit targets, time-based exits — they all gave back more than they saved. Here's the data and the lesson.">
+<title>Buy &amp; hold vs exit strategies &mdash; Dragonfly Lens &middot; Learn</title>
+<meta name="description" content="We backtested every smart exit you can imagine. Buy & hold won. Trailing stops, profit targets, time-based exits &mdash; they all gave back more than they saved. Here's the data and the lesson.">
 <style>
   :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -75,14 +75,14 @@
 </nav>
 
 <div class="page">
-  <div class="eyebrow">Concept · The Lens</div>
+  <div class="eyebrow">Concept &middot; The Lens</div>
   <h1>Buy &amp; hold vs exit strategies.</h1>
-  <div class="meta">~7 min read · Backed by our own backtest</div>
+  <div class="meta">~7 min read &middot; Backed by our own backtest</div>
 
   <div class="article">
-    <p>We spent months backtesting every "smart" exit strategy you can imagine — trailing stops, profit targets, time-based exits, regime-based exits, Sharpe-optimized exits, combinations of all of them. The data was unambiguous. <strong>Buy &amp; hold beat every one of them.</strong> Not by a tiny margin. By a wide one. This article documents what we found, what we changed, and what the implication is for how a signal-based newsletter should actually be used.</p>
+    <p>We spent months backtesting every "smart" exit strategy you can imagine &mdash; trailing stops, profit targets, time-based exits, regime-based exits, Sharpe-optimized exits, combinations of all of them. The data was unambiguous. <strong>Buy &amp; hold beat every one of them.</strong> Not by a tiny margin. By a wide one. This article documents what we found, what we changed, and what the implication is for how a signal-based newsletter should actually be used.</p>
 
-    <p>The conventional wisdom — "let your winners run but cut your losers fast" — is one of those things that <em>sounds</em> like sophisticated risk management and turns out, on data, to be wealth-destroying for the typical case. The intuition is wrong because it ignores how much of a portfolio's return comes from a tiny minority of multi-baggers, and how often the smart-exit rules clip those exact positions out.</p>
+    <p>The conventional wisdom &mdash; "let your winners run but cut your losers fast" &mdash; is one of those things that <em>sounds</em> like sophisticated risk management and turns out, on data, to be wealth-destroying for the typical case. The intuition is wrong because it ignores how much of a portfolio's return comes from a tiny minority of multi-baggers, and how often the smart-exit rules clip those exact positions out.</p>
 
     <h2>What we tested</h2>
 
@@ -102,12 +102,12 @@
       <div class="strat lose">
         <div class="strat-name">Trailing Stop (typical)</div>
         <div class="strat-result">Far behind</div>
-        <div class="strat-desc">Buy, then exit if the price falls X% from its peak. Standard "let winners run" rule. Sounds great, but: most multi-baggers see 30–50% drawdowns mid-thesis before continuing up. Trailing stops exit at the drawdown bottom, just before the recovery.</div>
+        <div class="strat-desc">Buy, then exit if the price falls X% from its peak. Standard "let winners run" rule. Sounds great, but: most multi-baggers see 30&ndash;50% drawdowns mid-thesis before continuing up. Trailing stops exit at the drawdown bottom, just before the recovery.</div>
       </div>
       <div class="strat lose">
         <div class="strat-name">Profit Target</div>
         <div class="strat-result">Worst</div>
-        <div class="strat-desc">Exit at a fixed +X% gain. Locks in small wins, caps the tail. Since portfolio returns are dominated by the rare 5–10x winners, capping them at +50% or +100% destroys most of the alpha. Mathematically guaranteed to underperform.</div>
+        <div class="strat-desc">Exit at a fixed +X% gain. Locks in small wins, caps the tail. Since portfolio returns are dominated by the rare 5&ndash;10x winners, capping them at +50% or +100% destroys most of the alpha. Mathematically guaranteed to underperform.</div>
       </div>
       <div class="strat lose">
         <div class="strat-name">Stop + Re-entry</div>
@@ -117,23 +117,23 @@
       <div class="strat draw">
         <div class="strat-name">Pyramid Scale-Out</div>
         <div class="strat-result">Mixed</div>
-        <div class="strat-desc">Sell 25% at +50%, another 25% at +100%, etc. Reduces psychological pressure but mechanically the same as a partial profit target — caps the tail without eliminating it. Slightly better than the others, still well behind buy &amp; hold.</div>
+        <div class="strat-desc">Sell 25% at +50%, another 25% at +100%, etc. Reduces psychological pressure but mechanically the same as a partial profit target &mdash; caps the tail without eliminating it. Slightly better than the others, still well behind buy &amp; hold.</div>
       </div>
     </div>
 
     <div class="key-finding">
       <span class="tag">The number</span>
-      <p>Across our 87-thesis backtest, ranked by entry conviction: <strong>HIGH-conviction signals returned +489% on buy &amp; hold</strong> over their average ~4.8 year holding window. Medium-conviction signals returned +148%. The same signals run through any of the smart-exit rules above returned dramatically less — and the trailing-stop strategy, in particular, gave up the majority of the conviction-driven outperformance.</p>
+      <p>Across our 87-thesis backtest, ranked by entry conviction: <strong>HIGH-conviction signals returned +489% on buy &amp; hold</strong> over their average ~4.8 year holding window. Medium-conviction signals returned +148%. The same signals run through any of the smart-exit rules above returned dramatically less &mdash; and the trailing-stop strategy, in particular, gave up the majority of the conviction-driven outperformance.</p>
       <p>The buy-and-hold conviction edge survives every robustness check we ran. Smart exits don't.</p>
     </div>
 
     <h2>Why this is true (the math)</h2>
 
-    <p>Portfolio returns are <strong>convex</strong>: dominated by the right tail. Across any large basket of stock picks, the median outcome is roughly flat-to-slightly-positive, but a handful of multi-baggers (5×, 10×, 30×) drag the average up massively. Any exit rule that <em>truncates the right tail</em> — and almost all "smart exits" do — hurts portfolio CAGR disproportionately.</p>
+    <p>Portfolio returns are <strong>convex</strong>: dominated by the right tail. Across any large basket of stock picks, the median outcome is roughly flat-to-slightly-positive, but a handful of multi-baggers (5&times;, 10&times;, 30&times;) drag the average up massively. Any exit rule that <em>truncates the right tail</em> &mdash; and almost all "smart exits" do &mdash; hurts portfolio CAGR disproportionately.</p>
 
-    <p>Consider: in a basket of 87 names, if 5 of them go up 10× and the rest are flat, your average return is roughly <code>(5 × 900% + 82 × 0%) / 87 ≈ +52%</code> per name. Cap each winner at +200% (a "respectable" profit target) and your 5 winners now contribute <code>5 × 200% / 87 ≈ +11%</code> — you've cut the basket's return by 80%. That's the cost of a profit target on a convex distribution.</p>
+    <p>Consider: in a basket of 87 names, if 5 of them go up 10&times; and the rest are flat, your average return is roughly <code>(5 &times; 900% + 82 &times; 0%) / 87 &asymp; +52%</code> per name. Cap each winner at +200% (a "respectable" profit target) and your 5 winners now contribute <code>5 &times; 200% / 87 &asymp; +11%</code> &mdash; you've cut the basket's return by 80%. That's the cost of a profit target on a convex distribution.</p>
 
-    <p>Trailing stops are even more insidious. Most great theses involve mid-trade drawdowns of 30%, 40%, sometimes 50%. NVDA had a ~70% drawdown in 2022 inside a multi-year megathesis. A 25% trailing stop would have exited NVDA at the 2022 bottom — and almost no one buys back into a name they just stopped out of, especially after a painful loss. So the trailing stop doesn't just give up the recovery; it psychologically prevents re-entry.</p>
+    <p>Trailing stops are even more insidious. Most great theses involve mid-trade drawdowns of 30%, 40%, sometimes 50%. NVDA had a ~70% drawdown in 2022 inside a multi-year megathesis. A 25% trailing stop would have exited NVDA at the 2022 bottom &mdash; and almost no one buys back into a name they just stopped out of, especially after a painful loss. So the trailing stop doesn't just give up the recovery; it psychologically prevents re-entry.</p>
 
     <h2>What this means for how you use the system</h2>
 
@@ -142,7 +142,7 @@
     <ul>
       <li><strong>The entry decision is where the edge lives.</strong> If exits can't be improved through cleverness, then the leverage is on selectivity at entry. That's why the conviction model matters: a HIGH-conviction setup held to thesis invalidation is the engine; a MED setup held the same way is the median; a no-conviction setup held the same way is the dilution. See <a href="conviction.html">how the conviction score is built</a>.</li>
       <li><strong>Position sizing matters more than exit timing.</strong> Since you can't reliably improve outcomes by exiting cleverly, the lever you have left is how much capital you put in at entry. Bigger size for higher-conviction setups; smaller for lower. The Dragonfly recommended-strategy field on each signal card encodes this.</li>
-      <li><strong>One catastrophic-stop exception.</strong> Buy &amp; hold doesn't mean "ignore everything that happens." If a company's actual financials disintegrate (the auditor resigns, the CEO is arrested, debt covenants break) — the thesis is dead. The Catastrophic Stop is for that, not for price movement.</li>
+      <li><strong>One catastrophic-stop exception.</strong> Buy &amp; hold doesn't mean "ignore everything that happens." If a company's actual financials disintegrate (the auditor resigns, the CEO is arrested, debt covenants break) &mdash; the thesis is dead. The Catastrophic Stop is for that, not for price movement.</li>
       <li><strong>Thesis invalidation is the real exit signal.</strong> What kills a thesis isn't a 30% drawdown. It's a fact pattern that contradicts the original case: the FDA approval got rejected, the contract went to a competitor, the regulatory tailwind reversed. Exits should track <em>thesis state</em>, not price action.</li>
     </ul>
 
@@ -152,12 +152,12 @@
 
     <p><em>"Buy &amp; hold is fine for institutional money with a 10-year horizon. Retail investors need to manage drawdown risk because they don't have the emotional capacity to sit through a -50% paper loss without panic-selling at the worst moment."</em></p>
 
-    <p>This is a real point. The data says buy &amp; hold is superior <em>if you can actually hold</em>. The historical record of retail behavior is that most people <em>can't</em> — they sell at the bottom of every drawdown and buy back near the top. If that's the realistic behavior, then a mechanical trailing stop might genuinely save them from worse outcomes than buy &amp; hold would.</p>
+    <p>This is a real point. The data says buy &amp; hold is superior <em>if you can actually hold</em>. The historical record of retail behavior is that most people <em>can't</em> &mdash; they sell at the bottom of every drawdown and buy back near the top. If that's the realistic behavior, then a mechanical trailing stop might genuinely save them from worse outcomes than buy &amp; hold would.</p>
 
-    <p>Our view: the answer isn't a worse-but-survivable exit rule. The answer is <em>position sizing that lets you sit through drawdowns without panic</em>. If you're sized correctly — meaning no single position can blow up your portfolio — a 50% drawdown on one name is uncomfortable but not catastrophic, and you can wait it out. If you're sized aggressively, the drawdowns force you out at exactly the wrong time, regardless of what the data says.</p>
+    <p>Our view: the answer isn't a worse-but-survivable exit rule. The answer is <em>position sizing that lets you sit through drawdowns without panic</em>. If you're sized correctly &mdash; meaning no single position can blow up your portfolio &mdash; a 50% drawdown on one name is uncomfortable but not catastrophic, and you can wait it out. If you're sized aggressively, the drawdowns force you out at exactly the wrong time, regardless of what the data says.</p>
 
     <div class="callout">
-      <p><strong>Bottom line:</strong> the cleverness budget in investing is finite. We've concluded ours is best spent on the entry side — convergent-catalyst selection, conviction scoring, watching for thesis invalidation. Exits we keep simple: buy, hold, sell only when the thesis breaks or the catastrophic stop trips.</p>
+      <p><strong>Bottom line:</strong> the cleverness budget in investing is finite. We've concluded ours is best spent on the entry side &mdash; convergent-catalyst selection, conviction scoring, watching for thesis invalidation. Exits we keep simple: buy, hold, sell only when the thesis breaks or the catastrophic stop trips.</p>
     </div>
   </div>
 

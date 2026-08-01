@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Did AMD Just Kill the AI Subscription? The Honest Version of Local AI — Dragonfly Lens</title>
-<meta name="description" content="A mini PC ran a 235-billion-parameter AI model with no cloud, and the internet declared subscriptions dead. The chip is real and the demo is real — but here's what 'killed subscriptions' leaves out, and who actually profits from AI moving to the edge. Plain English, every number sourced.">
+<title>Did AMD Just Kill the AI Subscription? The Honest Version of Local AI &mdash; Dragonfly Lens</title>
+<meta name="description" content="A mini PC ran a 235-billion-parameter AI model with no cloud, and the internet declared subscriptions dead. The chip is real and the demo is real &mdash; but here's what 'killed subscriptions' leaves out, and who actually profits from AI moving to the edge. Plain English, every number sourced.">
 <meta property="og:title" content="Did AMD Just Kill the AI Subscription? The Honest Version of Local AI">
-<meta property="og:description" content="A mini PC ran a 235B model with no cloud. The chip is real, the demo is real — but here's what the hype leaves out, and who actually profits from AI moving to the edge.">
+<meta property="og:description" content="A mini PC ran a 235B model with no cloud. The chip is real, the demo is real &mdash; but here's what the hype leaves out, and who actually profits from AI moving to the edge.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://officialdragonflysystems.com/learn/local-ai.html">
 <meta property="og:image" content="https://officialdragonflysystems.com/learn/local-ai-card.png">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Dragonfly Lens">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Did AMD Just Kill the AI Subscription?">
-<meta name="twitter:description" content="A mini PC ran a 235B model with no cloud. The chip is real — but here's what 'killed subscriptions' leaves out, and who actually profits.">
+<meta name="twitter:description" content="A mini PC ran a 235B model with no cloud. The chip is real &mdash; but here's what 'killed subscriptions' leaves out, and who actually profits.">
 <meta name="twitter:image" content="https://officialdragonflysystems.com/learn/local-ai-card.png">
 <style>
   :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
@@ -77,7 +77,7 @@
   <div class="box tldr">
     <h3 style="margin-top:0;">The short version</h3>
     <ul style="margin-bottom:2px;">
-      <li><b>What's real:</b> AMD's <span class="def" data-d="The Ryzen AI Max+ 395, codenamed Strix Halo — a single chip combining a CPU, a big GPU, and an AI accelerator, wired to up to 128GB of shared memory. Designed to run AI on a desktop instead of in a data center.">Strix Halo</span> mini PC genuinely ran a 235B model on your desk. That was impossible on consumer hardware a year ago.</li>
+      <li><b>What's real:</b> AMD's <span class="def" data-d="The Ryzen AI Max+ 395, codenamed Strix Halo &mdash; a single chip combining a CPU, a big GPU, and an AI accelerator, wired to up to 128GB of shared memory. Designed to run AI on a desktop instead of in a data center.">Strix Halo</span> mini PC genuinely ran a 235B model on your desk. That was impossible on consumer hardware a year ago.</li>
       <li><b>What's hype:</b> &ldquo;it killed subscriptions.&rdquo; The model only fits because of three asterisks the viral posts skip &mdash; and it runs at <b>~11 words a second</b>, not cloud speed.</li>
       <li><b>The honest framing:</b> local AI just got <i>good enough to matter</i> for a huge set of jobs. It did <b>not</b> become a cloud-killer. They split by use-case, they don't fight to the death.</li>
       <li><b>The opportunity:</b> the shift to the edge is a <b>memory story</b> first. Whether AI runs in the cloud or on your desk, the same chain gets paid &mdash; and now it gets paid <i>twice</i>.</li>
@@ -86,15 +86,15 @@
   </div>
 
   <h2>What actually happened</h2>
-  <p>At CES 2026, AMD's CEO held up a mini PC and ran <b>Qwen3-235B</b> &mdash; a 235-billion-parameter model &mdash; live, entirely on the device. The hardware is the <b>Ryzen AI Max+ 395</b>: 16 CPU cores, a big integrated GPU, a 50+ <span class="def" data-d="Trillions of Operations Per Second — a rough measure of an AI accelerator's raw speed. Higher is faster, but it's only one part of the story; memory size often matters more for big models.">TOPS</span> AI accelerator, and up to <b>128GB of unified memory</b>. That last number is the trick. A top gaming card (RTX 5090) has 32GB; this has <i>four times</i> the memory the model can live in &mdash; which is exactly what a giant model needs. For a machine that costs roughly <b>$1,500&ndash;2,500</b>, that's a genuine milestone. <b>Credit where due: this was not possible on a consumer device a year ago.</b></p>
+  <p>At CES 2026, AMD's CEO held up a mini PC and ran <b>Qwen3-235B</b> &mdash; a 235-billion-parameter model &mdash; live, entirely on the device. The hardware is the <b>Ryzen AI Max+ 395</b>: 16 CPU cores, a big integrated GPU, a 50+ <span class="def" data-d="Trillions of Operations Per Second &mdash; a rough measure of an AI accelerator's raw speed. Higher is faster, but it's only one part of the story; memory size often matters more for big models.">TOPS</span> AI accelerator, and up to <b>128GB of unified memory</b>. That last number is the trick. A top gaming card (RTX 5090) has 32GB; this has <i>four times</i> the memory the model can live in &mdash; which is exactly what a giant model needs. For a machine that costs roughly <b>$1,500&ndash;2,500</b>, that's a genuine milestone. <b>Credit where due: this was not possible on a consumer device a year ago.</b></p>
 
   <h2>The three asterisks the hype skips</h2>
   <p>Now the honest mechanics &mdash; because &ldquo;runs a 235B model&rdquo; is doing a lot of quiet work:</p>
   <div class="stack">
-    <div class="step"><b>It's a mixture-of-experts &mdash; only ~22B of the 235B run at once.</b> <span class="def" data-d="A model design where only a small fraction of the total parameters ('experts') activate for any given word. So a '235B model' only does ~22B worth of work per token — which is the real reason it fits on a small machine.">Mixture-of-experts (MoE)</span> means the model is 235B on paper but only fires ~22 billion parameters per word. That's <i>why</i> it fits. Calling it &ldquo;a 235B model on a mini PC&rdquo; is true but flattering &mdash; the active workload is a tenth of that.</div>
-    <div class="step"><b>It's heavily compressed.</b> To squeeze in, the model is <span class="def" data-d="Shrinking a model by storing its numbers at lower precision (e.g. 3-bit instead of 16-bit). It saves enormous memory but costs some accuracy — the model gets a little 'dumber' and blurrier.">quantized</span> down to about 3-bit precision (~101GB). That's real compression with a real quality cost &mdash; it's not the full-fat model the cloud serves.</div>
+    <div class="step"><b>It's a mixture-of-experts &mdash; only ~22B of the 235B run at once.</b> <span class="def" data-d="A model design where only a small fraction of the total parameters ('experts') activate for any given word. So a '235B model' only does ~22B worth of work per token &mdash; which is the real reason it fits on a small machine.">Mixture-of-experts (MoE)</span> means the model is 235B on paper but only fires ~22 billion parameters per word. That's <i>why</i> it fits. Calling it &ldquo;a 235B model on a mini PC&rdquo; is true but flattering &mdash; the active workload is a tenth of that.</div>
+    <div class="step"><b>It's heavily compressed.</b> To squeeze in, the model is <span class="def" data-d="Shrinking a model by storing its numbers at lower precision (e.g. 3-bit instead of 16-bit). It saves enormous memory but costs some accuracy &mdash; the model gets a little 'dumber' and blurrier.">quantized</span> down to about 3-bit precision (~101GB). That's real compression with a real quality cost &mdash; it's not the full-fat model the cloud serves.</div>
     <div class="step"><b>It runs at ~11 tokens per second.</b> That's roughly <b>11 words a second</b> &mdash; fine for a chat, painful for anything long, and a fraction of what a cloud endpoint delivers. Usable, not fast.</div>
-    <div class="step"><b>It can't <i>train</i> anything.</b> This is <span class="def" data-d="Running an already-built model to get answers. The opposite is 'training' — actually building or improving the model, which still requires data-center-scale compute the cloud provides.">inference</span> only. Building or fine-tuning frontier models still needs the data center. The cloud's hardest job didn't move at all.</div>
+    <div class="step"><b>It can't <i>train</i> anything.</b> This is <span class="def" data-d="Running an already-built model to get answers. The opposite is 'training' &mdash; actually building or improving the model, which still requires data-center-scale compute the cloud provides.">inference</span> only. Building or fine-tuning frontier models still needs the data center. The cloud's hardest job didn't move at all.</div>
   </div>
   <div class="flag"><b>So is the subscription dead?</b> No. What died is the idea that you <i>must</i> rent the cloud for <i>every</i> task. For a quick private chat or a coding assistant, a local box is now genuinely good enough. For the fastest, smartest, full-precision frontier model &mdash; and for training anything &mdash; the cloud still wins, and isn't close. &ldquo;Killed subscriptions&rdquo; is a headline; <b>&ldquo;local AI crossed the good-enough line for a big slice of tasks&rdquo;</b> is the true, and still huge, version.</div>
 
@@ -110,7 +110,7 @@
   </table></div>
 
   <h2>The opportunity: it's a memory story first</h2>
-  <p>Here's the Lens angle the &ldquo;cloud is dead&rdquo; crowd misses entirely. The thing that made this demo possible wasn't a faster chip &mdash; it was <b>128GB of fast memory sitting right next to the processor</b>. <span class="def" data-d="A design where the CPU and GPU share one big pool of fast memory instead of having separate, smaller pools. It's why a model that needs lots of memory can run on a small machine — and it's the real unlock here.">Unified memory</span> is the unlock. And that points straight at who profits:</p>
+  <p>Here's the Lens angle the &ldquo;cloud is dead&rdquo; crowd misses entirely. The thing that made this demo possible wasn't a faster chip &mdash; it was <b>128GB of fast memory sitting right next to the processor</b>. <span class="def" data-d="A design where the CPU and GPU share one big pool of fast memory instead of having separate, smaller pools. It's why a model that needs lots of memory can run on a small machine &mdash; and it's the real unlock here.">Unified memory</span> is the unlock. And that points straight at who profits:</p>
   <div class="tw"><table>
     <tr><th>Who benefits</th><th>How</th></tr>
     <tr><td><b>The memory chain</b> (Micron, SK Hynix, Samsung)</td><td>Local AI is <i>memory-hungry</i> by definition. Every AI PC sold is more high-speed DRAM &mdash; the same <a href="picks-and-shovels.html">memory bottleneck</a> that feeds cloud GPUs, now selling into a second market.</td></tr>

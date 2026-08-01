@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Next Bottleneck Isn't Silicon. It's Light. — Dragonfly Lens</title>
-<meta name="description" content="For 50 years, AI's limit was 'more transistors.' That era is ending. The real wall now is moving data between chips — and the energy it burns. The fix is light. Here's why co-packaged optics is the most important hardware shift of the decade, who profits, and an honest moonshot ladder. Plain English, every claim sourced.">
+<title>The Next Bottleneck Isn't Silicon. It's Light. &mdash; Dragonfly Lens</title>
+<meta name="description" content="For 50 years, AI's limit was 'more transistors.' That era is ending. The real wall now is moving data between chips &mdash; and the energy it burns. The fix is light. Here's why co-packaged optics is the most important hardware shift of the decade, who profits, and an honest moonshot ladder. Plain English, every claim sourced.">
 <meta property="og:title" content="The Next Bottleneck Isn't Silicon. It's Light.">
-<meta property="og:description" content="The wall moved from transistors to data movement and power. Most chip energy now goes to shuttling data, not computing it. The fix — and the next great trade — is light.">
+<meta property="og:description" content="The wall moved from transistors to data movement and power. Most chip energy now goes to shuttling data, not computing it. The fix &mdash; and the next great trade &mdash; is light.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://officialdragonflysystems.com/learn/light-bottleneck.html">
 <meta property="og:image" content="https://officialdragonflysystems.com/learn/light-bottleneck-card.png">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Dragonfly Lens">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Next Bottleneck Isn't Silicon. It's Light.">
-<meta name="twitter:description" content="The wall moved from transistors to data movement. The fix is light — co-packaged optics. Who profits, plain English, moonshots honestly labeled.">
+<meta name="twitter:description" content="The wall moved from transistors to data movement. The fix is light &mdash; co-packaged optics. Who profits, plain English, moonshots honestly labeled.">
 <meta name="twitter:image" content="https://officialdragonflysystems.com/learn/light-bottleneck-card.png">
 <style>
   :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
@@ -78,7 +78,7 @@
     <h3 style="margin-top:0;">The short version</h3>
     <ul style="margin-bottom:2px;">
       <li><b>What's real:</b> on a modern AI chip, <b>most of the energy is spent moving data around</b>, not doing the math. The bottleneck is data movement and power &mdash; not transistor count.</li>
-      <li><b>The fix:</b> <span class="def" data-d="Putting the optical engine — the part that turns electrical signals into light — directly onto the chip package, instead of off to the side. It lets chips talk to each other with light right where the data is, slashing the energy and distance penalty of copper.">co-packaged optics</span> / silicon photonics &mdash; chips that talk to each other with <b>light instead of copper wires</b>.</li>
+      <li><b>The fix:</b> <span class="def" data-d="Putting the optical engine &mdash; the part that turns electrical signals into light &mdash; directly onto the chip package, instead of off to the side. It lets chips talk to each other with light right where the data is, slashing the energy and distance penalty of copper.">co-packaged optics</span> / silicon photonics &mdash; chips that talk to each other with <b>light instead of copper wires</b>.</li>
       <li><b>Why it matters:</b> it removes the copper wall &mdash; bigger clusters, far lower energy per answer. It <b>raises the ceiling</b>, so the sector grows <i>bigger</i>, not smaller.</li>
       <li><b>The opportunity:</b> the optics supply chain &mdash; switch silicon, the lasers, and the photonics pure-plays. The data center's nervous system is being rewired in light.</li>
       <li><b>The honest line:</b> this is the <i>real</i> near-term shift. The flashier ideas &mdash; optical computing, superconductors, quantum &mdash; are further out, and we label each honestly below.</li>
@@ -86,7 +86,7 @@
   </div>
 
   <h2>The bottleneck already moved</h2>
-  <p>Here's the thing almost no one outside the industry has internalized: <span class="def" data-d="The observation that transistor counts double roughly every two years, driving 50 years of computing gains. It has slowed dramatically — shrinking transistors is hitting physical limits — so the easy gains now come from elsewhere.">Moore's Law</span> &mdash; the engine that made chips relentlessly faster &mdash; has slowed to a crawl. Shrinking transistors keeps getting harder and costlier. So the gains now come from a different place. And when engineers measure where the <i>energy</i> actually goes on a modern AI chip, the answer is surprising: <b>far more is burned shuttling data &mdash; from memory to processor, and from chip to chip &mdash; than doing the actual calculations.</b></p>
+  <p>Here's the thing almost no one outside the industry has internalized: <span class="def" data-d="The observation that transistor counts double roughly every two years, driving 50 years of computing gains. It has slowed dramatically &mdash; shrinking transistors is hitting physical limits &mdash; so the easy gains now come from elsewhere.">Moore's Law</span> &mdash; the engine that made chips relentlessly faster &mdash; has slowed to a crawl. Shrinking transistors keeps getting harder and costlier. So the gains now come from a different place. And when engineers measure where the <i>energy</i> actually goes on a modern AI chip, the answer is surprising: <b>far more is burned shuttling data &mdash; from memory to processor, and from chip to chip &mdash; than doing the actual calculations.</b></p>
   <p>That flips the whole problem. The question stopped being &ldquo;how do we compute faster?&rdquo; and became <b>&ldquo;how do we move data faster and cheaper?&rdquo;</b> There are two walls:</p>
   <div class="tw"><table>
     <tr><th>The wall</th><th>What it is</th><th>Why it hurts</th></tr>
@@ -95,7 +95,7 @@
   </table></div>
 
   <h2>Why light beats copper</h2>
-  <p>Today, chips mostly talk to each other over copper. Copper is fine for short hops, but it has two brutal limits: the faster you push data through it, the more <span class="def" data-d="Energy lost as heat when pushing electrical signals through wire. The faster and farther you send data over copper, the more power you burn just on the transmission — energy that does no computing.">signal it loses to heat</span>, and the farther you send it, the worse it gets. As AI clusters grow to tens of thousands of chips that must act as one machine, copper becomes the chokepoint. Light doesn't have those limits in the same way:</p>
+  <p>Today, chips mostly talk to each other over copper. Copper is fine for short hops, but it has two brutal limits: the faster you push data through it, the more <span class="def" data-d="Energy lost as heat when pushing electrical signals through wire. The faster and farther you send data over copper, the more power you burn just on the transmission &mdash; energy that does no computing.">signal it loses to heat</span>, and the farther you send it, the worse it gets. As AI clusters grow to tens of thousands of chips that must act as one machine, copper becomes the chokepoint. Light doesn't have those limits in the same way:</p>
   <div class="stack">
     <div class="step"><b>More data, less energy.</b> A beam of light can carry enormous amounts of data using a fraction of the power copper needs &mdash; and it barely degrades over distance. That directly attacks the &ldquo;most energy goes to data movement&rdquo; problem.</div>
     <div class="step"><b>Chips can sit farther apart and still act as one.</b> Optical links let you build a bigger, tighter cluster &mdash; more GPUs behaving as a single giant machine &mdash; which is exactly what training the next frontier model needs.</div>
@@ -124,7 +124,7 @@
     <p><b style="color:var(--warn)">2D-material &amp; carbon-nanotube transistors</b> <span style="color:var(--warn);font-size:11px;font-weight:800;text-transform:uppercase;">moonshot</span> &mdash; the post-silicon transistor itself. A decade-plus horizon.</p>
     <p style="margin-bottom:0;"><b style="color:var(--bad)">Quantum &ldquo;for AI&rdquo;</b> <span style="color:var(--bad);font-size:11px;font-weight:800;text-transform:uppercase;">category error</span> &mdash; quantum computers help optimization, simulation, and cryptography. They do <b>not</b> train large language models. Anyone selling quantum as an AI-compute disruptor is confusing two different machines.</p>
   </div>
-  <div class="real"><b>The light thread runs deeper than chips:</b> even the most durable <i>storage</i> breakthrough is optical &mdash; Microsoft's Project Silica writes data into ordinary glass with <span class="def" data-d="Lasers that fire pulses lasting quadrillionths of a second — precise enough to etch microscopic data points deep inside glass without cracking it.">femtosecond lasers</span>, packing ~2 million books onto a coaster-sized disc that lasts an estimated 10,000 years. DNA storage (insane density, archival, cost-gated) is the further moonshot. The pattern keeps repeating: when computing hits a wall, the breakthrough tends to arrive as light.</div>
+  <div class="real"><b>The light thread runs deeper than chips:</b> even the most durable <i>storage</i> breakthrough is optical &mdash; Microsoft's Project Silica writes data into ordinary glass with <span class="def" data-d="Lasers that fire pulses lasting quadrillionths of a second &mdash; precise enough to etch microscopic data points deep inside glass without cracking it.">femtosecond lasers</span>, packing ~2 million books onto a coaster-sized disc that lasts an estimated 10,000 years. DNA storage (insane density, archival, cost-gated) is the further moonshot. The pattern keeps repeating: when computing hits a wall, the breakthrough tends to arrive as light.</div>
 
   <h2>The Lens synthesis</h2>
   <p>Step back and every one of these &mdash; optics, packaging, memory, even the <a href="cpu-comeback.html">CPU comeback</a> &mdash; does the same thing: it <b>removes a bottleneck, which lets the system get bigger or cheaper, which expands demand to fill the new room.</b> A breakthrough doesn't shrink the AI buildout; it makes an already-exponential thing grow <i>faster</i>. That's why the durable bet never changes shape.</p>
@@ -146,7 +146,7 @@
   </div>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"Why is light the next bottleneck in computing?","acceptedAnswer":{"@type":"Answer","text":"Because the bottleneck moved from computation to data movement. On a modern AI chip, more energy is spent moving data between chips and memory than doing the actual math. Copper wires waste power and lose signal over distance, so the industry is switching to optics — sending data as light — which carries more data using far less energy."}},
+  {"@type":"Question","name":"Why is light the next bottleneck in computing?","acceptedAnswer":{"@type":"Answer","text":"Because the bottleneck moved from computation to data movement. On a modern AI chip, more energy is spent moving data between chips and memory than doing the actual math. Copper wires waste power and lose signal over distance, so the industry is switching to optics - sending data as light - which carries more data using far less energy."}},
   {"@type":"Question","name":"What is co-packaged optics?","acceptedAnswer":{"@type":"Answer","text":"Co-packaged optics means putting the optical engine, which turns electrical signals into light, directly onto the chip package instead of off to the side. It lets chips communicate with light right where the data is, cutting the energy and distance penalty of copper. It is considered the most important near-term hardware shift in AI infrastructure."}},
   {"@type":"Question","name":"Will optical or quantum computing replace today's chips?","acceptedAnswer":{"@type":"Answer","text":"Optical interconnect, moving data with light, is real and ramping now. Optical computing, doing math in light, is emerging but unproven at scale. Quantum computing is a different machine entirely, useful for optimization, simulation and cryptography, not for training AI models. They should not be conflated."}}
   ]}

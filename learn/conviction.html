@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reading a conviction score — Dragonfly Lens · Learn</title>
+<title>Reading a conviction score &mdash; Dragonfly Lens &middot; Learn</title>
 <meta name="description" content="The 0-100 conviction score, walked through line by line. Seven components, three fragility penalties, one composite. How to read a Dragonfly signal card the way the analyst who wrote it would.">
 <style>
   :root { --green:#2d6a4f; --lime:#4ade80; --dark:#0d1f0f; --bg:#0a0f0b; --card:#0e1f10; --border:#1e3a22; --text:#dff0df; --muted:#9cc0a3; --gold:#fbbf24; }
@@ -84,18 +84,18 @@
 </nav>
 
 <div class="page">
-  <div class="eyebrow">Concept · The Lens</div>
+  <div class="eyebrow">Concept &middot; The Lens</div>
   <h1>Reading a conviction score.</h1>
-  <div class="meta">~8 min read · Foundational <span class="beta-tag">Model · Beta · forward-verification</span></div>
+  <div class="meta">~8 min read &middot; Foundational <span class="beta-tag">Model &middot; Beta &middot; forward-verification</span></div>
 
   <div class="article">
-    <p>Every Dragonfly signal carries a single number from <strong>0 to 100</strong> — the conviction score. It's the analyst's structural read on the thesis, expressed as one number so you can compare signals at a glance. This article walks through what's actually inside that number: seven components that <em>add</em> to it, three penalties that <em>subtract</em> from it, and how to read the hover-breakdown on any signal card.</p>
+    <p>Every Dragonfly signal carries a single number from <strong>0 to 100</strong> &mdash; the conviction score. It's the analyst's structural read on the thesis, expressed as one number so you can compare signals at a glance. This article walks through what's actually inside that number: seven components that <em>add</em> to it, three penalties that <em>subtract</em> from it, and how to read the hover-breakdown on any signal card.</p>
 
-    <p>This article is the user manual. The model itself is in <strong>Beta · forward-verification</strong> — we score every new signal at publish time and are accumulating live results to validate the model end-to-end. The math is documented; what we're proving out is the calibration.</p>
+    <p>This article is the user manual. The model itself is in <strong>Beta &middot; forward-verification</strong> &mdash; we score every new signal at publish time and are accumulating live results to validate the model end-to-end. The math is documented; what we're proving out is the calibration.</p>
 
     <h2>The seven components (the upside half)</h2>
 
-    <p>Each component is scored 0–10 on a fixed rubric. A higher score on a component means stronger evidence for that piece of the thesis. The components are <em>weighted</em> (some count more than others — the weights are tuned based on what historically predicts outcomes) and the weighted sum is your <strong>base conviction</strong>, in the 0–100 range.</p>
+    <p>Each component is scored 0&ndash;10 on a fixed rubric. A higher score on a component means stronger evidence for that piece of the thesis. The components are <em>weighted</em> (some count more than others &mdash; the weights are tuned based on what historically predicts outcomes) and the weighted sum is your <strong>base conviction</strong>, in the 0&ndash;100 range.</p>
 
     <div class="component-table">
       <div class="ct-row">
@@ -134,7 +134,7 @@
         <div class="ct-code">C5</div>
         <div>
           <div class="ct-name">Insider conviction</div>
-          <div class="ct-desc">Are executives and directors buying their own stock with their own money — and is the buying a cluster (multiple insiders) or a one-off? Cluster buying inside a narrow time window is one of the cleanest signals in markets.</div>
+          <div class="ct-desc">Are executives and directors buying their own stock with their own money &mdash; and is the buying a cluster (multiple insiders) or a one-off? Cluster buying inside a narrow time window is one of the cleanest signals in markets.</div>
         </div>
         <div class="ct-weight">12 max</div>
       </div>
@@ -150,34 +150,34 @@
         <div class="ct-code">C7</div>
         <div>
           <div class="ct-name">Re-rating catalyst inventory</div>
-          <div class="ct-desc">Count and quality of specific upcoming catalysts implied by the thesis — a named contract decision, a regulatory milestone, a capacity-online date, an earnings inflection. Vague "could get popular" doesn't count.</div>
+          <div class="ct-desc">Count and quality of specific upcoming catalysts implied by the thesis &mdash; a named contract decision, a regulatory milestone, a capacity-online date, an earnings inflection. Vague "could get popular" doesn't count.</div>
         </div>
         <div class="ct-weight">10 max</div>
       </div>
     </div>
 
-    <p>The numbers on the right add to 100. That's the maximum a thesis could theoretically score on the upside half — if it maxed every component (no real thesis does — strong theses cluster in the 60–80 range, exceptional ones in the 80+ range).</p>
+    <p>The numbers on the right add to 100. That's the maximum a thesis could theoretically score on the upside half &mdash; if it maxed every component (no real thesis does &mdash; strong theses cluster in the 60&ndash;80 range, exceptional ones in the 80+ range).</p>
 
     <h2>The three fragility penalties (the downside half)</h2>
 
-    <p>The components answer "what's good about this thesis?" The penalties answer "what could break it?" Each fragility is scored 0 to its max — and the penalty <em>subtracts directly from the conviction score</em> as a hard cap.</p>
+    <p>The components answer "what's good about this thesis?" The penalties answer "what could break it?" Each fragility is scored 0 to its max &mdash; and the penalty <em>subtracts directly from the conviction score</em> as a hard cap.</p>
 
     <div class="component-table penalty-table">
       <div class="ct-row">
         <div class="ct-code">F1</div>
         <div>
           <div class="ct-name">Valuation extremity</div>
-          <div class="ct-desc">How far above sector norms is the stock trading on standard multiples? Expensive isn't automatically bad (great companies command a premium) — but extreme valuation means less margin for error and a higher probability that even good news disappoints.</div>
+          <div class="ct-desc">How far above sector norms is the stock trading on standard multiples? Expensive isn't automatically bad (great companies command a premium) &mdash; but extreme valuation means less margin for error and a higher probability that even good news disappoints.</div>
         </div>
-        <div class="ct-weight">−30 max</div>
+        <div class="ct-weight">&minus;30 max</div>
       </div>
       <div class="ct-row">
         <div class="ct-code">F2</div>
         <div>
           <div class="ct-name">Financing dependence</div>
-          <div class="ct-desc">Does the company's REVENUE depend on customer financing — residential solar, consumer EVs, mortgage-like purchases? If yes, the business is rate-sensitive: every Fed hike shrinks the addressable market. We've seen this kill multi-year theses.</div>
+          <div class="ct-desc">Does the company's REVENUE depend on customer financing &mdash; residential solar, consumer EVs, mortgage-like purchases? If yes, the business is rate-sensitive: every Fed hike shrinks the addressable market. We've seen this kill multi-year theses.</div>
         </div>
-        <div class="ct-weight">−25 max</div>
+        <div class="ct-weight">&minus;25 max</div>
       </div>
       <div class="ct-row">
         <div class="ct-code">F3</div>
@@ -185,39 +185,39 @@
           <div class="ct-name">Balance-sheet / dilution risk</div>
           <div class="ct-desc">Is the company likely to raise capital before the thesis plays out? Burn-rate vs. cash on hand, debt due dates, history of dilutive raises. Dilution can break a thesis even when the company is otherwise executing.</div>
         </div>
-        <div class="ct-weight">−25 max</div>
+        <div class="ct-weight">&minus;25 max</div>
       </div>
     </div>
 
     <div class="callout">
-      <p><strong>How the cap works:</strong> the final score is <code>min(weighted_components, 100 − Σpenalties)</code>. So even a "perfect" 92-component thesis can be pulled down to 60 by a heavy financing-dependence penalty. The penalties model the <em>worst plausible outcome</em>, not the central case.</p>
+      <p><strong>How the cap works:</strong> the final score is <code>min(weighted_components, 100 &minus; &Sigma;penalties)</code>. So even a "perfect" 92-component thesis can be pulled down to 60 by a heavy financing-dependence penalty. The penalties model the <em>worst plausible outcome</em>, not the central case.</p>
     </div>
 
     <h2>The full formula in one line</h2>
 
     <div class="scorecard">
-base   = Σ (component_score × component_weight) / 10
-cap    = 100 − (F1 + F2 + F3)
+base   = &Sigma; (component_score &times; component_weight) / 10
+cap    = 100 &minus; (F1 + F2 + F3)
 final  = min(base, cap)
 
-# Optional later: × staleness_factor (dampens scores
+# Optional later: &times; staleness_factor (dampens scores
 # from theses that haven't moved in &gt; 12 months)
     </div>
 
-    <p>That's the entire model. No black box, no proprietary magic — just a weighted sum capped by fragility. The hover-breakdown on a Dragonfly signal card shows the three components that contributed the most to the final score, and any fragility penalty greater than zero.</p>
+    <p>That's the entire model. No black box, no proprietary magic &mdash; just a weighted sum capped by fragility. The hover-breakdown on a Dragonfly signal card shows the three components that contributed the most to the final score, and any fragility penalty greater than zero.</p>
 
     <h2>How to read a real card</h2>
 
     <p>When you see a Dragonfly signal card, the layout from top to bottom is:</p>
 
     <ol>
-      <li><strong>Ticker + signal strength (HIGH / MED)</strong> — the entry-level conviction grade. Decided by the analyst at publish.</li>
-      <li><strong>Conviction score (0–100) badge</strong> — colored green (80+), amber (60–79), or muted (&lt;60). Hover the badge to see the component breakdown.</li>
-      <li><strong>Sector + company name</strong> — for context and watchlist matching.</li>
-      <li><strong>Teaser sentence</strong> — the one-line "why now."</li>
-      <li><strong>Stop / target</strong> — suggested risk levels based on signal strength.</li>
-      <li><strong>Thesis paragraph (Investor+)</strong> — the actual analysis. What the convergent catalysts are; why we waited for them; what would break the thesis.</li>
-      <li><strong>Recommended strategy + rationale (Investor+)</strong> — the spotter's call on how to play it (full size at entry, scale in on pullbacks, defensive sizing only in CHOPPY regime, etc.).</li>
+      <li><strong>Ticker + signal strength (HIGH / MED)</strong> &mdash; the entry-level conviction grade. Decided by the analyst at publish.</li>
+      <li><strong>Conviction score (0&ndash;100) badge</strong> &mdash; colored green (80+), amber (60&ndash;79), or muted (&lt;60). Hover the badge to see the component breakdown.</li>
+      <li><strong>Sector + company name</strong> &mdash; for context and watchlist matching.</li>
+      <li><strong>Teaser sentence</strong> &mdash; the one-line "why now."</li>
+      <li><strong>Stop / target</strong> &mdash; suggested risk levels based on signal strength.</li>
+      <li><strong>Thesis paragraph (Investor+)</strong> &mdash; the actual analysis. What the convergent catalysts are; why we waited for them; what would break the thesis.</li>
+      <li><strong>Recommended strategy + rationale (Investor+)</strong> &mdash; the spotter's call on how to play it (full size at entry, scale in on pullbacks, defensive sizing only in CHOPPY regime, etc.).</li>
     </ol>
 
     <p>The conviction score is the headline; the breakdown is the explanation; the thesis is the substance; the strategy is the recommended play. Use them as a stack: <em>conviction tells you whether to look, thesis tells you whether to believe, strategy tells you how to execute</em>. None of them are an instruction. All of them are a lens.</p>
@@ -226,25 +226,25 @@ final  = min(base, cap)
 
     <div class="ranges">
       <div class="range high">
-        <div class="range-band">80 — 100</div>
+        <div class="range-band">80 &mdash; 100</div>
         <div class="range-label">High conviction</div>
         <div class="range-desc">Multiple components scoring 8+, no large fragility penalty. These are rare. Worth a serious look.</div>
       </div>
       <div class="range med">
-        <div class="range-band">60 — 79</div>
+        <div class="range-band">60 &mdash; 79</div>
         <div class="range-label">Medium conviction</div>
         <div class="range-desc">Real thesis with some component(s) under-developed, OR a fragility penalty pulling a stronger thesis down. Read the breakdown.</div>
       </div>
       <div class="range low">
-        <div class="range-band">0 — 59</div>
+        <div class="range-band">0 &mdash; 59</div>
         <div class="range-label">Watch only</div>
         <div class="range-desc">Worth tracking on a watchlist but not yet a publish-worthy thesis. Usually published only to document the convergence we're waiting for.</div>
       </div>
     </div>
 
-    <h2>The Beta caveat — taken seriously</h2>
+    <h2>The Beta caveat &mdash; taken seriously</h2>
 
-    <p>The model is rule-defined and the weights are tuned. What we don't know yet is how well the calibration holds in <em>live</em> signed-and-anchored data. Backtested calibration on historical data has the standard hindsight problem — the analyst writing the historical scores knows how the thesis turned out, even if they try to bracket it out. The only honest calibration is forward, signed at publish, on theses we haven't seen the outcome of yet.</p>
+    <p>The model is rule-defined and the weights are tuned. What we don't know yet is how well the calibration holds in <em>live</em> signed-and-anchored data. Backtested calibration on historical data has the standard hindsight problem &mdash; the analyst writing the historical scores knows how the thesis turned out, even if they try to bracket it out. The only honest calibration is forward, signed at publish, on theses we haven't seen the outcome of yet.</p>
 
     <p>That's why we anchor every published signal cryptographically (see <a href="/track_record.html">the live track record</a>) and why the conviction-score section on the homepage is the only thing labelled Beta. Once we've accumulated ~3 months of live signed data, we can evaluate whether the model's bands (high/med/low) actually map to subsequent outcome distributions. If they do, Beta comes off. If they don't, the weights get re-tuned in public.</p>
   </div>

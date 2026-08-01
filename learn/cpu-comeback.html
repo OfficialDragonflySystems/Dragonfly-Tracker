@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The CPU Comeback: Why AI Agents Put the CPU Back in Charge — Dragonfly Lens</title>
-<meta name="description" content="Everyone wrote off the CPU when GPUs won the AI training war. Then AI became agents — and a huge share of the work turned out to be logic, not math. Here's why the 'boring' chip is the surprise winner of the agent era, what 'CPU comeback' really means (ARM, not x86), and who profits. Plain English, every number sourced.">
+<title>The CPU Comeback: Why AI Agents Put the CPU Back in Charge &mdash; Dragonfly Lens</title>
+<meta name="description" content="Everyone wrote off the CPU when GPUs won the AI training war. Then AI became agents &mdash; and a huge share of the work turned out to be logic, not math. Here's why the 'boring' chip is the surprise winner of the agent era, what 'CPU comeback' really means (ARM, not x86), and who profits. Plain English, every number sourced.">
 <meta property="og:title" content="The CPU Comeback: Why AI Agents Put the CPU Back in Charge">
-<meta property="og:description" content="GPUs won training. But agentic AI is CPU-bound — planning, tool-calls, orchestration — and could 4x CPU demand. The catch: it's ARM and custom silicon's comeback, not x86's.">
+<meta property="og:description" content="GPUs won training. But agentic AI is CPU-bound &mdash; planning, tool-calls, orchestration &mdash; and could 4x CPU demand. The catch: it's ARM and custom silicon's comeback, not x86's.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://officialdragonflysystems.com/learn/cpu-comeback.html">
 <meta property="og:image" content="https://officialdragonflysystems.com/learn/cpu-comeback-card.png">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Dragonfly Lens">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The CPU Comeback: Why AI Agents Put the CPU Back in Charge">
-<meta name="twitter:description" content="GPUs won training. Agentic AI is CPU-bound — and it's ARM's comeback, not x86's. Who profits, plain English.">
+<meta name="twitter:description" content="GPUs won training. Agentic AI is CPU-bound &mdash; and it's ARM's comeback, not x86's. Who profits, plain English.">
 <meta name="twitter:image" content="https://officialdragonflysystems.com/learn/cpu-comeback-card.png">
 <style>
   :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
@@ -77,7 +77,7 @@
   <div class="box tldr">
     <h3 style="margin-top:0;">The short version</h3>
     <ul style="margin-bottom:2px;">
-      <li><b>What's real:</b> agentic AI is <span class="def" data-d="Work bound by the processor's ability to run sequential logic and coordinate tasks, rather than by raw math throughput. Agents — planning, calling tools, routing data — are full of exactly this kind of work.">CPU-bound</span>. One industry estimate has agent workloads pushing CPU demand as much as <b>4x higher</b> (toward ~120 million cores per gigawatt of data center).</li>
+      <li><b>What's real:</b> agentic AI is <span class="def" data-d="Work bound by the processor's ability to run sequential logic and coordinate tasks, rather than by raw math throughput. Agents &mdash; planning, calling tools, routing data &mdash; are full of exactly this kind of work.">CPU-bound</span>. One industry estimate has agent workloads pushing CPU demand as much as <b>4x higher</b> (toward ~120 million cores per gigawatt of data center).</li>
       <li><b>The twist:</b> it's <b>not x86's</b> comeback. It's <b>ARM and custom silicon</b> &mdash; efficiency wins.</li>
       <li><b>Why it matters:</b> same lesson as everything in AI &mdash; <b>performance-per-watt</b> decides it, because power is the real ceiling.</li>
       <li><b>The opportunity:</b> the ARM licensing engine, the hyperscalers' in-house chips, and the &ldquo;CPU next to every accelerator&rdquo; buildout &mdash; plus the memory that all of it needs.</li>
@@ -86,20 +86,20 @@
   </div>
 
   <h2>What &ldquo;CPU comeback&rdquo; actually means</h2>
-  <p>A year ago the story was simple: the GPU does the AI, the CPU just boots the machine. That was true for <span class="def" data-d="The phase where a model has already been built and is just answering — or, in training, being built. Big training runs and high-volume answering are dominated by the GPU's raw math throughput.">training and big-batch inference</span>. But the workload changed underneath it. AI is moving from &ldquo;answer one question&rdquo; to <b>autonomous agents</b> that plan, call tools, query databases, run code, and chain dozens of steps together. Most of that is branchy, sequential decision-making &mdash; the thing CPUs are built for and GPUs are bad at.</p>
+  <p>A year ago the story was simple: the GPU does the AI, the CPU just boots the machine. That was true for <span class="def" data-d="The phase where a model has already been built and is just answering &mdash; or, in training, being built. Big training runs and high-volume answering are dominated by the GPU's raw math throughput.">training and big-batch inference</span>. But the workload changed underneath it. AI is moving from &ldquo;answer one question&rdquo; to <b>autonomous agents</b> that plan, call tools, query databases, run code, and chain dozens of steps together. Most of that is branchy, sequential decision-making &mdash; the thing CPUs are built for and GPUs are bad at.</p>
   <div class="stack">
     <div class="step"><b>The matrix math is a shrinking share of the job.</b> An agent spends a lot of its time <i>between</i> the model calls &mdash; deciding what to do next, formatting a tool request, parsing a result, handling an error. None of that is GPU work.</div>
-    <div class="step"><b>Every accelerator rack needs CPUs feeding it.</b> Data loading, scheduling, and orchestration sit on the CPU. As clusters scale, you need <span class="def" data-d="The coordinating server in a cluster that hands work out to the GPUs and collects results. It runs on CPUs — and agentic workloads lean on it heavily.">head-node</span> CPUs, CPUs beside the GPU racks, and whole CPU racks for the orchestration layer.</div>
+    <div class="step"><b>Every accelerator rack needs CPUs feeding it.</b> Data loading, scheduling, and orchestration sit on the CPU. As clusters scale, you need <span class="def" data-d="The coordinating server in a cluster that hands work out to the GPUs and collects results. It runs on CPUs &mdash; and agentic workloads lean on it heavily.">head-node</span> CPUs, CPUs beside the GPU racks, and whole CPU racks for the orchestration layer.</div>
     <div class="step"><b>The demand math is real.</b> The bottleneck of agentic inference is &ldquo;flow&rdquo; &mdash; keeping the agent's many small steps moving &mdash; and one analysis puts the resulting CPU demand at up to <b>4x</b>, around <b>120 million cores per gigawatt</b> of data center.</div>
     <div class="step"><b>It's a complement, not a coup.</b> The GPU didn't lose anything &mdash; training and frontier inference are as GPU-hungry as ever. The CPU just reclaimed the fast-growing <i>orchestration</i> layer that agents created.</div>
   </div>
 
   <h2>The catch: it's ARM's comeback, not x86's</h2>
-  <p>Here's the part the &ldquo;CPUs are back&rdquo; headlines blur. The CPUs coming back are <b>not</b> the old x86 chips from Intel and AMD that ran data centers for 25 years. The comeback is happening on <span class="def" data-d="A chip architecture (instruction set) known for doing more work per watt of power. Originally from phones, it now dominates efficient computing — and is taking the data center on the same logic.">ARM</span> and on the hyperscalers' own custom silicon, for one reason: <b>efficiency</b>.</p>
+  <p>Here's the part the &ldquo;CPUs are back&rdquo; headlines blur. The CPUs coming back are <b>not</b> the old x86 chips from Intel and AMD that ran data centers for 25 years. The comeback is happening on <span class="def" data-d="A chip architecture (instruction set) known for doing more work per watt of power. Originally from phones, it now dominates efficient computing &mdash; and is taking the data center on the same logic.">ARM</span> and on the hyperscalers' own custom silicon, for one reason: <b>efficiency</b>.</p>
   <p>ARM just shipped its first <i>in-house designed and built</i> data center processor &mdash; a 136-core chip aimed squarely at AI, claiming roughly <b>50% better performance-per-watt than x86</b>, with Meta as the lead co-developer and a projected <b>$15 billion</b> in sales from that chip alone by 2031. And ARM isn't alone &mdash; every major cloud now builds its own ARM CPU.</p>
   <div class="tw"><table>
     <tr><th>The shift</th><th>From</th><th>To</th></tr>
-    <tr><td>Architecture</td><td><b>x86</b> (Intel, AMD)</td><td><b>ARM</b> + <span class="def" data-d="An open, royalty-free chip architecture anyone can build on — the wildcard that could disrupt even ARM the way ARM disrupted x86.">RISC-V</span> (the open wildcard)</td></tr>
+    <tr><td>Architecture</td><td><b>x86</b> (Intel, AMD)</td><td><b>ARM</b> + <span class="def" data-d="An open, royalty-free chip architecture anyone can build on &mdash; the wildcard that could disrupt even ARM the way ARM disrupted x86.">RISC-V</span> (the open wildcard)</td></tr>
     <tr><td>Who designs it</td><td>Chip vendors</td><td><b>The hyperscalers themselves</b> &mdash; AWS Graviton, NVIDIA Grace, Microsoft Cobalt, Google Axion</td></tr>
     <tr><td>What's optimized</td><td>Peak single-thread speed</td><td><b>Performance-per-watt</b> at massive core counts</td></tr>
     <tr><td>The role</td><td>General-purpose server</td><td><b>The AI agent's orchestrator</b> &mdash; many efficient cores feeding the GPUs</td></tr>
