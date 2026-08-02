@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Synchronization Problem: Why Announced Gigawatts Aren't Compute - Dragonfly Lens</title>
+<meta name="description" content="The AI build-out is quoted in announcements - '10 GW', '$750B capex' - but almost none of it is compute yet. Every input arrives on a different clock, and the slowest one sets the date. A plain-English look at the critical path, the synchronization tax, and a scorecard for reading any data-center headline.">
+<meta property="og:title" content="Nobody Ships a Data Center: The Synchronization Problem">
+<meta property="og:description" content="Announced gigawatts aren't compute. GPUs arrive in weeks; the grid connection can take seven years. The slowest input sets the date - and that gap is the whole story of the AI build-out.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/synchronization-problem.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/synchronization-problem-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nobody Ships a Data Center: The Synchronization Problem">
+<meta name="twitter:description" content="GPUs arrive in weeks. The grid connection can take seven years. The slowest input sets the date - and announced gigawatts aren't compute.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/synchronization-problem-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; AI Build-Out</div>
+  <h1>The Synchronization Problem</h1>
+  <p class="lead">The AI build-out is quoted in announcements &mdash; &ldquo;a 10-gigawatt campus,&rdquo; &ldquo;$750 billion of capex.&rdquo; But almost none of that is <b>compute</b> yet. Every input a data center needs arrives on its own clock, and the <b>slowest</b> one sets the real date. The gap between <i>announced</i> and <i>deployable</i> is the whole story &mdash; and most coverage misses it. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; August 1, 2026 &middot; A framework, not a forecast.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>Announced is not deployed.</b> Roughly <b>12 GW</b> of new US data-center capacity is slated to come online in 2026 &mdash; but only about <b>one-third</b> is actually under construction, and by some counts <b>half</b> of planned builds have slipped or been cancelled.</li>
+      <li><b>The loudest input is the fastest.</b> GPUs ship in weeks and get all the headlines. The real gate is the quiet stuff: a <span class="def" data-d="The utility process of connecting a new large power source or load to the grid. For big data-center campuses it involves studies, upgrades, and approvals that routinely take years - often the single longest item on the whole project.">grid connection</span> can take <b>five to seven years</b>; a large <span class="def" data-d="The heavy equipment that steps voltage up or down between the grid and the facility. High-capacity units are custom-built, and there's a global backlog.">power transformer</span>, <b>two to four</b>.</li>
+      <li><b>The slowest input sets the date.</b> Like a dinner party where every dish has to hit the table at once, a data center only runs when the <i>last</i> piece arrives. That&rsquo;s the <b>synchronization tax</b>.</li>
+      <li><b>The takeaway is a tool.</b> We give you a <b>deployment-gate scorecard</b> &mdash; a short checklist that turns any &ldquo;5 GW announced!&rdquo; headline into a realistic date, and separates the firms that <i>compress</i> the critical path from the ones just riding it.</li>
+    </ul>
+  </div>
+
+  <h2>The number that lies</h2>
+  <p>When a hyperscaler announces a &ldquo;5-gigawatt AI campus,&rdquo; the number does a magic trick: it turns a <i>construction project with a decade of dependencies</i> into something that sounds like it&rsquo;s already humming. It isn&rsquo;t. A gigawatt announced is a gigawatt of <i>intent</i> &mdash; permits to file, equipment to order, a grid connection to wait in line for. The compute that actually earns revenue is years behind the press release.</p>
+  <p>The 2026 numbers make the gap concrete. Hyperscalers have guided to more than <b>$750 billion</b> in data-center capital spending this year. Yet of the roughly <b>12 GW</b> of new US capacity planned to energize in 2026, only about <b>a third is under active construction</b> &mdash; and industry trackers estimate that <b>30&ndash;50%</b> of announced builds are delayed or cancelled outright, choked by shortages of power equipment and parts. The announcements are running years ahead of the concrete.</p>
+  <div class="flag"><b>Why this matters for your money:</b> a stock, a sector, or a whole thesis can be priced as if &ldquo;announced&rdquo; equals &ldquo;online next quarter.&rdquo; The distance between the two is where both the <i>disappointment</i> (capex booked years before revenue) and the <i>opportunity</i> (whoever shortens that distance) actually live.</p>
+
+  <h2>The dinner-party problem</h2>
+  <p>Picture cooking dinner for 500 people, where every dish has to reach the table at the same minute. Your oven, your delivery truck, and your prep cook each run on a different schedule. It doesn&rsquo;t matter how fast the salad is ready &mdash; if the main course is two hours out, nobody eats until then. <b>The latest item sets dinner.</b></p>
+  <p>A data center is that dinner party. A world-class chef &mdash; the newest, fastest GPUs &mdash; standing in a kitchen with no power hookup serves exactly nothing. Engineers call the longest chain of must-happen-in-order steps the <span class="def" data-d="Project-management term: the sequence of dependent tasks that determines the minimum time to finish. Speeding up anything NOT on the critical path doesn't move the finish date; only the bottleneck chain does.">critical path</span>. In the AI build-out, the loudest, most-tracked input &mdash; the chips &mdash; is almost never on it. The critical path runs through the quiet, unglamorous, long-lead items nobody live-tweets.</p>
+
+  <h2>The critical path, input by input</h2>
+  <p>Here is the same build-out, sorted the way it actually behaves &mdash; by lead time and by how <i>visible</i> each input is. The pattern is the point: the things markets watch move fastest; the things that set the date move slowest and get the least attention.</p>
+  <div class="tw">
+  <table>
+    <thead><tr><th>Input</th><th>Realistic lead time (2026)</th><th>How visible</th><th>Sets the date?</th></tr></thead>
+    <tbody>
+      <tr><td><b>GPUs / accelerators</b></td><td>Weeks to months</td><td>Very loud &mdash; everyone tracks it</td><td>Rarely</td></tr>
+      <tr><td><b><span class="def" data-d="High-Bandwidth Memory: the stacked memory that sits next to an AI accelerator. It's the real supply choke on modern AI chips - a GPU without its HBM allocation is just silicon.">HBM memory</span></b></td><td>Booked out &mdash; 2026 supply sold out</td><td>Semi-quiet</td><td>Sometimes</td></tr>
+      <tr><td><b><span class="def" data-d="Chip-on-Wafer-on-Substrate: the advanced packaging step (mostly at TSMC) that bonds the accelerator and its memory together. Capacity here has been a recurring bottleneck.">Advanced packaging</span></b></td><td>Quarters</td><td>Quiet</td><td>Sometimes</td></tr>
+      <tr><td><b>Liquid cooling / <span class="def" data-d="Coolant Distribution Units: the plumbing that moves liquid coolant to dense AI racks. As chips run hotter, air cooling stops being enough, and this becomes its own supply line.">CDUs</span></b></td><td>Months to quarters</td><td>Quiet</td><td>Sometimes</td></tr>
+      <tr><td><b>Hyperscale construction</b></td><td>1&ndash;2 years</td><td>Semi-quiet</td><td>Often</td></tr>
+      <tr><td><b><span class="def" data-d="The heavy switching gear that safely routes and protects high-voltage power inside a facility. Like transformers, it's backlogged industry-wide.">Switchgear</span></b></td><td>1&ndash;2 years</td><td>Quiet</td><td>Often</td></tr>
+      <tr><td><b>Large power transformers</b></td><td>~2.5 years average; up to 4&ndash;5</td><td>Very quiet</td><td><b>Frequently</b></td></tr>
+      <tr><td><b>Grid interconnection</b></td><td>~5 years typical; up to 7 in PJM</td><td>Very quiet</td><td><b>Usually THE gate</b></td></tr>
+      <tr><td><b>Permits / water / community</b></td><td>Variable &mdash; can halt a project</td><td>Quiet</td><td>Sometimes</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Read the bottom of that table slowly. A large transformer now averages roughly <b>128 weeks</b> &mdash; about two and a half years &mdash; and high-capacity units can run <b>four to five years</b>, versus two before 2020. The <span class="def" data-d="The line of projects waiting for the utility to study and approve their grid connection. As of end-2025 it held over 2,000 gigawatts of proposed capacity - years of backlog.">interconnection queue</span> holds more than <b>2,000 GW</b> of projects nationwide, with typical waits near <b>five years</b> and the busiest grid regions pushing <b>seven</b>. And every AI accelerator needs its <b>HBM</b>, whose entire 2026 output was <i>sold out</i> &mdash; spoken for by the biggest buyers &mdash; before the year even began.</p>
+  <p>So the chip you read about is real, but it&rsquo;s the salad. The dinner is set by a transformer being wound in a factory backlog and a utility study that started years ago.</p>
+
+  <h2>The synchronization tax</h2>
+  <p>Here&rsquo;s the cruel arithmetic: because the inputs must all arrive <i>together</i>, a delay in any <b>one</b> of them delays the <b>whole</b> site. Speed up the GPUs and you&rsquo;ve sped up nothing &mdash; they weren&rsquo;t the gate. Slip the transformer by six months and the entire campus slips six months, GPUs sitting in a warehouse the whole time, capital already spent.</p>
+  <p>That is the <b>synchronization tax</b>, and it&rsquo;s why the money and the reality fall out of step. The capital is committed up front &mdash; land, chips, contracts &mdash; but the revenue can&rsquo;t start until the last, slowest piece lands. Spending happens on the announcement&rsquo;s clock; earnings happen on the interconnection queue&rsquo;s clock. Those two clocks are <i>years</i> apart.</p>
+  <p>If that pattern &mdash; heavy capital laid down long before the cash flow shows up &mdash; sounds familiar, it should. It&rsquo;s the exact mechanism behind the &ldquo;is this a bubble?&rdquo; debate we covered in <a href="/learn/ai-malinvestment.html">the Austrian lens on the build-out</a>. Synchronization risk is <i>how</i> a boom can build real, useful things and still strand the capital that built them: the demand may be genuine, but if the compute lands three years late into a changed world, the investment can still fail to earn its keep.</p>
+
+  <h2>Who compresses the critical path</h2>
+  <p>Once you see the build-out as a critical path, the investable question stops being &ldquo;who sells the bottleneck?&rdquo; and becomes sharper: <b>who shortens the longest pole?</b> The value doesn&rsquo;t just accrue to whoever makes the scarce part &mdash; it accrues to whoever makes the <i>date arrive sooner</i>. A few ways that happens:</p>
+  <ul>
+    <li><b><span class="def" data-d="Generating power on-site (often natural gas, sometimes fuel cells or solar-plus-storage) instead of waiting years for a grid connection. It sidesteps the single longest item on the critical path.">Behind-the-meter power</span></b> &mdash; building generation <i>at the site</i> so you don&rsquo;t wait five years in the interconnection queue. This directly attacks the longest pole, which is why energy-rich regions and &ldquo;bring-your-own-power&rdquo; models are suddenly central.</li>
+    <li><b>Long-lead pre-ordering</b> &mdash; the operators quietly reserving transformers, switchgear, and HBM <i>years</i> ahead. Boring, and decisive: a secured slot in a two-year backlog is a moat.</li>
+    <li><b>Modular / prefabricated builds</b> &mdash; factory-made data-center blocks that collapse construction time and run in parallel with the power work instead of after it.</li>
+    <li><b>Turnkey delivery</b> &mdash; firms that own the whole messy sequence (power + shell + cooling + fit-out) and hand over a finished, energized facility, absorbing the synchronization risk themselves.</li>
+  </ul>
+  <p>That reframing is the difference between &ldquo;power is the hot theme&rdquo; and knowing <i>which</i> exposure actually gets paid. A company that sells a scarce component into a project that&rsquo;s still four years from energizing has a great story and a long wait. A company that <i>shortens</i> the wait has pricing power now.</p>
+
+  <h2>The deployment-gate scorecard</h2>
+  <p>Here&rsquo;s the part you can use on the next headline you see. When a project is announced, don&rsquo;t ask &ldquo;how many gigawatts?&rdquo; Ask which inputs are <b>locked</b>, which are <b>pending</b>, and which are <b>unknown</b>. The binding constraint &mdash; the true earliest date &mdash; is the <i>longest-lead item that isn&rsquo;t locked yet.</i></p>
+  <div class="box">
+    <h3 style="margin-top:0;">Run any &ldquo;X GW announced&rdquo; headline through this:</h3>
+    <ol style="margin-bottom:2px;">
+      <li><b>Power secured?</b> Is there a signed grid interconnection <i>or</i> on-site generation &mdash; or just a plan? (This is usually the gate. No power date = no compute date.)</li>
+      <li><b>Transformers &amp; switchgear ordered?</b> Reserved slots, or still to be sourced into a multi-year backlog?</li>
+      <li><b>Shell under construction?</b> Steel in the ground, or a rendering?</li>
+      <li><b>Chips + HBM allocated?</b> A real allocation from a sold-out supply, or an intention to buy?</li>
+      <li><b>Cooling + crews lined up?</b> Liquid-cooling gear and skilled labor committed?</li>
+      <li><b>Permits / water / community clear?</b> Any pending approval that can stall or halt it?</li>
+    </ol>
+  </div>
+  <p>Count the <b>pending</b> and <b>unknown</b> rows, find the one with the longest lead time, and <i>that</i> &mdash; not the gigawatt number &mdash; is roughly when the site becomes real. Most splashy announcements have their power and transformers in the &ldquo;pending&rdquo; column. Now you know what the headline left out.</p>
+  <div class="real"><b>This is the habit we&rsquo;re after:</b> not memorizing tickers, but owning a lens you can point at any new announcement and immediately see what&rsquo;s missing. A headline gives you a number. The scorecard gives you a <i>date</i> &mdash; and the gap between them is the edge.</div>
+
+  <h2>What to watch next</h2>
+  <p>Because the real gates are quiet, the useful signals are quiet too. These are the gauges that tell you whether the announced-vs-deployable gap is <i>closing</i> or <i>widening</i>:</p>
+  <ul>
+    <li><b>Transformer and switchgear order books &amp; lead times</b> &mdash; the single clearest read on the physical bottleneck. Lengthening = the gap is widening.</li>
+    <li><b>Interconnection-queue data</b> &mdash; queue length and average wait by grid region (PJM, ERCOT, and the rest). Reform that shortens waits is a genuine catalyst.</li>
+    <li><b>HBM allocation commentary</b> &mdash; when memory makers stop saying &ldquo;sold out,&rdquo; a chip constraint is easing.</li>
+    <li><b>Behind-the-meter project count</b> &mdash; rising = operators routing <i>around</i> the grid, which is the market solving synchronization in real time.</li>
+    <li><b>Utilization vs. <span class="def" data-d="The rated maximum capacity a facility could run at, versus what it's actually running. A big gap between announced 'nameplate' gigawatts and energized, utilized gigawatts is the synchronization problem showing up in the data.">nameplate</span></b> &mdash; how much announced capacity is actually energized and busy. The wider that gap, the more the announcements are outrunning reality.</li>
+  </ul>
+
+  <h2>The honest close</h2>
+  <p>This lens cuts both ways, and that&rsquo;s the point &mdash; it&rsquo;s a framework, not a cheerleader. Synchronization risk is exactly <i>why</i> some of this capex will strand: build three years late into a world that changed, and even real demand may not save the return. It&rsquo;s also why the firms that genuinely compress the critical path &mdash; who make the date arrive sooner &mdash; can capture outsized, durable value while everyone else waits in line.</p>
+  <p>What it is <i>not</i> is a reason to take any &ldquo;5 GW announced&rdquo; headline at face value. Nobody ships a data center. They assemble one, slowly, from a dozen supply chains that have to arrive together &mdash; and the slowest one, the one nobody&rsquo;s tweeting about, decides when the lights actually turn on.</p>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">Plain-English coverage of the whole chain</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">We track the quiet inputs that set the date &mdash; not just the loud ones.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens covers the AI build-out as one connected system: power, memory, cooling, silicon &mdash; and the synchronization between them. Every claim sourced, every number dated.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/ai-malinvestment.html">Is the Build-Out a Bubble?</a> &middot; <a href="/learn/power-bottleneck.html">The Power Bottleneck</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <p class="disc"><b>Sources &amp; further reading (figures as of mid-2026 &mdash; verify current):</b> <b>Grid interconnection queue</b> &mdash; Lawrence Berkeley National Laboratory, <i>Queued Up</i> (2025 edition), <a href="https://emp.lbl.gov/queues" rel="nofollow">emp.lbl.gov/queues</a> (2,000+ GW queued; ~5-year typical wait, up to ~7 in PJM). <b>Power transformer lead times</b> &mdash; Wood Mackenzie transformer survey via <a href="https://www.powermag.com/transformers-in-2026-shortage-scramble-or-self-inflicted-crisis/" rel="nofollow">POWER Magazine</a> and <a href="https://pv-magazine-usa.com/2026/05/11/u-s-transformer-market-faces-severe-supply-constraints-as-lead-times-extend-to-four-years/" rel="nofollow">pv magazine USA</a> (~128 weeks average; up to 4&ndash;5 years for high-capacity units). <b>Data-center capex, construction share &amp; delays</b> &mdash; industry analyses incl. <a href="https://build.inc/insights/data-center-transformer-procurement-2026" rel="nofollow">Build.inc</a> ($750B+ 2026 capex; ~12 GW planned, ~1/3 under construction; 30&ndash;50% of sites at risk of delay/cancellation). <b>HBM supply</b> &mdash; <a href="https://www.trendforce.com/news/2025/08/13/news-hbm-battle-heats-up-micron-reportedly-hints-2026-sell-out-sk-hynix-yet-to-confirm" rel="nofollow">TrendForce</a> and supplier statements (2026 HBM capacity sold out across SK Hynix, Samsung, and Micron). Figures are point-in-time and move quickly; treat them as orders of magnitude, not fixed constants.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Nothing here is a recommendation to buy or sell any security. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
