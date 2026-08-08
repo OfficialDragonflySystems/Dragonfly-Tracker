@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI's Real Bottleneck Isn't the Chip &mdash; It's the Wall Behind It &mdash; Dragonfly Lens</title>
+<meta name="description" content="In one week of August 2026, Anthropic started designing its own chips and AMD bought a startup that bakes AI models straight into silicon. Different headlines, same story: the bottleneck has moved from the processor to the memory feeding it &mdash; the 'memory wall.' Whoever wins, the memory makers and the one factory underneath them get paid. Plain English, every number sourced.">
+<meta property="og:title" content="AI's Real Bottleneck Isn't the Chip. It's the Wall Behind It.">
+<meta property="og:description" content="Anthropic is designing its own chips; AMD just bought a startup that bakes models into silicon. Both are attacks on the same thing: the memory wall. Bet the bottleneck, not the horse.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/memory-wall.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/memory-wall-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI's Real Bottleneck Isn't the Chip. It's the Wall Behind It.">
+<meta name="twitter:description" content="Anthropic is designing its own chips; AMD bought a startup that bakes models into silicon. Both attack the same thing: the memory wall. Plain English.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/memory-wall-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; The Bottleneck Behind the Bottleneck</div>
+  <h1>AI's Real Bottleneck Isn't the Chip. It's the Wall Behind It.</h1>
+  <p class="lead">In one week of August 2026, two headlines landed that looked unrelated: <b>Anthropic</b> started building a team to design <b>its own chips</b>, and <b>AMD</b> bought a startup that bakes an AI model <b>straight into the silicon</b>. They are the same story. Both are attacks on a problem most coverage never names &mdash; the <span class="def" data-d="The memory wall: modern chips can compute far faster than memory can feed them data, so the chip spends much of its time idle, waiting. The gap has widened for decades.">memory wall</span>, the point where the world's fastest chip sits idle, waiting for data to arrive. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; August 8, 2026 &middot; Where the AI bottleneck actually moved &mdash; and who gets paid.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What's real:</b> Anthropic confirmed (Aug 5) it is hiring an in-house <b>chip design team</b> &mdash; silicon roles paying <b>$320K&ndash;$485K</b> &mdash; to co-design chips with Claude and cut <span class="def" data-d="Inference = actually using a trained model to answer you. Done billions of times, forever, so cost-per-answer is everything.">inference</span> cost by a targeted <b>~50%</b>. Days later (Aug 6), <b>AMD bought Taalas</b>, a Toronto startup that casts a model's weights <i>into transistors</i>.</li>
+      <li><b>The real shift:</b> the bottleneck moved from <b>compute</b> to <b>memory</b>. A modern AI chip can do the math almost instantly &mdash; but it spends much of its time <i>waiting</i> for data to be fetched. That gap is the <span class="def" data-d="The memory wall: compute has gotten ~60,000x faster over decades while memory bandwidth grew far less, so feeding the chip is now the limit, not the math.">memory wall.</span></li>
+      <li><b>Two escapes:</b> (1) <b>co-design</b> the chip and model together so less data has to move (Anthropic); (2) <b>bake the model into the chip</b> so the weights never leave it at all (Taalas claims <b>~73&times;</b> an Nvidia H200 at <b>1/10</b> the power on one small model).</li>
+      <li><b>The opportunity (the Lens angle):</b> whichever escape wins, the <b>memory makers</b> (SK Hynix, Samsung, Micron &mdash; whose <span class="def" data-d="High-Bandwidth Memory: stacks of memory sitting right next to the chip, the widest data pipe available. Three firms make nearly all of it; it is sold out through 2026.">HBM</span> is <b>sold out through 2026</b>) and the <b>one factory</b> that builds and stacks it all (TSMC) get paid. <b>Bet the bottleneck, not the horse.</b></li>
+      <li><b>The honest caveat:</b> Taalas's <b>73&times;</b> is the startup's own claim on a single 8-billion-parameter model; model-in-silicon chips are <i>inflexible</i> (the model changes, you re-spin the chip); Anthropic's silicon is <i>years</i> from a data center. This is a slow re-plumbing, not an overnight flip.</li>
+    </ul>
+  </div>
+
+  <h2>What actually happened</h2>
+  <p>On <b>August 5, 2026</b>, Anthropic publicly confirmed it is assembling an in-house team to <b>design its own chips</b> &mdash; posting silicon-engineer and hardware-architect roles at <b>$320,000&ndash;$485,000</b>, anchored by Clive Chan, who joined in June. The stated goal isn't to become a chipmaker; it's to <b>co-design</b> the hardware and Claude <i>together</i>, tailoring the chip to the model so each inference costs roughly <b>half</b> as much. Anthropic already runs on a mix of Google's TPUs, Amazon's Trainium, and Nvidia GPUs; now it wants a say in the transistors themselves.</p>
+  <p>A day later, on <b>August 6</b>, <b>AMD announced it is buying Taalas</b>, a Toronto startup founded in 2023. Taalas does something radical: instead of loading a model's <span class="def" data-d="Weights = the billions of numbers that ARE the trained model. Normally they live in memory and get streamed to the chip for every answer.">weights</span> from memory for every answer, it <b>etches the model directly into the chip's transistors</b>. Its first test chip, HC1, ran Meta's Llama 3.1 (8B) at a claimed <b>~17,000 tokens/second</b> &mdash; which Taalas said in February is <b>~73&times;</b> an Nvidia H200 at <b>one-tenth</b> the power. AMD plans to slot Taalas chips into its Helios rack systems (in mass production since July, with Microsoft, OpenAI, and Anthropic lined up for Q4).</p>
+  <div class="flag"><b>Read both with one eye on the source.</b> Anthropic's &ldquo;~50% cheaper&rdquo; is a <i>target</i>, not a shipped result, and its chips are years out. Taalas's &ldquo;73&times;&rdquo; is the <i>startup's own</i> benchmark on one small model, pre-acquisition. Anchor on what's verifiable &mdash; the hires, the acquisition, the direction &mdash; and treat the performance numbers as claims until independent silicon proves them.</div>
+
+  <h2>The plain-English version: what is the memory wall?</h2>
+  <p>For years the story was &ldquo;we need faster chips.&rdquo; We got them &mdash; almost <i>too</i> good. The processor can now do the math far faster than the system can <b>hand it the numbers to work on</b>. So the expensive chip sits there, idle, waiting for data to be carried over from memory. The waiting &mdash; not the calculating &mdash; is now the limit.</p>
+  <div class="real"><b>The genius chef and the far-away pantry.</b> Picture a chef (the chip) who can cook any dish the instant the ingredients hit the counter. The problem is the pantry (the memory) is down a long hallway, and someone has to walk every ingredient over one at a time. The chef spends most of the dinner service <i>standing around waiting</i>. You don't fix that by hiring a faster chef. You fix it by widening the hallway, or by keeping the ingredients on the counter. That hallway is the <span class="def" data-d="Memory bandwidth: how fast data can move between memory and the chip. The narrow hallway in the analogy - and the real limit on AI inference today.">memory wall</span>, and everything below is a way to beat it.</p>
+  <p>Why does AI hit this wall so hard? Because answering a prompt means reading <i>billions</i> of weights from memory for <i>every single token</i> of the reply. The math is cheap; the fetching is not. That's why the whole industry is suddenly obsessed with memory, and why these two August moves are really one move.</p>
+
+  <h2>The three ways to beat the wall</h2>
+  <div class="stack">
+    <div class="step"><b>Widen the hallway &mdash; fatter memory (HBM).</b> Stack memory right next to the chip and make the pipe as wide as physics allows. That's <span class="def" data-d="High-Bandwidth Memory - memory stacked in towers beside the processor with a very wide connection. HBM4, the 2026 generation, pushes ~1.5-2 terabytes/second per stack.">HBM</span>, and the 2026 generation (HBM4) moves ~1.5&ndash;2 <i>terabytes</i> per second per stack. It's the mainstream fix &mdash; and demand so far outstrips supply that it's <b>sold out through 2026.</b></div>
+    <div class="step"><b>Carry less &mdash; co-design the chip and model (Anthropic).</b> If you design the chip and the model <i>together</i>, you can shrink how much data has to move at all: match the chip to the model's exact shape, keep more on-chip, waste nothing. Less walking down the hallway. That's the ~50%-cheaper-inference bet.</div>
+    <div class="step"><b>Don't carry at all &mdash; bake the model into the chip (Taalas/AMD).</b> The most radical: etch the model's weights <i>into the transistors</i>, so they never have to be fetched from memory. No hallway, no walking &mdash; the ingredients <i>are</i> the counter. Blisteringly fast and low-power for that one model. The catch below.</div>
+  </div>
+  <div class="flag"><b>The bake-it-in trade-off is inflexibility.</b> A chip with the model cast into silicon only runs <i>that</i> model. When the model updates &mdash; and AI models update constantly &mdash; you need a new chip. It's the difference between <i>memorizing</i> one recipe into muscle memory (instant, but useless when the recipe changes) and <i>reading</i> from a book (slower, but you can cook anything). Powerful for stable, high-volume models; awkward for a field that reinvents itself every few months.</div>
+
+  <h2>The opportunity: who gets paid no matter who wins</h2>
+  <p>Most coverage asks &ldquo;can Anthropic really build a chip?&rdquo; or &ldquo;is this bad for Nvidia?&rdquo; Those are horse-race questions, and horse races are hard to call. The Lens question is the one that pays: <b>if the bottleneck is memory, who owns the memory bottleneck?</b></p>
+  <div class="tw"><table>
+    <tr><th>The layer</th><th>Who</th><th>Why they win either way</th></tr>
+    <tr><td><b>The memory makers</b></td><td>SK Hynix, Samsung, Micron</td><td>Just <b>three companies</b> make nearly all the world's <span class="def" data-d="High-Bandwidth Memory - the wide, stacked memory every top AI chip needs. An effective 3-way oligopoly; SK Hynix alone holds ~60%.">HBM</span>, and it's <b>sold out through 2026.</b> Every escape that &ldquo;widens the hallway&rdquo; buys more of their memory. When memory is the scarce thing, the people who make memory hold the cards.</td></tr>
+    <tr><td><b>The factory &amp; the stacker</b></td><td>TSMC</td><td>Nvidia's GPUs, Google's TPUs, Anthropic's future chips, AMD's Taalas parts &mdash; <b>TSMC makes them all</b>, and its <span class="def" data-d="Advanced packaging (e.g. TSMC's CoWoS) stitches the processor and its HBM memory stacks into one module. The scarce, hard step that decides how much memory you can put next to a chip.">advanced packaging</span> is what physically stitches the memory to the chip. It doesn't matter whose logo is on top. One factory sits under every path.</td></tr>
+    <tr><td><b>The moonshot &#127769;</b></td><td>New memory tiers (HBF)</td><td><i>Clearly speculative.</i> SK Hynix and SanDisk are building <span class="def" data-d="High-Bandwidth Flash - a proposed new memory tier aimed specifically at inference, where the model mostly reads its weights. Samples expected late 2026.">High-Bandwidth Flash</span> aimed straight at inference. If a genuinely new memory tier lands, it reshuffles the board &mdash; early, unproven, we'd only act on data.</td></tr>
+  </table></div>
+  <div class="real"><b>The insight that ties it together:</b> in a gold rush where everyone's problem is getting water to the mine, <b>own the pipe.</b> The chip-design fight (Anthropic, Nvidia, AMD) is loud and uncertain &mdash; but every combatant is fighting the <i>same</i> memory wall, and the value pools in the layer that supplies the memory and stitches it on. Same <a href="picks-and-shovels.html">picks-and-shovels</a> lesson we keep landing on, one layer deeper than last time: last year the bottleneck was <a href="nvidia-custom-silicon.html">who designs the custom chip</a>; this year it's <b>what feeds it.</b></div>
+
+  <h2>The risks &mdash; named, not buried</h2>
+  <ul>
+    <li><b>The performance numbers are marketing until proven.</b> Taalas's 73&times; is a startup's own benchmark on one 8B model; Anthropic's 50% is a target. Real, independent silicon is the only proof. Lead with the direction, not the multiples.</li>
+    <li><b>Model-in-silicon may stay a niche.</b> Its inflexibility (re-spin per model) suits a few huge, stable models &mdash; it is not obviously the shape of a field that changes monthly. It could be a specialist tool, not the future.</li>
+    <li><b>Nvidia is not the victim here.</b> Nvidia buys the same HBM and packaging and remains the biggest force in the room. &ldquo;Bet the bottleneck&rdquo; is not &ldquo;short Nvidia.&rdquo;</li>
+    <li><b>The bottleneck cuts both ways.</b> &ldquo;Own the memory oligopoly&rdquo; means owning a <i>concentrated, cyclical</i> industry: memory has brutal boom-bust cycles, and three suppliers in tense geographies is fragile as well as powerful.</li>
+    <li><b>Not advice.</b> This is how we read the chain, not a recommendation. Company names illustrate a structural shift, not buy calls &mdash; do your own work and size to your own risk.</li>
+  </ul>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">The chip war grabs the headlines. The memory wall decides the war.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens maps the AI buildout as one connected chain &mdash; and finds the layer where the value actually pools. Plain English, every claim sourced and flagged. When we're wrong, we say so.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/nvidia-custom-silicon.html">The chip designers underneath</a> &middot; <a href="/learn/ai-per-watt.html">Intelligence per watt</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>What is the &ldquo;memory wall&rdquo;?</b> It's the gap between how fast a chip can compute and how fast memory can feed it data. Processors have gotten enormously faster over the decades while memory bandwidth grew far less, so a modern AI chip spends much of its time idle, waiting for data. For AI inference &mdash; which reads billions of model weights for every word it generates &mdash; feeding the chip, not the math, is the real bottleneck.</p>
+    <p><b>Why is Anthropic designing its own chips?</b> To co-design the hardware and Claude together so each answer costs less &mdash; Anthropic is targeting roughly a 50% cut in per-token inference cost. It confirmed the in-house chip team on August 5, 2026, with silicon roles paying $320K&ndash;$485K. It's a multi-year effort, and Anthropic still uses Google TPUs, Amazon Trainium, and Nvidia GPUs today.</p>
+    <p><b>What did AMD buy Taalas for?</b> Taalas etches an AI model's weights directly into a chip's transistors, so the model never has to be fetched from memory &mdash; extremely fast and low-power for that one model, at the cost of flexibility. AMD (Aug 6, 2026) plans to place Taalas chips in its Helios systems. It's a bet on model-specific inference silicon.</p>
+    <p style="margin-bottom:0;"><b>Who benefits most from the memory-wall race?</b> The layer underneath the chip-brand fight: the three HBM memory makers (SK Hynix, Samsung, Micron), whose memory is sold out through 2026, and the foundry that manufactures and stacks nearly every advanced AI chip (TSMC). Whoever wins the chip design race, the memory and the factory get paid.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is the memory wall in AI chips?","acceptedAnswer":{"@type":"Answer","text":"The memory wall is the gap between how fast a chip can compute and how fast memory can feed it data. Processors have grown enormously faster over the decades while memory bandwidth grew far less, so a modern AI chip spends much of its time idle, waiting for data. For AI inference, which reads billions of model weights for every word generated, feeding the chip rather than the math is the real bottleneck."}},
+  {"@type":"Question","name":"Why is Anthropic designing its own AI chips?","acceptedAnswer":{"@type":"Answer","text":"To co-design the hardware and its Claude models together so each answer costs less, targeting roughly a 50 percent cut in per-token inference cost. Anthropic confirmed the in-house chip design team on August 5, 2026, with silicon roles paying 320,000 to 485,000 dollars. It is a multi-year effort, and Anthropic still uses Google TPUs, Amazon Trainium, and Nvidia GPUs today."}},
+  {"@type":"Question","name":"What did AMD acquire Taalas for?","acceptedAnswer":{"@type":"Answer","text":"Taalas etches an AI model's weights directly into a chip's transistors, so the model never has to be fetched from memory, making it extremely fast and low-power for that one model at the cost of flexibility. AMD announced the acquisition on August 6, 2026 and plans to place Taalas chips in its Helios rack systems. It is a bet on model-specific inference silicon."}},
+  {"@type":"Question","name":"Who benefits most from the AI memory bottleneck?","acceptedAnswer":{"@type":"Answer","text":"The layer underneath the chip-brand fight: the three high-bandwidth memory makers SK Hynix, Samsung, and Micron, whose HBM is sold out through 2026, and the foundry TSMC that manufactures and stacks nearly every advanced AI chip. Whoever wins the chip design race, the memory makers and the factory get paid."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>Anthropic confirms in-house chip design team; $320K&ndash;$485K silicon roles; ~50% inference-cost target; Clive Chan; multi-chip (TPU/Trainium/Nvidia) strategy</b> &mdash; <a href="https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/" rel="nofollow">TechCrunch</a>, <a href="https://www.datacenterdynamics.com/en/news/anthropic-publicly-confirms-its-putting-together-an-in-house-chip-design-team/" rel="nofollow">Data Center Dynamics</a>, <a href="https://www.forbes.com/sites/jonmarkman/2026/08/06/anthropic-enters-the-ai-chip-race-with-in-house-chip-team/" rel="nofollow">Forbes</a>. <b>AMD acquires Taalas; model-into-transistors; HC1 on TSMC 6nm ~17,000 tok/s on Llama 3.1 8B (~73&times; H200 at 1/10 power, Taalas's Feb claim); Helios integration</b> &mdash; <a href="https://www.cnbc.com/2026/08/06/amd-buys-taalas-startup-that-hardwires-ai-models-into-its-silicon.html" rel="nofollow">CNBC</a>, <a href="https://siliconangle.com/2026/08/06/amd-acquires-taalas-hardwire-ai-models-silicon/" rel="nofollow">SiliconANGLE</a>. <b>The memory wall; HBM4 ~1.5&ndash;2 TB/s per stack; SK Hynix/Samsung/Micron oligopoly (SK Hynix ~60%); HBM sold out through 2026; SK Hynix + SanDisk High-Bandwidth Flash for inference</b> &mdash; <a href="https://www.eetimes.com/the-state-of-hbm4-chronicled-at-ces-2026/" rel="nofollow">EE Times</a>, <a href="https://introl.com/blog/ai-memory-supercycle-hbm-2026" rel="nofollow">Introl</a>, <a href="https://247wallst.com/investing/2026/08/04/sk-hynix-and-sandisk-may-have-just-solved-ais-biggest-bottleneck-and-it-could-reshape-the-memory-market/" rel="nofollow">24/7 Wall St.</a><br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Figures are as reported by the sources above and were accurate at publication; performance multiples cited are the companies' own claims and await independent verification. Company names illustrate a structural shift in the AI compute supply chain, not buy recommendations &mdash; verify against primary filings before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
