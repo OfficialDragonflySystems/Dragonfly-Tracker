@@ -134,6 +134,20 @@ def card_musk():
     print("wrote musk-bottleneck-card.png")
 
 
+def card_whylens():
+    img, d = base()
+    kicker(d, "THE LENS  ·  READ THIS FIRST")
+    y = headline(d, ["Why Dragonfly Lens", "exists"], 150, 70, 88)
+    y = sub(d, "Honest, plain-English research you can check - including a public log of when we're wrong.", y + 26)
+    # three-pillar tagline
+    d.text((64, 470), "Sourced.  Plain-English.  We own our misses.", font=ARI(22), fill=TEAL)
+    lockup(d)
+    tag(d, "Built for regular people, not Wall Street")
+    img.convert("RGB").save(os.path.join(HERE, "why-the-lens-card.png"), "PNG")
+    print("wrote why-the-lens-card.png")
+
+
 if __name__ == "__main__":
     card_memwall()
     card_musk()
+    card_whylens()
