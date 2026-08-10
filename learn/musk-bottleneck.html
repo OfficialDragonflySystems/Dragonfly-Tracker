@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Musk Playbook: Own the Bottleneck, Don't Rent It &mdash; Dragonfly Lens</title>
+<meta name="description" content="Look past the personality and Elon Musk's companies rhyme: each one seizes a different bottleneck in the AI and energy buildout, and they feed each other. Tesla makes the power, xAI makes the intelligence, the new $16.8B Terafab makes the chips, SpaceX makes the launch and the connectivity. The lesson isn't 'buy Tesla' - it's where the value pools. Plain English, every number sourced, hype flagged.">
+<meta property="og:title" content="The Musk Playbook: Own the Bottleneck, Don't Rent It">
+<meta property="og:description" content="Tesla makes the power, xAI the intelligence, Terafab the chips, SpaceX the launch. One pattern under all of it: don't rent the bottleneck - build it. What that teaches the rest of us.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/musk-bottleneck.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/musk-bottleneck-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Musk Playbook: Own the Bottleneck, Don't Rent It">
+<meta name="twitter:description" content="Tesla makes the power, xAI the intelligence, the new $16.8B Terafab the chips, SpaceX the launch. One pattern: build the bottleneck, don't rent it. Plain English.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/musk-bottleneck-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; How the Builders Think</div>
+  <h1>The Musk Playbook: Own the Bottleneck, Don't Rent It</h1>
+  <p class="lead">Ignore the personality for a moment and Elon Musk's companies start to rhyme. Each one grabs a different <b>bottleneck</b> in the AI and energy buildout &mdash; and they feed each other. Tesla makes the <b>power</b>, xAI makes the <b>intelligence</b>, the new <b>$16.8B Terafab</b> will make the <b>chips</b>, and SpaceX makes the <b>launch and the connectivity</b>. This isn't a &ldquo;buy Tesla&rdquo; piece. It's about the <i>pattern</i> &mdash; and what it tells the rest of us about where value pools. <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; August 10, 2026 &middot; First in a &ldquo;How the Builders Think&rdquo; series &mdash; analysis, not admiration.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The pattern:</b> whenever Musk needs something scarce, he doesn't <i>rent</i> it &mdash; he <b>builds the thing that makes it.</b> Rockets, batteries, chips, power, connectivity. He buys the <span class="def" data-d="A bottleneck is the scarce step everyone else depends on. Own it and you get paid no matter who wins the layer above.">bottleneck.</span></li>
+      <li><b>The newest proof (Aug 6, 2026):</b> Tesla and SpaceX are building <b>Terafab</b>, a chip factory in Grimes County, Texas &mdash; a <b>$16.8B</b> first phase (up to ~$119B across four), pitched as <b>the largest building on Earth</b> (100M+ sq ft), to make <span class="def" data-d="Inference = actually running a trained AI model to produce answers. The high-volume, cost-sensitive work - and the chips for it are the scarce thing now.">inference</span> chips for Optimus robots, Cybercabs, and space-based data centers.</li>
+      <li><b>It's a system, not a scatter:</b> Tesla's batteries + solar power xAI's <b>Colossus</b> supercomputer (555,000 GPUs, 2 gigawatts); Colossus trains the AI; Terafab will feed all of it cheaper chips; SpaceX launches the satellites (and, eventually, data centers in orbit). Each company hands the next one its missing organ.</li>
+      <li><b>The Lens takeaway:</b> you can't buy most of this directly (SpaceX and xAI are private) &mdash; but the <i>map</i> is the lesson. The AI buildout's value pools at the <b>bottlenecks</b>: power, chips, memory, launch. Musk is just the loudest example of a rule that names the winners. <b>Bet the bottleneck, not the horse.</b></li>
+      <li><b>The honest caveat:</b> vertical integration this wide is <i>brutally</i> capital-hungry and fragile; several claims are self-promotional (verify before you believe); and Colossus was partly powered by <b>unpermitted</b> gas turbines &mdash; real regulatory and social risk, not a footnote.</li>
+    </ul>
+  </div>
+
+  <h2>What actually happened</h2>
+  <p>On <b>August 6, 2026</b>, Tesla and SpaceX jointly confirmed <b>Terafab</b> &mdash; a semiconductor plant in Grimes County, Texas, with a <b>$16.8 billion</b> first phase and a potential build-out to roughly <b>$119 billion</b> across four phases. Musk calls it the largest building on Earth: more than <b>100 million square feet</b>. Its job is to stamp out <span class="def" data-d="Inference chips run already-trained AI models cheaply and at huge volume - the workload that dominates AI cost once a model is deployed.">inference chips</span> for Tesla's Optimus robots and Cybercabs, plus high-power chips for SpaceX's planned space-based data centers.</p>
+  <p>Read alone, it's just another giant factory headline. Read alongside everything else Musk is building, it's the missing piece of a machine that has been taking shape for years.</p>
+  <div class="flag"><b>Believe the direction, not the superlatives.</b> &ldquo;Largest building on Earth,&rdquo; the four-phase $119B figure, and the timelines are <i>plans and projections</i>, announced by the companies themselves. Phase one is real money and real intent; the rest is a roadmap. And the &ldquo;50&times; the Pentagon&rdquo; line making the rounds overstates it &mdash; 100M sq ft is closer to ~15&times; the Pentagon's floor area. Anchor on the $16.8B first phase; treat the rest as ambition.</div>
+
+  <h2>The plain-English version: he builds the bottleneck</h2>
+  <p>Most companies <i>rent</i> what's scarce. Need chips? Buy them from Nvidia. Need power? Buy it from the grid. Need launch? Book a rocket. Musk's habit is the opposite: when a scarce thing sits between him and what he wants, he builds the factory that makes the scarce thing.</p>
+  <div class="real"><b>Don't queue for the well &mdash; own the well.</b> In a drought, everyone lines up at the one well and pays whatever the owner asks. Musk's move is to go dig his own well &mdash; and then sell water to the people still standing in line. Rockets were the well for space; <span class="def" data-d="Starlink: SpaceX's satellite internet. SpaceX makes launch cheap, so it can loft its own satellites and sell the connectivity - owning both the well and the water.">Starlink</span> was the well for connectivity; batteries were the well for storing power. Terafab is him digging the well for <b>chips.</b></div>
+  <p>Why does that matter far beyond Musk? Because it's the same lesson the Lens keeps landing on from the other side: in a gold rush, the durable money is in the <a href="picks-and-shovels.html">picks and shovels</a> &mdash; the scarce inputs everyone needs. Musk is that lesson lived at full scale: he doesn't pan for gold, he <i>becomes the shovel store.</i></p>
+
+  <h2>The machine: how the companies feed each other</h2>
+  <p>The empire looks scattered &mdash; cars, rockets, robots, a chatbot &mdash; until you line the companies up by <i>which bottleneck each one owns</i>. Then they click together:</p>
+  <div class="stack">
+    <div class="step"><b>Power &mdash; Tesla.</b> Batteries (<span class="def" data-d="Tesla's grid-scale battery. Stores power so a data center or grid can draw steady electricity even when supply swings.">Megapack</span>) and solar. Electricity is <i>the</i> gating bottleneck of the AI era &mdash; you can't run chips you can't power. Tesla makes the power gear that feeds the compute.</div>
+    <div class="step"><b>Compute &mdash; xAI.</b> The <span class="def" data-d="xAI's Memphis supercomputer - as of early 2026, ~555,000 GPUs and 2 gigawatts of power, one of the largest AI training clusters on Earth.">Colossus</span> supercomputer: ~555,000 GPUs, 2 gigawatts, ~$18B &mdash; and partly powered by on-site gas turbines <i>and Tesla Megapacks.</i> One Musk company literally keeps another one's AI running.</div>
+    <div class="step"><b>Chips &mdash; Terafab.</b> The newest link: instead of buying every AI chip from others, make the inference silicon in-house &mdash; the same &ldquo;escape the chip bottleneck&rdquo; move the whole industry is racing on (see <a href="memory-wall.html">the memory wall</a>).</div>
+    <div class="step"><b>Launch &amp; connectivity &mdash; SpaceX.</b> Cheap launch made Starlink possible; Starlink funds more launch. And the next idea &mdash; <b>data centers in orbit</b>, running on unlimited solar and cooled by space &mdash; would fuse all of it: SpaceX lofts the compute, Terafab supplies its chips, and the bottleneck moves off-planet.</div>
+  </div>
+  <div class="real"><b>The insight:</b> each company is a bottleneck, and each one's output is the next one's scarce input. Power feeds compute; compute needs chips; chips and compute ride to orbit on cheap launch. It's not five bets &mdash; it's <b>one bet, five times,</b> on owning the scarce middle of the whole stack.</div>
+
+  <h2>The opportunity: what this teaches the rest of us</h2>
+  <p>Here's the trap: the obvious reaction is &ldquo;so buy Tesla.&rdquo; But the two most bottleneck-pure pieces &mdash; SpaceX and xAI &mdash; are <b>private</b>, and Tesla the stock is a car company, an energy company, and a robotics bet all mixed together. The <i>real</i> value isn't a ticker. It's the <b>map.</b></p>
+  <div class="tw"><table>
+    <tr><th>The bottleneck</th><th>Musk's version</th><th>The general lesson (who gets paid)</th></tr>
+    <tr><td><b>Power</b></td><td>Tesla Megapack + solar</td><td>Electricity gates the whole AI buildout. The people who <i>make power and grid gear</i> get paid whoever wins the model war. (See <a href="power-bottleneck.html">the power bottleneck</a>.)</td></tr>
+    <tr><td><b>Chips &amp; memory</b></td><td>Terafab</td><td>Everyone's escaping the chip bottleneck at once. The designers, the memory makers, and the one factory underneath get paid. (See <a href="memory-wall.html">the memory wall</a>.)</td></tr>
+    <tr><td><b>Launch &amp; orbit</b></td><td>SpaceX / Starlink</td><td>Cheap launch is its own bottleneck; whoever owns it controls space-based connectivity &mdash; and maybe space-based compute next. (See <a href="off-earth-economy.html">the off-earth economy</a>.)</td></tr>
+    <tr><td><b>The moonshot &#127769;</b></td><td>Data centers in orbit</td><td><i>Clearly speculative.</i> If compute really moves to space for free cooling and solar, it rewrites the map again. Early, unproven &mdash; we'd only act on data.</td></tr>
+  </table></div>
+  <div class="real"><b>The through-line:</b> Musk isn't magic &mdash; he's a very loud demonstration of one rule. In every scarce layer, the value flows to whoever <i>owns the scarce layer.</i> You don't have to buy his companies to use the map: it points at power, chips, memory, and launch as the places the buildout's money pools &mdash; the same <a href="picks-and-shovels.html">own-the-bottleneck</a> idea we keep coming back to.</div>
+
+  <h2>The risks &mdash; named, not buried</h2>
+  <ul>
+    <li><b>Vertical integration is a high-wire act.</b> Owning every layer means paying for every layer, up front, at once. It's staggeringly capital-hungry, and if one link (say, Terafab's build-out) slips, it strains the others. Wide is powerful <i>and</i> fragile.</li>
+    <li><b>The claims run ahead of the concrete.</b> &ldquo;Largest building on Earth,&rdquo; $119B, aggressive timelines, &ldquo;heat-shield problem solved&rdquo; &mdash; these are announcements, not audited results. Musk's direction is often right and his <i>dates</i> often wrong. Lead with what's built.</li>
+    <li><b>Real-world friction is real.</b> Colossus ran on <b>unpermitted</b> gas turbines near Memphis, drawing regulatory and community pushback. Building the bottleneck yourself means owning its externalities &mdash; pollution, permits, politics.</li>
+    <li><b>You mostly can't buy the purest pieces.</b> SpaceX and xAI are private; Tesla is a blended bet. &ldquo;Own the bottleneck&rdquo; as an <i>investing</i> idea usually points at the suppliers underneath, not at Musk's cap table.</li>
+    <li><b>Not advice.</b> This is how we read the pattern, not a recommendation. Company names illustrate a structure, not buy calls &mdash; do your own work and size to your own risk.</li>
+  </ul>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">Don't watch the man. Watch the bottlenecks he keeps buying.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens maps the AI buildout as one connected chain &mdash; and finds the layer where the value actually pools. Plain English, every claim sourced and flagged. When we're wrong, we say so.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/memory-wall.html">The memory wall</a> &middot; <a href="/learn/power-bottleneck.html">The power bottleneck</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>What is Terafab?</b> A semiconductor factory that Tesla and SpaceX confirmed on August 6, 2026, for Grimes County, Texas. The first phase is a $16.8 billion investment, with a potential build-out toward $119 billion across four phases, and it's pitched as the largest building on Earth at over 100 million square feet. It will make inference chips for Tesla's Optimus robots and Cybercabs and high-power chips for SpaceX's planned space-based data centers.</p>
+    <p><b>What is the &ldquo;Musk playbook&rdquo;?</b> The pattern of building the thing that makes a scarce input rather than buying it: rockets and launch (SpaceX), connectivity (Starlink), power storage (Tesla Megapack), compute (xAI's Colossus), and now chips (Terafab). Each company owns a bottleneck, and their outputs feed each other &mdash; power runs the compute, chips feed the compute, cheap launch carries it to orbit.</p>
+    <p style="margin-bottom:0;"><b>How should an ordinary investor read this?</b> As a map, not a stock tip. The purest bottleneck companies (SpaceX, xAI) are private, and Tesla is a blended bet. The transferable lesson is where the AI buildout's value pools &mdash; power, chips, memory, and launch &mdash; and that the suppliers who own those scarce layers tend to get paid regardless of which brand wins on top.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is Terafab?","acceptedAnswer":{"@type":"Answer","text":"Terafab is a semiconductor factory that Tesla and SpaceX confirmed on August 6, 2026 for Grimes County, Texas. The first phase is a 16.8 billion dollar investment, with a potential build-out toward 119 billion dollars across four phases, and it is pitched as the largest building on Earth at over 100 million square feet. It will make inference chips for Tesla's Optimus robots and Cybercabs and high-power chips for SpaceX's planned space-based data centers."}},
+  {"@type":"Question","name":"What is the Musk playbook for owning bottlenecks?","acceptedAnswer":{"@type":"Answer","text":"It is the pattern of building the thing that makes a scarce input rather than buying it: launch through SpaceX, connectivity through Starlink, power storage through Tesla Megapack, compute through xAI's Colossus supercomputer, and now chips through Terafab. Each company owns a bottleneck and their outputs feed each other - power runs the compute, chips feed the compute, and cheap launch can carry it to orbit."}},
+  {"@type":"Question","name":"How should an ordinary investor interpret Musk's bottleneck strategy?","acceptedAnswer":{"@type":"Answer","text":"As a map rather than a stock tip. The purest bottleneck companies, SpaceX and xAI, are private, and Tesla is a blended car, energy, and robotics bet. The transferable lesson is where the AI buildout's value pools - power, chips, memory, and launch - and that the suppliers who own those scarce layers tend to get paid regardless of which brand wins on top."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>Terafab: Tesla/SpaceX $16.8B first phase (up to ~$119B / 4 phases), 100M+ sq ft, Grimes County TX, inference chips for Optimus/Cybercab + space data centers</b> &mdash; <a href="https://techcrunch.com/2026/08/06/tesla-and-spacex-will-invest-16-8b-to-start-building-terafab-chip-factory-in-texas/" rel="nofollow">TechCrunch</a>, <a href="https://electrek.co/2026/08/06/tesla-spacex-terafab-grimes-county-16-8-billion/" rel="nofollow">Electrek</a>, <a href="https://www.foxbusiness.com/technology/spacex-tesla-choose-texas-ai-chip-manufacturing-plant-worlds-largest-building" rel="nofollow">Fox Business</a>. <b>xAI Colossus: ~555,000 GPUs, 2 GW, ~$18B; gas turbines + Tesla Megapacks; unpermitted-turbine controversy; permit expires 2027</b> &mdash; <a href="https://introl.com/blog/xai-colossus-2-gigawatt-expansion-555k-gpus-january-2026" rel="nofollow">Introl</a>, <a href="https://en.wikipedia.org/wiki/Colossus_(data_center)" rel="nofollow">Wikipedia</a>, <a href="https://www.technology.org/2026/07/15/xai-59-unpermitted-gas-turbines-southaven-colossus-2/" rel="nofollow">Technology.org</a>. <b>Industry-wide move to custom/inference silicon</b> &mdash; see our <a href="/learn/memory-wall.html">memory-wall</a> explainer and its sources.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Figures are as reported by the sources above and were accurate at publication; forward figures (phase totals, timelines, &ldquo;largest building&rdquo;) are company projections, not results. Company names illustrate a structural pattern in the AI and energy buildout, not buy recommendations &mdash; verify against primary filings before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
