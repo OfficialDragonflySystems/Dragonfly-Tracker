@@ -147,7 +147,19 @@ def card_whylens():
     print("wrote why-the-lens-card.png")
 
 
+def card_squeeze():
+    img, d = base()
+    kicker(d, "THE LENS  ·  HOW THE GAME REALLY WORKS")
+    y = headline(d, ["GameStop wasn't magic.", "It was a setup you", "can learn to read."], 128, 58, 74)
+    sub(d, "How a short squeeze really works, how to read the setup yourself - and the part nobody tells you: most who chased it late lost.", y + 16)
+    lockup(d)
+    tag(d, "We show the data. You decide.")
+    img.convert("RGB").save(os.path.join(HERE, "short-squeeze-card.png"), "PNG")
+    print("wrote short-squeeze-card.png")
+
+
 if __name__ == "__main__":
     card_memwall()
     card_musk()
     card_whylens()
+    card_squeeze()

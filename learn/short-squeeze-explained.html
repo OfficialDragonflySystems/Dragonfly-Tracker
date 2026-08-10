@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameStop Wasn't Magic. It Was a Setup You Can Learn to Read. &mdash; Dragonfly Lens</title>
+<meta name="description" content="In 2021 a struggling game retailer went from $17 to $483 and cost hedge funds about $5 billion. It looked like chaos - it wasn't. The setup was sitting in public data anyone could read. Here's how a short squeeze actually works, how to spot the setup yourself, and the part nobody tells you: most people who chased it late got wrecked. Plain English, every number sourced.">
+<meta property="og:title" content="GameStop Wasn't Magic. It Was a Setup You Can Learn to Read.">
+<meta property="og:description" content="How a short squeeze actually works, how to read the setup in public data - and the honest part nobody tells you: most people who chased GameStop late lost. We show the data; you decide.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/short-squeeze-explained.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/short-squeeze-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GameStop Wasn't Magic. It Was a Setup You Can Learn to Read.">
+<meta name="twitter:description" content="How a short squeeze works, how to read the setup yourself - and the honest part: most who chased GameStop late lost. We show the data; you decide.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/short-squeeze-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .danger{border-left:4px solid var(--bad);background:rgba(248,113,113,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .danger b{color:var(--bad);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; How the Game Really Works</div>
+  <h1>GameStop Wasn't Magic. It Was a Setup You Can Learn to Read.</h1>
+  <p class="lead">In early 2021, a struggling video-game retailer went from about <b>$17 to $483</b> in
+  three weeks and cost hedge funds roughly <b>$5 billion</b>. It looked like pure chaos. It wasn't &mdash;
+  the <i>setup</i> was sitting in public data that anyone could read. Here's how a <span class="def" data-d="A short squeeze: when a heavily bet-against stock starts rising, the people who bet against it are forced to buy it back to limit their losses - and their buying pushes it even higher, forcing more of them to buy. A feedback loop.">short squeeze</span> actually works, how to spot the setup yourself &mdash; and the part almost nobody tells you: <b>most people who chased it late got wrecked.</b> <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; August 10, 2026 &middot; What the squeeze really was &mdash; and how to read positioning without getting burned.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What happened:</b> so many funds had bet against GameStop that <b>more than 140% of its
+      available shares were sold short</b> &mdash; more than existed. When the price started rising, those
+      bets had to be bought back, and the buying fed on itself. GME hit <b>$483</b> intraday on Jan 28, 2021.</li>
+      <li><b>Why it's not magic:</b> the fuel was <i>visible</i> beforehand &mdash; extreme
+      <span class="def" data-d="Short interest = how many shares have been borrowed and sold short, betting the price falls. Usually shown as a % of the shares available to trade (the float). Above ~20% is high; GameStop was over 140%.">short interest</span>,
+      a high <span class="def" data-d="Days-to-cover = short interest divided by average daily volume. It estimates how many days of buying it would take the shorts to all cover. A high number means a squeeze, once started, can run for days.">days-to-cover</span>, and a pile of call options forcing dealers to buy. That's a <i>readable setup</i>, not a miracle.</li>
+      <li><b>The honest part:</b> squeezes are <b>violent and brief.</b> Early buyers won huge; a <span class="def" data-d="When brokers like Robinhood restricted BUYING of GameStop on Jan 28, 2021, the fuel was cut and the stock fell more than 60%. Many who bought near the top were trapped.">buying halt</span> cut the fuel, GME fell 60%+, and <b>the people who piled in late lost badly.</b> Over time, short sellers usually win.</li>
+      <li><b>The Lens angle:</b> the data institutions watch &mdash; short interest, days-to-cover, borrow cost, options positioning &mdash; is <i>largely public.</i> Retail can read the same setup. Seeing it clearly is the edge. <b>Chasing it blindly is the trap.</b></li>
+      <li><b>Our line, always:</b> we <i>show you the data and how to read it.</i> We never tell you to pile into anything. This is how the game works &mdash; not a signal to buy.</li>
+    </ul>
+  </div>
+
+  <h2>What actually happened</h2>
+  <p>GameStop was a dying mall retailer, and Wall Street knew it &mdash; so funds bet heavily that its
+  stock would fall. They bet <i>so</i> heavily that <b>short interest topped 140% of the float</b>: more
+  shares had been borrowed and sold short than actually traded freely. On the other side, a wave of
+  retail investors (famously on Reddit's r/wallstreetbets) noticed exactly that, and started buying and
+  <b>holding</b> &mdash; partly to make money, partly to make a point.</p>
+  <p>Because so many shorts had to eventually buy the stock back, every tick up forced <i>more</i> buying,
+  which forced the price higher still. GME ran from ~$17 at the start of January to an intraday
+  <b>$483 on January 28, 2021</b>. <b>Melvin Capital</b>, a fund short GameStop, lost about <b>53%</b> that
+  month and took a <b>$2.75 billion</b> emergency lifeline from Citadel and Point72 (it closed for good in
+  2022). Short sellers as a group lost an estimated <b>$5 billion</b> in January alone.</p>
+  <div class="flag"><b>The number that tells the whole story: 140%.</b> When more than 100% of a stock's
+  float is sold short, the shorts are structurally trapped &mdash; if enough holders simply refuse to sell,
+  there literally aren't enough shares for the shorts to buy back without driving the price to the moon.
+  That's the readable setup. It's rare, and it's the exception, not a strategy.</div>
+
+  <h2>The plain-English version: what a short squeeze is</h2>
+  <p>To bet against a stock, you <span class="def" data-d="Short selling: you borrow shares you don't own, sell them now, and plan to buy them back cheaper later to return them - profiting from the fall. If the price RISES instead, your loss can be unlimited, because there's no ceiling on how high a price can go.">short</span> it: borrow
+  shares, sell them today, and plan to buy them back cheaper later. It works great when the stock falls.
+  The problem is what happens when it <i>rises</i> &mdash; because your loss has <b>no ceiling</b>, and at
+  some point you're forced to buy the stock back just to stop the bleeding.</p>
+  <div class="real"><b>The crowded theater with one small exit.</b> Picture a packed theater where
+  everyone has quietly bet the building will burn down. Then someone yells &ldquo;it's rising!&rdquo; and
+  they all rush for the <i>same tiny exit at once</i> &mdash; each one's panic-buying shoves the price up,
+  which panics the next one. That stampede <i>is</i> the squeeze. The more people who shorted (the fuller
+  the theater), the more violent the rush for the exit.</div>
+  <p>Two gauges tell you how flammable a stock is <i>before</i> the match is lit:</p>
+  <div class="stack">
+    <div class="step"><b>Short interest</b> &mdash; how much of the stock is sold short. Above ~20% of float
+    is high; GameStop's <b>140%+</b> was almost unheard of. More shorts = more forced buyers waiting.</div>
+    <div class="step"><b>Days-to-cover</b> &mdash; short interest divided by daily volume: roughly how many
+    days of buying it would take for all the shorts to get out. A high number means that once a squeeze
+    starts, it can <i>keep</i> running, because they can't all escape in a day.</div>
+    <div class="step"><b>The gamma kicker (the options layer).</b> When crowds also buy call
+    <span class="def" data-d="A call option is a bet that a stock will rise. To stay balanced, the dealers who sell those calls must BUY the underlying stock as it climbs - which adds even more forced buying on top of the short squeeze. This is a 'gamma squeeze'.">options</span>,
+    the dealers who sold those calls have to buy the stock to hedge &mdash; piling <i>more</i> forced buying
+    on top. This &ldquo;gamma squeeze&rdquo; is what turned GameStop from a fire into an explosion.</div>
+  </div>
+
+  <h2>The data that showed it coming &mdash; and that you can read too</h2>
+  <p>Here's the part that matters for you: <b>none of those gauges are secret.</b> The information the big
+  players watch is largely public or semi-public &mdash; the game is that most retail investors never knew
+  to look. That's the gap worth closing.</p>
+  <div class="tw"><table>
+    <tr><th>What to read</th><th>What it tells you</th><th>Where it lives</th></tr>
+    <tr><td><b>Short interest (% of float)</b></td><td>How crowded the bet against a stock is &mdash; the raw fuel for a squeeze.</td><td>Exchanges/FINRA publish it (lagged); real-time estimates from paid data.</td></tr>
+    <tr><td><b>Days-to-cover</b></td><td>How long a squeeze could run once it starts.</td><td>Short interest &divide; average volume &mdash; simple math.</td></tr>
+    <tr><td><b>Cost-to-borrow</b></td><td>How <i>expensive and hard</i> it's become to keep shorting &mdash; rising borrow fees mean shorts are under pressure.</td><td>Broker/borrow-desk data.</td></tr>
+    <tr><td><b>Options positioning / <span class="def" data-d="Gamma exposure (GEX) measures how much dealers must buy or sell to stay hedged as a stock moves - it reveals price levels that act like magnets or walls. We already compute this internally.">gamma</span></b></td><td>Where dealer hedging creates support, resistance, and squeeze fuel.</td><td>Options chain data (we compute this internally as GEX).</td></tr>
+  </table></div>
+  <div class="real"><b>The Lens angle in one line:</b> for decades this positioning data was something
+  institutions watched and most retail didn't even know existed. Putting it in front of regular people,
+  in plain English, is exactly the kind of <a href="picks-and-shovels.html">leveling of the field</a> we
+  exist to do. <b>Seeing the setup clearly is the real edge</b> &mdash; not front-running a mob.</div>
+
+  <h2>The part nobody tells you (read this twice)</h2>
+  <p>The GameStop story usually gets told as a fairy tale: little guy beats Wall Street. Some did &mdash;
+  spectacularly. But that's survivorship bias talking. Here's the whole picture, honestly:</p>
+  <div class="danger"><b>Most people who chased it late lost.</b> A squeeze is <i>violent and brief.</i>
+  When brokers restricted buying on January 28, the fuel was cut and GME fell more than 60% almost
+  immediately &mdash; and everyone who bought near $400&ndash;$483 because it was &ldquo;going to the
+  moon&rdquo; was suddenly deep underwater. Over the following months it round-tripped much of the move.
+  The early readers won; the late chasers were the exit liquidity.</div>
+  <ul>
+    <li><b>Short sellers usually win in the end.</b> A squeeze is a rare, temporary dislocation. Betting your money on catching lightning is not a strategy &mdash; it's a lottery ticket with better graphics.</li>
+    <li><b>The game can change mid-play.</b> Brokers halted buying; rules and margin requirements shifted overnight. When you're in a mania, you don't control the exits.</li>
+    <li><b>&ldquo;Stick it to the man&rdquo; is an emotion, not a plan.</b> The funds that lost got bailed out or replaced by other funds. The retail investors who bought the top mostly just&hellip; lost their own money.</li>
+  </ul>
+  <div class="flag"><b>This is why we show data instead of calling shots.</b> Reading that a squeeze is
+  <i>possible</i> is useful knowledge. Treating it as a green light to bet the rent is how regular people
+  get hurt. We'll always hand you the gauges and the honest odds &mdash; and never the words &ldquo;buy
+  this now.&rdquo;</div>
+
+  <h2>So what's the actual takeaway?</h2>
+  <p>Not &ldquo;go find the next GameStop.&rdquo; The takeaway is bigger and calmer than that: <b>the
+  market has a hidden layer &mdash; positioning &mdash; that most retail never learns to read, and it's
+  most of what separates feeling like a victim from understanding the game.</b> Learn to read short
+  interest, days-to-cover, borrow cost, and options positioning, and a lot of &ldquo;random&rdquo; moves
+  stop looking random. You'll spot when a stock is a crowded, fragile bet &mdash; in <i>either</i>
+  direction &mdash; and you'll understand the risk you're actually taking.</p>
+  <p>That understanding is the edge that lasts. The squeeze is the fireworks; the ability to read
+  positioning is the skill you keep long after the show.</p>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">Don't chase the squeeze. Learn to read the setup.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens puts the data the big players watch in front of regular people, in plain English &mdash; with the honest odds attached. We show you how the game works. What you do is always yours.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted);">More: <a href="/learn/why-the-lens.html">Why we do this</a> &middot; <a href="/learn/how-we-prove-it.html">How we prove our edge</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>What is a short squeeze, simply?</b> When a heavily bet-against stock starts rising, the people who bet against it (short sellers) are forced to buy it back to cap their losses. Their buying pushes the price higher, which forces even more of them to buy &mdash; a feedback loop that can send the price up violently for a short time. GameStop in January 2021 is the famous example.</p>
+    <p><b>How did people know GameStop could squeeze?</b> The setup was visible in public data: short interest topped 140% of the float (more shares were sold short than freely traded), days-to-cover was high, and a wave of call-option buying forced dealers to buy the stock to hedge. Those gauges &mdash; short interest, days-to-cover, cost-to-borrow, and options positioning &mdash; are what tell you a stock is a crowded, fragile bet.</p>
+    <p style="margin-bottom:0;"><b>Should I try to trade the next one?</b> This is educational research, not advice &mdash; and the honest odds matter: short squeezes are rare, violent, and brief, and most people who chase them late lose money, as many did when GameStop fell 60%+ after the buying halt. Reading positioning is a durable skill; betting on catching a squeeze is a lottery ticket. Understand the setup and the risk before you ever consider acting, and never risk money you can't afford to lose.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is a short squeeze, simply?","acceptedAnswer":{"@type":"Answer","text":"A short squeeze is when a heavily bet-against stock starts rising, forcing the short sellers to buy it back to cap their losses. Their buying pushes the price higher, forcing even more of them to buy - a feedback loop that can send the price up violently for a short time. GameStop in January 2021 is the famous example, running from about 17 dollars to 483 dollars intraday."}},
+  {"@type":"Question","name":"How did people know GameStop could squeeze?","acceptedAnswer":{"@type":"Answer","text":"The setup was visible in public data. Short interest topped 140 percent of the float, meaning more shares were sold short than traded freely; days-to-cover was high; and a wave of call-option buying forced dealers to buy the stock to hedge. Short interest, days-to-cover, cost-to-borrow, and options positioning are the gauges that reveal a crowded, fragile bet."}},
+  {"@type":"Question","name":"Should I try to trade a short squeeze?","acceptedAnswer":{"@type":"Answer","text":"This is educational research, not investment advice. Short squeezes are rare, violent, and brief, and most people who chase them late lose money, as many did when GameStop fell more than 60 percent after brokers restricted buying. Reading positioning is a durable skill; betting on catching a squeeze is closer to a lottery ticket. Understand the setup and the risk first, and never risk money you cannot afford to lose."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>GameStop ~$17 to $483 intraday (Jan 28, 2021); short interest >140% of float; short sellers lost ~$5B in January</b> &mdash; <a href="https://www.tradingsim.com/blog/the-gme-gamestop-short-squeeze-explained" rel="nofollow">TradingSim</a>, <a href="https://www.thestreet.com/investing/stocks/a-timeline-of-the-gamestop-short-squeeze" rel="nofollow">TheStreet</a>. <b>Melvin Capital lost ~53% in January 2021; $2.75B from Citadel + Point72; closed 2022</b> &mdash; <a href="https://www.cnbc.com/2021/01/31/melvin-capital-lost-more-than-50percent-after-betting-against-gamestop-wsj.html" rel="nofollow">CNBC</a>. <b>Buying restrictions and the 60%+ drop; short sellers tend to win over time</b> &mdash; <a href="https://blogs.cfainstitute.org/investor/2021/01/31/gamestop-or-why-the-short-sellers-win/" rel="nofollow">CFA Institute</a>, <a href="https://www.cato.org/cato-journal/fall-2021/gamestop-episode-what-happened-what-does-it-mean" rel="nofollow">Cato Institute</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. This explains how short squeezes and positioning work; it is not a recommendation to buy, sell, or trade any security. Short squeezes are high-risk and most participants who chase them lose money &mdash; verify everything and never risk money you cannot afford to lose. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
