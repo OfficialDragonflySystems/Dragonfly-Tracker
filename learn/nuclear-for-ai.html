@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Tech Is Going Nuclear &mdash; What's Real, What's a Decade Away, and Who Gets Paid &mdash; Dragonfly Lens</title>
+<meta name="description" content="Microsoft, Amazon and Google are all buying nuclear power for AI. But the only near-term megawatts come from restarting old reactors; the shiny small-reactor and fusion headlines are 2030s-and-later targets &mdash; and the fuel they need is enriched by Russia and China. Plain English, every date sourced, hype flagged.">
+<meta property="og:title" content="Big Tech Is Going Nuclear. Most of It Is a Decade Away.">
+<meta property="og:description" content="The real AI-power megawatts come from restarting old reactors. Small reactors and fusion are targets, not plants &mdash; and the fuel bottleneck is owned by rivals. What's real vs. what's a press release.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/nuclear-for-ai.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/nuclear-for-ai-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Big Tech Is Going Nuclear. Most of It Is a Decade Away.">
+<meta name="twitter:description" content="Real AI-power megawatts come from restarting old reactors. Small reactors and fusion are targets, not plants. And the fuel is enriched by Russia and China. Plain English, sourced.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/nuclear-for-ai-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .danger{border-left:4px solid var(--bad);background:rgba(248,113,113,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .danger b{color:var(--bad);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; What's Real, What's Years Away</div>
+  <h1>Big Tech Is Going Nuclear. Most of It Is a Decade Away.</h1>
+  <p class="lead">Microsoft, Amazon and Google have all signed deals to buy nuclear power for their AI data centers, and the headlines blur together into one big &ldquo;the nuclear age is back&rdquo; story. It isn't one story. It's <b>three very different clocks</b> &mdash; and only one of them is ticking now. The honest version separates the megawatts you can actually count from the press releases dated a decade out, and points at a quieter bottleneck almost no one names: the <b>fuel itself.</b> <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; August 12, 2026 &middot; Sorting the real AI-power buildout from the brochure.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>What's real <i>now</i>:</b> the near-term megawatts come from <b>restarting or expanding reactors that already exist.</b> Microsoft is buying <b>835&nbsp;MW</b> from the restart of <b>Three Mile Island Unit&nbsp;1</b> (now &ldquo;Crane&rdquo;) on a 20-year deal, targeting <b>mid-2027</b>. Amazon has a <b>1,920&nbsp;MW</b> deal from the existing <b>Susquehanna</b> plant. Real reactors, real dates.</li>
+      <li><b>What's a target, not a plant:</b> the <span class="def" data-d="Small Modular Reactor: a new, factory-built reactor design, smaller than a traditional one. Promising on paper; only two are operating in the world so far, and first-of-a-kind builds keep slipping on cost and schedule.">small modular reactors</span> (Google/Kairos, Amazon/X-energy) are <b>2030-and-later</b> goals. Only <b>two</b> are operating anywhere on earth today, and the flagship US project (NuScale) was <b>cancelled</b> on cost.</li>
+      <li><b>What's a 2040s story:</b> <span class="def" data-d="Fusion: the reaction that powers the sun - fusing atoms rather than splitting them. No commercial fusion plant exists; the honest grid-scale timeline is the 2040s.">fusion</span>. Real money is flowing (<b>$14B+</b> private), and 2027 could bring a landmark lab milestone &mdash; but MIT's own 2026 study says the hurdle is now <b>economics, not physics.</b> No fusion plant powers anything this decade.</li>
+      <li><b>The bottleneck nobody names:</b> the new reactors need special <span class="def" data-d="HALEU (High-Assay Low-Enriched Uranium): fuel enriched to 5-19.5% - richer than today's reactors use. Most advanced/small reactors need it, and the US cannot yet make it at commercial scale.">HALEU</span> fuel &mdash; and the only countries that <span class="def" data-d="Enrichment: raising the concentration of the reactive isotope in uranium. The hard, strategic step in the fuel chain - and the one Russia and China dominate.">enrich</span> it at scale today are <b>Russia and China.</b> The US bought ~99% of its uranium abroad and can't yet make HALEU commercially. You can build the stove; the fuel is a different fight.</li>
+      <li><b>The Lens angle:</b> the value in this decade pools in the <b>unglamorous, near-term layer</b> &mdash; the operators restarting and uprating existing plants, the <b>fuel and enrichment</b> supply chain being reshored, and the turbine/component makers &mdash; <b>not</b> the fusion and small-reactor logos on the 2035 slide. <b>Bet the clock that's actually ticking.</b></li>
+    </ul>
+  </div>
+
+  <h2>Why this is happening at all</h2>
+  <p>Start with the demand, because it's the one number nobody disputes is enormous. Global data-center electricity use is projected to roughly <b>double to about 945 terawatt-hours by 2030</b> (from ~415 in 2024) &mdash; the International Energy Agency's estimate &mdash; and AI-specific consumption <b>jumped ~50% in 2025 alone.</b> In the US, data centers were ~4.4% of all electricity in 2023 and could reach <b>as much as ~12% by 2028.</b></p>
+  <p>That is why Big Tech went reactor-shopping. They need <b>enormous, steady, always-on, carbon-free</b> power, and nuclear is the one source that is all four at once. But &ldquo;we signed a nuclear deal&rdquo; can mean three completely different things, on three completely different timelines. Here they are, slowest promise to fastest reality &mdash; then in reverse for what to actually watch.</p>
+
+  <h2>The three clocks</h2>
+  <div class="stack">
+    <div class="step"><b>Restart / expand an existing reactor &mdash; the fast one (now to ~2027).</b> The quickest power is a plant that already exists: reopen a recently-closed reactor, or sell more of a running one's output to a data center. Nothing to invent, the site and the license framework are largely there. This is where every <i>near-term</i> megawatt in these deals actually comes from.</div>
+    <div class="step"><b>Build a small modular reactor &mdash; the &ldquo;soon&rdquo; one (2030s).</b> A new, smaller, factory-built reactor design. Genuinely promising, and where Google and Amazon's headline SMR deals live. But it's a <i>new</i> product: first-of-a-kind builds have to be designed, licensed, financed and proven &mdash; and historically that phase runs long and over budget.</div>
+    <div class="step"><b>Fusion &mdash; the &ldquo;someday, maybe big&rdquo; one (2040s for the grid).</b> A different physics entirely &mdash; fusing atoms like the sun, not splitting them. Huge upside, real 2026 progress in the lab, and real private money. But no plant sells power this decade, and the remaining hurdle just shifted from &ldquo;can we do the physics&rdquo; to &ldquo;can we do it for a price anyone will pay.&rdquo;</div>
+  </div>
+  <div class="real"><b>The plain-English picture: three ways to get more heat in the kitchen.</b> Clock one is <i>reopening a restaurant that closed last year</i> &mdash; the building and the ovens are still there, you just turn them back on. Clock two is <i>building a new restaurant from a fresh blueprint</i> &mdash; exciting, but the first one always takes longer and costs more than the drawing said. Clock three is <i>inventing a new kind of oven that no restaurant has ever run</i> &mdash; it might change everything, but not in time for this year's dinner service. When a company &ldquo;goes nuclear,&rdquo; the first question is always: which clock?</div>
+
+  <h2>Clock one: the deals that are actually real</h2>
+  <p>These are the ones worth counting, because they involve reactors that exist:</p>
+  <div class="tw"><table>
+    <tr><th>Deal</th><th>Power &amp; source</th><th>Reality check</th></tr>
+    <tr><td><b>Microsoft &mdash; Three Mile Island Unit&nbsp;1</b> (renamed Crane Clean Energy Center), run by Constellation</td><td><b>835&nbsp;MW</b>, 20-year <span class="def" data-d="Power Purchase Agreement: a long-term contract to buy a plant's electricity at a set price. It's what makes a restart or a new build financeable.">PPA</span>. Restarting a reactor closed in 2019.</td><td><b>Real and close.</b> Targeting <b>mid-2027</b> &mdash; about a year ahead of the original 2028 plan &mdash; with fresh fuel due by end of 2026. Friction: a grid market-monitor has <i>opposed</i> some of the waivers Constellation wants, so the commercial terms aren't fully settled.</td></tr>
+    <tr><td><b>Amazon &mdash; Susquehanna</b> (Talen Energy)</td><td>Up to <b>1,920&nbsp;MW</b> from an existing, operating plant; ramps to full volume by ~2032.</td><td><b>Real.</b> The structure had to be <i>reworked</i> in 2026 (from plugging the data center straight into the plant to a normal grid arrangement) after federal regulators raised fairness concerns. The power is real; the plumbing got renegotiated.</td></tr>
+  </table></div>
+  <div class="flag"><b>Notice the pattern.</b> Every one of the <i>near-term</i> megawatts above comes from a reactor that <b>already existed.</b> That's not a knock &mdash; it's the tell. When you read &ldquo;Big Tech is powering AI with nuclear&rdquo; in 2026-2027, it almost always means <b>restarting or re-selling old reactors,</b> which is exactly why it can happen this fast.</div>
+
+  <h2>Clock two: small reactors &mdash; promising, and slower than the slide says</h2>
+  <p>This is where the future-tense deals live. <b>Google + Kairos Power:</b> up to <b>500&nbsp;MW</b> across six or seven new reactors, first one targeted for <b>2030</b>, the full fleet by <b>2035.</b> <b>Amazon + X-energy:</b> backing designs aimed at <b>5+&nbsp;GW by 2039,</b> plus a January 2026 agreement with Talen to <i>explore</i> SMR projects. Note the verbs: <i>targeted, aimed, explore.</i> These are goals, not groundbreakings.</p>
+  <p>The honest track record on new reactor builds is the reason to keep the champagne corked:</p>
+  <ul>
+    <li><b>Only two SMRs operate anywhere in the world today</b> &mdash; one in Russia, one in China &mdash; and both came in slower, pricier, and running less of the time than promised.</li>
+    <li><b>The flagship US project was cancelled.</b> NuScale's first approved American SMR (in Idaho) was scrapped after delays and cost overruns &mdash; the industry's cautionary tale that the <i>economics</i>, not the science, are the hard part.</li>
+    <li>North America's likely first grid-scale SMR is Ontario's Darlington BWRX-300, targeted for <b>2029.</b> That's the near end of the range &mdash; and it's still years out.</li>
+  </ul>
+  <div class="real"><b>The counterweight (this is real momentum, not vapor):</b> late 2025 and 2026 brought serious federal muscle &mdash; a US Department of Energy award to TVA and Holtec (~$800M) to jump-start SMR deployment, and a US-Japan energy partnership worth up to <b>$40B</b> to build GE-Hitachi small reactors in Tennessee and Alabama. SMRs are coming. Just budget the calendar in <b>years, plural</b> &mdash; and expect the first ones to run late and over budget, because first ones always do.</div>
+
+  <h2>Clock three: fusion &mdash; the honest timeline</h2>
+  <p>Fusion is the one that gets people dreaming, and 2026 gave them reasons. <b>Commonwealth Fusion Systems</b> &mdash; the MIT spinout, now ~$4B raised &mdash; has its SPARC machine about <b>75% built</b> and is targeting <b>first plasma in 2026</b> and, more importantly, <span class="def" data-d="Net energy gain: getting more energy out of the fusion reaction than you put in to create it. The field's holy-grail milestone - and still a lab result, not a power plant.">net energy gain</span> in <b>2027.</b> If it hits, that's a genuine landmark. Its first commercial plant (ARC, in Virginia, ~400&nbsp;MW) is penciled for the <b>early 2030s</b>, with Google already contracted for some of the output.</p>
+  <p>And this month's headline &mdash; <b>Kyoto Fusioneering</b> starting work on a &ldquo;key fusion power plant device&rdquo; with Oak Ridge National Lab &mdash; is real, but read what it is: a <b>test rig</b> (called UNITY-3) that validates how a future plant would <i>harvest heat and breed its own fuel.</i> It is infrastructure to <i>de-risk</i> fusion and position the company as a parts supplier &ldquo;when fusion is ready.&rdquo; The announcement gives <b>no date for grid power,</b> because that isn't what it is.</p>
+  <div class="flag"><b>The MIT reality check (August 2026).</b> A new framework from MIT's Dennis Whyte and Andrew Lo (of &ldquo;<span class="def" data-d="A ratio the MIT study proposes: the capital a fusion plant generates over its life versus the capital spent building and running it. A plant can work physically and still lose money.">Economic Q</span>&rdquo; fame) lands the honest point: fusion's biggest remaining hurdle is no longer the physics &mdash; it's <b>the money.</b> Their own numbers put a first commercial plant's power cost around <b>$150-200 per megawatt-hour</b> (roughly 2-3x today's cheap power), only reaching competitive <b>$60-100</b> after many plants are built and lessons compound. Translation: even if the science works on schedule, <b>cheap fusion power is a 2040s proposition.</b> Anyone selling you a fusion trade for this decade is selling the dream, not the plant.</div>
+
+  <h2>The bottleneck within the bottleneck: the fuel</h2>
+  <p>Here's the part that almost no coverage connects, and it's the most important one for how the Lens reads the whole map. You can sign every reactor deal you want &mdash; but the advanced and small reactors driving this boom need a special fuel called <b>HALEU</b> (uranium enriched a bit richer than today's plants use). And the ability to <i>enrich</i> uranium to that level, at scale, today, sits almost entirely with <b>two countries: Russia and China.</b></p>
+  <div class="tw"><table>
+    <tr><th>The fuel fact</th><th>The number</th><th>Why it matters</th></tr>
+    <tr><td><b>US uranium is imported</b></td><td>~<b>99%</b> bought abroad (Canada ~27%, Kazakhstan ~25%, Russia ~12%)</td><td>The raw material already isn't domestic. Russia's deeper leverage is in the <i>enrichment</i> step, not just the rock.</td></tr>
+    <tr><td><b>The Russian fuel ban</b></td><td>Waivers end <b>Jan 1, 2028</b></td><td>The US banned Russian uranium &mdash; but granted temporary waivers because it can't replace the supply yet. That clock runs out in under two years.</td></tr>
+    <tr><td><b>HALEU for new reactors</b></td><td>Need <b>&gt;50 tonnes/year</b> by ~2030; US commercial output today ~<b>zero</b></td><td>Only Russia and China make HALEU at scale. The US is racing to build its own; until it does, the SMR dream has a foreign fuel dependency.</td></tr>
+  </table></div>
+  <div class="real"><b>Plain English: you can buy all the new stoves you like &mdash; but if the special fuel only comes from two gas stations, and both are owned by your rivals, you don't actually control your own kitchen.</b> This is the same lesson as our <a href="/learn/memory-wall.html">memory-wall</a> and <a href="/learn/musk-bottleneck.html">bottleneck</a> pieces, one field over: the flashy layer (reactors, chips) grabs attention, but the value and the leverage pool in the <b>scarce input underneath</b> (enrichment, memory). Whoever reshores HALEU enrichment is solving a problem every SMR on every 2035 slide quietly depends on.</div>
+
+  <h2>The opportunity: bet the clock that's ticking</h2>
+  <p>Most coverage asks &ldquo;is fusion finally here?&rdquo; or &ldquo;which SMR startup wins?&rdquo; Those are the fun questions and the hard-to-call ones. The Lens question is the boring, bankable one: <b>where do the megawatts and the leverage actually sit in <i>this</i> decade?</b> Three layers, roughly in order of how soon they matter:</p>
+  <div class="tw"><table>
+    <tr><th>The layer</th><th>Why it wins in <i>this</i> decade</th></tr>
+    <tr><td><b>Restart &amp; uprate operators</b></td><td>The utilities restarting closed reactors and squeezing more output from running ones are the only ones delivering AI power in 2026-2028. Boring, regulated, real cash flow &mdash; and suddenly with a premium buyer (Big Tech) on a 20-year contract.</td></tr>
+    <tr><td><b>The fuel &amp; enrichment chain</b></td><td>The <b>real</b> scarce layer. Reshoring uranium <span class="def" data-d="Conversion and enrichment: the mid-chain steps that turn mined uranium into reactor-ready fuel. The strategic choke points - and where Russia's leverage actually is.">conversion and enrichment</span> (especially HALEU) is a national-security priority with government money behind it and a hard 2028 deadline. Every SMR depends on it.</td></tr>
+    <tr><td><b>Turbines, components &amp; grid gear</b></td><td>Restart or new-build, every reactor needs turbines, heavy components, and a grid connection &mdash; the same physical supply chain (and multi-year lead times) we flagged as the choke point in the broader buildout.</td></tr>
+    <tr><td><b>Fusion &amp; SMR names &#127769;</b></td><td><i>Clearly speculative for this decade.</i> Real science, real money, real optionality &mdash; but the grid revenue is 2030s-and-later, most of the pure-play pieces are private, and first-of-a-kind risk is high. Watch the milestones (SPARC net energy in 2027); don't price the plant before it exists.</td></tr>
+  </table></div>
+
+  <h2>The risks &mdash; named, not buried</h2>
+  <ul>
+    <li><b>Targets are not megawatts.</b> Every SMR &ldquo;2030&rdquo; and fusion &ldquo;early 2030s&rdquo; date is a self-reported goal with execution risk. The history of first-of-a-kind nuclear is delay and cost overrun &mdash; assume slippage, and treat any hit date as upside.</li>
+    <li><b>Even the &ldquo;real&rdquo; deals have friction.</b> The Microsoft/Crane restart faces a market-monitor objection; the Amazon/Susquehanna structure had to be renegotiated with regulators. Signed is not the same as settled.</li>
+    <li><b>The fuel dependency is a genuine wildcard.</b> If domestic HALEU enrichment lags past the 2028 waiver cliff, it constrains the whole advanced-reactor timeline &mdash; a real risk to the SMR thesis, not a footnote.</li>
+    <li><b>&ldquo;Restart operators&rdquo; is a regulated, rate-capped world.</b> Steady cash flow, yes &mdash; but also political, regulatory, and single-asset (one reactor tripping offline) risk. Robust is not the same as exciting or safe.</li>
+    <li><b>Not advice.</b> This is how we read the chain, not a recommendation. Company and country names illustrate where the structure concentrates value and risk &mdash; not buy calls. Do your own work and size to your own risk.</li>
+  </ul>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">The fusion headline gets the clicks. The old reactor and the fuel get the power.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens maps the AI buildout as one connected chain &mdash; and separates the clock that's ticking from the one dated 2040. Plain English, every date sourced and flagged. When we're wrong, we say so.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:14px;font-size:13.5px;color:var(--muted);">Not ready to subscribe? <a href="https://dragonflysystems.substack.com/subscribe" style="color:var(--lime);font-weight:700;">Get the free weekly &rarr;</a></div>
+    <div style="margin-top:16px;font-size:13px;color:var(--muted);">More: <a href="/learn/memory-wall.html">The memory wall</a> &middot; <a href="/learn/musk-bottleneck.html">Own the bottleneck</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Is Big Tech really powering AI with nuclear?</b> Yes, but mostly by restarting or buying more output from reactors that already exist. Microsoft has a 20-year deal for 835 MW from the Three Mile Island Unit 1 restart (targeting mid-2027); Amazon has up to 1,920 MW from the existing Susquehanna plant. The new small reactors and fusion get the headlines, but they're 2030s-and-later targets.</p>
+    <p><b>When will small modular reactors (SMRs) actually deliver power?</b> The 2030s at the earliest. Google's Kairos fleet targets a first reactor in 2030 and 500 MW by 2035; North America's likely first grid-scale SMR (Ontario's Darlington) targets 2029. Only two SMRs operate anywhere today, and the flagship US project (NuScale) was cancelled on cost &mdash; so treat these dates as goals with real slippage risk.</p>
+    <p><b>When will fusion power the grid?</b> Realistically the 2040s. There's genuine 2026 progress &mdash; Commonwealth Fusion Systems targets a net-energy milestone in 2027 &mdash; but MIT's 2026 economics study found the main hurdle is now cost, not physics, with early plants around $150-200/MWh. No fusion plant sells power this decade.</p>
+    <p style="margin-bottom:0;"><b>What's the catch in the nuclear-for-AI boom?</b> The fuel. Advanced and small reactors need HALEU (higher-enriched uranium), and the only countries that enrich it at scale today are Russia and China. The US imports ~99% of its uranium and has essentially no commercial HALEU production yet, while the waiver window on banned Russian fuel closes January 1, 2028. Reshoring enrichment is the real, under-covered bottleneck.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Is Big Tech really powering AI with nuclear energy?","acceptedAnswer":{"@type":"Answer","text":"Yes, but mostly by restarting or buying more output from reactors that already exist. Microsoft has a 20-year deal for 835 MW from the Three Mile Island Unit 1 restart, targeting mid-2027; Amazon has up to 1,920 MW from the existing Susquehanna plant. The new small modular reactors and fusion get the headlines, but they are 2030s-and-later targets."}},
+  {"@type":"Question","name":"When will small modular reactors (SMRs) actually deliver power for AI?","acceptedAnswer":{"@type":"Answer","text":"The 2030s at the earliest. Google's Kairos fleet targets a first reactor in 2030 and 500 MW by 2035, and North America's likely first grid-scale SMR at Darlington, Ontario targets 2029. Only two SMRs operate anywhere in the world today and the flagship US NuScale project was cancelled on cost, so these dates are goals with real slippage risk."}},
+  {"@type":"Question","name":"When will fusion power the electricity grid?","acceptedAnswer":{"@type":"Answer","text":"Realistically the 2040s. There is genuine 2026 progress, with Commonwealth Fusion Systems targeting a net-energy milestone in 2027, but an MIT 2026 economics study found the main hurdle is now cost rather than physics, with early commercial plants around 150 to 200 dollars per megawatt-hour. No fusion plant sells power to the grid this decade."}},
+  {"@type":"Question","name":"What is the catch in the nuclear-for-AI boom?","acceptedAnswer":{"@type":"Answer","text":"The fuel. Advanced and small reactors need HALEU, a higher-enriched uranium, and the only countries that enrich it at scale today are Russia and China. The US imports about 99 percent of its uranium and has essentially no commercial HALEU production yet, while the waiver window on banned Russian fuel closes January 1, 2028. Reshoring enrichment is the real, under-covered bottleneck."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>Microsoft / Three Mile Island Unit 1 (Crane): 835 MW, 20-year PPA, restart targeting mid-2027 (ahead of 2028), fuel by end-2026; PJM market-monitor objection</b> &mdash; <a href="https://www.datacenterdynamics.com/en/news/three-mile-island-nuclear-power-plant-to-return-as-microsoft-signs-20-year-835mw-ai-data-center-ppa/" rel="nofollow">Data Center Dynamics</a>, <a href="https://penncapital-star.com/energy-environment/concern-persists-as-crane-nuclear-plant-progresses-toward-2027-restart/" rel="nofollow">Pennsylvania Capital-Star</a>, <a href="https://www.utilitydive.com/news/pjm-market-monitor-constellations-nuclear-crane-waiver/818216/" rel="nofollow">Utility Dive</a>. <b>Amazon / Susquehanna (Talen): up to 1,920 MW, 2026 front-of-meter restructuring; X-energy + Talen Jan 2026 SMR agreement</b> &mdash; <a href="https://www.world-nuclear-news.org/articles/new-supply-agreement-expands-talen-amazon-partnership" rel="nofollow">World Nuclear News</a>, <a href="https://www.nucnet.org/news/x-energy-and-talen-to-explore-smr-projects-in-us-power-market-3-1-2026" rel="nofollow">NucNet</a>. <b>Google / Kairos Power: up to 500 MW across 6-7 reactors, first 2030, fleet 2035</b> &mdash; <a href="https://kairospower.com/external_updates/google-and-kairos-power-partner-to-deploy-500-mw-of-clean-electricity-generation/" rel="nofollow">Kairos Power</a>, <a href="https://www.utilitydive.com/news/google-kairos-power-advanced-nuclear-reactor-data-center-electricity-demand-ai/729876/" rel="nofollow">Utility Dive</a>. <b>SMR reality: only two operating (Russia KLT-40S, China HTR-PM); NuScale/UAMPS cancellation; Darlington BWRX-300 ~2029; DOE TVA+Holtec ~$800M; US-Japan $40B</b> &mdash; <a href="https://understand-energy.stanford.edu/news/understand-small-modular-reactors" rel="nofollow">Stanford Understand Energy</a>, <a href="https://sustainableatlas.org/post/explainer-small-modular-reactors-smrs-technology-economics-deployment-1433" rel="nofollow">Sustainable Atlas</a>. <b>Fusion: CFS SPARC ~75% built, first plasma 2026 / net energy 2027 target, ARC Virginia early 2030s, ~$4B raised; Kyoto Fusioneering UNITY-3 breeding-blanket test rig w/ ORNL (no grid date); MIT Whyte &amp; Lo "Economic Q", LCOE ~$150-200/MWh FOAK; $14.24B cumulative private fusion investment</b> &mdash; <a href="https://thefusionreport.com/commonwealth-fusion-systems-a-hot-start-for-2026/" rel="nofollow">The Fusion Report</a>, <a href="https://techcrunch.com/2026/08/11/kyoto-fusioneering-starts-work-on-key-fusion-power-plant-device/" rel="nofollow">TechCrunch</a>, <a href="https://news.mit.edu/2026/mit-researchers-tackle-economic-realities-fusion-power-0810" rel="nofollow">MIT News</a>, <a href="https://solarquarter.com/2026/07/15/private-fusion-industry-reaches-14-24-billion-investment-milestone-as-commercial-projects-gain-momentum-report/" rel="nofollow">Fusion Industry Association (via SolarQuarter)</a>. <b>Uranium/HALEU: US ~99% imported (Canada ~27% / Kazakhstan ~25% / Russia ~12%); Russian-fuel waivers end Jan 1, 2028; &gt;50 t/yr HALEU needed by ~2030, no US commercial HALEU yet, Russia &amp; China only scale producers</b> &mdash; <a href="https://world-nuclear.org/information-library/country-profiles/countries-t-z/usa-nuclear-fuel-cycle" rel="nofollow">World Nuclear Association</a>, <a href="https://www.energy.gov/ne/articles/russian-uranium-ban-will-speed-development-us-nuclear-fuel-supply-chain" rel="nofollow">US DOE</a>, <a href="https://www.csis.org/analysis/fueling-future-recommendations-strengthening-us-uranium-security" rel="nofollow">CSIS</a>. <b>Data-center demand: IEA ~945 TWh by 2030 (from 415 in 2024), AI use +50% in 2025; DOE US data centers 4.4% (2023) to ~12% by 2028</b> &mdash; <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary" rel="nofollow">IEA</a>, <a href="https://www.datacenterdynamics.com/en/news/eia-projects-record-us-data-center-power-use-amid-ai-and-crypto-boom/" rel="nofollow">DCD / DOE</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Figures are as reported by the sources above and were accurate at publication; dates for small-reactor and fusion projects are company or agency targets and carry execution risk. Company and country names illustrate a structural shift in the energy supply chain, not buy recommendations &mdash; verify against primary filings before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
