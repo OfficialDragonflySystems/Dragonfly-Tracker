@@ -51,6 +51,10 @@
   .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
   .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
   .step b{color:#fff;}
+  .updates{background:rgba(94,234,212,.05);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0;}
+  .updates .uh{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:4px;}
+  .updates p{margin:5px 0;color:var(--muted);font-size:13.5px;}
+  .updates b{color:#fff;} .updates del{color:#8a97a8;} .updates ins{color:var(--good);text-decoration:none;font-weight:700;}
   .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
   footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
 </style>
@@ -74,6 +78,11 @@
   <h1>Big Tech Is Going Nuclear. Most of It Is a Decade Away.</h1>
   <p class="lead">Microsoft, Amazon and Google have all signed deals to buy nuclear power for their AI data centers, and the headlines blur together into one big &ldquo;the nuclear age is back&rdquo; story. It isn't one story. It's <b>three very different clocks</b> &mdash; and only one of them is ticking now. The honest version separates the megawatts you can actually count from the press releases dated a decade out, and points at a quieter bottleneck almost no one names: the <b>fuel itself.</b> <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
   <p class="byline">Dragonfly Lens &middot; August 12, 2026 &middot; Sorting the real AI-power buildout from the brochure.</p>
+
+  <div class="updates">
+    <div class="uh">Updates to this piece</div>
+    <p><b>2026-08-13:</b> Refreshed the US uranium-import figure to the latest 2025 data: <del>~99% imported (Canada ~27% / Kazakhstan ~25% / Russia ~12%)</del> &rarr; <ins>~93% imported (Canada ~32% / Kazakhstan ~28% / Australia ~15%)</ins>, and added that Russia supplies ~26% of US <i>enrichment</i> services. The conclusion is unchanged &mdash; the fuel-and-enrichment layer is the real bottleneck &mdash; but the numbers are now current. Source: EIA 2025 (via Interesting Engineering).</p>
+  </div>
 
   <div class="box tldr">
     <h3 style="margin-top:0;">The short version</h3>
