@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- DRAFT - not yet published. Kept UNREGISTERED (not in index/sitemap/manifest) and noindex
+     so we can fold in fresh InP/CPO news before posting. On publish: remove the robots noindex
+     meta, register in learn/index.html + sitemap.xml, re-run gen_learn_manifest.py, refresh any
+     [WATCH] figures. See content_drafts/deep_dives/2026-08-13_optical-bottleneck/README.md. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>AI's Next Bottleneck Is the Wire Between the Chips &mdash; Dragonfly Lens</title>
+<meta name="description" content="AI chips have outrun the copper wires that connect them. The fix is to send data as light, right next to the chip - and that needs lasers built on a rare crystal (indium phosphide) that only a few firms make on tiny wafers. Lumentum's CEO calls the coming shortage 'worse than memory.' Plain English, every number sourced.">
+<meta property="og:title" content="AI's Next Bottleneck Is the Wire Between the Chips">
+<meta property="og:description" content="The bottleneck moved from the chip to the memory. Now it's moving again - to the light between the chips. And the CEO of the company that makes the lasers says the shortage will be 'worse than memory.'">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/optical-bottleneck.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/optical-bottleneck-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI's Next Bottleneck Is the Wire Between the Chips">
+<meta name="twitter:description" content="Copper has run out of road. AI data movement is going optical - and the lasers need a rare crystal only a few firms make. 'Worse than memory,' says the CEO who makes them.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/optical-bottleneck-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .danger{border-left:4px solid var(--bad);background:rgba(248,113,113,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .danger b{color:var(--bad);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; The Bottleneck After the Memory Wall</div>
+  <h1>AI's Next Bottleneck Is the Wire Between the Chips.</h1>
+  <p class="lead">We wrote earlier about the <a href="/learn/memory-wall.html">memory wall</a> &mdash; how AI's bottleneck moved from the <b>chip</b> to the <b>memory</b> feeding it. It's moving again, one step further out: to the <b>wires that connect the chips to each other.</b> AI clusters have gotten so fast that ordinary <b>copper</b> can no longer carry the data between chips without garbling it. The fix is to send it as <b>light</b> &mdash; and the lasers that make the light need a rare crystal that only a handful of companies produce. The CEO of one of them says the coming shortage will be <b>&ldquo;worse than memory.&rdquo;</b> <b>Hover or tap any <span class="def" data-d="Any underlined term shows a plain-English definition on hover (desktop) or tap (mobile).">underlined term</span>.</b></p>
+  <p class="byline">Dragonfly Lens &middot; DRAFT (August 2026) &middot; The newest link in the bottleneck chain.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The problem:</b> inside an AI cluster, chips constantly pass data to each other over copper wires. But network speed <b>doubles every 2&ndash;3 years</b>, and the faster copper runs, the <b>shorter the distance</b> it can carry a clean signal &mdash; now down to tens of centimeters. Copper has run out of road.</li>
+      <li><b>The fix:</b> replace the copper with <b>light.</b> Move tiny optical engines <i>right next to</i> the chip so data leaves as a laser beam instead of an electrical pulse &mdash; called <span class="def" data-d="Co-packaged optics (CPO): building the optical parts that convert electricity to light into the same package as the chip, instead of in a separate pluggable module across the board. Shortens the electrical path to almost nothing.">co-packaged optics</span>. Nvidia's own roadmap puts this into its systems in <b>2027&ndash;2028.</b></li>
+      <li><b>The bottleneck:</b> those lasers are built on <span class="def" data-d="Indium phosphide (InP): a compound-semiconductor crystal that can emit and modulate light, which plain silicon cannot do well. The base material for the lasers in AI optical links.">indium phosphide (InP)</span>, a specialty crystal grown on tiny <b>2&ndash;4 inch</b> wafers (vs. silicon's 12-inch) by a <b>few</b> suppliers. Demand just jumped from telecom-scale &ldquo;hundreds&rdquo; to AI-scale &ldquo;hundreds of millions,&rdquo; and supply is short by <b>more than 30%.</b> Lumentum's CEO calls it <b>&ldquo;worse than memory.&rdquo;</b></li>
+      <li><b>The opportunity (the Lens angle):</b> this is the <a href="/learn/memory-wall.html">memory-wall</a> pattern again, one layer out. The value pools in the <b>scarce physical inputs</b> &mdash; the <b>InP substrate makers</b> (a concentrated group, much like the HBM oligopoly), the <b>laser and optical-component makers</b>, and the <b>packaging</b> that stitches optics to silicon &mdash; not just the switch or GPU brand on top. <b>Bet the bottleneck, not the horse.</b></li>
+      <li><b>The honest caveat:</b> the CPO shift is a <b>2027&ndash;2028 target</b>, not shipping at scale today; one analyst house (LightCounting) expects the InP crunch to <b>ease by end-2026</b>; and co-packaged optics has an unsolved <b>serviceability</b> problem (if one laser dies, you may have to replace the whole expensive package). This is a real, developing constraint &mdash; not a done deal.</li>
+    </ul>
+  </div>
+
+  <h2>The chain so far &mdash; and the newest link</h2>
+  <p>If you've followed the Lens, this is a familiar shape. The AI buildout keeps hitting a wall, we solve it, and the wall moves to the next-most-physical thing. Each link is a piece we've mapped:</p>
+  <div class="stack">
+    <div class="step"><b>Power.</b> First the limit was electricity &mdash; enough always-on power to run the data centers at all. (See <a href="/learn/nuclear-for-ai.html">the nuclear pieces</a>.)</div>
+    <div class="step"><b>Memory.</b> Then the chip could compute faster than memory could feed it &mdash; the <a href="/learn/memory-wall.html">memory wall</a>, and the sold-out <span class="def" data-d="High-Bandwidth Memory - stacked memory next to the chip. Three firms make nearly all of it; sold out through 2026.">HBM</span> that eased it.</div>
+    <div class="step"><b>Packaging.</b> Then even memory wasn't enough if you couldn't <i>assemble</i> logic and memory together at volume &mdash; advanced packaging (TSMC's CoWoS) became a rate-limiter.</div>
+    <div class="step"><b>The interconnect (this piece).</b> Now the chips are so fast that the <b>wires between them</b> are the limit. The fix is optical &mdash; and the optics have their own scarce input. This is the newest link, and it's tightening right now.</div>
+  </div>
+
+  <h2>The plain-English version: why copper hit a wall</h2>
+  <p>An AI cluster isn't one chip &mdash; it's tens of thousands of them that have to talk to each other constantly, at once, as if they were a single giant brain. That conversation runs over wires. And here's the physics: every couple of years the required speed doubles, but the faster you push data through copper, the more the signal <b>smears and fades</b> &mdash; so the distance it can travel cleanly keeps <i>shrinking</i>. We've reached the point where copper can only carry the top speeds a few tens of centimeters &mdash; not even reliably across a rack.</p>
+  <div class="real"><b>The crowded party analogy.</b> Copper is like talking across a loud room. At a whisper (slow data) your voice carries fine. But to pass more information you have to talk faster and faster &mdash; and the faster you talk, the more your words blur together and the less far they carry, until you can only be understood by the person right next to you. Light (optics) is like handing them a written note instead: it doesn't blur with speed, and it carries clean across the whole room. That's the switch the whole industry is now making &mdash; from shouting over copper to passing notes in light.</p>
+  <p>Sending data as light isn't new &mdash; that's what fiber-optic internet is. What's new is moving the light-making hardware <i>right up against the chip</i> (co-packaged optics), so the slow, lossy electrical hop is almost eliminated. And to make light on a chip, you need a material that can <i>emit</i> it. Silicon &mdash; the stuff of ordinary chips &mdash; is bad at that. The material that's good at it is <b>indium phosphide.</b> Which is where the bottleneck lives.</p>
+
+  <h2>What actually happened (August 2026)</h2>
+  <p>Two things brought this from an engineering footnote to a supply-chain story:</p>
+  <p>First, <b>Lumentum</b> &mdash; one of the main makers of the lasers these links need &mdash; had its CEO, Michael Hurlston, warn publicly that the <span class="def" data-d="The lasers (electro-absorption modulated lasers, EMLs) that encode data onto light for high-speed AI optical links. Built on indium phosphide.">InP laser</span> shortage is set to be <b>more severe than the memory-chip shortage</b>, with demand exceeding supply by <b>more than 30%.</b> His framing: demand has leapt from telecom-scale &ldquo;hundreds&rdquo; of units to cloud-scale &ldquo;hundreds of millions.&rdquo; <b>Coherent</b>, another key supplier, is racing to <b>double</b> its internal InP output in 2026 and more than double it again by end-2027 &mdash; but Lumentum's own new US fab isn't expected to contribute much until <b>2028.</b> [<span style="color:var(--warn)">WATCH: refresh these figures at the next Lumentum/Coherent earnings before posting.</span>]</p>
+  <p>Second, the industry started moving from proprietary experiments toward a <b>shared standard</b>: <b>Lightmatter</b> and a coalition of major hardware firms (Corning, Dell, Foxconn, Qualcomm, Keysight and others) proposed an open <b>reference architecture</b> for co-packaged optics inside the <span class="def" data-d="Open Compute Project: an industry body where hyperscalers and vendors agree on shared hardware standards, so parts from different makers interoperate.">Open Compute Project</span>. When an industry standardizes something, it's usually the sign the thing is about to ship in volume &mdash; and that the fights over who supplies it are beginning. Nvidia, for its part, has already been <b>locking up laser supply</b> with multi-billion-dollar commitments to key suppliers. [<span style="color:var(--warn)">WATCH: OCP spec milestones + any new Nvidia optics commitments.</span>]</p>
+  <div class="flag"><b>Read the numbers with one eye on the source.</b> &ldquo;Worse than memory,&rdquo; &ldquo;30%+ short,&rdquo; and the 2027&ndash;2028 rollout dates are a mix of a supplier CEO's framing and roadmap targets &mdash; directionally well-supported, but not settled fact. And at least one analyst house expects the crunch to <i>ease</i> by end-2026. Anchor on the structural point (optics is the next interconnect, and its inputs are scarce and concentrated); treat the exact figures and dates as live and subject to revision.</div>
+
+  <h2>The opportunity: who gets paid no matter whose switch wins</h2>
+  <p>The horse-race question is &ldquo;does Nvidia or Broadcom win co-packaged optics?&rdquo; The Lens question is the one that pays: <b>if data movement is going optical, who owns the scarce parts every optical link needs?</b></p>
+  <div class="tw"><table>
+    <tr><th>The layer</th><th>Who</th><th>Why they win either way</th></tr>
+    <tr><td><b>The crystal (substrate)</b></td><td>Sumitomo Electric, AXT, Resonac (+ emerging China supply)</td><td>The real chokepoint. <span class="def" data-d="The base wafer the lasers are built on. InP is grown on small 2-4 inch wafers by a handful of firms - a concentrated, hard-to-scale layer.">InP substrates</span> come from a <b>few</b> firms on tiny 2&ndash;4 inch wafers that can't be scaled up like silicon overnight. Concentrated supply meeting vertical demand &mdash; the same setup that made HBM so powerful.</td></tr>
+    <tr><td><b>The lasers &amp; optical components</b></td><td>Lumentum, Coherent (and the broader optical supply chain)</td><td>Whoever's switch wins, it needs the lasers, modulators and optical engines &mdash; and those makers are already <b>sold past their capacity</b> (30%+ short). Nvidia is pre-paying them to lock supply.</td></tr>
+    <tr><td><b>The integrators / packaging</b></td><td>CPO designers (Lightmatter, Nvidia, Broadcom) + the foundry (TSMC)</td><td>Someone has to <b>stitch the optics onto the silicon</b> at volume &mdash; the same advanced-packaging chokepoint from the memory-wall story, now with optical parts added. The brand on the switch changes; the packaging bottleneck underneath doesn't.</td></tr>
+    <tr><td><b>The moonshot &#127769;</b></td><td>Silicon photonics that need <i>fewer</i> InP lasers</td><td><i>Clearly speculative.</i> If a design lands that moves more of the work onto cheap silicon and leans less on scarce InP, it reshuffles the board. Early, unproven &mdash; we'd only act on data.</td></tr>
+  </table></div>
+  <div class="real"><b>The insight that ties it together:</b> this is the exact same move as the <a href="/learn/memory-wall.html">memory wall</a>, one layer further out. In a gold rush where everyone suddenly needs to move data as light, <b>own the light-making inputs</b> &mdash; the crystal, the lasers, the packaging &mdash; rather than betting on which switch brand wins the loud fight on top. The bottleneck keeps moving; the <a href="/learn/picks-and-shovels.html">picks-and-shovels</a> logic doesn't.</div>
+
+  <h2>The risks &mdash; named, not buried</h2>
+  <ul>
+    <li><b>The timeline is a target.</b> Co-packaged optics ramps in <b>2027&ndash;2028</b> on Nvidia's roadmap &mdash; not at scale today. Roadmaps slip; copper will hobble along in parallel for a while. This is a multi-year re-plumbing, not an overnight flip.</li>
+    <li><b>The shortage may be shorter than the headline.</b> At least one analyst house (LightCounting) expects the InP crunch to <b>ease by end-2026</b> as capacity comes online. A supplier CEO calling it &ldquo;worse than memory&rdquo; has an incentive to stress scarcity. Watch the actual capacity adds.</li>
+    <li><b>Co-packaged optics isn't a solved product.</b> Its big unsolved problem is <b>serviceability</b> &mdash; if a laser fails, replacing it can mean pulling the whole expensive package. That could slow adoption or reshape who wins.</li>
+    <li><b>Concentrated supply cuts both ways.</b> &ldquo;Own the InP oligopoly&rdquo; also means owning a <i>small, specialized, cyclical</i> layer &mdash; powerful when demand runs hot, brutal when it turns.</li>
+    <li><b>Not advice.</b> This is how we read the chain, not a recommendation. Company names illustrate a structural shift, not buy calls &mdash; do your own work and size to your own risk.</li>
+  </ul>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The viral take and the true take are rarely the same trade</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">The switch war grabs the headlines. The crystal decides who ships.</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens maps the AI buildout as one connected chain &mdash; and keeps finding the layer where the value actually pools as the bottleneck moves. Plain English, every claim sourced and flagged. When we're wrong, we say so.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:14px;font-size:13.5px;color:var(--muted);">Not ready to subscribe? <a href="https://dragonflysystems.substack.com/subscribe" style="color:var(--lime);font-weight:700;">Get the free weekly &rarr;</a></div>
+    <div style="margin-top:16px;font-size:13px;color:var(--muted);">More: <a href="/learn/memory-wall.html">The memory wall</a> &middot; <a href="/learn/nuclear-for-ai.html">Big Tech goes nuclear</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>Why is copper a problem for AI now?</b> Inside an AI cluster, chips constantly exchange data over wires, and the required speed doubles every 2&ndash;3 years. The faster data moves through copper, the shorter the distance it can travel before the signal degrades &mdash; now just tens of centimeters at top speeds. Copper can no longer reliably carry the traffic even across a rack, so the industry is switching to light.</p>
+    <p><b>What is co-packaged optics (CPO)?</b> It's building the parts that turn electricity into light into the same package as the chip, instead of in a separate module across the board. That nearly eliminates the slow electrical hop and lets data leave the chip as a laser beam. Nvidia's roadmap introduces it in its systems around 2027&ndash;2028.</p>
+    <p><b>Why does indium phosphide (InP) matter?</b> Silicon can't efficiently emit light; indium phosphide can, so it's the base material for the lasers in AI optical links. It's grown on small 2&ndash;4 inch wafers by only a few suppliers, and AI demand has jumped from telecom-scale to cloud-scale almost overnight &mdash; which is why Lumentum's CEO warned the shortage could be &ldquo;worse than memory.&rdquo;</p>
+    <p style="margin-bottom:0;"><b>Who benefits from the optical-interconnect shift?</b> The scarce layers underneath the switch brand: the InP substrate makers (Sumitomo, AXT, Resonac), the laser and optical-component makers (Lumentum, Coherent), and the packaging that stitches optics to silicon (including TSMC). Whoever wins the switch fight, those inputs get bought.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Why is copper a problem for AI data centers now?","acceptedAnswer":{"@type":"Answer","text":"Inside an AI cluster, chips constantly exchange data over wires, and the required speed doubles every two to three years. The faster data moves through copper, the shorter the distance it can travel before the signal degrades, now just tens of centimeters at top speeds. Copper can no longer reliably carry the traffic even across a rack, so the industry is switching to light."}},
+  {"@type":"Question","name":"What is co-packaged optics (CPO)?","acceptedAnswer":{"@type":"Answer","text":"Co-packaged optics builds the parts that turn electricity into light into the same package as the chip, instead of in a separate pluggable module across the board. That nearly eliminates the slow electrical hop and lets data leave the chip as a laser beam. Nvidia's roadmap introduces it in its systems around 2027 to 2028."}},
+  {"@type":"Question","name":"Why does indium phosphide (InP) matter for AI?","acceptedAnswer":{"@type":"Answer","text":"Silicon cannot efficiently emit light, but indium phosphide can, so it is the base material for the lasers in AI optical links. It is grown on small 2 to 4 inch wafers by only a few suppliers, and AI demand jumped from telecom scale to cloud scale almost overnight, which is why Lumentum's CEO warned the shortage could be worse than memory."}},
+  {"@type":"Question","name":"Who benefits from the AI optical-interconnect shift?","acceptedAnswer":{"@type":"Answer","text":"The scarce layers underneath the switch brand: the indium phosphide substrate makers such as Sumitomo, AXT and Resonac, the laser and optical component makers such as Lumentum and Coherent, and the advanced packaging that stitches optics to silicon, including TSMC. Whoever wins the switch fight, those inputs get bought."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources:</b> <b>InP laser shortage "worse than memory," demand&gt;supply by &gt;30%, telecom-to-cloud scale jump; Coherent doubling InP output 2026 / &gt;2x by 2027; Lumentum NC fab ~2028; 2-4in wafers vs 12in CMOS; Nvidia multi-billion supplier lock-ups; LightCounting sees easing by end-2026</b> &mdash; <a href="https://www.trendforce.com/news/2026/08/06/news-inp-shortage-emerges-as-ai-optical-interconnect-bottleneck/" rel="nofollow">TrendForce</a>, <a href="https://mlq.ai/news/lumentum-says-ai-laser-demand-exceeds-supply-by-more-than-30-as-inp-capacity-lags/" rel="nofollow">MLQ/Lumentum</a>, <a href="https://futurumgroup.com/insights/nvidias-4b-optics-bet-signals-photonics-as-ais-next-bottleneck/" rel="nofollow">Futurum</a>. <b>Copper reach shrinks as bandwidth doubles every 2-3 years; CPO ramps 2027-2028 (Nvidia GTC roadmap; Rubin Ultra late 2027); optical packaging becomes the bottleneck 2028-2030 "similar to the HBM shortage"; serviceability debate</b> &mdash; <a href="https://www.networkworld.com/article/4098942/what-is-co-packaged-optics-a-solution-for-surging-capacity-in-ai-data-center-networks.html" rel="nofollow">Network World</a>, <a href="https://newsletter.semianalysis.com/p/co-packaged-optics-cpo-book-scaling" rel="nofollow">SemiAnalysis</a>, <a href="https://semiengineering.com/all-ai-data-center-interconnects-will-be-optical-within-5-years/" rel="nofollow">Semiconductor Engineering</a>. <b>Lightmatter OCP co-packaged-optics reference-architecture initiative (Corning, Dell, Foxconn, Qualcomm, Keysight, et al., Mar 2026)</b> &mdash; <a href="https://lightmatter.co/press-release/lightmatter-announces-reference-architecture-initiative-with-industry-leaders-in-the-open-compute-project-for-co-packaged-optics/" rel="nofollow">Lightmatter</a>, <a href="https://www.hpcwire.com/off-the-wire/lightmatter-proposes-ocp-reference-architecture-for-co-packaged-optics-in-ai-systems/" rel="nofollow">HPCwire</a>. <b>InP substrate makers (Sumitomo Electric dominant, AXT, Resonac; emerging China supply; Eindhoven 6-inch fab)</b> &mdash; <a href="https://www.mordorintelligence.com/industry-reports/indium-phosphide-wafer-market" rel="nofollow">Mordor Intelligence</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Figures are as reported by the sources above; several (shortage severity, rollout dates) are supplier framing or roadmap targets and carry revision risk &mdash; this is a developing story. Company names illustrate a structural shift in the AI compute supply chain, not buy recommendations &mdash; verify against primary filings before acting. Past performance does not guarantee future results.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
