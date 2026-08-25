@@ -1,0 +1,34 @@
+@CM_X_CM (AI data centers + bottlenecks)
+The bottleneck most are pricing is generation. The one that actually gates a 2027 build is delivery - transformers (~128wk lead, per Wood Mackenzie) + interconnect (~2,600 GW queue, ~2x all US capacity). You can have the power and still not get it to the rack.
+
+@MarsSTRonaut (AI power infra)
+The number that reframes the whole buildout: the US interconnection queue is ~2,600 GW - more than double all existing US power capacity. Capital isn't the constraint anymore; transformers (~2.5yr waits) and grid hookups are. Delivery > generation.
+
+@Maddoxxfmr (transformer industry)
+Even when the transformer finally lands, the project still has to plug in - and the US interconnect queue is ~2,600 GW with ~5yr median waits. The lead-time crunch on your side + the queue on the grid side are a double gate most AI-power takes completely miss.
+
+@BarrioEnergy (energy / queues)
+Capital's everywhere, but the queue + transformer waits decide which projects actually energize. ~2,600 GW waiting, ~128-week transformer lead times. Money can't compress a 2-4 year physical supply chain - delivery is the real filter on the buildout.
+
+@RossGivens_ (posts transformer lead times)
+That 128-week figure is the story nobody's pricing. Stack the interconnect queue on top (~2,600 GW, ~2x US capacity) and you get the real thesis: generation is crowded, delivery is the gate. The money's shifting from the watt to the wire.
+
+
+
+
+(✅ = I confirmed real via search - ⚠️ = click-verify before engaging - ❌ = skip)
+
+Tier 1 - Peers (highest ROI, build relationships):
+
+@TheBigBerbowski ✅ - Substack, DC infra / memory / AI deep-dives
+@damnang2 ⚠️ - semiconductor engineer (your plain-English-translation angle)
+Tier 2 - Mid (audience + peer):
+
+@BULLOFBRITAIN ⚠️ - semis / supply chain
+@PhotonBull ⚠️ - photonics / critical minerals / space
+Tier 3 - Larger audience-borrow (opportunistic, low reciprocity):
+
+@SpaceInvestor_D ✅ - space economy (great for your SpaceX content)
+@itsmichaelluu ✅ - AI infra/supply chain, but picks-heavy tone - engage sober/sparingly
+@The_AI_Investor ⚠️ - verify the exact handle (lookalikes exist)
+@CKCapitalxx ⚠️ - defense / space / photonics
