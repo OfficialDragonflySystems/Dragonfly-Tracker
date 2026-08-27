@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- DRAFT - not yet published. noindex + unregistered (not in index/sitemap/manifest).
+     On publish: remove the robots noindex meta, register in learn/index.html + sitemap.xml,
+     re-run gen_learn_manifest.py, manual-sync to Dragonfly-Tracker if Actions still blocked.
+     Kit: content_drafts/deep_dives/2026-08-27_robot-decades/ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>The Robot Decades: An Honest Timeline for When the Machines Actually Arrive &mdash; Dragonfly Lens</title>
+<meta name="description" content="Everyone has a number for when robots take the jobs. Most are marketing. Here is the sober version: four scenarios for 2040, the rule that predicts which jobs go first, the profession that was declared dead in 2016 and got a raise instead - and the question that matters more than the timeline: who owns the robots.">
+<meta property="og:title" content="The Robot Decades: An Honest Timeline for When the Machines Actually Arrive">
+<meta property="og:description" content="Four scenarios for 2040, the rule that predicts which jobs go first, the radiologist lesson - and the question that matters more than the timeline: who owns the robots.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/robot-decades.html">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/robot-decades-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Robot Decades: An Honest Timeline">
+<meta name="twitter:description" content="Four scenarios for 2040, the rule that predicts which jobs go first, and why the tradesperson may end up owning the robots.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/robot-decades-card.png">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Work, Ownership, and the Machines</div>
+  <h1>The Robot Decades: An Honest Timeline for When the Machines Actually Arrive.</h1>
+  <p class="lead"><b>Amazon has a million robots. Unitree has built about 18,000 walking ones. Tesla has sold zero.</b> And the forecasts for the next decade still differ by ten-fold. Everyone has a number for when robots take the jobs; most of those numbers are marketing &mdash; a CEO selling a robot or a pundit selling fear. This is the sober version: <b>four scenarios for 2040</b> instead of one prediction, the <b>rule</b> that predicts which jobs go first, the profession that was <b>declared dead in 2016 and got a raise instead</b>, and the question that matters more than any timeline: <b>who owns the robots.</b></p>
+  <p class="byline">Dragonfly Lens &middot; DRAFT (August 2026) &middot; Reviewed against a second independent read 27 Aug 2026 &middot; Projections are labelled as projections. Every measured number is sourced.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>Where we actually are (measured):</b> about <b>4.66 million</b> industrial robots operate worldwide (IFR World Robotics 2025; year-end 2024 stock) against a global workforce in the billions &mdash; a vanishingly small share of physical work-hours. Amazon alone runs <b>1 million</b> warehouse robots. Humanoids are real but tiny: Unitree, the volume leader, has built about <b>18,000</b> bipeds <i>ever</i> (mid-2026), at $13,500 for its small G1.</li>
+      <li><b>The forecast spread is 10&times; &mdash; and moving:</b> Interact Analysis&rsquo; 2025 baseline saw humanoid shipments of just over <b>40,000 a year by 2032</b>; its 2026 update now says <b>700,000 a year by 2035.</b> Tesla, meanwhile, <b>declined to give any 2026 number</b> at all (&ldquo;quite slow&rdquo;), built only &ldquo;several hundred&rdquo; units in Q1, and has sold none. When the same forecaster moves 17&times; in a year and the loudest company won&rsquo;t name a figure, the honest answer is scenarios, not a number.</li>
+      <li><b>The ordering rule:</b> jobs get automated roughly in order of <b>(danger + wage + repetition) &divide; messiness of the environment.</b> Mines, warehouses and welding first; the roofer's crew mid-order; the nurse, the plumber in a 90-year-old basement, and anyone whose <i>relationship</i> is the product, last.</li>
+      <li><b>The radiologist lesson:</b> in 2016 the &ldquo;godfather of AI&rdquo; said to stop training radiologists. Demand <i>rose</i>; the average radiologist now earns $571K; the shortage is structural. Most jobs follow that arc &mdash; <b>augmentation, then a boom, then (only much later) replacement.</b></li>
+      <li><b>The Lens angle:</b> the question isn&rsquo;t &ldquo;will a robot take my job&rdquo; but <b>&ldquo;will I own the robot that does it?&rdquo;</b> A roofer with four robots does a six-person crew&rsquo;s volume. Whether that owner is the tradesperson or a platform is the biggest economic decision of the next fifteen years.</li>
+    </ul>
+  </div>
+
+  <h2>Start with what can be counted</h2>
+  <p>Before any forecast, the measured baseline. The International Federation of Robotics counted <b>4,664,000 industrial robots</b> in operation at the end of 2024, up 9% in a year, with <b>542,000</b> installed that year &mdash; double the number a decade earlier &mdash; and it expects installations to pass 700,000 a year by 2028. That growth is real and compounding. It is also, against a global workforce in the billions, still a rounding error in total work-hours: robots today are overwhelmingly bolted-down arms in car and electronics plants.</p>
+  <p>The one place the future is visibly arriving is the warehouse. Amazon crossed <b>one million robots</b> in July 2025 and reported that 75% of its deliveries are now robot-assisted; the Wall Street Journal noted its robot count may soon equal its human headcount. That is the template: <i>structured</i> spaces, repetitive tasks, one company with the capital to build its own fleet.</p>
+  <p>Humanoids &mdash; the robots everyone pictures &mdash; are a much earlier story than the videos suggest. Unitree, the volume leader, shipped about 5,500 units in 2025 and has built roughly <b>18,000 bipeds cumulatively</b> as of mid-2026, with its compact G1 selling from <b>$13,500</b>. Tesla is the loudest voice and the least measurable one: on its Q1 2026 earnings call Elon Musk said Optimus production would begin at Fremont in late summer, warned output would be &ldquo;quite slow,&rdquo; called the 2026 rate &ldquo;literally impossible to predict&rdquo; across 10,000 unique parts, and <b>declined to give a number</b>; the company disclosed &ldquo;several hundred&rdquo; units built in Q1, and its earlier ambition of ~10,000 in 2025 was missed. The talked-about $20,000&ndash;$30,000 price and the million-a-year figure are long-run design capacity, not a forecast. The IFR&rsquo;s own 2026 trends note says whether humanoids are &ldquo;an economically viable and scalable business case for industrial applications&rdquo; <i>remains to be seen.</i> And the specialist forecaster Interact Analysis shows how unsettled this is: its May 2025 baseline projected just over <b>40,000 humanoids shipped a year by 2032</b> (~$2B of revenue); its May 2026 update projects <b>700,000 a year by 2035</b> (~$15B), with the commercial inflection not before 2032.</p>
+  <div class="flag"><b>Read the gap.</b> The same specialist forecaster moved its outlook 17&times; in twelve months, and the company with the biggest ambitions won&rsquo;t state a number. That is not a rounding disagreement; it is an industry that does not yet know its own volume. Anyone giving you one confident number for 2035 is choosing a world for you. The honest move is to hold several.</div>
+
+  <h2>Who is actually building them &mdash; and at what scale</h2>
+  <p>&ldquo;Humanoid robots&rdquo; is not one company. The specialist tracker Interact Analysis counts <b>more than 20,000 humanoids produced in 2025</b> &mdash; a ten-fold jump from under 2,000 in 2024 &mdash; with Chinese vendors accounting for <b>over 90%</b> of production. The number that matters more: only <b>about 10%</b> of those units went into real-world work. The rest went to research labs, data collection and entertainment. Here is the field, measured where measurement exists (company claims are labelled as claims):</p>
+  <div class="tw"><table>
+    <tr><th>Maker</th><th>Measured (as of Aug 2026)</th><th>Claimed / targeted</th></tr>
+    <tr><td><b>AgiBot</b> (China)</td><td>#1 by 2025 shipments: <b>5,168 units</b>, ~39% global share (Omdia). <b>15,000th robot</b> off the line 28 Jun 2026; the last 5,000 took three months.</td><td>Aggressive national-champion scaling; state support explicit.</td></tr>
+    <tr><td><b>Unitree</b> (China)</td><td>~5,500 shipped in 2025; <b>~18,000 bipeds cumulative</b> by Jul 2026; G1 from <b>$13,500</b> &mdash; the volume and price leader.</td><td>Up to 20,000 humanoids in 2026 (CEO).</td></tr>
+    <tr><td><b>UBTech</b> (China)</td><td><b>1,079 Walker S2</b> industrial units delivered in 2025; orders &gt;&yen;800M (~$112M) since early 2025.</td><td>Capacity of 5,000/yr in 2026, 10,000/yr in 2027.</td></tr>
+    <tr><td><b>Figure</b> (US)</td><td>BotQ factory hit <b>one robot per hour</b> (29 Apr 2026, from one a day in January); <b>350+ delivered</b>; pilots incl. BMW Spartanburg.</td><td>12,000/yr first-line capacity; ~50,000/yr eventual. ~$39B private valuation.</td></tr>
+    <tr><td><b>Agility Robotics</b> (US)</td><td>Digit: <b>65,000+ operating hours</b> across nine customer sites (GXO, Schaeffler, Toyota Canada, Mercado Libre); first humanoid in a live workplace (Jun 2024). $300M+ multi-year orders. Going public via a <b>$2.5B SPAC</b> (Jul 2026).</td><td>RoboFab nameplate 10,000/yr &mdash; reported running at ~8 units per shift.</td></tr>
+    <tr><td><b>Boston Dynamics / Hyundai</b></td><td>Electric Atlas in production; <b>2026 output fully committed</b> (Hyundai plants, Google DeepMind).</td><td>Hyundai plans <b>25,000+</b> Atlas in its factories; 30,000/yr factory. Its Korean union has pushed back on deployment without a labor deal.</td></tr>
+    <tr><td><b>Tesla</b> (US)</td><td>&ldquo;Several hundred&rdquo; Optimus built in Q1 2026 for internal use; <b>none sold</b>; production start at Fremont late summer 2026, &ldquo;quite slow.&rdquo;</td><td>No 2026 number given. $20&ndash;30K price and 1M/yr are long-run design targets.</td></tr>
+    <tr><td><b>1X</b> (Norway/US)</td><td>NEO home humanoid on pre-order: <b>$20,000</b> or $499/month; US deliveries slated for 2026. Early demos still needed remote human help.</td><td>The first real test of the home-robot scenario.</td></tr>
+    <tr><td><b>Apptronik</b> (US)</td><td>Apollo built with contract manufacturer Jabil (&ldquo;Apollo to build Apollo&rdquo;); pilots in Jabil&rsquo;s own plants; Mercedes trials.</td><td>Volume undisclosed.</td></tr>
+  </table></div>
+  <div class="flag"><b>What the table says that the videos don&rsquo;t.</b> The volume is Chinese, the deployments are American, and the two are not yet the same robots. China&rsquo;s 20,000-unit year is mostly research and demo units; the Western makers with real factory hours (Agility, Figure, Boston Dynamics) are measured in hundreds of deployed robots and tens of thousands of hours, not millions. And notice what is scarce in every row: not demo videos but <b>actuators, precision gearboxes, rare-earth magnets, batteries and tactile sensing</b> &mdash; a parts list, not a prophecy. That is why our four scenarios span a ten-fold range and why the conservative case wins by default if those supply chains bind.</div>
+
+  <h2>Four scenarios for 2040 (projection, not prediction)</h2>
+  <p>We measure by <b>share of physical work-hours done by robots</b>, not robot count &mdash; one robot can work 20 hours a day, so counting bodies flatters the machines. These are our ranges, built from the baseline above and the ordering rule below. They are opinions with reasoning attached, and we will update them in public as the data comes in.</p>
+  <div class="tw"><table>
+    <tr><th>Scenario</th><th>Robot share of physical work-hours, 2040</th><th>What has to be true</th></tr>
+    <tr><td><b>Conservative</b></td><td>3&ndash;7% overall<br>(20&ndash;30% of factory/warehouse tasks)</td><td>Actuator, magnet and battery supply chains stay tight; humanoids stay clumsy in messy environments; adoption follows normal capital-spending cycles.</td></tr>
+    <tr><td><b>Balanced</b> (our base case)</td><td><b>8&ndash;15%</b> overall<br>(40&ndash;60% of structured industrial work; dangerous jobs heavily robotic)</td><td>Humanoids reach &ldquo;capable but supervised&rdquo; around 2030&ndash;32, then an 8&ndash;10 year diffusion like smartphones-for-labor.</td></tr>
+    <tr><td><b>Aggressive</b></td><td>15&ndash;30%</td><td>Robots building robots closes the manufacturing loop; unit costs fall to $20&ndash;30K; tens of millions of humanoids.</td></tr>
+    <tr><td><b>Musk-tier</b></td><td>Robots rival or exceed the human workforce; &ldquo;work optional&rdquo;</td><td>Tesla&rsquo;s own framing. History says Musk&rsquo;s <i>direction</i> is usually right and his <i>timeline</i> runs two to three times long &mdash; so read &ldquo;2040&rdquo; here as plausible-2055.</td></tr>
+  </table></div>
+  <p><b>Home robots</b> follow a lag: our balanced case is 5&ndash;10% of households with a genuinely useful humanoid by 2040, 20&ndash;30% aggressive &mdash; and the pattern will likely look like the early PC: expensive, slightly useless, bought by enthusiasts, then suddenly everywhere once one killer task (honestly: laundry, start to folded) works flawlessly.</p>
+
+  <h2>The rule that predicts the order</h2>
+  <p>Adoption follows one ratio: <b>(danger + wage cost + repetition) &divide; messiness of the environment.</b> High numerator, low denominator, robots first.</p>
+  <ul>
+    <li><b>First:</b> mining, warehouse picking, welding, painting, haulage, security patrol, commercial cleaning &mdash; dangerous or dull, in <i>structured</i> spaces.</li>
+    <li><b>Mid-order, and the most instructive example &mdash; the roofer.</b> Falls are the leading cause of death in construction: <b>389 of 1,034</b> construction deaths in 2024 were falls (BLS), about 38%. The task is repetitive and lethal, which pushes it early. But every roof is different, which pushes it late. Expect <i>augmentation first</i> &mdash; robotic shingle-loaders, drone inspection, exoskeletons &mdash; and crew replacement in the 2030s. The economics matter more than the date: <b>the crew shrinks, but the owner scales.</b> Illustratively, one roofer plus four robots doing today&rsquo;s six-person crew&rsquo;s volume &mdash; a scenario, not a measurement, but the shape is the point. The tradesperson becomes a fleet owner. That applies to every trade.</li>
+    <li><b>Last:</b> unstructured and human-facing work &mdash; the caring half of eldercare, novel repairs in old buildings, teaching, anything where the relationship <i>is</i> the product.</li>
+  </ul>
+
+  <h2>The radiologist lesson (the most important calibration we have)</h2>
+  <p>In 2016, Geoffrey Hinton &mdash; later a Nobel laureate and the &ldquo;godfather of AI&rdquo; &mdash; said medical schools should stop training radiologists because AI would outperform them within five years. A decade on, the opposite happened. the <i>average</i> U.S. radiologist now earns <b>$571,000</b> (Medscape&rsquo;s 2026 report, third-highest of any specialty); imaging volume has grown <b>4.6% a year</b> (an ACR registry of 46 million exams, 2018&ndash;24); the workforce is capped by residency slots (only 29 new diagnostic-radiology positions added nationally since 2021); and the ACR projects about 37,500 radiologists today rising to only 47,000 by 2055 while demand grows up to 27%. <b>Over a thousand</b> FDA-cleared radiology AI devices exist (1,163 of all 1,524 cleared AI devices as of March 2026) &mdash; and the shortage got <i>worse.</i></p>
+  <p>Why? Three things the &ldquo;replacement&rdquo; story misses: AI made each radiologist faster, so imaging got cheaper, so <b>volume exploded</b> (economists call this Jevons&rsquo; paradox &mdash; efficiency increases total demand); <b>liability</b> still requires a human signature; and the AI handles the reading, not the judgment call, the conversation, or the responsibility. The pattern generalizes: <b>augmentation &rarr; boom &rarr; then, only when the tool is near-perfect <i>and</i> liability shifts, replacement.</b> Most jobs will rise before they fall. People consistently miss the middle phase, and the middle phase can last decades.</p>
+  <div class="real"><b>The inversion nobody expected.</b> AI ate office work before physical work. Data entry, routine bookkeeping, tier-one support, boilerplate code and production graphics are eroding now; the plumber is safer than the paralegal. If you work with your hands in messy places, you are later in the queue than the headlines say &mdash; and better positioned to become the owner of the machines that eventually join you.</div>
+
+  <h2>Job horizons (projection; confidence falls with distance)</h2>
+  <div class="tw"><table>
+    <tr><th>Horizon</th><th>What erodes</th><th>What opens</th></tr>
+    <tr><td><b>5&ndash;10 yrs</b></td><td>Cognitive-routine work first: data entry, basic bookkeeping, tier-1 support, translation, routine paralegal/junior-analyst work, production design. Physical: warehouse picking, mine haulage, repetitive welding.</td><td>Robot-fleet supervisors and teleoperators (one human, ten robots); AI auditors and verifiers; the energy-and-infrastructure buildout trades &mdash; electricians and linemen boom for 20+ years before any of this touches them.</td></tr>
+    <tr><td><b>10&ndash;20 yrs</b></td><td>The driving-and-assembly layer: trucking (one of the largest occupations in North America &mdash; the biggest single social shock on this list), delivery, most assembly, fast food, commercial cleaning, security, the repetitive halves of trades. Diagnostics finally decline.</td><td><b>Robot maintenance technicians &mdash; the new skilled trade, and a huge one.</b> Fleet-owner tradespeople. &ldquo;Human-made&rdquo; premium goods (people already pay 5&times; for handmade furniture; that premium widens).</td></tr>
+    <tr><td><b>20&ndash;30 yrs</b></td><td>Structured physical work broadly: construction crews (supervisor + fleet), agriculture, logistics end-to-end, routine surgical assistance, eldercare <i>tasks</i>.</td><td>Care, coaching, community, craft; creators of every kind; the ownership economy around automation.</td></tr>
+    <tr><td><b>30&ndash;40 yrs</b></td><td>Almost everything task-shaped.</td><td>Work where humanness is the point.</td></tr>
+  </table></div>
+
+  <h2>The part that matters more than the timeline: ownership</h2>
+  <p>When income stops flowing through labor, it flows through <b>whoever owns the robots and the rails they run on.</b> There are two bad endings and one good one. Bad ending one: ownership concentrates in a handful of platforms. Bad ending two: everything routes through the state, and a population living on an allowance under fully digital money, speech and energy is not a utopia &mdash; it is an allowance with terms of service. The good ending &mdash; humans creating, building with the machines, focusing on being human &mdash; is available, but it is <i>not the default</i>, because concentration is always more efficient in the short run.</p>
+  <p>What tilts it toward the good ending is mostly decisions being made <i>now</i>: <b>broad capital ownership over handouts</b> (millions of small fleet owners, cooperative and index-style ownership of automation); <b>parallel rails kept alive</b> (cash beside digital money, open models beside corporate ones, local energy and repair capability &mdash; redundancy, not paranoia); education rebuilt around <b>judgment, taste and creation</b> rather than job-training for jobs that won&rsquo;t exist; and a recognition that in a world of infinite machine output, <b>verified-human and verified-true become the scarce goods.</b> Trust becomes the commodity.</p>
+
+  <h2>The risks &mdash; named, not buried</h2>
+  <ul>
+    <li><b>Every date above is a projection.</b> The measured baseline is small; the forecasts span an order of magnitude; the most confident voices have the biggest incentives. We will update this page in public as real numbers land.</li>
+    <li><b>Physical bottlenecks can stall the whole curve.</b> Humanoids at volume are a motors-and-magnets problem &mdash; precision gearboxes, rare-earth magnets (China-dominated), batteries, actuators. If those supply chains bind, the conservative scenario wins by default. (We track this as its own thesis.)</li>
+    <li><b>The middle phase can be long.</b> The radiologist boom has lasted a decade and counting. &ldquo;Eventually replaced&rdquo; can mean a full career of augmentation first.</li>
+    <li><b>Social shocks are lumpy, not smooth.</b> Trucking alone concentrates millions of livelihoods in a single automation event. Averages hide that.</li>
+    <li><b>Not advice.</b> This is a map of a transition, not a recommendation. Company names illustrate where things stand, not buy calls.</li>
+  </ul>
+
+  <div class="box" style="background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #2d5a35;margin-top:36px;text-align:center;">
+    <div class="kick">The question under the question</div>
+    <h3 style="font-family:Georgia,serif;font-weight:400;font-size:25px;color:#fff;margin:8px 0 10px;">Not &ldquo;will a robot take my job&rdquo; &mdash; &ldquo;will I own the robot that does it?&rdquo;</h3>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Dragonfly Lens maps the AI buildout as one connected chain &mdash; the bottlenecks, the machines, and who ends up owning them. Plain English, projections labelled as projections, every measured number sourced. When we're wrong, we say so.</p>
+    <a href="https://officialdragonflysystems.com/#pricing" style="display:inline-block;background:var(--lime);color:#06231e;font-weight:800;padding:13px 28px;border-radius:9px;text-decoration:none;font-size:15px;">Join the Lens &rarr;</a>
+    <div style="margin-top:14px;font-size:13.5px;color:var(--muted);">Not ready to subscribe? <a href="https://dragonflysystems.substack.com/subscribe" style="color:var(--lime);font-weight:700;">Get the free weekly &rarr;</a></div>
+    <div style="margin-top:16px;font-size:13px;color:var(--muted);">More: <a href="/learn/musk-bottleneck.html">The Musk playbook</a> &middot; <a href="/learn/optical-bottleneck.html">The wire between the chips</a> &middot; <a href="/learn/">All explainers</a></div>
+  </div>
+
+  <h2>Quick answers</h2>
+  <div class="box">
+    <p style="margin-top:0;"><b>How many robots are working today?</b> About 4.66 million industrial robots (IFR, end of 2024), overwhelmingly fixed arms in factories, plus large single-company fleets like Amazon&rsquo;s one million warehouse robots. Humanoids: more than 20,000 were produced in 2025, over 90% in China, but only about one in ten went into real work.</p>
+    <p><b>When will humanoid robots be common?</b> Nobody knows: the specialist forecaster Interact Analysis went from ~40,000 shipped a year by 2032 (2025) to 700,000 a year by 2035 (2026), and Tesla declined to give a 2026 number. Our base case is &ldquo;capable but supervised&rdquo; around 2030&ndash;32, then a decade of diffusion.</p>
+    <p><b>Which jobs go first?</b> Roughly in order of (danger + wage + repetition) divided by how messy the environment is: mining, warehouses, welding and haulage first; unstructured, human-facing work last. Office-routine work is eroding before physical work.</p>
+    <p style="margin-bottom:0;"><b>Why didn&rsquo;t AI replace radiologists?</b> AI made each radiologist faster, so imaging got cheaper and volume grew; liability still needs a human signature; and supply is capped by residency slots. Demand rose and the shortage worsened &mdash; the augmentation-then-boom pattern most jobs will follow.</p>
+  </div>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How many robots are working today?","acceptedAnswer":{"@type":"Answer","text":"About 4.66 million industrial robots were in operation at the end of 2024 according to the IFR, mostly fixed arms in factories, plus large single-company fleets such as Amazon's one million warehouse robots. Humanoid robots number in the low tens of thousands worldwide."}},
+  {"@type":"Question","name":"When will humanoid robots be common?","acceptedAnswer":{"@type":"Answer","text":"Nobody knows: the specialist forecaster Interact Analysis moved from about 40,000 humanoids shipped a year by 2032 in its 2025 report to 700,000 a year by 2035 in its 2026 report, and Tesla declined to give a 2026 production number. Our base case is capable-but-supervised humanoids around 2030 to 2032 followed by a decade of diffusion."}},
+  {"@type":"Question","name":"Which jobs will robots take first?","acceptedAnswer":{"@type":"Answer","text":"Roughly in order of danger plus wage plus repetition, divided by how messy the environment is: mining, warehouses, welding and haulage first; unstructured, human-facing work last. Routine office work is eroding before physical work."}},
+  {"@type":"Question","name":"Why did AI not replace radiologists?","acceptedAnswer":{"@type":"Answer","text":"AI made each radiologist faster, so imaging became cheaper and volumes grew; liability still requires a human signature; and the supply of radiologists is capped by residency positions. Demand rose and the shortage worsened, an augmentation-then-boom pattern most jobs are likely to follow."}}
+  ]}
+  </script>
+
+  <p class="disc"><b>Sources (measured figures):</b> <b>4,664,000 operational industrial robots (2024, +9%), 542,000 installed, 700,000/yr by 2028; humanoid business case &ldquo;remains to be seen&rdquo;</b> &mdash; <a href="https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years" rel="nofollow">IFR World Robotics 2025</a>, <a href="https://ifr.org/ifr-press-releases/top-5-global-robotics-trends-2026" rel="nofollow">IFR Trends 2026</a>. <b>Amazon 1,000,000 robots, 75% of deliveries robot-assisted</b> &mdash; <a href="https://techcrunch.com/2025/07/01/amazon-deploys-its-1-millionth-robot-releases-generative-ai-model/" rel="nofollow">TechCrunch</a>, <a href="https://www.cnbc.com/2025/07/02/amazon-deploys-its-1-millionth-robot-in-a-sign-of-more-job-automation.html" rel="nofollow">CNBC</a>. <b>Unitree ~18,000 cumulative bipeds (Jul 2026), 5,500 shipped in 2025, G1 from $13,500</b> &mdash; <a href="https://www.humanoidsdaily.com/news/unitree-reclaims-the-spotlight-with-18-000-cumulative-bipedal-humanoids-produced" rel="nofollow">Humanoids Daily</a>, <a href="https://www.forbes.com/sites/jonmarkman/2026/04/27/unitree-g1-humanoid-robots-are-reshaping-the-robotics-investment-stack/" rel="nofollow">Forbes</a>. <b>Interact Analysis: ~40,000 units/yr by 2032 (May 2025); 700,000/yr by 2035, inflection 2032 (May 2026)</b> &mdash; <a href="https://interactanalysis.com/despite-hype-and-large-addressable-market-humanoid-robot-adoption-will-remain-low/" rel="nofollow">Interact Analysis 2025</a>, <a href="https://interactanalysis.com/humanoid-robot-revenue/" rel="nofollow">Interact Analysis 2026</a>. <b>Tesla Q1 2026 call: production start late Jul/Aug, &ldquo;quite slow,&rdquo; no 2026 number, &ldquo;several hundred&rdquo; units in Q1</b> &mdash; <a href="https://electrek.co/2026/04/22/tesla-optimus-production-fremont-model-sx-line/" rel="nofollow">Electrek</a>, <a href="https://evwire.com/p/tesla-tsla-q1-2026-earnings-call-full-transcript" rel="nofollow">call transcript</a>. <b>Radiologists: Hinton 2016 claim; average pay $571K (+9%, 3rd among specialties)</b> &mdash; <a href="https://fortune.com/article/ai-godfather-radiologists-obsolete-salaries-up-to-571k-demand-growing/" rel="nofollow">Fortune</a>, <a href="https://radiologybusiness.com/topics/healthcare-management/healthcare-economics/radiologists-earning-average-571000-9-year-over-year" rel="nofollow">Radiology Business / Medscape 2026</a>; <b>imaging +31% 2018&ndash;24 (4.6% CAGR), 46.4M exams</b> &mdash; <a href="https://www.sciencedirect.com/science/article/abs/pii/S1546144025007446" rel="nofollow">JACR / ACR NRDR</a>; <b>1,163 radiology of 1,524 FDA AI devices (Mar 2026)</b> &mdash; <a href="https://theimagingwire.com/2026/03/11/numbers-from-the-fda-show-radiology-is-maintaining-its-lead/" rel="nofollow">The Imaging Wire</a>; <b>~37,500 radiologists &rarr; 47,000 by 2055, demand +27%, 29 DR residency slots added since 2021</b> &mdash; <a href="https://www.acr.org/Clinical-Resources/Publications-and-Research/ACR-Bulletin/2026/radiologist-shortage-work-force-update" rel="nofollow">ACR / Harvey L. Neiman HPI</a>, <a href="https://www.nature.com/articles/s44401-025-00023-6" rel="nofollow">npj Health Systems</a>. <b>Humanoid production &gt;20,000 in 2025 (10&times;), China &gt;90% of production, ~10% deployed</b> &mdash; <a href="https://interactanalysis.com/insight/humanoid-robot-production-surges/" rel="nofollow">Interact Analysis</a>; <b>AgiBot 5,168 shipped 2025 / 39% share (Omdia); 15,000th unit 28 Jun 2026</b> &mdash; <a href="https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/" rel="nofollow">The Robot Report</a>; <b>UBTech 1,079 Walker S2 delivered 2025, &yen;800M+ orders</b> &mdash; <a href="https://www.prnewswire.com/news-releases/ubtech-humanoid-robot-walker-s2-begins-mass-production-and-delivery-with-orders-exceeding-800-million-yuan-302616924.html" rel="nofollow">UBTech</a>; <b>Figure BotQ one/hour, 350+ delivered (29 Apr 2026)</b> &mdash; <a href="https://www.figure.ai/news/ramping-figure-03-production" rel="nofollow">Figure</a>; <b>Agility 65,000+ hours, nine sites, $300M+ orders, $2.5B SPAC</b> &mdash; <a href="https://www.sec.gov/Archives/edgar/data/0002074973/000121390026071290/ea029548401ex99-1.htm" rel="nofollow">SEC Form 425</a>, <a href="https://roboticsandautomationnews.com/2026/07/07/agility-robotics-to-go-public-through-2-5-billion-spac-merger/103130/" rel="nofollow">R&amp;AN</a>; <b>Atlas 2026 fully committed; Hyundai 25,000+ plan; 30,000/yr factory</b> &mdash; <a href="https://www.forbes.com/sites/johnkoetsier/2026/01/06/atlas-humanoid-robots-production-fully-committed-for-2026-factory-will-build-30000-per-year/" rel="nofollow">Forbes</a>, <a href="https://www.koreaherald.com/article/10741955" rel="nofollow">Korea Herald</a>; <b>1X NEO $20,000 / $499 mo, 2026 US delivery</b> &mdash; <a href="https://www.therobotreport.com/1x-announces-pre-order-launch-neo-humanoid-robot/" rel="nofollow">The Robot Report</a>; <b>Apptronik&ndash;Jabil</b> &mdash; <a href="https://investors.jabil.com/news/news-details/2025/Apptronik-and-Jabil-Collaborate-to-Scale-Production-of-Apollo-Humanoid-Robots-and-Deploy-in-Manufacturing-Operations/default.aspx" rel="nofollow">Jabil</a>. <b>Construction: 1,034 deaths in 2024, 389 falls (~38%)</b> &mdash; <a href="https://www.bls.gov/news.release/cfoi.nr0.htm" rel="nofollow">BLS CFOI 2024</a>, <a href="https://www.constructiondive.com/news/constructions-deaths-fatality-rate-2024-hazards/812666/" rel="nofollow">Construction Dive</a>.<br><br>Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. The 2040 scenarios and job horizons are our projections, labelled as such, and will be revised in public as data arrives. Company names illustrate a structural shift, not buy recommendations.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script>
+(function(){
+  var tip=document.getElementById('dtip')||(function(){var d=document.createElement('div');d.id='dtip';document.body.appendChild(d);return d;})();
+  function show(el){var t=el.getAttribute('data-d');if(!t)return;tip.textContent=t;tip.style.display='block';var r=el.getBoundingClientRect();var w=tip.offsetWidth,h=tip.offsetHeight;var left=Math.max(8,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-8));var top=r.top-h-9;if(top<8)top=r.bottom+9;tip.style.left=left+'px';tip.style.top=top+'px';tip.style.opacity='1';}
+  function hide(){tip.style.opacity='0';tip.style.display='none';}
+  function tgt(e){return (e.target&&e.target.closest)?e.target.closest('.def'):null;}
+  document.addEventListener('mouseover',function(e){var t=tgt(e);if(t)show(t);});
+  document.addEventListener('mouseout',function(e){if(tgt(e))hide();});
+  document.addEventListener('click',function(e){var t=tgt(e);if(t){e.preventDefault();show(t);}else hide();});
+  document.addEventListener('scroll',hide,true);
+})();
+</script>
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
