@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>We Published the Wrong Number. Here Is the Right One. &mdash; Dragonfly Lens</title>
+<meta name="description" content="Our track record page said +380% average return vs +117% for the S&P 500. Recomputed from the live ledger it is +343.5% and +109.6% - and both were the smaller problem. Every position is still open with an average 5.1-year hold, so the honest figure is +21%/yr against the index's +15%/yr. Here is the error, the arithmetic, and the three questions that let you check anyone's track record in two minutes.">
+<meta property="og:title" content="We Published the Wrong Number. Here Is the Right One.">
+<meta property="og:description" content="A correction, in public, with the arithmetic - and the three questions that let you check any track record in two minutes.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/the-number-we-got-wrong.html">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="We Published the Wrong Number">
+<meta name="twitter:description" content="The correction, the arithmetic, and how to check anyone's track record in two minutes.">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .danger{border-left:4px solid var(--bad);background:rgba(248,113,113,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .danger b{color:var(--bad);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .old{color:var(--bad);text-decoration:line-through;} .new{color:var(--good);font-weight:800;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Corrections, In Public</div>
+  <h1>We Published the Wrong Number. Here Is the Right One.</h1>
+  <p class="lead">Our track record page said <b>+380% average return</b> across 87 positions against <b>+117%</b> for the S&amp;P 500. Recomputed from the live ledger on 11 September 2026, those figures are <b>+343.5%</b> and <b>+109.6%</b>. We were overstating. And that was the <i>smaller</i> of the two problems, because every one of those 87 positions is still open and has been held for an average of <b>5.1 years</b> &mdash; a fact the page never mentioned. This piece is the correction, the arithmetic, and the part that is actually useful to you: the three questions that let you check anybody&rsquo;s track record in about two minutes.</p>
+  <p class="byline">Dragonfly Lens &middot; 11 September 2026 &middot; Figures measured 11 September 2026 from the live 87-thesis ledger. Nothing below is hidden behind a subscription.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>Two numbers were wrong.</b> The page showed a June 2026 snapshot as if it were current. Returns had <i>fallen</i> since, so we were overstating: +380% is really +343.5%, and the S&amp;P comparison +117% is really +109.6%. The win rate, 83%, was correct.</li>
+      <li><b>The framing was the bigger error.</b> All 87 positions are still open, entries run 2013 to 2024, and the returns are cumulative since entry. A number like that grows every year <i>whether or not we ever have another good idea.</i></li>
+      <li><b>The honest figure is annualised.</b> +343.5% over an average 5.1-year hold is <b>+21.2% a year</b> at the median. The S&amp;P over the same matched windows is <b>+15.0% a year.</b></li>
+      <li><b>That is still real outperformance</b> &mdash; about 6 points a year over the index, over five years, with the losses included. It is just a number that survives being checked, which the old one did not.</li>
+      <li><b>It also made our actual case better.</b> The thing we want to claim is that our conviction ratings mean something. Annualised, HIGH-conviction positions returned <b>+32.1% a year</b> against MEDIUM at <b>+14.0%</b>. The tiering works on a per-year basis, not just by holding the good ones longer.</li>
+      <li><b>We found this ourselves, during a routine audit.</b> Nobody complained. We are publishing it because a track record you only correct when caught is not a track record.</li>
+    </ul>
+  </div>
+
+  <h2>1. What we said, and what is true</h2>
+
+  <div class="tw"><table>
+    <tr><th>Claim on the page</th><th>What it said</th><th>What the ledger says</th><th>Verdict</th></tr>
+    <tr><td>Average return per position</td><td class="old">+380%</td><td class="new">+343.5%</td><td>Overstated by ~37 points</td></tr>
+    <tr><td>S&amp;P 500, matched windows</td><td class="old">+117%</td><td class="new">+109.6%</td><td>Overstated by ~7 points</td></tr>
+    <tr><td>Win rate</td><td>83%</td><td>82.8% (72 of 87)</td><td><b>Correct</b></td></tr>
+    <tr><td>Average holding period</td><td class="old">not shown</td><td class="new">5.13 years</td><td>Missing entirely</td></tr>
+    <tr><td>Returns realised or open?</td><td class="old">not shown</td><td class="new">87 of 87 still open</td><td>Missing entirely</td></tr>
+    <tr><td>Annualised return</td><td class="old">not shown</td><td class="new">+21.2% median a year</td><td>Missing entirely</td></tr>
+  </table></div>
+
+  <p>The mechanical cause of the first two rows is dull: the figures were computed in June 2026 and the page kept displaying them months later without a date attached. Prices moved. Because they moved <i>down</i>, the stale number flattered us. Had it drifted the other way we would have been understating and would probably never have noticed &mdash; which is its own lesson about which errors get caught.</p>
+
+  <h2>2. The error that actually matters</h2>
+
+  <p>Suppose we told you a delivery van had covered <b>400 miles.</b> Impressive? You cannot know. Over an afternoon it is remarkable. Over four years it means the van barely left the yard. <b>A distance without a time is not a speed</b>, and a return without a holding period is not a rate of return. It is just a distance.</p>
+
+  <p>&ldquo;+380% average return&rdquo; is a distance. It says our positions, in total, since we bought them, are up that much. It does not say <i>since when</i>. The answer is an average of 5.13 years, with the oldest entry dating to 2013.</p>
+
+  <p>There is a second problem hiding underneath. <b>None of those 87 positions has ever been closed.</b> They are marked at today&rsquo;s price and still held. So the cumulative figure does something quietly dishonest with time: it rises every year that the market rises, with no new decision from us at all. A firm that made a handful of good calls in 2021 and has done nothing since can watch its &ldquo;average return&rdquo; climb indefinitely, and advertise it as though it were evidence of ongoing skill. We were, without intending to, doing exactly that.</p>
+
+  <div class="danger"><b>The uncomfortable version.</b> Our headline number would have kept growing even if every idea we had after 2024 was worthless. That is not a hypothetical: our most recent published thesis entry is dated May 2024. A metric that improves while you do nothing is not measuring you.</div>
+
+  <h2>3. The honest numbers</h2>
+
+  <p>Annualising asks a different question: not &ldquo;how far did it travel,&rdquo; but &ldquo;how fast.&rdquo; It converts a total into a per-year rate, so a five-year hold and a one-year hold can finally be compared. Here is the whole ledger both ways.</p>
+
+  <div class="tw"><table>
+    <tr><th>Group</th><th>n</th><th>Win rate</th><th>Cumulative</th><th>Avg hold</th><th>Annualised (mean)</th><th>Annualised (median)</th></tr>
+    <tr><td><b>All positions</b></td><td>87</td><td>82.8%</td><td>+343.5%</td><td>5.13 yr</td><td><b class="new">+27.7%/yr</b></td><td><b class="new">+21.2%/yr</b></td></tr>
+    <tr><td>HIGH conviction</td><td>47</td><td>89.4%</td><td>+504.7%</td><td>5.02 yr</td><td class="new">+41.4%/yr</td><td class="new">+32.1%/yr</td></tr>
+    <tr><td>MEDIUM conviction</td><td>40</td><td>75.0%</td><td>+154.1%</td><td>5.27 yr</td><td>+11.7%/yr</td><td>+14.0%/yr</td></tr>
+    <tr><td>S&amp;P 500, matched</td><td>&mdash;</td><td>&mdash;</td><td>+109.6%</td><td>5.13 yr</td><td>+15.0%/yr</td><td>&mdash;</td></tr>
+  </table></div>
+
+  <p>We report the <b>median</b> alongside the mean deliberately. The mean is pulled upward by a handful of enormous winners &mdash; one position is up more than 2,600% &mdash; and a single outlier can carry an average a long way. The median is the middle position: half did better, half did worse. When the two disagree, the median is usually the more honest description of a typical outcome.</p>
+
+  <div class="real"><b>What survives the correction.</b> About <b>six percentage points a year over the index, across five years, with every loss included and nothing cherry-picked.</b> That is a result worth having. It is simply a smaller, more believable number than the one we had been printing &mdash; and it is the one we can defend line by line.</div>
+
+  <h2>4. The part that makes our case stronger</h2>
+
+  <p>Here is the genuinely useful thing the correction surfaced. The claim we actually care about is not &ldquo;we pick good stocks.&rdquo; It is <b>&ldquo;when we say HIGH conviction, that label carries information.&rdquo;</b> A rating system that does not separate outcomes is decoration.</p>
+
+  <p>On cumulative numbers the separation looked enormous &mdash; +504.7% against +154.1% &mdash; but some of that gap was simply time: if HIGH-conviction names happened to be bought earlier, they would show bigger totals for no better reason than a longer runway. Annualising strips that out, and the separation holds: <b>+32.1% a year against +14.0%.</b> The labels are doing real work.</p>
+
+  <p>That is a stronger claim than the one we were making, because it cannot be explained away by a calendar.</p>
+
+  <div class="flag"><b>What we still cannot prove.</b> We cannot yet demonstrate that the HIGH and MEDIUM labels on these historical 87 were assigned <i>at the time we published</i> rather than with the benefit of hindsight. That is why we do not headline the conviction numbers. Every new signal is now rated and cryptographically signed at publication, so the point-in-time proof accumulates going forward. Until there is enough of it, treat the tier comparison as suggestive, not settled.</div>
+
+  <h2>5. Zoom all the way out: how to check anyone&rsquo;s track record</h2>
+
+  <p>This failure mode is not ours alone. It is close to universal in financial marketing, and it survives because it is not a lie &mdash; every number involved is arithmetically true. Three questions catch nearly all of it, and none requires any maths beyond division.</p>
+
+  <h3>Question 1: Over what period?</h3>
+  <p>If a return has no time attached, it is a distance, not a speed. Divide mentally: a 400% total over ten years is roughly 17% a year, which is good. The same 400% over two years is about 71% a year, which is extraordinary and probably unrepeatable. <b>The same headline can describe a solid record or a fantasy, depending on a number they did not print.</b></p>
+
+  <h3>Question 2: Are the positions closed?</h3>
+  <p>Open positions are marked at today&rsquo;s price and can drift back. Closed positions are finished facts. A record built entirely of open positions &mdash; ours is &mdash; is a record of decisions that have not fully resolved. Worse, as above, it keeps improving on its own in a rising market. Ask what share of the track record is realised. If the answer is &ldquo;none,&rdquo; the number is a snapshot of an unfinished experiment.</p>
+
+  <h3>Question 3: Compared with what, over the same window?</h3>
+  <p>+21% a year is excellent against an index returning 15%, and catastrophic against one returning 30%. A benchmark is only meaningful when it is measured over <i>exactly</i> the same periods &mdash; the same entry dates, the same holding lengths. Any comparison that quietly uses a different window is not a comparison.</p>
+
+  <div class="box">
+    <h3 style="margin-top:0;">Run it on us</h3>
+    <p style="margin-bottom:0;"><b>1. Over what period?</b> 5.13 years average, entries 2013 to 2024. <b>2. Are the positions closed?</b> No &mdash; 87 of 87 are open, so every return quoted is unrealised. <b>3. Compared with what?</b> The S&amp;P 500 over matched windows, +15.0% a year against our +21.2% median. Those are the three worst-sounding honest answers we can give, and we would rather you have them from us than find them yourself.</p>
+  </div>
+
+  <h2>6. What we changed, and what is still wrong</h2>
+
+  <p>Changed on 11 September 2026:</p>
+  <ul>
+    <li>The track record page now leads with the <b>annualised</b> figure and states the average holding period beneath it. Cumulative totals are still shown, because they are real &mdash; just no longer alone.</li>
+    <li>Every figure now carries <b>the date it was measured</b>, not merely the date the page was published. A stale number presented as current was the mechanical cause of this whole correction.</li>
+    <li>The same treatment has been applied to our Decision Ledger, which had the identical problem.</li>
+    <li>The calculation now runs <b>nightly</b> instead of whenever someone remembers. The original script carried a comment saying it would be scheduled &ldquo;later.&rdquo; Later did not arrive for three months.</li>
+  </ul>
+
+  <p>Still wrong, and stated here rather than quietly fixed one day:</p>
+  <ul>
+    <li>The per-position table shows a single portfolio-level S&amp;P figure on every row. Each position has its own matched-window benchmark in the underlying data; the table should use it and currently does not.</li>
+    <li>We cannot yet prove the historical conviction labels were assigned at publication rather than in retrospect. See the caveat above.</li>
+    <li>Our most recent published thesis entry is dated <b>May 2024</b>. The track record is real; it is also not currently being extended, and we would rather say that plainly than let a page of past results imply otherwise.</li>
+  </ul>
+
+  <div class="real"><b>Why publish this at all.</b> Nobody asked. No reader caught it. We found it during a routine audit of our own numbers and could have quietly changed a figure on a page that almost nobody reads closely. The reason not to is simple: the entire value of a track record is that it is the one thing we cannot spin. The moment we start editing it silently, it stops being evidence and becomes marketing &mdash; and then everything else we publish is worth less too. A correction costs us a big number. Hiding one would cost us the only thing that makes the rest worth reading.</div>
+
+  <p class="disc">Figures measured 11 September 2026 from the live 87-thesis ledger. Returns are unrealised and cumulative since entry unless explicitly labelled annualised. Annualised figures are computed per position and then averaged, never as a growth rate of the average. Past performance does not predict future results, and a five-year window that contains a historic bull market is a friendly window. Nothing here is financial advice.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>

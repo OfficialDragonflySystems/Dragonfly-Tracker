@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Dragonfly Systems full methodology and multi-year track record. Every thesis, every ticker — including the losses. +380% average buy &amp; hold return across 87 thesis positions vs +117% S&amp;P 500 over matched windows.">
+<meta name="description" content="Dragonfly Systems full methodology and multi-year track record. Every thesis, every ticker - including the losses. +21%/yr median annualised across 87 thesis positions (+343% cumulative over 5.1 years average, unrealised) vs +15%/yr for the S&amp;P 500 over matched windows. Measured 2026-09-11.">
 <meta property="og:title" content="Dragonfly Systems — Full Track Record &amp; Methodology">
 <meta property="og:description" content="Every thesis, measured across more than a decade of public data. Buy &amp; hold, no cherry-picking — including the losses.">
 <meta property="og:image" content="https://officialdragonflysystems.com/Tracker/og-image.png">
@@ -577,15 +577,23 @@ function toggleTheme() {
 <!-- SUMMARY STATS BAR -->
 <div class="stats-bar">
   <div class="stats-bar-inner">
+    <!-- 2026-09-11: was "+380%" / "+117%" with no date and no holding period.
+         Two problems. (1) Those were a JUNE 2026 snapshot shown as current; recomputed
+         from the live 87-thesis ledger today they are +343.5% and +109.6%, i.e. the page
+         was overstating. (2) Far more important, a cumulative return on positions that are
+         still OPEN and average 5.1 YEARS old reads as a recent, repeatable result. The
+         annualised figure is the one a reader can actually act on, and it is the one that
+         survives someone checking our arithmetic. Both are now shown, with the vintage
+         dated, per the standing rule to date the DATA not just the page. -->
     <div class="stat-cell">
-      <div class="num">+380%</div>
-      <div class="lbl">Avg return &mdash; buy &amp; hold</div>
-      <div class="sub">Held to thesis invalidation</div>
+      <div class="num">+21%<span style="font-size:13px;font-weight:400;color:#7bbf90;">/yr</span></div>
+      <div class="lbl">Median return &mdash; annualised</div>
+      <div class="sub">+343% cumulative over 5.1 yrs avg &middot; unrealised, still held</div>
     </div>
     <div class="stat-cell">
-      <div class="num muted">+117% <span style="font-size:11px;font-weight:400;color:#6a9;">(matched windows)</span></div>
+      <div class="num muted">+15%<span style="font-size:13px;font-weight:400;color:#6a9;">/yr</span></div>
       <div class="lbl">S&amp;P 500 same periods</div>
-      <div class="sub">SPY benchmark, matched windows</div>
+      <div class="sub">+110% cumulative, matched windows</div>
     </div>
     <div class="stat-cell">
       <div class="num">83%</div>
@@ -645,7 +653,7 @@ body.dark .eq-leg-item { color:#9ca; }
   <div class="section-label">Strategy Backtest &mdash; since inception</div>
   <h2>How $12,000 grew with the system.</h2>
   <p class="lead">Starting capital: <strong>$12,000 CAD</strong> &mdash; January 2013. 4% position sizing per signal entry. Every position bought and <strong>held to thesis invalidation</strong> &mdash; no trailing stops, no profit-taking. No leverage, no margin.</p>
-  <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:#888;line-height:1.7;max-width:680px;margin-top:8px;">Two different lenses, both shown (backtest reference, as of June 2026): the <strong>+380%</strong> headline is the average return <em>per position</em>. The curve below is a <strong>$12,000 portfolio</strong> compounding across 25 staggered entries over 13 years &mdash; the same theses, measured as an account would actually grow.</p>
+  <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:#888;line-height:1.7;max-width:680px;margin-top:8px;">Two different lenses, both shown (backtest reference, as of June 2026): the <strong>+380%</strong> headline is the average return <em>per position</em> as of June 2026 (+343% recomputed 2026-09-11). The curve below is a <strong>$12,000 portfolio</strong> compounding across 25 staggered entries over 13 years &mdash; the same theses, measured as an account would actually grow.</p>
 
   <div class="eq-stats">
     <div class="eq-stat green">
@@ -681,7 +689,7 @@ body.dark .eq-leg-item { color:#9ca; }
     Path derived from verified returns for all explicitly tracked positions:
     VRT (+2,739%&rarr;+2,297%), MOD (+2,505%&rarr;+2,310%), NVDA (+1,549%&rarr;+1,333%), CCJ (+1,083%&rarr;+832%), OKLO (+1,961%&rarr;+596%), BE (+1,028%&rarr;+944%),
     MP (+585%&rarr;+323%), WPM (+497%&rarr;+355%) &mdash; each shown peak&rarr;current, PLUG (&minus;92% &mdash; a near-total loss, shown not hidden),
-    ENPH (&minus;72% loss, included). Remaining positions applied at the buy &amp; hold average (+380%) from the full 87-thesis ledger.
+    ENPH (&minus;72% loss, included). Remaining positions applied at the buy &amp; hold average (+380%, the June 2026 ledger figure this curve was built from; the ledger reads +343% as of 2026-09-11).
     25 positions &times; $480 each (4% of $12,000). No leverage, no margin, no transaction costs. Entries at closing price on signal detection date.
     Peak portfolio value ~$81,400 in Q4 2024; current pullback reflects VRT and NVDA off 2024 highs.
     TSX benchmark uses XIC total-return index. S&amp;P 500 benchmark uses SPY price return.
@@ -944,7 +952,7 @@ body.dark .eq-leg-item { color:#9ca; }
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
         <div style="width:184px;font-size:11.5px;color:#9ca;text-align:right;">Equal-weight buy &amp; hold</div>
         <div style="flex:1;background:#06120a;border-radius:3px;height:26px;"><div style="width:68%;height:100%;background:#1f7a44;border-radius:3px;"></div></div>
-        <div style="width:54px;font-size:13px;font-weight:800;color:#7bbf90;">+380%</div>
+        <div style="width:54px;font-size:13px;font-weight:800;color:#7bbf90;">+343%</div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
         <div style="width:184px;font-size:11.5px;color:#9ca;text-align:right;">Conviction-weighted 2:1</div>
@@ -983,7 +991,7 @@ body.dark .eq-leg-item { color:#9ca; }
     <div style="background:#1a1405;border:1px solid #3a3000;border-radius:8px;padding:18px 22px;">
       <div style="font-size:10px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;">Forward-verification in progress</div>
       <div style="font-size:13px;color:#c8b890;line-height:1.75;">
-        These conviction figures are backtest results, and we hold them to a higher bar than that. We cannot yet prove the HIGH / MEDIUM labels on the historical 87 were assigned <em>at signal time</em> rather than with hindsight &mdash; so we don't headline them. Instead, every new signal is conviction-rated and cryptographically signed <em>at publish</em>, and the live track record further down this page is accumulating the real, point-in-time proof. <strong style="color:#dff0df;">Buy &amp; hold (+380%) is what we stand on today; conviction-weighting is the edge we're proving in the open.</strong>
+        These conviction figures are backtest results, and we hold them to a higher bar than that. We cannot yet prove the HIGH / MEDIUM labels on the historical 87 were assigned <em>at signal time</em> rather than with hindsight &mdash; so we don't headline them. Instead, every new signal is conviction-rated and cryptographically signed <em>at publish</em>, and the live track record further down this page is accumulating the real, point-in-time proof. <strong style="color:#dff0df;">Buy &amp; hold (+21%/yr median, +343% cumulative over an average 5.1-year hold, measured 2026-09-11) is what we stand on today; conviction-weighting is the edge we're proving in the open.</strong>
       </div>
     </div>
   </div>
@@ -1270,7 +1278,7 @@ body.dark .eq-leg-item { color:#9ca; }
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
         <div style="width:160px;font-size:11.5px;color:#dff0df;text-align:right;font-weight:700;">Buy &amp; Hold</div>
         <div style="flex:1;background:#06120a;border-radius:3px;height:26px;"><div style="width:100%;height:100%;background:linear-gradient(90deg,#1f7a44,#27ae60);border-radius:3px;"></div></div>
-        <div style="width:54px;font-size:13px;font-weight:800;color:#27ae60;">+380%</div>
+        <div style="width:54px;font-size:13px;font-weight:800;color:#27ae60;">+343%</div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
         <div style="width:160px;font-size:11.5px;color:#9ca;text-align:right;">Catastrophic &minus;70% stop</div>
@@ -1285,7 +1293,7 @@ body.dark .eq-leg-item { color:#9ca; }
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
         <div style="width:160px;font-size:11.5px;color:#888;text-align:right;">S&amp;P 500 <span style="font-size:9px;">(same windows)</span></div>
         <div style="flex:1;background:#06120a;border-radius:3px;height:26px;"><div style="width:34%;height:100%;background:#3a3a3a;border-radius:3px;"></div></div>
-        <div style="width:54px;font-size:13px;font-weight:800;color:#888;">+117%</div>
+        <div style="width:54px;font-size:13px;font-weight:800;color:#888;">+110%</div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
         <div style="width:160px;font-size:11.5px;color:#9ca;text-align:right;">Trailing stop 25%</div>
@@ -1395,35 +1403,35 @@ body.dark .eq-leg-item { color:#9ca; }
           <td class="td-ticker">VRT</td>
           <td class="td-sector">Data Center Cooling &amp; Power</td>
           <td class="right td-pos-strong">+2,739% &rarr; +2,297%</td>
-          <td class="td-spy">+117% SPY</td>
+          <td class="td-spy">+110% SPY</td>
         </tr>
         <!-- MOD -->
         <tr>
           <td class="td-ticker">MOD</td>
           <td class="td-sector">HVAC / Thermal Management</td>
           <td class="right td-pos-strong">+2,505% &rarr; +2,310%</td>
-          <td class="td-spy">+117% SPY</td>
+          <td class="td-spy">+110% SPY</td>
         </tr>
         <!-- CCJ -->
         <tr>
           <td class="td-ticker">CCJ</td>
           <td class="td-sector">Uranium / Nuclear Energy</td>
           <td class="right td-pos-strong">+1,083% &rarr; +832%</td>
-          <td class="td-spy">+117% SPY</td>
+          <td class="td-spy">+110% SPY</td>
         </tr>
         <!-- PLUG -->
         <tr>
           <td class="td-ticker">PLUG</td>
           <td class="td-sector">Hydrogen Fuel Cell</td>
           <td class="right td-neg">&minus;92%</td>
-          <td class="td-spy">+117% SPY</td>
+          <td class="td-spy">+110% SPY</td>
         </tr>
         <!-- ENPH -->
         <tr>
           <td class="td-ticker">ENPH</td>
           <td class="td-sector">Solar Technology</td>
           <td class="right td-neg">&minus;72%</td>
-          <td class="td-spy">+117% SPY</td>
+          <td class="td-spy">+110% SPY</td>
         </tr>
       </tbody>
     </table>
@@ -1435,12 +1443,12 @@ body.dark .eq-leg-item { color:#9ca; }
         <div style="overflow-x:auto;">
         <table class="data-table">
           <tbody>
-            <tr><td class="td-ticker">NVDA</td><td class="td-sector">AI / GPU Compute</td><td class="right td-pos-strong">+1,549% &rarr; +1,333%</td><td class="td-spy">+117%</td></tr>
-            <tr><td class="td-ticker">OKLO</td><td class="td-sector">Advanced Nuclear (Microreactor)</td><td class="right td-pos-strong">+1,961% &rarr; +596%</td><td class="td-spy">+117%</td></tr>
-            <tr><td class="td-ticker">BE</td><td class="td-sector">Fuel Cell / Distributed Energy</td><td class="right td-pos">+1,028% &rarr; +944%</td><td class="td-spy">+117%</td></tr>
-            <tr><td class="td-ticker">AMSC</td><td class="td-sector">Grid / Power Electronics</td><td class="right td-pos">+505% &rarr; +264%</td><td class="td-spy">+117%</td></tr>
-            <tr><td class="td-ticker">MP</td><td class="td-sector">Rare Earth / Critical Minerals</td><td class="right td-pos">+585% &rarr; +323%</td><td class="td-spy">+117%</td></tr>
-            <tr><td class="td-ticker">WPM</td><td class="td-sector">Gold &amp; Silver Streaming</td><td class="right td-pos">+497% &rarr; +355%</td><td class="td-spy">+117%</td></tr>
+            <tr><td class="td-ticker">NVDA</td><td class="td-sector">AI / GPU Compute</td><td class="right td-pos-strong">+1,549% &rarr; +1,333%</td><td class="td-spy">+110%</td></tr>
+            <tr><td class="td-ticker">OKLO</td><td class="td-sector">Advanced Nuclear (Microreactor)</td><td class="right td-pos-strong">+1,961% &rarr; +596%</td><td class="td-spy">+110%</td></tr>
+            <tr><td class="td-ticker">BE</td><td class="td-sector">Fuel Cell / Distributed Energy</td><td class="right td-pos">+1,028% &rarr; +944%</td><td class="td-spy">+110%</td></tr>
+            <tr><td class="td-ticker">AMSC</td><td class="td-sector">Grid / Power Electronics</td><td class="right td-pos">+505% &rarr; +264%</td><td class="td-spy">+110%</td></tr>
+            <tr><td class="td-ticker">MP</td><td class="td-sector">Rare Earth / Critical Minerals</td><td class="right td-pos">+585% &rarr; +323%</td><td class="td-spy">+110%</td></tr>
+            <tr><td class="td-ticker">WPM</td><td class="td-sector">Gold &amp; Silver Streaming</td><td class="right td-pos">+497% &rarr; +355%</td><td class="td-spy">+110%</td></tr>
           </tbody>
         </table>
         </div>
