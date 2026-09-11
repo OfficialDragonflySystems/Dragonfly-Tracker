@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Our Data Was Lying for Five Months. Every Alarm Said It Was Fine. &mdash; Dragonfly Lens</title>
+<meta name="description" content="A trading strategy we spent months building never worked. The edge was manufactured by a defect in our own price data - two versions of history mixed together, bar by bar, inside the same trading day. Every integrity check we had passed it, because every single price in the file was real. Here is how data lies while looking healthy, and the one test that catches it.">
+<meta property="og:title" content="Our Data Was Lying for Five Months. Every Alarm Said It Was Fine.">
+<meta property="og:description" content="The edge was manufactured by our own data. Every integrity check passed, because every price in the file was real. How to catch the errors that look healthy.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/data-was-lying.html">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Data Was Lying for Five Months">
+<meta name="twitter:description" content="Every alarm said it was fine. Every price in the file was real. The edge was still fake.">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .danger{border-left:4px solid var(--bad);background:rgba(248,113,113,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .danger b{color:var(--bad);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .bad-n{color:var(--bad);font-weight:800;} .good-n{color:var(--good);font-weight:800;}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; What We Got Wrong</div>
+  <h1>Our Data Was Lying for Five Months. Every Alarm Said It Was Fine.</h1>
+  <p class="lead">We spent months building a trading strategy around an edge that did not exist. It was not a bad idea badly tested. The edge was <b>manufactured by a defect in our own price data</b> &mdash; two different versions of history mixed together, bar by bar, inside the same trading day. What makes this worth your time is not that we got it wrong. It is <i>why nothing caught it</i>: every integrity check we had said the data was healthy, and every one of them was right, because <b>every single price in the file was a real price.</b> They were just not all measured from the same place.</p>
+  <p class="byline">Dragonfly Lens &middot; 11 September 2026 &middot; Defect found 1 September 2026; full extent measured 10&ndash;11 September. Every figure below is from our own files.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The short version</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>The strategy never worked.</b> On corrupt data it looked strong. On clean data the same code produces a <i>negative</i> expectation. We had been trading it on paper and wondering why live results disappointed. Live was right; the backtest was lying.</li>
+      <li><b>The defect was two versions of the same history, interleaved.</b> Not a wrong price, not a missing day &mdash; two internally-consistent price series about <b>2.4% apart</b>, mixed together within single sessions. On the contract we checked, <b>42% of bars came from one version and 29% from the other</b>, and <b>92 of 105 trading days contained both.</b></li>
+      <li><b>Four separate conclusions died.</b> The strategy edge, the benchmark we measured it against, a finding we had downgraded, and the size of the one effect we still believe in &mdash; that last one was <b>inflated 2.3x.</b></li>
+      <li><b>Every guard passed it,</b> because a mixed series is not broken in any way a guard looks for: not discontinuous, not out of range, not stale, no gaps. Each bar is genuine. The file is only wrong <i>relative to itself.</i></li>
+      <li><b>Our "independent verification" was not independent.</b> The script that confirmed our best result read the same database it was supposed to be checking. It agreed perfectly, as it had to.</li>
+      <li><b>The one test that works:</b> compare against a <i>different source</i>. Not a second calculation &mdash; a second source. That is the whole lesson, and it applies to anyone who trusts a spreadsheet.</li>
+    </ul>
+  </div>
+
+  <h2>1. The growth chart with a moving floor</h2>
+
+  <p>Imagine measuring a child&rsquo;s height every month and writing it on a chart. In March someone measures from the floor. In April, without telling anyone, they measure from the top of a 3-centimetre doorstep. In May, back to the floor. June, the doorstep again.</p>
+
+  <p>Every measurement is real. Nobody lied, nobody fat-fingered a number, and if you check any single entry against the child standing there it is correct. But the <b>chart</b> is nonsense. The growth spurts and shrinkages it shows are the doorstep, not the child. And here is the cruel part: the more carefully you analyse the chart, the more confident you become in a pattern that is purely an artefact of where the tape was held.</p>
+
+  <p>That is exactly what happened to our price data, and futures markets make it unusually easy to do.</p>
+
+  <h3>Why futures data needs a &ldquo;floor&rdquo; at all</h3>
+  <p>A futures contract expires. The one everybody trades today is replaced by next quarter&rsquo;s, and the two trade at slightly different prices for perfectly ordinary reasons &mdash; storage, financing, time. So a chart of &ldquo;the price of the S&amp;P 500 future&rdquo; going back ten years is not one contract. It is dozens, stitched together.</p>
+  <p>To stitch them without fake jumps at every changeover, data providers <b>back-adjust</b>: they shift all the older prices by whatever the gap was, so the seam disappears. It works well. But it means <b>the historical prices in your file are not the prices anyone ever traded at</b> &mdash; they have been shifted to make the line continuous. That is fine, and it is standard, as long as the <i>whole file</i> is shifted the same way.</p>
+  <p>Adjust the same history twice, at different times, with different contract gaps, and you get two versions of the past that are each internally perfect and about 2.4% apart. Put both in one table and you have the doorstep.</p>
+
+  <h2>2. What it actually looked like</h2>
+
+  <p>Here is the fingerprint. For every minute where we could compare our database against an independent vendor copy of the same contract, we took the ratio between them. If the data were clean, that ratio would be 1.0000 everywhere.</p>
+
+  <div class="tw"><table>
+    <tr><th>Ratio, our data vs the vendor</th><th>Share of bars</th><th>Meaning</th></tr>
+    <tr><td>exactly 1.0000</td><td class="good-n">42.3%</td><td>Correct version</td></tr>
+    <tr><td>about 1.024</td><td class="bad-n">28.5%</td><td>The other version, ~2.4% adrift</td></tr>
+    <tr><td>in between / other</td><td>29.2%</td><td>Boundaries and smaller mixes</td></tr>
+  </table></div>
+
+  <p>Two clusters. That is the signature of two versions, not of noise &mdash; noise is smooth and centred, not lumpy at two specific values. And the mixing was not neatly separated by month or by year, which would have been survivable. <b>Ninety-two of one hundred and five trading days contained both versions inside the same session.</b></p>
+
+  <div class="danger"><b>Why that specific pattern is so destructive.</b> A 2.4% step is roughly <b>sixty times</b> the size of a typical overnight move in these markets. So any calculation that happened to span one of those switches did not get a slightly wrong answer. It got an enormous fake move, in whichever direction the switch went. Strategies that look for sharp moves and bet on them reversing &mdash; which is precisely what we had built &mdash; were being fed a steady diet of manufactured sharp moves that reliably &ldquo;reversed&rdquo; when the data flipped back.</div>
+
+  <p>We had not discovered an edge. We had discovered our own data flipping between two rulers, and built a trading strategy that detected it.</p>
+
+  <h2>3. Why every alarm stayed silent</h2>
+
+  <p>We are not careless about this. We run integrity checks on every series before it is used. They look for the ways data normally goes wrong, and they all passed. Look at why:</p>
+
+  <div class="tw"><table>
+    <tr><th>The check</th><th>What it asks</th><th>Why it passed</th></tr>
+    <tr><td>Missing data</td><td>Are there gaps?</td><td>No gaps. Every minute present.</td></tr>
+    <tr><td>Stale data</td><td>Is the price stuck?</td><td>Prices moved normally all day.</td></tr>
+    <tr><td>Out of range</td><td>Any impossible values?</td><td>Every price plausible. They are real prices.</td></tr>
+    <tr><td>Bad bar shape</td><td>Is the high below the low?</td><td>Every bar internally consistent.</td></tr>
+    <tr><td>Discontinuity</td><td>Any sudden jumps?</td><td><b>0.06% of bars</b> &mdash; below any sane threshold.</td></tr>
+  </table></div>
+
+  <p>That last row is the one that stings. We <i>had</i> a jump detector, aimed at exactly this class of problem, and it saw almost nothing &mdash; because in percentage terms a 2.4% step between two adjacent minutes is unusual but not absurd. Markets do that. The detector was calibrated to catch a series that had been visibly broken in half, and this series had been quietly shuffled instead.</p>
+
+  <div class="flag"><b>The general form of the problem.</b> Every one of those checks examines the file <i>on its own terms</i> &mdash; is it internally sensible? A mixed-vintage series <b>is</b> internally sensible. Each number is real, each bar is well-formed, the whole thing looks like a market. It is wrong only in relation to <i>something outside itself</i>. No amount of staring at the file can reveal that, which is why five months of looking did not.</div>
+
+  <h2>4. The verification that verified nothing</h2>
+
+  <p>This is the part we find hardest to write, and the most useful to publish.</p>
+
+  <p>The one result we still believed in &mdash; a small, real effect, our best-evidenced idea &mdash; had been <i>independently verified</i>. We had a separate script, written later, whose entire job was to recompute it from scratch and check the answer. It reproduced the original figure exactly, to two decimal places. We recorded that as confirmation and moved on.</p>
+
+  <p>The verification script read the same database. It loaded the same contaminated numbers through a slightly different door and did the arithmetic again. Of course it agreed. <b>It was never checking the data; it was checking our multiplication.</b></p>
+
+  <p>When we finally pointed it at a genuinely different source, it disagreed immediately &mdash; and the effect it had been &ldquo;confirming&rdquo; turned out to be <b>2.3 times smaller</b> than we had been claiming.</p>
+
+  <div class="real"><b>The rule we now hold ourselves to.</b> Reproducing a number from the same source verifies the <i>calculation</i>, not the <i>data</i>. A second opinion has to come from a second <b>source</b>. Anything else is agreement with yourself, wearing a lab coat.</div>
+
+  <h2>5. What it cost</h2>
+
+  <div class="tw"><table>
+    <tr><th>What we believed</th><th>What it was</th></tr>
+    <tr><td>The core strategy had a strong statistical edge</td><td>On clean data the same code has a <b class="bad-n">negative</b> expectation. It never worked.</td></tr>
+    <tr><td>We had a benchmark to measure live results against</td><td>The benchmark was built from the same bad data. We were grading against a fiction.</td></tr>
+    <tr><td>A promising effect had faded and was downgraded</td><td>The &ldquo;fade&rdquo; was the defect. On clean data the effect held. <b>Downgrade withdrawn.</b></td></tr>
+    <tr><td>Our best idea was strong</td><td>Real, but <b class="bad-n">2.3x smaller</b> than advertised.</td></tr>
+  </table></div>
+
+  <p>Note the third row, because it cuts against the self-flattering version of this story. Bad data does not only invent things that are not there. It also <b>destroys things that are</b>. We had thrown away a genuine finding because corrupt numbers made it look dead. Contamination is not a bias in one direction; it is a fog.</p>
+
+  <p>The one consolation, and it is a real one: <b>our live paper-trading results had been quietly disagreeing with the backtest for months.</b> We had noticed and assumed the live execution was flawed. It was not. The ledger of things that actually happened was right the whole time, and the model was wrong. When a clean record and a clever model disagree, the record is usually not the thing to fix.</p>
+
+  <h2>6. Where it came from</h2>
+
+  <p>Databases usually record when each row was written. Ours did, and it made the forensics almost anticlimactic. Grouping every price bar by the date it was inserted:</p>
+
+  <ul>
+    <li><b>One large, clean import</b> brought in a complete, correctly-adjusted history.</li>
+    <li><b>Two smaller backfills</b>, run months apart to patch gaps, pulled the same contracts from a source that had been adjusted differently &mdash; and wrote them straight into the same table, interleaved with the good rows.</li>
+  </ul>
+
+  <p>Nobody did anything obviously wrong. Each backfill was a sensible response to a real gap. The mistake was structural: <b>the table had no concept of where a row came from.</b> Two versions of history were allowed to sit side by side with nothing recording that they were measured differently, because it had never occurred to anyone that they could be.</p>
+
+  <h2>7. Zoom all the way out: this is not a trading problem</h2>
+
+  <p>The specifics here are futures data, but the shape is completely general. It happens whenever numbers from more than one source, vintage, or definition end up in the same column &mdash; which is most spreadsheets that have existed for more than a year.</p>
+
+  <p>Three questions catch most of it, and none needs any technical skill.</p>
+
+  <h3>Question 1: Could this file contain two different definitions of the same thing?</h3>
+  <p>Prices adjusted two ways. Revenue before and after a policy change. Headcount including and excluding contractors. Temperatures from two instruments. The failure never announces itself, because <b>both definitions produce believable numbers.</b> If a column has been appended to, patched, or merged at any point, the answer is probably yes.</p>
+
+  <h3>Question 2: Am I checking this against something, or just re-checking myself?</h3>
+  <p>Recalculating, having a colleague review the formula, and running it again tomorrow all test the <i>arithmetic</i>. None of them can see a data defect. Only a genuinely separate source can &mdash; a different vendor, a different system, a physical count, a printed statement. If you cannot name the second source, you have not verified anything.</p>
+
+  <h3>Question 3: When a result looks unusually good, do I check the data before I check the idea?</h3>
+  <p>Our instinct was to admire the edge and then stress-test the <i>strategy</i>. The faster and more reliable move is the opposite: <b>a surprisingly good result is a data question before it is a skill question.</b> Genuine edges are usually small and awkward. Beautiful ones are usually a measurement artefact, and it costs ten minutes to rule that out before spending five months not ruling it out.</p>
+
+  <div class="box">
+    <h3 style="margin-top:0;">What we changed</h3>
+    <ul style="margin-bottom:2px;">
+      <li>Research now routes through a single guarded door instead of reading the raw table wherever convenient.</li>
+      <li>We added the check nothing else could make: <b>compare our copy against an independent copy</b>, bar by bar, and report the share that disagrees. It is the only test that can see this failure.</li>
+      <li>Where no second source exists to compare against, the answer is recorded as <b>UNVERIFIED</b> &mdash; not &ldquo;clean&rdquo;. Three states, never two. Silent bad data is worse than missing data, because it produces confident results.</li>
+      <li>A standing audit lists every remaining place a conclusion still rests on the unguarded table, ranked by whether anything still runs it. As of today, <b>nothing on a schedule reads the bad series.</b></li>
+      <li>Findings that were produced on the bad data and are still quoted are tracked as debt until re-run, rather than assumed fine because they are old.</li>
+    </ul>
+  </div>
+
+  <div class="real"><b>Why publish this.</b> Nobody would have known. The defect is invisible from outside, the conclusions it poisoned were never sold to anyone, and quietly fixing it would have been easy and comfortable. We are writing it down because a research operation that only reports its wins is not producing evidence, it is producing advertising &mdash; and because the single most valuable thing we own is not a strategy. It is knowing which of our numbers we are allowed to believe.</div>
+
+  <p class="disc">All figures from our own files, measured 1&ndash;11 September 2026. Share-of-bars figures are for the contract we examined in most depth; the pattern is present to differing degrees across the affected symbols. Nothing here is financial advice, and none of the affected conclusions was ever published as a subscriber signal.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
