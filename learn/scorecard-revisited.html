@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>In June We Wrote Down What Would Settle the AI Bubble Question. Here Is the Score. &mdash; Dragonfly Lens</title>
+<meta name="description" content="Three months ago we published four checkable tests for whether the AI build-out is real demand or malinvestment. This week the market had exactly that scare. Scoring them honestly: the number we were most worried about got BETTER, and the two we flagged as secondary got much worse. GPU rentals are up 33% year over year; CoreWeave's debt went from under $8bn to over $21bn and its new paper is rated junk; Nvidia's investment in OpenAI went from $2bn-scale deals to $30bn plus a signed $105bn guarantee.">
+<meta property="og:title" content="In June We Wrote Down What Would Settle the AI Bubble Question. Here Is the Score.">
+<meta property="og:description" content="Four tests, published June 10. Scored September 15. One improved, two got worse - and the one that improved is the one everybody points at.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/scorecard-revisited.html">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="We Wrote Down What Would Settle It. Here Is the Score.">
+<meta name="twitter:description" content="Four AI-bubble tests published in June, scored in September. One improved, two got worse.">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .danger{border-left:4px solid var(--bad);background:rgba(248,113,113,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .danger b{color:var(--bad);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:600px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .v-better{color:var(--good);font-weight:800;} .v-worse{color:var(--bad);font-weight:800;} .v-same{color:var(--gold);font-weight:800;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Scoring Our Own Homework</div>
+  <h1>In June We Wrote Down What Would Settle the AI Bubble Question. Here Is the Score.</h1>
+  <p class="lead">On 10 June we published four specific, checkable tests for whether the AI build-out is real demand or <a href="/learn/ai-malinvestment.html">malinvestment</a> &mdash; and said plainly that these numbers, not the arguing, would settle it. This week the market had exactly the scare those tests were written for: the heads of OpenAI and Anthropic publicly called for slowing AI development, and data-centre power and construction stocks were hit hard. So it is a good moment to do the unglamorous thing and mark our own work. <b>The result is not what we expected. The number we were most worried about has got better. The two we treated as secondary have got considerably worse.</b></p>
+  <p class="byline">Dragonfly Lens &middot; 15 September 2026 &middot; Original tests published 10 June 2026. Every figure below is dated, sourced, and compared against what we wrote then &mdash; including where we were wrong.</p>
+
+  <div class="box tldr">
+    <h3 style="margin-top:0;">The score, in one table</h3>
+    <div class="tw"><table>
+      <tr><th>Test</th><th>June 2026 verdict</th><th>September 2026</th><th>Direction</th></tr>
+      <tr><td><b>1. Savings or credit?</b></td><td>SPLIT, moving the wrong way</td><td>Debt over $21bn, new paper rated junk</td><td class="v-worse">WORSE</td></tr>
+      <tr><td><b>2. Capacity ahead of demand?</b></td><td>FLASHING</td><td>Rental prices up 33% year over year</td><td class="v-better">BETTER</td></tr>
+      <tr><td><b>3. Circular financing?</b></td><td>PRESENT</td><td>$2bn-scale became $30bn plus a $105bn guarantee</td><td class="v-worse">MUCH WORSE</td></tr>
+      <tr><td><b>4. Is the narrative doing the work?</b></td><td>Watch it</td><td>Now the loudest argument in the market</td><td class="v-same">LIVE</td></tr>
+    </table></div>
+    <p style="margin-bottom:2px;"><b>The short read:</b> the overcapacity signal that worried us most in June has reversed, while the financing structure underneath the boom has deteriorated faster than we expected. That is close to the opposite of the story the market told itself this week.</p>
+  </div>
+
+  <h2>Why we are doing this at all</h2>
+
+  <p>It is easy to publish a framework. It costs nothing, it always sounds wise, and nobody comes back to check. The only thing that makes a framework worth reading is whether the person who wrote it returns to it when the numbers are inconvenient.</p>
+  <p>So: in June we did not say &ldquo;it is a bubble&rdquo; or &ldquo;it is not.&rdquo; We said an investment boom turns into malinvestment when specific conditions hold, listed four of them, and wrote down what each looked like at the time. Three months later, three of the four have moved enough to score. Here they are, one at a time.</p>
+
+  <h2>Test 1: Is it funded by savings, or by credit?</h2>
+
+  <p><b>Why it matters, in plain terms.</b> A company spending money it already earned can be wrong without taking anyone else down &mdash; it simply stops. A company spending borrowed money has lenders, covenants and maturity dates, and when it stops, the stopping is disorderly. The same building gets built either way; what differs is what happens if demand disappoints.</p>
+
+  <p><b>What we said in June.</b> Split, and moving the wrong way. The hyperscaler core &mdash; roughly $725bn of capex from Microsoft, Alphabet, Amazon and Meta &mdash; is funded mostly by genuine operating cash flow, which makes it unlike 1999 in an important way. But the marginal layer had turned to debt: CoreWeave&rsquo;s $8.5bn facility secured against GPUs, the first investment-grade rating ever granted to chip-collateralised infrastructure, plus $3.1bn publicly syndicated in May.</p>
+
+  <p><b>What happened since.</b> It has deepened, and the quality has fallen.</p>
+
+  <div class="tw"><table>
+    <tr><th>Facility</th><th>Size</th><th>Closed</th><th>Rating</th></tr>
+    <tr><td>DDTL 4.0</td><td>$8.5bn</td><td>Mar 2026</td><td><b>A3 / A (low)</b> &mdash; investment grade</td></tr>
+    <tr><td>DDTL 5.0 (publicly syndicated)</td><td>$3.1bn</td><td>May 2026</td><td class="v-worse">Ba2 / BB+ &mdash; below investment grade</td></tr>
+    <tr><td>DDTL 5.5</td><td>$2.6bn</td><td>Aug 2026</td><td class="v-worse">Ba2 / BB+, priced at SOFR + 550bp</td></tr>
+  </table></div>
+
+  <p>CoreWeave raised more than <b>$30bn in debt and equity across 2026</b>, and its total debt now exceeds <b>$21bn &mdash; up from under $8bn in 2024.</b></p>
+
+  <div class="danger"><b>The detail that matters more than the size.</b> The <i>first</i> GPU-backed facility earned an investment-grade rating. The ones after it are rated <b>Ba2 / BB+ &mdash; junk</b> &mdash; and the August facility priced at 550 basis points over SOFR. The market did not simply lend more against chips; it lent more against chips <i>on progressively worse terms.</i> That is what the marginal dollar getting riskier looks like while the headline number still grows, and it is the single clearest deterioration on this scorecard.</div>
+
+  <p><b>Score: WORSE.</b> We flagged this as split and moving the wrong way. It kept moving that way, and faster than we expected.</p>
+
+  <h2>Test 2: Is capacity running ahead of demonstrated demand?</h2>
+
+  <p><b>Why it matters, in plain terms.</b> If you want to know whether a hotel-building boom is justified, do not count cranes &mdash; check the nightly room rate. Building while the rate collapses means capacity has outrun anyone&rsquo;s willingness to pay for it. For AI, the room rate is what it costs to rent an hour of GPU time.</p>
+
+  <p><b>What we said in June.</b> Flashing. H100 rental prices had fallen from roughly $8/hr to $2.85&ndash;3.50 &mdash; about a 64% collapse &mdash; as more than 300 providers piled in, <i>while</i> capex accelerated 77%. Falling utilisation prices alongside an accelerating build-out is the textbook gap. We did note a counter-signal and said the market was &ldquo;genuinely contested, not one-way.&rdquo;</p>
+
+  <p><b>What happened since.</b> The counter-signal won, and decisively.</p>
+
+  <ul>
+    <li>The <b>median on-demand H100 price rose ~10% over the past 90 days to about $3.40/hr</b>, and roughly 11% over twelve months.</li>
+    <li>Bank of America put H100 <b>spot at ~$2.80/hr in August 2026</b>, describing GPU spot prices as near all-time highs even for older silicon &mdash; with H100 <b>up 33% year over year.</b></li>
+    <li>Most tellingly, <b>prices rose through 2026 even as H200 and Blackwell shipped.</b> Older chips are supposed to get cheaper when better ones arrive. These did not, because demand for any working GPU outran the industry&rsquo;s ability to add supply.</li>
+  </ul>
+
+  <div class="real"><b>We were wrong on this one, and it is the most important line in this piece.</b> The June reading treated the price collapse as evidence that capacity was outrunning demand. The honest reading now is that the 2024&ndash;25 collapse was a <i>supply</i> event &mdash; hundreds of new providers arriving at once &mdash; not a demand failure. When the rented asset gets <i>more</i> expensive while newer and better substitutes are available, the demand is real. An older chip holding a 33% price gain against its own replacement is about as clean a demand signal as this market produces.</div>
+
+  <p><b>Score: BETTER.</b> Materially. And note where that leaves the argument: the test most often cited as proof of an AI bubble is the one that has improved.</p>
+
+  <h2>Test 3: Is there circular financing?</h2>
+
+  <p><b>Why it matters, in plain terms.</b> If a shopkeeper lends you the money to buy his goods, his sales figures partly measure his own lending, not your appetite. The revenue is real on the way in and vulnerable if the lending ever stops.</p>
+
+  <p><b>What we said in June.</b> Present. Nvidia had invested $2bn in CoreWeave, whose business is buying Nvidia chips; Meta committed roughly $21bn to CoreWeave capacity; Anthropic and Google together pay SpaceX and xAI around $26bn a year for compute built partly to serve them. Real contracts and real money &mdash; but the same names kept appearing on both sides of the table.</p>
+
+  <p><b>What happened since.</b> It went up an order of magnitude.</p>
+
+  <ul>
+    <li><b>Nvidia agreed in February to invest $30bn in OpenAI</b> &mdash; against $2bn-scale deals when we wrote.</li>
+    <li>Reported financing around OpenAI&rsquo;s build-out escalated through July, and in August became a <b>signed $105bn guarantee.</b></li>
+    <li>Oracle is borrowing heavily to build capacity for OpenAI, which introduces the question investors actually started asking this week: if the funding into OpenAI ever wavered, could OpenAI still pay Oracle?</li>
+  </ul>
+
+  <p><b>The honest counter-argument, which deserves stating properly.</b> Nvidia&rsquo;s Jensen Huang publicly rejects the &ldquo;circular financing&rdquo; label, arguing OpenAI pays the lease like any tenant and that its infrastructure plans could represent roughly $600bn of Nvidia compute through 2030. Some asset managers describe the same web as a &ldquo;virtuous circle&rdquo; &mdash; long-term purchase commitments paired with financing are a normal way to lock in supply in a capacity-constrained industry. Both points are fair. Vendor financing is not fraud and is not new.</p>
+
+  <div class="flag"><b>But the historical record is specific about the risk.</b> Revenue round-tripping and vendors financing their own customers did not <i>cause</i> previous technology busts &mdash; they made them worse when they arrived, because the losses landed in more than one place at once. The question is never whether the contracts are real. It is what the arrangement does in the scenario where demand disappoints. On that test, an arrangement that was worth billions in June is worth tens of billions now.</div>
+
+  <p><b>Score: MUCH WORSE.</b></p>
+
+  <h2>Test 4: Is the narrative doing the work?</h2>
+
+  <p>This was the softest of the four in June, and it is now the loudest thing in the market. The heads of OpenAI and Anthropic called publicly for slowing the pace of AI development; AI stocks fell broadly; power-equipment suppliers and data-centre contractors were hit. Nvidia&rsquo;s chief executive is publicly arguing about a label. Analysts are split on whether a credible safety framework makes long-duration capital <i>easier</i> to underwrite rather than harder.</p>
+
+  <p>We are not going to score a test whose measure is essentially vibes. But one distinction is worth holding on to, because a great deal of money moved on it this week: <b>a chief executive asking for guardrails is not a capital-expenditure cut.</b> Those are different events. One is a statement; the other shows up in orders. Which brings us to the only thing we would actually watch.</p>
+
+  <h2>What we would watch instead &mdash; and it is not the share price</h2>
+
+  <p>The whole point of this site is that the AI build-out is a <i>physical</i> event. It needs transformers, switchgear, transmission, cooling, memory and optics, and those things have lead times measured in years. A physical build-out slows down in physical ways, and those show up in order books before they show up in anybody&rsquo;s stock.</p>
+
+  <div class="box">
+    <h3 style="margin-top:0;">The tells that would actually mean a slowdown</h3>
+    <ul style="margin-bottom:2px;">
+      <li><b>Lead times shortening.</b> A large grid transformer has been quoted at around 128 weeks. If that number starts falling, orders are being cancelled. It is the single cleanest signal available and it is not a market price.</li>
+      <li><b>Grid interconnection queues shrinking.</b> Projects withdraw before they stop being announced.</li>
+      <li><b>GPU rental prices falling again</b> &mdash; specifically falling while capex also falls. The 2024&ndash;25 fall happened <i>against</i> rising capex, which is why we now read it as supply, not demand.</li>
+      <li><b>Memory and optics pricing rolling over.</b> These are the inputs with the least substitutability.</li>
+      <li><b>Data-centre starts and permits declining</b> &mdash; starts, not announcements. Announcements are free.</li>
+    </ul>
+  </div>
+
+  <p>None of those five is what moved this week. What moved this week was a statement, and the price of things that sell into the build-out. That may turn out to have been early. It is not, on its own, evidence.</p>
+
+  <h2>Where this leaves us</h2>
+
+  <p>The June conclusion was <b>own the bottleneck, not the boom</b>: the leveraged, fast-depreciating middle &mdash; rented single-purpose compute financed at fixed rates against a three-to-six-year asset &mdash; only wins if the boom continues, while the scarce, slow-depreciating inputs are twenty-to-forty-year assets with demand from grid replacement, electrification and reshoring whether or not AI keeps compounding.</p>
+
+  <p>Three months of evidence has not changed that conclusion. It has sharpened it, and in a slightly uncomfortable direction: <b>the demand looks more real than we thought, and the financing looks more fragile.</b> Those two findings do not cancel out. They point at the same place &mdash; toward the part of the chain that gets paid in both scenarios, and away from the part that only survives one.</p>
+
+  <div class="real"><b>And the honest asymmetry about our own position, restated.</b> A genuine AI-credit bust drags everything down, the infrastructure names included &mdash; lower beta is not immunity. If the boom instead runs another five years, the leveraged middle will outperform our caution and we will have been too careful. We said that in June and it is still true. Writing down the scenario in which you look wrong is the only thing that makes the scorecard worth keeping.</div>
+
+  <p><b>Next check: December 2026</b>, on the same four tests, with the five physical tells above added as a fifth. If the transformer lead times have not moved by then, whatever happened this week was a mood, not a slowdown.</p>
+
+  <p class="disc">Figures dated where cited. June baselines are from our 10 June 2026 piece, <a href="/learn/ai-malinvestment.html">Real Demand or Malinvestment?</a>. September figures: CoreWeave facility sizes, dates and ratings from company announcements and rating-agency reporting; H100 pricing from published provider comparisons and a Bank of America estimate for August 2026; Nvidia-OpenAI figures from company statements and contemporaneous reporting, where the $600bn figure was reported and the $105bn guarantee signed. Where a number is reported rather than confirmed by a filing, we have said so. Educational research, not investment advice.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script src="listen.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
