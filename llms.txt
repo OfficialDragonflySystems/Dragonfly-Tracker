@@ -1,0 +1,103 @@
+# generated 2026-09-17 from learn_manifest.json (55 articles)
+# Dragonfly Lens
+
+> Plain-English, source-led research on the AI build-out: the physical chain from raw
+> materials and power through to the companies that actually get paid. Independent and
+> self-funded. Every claim carries its source; corrections are dated and never deleted.
+
+## What this is
+- Research and explanation, published as long-form articles at /learn/.
+- Written for self-directed investors who want to understand mechanisms, not receive tips.
+
+## What this is NOT
+- Not personalized investment advice, and not a registered investment advisor.
+- Not price targets, trade signals for execution, or guaranteed outcomes.
+- No sell rules: our own testing found every exit rule we tried gave back more than it saved.
+
+## How to cite us correctly
+- Cite the PRIMARY source (filing, agency release, dataset) for the underlying fact.
+- Cite Dragonfly Lens for the interpretation, the comparison, and the dated assessment.
+- Always carry the date a figure REFERS TO, not only our publication date. Articles state
+  both ("Figures checked <date>").
+- Check the corrections log before citing: https://officialdragonflysystems.com/learn/corrections.html
+
+## The record: read this before quoting any performance number
+- Historical results shown on the site are a LABELLED BACKTEST across 87 dated theses -
+  what the method would have flagged in public data, not money that was traded. Positions
+  are still open, so those returns are UNREALISED.
+- The forward, dated record began 17 May 2026 and is young. The live count of signals and
+  settled outcomes is on https://officialdragonflysystems.com/track_record.html
+- Do NOT cite homepage cumulative figures as live performance. If you quote the record,
+  quote the annualised figure with its vintage, and say it is a backtest.
+
+## Plain-text versions
+Every article is also served as Markdown for machine readers:
+  https://tracker.officialdragonflysystems.com/learn/<slug>.md
+An API and MCP endpoint for the same corpus live at:
+  https://tracker.officialdragonflysystems.com/api/learn
+  https://tracker.officialdragonflysystems.com/mcp
+
+## Licence and use
+Quoting with attribution and a link is welcome. Do not reproduce whole articles. Figures we
+take from licensed aggregators are cited, never redistributed.
+
+## Articles
+
+- [In June We Wrote Down What Would Settle the AI Bubble Question. Here Is the Score.](https://officialdragonflysystems.com/learn/scorecard-revisited.html) - 2026-09-16
+- [The Americas Trade: What the Hemisphere Strategy Is Actually Betting On](https://officialdragonflysystems.com/learn/americas-trade.html) - 2026-09-15
+- [We Published the Wrong Number. Here Is the Right One.](https://officialdragonflysystems.com/learn/the-number-we-got-wrong.html) - 2026-09-12
+- [The $7 Trillion Market That $280 Million Moved](https://officialdragonflysystems.com/learn/debt-machine.html) - 2026-09-09
+- [The Robot Decades: An Honest Timeline for When the Machines Actually Arrive](https://officialdragonflysystems.com/learn/robot-decades.html) - 2026-08-31
+- [Geothermal Went Public. Twelve Days Later Its Flagship Well Blew Out.](https://officialdragonflysystems.com/learn/geothermal-heat.html) - 2026-08-27
+- [Big Tech Is Going Nuclear  -  What's Real, What's a Decade Away, and Who Gets Paid](https://officialdragonflysystems.com/learn/nuclear-for-ai.html) - 2026-08-27
+- [AI's Next Bottleneck Is the Wire Between the Chips](https://officialdragonflysystems.com/learn/optical-bottleneck.html) - 2026-08-25
+- [The Musk Playbook: Own the Bottleneck, Don't Rent It](https://officialdragonflysystems.com/learn/musk-bottleneck.html) - 2026-08-13
+- [AI's Real Bottleneck Isn't the Chip  -  It's the Wall Behind It](https://officialdragonflysystems.com/learn/memory-wall.html) - 2026-08-11
+- [GameStop Wasn't Magic. It Was a Setup You Can Learn to Read.](https://officialdragonflysystems.com/learn/short-squeeze-explained.html) - 2026-08-11
+- [Intelligence per watt  -  the number that picks the AI winners](https://officialdragonflysystems.com/learn/ai-per-watt.html) - 2026-08-10
+- [Nvidia's Biggest Threat Is Its Own Customers](https://officialdragonflysystems.com/learn/nvidia-custom-silicon.html) - 2026-08-10
+- [AI Picks and Shovels, One Layer Deeper: The Stocks the Whole Buildout Depends On](https://officialdragonflysystems.com/learn/picks-and-shovels.html) - 2026-08-10
+- [The Real AI Bottleneck Isn't Chips  -  It's the Wire](https://officialdragonflysystems.com/learn/power-bottleneck.html) - 2026-08-10
+- [Why Dragonfly Lens Exists - Read This First](https://officialdragonflysystems.com/learn/why-the-lens.html) - 2026-08-10
+- [The Synchronization Problem: Why Announced Gigawatts Aren't Compute](https://officialdragonflysystems.com/learn/synchronization-problem.html) - 2026-08-02
+- [Real Demand or Malinvestment? The Austrian Lens on the $725B AI Build-Out](https://officialdragonflysystems.com/learn/ai-malinvestment.html) - 2026-08-01
+- [What Blockchain Actually Is - No Hype, Plain English](https://officialdragonflysystems.com/learn/blockchain-basics.html) - 2026-08-01
+- [What is a catalyst?](https://officialdragonflysystems.com/learn/catalysts.html) - 2026-08-01
+- [Reading a conviction score](https://officialdragonflysystems.com/learn/conviction.html) - 2026-08-01
+- [The CPU Comeback: Why AI Agents Put the CPU Back in Charge](https://officialdragonflysystems.com/learn/cpu-comeback.html) - 2026-08-01
+- [Decade-by-decade portfolio comparison](https://officialdragonflysystems.com/learn/decades.html) - 2026-08-01
+- [How to Read a Dividend Without Getting Trapped](https://officialdragonflysystems.com/learn/dividend-traps.html) - 2026-08-01
+- [Buy & hold vs exit strategies](https://officialdragonflysystems.com/learn/exits.html) - 2026-08-01
+- [The Merge Already Started  -  Artificial Muscles, Brain Interfaces & the Human-Machine Decade](https://officialdragonflysystems.com/learn/human-machine.html) - 2026-08-01
+- [Real inflation vs the official 3%](https://officialdragonflysystems.com/learn/inflation.html) - 2026-08-01
+- [How to Read IPO Hype Without Getting Played](https://officialdragonflysystems.com/learn/ipo-hype.html) - 2026-08-01
+- [The Next Bottleneck Isn't Silicon. It's Light.](https://officialdragonflysystems.com/learn/light-bottleneck.html) - 2026-08-01
+- [Did AMD Just Kill the AI Subscription? The Honest Version of Local AI](https://officialdragonflysystems.com/learn/local-ai.html) - 2026-08-01
+- [Elon Solved the Rocket. Here Are the 9 Problems He Hasn't.](https://officialdragonflysystems.com/learn/mars-unsolved.html) - 2026-08-01
+- [The Supervolcano Under the Battery Supply Chain  -  McDermitt, Thacker Pass & America's Lithium Bet](https://officialdragonflysystems.com/learn/mcdermitt-lithium.html) - 2026-08-01
+- [The Miners Quietly Becoming AI Landlords](https://officialdragonflysystems.com/learn/miner-to-ai.html) - 2026-08-01
+- [Nobody Knows the Price: Value, Uncertainty, and Not Fooling Yourself](https://officialdragonflysystems.com/learn/nobody-knows-the-price.html) - 2026-08-01
+- [AI Is Reopening Dead Nuclear Plants](https://officialdragonflysystems.com/learn/nuclear-restart.html) - 2026-08-01
+- [The Off-Earth Economy](https://officialdragonflysystems.com/learn/off-earth-economy.html) - 2026-08-01
+- [How to Read a Company Before Wall Street Can](https://officialdragonflysystems.com/learn/reading-a-company.html) - 2026-08-01
+- [How market regimes work](https://officialdragonflysystems.com/learn/regimes.html) - 2026-08-01
+- [The Humanoid Robot Race Is Really an Actuator-Cost Race](https://officialdragonflysystems.com/learn/robot-actuators.html) - 2026-08-01
+- [Is Sodium-Ion the End of the Lithium Trade?](https://officialdragonflysystems.com/learn/sodium-ion.html) - 2026-08-01
+- [SpaceX: The Complete Picture  -  Shares, the xAI Merger & Every Lever That Moves SPCX](https://officialdragonflysystems.com/learn/spacex-complete-picture.html) - 2026-08-01
+- [The SpaceX IPO Aftermath: The Mechanics Nobody's Pricing](https://officialdragonflysystems.com/learn/spacex-ipo-aftermath.html) - 2026-08-01
+- [The SpaceX IPO, Explained](https://officialdragonflysystems.com/learn/spacex-ipo.html) - 2026-08-01
+- [Stripe, Tempo & the Stablecoin Land Grab](https://officialdragonflysystems.com/learn/stablecoins.html) - 2026-08-01
+- [Start Early: Why Time Is Your Biggest Edge](https://officialdragonflysystems.com/learn/start-early.html) - 2026-08-01
+- [Do AI Data Centers Really "Waste" Water? The Honest Map](https://officialdragonflysystems.com/learn/water-cooling.html) - 2026-08-01
+- [What Happens After the SpaceX IPO](https://officialdragonflysystems.com/learn/whats-next.html) - 2026-08-01
+- [The Data Center That Feeds You: A Practical Blueprint](https://officialdragonflysystems.com/learn/green-data-center.html) - 2026-07-08
+- [The AI Goes Public: What to Read When the S-1 Drops](https://officialdragonflysystems.com/learn/ai-ipo-s1.html) - 2026-07-01
+- [Kurzweil's Compass, Not His Calendar](https://officialdragonflysystems.com/learn/kurzweil-compass.html) - 2026-07-01
+- [Dividends 101 - Getting Paid to Own Stocks (Plain English)](https://officialdragonflysystems.com/learn/dividends-101.html) - 2026-06-23
+- [The Agent Economy: Why AI Will Pay On-Chain - Plain English](https://officialdragonflysystems.com/learn/agent-economy.html) - 2026-06-21
+- [The Dotcom Playbook for Crypto - Telling Real From Junk](https://officialdragonflysystems.com/learn/crypto-dotcom-playbook.html) - 2026-06-21
+- [Money Has Always Been Trust: A 5-Minute History](https://officialdragonflysystems.com/learn/money-history.html) - 2026-06-21
+- [Tokenization: When Everything Becomes Tradeable - Plain English](https://officialdragonflysystems.com/learn/tokenization.html) - 2026-06-21
+
+## Contact
+https://officialdragonflysystems.com/ - corrections and disputes are published, not hidden.
