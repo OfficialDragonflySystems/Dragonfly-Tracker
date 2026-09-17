@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!-- PREVIEW ONLY - proposed simplified homepage, 2026-09-17. Not linked from the live site. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<!-- preview build 2026-09-17b -->
+<meta name="description" content="Dragonfly Lens turns filings, policy changes and industry data into plain-English research on AI infrastructure, energy and critical materials - with the sources, the risks, and a corrections log we never delete.">
+<title>Dragonfly Lens &mdash; Understand the companies behind the AI buildout</title>
+<link rel="icon" type="image/png" href="/Tracker/og-image.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:  #2d6a4f;
+  --lime:   #4ade80;
+  --gold:   #c8a84b;
+  --dark:   #0d1f0f;
+  --text:   #1a1a1a;
+  --muted:  #666;
+  --border: #e8e8e4;
+  --bg:     #f9f9f7;
+}
+html { scroll-behavior: smooth; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--text); background: #fff; }
+.sans { font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+/* -- PREVIEW BANNER -- */
+#preview-banner { background:#fbbf24; color:#0d1f10; font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px; padding:9px 44px 9px 18px; text-align:center; position:relative; line-height:1.5; }
+#preview-banner strong { letter-spacing:.06em; }
+#preview-banner a { color:#0d1f10; font-weight:700; }
+#preview-close { position:absolute; top:5px; right:12px; background:none; border:none;
+  font-size:19px; line-height:1; color:#0d1f10; cursor:pointer; padding:2px 6px; }
+
+/* -- NAV -- */
+nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 10px 24px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 9px; border-bottom: 1px solid #1a3a1f; }
+.nav-logo { color: var(--lime); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px;
+  font-weight: 800; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+.nav-links { display: flex; gap: 13px; align-items: center; flex-wrap: wrap; justify-content: center; row-gap: 7px; }
+.nav-links a { color: #9ca; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-decoration: none; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: var(--lime); color: var(--dark) !important; font-weight: 700; padding: 7px 16px; border-radius: 4px; }
+.nav-cta:hover { background: #86efac; }
+
+/* -- HERO -- */
+.hero { background: var(--dark); padding: 74px 32px 64px; text-align: center; }
+.hero-eyebrow { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--lime); margin-bottom: 20px; }
+.hero h1 { font-size: clamp(28px, 5vw, 46px); font-weight: normal; color: #fff; line-height: 1.2; max-width: 740px; margin: 0 auto 20px; }
+.hero p.sub { font-size: 17px; color: #cfe8d2; line-height: 1.7; max-width: 660px; margin: 0 auto 32px;
+  font-family: 'Helvetica Neue', Arial, sans-serif; }
+.hero p.sub a { color: var(--lime); font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(74,222,128,.4); }
+.hero-btns { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-block; padding: 14px 28px; border-radius: 5px; font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px; font-weight: 700; text-decoration: none; text-align: center; transition: opacity .15s; }
+.btn:hover { opacity: .88; }
+.btn-primary { background: var(--lime); color: var(--dark); }
+.quiet { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; color: #8ab890; text-decoration: none; border-bottom: 1px solid rgba(138,184,144,.35); }
+.quiet:hover { color: #cfe8d2; }
+
+/* -- SECTIONS -- */
+section { padding: 56px 32px; max-width: 1000px; margin: 0 auto; }
+.section-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+h2 { font-size: clamp(22px, 3vw, 30px); font-weight: normal; margin-bottom: 16px; line-height: 1.25; }
+.lead { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 660px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* -- FEATURED ARTICLE -- */
+.featured { display:block; text-decoration:none; background:#0a1a0c; border:1px solid #1a3a1f;
+  border-radius:12px; padding:26px 28px; max-width:760px; margin:0 auto; }
+.featured .kicker { font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px; font-weight:800;
+  letter-spacing:.1em; text-transform:uppercase; color:#4ade80; margin-bottom:9px; }
+.featured h3 { font-family:Georgia,serif; font-size:clamp(19px,2.6vw,23px); font-weight:normal;
+  color:#fff; line-height:1.3; margin-bottom:10px; }
+.featured p { font-family:'Helvetica Neue',Arial,sans-serif; font-size:13.5px; color:#9cc0a5; line-height:1.65; margin:0 0 14px; }
+.featured .arrow { font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px; color:#4ade80; font-weight:700; }
+
+/* -- HOW WE WORK -- */
+.work-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:32px; }
+.work-card { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:22px 24px; }
+.work-card h3 { font-family:'Helvetica Neue',Arial,sans-serif; font-size:14px; font-weight:800; color:var(--dark); margin-bottom:8px; }
+.work-card p { font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px; color:var(--muted); line-height:1.7; }
+.work-card a { color:var(--green); font-weight:700; text-decoration:none; }
+
+/* -- RECORD LINE -- */
+.record-line { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:32px; }
+.record-line p { max-width:760px; margin:0 auto; font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:14.5px; line-height:1.8; color:#444; text-align:center; }
+.record-line a { color:var(--green); font-weight:700; }
+
+/* -- PRICING -- */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 20px; margin-top: 36px; }
+.plan { border: 1px solid var(--border); border-radius: 8px; padding: 26px 26px 22px; position: relative; display:flex; flex-direction:column; }
+.plan.featured-plan { border-color: var(--green); border-width: 2px; }
+.plan-badge { position: absolute; top: -12px; left: 22px; background: var(--green); color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700; padding: 3px 10px;
+  border-radius: 20px; letter-spacing: .05em; }
+.plan-name { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+.plan-price { font-size: 34px; font-weight: 800; font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--dark); }
+.plan-price span { font-size: 14px; font-weight: normal; color: var(--muted); }
+.plan-annual { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: var(--green); margin: 4px 0 14px; }
+.plan-who { font-family:'Helvetica Neue',Arial,sans-serif; font-size:12px; color:var(--muted); font-style:italic;
+  line-height:1.6; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.plan-features { list-style: none; margin-bottom: 22px; }
+.plan-features li { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: #444;
+  padding: 5px 0; display: flex; gap: 8px; line-height:1.55; }
+.check { color: var(--green); font-weight: 700; flex-shrink: 0; }
+.plan .btn { width: 100%; margin-top:auto; }
+.price-note { font-family:'Helvetica Neue',Arial,sans-serif; font-size:12.5px; color:var(--muted); margin-top:20px; text-align:center; }
+.price-note a { color:var(--green); }
+
+/* -- FOOTER -- */
+footer { background: var(--dark); padding: 40px 32px; text-align: center; }
+footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #9cc0a3; line-height: 1.8; }
+footer a { color: #4ade80; text-decoration: none; }
+footer a:hover { color: var(--lime); }
+
+@media (max-width: 600px) {
+  nav { padding: 9px 12px 7px; }
+  .nav-links { gap: 11px; }
+  section { padding: 44px 20px; }
+  .hero { padding: 52px 20px 48px; }
+  .record-line { padding: 28px 20px; }
+  .featured { padding: 22px 20px; }
+}
+
+/* -- DARK MODE -- */
+body.dark { background: #0a0f0b !important; color: #c9d1d9; }
+body.dark section { background: #0a0f0b !important; }
+body.dark h2 { color: #e6edf3 !important; }
+body.dark .lead { color: #9ba3af !important; }
+body.dark .section-label { color: #4ade80 !important; }
+body.dark .divider { border-color: #1a3a1f !important; }
+body.dark .work-card, body.dark .plan { background: #111d12 !important; border-color: #1e3a24 !important; }
+body.dark .work-card h3 { color: #e6edf3 !important; }
+body.dark .work-card p { color: #9ba3af !important; }
+body.dark .record-line { background: #0b1209 !important; border-color: #1a3a1f !important; }
+body.dark .record-line p { color: #b1bac4 !important; }
+body.dark .plan-features li { color: #b1bac4 !important; }
+body.dark .plan-name, body.dark .plan-who { color: #9ba3af !important; }
+body.dark .plan-who { border-color:#1e3a24 !important; }
+body.dark .plan-price { color: #e6edf3 !important; }
+body.dark .price-note { color:#9ba3af !important; }
+</style>
+</head>
+<body>
+
+<!-- PREVIEW BANNER -->
+<div id="preview-banner">
+  <strong>PREVIEW</strong> &mdash; proposed simplified homepage. The live site is unchanged.
+  <a href="index.html">View current homepage &rarr;</a>
+  <button id="preview-close" onclick="document.getElementById('preview-banner').style.display='none'" aria-label="Dismiss preview notice">&#215;</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Dragonfly Lens</a>
+  <div class="nav-links">
+    <a href="learn/why-the-lens.html" style="color:#4ade80;font-weight:700;" title="New here? Start with why we exist">Why us</a>
+    <a href="learn/index.html" style="color:#4ade80;font-weight:700;">Learn</a>
+    <a href="track_record.html">Track record</a>
+    <a href="learn/corrections.html">Corrections</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://tracker.officialdragonflysystems.com/signin" title="Subscriber login">My Account</a>
+    <button id="theme-btn" onclick="toggleTheme()" title="Toggle dark mode"
+      style="background:none;border:1px solid #2a5a35;border-radius:4px;color:#9ca;cursor:pointer;padding:5px 9px;font-size:15px;line-height:1;display:flex;align-items:center;">
+      <span id="theme-icon">&#9790;</span>
+    </button>
+    <a href="#pricing" class="nav-cta">Subscribe</a>
+  </div>
+</nav>
+<script>
+function toggleTheme() {
+  var dark = document.body.classList.toggle('dark');
+  try { localStorage.setItem('df_theme', dark ? 'dark' : 'light'); } catch (e) {}
+  document.getElementById('theme-icon').innerHTML = dark ? '&#9788;' : '&#9790;';
+}
+(function() {
+  try {
+    if (localStorage.getItem('df_theme') === 'dark') {
+      document.body.classList.add('dark');
+      var ic = document.getElementById('theme-icon');
+      if (ic) ic.innerHTML = '&#9788;';
+    }
+  } catch (e) {}
+})();
+</script>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Independent research &middot; self-funded &middot; held to account</div>
+  <h1>Understand the companies behind the AI buildout.</h1>
+  <p class="sub">Dragonfly Lens turns filings, policy changes and industry data into plain-English research on AI infrastructure, energy and critical materials &mdash; with the sources, the risks, and a <a href="learn/corrections.html">corrections log we never delete</a>.</p>
+  <div class="hero-btns">
+    <a href="learn/scorecard-revisited.html" class="btn btn-primary">Read this week's research &rarr;</a>
+    <a href="track_record.html" class="quiet">See the track record</a>
+  </div>
+</div>
+
+<!-- FEATURED FREE ARTICLE -->
+<section id="featured" style="padding-top:48px;padding-bottom:40px;">
+  <div class="section-label" style="text-align:center;">Free to read &middot; published Sep 16, 2026</div>
+  <a class="featured" href="learn/scorecard-revisited.html">
+    <div class="kicker">This week's deep dive</div>
+    <h3>In June We Wrote Down What Would Settle the AI Bubble Question. Here Is the Score.</h3>
+    <p>We published four checkable tests for whether the AI build-out is real demand or malinvestment &mdash; three months on, one test improved, two got worse, and we name two things our June piece missed.</p>
+    <span class="arrow">Read the scorecard &rarr;</span>
+  </a>
+  <p style="text-align:center;margin-top:18px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:var(--muted);">
+    More in the <a href="learn/index.html" style="color:var(--green);font-weight:700;text-decoration:none;">Learn section</a> &mdash; every deep dive is free.
+  </p>
+</section>
+
+<hr class="divider">
+
+<!-- HOW WE WORK -->
+<section id="how-we-work">
+  <div class="section-label">How we work</div>
+  <h2>Built to be checked, not just believed.</h2>
+  <p class="lead">Three rules. They are the whole method, and you can hold us to all three.</p>
+
+  <div class="work-grid">
+    <div class="work-card">
+      <h3>Source-linked claims</h3>
+      <p>Every claim is sourced, and fact is kept separate from hype. We route you to the primary source document &mdash; the filing, the grant, the rule change &mdash; not a summary of someone else's summary.</p>
+    </div>
+    <div class="work-card">
+      <h3>Risks, and what would prove us wrong</h3>
+      <p>Every piece states the specific conditions that would break the thesis &mdash; what would have to be true for us to be wrong. Positions are held until the thesis breaks; we do not publish sell rules.</p>
+    </div>
+    <div class="work-card">
+      <h3>Public corrections</h3>
+      <p>When we get something wrong, we say so &mdash; publicly, dated, and never deleted. The misses sit on the shelf next to the wins, on purpose. <a href="learn/corrections.html">See the corrections log &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- THE HONEST LINE ABOUT THE RECORD -->
+<div class="record-line">
+  <p>
+    One thing to be clear about: our historical results are a <strong>labelled backtest</strong> &mdash; what the methodology would have flagged across public data, not money that was traded. The forward, dated record began in <strong>May 2026</strong> and is still young. Judge us on what comes next.
+    <br><a href="track_record.html">See the track record &rarr;</a> &nbsp;&middot;&nbsp; <a href="learn/corrections.html">See the corrections log &rarr;</a>
+  </p>
+</div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2>Three tiers. No lock-in, cancel any time.</h2>
+  <p class="lead">The research above is free. A subscription adds alerts, tooling and depth on top of it. First 30 days, full refund &mdash; no questions asked.</p>
+
+  <div class="pricing-grid">
+
+    <!-- BASIC -->
+    <div class="plan">
+      <div class="plan-name">Basic</div>
+      <div class="plan-price">$9.99 <span>/ month</span></div>
+      <div class="plan-annual">or $89.99/yr &mdash; save $30/yr</div>
+      <div class="plan-who">For getting familiar with the system and the sectors we track.</div>
+      <ul class="plan-features">
+        <li><span class="check">&#10003;</span> Weekly digest every Friday</li>
+        <li><span class="check">&#10003;</span> 3-ticker watchlist</li>
+        <li><span class="check">&#10003;</span> Full track record access</li>
+        <li><span class="check">&#10003;</span> Monthly macro + thesis recap</li>
+      </ul>
+      <a href="https://buy.stripe.com/9B6fZh0iU17P2dQ7Xt8Vi0b" class="btn" style="background:#f5f5f2;color:#333;border:1px solid #e0e0dc;">Get started &rarr;</a>
+    </div>
+
+    <!-- INVESTOR -->
+    <div class="plan featured-plan">
+      <div class="plan-badge">Most popular</div>
+      <div class="plan-name">Investor</div>
+      <div class="plan-price">$18.99 <span>/ month</span></div>
+      <div class="plan-annual">or $179.99/yr &mdash; save $48/yr</div>
+      <div class="plan-who">For active investors who want to see a signal when it fires, not a week later.</div>
+      <ul class="plan-features">
+        <li><span class="check">&#10003;</span> Everything in Basic</li>
+        <li><span class="check">&#10003;</span> <strong>Real-time signal alerts</strong></li>
+        <li><span class="check">&#10003;</span> 12-ticker watchlist + holdings tracker</li>
+        <li><span class="check">&#10003;</span> Company profiles + conviction ratings</li>
+        <li><span class="check">&#10003;</span> Macro bar (DXY, 10Y, VIX, metals)</li>
+      </ul>
+      <a href="https://buy.stripe.com/14A4gzfdO03L5q21z58Vi09" class="btn" style="background:var(--green);color:#fff;">Subscribe &rarr;</a>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="plan" style="border:2px solid var(--gold);">
+      <div class="plan-name" style="color:var(--gold);">Premium</div>
+      <div class="plan-price">$36.99 <span>/ month</span></div>
+      <div class="plan-annual" style="color:var(--gold);">or $359.99/yr &mdash; save $84/yr</div>
+      <div class="plan-who">For investors who want the full context behind every signal.</div>
+      <ul class="plan-features">
+        <li><span class="check" style="color:var(--gold);">&#10003;</span> Everything in Investor</li>
+        <li><span class="check" style="color:var(--gold);">&#10003;</span> Deep research notes on every signal</li>
+        <li><span class="check" style="color:var(--gold);">&#10003;</span> Radar &mdash; 4-tier coverage of every ticker we track</li>
+        <li><span class="check" style="color:var(--gold);">&#10003;</span> Compound &mdash; the trade journal</li>
+        <li><span class="check" style="color:var(--gold);">&#10003;</span> The Distillery &mdash; live macro charts</li>
+        <li><span class="check" style="color:var(--gold);">&#10003;</span> Unlimited watchlist</li>
+      </ul>
+      <a href="https://buy.stripe.com/3cI8wP4za17PcSufpV8Vi07" class="btn" style="background:var(--gold);color:#fff;">Subscribe &rarr;</a>
+    </div>
+
+  </div>
+
+  <p class="price-note">
+    We never sell your data &mdash; and we never even see your card. By subscribing you agree to our
+    <a href="https://tracker.officialdragonflysystems.com/terms" target="_blank" rel="noopener">Terms</a> &amp;
+    <a href="https://tracker.officialdragonflysystems.com/risk-disclosure" target="_blank" rel="noopener">Risk Disclosure</a>.
+  </p>
+</section>
+
+<!-- ABOUT (condensed) -->
+<section id="about" style="padding-top:8px;">
+  <div class="section-label">About</div>
+  <h2>Built by someone who actually trades it.</h2>
+  <p class="lead">
+    I spent most of my life doing carpentry, and over 15 years figuring this out. I am not a hedge fund manager and not
+    a financial advisor &mdash; this is editorial research. I built Dragonfly Systems because I got tired of tracking all
+    of this by hand; the system does it now. I publish it because more people should have access to this kind of research,
+    and because keeping a public track record keeps me honest. The name comes from the dragonfly &mdash; reportedly the most
+    effective hunter in the natural world. Not brute force: precision. Not more signals, better ones.
+    <br><br>
+    Questions or feedback? Write to <a href="mailto:officialdragonflysystems@gmail.com" style="color:var(--green);font-weight:700;text-decoration:none;">officialdragonflysystems@gmail.com</a>. I read everything.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <a href="#">Dragonfly Systems</a> &nbsp;&bull;&nbsp;
+    <a href="track_record.html">Track record</a> &nbsp;&bull;&nbsp;
+    <a href="learn/corrections.html">Corrections</a> &nbsp;&bull;&nbsp;
+    <a href="mailto:officialdragonflysystems@gmail.com">officialdragonflysystems@gmail.com</a>
+  </p>
+  <p style="margin-top:12px;">
+    Not financial advice. Past thesis performance does not guarantee future results.<br>
+    All positions tracked from first verifiable public signal &mdash; winners and losers included.<br>
+    Dragonfly Systems publishes editorial research, not personalised investment advice. Nothing on this site
+    constitutes a recommendation to buy or sell any security. Consult a registered financial advisor before acting.
+  </p>
+  <p style="margin-top:12px;">
+    &copy; 2026 Dragonfly Systems &nbsp;&bull;&nbsp;
+    <a href="https://github.com/OfficialDragonflySystems">GitHub</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/privacy">Privacy Policy</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/terms">Terms of Service</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/risk-disclosure">Risk Disclosure</a>
+  </p>
+</footer>
+
+</body>
+</html>
