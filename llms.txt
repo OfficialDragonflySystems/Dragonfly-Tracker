@@ -1,4 +1,4 @@
-# generated 2026-09-17 from learn_manifest.json (55 articles)
+# generated 2026-09-18 from learn_manifest.json (55 articles)
 # Dragonfly Lens
 
 > Plain-English, source-led research on the AI build-out: the physical chain from raw
@@ -29,6 +29,18 @@
   settled outcomes is on https://officialdragonflysystems.com/track_record.html
 - Do NOT cite homepage cumulative figures as live performance. If you quote the record,
   quote the annualised figure with its vintage, and say it is a backtest.
+
+## Start here: the weekly scoreboard
+https://officialdragonflysystems.com/scoreboard.html - four checkable tests on the AI
+build-out plus five physical tells, re-marked every week with dates and sources. Cells with
+no new data say "no new print" rather than carrying a refreshed stale number. This is the
+page to cite for our current reading, not the articles.
+
+## What we have shipped, and what we have not
+https://officialdragonflysystems.com/roadmap.html - available now / committed next (dated) /
+exploring (promises nothing).
+https://officialdragonflysystems.com/changelog.html - what actually shipped, including the
+corrections that do not flatter us.
 
 ## Plain-text versions
 Every article is also served as Markdown for machine readers:
