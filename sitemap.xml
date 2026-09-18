@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Dragonfly Lens sitemap - synced 2026-06-17 r3 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://officialdragonflysystems.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://officialdragonflysystems.com/</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url><loc>https://officialdragonflysystems.com/learn/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://officialdragonflysystems.com/roadmap.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://officialdragonflysystems.com/changelog.html</loc><lastmod>2026-09-18</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
