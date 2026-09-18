@@ -70,7 +70,7 @@ li { margin: 6px 0; }
 /* -- TABLES -- */
 .tw { overflow-x: auto; margin: 18px 0; -webkit-overflow-scrolling: touch; }
 table { width: 100%; border-collapse: collapse; font-family:'Helvetica Neue',Arial,sans-serif;
-  font-size: 13.5px; min-width: 760px; }
+  font-size: 13.5px; min-width: 860px; }
 th, td { padding: 10px 11px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
 th { color: var(--muted); font-weight: 700; font-size: 10.5px; text-transform: uppercase;
   letter-spacing: .06em; background: var(--bg); }
@@ -134,7 +134,7 @@ body.dark .disc { color: #8b949e !important; border-color: #1e3a24 !important; }
 
 <!-- DRAFT BANNER -->
 <div id="draft-banner">
-  <strong>DRAFT</strong> &mdash; internal prototype of the weekly scoreboard, built 17 Sep 2026. Not published, not linked, not indexed. Every figure below is carried from our September re-score; nothing here is new reporting.
+  <strong>DRAFT</strong> &mdash; internal prototype of the weekly scoreboard, built 17 Sep 2026, revised 18 Sep 2026 after an outside review. Not published, not linked, not indexed. Every figure below is carried from our September re-score; nothing here is new reporting.
 </div>
 
 <!-- NAV -->
@@ -182,7 +182,12 @@ function toggleTheme() {
   <div class="card change">
     <p style="margin-top:0;">Nothing in the five physical tells moved. There was no new transformer lead-time survey, no interconnection-queue print and no data-centre starts release, so those rows carry the same figures as last week or no figure at all.</p>
     <p>What moved was financing, and mood. CoreWeave&rsquo;s August facility priced at SOFR&nbsp;+&nbsp;550bp against May&rsquo;s SOFR&nbsp;+&nbsp;450bp at the same Ba2&nbsp;/&nbsp;BB+ rating<sup id="r1"><a href="#s1">1</a></sup><sup id="r2"><a href="#s2">2</a></sup> &mdash; the same credit grade at a higher price, which is what the marginal dollar getting riskier looks like while the headline number still grows. Separately, on 14 September a public call from Anthropic&rsquo;s chief executive to slow frontier AI development knocked data-centre power names down sharply (GE Vernova &minus;8.6%, Vertiv &minus;7.7%)<sup id="r3"><a href="#s3">3</a></sup><sup id="r4"><a href="#s4">4</a></sup>, on the same day the US 10-year Treasury yield touched 5%<sup id="r5"><a href="#s5">5</a></sup>.</p>
-    <p style="margin-bottom:0;"><b>Our read:</b> a chief executive asking for guardrails is not a capital-expenditure cut. One is a statement; the other shows up in order books. The order books did not move this week.</p>
+    <p style="margin-bottom:0;"><b>Our read:</b> the marginal dollar got more expensive at the same credit grade. That is the only thing this week that touched a test. The order books did not move at all.</p>
+  </div>
+
+  <div class="card">
+    <h3>What we are ignoring this week</h3>
+    <p style="margin-bottom:0;">The 14 September sell-off and the slowdown essays. A chief executive asking for guardrails is not a capital-expenditure cut &mdash; one is a statement, the other shows up in an order book &mdash; and a share price is not a print, so neither of them changes a test on this page.</p>
   </div>
 </section>
 
@@ -195,34 +200,38 @@ function toggleTheme() {
   <p class="scroll-hint">Scroll the table sideways on a phone &rarr;</p>
   <div class="tw"><table>
     <tr>
-      <th style="width:16%;">Test</th>
-      <th style="width:19%;">June 2026</th>
-      <th style="width:30%;">Latest reading</th>
-      <th style="width:11%;">As of</th>
-      <th style="width:12%;">Direction</th>
-      <th style="width:12%;">Source</th>
+      <th style="width:15%;">Test</th>
+      <th style="width:17%;">June 2026</th>
+      <th style="width:26%;">Latest reading</th>
+      <th style="width:10%;">As of</th>
+      <th style="width:12%;">Last week</th>
+      <th style="width:10%;">Direction</th>
+      <th style="width:10%;">Source</th>
     </tr>
     <tr>
       <td><b>1. Savings or credit?</b><br>Is it funded out of cash flow, or borrowed?</td>
       <td>SPLIT, moving the wrong way. Hyperscaler core (about $725bn of capex) cash-funded; the marginal layer turning to debt &mdash; an $8.5bn GPU-backed facility at A3&nbsp;/&nbsp;A&nbsp;(low), SOFR&nbsp;+&nbsp;225bp<sup id="r6"><a href="#s6">6</a></sup></td>
-      <td>CoreWeave debt about <b>$35.6bn</b> at 30 June 2026, from about $21bn at end-2025 and about $8bn at end-2024<sup id="r7"><a href="#s7">7</a></sup>. Both publicly syndicated facilities since are below investment grade: May at <b>Ba2&nbsp;/&nbsp;BB+, SOFR&nbsp;+&nbsp;450bp</b><sup><a href="#s1">1</a></sup>; August at the same rating, <b>SOFR&nbsp;+&nbsp;550bp</b><sup><a href="#s2">2</a></sup>. Same grade, a full point wider.</td>
+      <td>CoreWeave total debt <b>$35,551m</b> (about $35.6bn) at 30 June 2026, from about $21bn at end-2025 and about $8bn at end-2024<sup id="r7"><a href="#s7">7</a></sup>. Both publicly syndicated facilities since are below investment grade: May at <b>Ba2&nbsp;/&nbsp;BB+, SOFR&nbsp;+&nbsp;450bp</b><sup><a href="#s1">1</a></sup>; August at the same rating, <b>SOFR&nbsp;+&nbsp;550bp</b><sup><a href="#s2">2</a></sup>. Same grade, a full point wider.</td>
       <td>30 Jun 2026 (debt)<br>10 Aug 2026 (pricing)</td>
+      <td><span class="dir-same">same</span><br><span class="nonew">$35,551m; SOFR&nbsp;+&nbsp;550bp</span></td>
       <td class="dir-down">WEAKENING</td>
       <td>10-Q; company release; 8-K<sup><a href="#s7">7</a></sup><sup><a href="#s1">1</a></sup><sup><a href="#s2">2</a></sup></td>
     </tr>
     <tr>
       <td><b>2. Capacity ahead of demand?</b><br>What does it cost to rent an hour of the asset everyone is buying?</td>
       <td>FLASHING. H100 rentals down from about $8/hr to <b>$2.85&ndash;3.50</b>, roughly a 64% collapse, as 300+ providers piled in while capex accelerated 77%<sup id="r8"><a href="#s8">8</a></sup></td>
-      <td>Median on-demand H100 about <b>$3.39/hr</b>, up about 10% over 90 days and about <b>11% year over year</b><sup id="r9"><a href="#s9">9</a></sup>. Bank of America put H100 spot at about <b>$2.80/hr</b> in mid-August and called spot rents &ldquo;near all-time highs&rdquo;; a BofA figure of $2.77/hr, <b>up 33% y/y</b>, is <b>secondhand</b> &mdash; reported, note not seen by us<sup id="r10"><a href="#s10">10</a></sup>. Prices rose through 2026 even as H200 and Blackwell shipped.</td>
-      <td>19 Aug 2026 (median)<br>12 Aug 2026 (BofA)</td>
+      <td>Median on-demand H100 about <b>$3.39/hr</b>, up about 10% over 90 days and about <b>11% year over year</b><sup id="r9"><a href="#s9">9</a></sup>. Prices rose through 2026 even as H200 and Blackwell shipped. This is the reading we have seen ourselves; a higher secondhand bank estimate is kept in the sources, not in this cell<sup><a href="#s10">10</a></sup>.</td>
+      <td>19 Aug 2026 (median)</td>
+      <td><span class="dir-same">same</span><br><span class="nonew">$3.39/hr, +11% y/y</span></td>
       <td class="dir-up">STRENGTHENING</td>
-      <td>Provider index; BofA via press<sup><a href="#s9">9</a></sup><sup><a href="#s10">10</a></sup></td>
+      <td>Provider index<sup><a href="#s9">9</a></sup>; BofA via press, secondhand<sup id="r10"><a href="#s10">10</a></sup></td>
     </tr>
     <tr>
       <td><b>3. Circular financing?</b><br>Is the seller funding the buyer?</td>
       <td>PRESENT. Nvidia $2bn into CoreWeave; Meta about $21bn of capacity committed<sup id="r11"><a href="#s11">11</a></sup>; Anthropic and Google paying SpaceX and xAI about $26bn a year for compute<sup id="r12"><a href="#s12">12</a></sup>. <b>We under-counted this in June</b> &mdash; see the next cell.</td>
       <td>Nvidia had <b>already agreed in February to invest $30bn in OpenAI</b> &mdash; public when we wrote in June, and missing from our June list<sup id="r13"><a href="#s13">13</a></sup>. New since June: in August Nvidia signed a <b>guarantee of up to $105bn</b> behind OpenAI&rsquo;s lease and power payments on an Ohio campus &mdash; a backstop, not a cash investment<sup id="r14"><a href="#s14">14</a></sup>; it was reported at up to $250bn in July and cut before signing<sup id="r15"><a href="#s15">15</a></sup>. Oracle plans to raise $45&ndash;50bn of debt and equity this year to build for OpenAI<sup id="r16"><a href="#s16">16</a></sup>.</td>
       <td>19 Feb 2026 (stake)<br>17 Aug 2026 (guarantee)</td>
+      <td><span class="dir-same">same</span><br><span class="nonew">$105bn guarantee</span></td>
       <td class="dir-down">WEAKENING</td>
       <td>CNBC; Fortune; DCD<sup><a href="#s13">13</a></sup><sup><a href="#s14">14</a></sup><sup><a href="#s15">15</a></sup><sup><a href="#s16">16</a></sup></td>
     </tr>
@@ -231,10 +240,12 @@ function toggleTheme() {
       <td>PARTLY. &ldquo;Scaling laws plus AGI timelines&rdquo; as the unaudited growth claim of this cycle</td>
       <td>Now the loudest argument in the market: a slowdown call from Anthropic&rsquo;s chief executive, publicly backed by others, a broad AI sell-off on 14 September<sup><a href="#s3">3</a></sup><sup><a href="#s4">4</a></sup>, and analysts openly split on whether a credible safety framework makes long-duration capital easier or harder to underwrite<sup id="r17"><a href="#s17">17</a></sup>. Nvidia&rsquo;s chief executive spent August rejecting the &ldquo;circular financing&rdquo; label<sup id="r18"><a href="#s18">18</a></sup>. <b>We do not grade this one; its measure is vibes.</b></td>
       <td>15 Sep 2026</td>
+      <td><span class="dir-same">same</span><br><span class="nonew">ungraded</span></td>
       <td class="dir-live">LIVE</td>
       <td>CNBC; Reuters; Benzinga<sup><a href="#s3">3</a></sup><sup><a href="#s17">17</a></sup><sup><a href="#s18">18</a></sup></td>
     </tr>
   </table></div>
+  <p class="scroll-hint" style="margin:-8px 0 0;"><b>Last week:</b> this is issue&nbsp;#1, so that column repeats this week&rsquo;s values. From issue&nbsp;#2 it carries the previous week&rsquo;s figure &mdash; which is what makes &ldquo;updated weekly&rdquo; something you can check rather than a caption you have to take our word for.</p>
 
   <div class="card">
     <h3>Why Test 4 is marked LIVE and never scored</h3>
@@ -248,53 +259,43 @@ function toggleTheme() {
 <section id="tells">
   <div class="section-label">The five physical tells</div>
   <h2>What a real slowdown would look like</h2>
-  <p class="lead">The AI build-out is a physical event. It needs transformers, switchgear, transmission, cooling, memory and optics, and those have lead times measured in years. A physical build-out slows in physical ways, and those show up in order books before they show up in anybody&rsquo;s stock. These five are the tells. Most weeks, most of them will say <span class="nonew">no new print</span>.</p>
+  <p class="lead">The AI build-out is a physical event. It needs transformers, switchgear, transmission, cooling, memory and optics, and those have lead times measured in years. A physical build-out slows in physical ways, and those show up in order books before they show up in anybody&rsquo;s stock. These five are the tells. Most weeks, most of them will say <span class="nonew">no new print</span>. Two of the five carry a figure today; the other three have no baseline of ours yet and sit in their own section below the table until they do.</p>
 
   <p class="scroll-hint">Scroll the table sideways on a phone &rarr;</p>
   <div class="tw"><table>
     <tr>
-      <th style="width:19%;">Tell</th>
-      <th style="width:29%;">What would signal a slowdown</th>
-      <th style="width:25%;">Last print</th>
-      <th style="width:13%;">As of</th>
-      <th style="width:14%;">Status</th>
+      <th style="width:17%;">Tell</th>
+      <th style="width:26%;">What would signal a slowdown</th>
+      <th style="width:24%;">Last print</th>
+      <th style="width:11%;">As of</th>
+      <th style="width:11%;">Last week</th>
+      <th style="width:11%;">Status</th>
     </tr>
     <tr>
-      <td><b>Transformer lead times</b></td>
-      <td>Lead times <b>shortening</b> from current levels. If the queue gets shorter, orders are being cancelled. The single cleanest signal available, and it is not a market price.</td>
-      <td>About <b>128 weeks</b> from order to delivery on Wood Mackenzie&rsquo;s mid-2025 survey<sup id="r19"><a href="#s19">19</a></sup>; larger substation units now running past <b>160 weeks</b><sup id="r20"><a href="#s20">20</a></sup></td>
-      <td>mid-2025 survey<br>2026 trade reporting</td>
-      <td class="nonew">no new print</td>
-    </tr>
-    <tr>
-      <td><b>Grid interconnection queues</b></td>
-      <td>Queues <b>shrinking</b> &mdash; projects withdrawing. Developers withdraw long before they stop announcing.</td>
-      <td class="nonew">no baseline carried &mdash; we have not published a queue figure of our own yet</td>
-      <td>&mdash;</td>
-      <td class="nonew">no new print</td>
-    </tr>
-    <tr>
-      <td><b>GPU rents vs capex</b></td>
+      <td><b>1. GPU rents vs capex</b></td>
       <td>Rents <b>falling while capex also falls</b>. The 2024&ndash;25 fall happened against rising capex, which is why we now read it as a supply event rather than a demand failure. Both falling together is the real signal.</td>
       <td>Rents <b>rising</b>: median on-demand about $3.39/hr, up about 11% y/y<sup><a href="#s9">9</a></sup>. Capex still accelerating: about $725bn of hyperscaler capex guided for 2026, up about 77% y/y<sup id="r21"><a href="#s21">21</a></sup></td>
       <td>19 Aug 2026 (rents)<br>Feb 2026 (capex)</td>
+      <td><span class="dir-same">same</span><br><span class="nonew">$3.39/hr vs $725bn</span></td>
       <td class="dir-up">no slowdown</td>
     </tr>
     <tr>
-      <td><b>Memory and optics pricing</b></td>
-      <td>Pricing <b>rolling over</b>. These are the inputs with the least substitutability, so they crack late and they crack honestly.</td>
-      <td class="nonew">no baseline carried &mdash; we have not published a memory or optics price series yet</td>
-      <td>&mdash;</td>
-      <td class="nonew">no new print</td>
-    </tr>
-    <tr>
-      <td><b>Data-centre starts</b></td>
-      <td>Starts and permits <b>declining</b> &mdash; starts, not announcements. Announcements are free.</td>
-      <td class="nonew">no baseline carried &mdash; we have not published a starts series yet</td>
-      <td>&mdash;</td>
+      <td><b>2. Transformer lead times</b></td>
+      <td>Lead times <b>shortening</b> from current levels. If the queue gets shorter, orders are being cancelled. The single cleanest signal available, and it is not a market price.</td>
+      <td>About <b>128 weeks</b> from order to delivery on Wood Mackenzie&rsquo;s mid-2025 survey<sup id="r19"><a href="#s19">19</a></sup>; larger substation units now running past <b>160 weeks</b><sup id="r20"><a href="#s20">20</a></sup></td>
+      <td>mid-2025 survey<br>2026 trade reporting</td>
+      <td><span class="dir-same">same</span><br><span class="nonew">128 / 160+ weeks</span></td>
       <td class="nonew">no new print</td>
     </tr>
   </table></div>
+
+  <h3 style="margin-top:28px;">Baselines we are still building</h3>
+  <p style="margin-top:6px;">A tell with no baseline is not yet a measurement, so tells 3 to 5 sit here rather than in the table above, where an empty row still reads like a reading. We will add one source a month, published with its date and its basis, instead of inventing numbers to fill them.</p>
+  <ul>
+    <li><b>3. Grid interconnection queues</b> &mdash; a slowdown would show as queues <b>shrinking</b>, projects withdrawing. Developers withdraw long before they stop announcing. <span class="nonew">No baseline carried: we have not published a queue figure of our own yet.</span></li>
+    <li><b>4. Memory and optics pricing</b> &mdash; a slowdown would show as pricing <b>rolling over</b>. These are the inputs with the least substitutability, so they crack late and they crack honestly. <span class="nonew">No baseline carried: we have not published a memory or optics price series yet.</span></li>
+    <li><b>5. Data-centre starts</b> &mdash; a slowdown would show as starts and permits <b>declining</b>: starts, not announcements. Announcements are free. <span class="nonew">No baseline carried: we have not published a starts series yet.</span></li>
+  </ul>
 
   <div class="card mind">
     <h3>What would change our mind</h3>
@@ -332,10 +333,10 @@ function toggleTheme() {
     <li id="s4"><span class="num">4.</span> GE Vernova &minus;8.6%, Vertiv &minus;7.7% &mdash; <a href="https://www.fool.com/investing/2026/09/14/why-did-ge-vernova-stock-fall-today/" rel="nofollow">Motley Fool</a>. <span class="meta">Figure refers to: close of 14 Sep 2026. Checked 17 Sep 2026.</span> <a href="#r4">&#8617;</a></li>
     <li id="s5"><span class="num">5.</span> US 10-year Treasury yield touching 5% &mdash; <a href="https://www.bloomberg.com/news/articles/2026-09-14/us-10-year-yield-breaches-5-as-inflation-supply-worries-mount" rel="nofollow">Bloomberg</a>. <span class="meta">Figure refers to: 14 Sep 2026. Checked 17 Sep 2026.</span> <a href="#r5">&#8617;</a></li>
     <li id="s6"><span class="num">6.</span> CoreWeave DDTL 4.0, $8.5bn, A3&nbsp;/&nbsp;A&nbsp;(low), floating tranche SOFR&nbsp;+&nbsp;225bp, backed by Meta contracts &mdash; <a href="https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-Landmark-8-5-Billion-Financing-Facility-Achieving-First-Investment-Grade-Rated-GPU-backed-Financing/default.aspx" rel="nofollow">company release</a>. <span class="meta">Figure refers to: facility closed 31 Mar 2026 &mdash; the June baseline. Checked 17 Sep 2026.</span> <a href="#r6">&#8617;</a></li>
-    <li id="s7"><span class="num">7.</span> CoreWeave total debt about $35.6bn &mdash; <a href="https://www.stocktitan.net/sec-filings/CRWV/10-q-core-weave-inc-quarterly-earnings-report-d3b596a1f167.html" rel="nofollow">10-Q filing summary</a>. <span class="meta">Figure refers to: the balance sheet at 30 Jun 2026; filed 11 Aug 2026. Updates quarterly. Checked 17 Sep 2026.</span> <a href="#r7">&#8617;</a></li>
+    <li id="s7"><span class="num">7.</span> CoreWeave total debt of <b>$35,551 million</b> at 30 June 2026 &mdash; <a href="https://www.sec.gov/Archives/edgar/data/1769628/000176962826000366/crwv-20260630.htm" rel="nofollow">CoreWeave Form 10-Q for the quarter ended 30 June 2026</a>, Note 10, Debt (EDGAR, CIK 1769628, accession 0001769628-26-000366). The filing&rsquo;s own words: &ldquo;As of June 30, 2026, the future principal payments for the Company&rsquo;s total debt were as follows (in millions)&rdquo; &mdash; Total <b>$35,551</b>. <span class="meta">Figure refers to: 30 Jun 2026; accepted by EDGAR on the evening of 11 Aug 2026 and carrying an EDGAR filing date of 12 Aug 2026. The end-2025 comparative (about $21.4bn of recourse and non-recourse debt) is in the same filing; the end-2024 figure comes from the prior year&rsquo;s filings. Updates quarterly. <b>Changed 18 Sep 2026:</b> this figure previously cited a republisher&rsquo;s filing summary; it now cites the filing itself. Checked 18 Sep 2026.</span> <a href="#r7">&#8617;</a></li>
     <li id="s8"><span class="num">8.</span> H100 rentals falling from about $8/hr to $2.85&ndash;3.50 &mdash; <a href="https://introl.com/blog/gpu-cloud-price-collapse-h100-market-december-2025" rel="nofollow">Introl</a>, <a href="https://www.silicondata.com/blog/h100-rental-price-over-time" rel="nofollow">Silicon Data index</a>, <a href="https://www.latent.space/p/gpu-bubble" rel="nofollow">Latent Space</a>. <span class="meta">Figure refers to: the 2024&ndash;25 decline, as read in June 2026. Checked 17 Sep 2026.</span> <a href="#r8">&#8617;</a></li>
     <li id="s9"><span class="num">9.</span> Median on-demand H100 about $3.39/hr, about +10% over 90 days and about +11% y/y (GetDeploying data) &mdash; <a href="https://akash.network/the-bid/h100-rental-price-2026-cost-per-hour/" rel="nofollow">Akash, 19 Aug 2026</a>. <span class="meta">Figure refers to: August 2026 pricing. Checked 17 Sep 2026.</span> <a href="#r9">&#8617;</a></li>
-    <li id="s10"><span class="num">10.</span> Bank of America: H100 spot about $2.80/hr and spot rents &ldquo;near all-time highs&rdquo;; a cited $2.77/hr, up 33% y/y &mdash; <a href="https://finance.yahoo.com/markets/stocks/articles/bank-america-sends-blunt-message-174700491.html" rel="nofollow">TheStreet, 12 Aug 2026</a>. <span class="meta">Figure refers to: mid-August 2026. <b>Secondhand</b> &mdash; reported from a BofA note we have not seen. Checked 17 Sep 2026.</span> <a href="#r10">&#8617;</a></li>
+    <li id="s10"><span class="num">10.</span> Bank of America on H100 spot rents &mdash; reported at about $2.80/hr and &ldquo;near all-time highs&rdquo;, with a cited <b>$2.77/hr, up 33% year over year</b> &mdash; <a href="https://finance.yahoo.com/markets/stocks/articles/bank-america-sends-blunt-message-174700491.html" rel="nofollow">TheStreet, 12 Aug 2026</a>. <span class="meta">Figure refers to: mid-August 2026. <b>Secondhand and unverified</b> &mdash; reported from a BofA note we have not seen. <b>Changed 18 Sep 2026:</b> the +33% y/y figure used to sit in the scoreboard cell, which is the cell people quote; it now lives here only. The reading the table carries is the $3.39/hr provider median at note 9. Checked 18 Sep 2026.</span> <a href="#r10">&#8617;</a></li>
     <li id="s11"><span class="num">11.</span> Nvidia $2bn into CoreWeave; Meta capacity commitment of about $21bn &mdash; CoreWeave 8-K series, <a href="https://www.sec.gov/Archives/edgar/data/1769628/000176962826000129/ex991.htm" rel="nofollow">Mar 2026</a>. <span class="meta">Figure refers to: positions as disclosed to March 2026 &mdash; the June baseline. Checked 17 Sep 2026.</span> <a href="#r11">&#8617;</a></li>
     <li id="s12"><span class="num">12.</span> Anthropic and Google compute payments to SpaceX and xAI, about $26bn a year combined &mdash; <a href="https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/" rel="nofollow">TechCrunch, 5 Jun 2026</a>. <span class="meta">Figure refers to: contracts as reported in June 2026. Checked 17 Sep 2026.</span> <a href="#r12">&#8617;</a></li>
     <li id="s13"><span class="num">13.</span> Nvidia agreeing to invest up to $30bn in OpenAI, part of a roughly $122bn round &mdash; <a href="https://www.cnbc.com/2026/02/19/nvidia-is-in-talks-to-invest-up-to-30-billion-in-openai-source-says.html" rel="nofollow">CNBC, 19 Feb 2026</a>. <span class="meta">Figure refers to: February 2026. Public before our June piece and left out of it &mdash; our error, stated as such. Checked 17 Sep 2026.</span> <a href="#r13">&#8617;</a></li>
@@ -354,7 +355,7 @@ function toggleTheme() {
   </ul>
 
   <p class="disc">
-    No figure on this page is new reporting. All of it is carried from our <a href="learn/scorecard-revisited.html">17 September 2026 re-score</a> and our <a href="learn/ai-malinvestment.html">10 June 2026 piece</a>, with the source and the date it refers to attached. Where a number is reported rather than confirmed by a filing, the row says so. Three of the five physical tells carry no baseline of ours yet; those cells say so rather than borrow a number from somewhere else.<br><br>
+    No figure on this page is new reporting. All of it is carried from our <a href="learn/scorecard-revisited.html">17 September 2026 re-score</a> and our <a href="learn/ai-malinvestment.html">10 June 2026 piece</a>, with the source and the date it refers to attached. Where a number is reported rather than confirmed by a filing, the row says so. Three of the five physical tells carry no baseline of ours yet; they are listed under &ldquo;Baselines we are still building&rdquo; instead of being shown as readings, and we will not borrow a number from somewhere else to fill them.<br><br>
     Educational research, not personalized investment advice. Dragonfly Lens is not a registered investment advisor. Companies are named to explain the framework, not as buy or sell recommendations. Past performance does not guarantee future results.
   </p>
 </section>
