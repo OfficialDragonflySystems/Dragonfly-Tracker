@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!-- Changelog, first published 2026-09-18. Built from the commit history, starting 2026-09-01.
+     One line per entry. Corrections and removals belong here as much as additions do. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A dated record of what actually shipped on Dragonfly Lens, newest first - including the corrections, the removals and the things we had to take back.">
+<title>Changelog &mdash; Dragonfly Lens</title>
+<link rel="icon" type="image/png" href="/Tracker/og-image.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:  #2d6a4f;
+  --lime:   #4ade80;
+  --gold:   #c8a84b;
+  --dark:   #0d1f0f;
+  --text:   #1a1a1a;
+  --muted:  #666;
+  --border: #e8e8e4;
+  --bg:     #f9f9f7;
+}
+html { scroll-behavior: smooth; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--text); background: #fff; }
+.sans { font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+/* -- NAV -- */
+nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 10px 24px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 9px; border-bottom: 1px solid #1a3a1f; }
+.nav-logo { color: var(--lime); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px;
+  font-weight: 800; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+.nav-links { display: flex; gap: 13px; align-items: center; flex-wrap: wrap; justify-content: center; row-gap: 7px; }
+.nav-links a { color: #9ca; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-decoration: none; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: var(--lime); color: var(--dark) !important; font-weight: 700; padding: 7px 16px; border-radius: 4px; }
+.nav-cta:hover { background: #86efac; }
+
+/* -- HERO -- */
+.hero { background: var(--dark); padding: 60px 32px 52px; text-align: center; }
+.hero-eyebrow { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--lime); margin-bottom: 20px; }
+.hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: normal; color: #fff; line-height: 1.2; max-width: 740px; margin: 0 auto 20px; }
+.hero p.sub { font-size: 17px; color: #cfe8d2; line-height: 1.7; max-width: 660px; margin: 0 auto;
+  font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+/* -- SECTIONS -- */
+section { padding: 52px 32px; max-width: 860px; margin: 0 auto; }
+.section-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+h2 { font-size: clamp(22px, 3vw, 30px); font-weight: normal; margin-bottom: 16px; line-height: 1.25; }
+.lead { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 660px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.lead a { color: var(--green); font-weight: 700; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* -- LOG -- */
+.log { margin-top: 30px; }
+.day { border-top: 1px solid var(--border); padding: 18px 0 16px; display: grid;
+  grid-template-columns: 116px 1fr; gap: 18px; align-items: start; }
+.day:last-child { border-bottom: 1px solid var(--border); }
+.day-date { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 800;
+  letter-spacing: .05em; text-transform: uppercase; color: var(--green); padding-top: 3px; }
+.day ul { list-style: none; }
+.day li { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13.5px; color: #333;
+  line-height: 1.7; padding: 4px 0 4px 15px; position: relative; }
+.day li:before { content: ""; position: absolute; left: 0; top: 13px; width: 5px; height: 5px;
+  border-radius: 50%; background: var(--border); }
+.day li a { color: var(--green); font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(45,106,79,.3); }
+.day li.fix:before { background: var(--gold); }
+.note { background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--green);
+  border-radius: 6px; padding: 16px 18px; margin-top: 26px;
+  font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13.5px; color: #444; line-height: 1.75; }
+.note a { color: var(--green); font-weight: 700; }
+
+/* -- FOOTER -- */
+footer { background: var(--dark); padding: 40px 32px; text-align: center; }
+footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #9cc0a3; line-height: 1.8; }
+footer a { color: #4ade80; text-decoration: none; }
+footer a:hover { color: var(--lime); }
+
+@media (max-width: 600px) {
+  nav { padding: 9px 12px 7px; }
+  .nav-links { gap: 11px; }
+  section { padding: 40px 20px; }
+  .hero { padding: 46px 20px 42px; }
+  .day { grid-template-columns: 1fr; gap: 8px; }
+  .day-date { padding-top: 0; }
+}
+
+/* -- DARK MODE -- */
+body.dark { background: #0a0f0b !important; color: #c9d1d9; }
+body.dark section { background: #0a0f0b !important; }
+body.dark h2 { color: #e6edf3 !important; }
+body.dark .lead { color: #9ba3af !important; }
+body.dark .section-label { color: #4ade80 !important; }
+body.dark .divider { border-color: #1a3a1f !important; }
+body.dark .day { border-color: #1e3a24 !important; }
+body.dark .day-date { color: #4ade80 !important; }
+body.dark .day li { color: #b1bac4 !important; }
+body.dark .day li:before { background: #1e3a24 !important; }
+body.dark .day li.fix:before { background: var(--gold) !important; }
+body.dark .day li a { color: #4ade80 !important; border-color: rgba(74,222,128,.3) !important; }
+body.dark .note { background: #111d12 !important; border-color: #1e3a24 !important;
+  border-left-color: #4ade80 !important; color: #b1bac4 !important; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Dragonfly Lens</a>
+  <div class="nav-links">
+    <a href="learn/why-the-lens.html" style="color:#4ade80;font-weight:700;" title="New here? Start with why we exist">Why us</a>
+    <a href="learn/index.html" style="color:#4ade80;font-weight:700;">Learn</a>
+    <a href="track_record.html">Track record</a>
+    <a href="learn/corrections.html">Corrections</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="https://tracker.officialdragonflysystems.com/signin" title="Subscriber login">My Account</a>
+    <button id="theme-btn" onclick="toggleTheme()" title="Toggle dark mode"
+      style="background:none;border:1px solid #2a5a35;border-radius:4px;color:#9ca;cursor:pointer;padding:5px 9px;font-size:15px;line-height:1;display:flex;align-items:center;">
+      <span id="theme-icon">&#9790;</span>
+    </button>
+    <a href="index.html#pricing" class="nav-cta">Subscribe</a>
+  </div>
+</nav>
+<script>
+function toggleTheme() {
+  var dark = document.body.classList.toggle('dark');
+  try { localStorage.setItem('df_theme', dark ? 'dark' : 'light'); } catch (e) {}
+  document.getElementById('theme-icon').innerHTML = dark ? '&#9788;' : '&#9790;';
+}
+(function() {
+  try {
+    if (localStorage.getItem('df_theme') === 'dark') {
+      document.body.classList.add('dark');
+      var ic = document.getElementById('theme-icon');
+      if (ic) ic.innerHTML = '&#9788;';
+    }
+  } catch (e) {}
+})();
+</script>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Changelog &middot; newest first</div>
+  <h1>What actually shipped, with the dates.</h1>
+  <p class="sub">Including the corrections, the removals, and the claims we had to take back. Those are the entries worth reading.</p>
+</div>
+
+<section id="log">
+  <div class="section-label">The log</div>
+  <h2>From 1 September 2026.</h2>
+  <p class="lead">One line per change, newest first. Drafts and internal work are not listed &mdash; only things a reader or a subscriber can see. Entries marked in gold are fixes to something we got wrong. What comes next is on the <a href="roadmap.html">roadmap</a>.</p>
+
+  <div class="log">
+
+    <div class="day">
+      <div class="day-date">18 Sep 2026</div>
+      <ul>
+        <li>The homepage is now one short page instead of 233KB of sales copy; the old version is archived, not deleted. <a href="index.html">See it</a></li>
+        <li>The weekly scoreboard came out of draft and is now public. <a href="scoreboard.html">Open it</a></li>
+        <li class="fix">Deleted every tier claim the code could not back: the 60-day Premium trial, exit-strategy guidance, the monthly recap, the macro bar, the private community, the weekly Q&amp;A, and &ldquo;re-evaluated every 15 minutes&rdquo; on Radar, which has been hourly since 24 August.</li>
+        <li class="fix">Closed the paid-data leaks. The Distillery served its whole page to anyone behind a CSS overlay, the live signal&rsquo;s ticker and its conviction score were readable without an account, and real-time alerts sold as Investor were reaching Basic. All four are now enforced on the server.</li>
+        <li class="fix">Our own 11 September track-record correction had never reached the homepage, which was still showing the old numbers in seven places, including the headline. An outside review caught it. Fixed.</li>
+        <li>The weekly digest moved from Sunday to Friday &mdash; the day we advertise &mdash; and now always carries the week&rsquo;s published research and the scoreboard, so it is not empty in a quiet week.</li>
+        <li>Scoreboard: rows that carry a figure now come first, there is a column for what changed since last week, and each source links to the filing rather than to a site summarising it.</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">17 Sep 2026</div>
+      <ul>
+        <li>First version of the weekly scoreboard, published unlisted so it could be reviewed before anyone was pointed at it.</li>
+        <li class="fix">Stopped selling exit-strategy guidance. Our own research found that trade management gave back more than it saved, and the onboarding email said so while the pricing card sold the opposite.</li>
+        <li>Published llms.txt on the public site. It had been a 404, so tools reading the site could not find the research library at all.</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">16 Sep 2026</div>
+      <ul>
+        <li>Published the three-month re-score of the June AI-bubble tests, including the two things the June piece missed. <a href="learn/scorecard-revisited.html">Read it</a></li>
+        <li class="fix">America&rsquo;s Trade: dated corrections added after outside review, with every remaining point re-checked against its source. <a href="learn/americas-trade.html">Read it</a></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">12 Sep 2026</div>
+      <ul>
+        <li class="fix">Published the piece explaining the track-record correction: what the numbers were, what they should have been, and the arithmetic. <a href="learn/the-number-we-got-wrong.html">Read it</a></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">11 Sep 2026</div>
+      <ul>
+        <li class="fix">Corrected the published track record downward: cumulative +380% became +343.5%, the S&amp;P comparison +117% became +109.6%, and the win rate 83% became 82.8%. Every figure now carries the date it was measured and the average holding period behind it. <a href="track_record.html">See the page</a></li>
+        <li class="fix">The Decision Ledger&rsquo;s headline number had been generated once in June and served as current ever since. Re-run, re-dated, and the stale-by-design part removed.</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">10 Sep 2026</div>
+      <ul>
+        <li>Published a machine-readable index of the research library, which had been invisible to anything that was not a human clicking through. <a href="learn/index.html">Browse it</a></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">4 Sep 2026</div>
+      <ul>
+        <li>Published two deep dives: <a href="learn/debt-machine.html">The Debt Machine</a> and <a href="learn/americas-trade.html">America&rsquo;s Trade</a>.</li>
+        <li class="fix">Added a freshness check after both had sat finished but unpublished, because nothing was watching for that.</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">3 Sep 2026</div>
+      <ul>
+        <li class="fix">The Debt Machine: eight factual errors found in an outside review and fixed before publication, with the mechanism and the counter-argument added.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="note">
+    This log starts on 1 September 2026, which is when we started keeping it. Corrections to published
+    articles also live in the <a href="learn/corrections.html">corrections log</a>, where they sit beside the
+    claim they replace and are never removed.
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <a href="index.html">Dragonfly Systems</a> &nbsp;&bull;&nbsp;
+    <a href="track_record.html">Track record</a> &nbsp;&bull;&nbsp;
+    <a href="learn/corrections.html">Corrections</a> &nbsp;&bull;&nbsp;
+    <a href="roadmap.html">Roadmap</a> &nbsp;&bull;&nbsp;
+    <a href="changelog.html">Changelog</a> &nbsp;&bull;&nbsp;
+    <a href="mailto:officialdragonflysystems@gmail.com">officialdragonflysystems@gmail.com</a>
+  </p>
+  <p style="margin-top:12px;">
+    Not financial advice. Past thesis performance does not guarantee future results.<br>
+    All positions tracked from first verifiable public signal &mdash; winners and losers included.<br>
+    Dragonfly Systems publishes editorial research, not personalised investment advice. Nothing on this site
+    constitutes a recommendation to buy or sell any security. Consult a registered financial advisor before acting.
+  </p>
+  <p style="margin-top:12px;">
+    &copy; 2026 Dragonfly Systems &nbsp;&bull;&nbsp;
+    <a href="https://github.com/OfficialDragonflySystems">GitHub</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/privacy">Privacy Policy</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/terms">Terms of Service</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/risk-disclosure">Risk Disclosure</a>
+  </p>
+</footer>
+
+</body>
+</html>

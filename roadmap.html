@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!-- Roadmap, first published 2026-09-18. Rule: nothing is listed under "Available now"
+     until it works, and anything that stops working comes off this page and goes in the changelog. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What Dragonfly Lens actually has today, the three things we have committed to next with dates, and the ideas we are only exploring. No feature is advertised here before it works.">
+<title>Roadmap &mdash; Dragonfly Lens</title>
+<link rel="icon" type="image/png" href="/Tracker/og-image.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:  #2d6a4f;
+  --lime:   #4ade80;
+  --gold:   #c8a84b;
+  --dark:   #0d1f0f;
+  --text:   #1a1a1a;
+  --muted:  #666;
+  --border: #e8e8e4;
+  --bg:     #f9f9f7;
+}
+html { scroll-behavior: smooth; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--text); background: #fff; }
+.sans { font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+/* -- NAV -- */
+nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 10px 24px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 9px; border-bottom: 1px solid #1a3a1f; }
+.nav-logo { color: var(--lime); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px;
+  font-weight: 800; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+.nav-links { display: flex; gap: 13px; align-items: center; flex-wrap: wrap; justify-content: center; row-gap: 7px; }
+.nav-links a { color: #9ca; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-decoration: none; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: var(--lime); color: var(--dark) !important; font-weight: 700; padding: 7px 16px; border-radius: 4px; }
+.nav-cta:hover { background: #86efac; }
+
+/* -- HERO -- */
+.hero { background: var(--dark); padding: 60px 32px 52px; text-align: center; }
+.hero-eyebrow { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--lime); margin-bottom: 20px; }
+.hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: normal; color: #fff; line-height: 1.2; max-width: 740px; margin: 0 auto 20px; }
+.hero p.sub { font-size: 17px; color: #cfe8d2; line-height: 1.7; max-width: 660px; margin: 0 auto;
+  font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+/* -- SECTIONS -- */
+section { padding: 52px 32px; max-width: 860px; margin: 0 auto; }
+.section-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+h2 { font-size: clamp(22px, 3vw, 30px); font-weight: normal; margin-bottom: 16px; line-height: 1.25; }
+.lead { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 660px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.lead a { color: var(--green); font-weight: 700; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* -- ITEM LISTS -- */
+.rm-list { list-style: none; margin-top: 26px; }
+.rm-list li { border-top: 1px solid var(--border); padding: 16px 0 15px; }
+.rm-list li:last-child { border-bottom: 1px solid var(--border); }
+.rm-name { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14.5px; font-weight: 800;
+  color: var(--dark); margin-bottom: 5px; }
+.rm-name .tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); border-radius: 10px;
+  padding: 2px 8px; margin-left: 7px; vertical-align: 2px; }
+.rm-desc { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13.5px; color: #444; line-height: 1.7; }
+.rm-desc a { color: var(--green); font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(45,106,79,.3); }
+.rm-when { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12.5px; color: var(--green);
+  font-weight: 700; margin-top: 7px; }
+.rm-check { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12.5px; color: var(--muted);
+  margin-top: 4px; font-style: italic; }
+.note { background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--green);
+  border-radius: 6px; padding: 16px 18px; margin-top: 24px;
+  font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13.5px; color: #444; line-height: 1.75; }
+.note a { color: var(--green); font-weight: 700; }
+.warnbox { background: #fdf7e3; border: 1px solid #e6d9a8; border-left: 3px solid var(--gold);
+  border-radius: 6px; padding: 16px 18px; margin-top: 22px;
+  font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13.5px; color: #5c4700; line-height: 1.75; }
+.warnbox a { color: #7a5c00; font-weight: 700; }
+
+/* -- FOOTER -- */
+footer { background: var(--dark); padding: 40px 32px; text-align: center; }
+footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #9cc0a3; line-height: 1.8; }
+footer a { color: #4ade80; text-decoration: none; }
+footer a:hover { color: var(--lime); }
+
+@media (max-width: 600px) {
+  nav { padding: 9px 12px 7px; }
+  .nav-links { gap: 11px; }
+  section { padding: 40px 20px; }
+  .hero { padding: 46px 20px 42px; }
+}
+
+/* -- DARK MODE -- */
+body.dark { background: #0a0f0b !important; color: #c9d1d9; }
+body.dark section { background: #0a0f0b !important; }
+body.dark h2 { color: #e6edf3 !important; }
+body.dark .lead { color: #9ba3af !important; }
+body.dark .section-label { color: #4ade80 !important; }
+body.dark .divider { border-color: #1a3a1f !important; }
+body.dark .rm-list li { border-color: #1e3a24 !important; }
+body.dark .rm-name { color: #e6edf3 !important; }
+body.dark .rm-name .tag { color: #9ba3af !important; border-color: #1e3a24 !important; }
+body.dark .rm-desc { color: #b1bac4 !important; }
+body.dark .rm-desc a { color: #4ade80 !important; border-color: rgba(74,222,128,.3) !important; }
+body.dark .rm-when { color: #4ade80 !important; }
+body.dark .rm-check { color: #9ba3af !important; }
+body.dark .note { background: #111d12 !important; border-color: #1e3a24 !important;
+  border-left-color: #4ade80 !important; color: #b1bac4 !important; }
+body.dark .warnbox { background: #1a1200 !important; border-color: #3a2800 !important;
+  border-left-color: var(--gold) !important; color: #c8b890 !important; }
+body.dark .warnbox a { color: var(--gold) !important; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Dragonfly Lens</a>
+  <div class="nav-links">
+    <a href="learn/why-the-lens.html" style="color:#4ade80;font-weight:700;" title="New here? Start with why we exist">Why us</a>
+    <a href="learn/index.html" style="color:#4ade80;font-weight:700;">Learn</a>
+    <a href="track_record.html">Track record</a>
+    <a href="learn/corrections.html">Corrections</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="https://tracker.officialdragonflysystems.com/signin" title="Subscriber login">My Account</a>
+    <button id="theme-btn" onclick="toggleTheme()" title="Toggle dark mode"
+      style="background:none;border:1px solid #2a5a35;border-radius:4px;color:#9ca;cursor:pointer;padding:5px 9px;font-size:15px;line-height:1;display:flex;align-items:center;">
+      <span id="theme-icon">&#9790;</span>
+    </button>
+    <a href="index.html#pricing" class="nav-cta">Subscribe</a>
+  </div>
+</nav>
+<script>
+function toggleTheme() {
+  var dark = document.body.classList.toggle('dark');
+  try { localStorage.setItem('df_theme', dark ? 'dark' : 'light'); } catch (e) {}
+  document.getElementById('theme-icon').innerHTML = dark ? '&#9788;' : '&#9790;';
+}
+(function() {
+  try {
+    if (localStorage.getItem('df_theme') === 'dark') {
+      document.body.classList.add('dark');
+      var ic = document.getElementById('theme-icon');
+      if (ic) ic.innerHTML = '&#9788;';
+    }
+  } catch (e) {}
+})();
+</script>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Roadmap &middot; last updated 18 September 2026</div>
+  <h1>What exists, what we have committed to, and what we are only thinking about.</h1>
+  <p class="sub">Three sections, in that order, and nothing else. If a feature is not in the first section, you are not paying for it.</p>
+</div>
+
+<!-- THE RULE -->
+<section id="the-rule" style="padding-bottom:20px;">
+  <div class="section-label">The rule</div>
+  <h2>No feature is advertised before it works.</h2>
+  <p class="lead">
+    Everything under &ldquo;Available now&rdquo; is something we have checked end to end: the code runs, the data
+    flows, and a subscriber can open it today. Anything that is built but has no data behind it, or that we
+    could not verify ourselves, does not appear there &mdash; not in a lighter font, not with an asterisk, not
+    at all. This works in both directions: if something on that list stops working, it comes off the page, and
+    the removal goes in the <a href="changelog.html">changelog</a> with the date.
+  </p>
+  <div class="warnbox">
+    <strong>What we removed, and why.</strong> Until 18 September 2026 our homepage carried a roadmap that
+    unlocked features at subscriber counts &mdash; sector filters at 10 subscribers, earnings-call summaries
+    further up, a B2B API further up still, broker connections &ldquo;as we grow&rdquo;. We deleted it. A
+    milestone tied to a subscriber number tells you how badly we want your money, not when you will get the
+    thing, and it quietly made every unbuilt feature look like your fault for not recruiting fast enough.
+    Dates and prerequisites we control replace it. This page is the replacement, and it is shorter on purpose.
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 1. AVAILABLE NOW -->
+<section id="available-now">
+  <div class="section-label">1 &middot; Available now</div>
+  <h2>Live today, and checkable today.</h2>
+  <p class="lead">Free items are marked free; the rest say which tier they sit in. One line each for what the thing actually does.</p>
+
+  <ul class="rm-list">
+    <li>
+      <div class="rm-name">The AI build-out scoreboard <span class="tag">Free</span></div>
+      <div class="rm-desc">Four checkable tests on whether the AI build-out is real demand or malinvestment, re-marked every week with the source and the date each figure refers to &mdash; and cells with nothing new say &ldquo;no new print&rdquo; instead of recycling a stale number. <a href="scoreboard.html">Open the scoreboard &rarr;</a></div>
+    </li>
+    <li>
+      <div class="rm-name">The Learn library <span class="tag">Free</span></div>
+      <div class="rm-desc">55 published deep dives on AI infrastructure, energy and critical materials, each sourced to the filing or the dataset rather than to somebody else&rsquo;s summary. <a href="learn/index.html">Browse the library &rarr;</a></div>
+    </li>
+    <li>
+      <div class="rm-name">The corrections log <span class="tag">Free</span></div>
+      <div class="rm-desc">Every correction we have made, dated, kept beside the claim it replaces, and never deleted &mdash; including the week we found our own published track-record numbers were overstated. <a href="learn/corrections.html">Read the log &rarr;</a></div>
+    </li>
+    <li>
+      <div class="rm-name">The track record <span class="tag">Free</span></div>
+      <div class="rm-desc">All 87 dated theses with the losers included, labelled for what it is: a backtest of what the method would have flagged, not money that was traded. <a href="track_record.html">Inspect all 87 &rarr;</a></div>
+    </li>
+    <li>
+      <div class="rm-name">The signed signal ledger <span class="tag">Free to verify</span></div>
+      <div class="rm-desc">Every editorial signal is cryptographically signed the moment it is published, and anyone can check the payload against our public key, so we cannot quietly edit history. The forward record is small and we will not round it up: one signed signal since 17 May 2026, conviction WATCH at 56 out of 100, still open and currently down. <a href="https://tracker.officialdragonflysystems.com/verify">Verify a signal yourself &rarr;</a></div>
+    </li>
+    <li>
+      <div class="rm-name">The Friday digest <span class="tag">All tiers</span></div>
+      <div class="rm-desc">One email a week carrying that week&rsquo;s published research and the current scoreboard, so it has a payload whether or not a signal fired. It went out on Sundays until 18 September 2026, which did not match what we advertised; the first Friday send is 18 September 2026.</div>
+    </li>
+    <li>
+      <div class="rm-name">Watchlists and the holdings tracker <span class="tag">Basic / Investor+</span></div>
+      <div class="rm-desc">Track 3 tickers on Basic, 12 on Investor and an unlimited list on Premium, with a holdings tracker from Investor up; the limits are enforced by the server, not just hidden in the page.</div>
+    </li>
+    <li>
+      <div class="rm-name">Radar <span class="tag">Premium</span></div>
+      <div class="rm-desc">A four-tier coverage board over every ticker we track, recomputed by the news scan every hour &mdash; hourly, not the &ldquo;every 15 minutes&rdquo; we used to claim, which stopped being true when we throttled the scan on 24 August 2026.</div>
+    </li>
+    <li>
+      <div class="rm-name">Compound &mdash; the trade journal <span class="tag">Premium</span></div>
+      <div class="rm-desc">Log a trade with your time horizon and what would make you sell, and see your win rate, profit factor, equity curve and how your conviction lined up with your outcomes. It is the most complete thing we sell.</div>
+    </li>
+    <li>
+      <div class="rm-name">The Distillery <span class="tag">Investor+</span></div>
+      <div class="rm-desc">Live macro charts inside the subscriber portal. Until 18 September 2026 the only thing between a free reader and this page was a CSS overlay; the gate is now enforced on the server. The global-energy panel inside it is still running on fallback data, so treat that one panel as not live.</div>
+    </li>
+  </ul>
+
+  <div class="note">
+    This list is shorter than our pricing page used to be, and that is the point. On 18 September 2026 we
+    audited every tier promise against the code that was supposed to deliver it and deleted the ones nothing
+    backed. What survived is above.
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 2. COMMITTED NEXT -->
+<section id="committed-next">
+  <div class="section-label">2 &middot; Committed next</div>
+  <h2>Three commitments, with dates you can hold us to.</h2>
+  <p class="lead">Three, not thirty. Each has a date or a stated prerequisite, and each is written so that on the date you can look at the site and decide for yourself whether we did it. If we miss one, it gets a dated entry in the changelog saying we missed it.</p>
+
+  <ul class="rm-list">
+    <li>
+      <div class="rm-name">1. Close the three blank baselines on the scoreboard &mdash; one source a month</div>
+      <div class="rm-desc">Three of the five physical tells on the scoreboard carry no figure of ours: grid interconnection queues, memory and optics pricing, and data-centre starts. They sit under &ldquo;Baselines we are still building&rdquo; rather than as empty rows, because an empty row still reads like a reading. We will publish one of them a month, each with its primary source, the date the figure refers to, and the basis it is measured on &mdash; and we will not borrow a number from somewhere else to fill a row.</div>
+      <div class="rm-when">Grid interconnection queues by 31 October 2026 &middot; memory and optics pricing by 30 November 2026 &middot; data-centre starts by 31 December 2026.</div>
+      <div class="rm-check">How to check: open the scoreboard on 1 November, 1 December and 1 January and count how many of the five physical tells carry a dated figure of ours. It should read three, then four, then five.</div>
+    </li>
+    <li>
+      <div class="rm-name">2. A &ldquo;verify this claim&rdquo; page behind every published figure</div>
+      <div class="rm-desc">Anyone can already verify a signal&rsquo;s signature at <a href="https://tracker.officialdragonflysystems.com/verify">/verify</a>. Editorial figures do not have that: a footnote takes you to a source list, not to a record of what we measured. We will extend the same machinery to figures, so a number resolves to a page showing the primary source, the date the figure refers to, the date we last checked it, and any correction applied since.</div>
+      <div class="rm-when">Every figure on the scoreboard by 31 December 2026; every figure in Learn articles published from 1 January 2027 onward, from the day each is published.</div>
+      <div class="rm-check">How to check: click any figure on the scoreboard after 31 December 2026. If it does not land on a per-figure record, we did not do it.</div>
+    </li>
+    <li>
+      <div class="rm-name">3. Compound&rsquo;s scoring loop &mdash; one line of reasoning in, a score out</div>
+      <div class="rm-desc">Compound already stores a time horizon and a sell thesis with each position, but the loop is open: nothing goes back and marks what happened when that horizon arrives. We will capture one line of reasoning at the moment of the decision and score that entry automatically when its horizon passes &mdash; was the reason still the reason, and did it play out &mdash; so the journal can tell you which of your own reasons work.</div>
+      <div class="rm-when">Capture and automatic scoring shipped by 31 March 2027. Prerequisite before we publish any calibration number out of it: at least 30 entries whose horizon has passed, because a hit rate on fewer than that is noise, and we are not going to do to you what we refuse to do to ourselves.</div>
+      <div class="rm-check">How to check: after 31 March 2027, a Premium account&rsquo;s Compound tab should show a scored / not-yet-scored count on its own entries.</div>
+    </li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- 3. EXPLORING -->
+<section id="exploring">
+  <div class="section-label">3 &middot; Exploring</div>
+  <h2>Ideas. Not promises.</h2>
+  <div class="warnbox">
+    <strong>Nothing in this section is promised.</strong> There are no dates here, no prerequisites, and no
+    implied delivery. None of it should affect your decision to subscribe or to stay subscribed &mdash; if
+    anything below is the reason you are considering a subscription, please do not subscribe yet. One or two
+    have had a single trial run; most will never ship, and the ones that do not will simply disappear from
+    this list without ceremony. If one does ship, it moves up to &ldquo;Available now&rdquo; and appears in
+    the <a href="changelog.html">changelog</a> on the day it does.
+  </div>
+
+  <ul class="rm-list">
+    <li>
+      <div class="rm-name">Said vs Happened</div>
+      <div class="rm-desc">A dated record of what prominent public forecasters actually said, set against what actually happened &mdash; the same standard we apply to our own calls, applied to theirs.</div>
+    </li>
+    <li>
+      <div class="rm-name">What the World Pays</div>
+      <div class="rm-desc">Per-country comparisons of what a household really pays for the same basic thing, at the price they meet rather than the headline rate. One trial dossier exists, on fuel. It is not published.</div>
+    </li>
+    <li>
+      <div class="rm-name">How the World Covered It</div>
+      <div class="rm-desc">One event read through the outlets of many countries at once, to show where the accounts diverge and where they agree. One trial run exists, across 23 outlets in 14 countries. It is not published.</div>
+    </li>
+    <li>
+      <div class="rm-name">Broker statement import for Compound</div>
+      <div class="rm-desc">Upload or paste a broker statement instead of typing trades in by hand. To be explicit, because our old roadmap was not: this would be file import, not account linking, and we have no plan to connect to your brokerage.</div>
+    </li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <a href="index.html">Dragonfly Systems</a> &nbsp;&bull;&nbsp;
+    <a href="track_record.html">Track record</a> &nbsp;&bull;&nbsp;
+    <a href="learn/corrections.html">Corrections</a> &nbsp;&bull;&nbsp;
+    <a href="roadmap.html">Roadmap</a> &nbsp;&bull;&nbsp;
+    <a href="changelog.html">Changelog</a> &nbsp;&bull;&nbsp;
+    <a href="mailto:officialdragonflysystems@gmail.com">officialdragonflysystems@gmail.com</a>
+  </p>
+  <p style="margin-top:12px;">
+    Not financial advice. Past thesis performance does not guarantee future results.<br>
+    All positions tracked from first verifiable public signal &mdash; winners and losers included.<br>
+    Dragonfly Systems publishes editorial research, not personalised investment advice. Nothing on this site
+    constitutes a recommendation to buy or sell any security. Consult a registered financial advisor before acting.
+  </p>
+  <p style="margin-top:12px;">
+    &copy; 2026 Dragonfly Systems &nbsp;&bull;&nbsp;
+    <a href="https://github.com/OfficialDragonflySystems">GitHub</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/privacy">Privacy Policy</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/terms">Terms of Service</a> &nbsp;&bull;&nbsp;
+    <a href="https://tracker.officialdragonflysystems.com/risk-disclosure">Risk Disclosure</a>
+  </p>
+</footer>
+
+</body>
+</html>
