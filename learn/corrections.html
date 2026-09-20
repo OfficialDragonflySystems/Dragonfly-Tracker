@@ -106,6 +106,30 @@
   </div>
 
   <div class="entry">
+    <div class="date">2026-09-20 &middot; <span class="tag t-data">Data / method</span></div>
+    <h3>Our track record compared every position to the same benchmark number</h3>
+    <div class="row"><b>What we found:</b> the track-record table showed an S&amp;P 500 comparison beside each position, and
+    <b>every one of the eleven displayed rows read &ldquo;+110%&rdquo;</b>. The footnote under the table said the benchmark was
+    &ldquo;matched to identical holding period&rdquo;. It was not. Those positions were entered between January 2020 and May 2024,
+    so they cannot share a benchmark figure. +110% was the portfolio-wide comparison, printed once per row as though it had been
+    computed for each.</div>
+    <div class="row"><b>What it should have said:</b> computed per position from dividend-adjusted S&amp;P closes over each
+    position&rsquo;s own window, the column ranges from <b>+51%</b> (OKLO, entered May 2024) to <b>+158%</b> (WPM, entered January
+    2020). Two rows really are +110% &mdash; VRT and NVDA, both entered 3 January 2023 &mdash; which is how a wrong column can look
+    right if you only check one line.</div>
+    <div class="row"><b>Does it change the conclusion:</b> no, and we are saying so rather than letting anyone assume it does.
+    Every position return on that page was already correct; only the comparison column was wrong. It made the weaker positions look
+    like they had cleared a lower bar than they did, and the strongest ones look less remarkable.</div>
+    <div class="row"><b>How we found it:</b> not by ourselves, again. An outside review we commissioned read the live page and
+    noticed that five rows with different entry dates all carried the same benchmark. This is the second time in ten days that an
+    outside reader has found an arithmetic error in our track record before we did. The first was the
+    +380% headline we had already corrected elsewhere and left standing on the homepage.</div>
+    <div class="row"><b>What we did:</b> recomputed all eleven rows from the underlying data, published the per-position figures,
+    and rewrote the footnote to say plainly what the column is, what it was, and that a reviewer caught it. The working file is
+    <code>data/track_record_spy_per_position.json</code>.</div>
+  </div>
+
+  <div class="entry">
     <div class="date">2026-09-18 &middot; <span class="tag t-data">Claims / terms</span></div>
     <h3>We advertised a 30-day refund our own Terms of Service denied</h3>
     <div class="row"><b>What we found:</b> the homepage said &ldquo;First 30 days, full refund &mdash; no questions asked&rdquo; and our
