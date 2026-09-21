@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The AI build-out scoreboard &mdash; Dragonfly Lens</title>
-<meta name="description" content="Four checkable tests of the AI build-out plus the five physical tells that would signal a slowdown - dated, sourced, and updated every week.">
+<meta name="description" content="Five checkable tests of the AI build-out plus the five physical tells that would signal a slowdown - dated, sourced, and updated every week.">
 <link rel="icon" type="image/png" href="/Tracker/og-image.png">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -164,7 +164,7 @@ function toggleTheme() {
 <div class="hero">
   <div class="hero-eyebrow">Updated weekly &middot; week of 14&ndash;18 September 2026</div>
   <h1>The AI build-out scoreboard</h1>
-  <p class="sub">Four checkable tests of whether the AI build-out is real demand or malinvestment, plus the five physical tells that would show a slowdown before any share price does. Every figure is dated and sourced, and we update it every week &mdash; including the weeks when nothing moves.</p>
+  <p class="sub">Five checkable tests of whether the AI build-out is real demand or malinvestment, plus the five physical tells that would show a slowdown before any share price does. Every figure is dated and sourced, and we update it every week &mdash; including the weeks when nothing moves.</p>
 </div>
 
 <!-- WHAT CHANGED THIS WEEK -->
@@ -245,8 +245,39 @@ function toggleTheme() {
       <td class="dir-live">LIVE</td>
       <td>CNBC; Reuters; Benzinga<sup><a href="#s3">3</a></sup><sup><a href="#s17">17</a></sup><sup><a href="#s18">18</a></sup></td>
     </tr>
+    <tr>
+      <td><b>5. Do obsolete chips still clear near book?</b><br>Is the second-hand market agreeing with the accounting?</td>
+      <td>WEAKENING. One of the five largest buyers has cut the life it expects from its own servers, and said why</td>
+      <td><b>Amazon shortened</b> the useful life of a subset of its servers and networking equipment <b>from six years to five</b>, effective 1 January 2025, and separately booked <b>$920m of accelerated depreciation</b> for equipment it decided to retire early. Amazon's own stated reason: &ldquo;an increased pace of technology development, particularly in the area of artificial intelligence and machine learning&rdquo;<sup id="r23"><a href="#s23">23</a></sup>. The realised effect in 2025 was <b>$1.4bn more depreciation and $1.0bn less net income</b>, mostly at AWS<sup id="r24"><a href="#s24">24</a></sup>. Thirteen months earlier the same company had <i>lengthened</i> the same assets to six years. <b>Against this:</b> CoreWeave has an A100 contract running into 2029 and says it re-booked expiring H100s at 95% of their original pricing &mdash; but that reaches us through trade press, not a filing, so it does not move the direction.</td>
+      <td>1 Jan 2025 (effective)<br>Feb 2025 (filed)<br>FY2025 (realised)</td>
+      <td><span class="dir-new">new print</span><br><span class="nonew">first reading</span></td>
+      <td class="dir-down">WEAKENING</td>
+      <td>10-K<sup><a href="#s23">23</a></sup><sup><a href="#s24">24</a></sup></td>
+    </tr>
   </table></div>
   <p class="scroll-hint" style="margin:-8px 0 0;"><b>Last week:</b> this is issue&nbsp;#1, so that column repeats this week&rsquo;s values except where a new primary document landed after we drafted &mdash; test&nbsp;1 says &ldquo;new print&rdquo; because the 17 September 8-K arrived and did not change the grade. A new filing and an unchanged direction are two different facts and the column shows both. From issue&nbsp;#2 it carries the previous week&rsquo;s figure &mdash; which is what makes &ldquo;updated weekly&rdquo; something you can check rather than a caption you have to take our word for.</p>
+
+  <div class="card">
+    <h3>Test 5 fired against our own expectation, and we are showing our working</h3>
+    <p>We wrote this test's rule on <b>20 September</b>, before looking at any of the data, because a
+    test invented after you have seen the answer is not a test. The rule says the direction goes to
+    WEAKENING if any of the five largest buyers <b>shortens</b> the useful life it assigns to its own
+    servers. We also wrote down what we expected to find: STRENGTHENING, because the loudest available
+    evidence pointed that way.</p>
+    <p>We were wrong. Amazon had already shortened, in a filing from February 2025, and said in plain
+    language that AI was the reason. Our own rule marked the cell against the answer we anticipated.</p>
+    <p><b>Why this test exists.</b> The big buyers have told their auditors these machines last six
+    years, and that number is fixed in a filing for years at a time. The second-hand market re-prices
+    every week. If demand is real, obsolete chips keep clearing near what the books say they are worth.
+    If it is not, the resale price cracks first &mdash; before any income statement can show it, because
+    the accounting cannot move that fast. <b>What would move this cell back:</b> the CoreWeave rebooking
+    figures confirmed in a filing or transcript rather than trade press, and no further shortening in
+    the next round of annual reports.</p>
+    <p class="meta">The rule, the direction table, and the two ways we could be wrong:
+    research/PREREG_scoreboard_test5_residuals_2026-09-20.md. Microsoft (through its year to
+    30 June 2026), Alphabet, Meta, CoreWeave and Nebius have all only <i>lengthened</i>; Oracle
+    publishes no server life at all.</p>
+  </div>
 
   <div class="card">
     <h3>Why Test 4 is marked LIVE and never scored</h3>
@@ -362,6 +393,23 @@ function toggleTheme() {
     &mdash; we will carry the priced terms when they are filed. <b>Found by:</b> core/scoreboard_assistant.py on
     its first run, which polls EDGAR for new CoreWeave filings; a human read the filing.</span>
     <a href="#r22" class="back">&#8617;</a></li>
+    <li id="s23"><span class="num">23.</span> Amazon's change in the estimated useful life of servers and
+    networking equipment, and the accelerated depreciation on early retirements &mdash;
+    <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm" rel="nofollow">Form 10-K for
+    the year ended 31 December 2024</a>, filed February 2025 (EDGAR, CIK 1018724). The filing's own words:
+    the company is &ldquo;changing the useful lives of a subset of our servers and networking equipment,
+    effective January 1, 2025, from six years to five years&rdquo;, and the cause is &ldquo;an increased pace
+    of technology development, particularly in the area of artificial intelligence and machine
+    learning&rdquo;.
+    <span class="meta">Figure refers to: 1 Jan 2025 (effective). Filed Feb 2025. Checked 21 Sep 2026.</span>
+    <a href="#r23" class="back">&#8617;</a></li>
+    <li id="s24"><span class="num">24.</span> The realised effect of that change &mdash;
+    <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" rel="nofollow">Form 10-K for
+    the year ended 31 December 2025</a> (EDGAR, CIK 1018724): &ldquo;an increase in depreciation and
+    amortization expense of $1.4 billion and a reduction in net income of $1.0 billion&hellip; which primarily
+    impacted our AWS segment&rdquo;.
+    <span class="meta">Figure refers to: FY2025. Checked 21 Sep 2026.</span>
+    <a href="#r24" class="back">&#8617;</a></li>
   </ul>
 
   <p class="disc">
