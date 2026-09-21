@@ -64,6 +64,9 @@
   footer a{color:var(--lime);}
   .upd{border-left:4px solid var(--gold);background:rgba(251,191,36,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;color:var(--muted);}
   .upd b{color:var(--gold);} .upd del{color:#7a9a80;} .upd ins{color:var(--lime);text-decoration:none;font-weight:700;}
+  .rule{border:1px solid var(--border);border-left:4px solid var(--lime);background:rgba(74,222,128,.05);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;}
+  .rule .rh{color:var(--lime);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:6px;}
+  .rule p{margin:7px 0;font-size:14px;color:var(--muted);} .rule b{color:var(--text);}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
@@ -122,6 +125,23 @@
 
     <p><strong>Read that as a proxy, not as a measurement.</strong> The price is the closest public window onto the efficiency curve, and the direction is not in dispute &mdash; but three different things pushed it down, and only one of them is physics. Most of the fall came from <strong>a far smaller model reaching the same score</strong> (Llama 3.2 3B against GPT-3's 175 billion parameters), some from genuine hardware and serving efficiency, and some from <strong>margin compression</strong> as open-weight models commoditised inference. Watts per useful answer improved. They did not improve a thousand-fold. We wrote that the falling price <em>is</em> the efficiency curve until 21 September 2026; it is a contaminated view of it, and the distinction matters because the first version implies you can buy the physics by watching the sticker.</p>
 
+  <div class="rule">
+    <div class="rh">How we use the word &ldquo;bottleneck&rdquo;</div>
+    <p>We were using one word for two different things, across several pages, and an outside
+    review caught it in September 2026. The distinction we now hold to everywhere:</p>
+    <p><b>BINDING</b> &mdash; what limits the next megawatt actually energised <i>this year</i>.
+    Today that is <b>power delivery</b>: transformers on four-year lead times, interconnect
+    queues, substations, and the trades who build them. A binding constraint is slow, not rare,
+    and it sets <b>the pace</b> of the buildout.</p>
+    <p><b>FRAGILE</b> &mdash; a single point of failure. Low probability of stopping, severe if it
+    does. <b>EUV lithography</b> (one maker on Earth), photomask inspection, HBM, advanced
+    substrates, rare-earth separation. A fragile node is rare, not slow, and it sets
+    <b>the tail risk</b>.</p>
+    <p>Both claims were true; printing them as the same claim was not. They are different
+    questions with different trades: you own the binding constraint for the grind, and you watch
+    the fragile node for the break.</p>
+  </div>
+
     <h2>Follow the bottleneck &mdash; this is where the money is</h2>
 
     <p>Here's the move most investors miss. Because you can't cleanly tell which <em>model</em> will win &mdash; they leapfrog each other monthly &mdash; betting on the model is betting on a coin flip. So don't. Bet on the <strong>bottleneck</strong> instead, because the scarce input gets paid no matter which model is on top.</p>
@@ -130,7 +150,7 @@
 
     <div class="layers">
       <div class="layer normal"><div class="layer-name">The foundry</div><div class="layer-tag">chokepoint</div><div class="layer-desc">Makes every advanced chip on Earth &mdash; one company, one un-hedgeable choke point. The geopolitical risk in the whole thesis.</div></div>
-      <div class="layer normal"><div class="layer-name">Compute silicon</div><div class="layer-tag">racing</div><div class="layer-desc">The chips. Improving on efficiency fast, but plentiful-ish &mdash; and the place everyone is already looking.</div></div>
+      <div class="layer normal"><div class="layer-name">Compute silicon</div><div class="layer-tag">racing</div><div class="layer-desc">The chips. Improving on efficiency fast, and abundant relative to the power needed to run them &mdash; the place everyone is already looking. Abundant is not the same as safe: the foundry above it and the substrates beneath it are <b>fragile</b>, in the sense defined below.</div></div>
       <div class="layer bottleneck"><div class="layer-name">Memory + interconnect</div><div class="layer-tag">BOTTLENECK</div><div class="layer-desc">The pipes that feed the chips (high-bandwidth memory, networking). A starved chip burns power doing nothing &mdash; like an engine revving in neutral. Genuinely scarce today.</div></div>
       <div class="layer bottleneck"><div class="layer-name">Power / energy</div><div class="layer-tag">THE CEILING</div><div class="layer-desc">The electricity to run it all. Nuclear, the grid, and the people who build both. The ultimate scaling limit &mdash; and where the most durable money sits.</div></div>
       <div class="layer normal"><div class="layer-name">Cooling / data center</div><div class="layer-tag">tightening</div><div class="layer-desc">Every watt spent on air conditioning is a watt not spent thinking. Efficiency here is pure margin.</div></div>
@@ -139,6 +159,8 @@
     </div>
 
     <p>The two links flashing red today &mdash; the genuine scarcity &mdash; are <strong>energy and memory.</strong> That's where the durable money is, because they win regardless of which model wins.</p>
+
+    <p>One clarification, because we have not always been careful with it. Energy is the <b>binding</b> constraint &mdash; the thing that limits how fast this gets built. It is not the only place the chain can break. Our <a href="picks-and-shovels.html">supply-chain map</a> names roughly twenty <b>fragile</b> nodes &mdash; EUV lithography, photomask inspection, advanced substrates, rare-earth separation &mdash; any one of which would stop the buildout outright rather than slow it. Different risk, different trade.</p>
 
     <h2>The wildcard that can flip the board overnight</h2>
 

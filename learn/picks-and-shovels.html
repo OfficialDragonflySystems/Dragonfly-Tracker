@@ -59,6 +59,9 @@
   .step b{color:#fff;}
   .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
   footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+  .rule{border:1px solid var(--line);border-left:4px solid var(--accent);background:rgba(94,234,212,.05);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;}
+  .rule .rh{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:6px;}
+  .rule p{margin:7px 0;font-size:14px;color:var(--muted);} .rule b{color:var(--ink);}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
@@ -93,6 +96,23 @@
 
   <p style="font-size:13px;color:var(--muted);"><b>Legend:</b> <span class="tag t-lead">Leader</span> established, real revenue &middot; <span class="tag t-emerg">Emerging</span> small-cap / early &middot; <span class="tag t-priv">Private</span> not yet public &middot; <span class="tag t-hype">Hype</span> narrative running ahead of revenue &middot; <span class="tag t-spof">SPOF</span> single point of failure.</p>
 
+  <div class="rule">
+    <div class="rh">How we use the word &ldquo;bottleneck&rdquo;</div>
+    <p>We were using one word for two different things, across several pages, and an outside
+    review caught it in September 2026. The distinction we now hold to everywhere:</p>
+    <p><b>BINDING</b> &mdash; what limits the next megawatt actually energised <i>this year</i>.
+    Today that is <b>power delivery</b>: transformers on four-year lead times, interconnect
+    queues, substations, and the trades who build them. A binding constraint is slow, not rare,
+    and it sets <b>the pace</b> of the buildout.</p>
+    <p><b>FRAGILE</b> &mdash; a single point of failure. Low probability of stopping, severe if it
+    does. <b>EUV lithography</b> (one maker on Earth), photomask inspection, HBM, advanced
+    substrates, rare-earth separation. A fragile node is rare, not slow, and it sets
+    <b>the tail risk</b>. Everything tagged SPOF on this page is of this kind.</p>
+    <p>Both claims were true; printing them as the same claim was not. They are different
+    questions with different trades: you own the binding constraint for the grind, and you watch
+    the fragile node for the break.</p>
+  </div>
+
   <h2>The one idea: go one layer below the obvious shovel</h2>
   <p>When a trade gets crowded, the edge isn't in the famous name &mdash; it's in the unglamorous supplier the famous name can't live without. Everyone knows NVIDIA makes the GPU. Far fewer know that every advanced GPU needs a special <span class="def" data-d="The fiberglass-and-resin board that a chip sits on, carrying thousands of electrical connections between the chip and the rest of the computer. Advanced AI chips need exotic, hard-to-make substrates &mdash; a quiet bottleneck.">substrate</span> from a tiny club of Japanese makers, must be stacked with <span class="def" data-d="High-Bandwidth Memory &mdash; stacks of memory chips bonded right next to the GPU to feed it data fast. Made by only three companies in the world.">HBM</span> that only three firms produce, and must be <span class="def" data-d="Checking every stacked memory chip works before it ships &mdash; dominated by two makers, Advantest and Teradyne. A hidden gate on the entire AI memory supply.">tested</span> on machines from a tiny club of testers. <b>That's where the scarcity &mdash; and the pricing power &mdash; actually lives.</b></p>
   <div class="real"><b>The cap-table tell:</b> the fastest way to find these hidden chokepoints is to watch where the giants invest <i>defensively</i>. When NVIDIA, AMD and Intel <i>all</i> back the same optical-interconnect startup, they're not being generous &mdash; they're insuring against a part of their own roadmap they can't yet build. Follow the strategic money and it draws you a map of the industry's own fears. We cover how to read this in <a href="#xray">the x-ray section</a>.</div>
@@ -124,13 +144,13 @@
   <h2>Layer 3 &mdash; power &amp; cooling (we mapped these separately)</h2>
   <p>The electricity and heat layer is so large it has its own deep dives. The short version, with the verdict that surprised us:</p>
   <ul>
-    <li><b>Power delivery</b> is the binding constraint &mdash; transformers with 4-year waits, grid interconnect. Full map: <a href="power-bottleneck.html">The Real AI Bottleneck Isn't Chips, It's the Wire</a> (ETN, PWR, GEV, VRT).</li>
+    <li><b>Power delivery</b> is the <b>binding</b> constraint &mdash; transformers with 4-year waits, grid interconnect. This is the one layer on this page that is slow rather than fragile, and it is why the buildout runs late rather than stops. Full map: <a href="power-bottleneck.html">The Real AI Bottleneck Isn't Chips, It's the Wire</a> (ETN, PWR, GEV, VRT).</li>
     <li><b>Cooling verdict:</b> <span class="def" data-d="Cooling that pumps liquid through a metal plate sitting directly on the chip &mdash; now the mainstream choice for AI racks. 'Immersion' (dunking whole servers in fluid) turned out to be the niche, not the future.">cold-plate (direct-to-chip)</span> <b>won the AI rack; immersion is a secondary niche.</b> The proof is in the M&amp;A &mdash; every billion-dollar cooling acquisition (Eaton/Boyd, Ecolab/CoolIT, Schneider/Motivair) was cold-plate. Public leaders: <b>Vertiv (VRT)</b>, <b>nVent (NVT)</b>, <b>Modine (MOD)</b>.</li>
     <li><b>The deepest cooling SPOF:</b> the <span class="def" data-d="Specialized non-conductive coolant fluids used in liquid cooling. A handful of chemical companies make them &mdash; and several are ALSO equity investors in cooling startups, which is the consistent tell.">dielectric-fluid</span> makers (Shell, Castrol, Solvay, Honeywell) <span class="tag t-spof">SPOF</span> &mdash; who are <i>both</i> suppliers and equity backers. And the water angle is mostly a myth: <a href="water-cooling.html">Do data centers really waste water?</a></li>
   </ul>
 
   <h2>Layer 4 &mdash; the materials, robots &amp; satellites (where the deepest picks hide)</h2>
-  <p>This is the least-watched, most-chokepoint-dense layer of all &mdash; and the one with the clearest single message: <b>the bottleneck is almost never the mine or the robot. It's the refining, the gear, and the magnet.</b></p>
+  <p>This is the least-watched, most-chokepoint-dense layer of all &mdash; and the one with the clearest single message: <b>the bottleneck is almost never the mine or the robot. It's the refining, the gear, and the magnet</b> &mdash; all of them <b>fragile</b> rather than binding, in the sense set out above.</p>
 
   <h3>Minerals &mdash; refining is the moat, and China owns it</h3>
   <p>The world has plenty of rare-earth <i>ore</i>. What it lacks is the dirty, capital-intensive step of <span class="def" data-d="Chemically pulling individual rare-earth elements apart from each other and from the rock &mdash; the hard, polluting, expensive step. China runs ~90% of the world's capacity, which is the real bottleneck (not mining).">separation and refining</span>, where China runs ~90% of capacity (and ~98% of gallium, a chip material).</p>
