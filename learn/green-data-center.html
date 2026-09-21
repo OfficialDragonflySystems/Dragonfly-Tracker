@@ -42,6 +42,8 @@
   .warnbox h4{color:var(--warn);font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
   .disc{color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:34px;padding-top:16px;line-height:1.6;}
   footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+  .upd{border-left:4px solid #fbbf24;background:rgba(251,191,36,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;}
+  .upd b{color:#fbbf24;} .upd del{color:#8a97a8;} .upd ins{color:#6ee7a8;text-decoration:none;font-weight:700;}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TED3ERB140');</script>
@@ -51,6 +53,8 @@
 
 <div class="wrap">
   <div class="kick">Deep dive &middot; Practical blueprint</div>
+  <div class="upd"><b>Correction, 22 September 2026.</b> This page described the German heat-reuse mandate as <del>&ldquo;10% from July 2026, 20% by 2028&rdquo;</del>. Two things were wrong. It <b>omitted the 15% step</b> for facilities commissioned from 1 July 2027. More seriously, it read as a <b>ratchet</b> &mdash; as though a single data centre must climb from 10% to 20% by 2028. EnEfG &sect;11(2) ties the tier to the <b>commissioning date</b>: a site that starts operating in July 2026 stays on the 10% tier. We also now note that the 15% and 20% figures are a <i>geplanter Anteil</i> &mdash; a <b>planned</b> share, not an achieved one &mdash; and that compliance is an annual average due two years after commissioning. Source: EnEfG &sect;11(2) Satz 1 Nr. 2 and Satz 2 (BGBl. 2023 I Nr. 309, in force 18 Nov 2023). <b>Sourcing caveat:</b> our reviewer could not reach gesetze-im-internet.de and read the text via a private statute consolidator, so this is a second-hand reading of a primary statute. We are flagging that rather than implying we read the Bundesgesetzblatt ourselves. <a href="corrections.html">Corrections log &rarr;</a></div>
+
   <h1>The Data Center That Feeds You</h1>
   <p class="lead">Right now, AI data centers dump <b>gigawatts of heat into the sky</b> through cooling towers &mdash; while greenhouses, sometimes in the same county, <b>burn natural gas</b> to stay warm. One side's waste is <em>exactly</em> the other side's fuel. Here's the practical design for pairing them &mdash; the loop, the crops, the numbers, the honest risks &mdash; and why regulators just made this inevitable.</p>
 
@@ -108,7 +112,7 @@
 
   <h2>Why the economics actually close now</h2>
   <ul>
-    <li><b>Regulation:</b> Germany now <b>mandates</b> heat reuse for new data centers &mdash; 10% from July 2026, 20% by 2028. The EU is moving the same way. What was PR is becoming a permit condition.</li>
+    <li><b>Regulation:</b> Germany <b>mandates</b> heat reuse for new data centers, and the tier is set by <b>when a facility is commissioned</b> &mdash; not a deadline every site ratchets toward. Under EnEfG &sect;11(2): commissioned from <b>1 July 2026</b>, at least <b>10%</b> reused energy; from <b>1 July 2027</b>, a <i>planned</i> <b>15%</b>; from <b>1 July 2028</b>, a <i>planned</i> <b>20%</b>. A site built in 2026 stays on the 10% tier permanently. The requirement is an annual average, due at the latest two years after commissioning. The EU is moving the same way. What was PR is becoming a permit condition.</li>
     <li><b>The NIMBY unlock (the underrated one):</b> communities everywhere are fighting data centers. A campus that heats the town's greenhouses &mdash; or its homes, as Microsoft and Fortum are doing for 250,000 people in Finland &mdash; flips the town meeting from opposition to invitation. <b>In the AI buildout, faster permitting is worth more than the heat.</b></li>
     <li><b>It's already operating:</b> QScale's L&eacute;vis, Quebec campus is designed to feed surplus heat to neighboring greenhouses; SAI.TECH runs a greenhouse demo in Ohio; Microsoft's underwater-server experiments proved the reliability math years ago. This blueprint is assembled from working parts, not invented.</li>
     <li><b>Food security bonus:</b> cold countries import an absurd share of winter vegetables. Heat that would've been vented becomes local winter food &mdash; the kind of "extra useful" that voters, and increasingly regulators, reward.</li>
