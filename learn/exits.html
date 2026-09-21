@@ -60,6 +60,9 @@
   footer a{color:var(--lime);}
   .upd{border-left:4px solid #fbbf24;background:rgba(251,191,36,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;}
   .upd b{color:#fbbf24;} .upd del{color:#8a97a8;} .upd ins{color:#6ee7a8;text-decoration:none;font-weight:700;}
+  .scope{border:1px solid rgba(148,163,184,.3);border-left:4px solid #4ade80;background:rgba(74,222,128,.05);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;}
+  .scope .sh{color:#4ade80;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:6px;}
+  .scope p{margin:7px 0;font-size:14px;}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
@@ -89,7 +92,23 @@
 
     <p>The conventional wisdom &mdash; "let your winners run but cut your losers fast" &mdash; is one of those things that <em>sounds</em> like sophisticated risk management and turns out, on data, to be wealth-destroying for the typical case. The intuition is wrong because it ignores how much of a portfolio's return comes from a tiny minority of multi-baggers, and how often the smart-exit rules clip those exact positions out.</p>
 
-    <h2>What we tested</h2>
+    <div class="scope">
+    <div class="sh">Which kind of holding is this?</div>
+    <p>We publish two exit rules that look contradictory, so here is the line between them, stated once and used on
+    every page.</p>
+    <p><b>Income holdings &mdash; the thesis <i>is</i> the payout.</b> You own it to be paid. A collapsing price is
+    direct market evidence that the payout is at risk, because the only thing you are owed is cash the company chooses
+    to send. So a trend gate is legitimate here: it is not timing the market, it is noticing that the market disagrees
+    with the one thing your thesis depends on.</p>
+    <p><b>Conviction holdings &mdash; the thesis is a multi-year build.</b> You own it because something physical is
+    being constructed over years. Price tells you very little about whether that construction is happening, and our own
+    87-thesis record says price-based exits gave up most of the outperformance. So you hold to <i>thesis</i>
+    invalidation, not to price.</p>
+    <p><b>The honest caveat:</b> we have backtested the second rule and not the first. The trend gate is a heuristic
+    drawn from how dividend traps actually fail, not a result we have measured. We are telling you which is which.</p>
+  </div>
+
+  <h2>What we tested</h2>
 
     <p>We ran every published signal in our 87-thesis history through five different exit-management strategies, plus a custom "combined" row. The same entries, the same prices, the same data. Only the exit logic varied:</p>
 
