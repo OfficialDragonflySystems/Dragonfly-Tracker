@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Build-Out Makes Two Things Nobody Is Bidding For &mdash; Dragonfly Lens</title>
+<meta name="description" content="Data centres produce waste heat continuously and retired hardware on a schedule set by depreciation policy. One has a price in exactly one city. The other just showed up in Amazon's accounts.">
+<meta property="og:title" content="The AI Build-Out Makes Two Things Nobody Is Bidding For">
+<meta property="og:description" content="Data centres produce waste heat continuously and retired hardware on a schedule set by depreciation policy. One has a price in exactly one city. The other just showed up in Amazon's accounts.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/waste-streams.html">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The AI Build-Out Makes Two Things Nobody Is Bidding For">
+<meta name="twitter:description" content="Data centres produce waste heat continuously and retired hardware on a schedule set by depreciation policy. One has a price in exactly one city. The other just showed up in Amazon's accounts.">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+  .srclist{margin:14px 0 0 4px;padding-left:20px;font-size:14px;color:var(--muted);}
+  .srclist li{margin:11px 0;color:var(--muted);}
+  .meta{font-size:13px;color:var(--muted);}
+  sup a{color:var(--accent);text-decoration:none;font-size:11px;}
+  a.back{color:var(--muted);text-decoration:none;}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; What The Build-Out Leaves Behind</div>
+  <h1>The AI build-out makes two things nobody is bidding for</h1>
+  <p class="lead">Every input to the AI build-out is fought over. Two of its outputs are not.
+  One of them turns out to be the cleanest test we have of whether the whole thing is real.</p>
+  <div class="byline">Dragonfly Lens &middot; published 22 September 2026 &middot; every figure
+  carries the date it refers to and the date we checked it</div>
+
+  <p>Power, land, transformers, high-bandwidth memory, water rights, the electricians who can
+  terminate a 1,400-amp bus bar. Every input to this build-out has more buyers than sellers, and
+  every one of them gets written about weekly.</p>
+
+  <p>Two <strong>outputs</strong> are not contested at all. A data centre produces waste heat
+  continuously, and retired hardware on a schedule. Both volumes are set by decisions that have
+  already been made &mdash; by how much capacity is switched on, and by how fast the owner has
+  told its auditors it writes the equipment down.</p>
+
+  <p>That makes them the only forecastable quantities in the entire build-out that nobody is
+  competing to buy. And in the last fortnight, one of them stopped being a curiosity and became
+  the most useful number on our weekly scoreboard.</p>
+
+  <h2>Heat: a real price, in one city, and almost nobody selling into it</h2>
+
+  <p>Start with the physics, because it is not a metaphor. Nearly every kilowatt-hour that
+  enters a rack leaves as heat. A 100&nbsp;MW hall of servers is, thermodynamically, an
+  85&ndash;90&nbsp;MW heat plant that also does matrix multiplication.</p>
+
+  <p>What changed recently is the <em>grade</em> of that heat, not its existence. Air-cooled
+  halls exhaust air at 30&ndash;40&nbsp;degrees, which a district heating network will not take
+  without a heat pump in between. The direct-liquid-cooled racks that AI hardware requires
+  return coolant at 55&ndash;65&nbsp;degrees &mdash; already hot enough for a modern heat
+  network. The architecture AI forced on the industry is the architecture that makes its waste
+  heat sellable.</p>
+
+  <div class="box">
+    <h3>The one real price</h3>
+    <p>Stockholm Exergi's Open District Heating scheme pays, in its own published words,
+    <strong>indicatively 2 million SEK per year for a heat delivery corresponding to
+    1&nbsp;MW</strong>.<sup id="r1"><a href="#s1">1</a></sup> The payment is set by avoided
+    cost &mdash; what the same heat would have cost Exergi to make in its own plants &mdash;
+    and it is temperature-indexed, rising as the weather gets colder.</p>
+    <p>The scheme has 27 suppliers, 16 of them data centres, delivering about 120&nbsp;GWh a
+    year. That is roughly 1.5% of Exergi's customer demand against a 10% long-term target, in a
+    12&nbsp;TWh network. Eleven thousand apartments are heated this way.</p>
+    <p class="meta"><strong>On the euro figure:</strong> an earlier draft of this piece
+    converted that tariff to "about EUR 150,000 per MW per year." That was wrong &mdash; the
+    conversion needs a rate of 13.3 SEK to the euro, well outside where the krona has traded.
+    We publish the krona figure, which is the one the operator states, and any conversion here
+    carries its rate and its date.</p>
+  </div>
+
+  <p>Now the counter-example, a few hundred kilometres south. Meta's data centre in Odense
+  delivers <strong>165,000&nbsp;MWh a year</strong> of surplus heat to Fjernvarme Fyn &mdash;
+  enough for up to about 9,000 households &mdash; <strong>free of charge</strong>.<sup id="r2"><a href="#s2">2</a></sup></p>
+
+  <p>A decade-old tariff in Stockholm with sixteen data centres on it. One of the largest
+  operators in Europe giving the same commodity away for nothing. <strong>That is not a market
+  clearing at a low price. That is an absent market.</strong></p>
+
+  <h3>Why it stays absent</h3>
+  <ul>
+    <li><strong>Heat is worthless without a pipe.</strong> It cannot travel far. American
+    hyperscale sites are chosen for cheap power in places with no district heating at all.</li>
+    <li><strong>Demand is seasonal and AI load is not.</strong> Summer heat is a disposal
+    problem, not a product.</li>
+    <li><strong>The money is trivial next to the compute.</strong> Even at Stockholm's tariff,
+    the heat from a large campus is a rounding error against what the servers inside it
+    earn.</li>
+  </ul>
+
+  <p>Which raises the obvious question: if Stockholm pays, why does Meta give it away? The
+  honest answer is that in the Nordic cases <strong>the permit and the social licence are the
+  prize, not the revenue</strong>. Stockholm's utility is willing to pay because recovered heat
+  displaces production it would otherwise have to make itself. Meta's problem in Odense was
+  permission and reputation in a country where the alternative heat source was coal and where
+  the planning system can stop you.</p>
+
+  <p>Anyone telling you waste-heat revenue will change where American data centres get built is
+  selling a Nordic institutional fact as though it were a law of physics.</p>
+
+  <h3>Germany wrote a price into law and then declined to publish it</h3>
+
+  <p>Germany's Energy Efficiency Act does something no market has managed: it turns heat reuse
+  into a construction requirement. A data centre commissioned from 1 July 2026 must reach a
+  share of reused energy of <strong>at least 10 per cent</strong>; one commissioned from 1 July
+  2027, <strong>15 per cent</strong>; from 1 July 2028, <strong>20 per
+  cent</strong>.<sup id="r8"><a href="#s8">8</a></sup></p>
+
+  <p>Two details that summaries of this law routinely flatten, and both matter. The dates are
+  <strong>commencement-of-operation triggers, not compliance deadlines</strong> &mdash; the
+  statute gives operators up to two years after switch-on to actually hit the number, so a hall
+  energising in July 2028 owes its 20 per cent by July 2030. And the obligation attaches at a
+  <strong>non-redundant rated connected load of 300 kilowatts</strong>, which is a different and
+  broader measure than the IT load a data-centre operator would normally quote.</p>
+
+  <p>Now the part that matters most for this piece. The law lets an operator escape the reuse
+  obligation entirely by signing an agreement with a nearby municipality or heat-network
+  operator. And it specifies what that agreement must contain: an investment plan, a provision
+  on who bears the cost of the connecting pipe, and <strong>a provision on the price at which
+  the waste heat is supplied</strong>.<sup id="r9"><a href="#s9">9</a></sup></p>
+
+  <div class="box">
+    <p><strong>So a heat price is legally required to exist in every one of those agreements in
+    Germany &mdash; and nothing requires anyone to publish it.</strong></p>
+    <p>That is the clearest possible statement of what we mean by an absent market. The price is
+    not missing because the commodity is worthless. It is missing because it is negotiated
+    bilaterally, written into a private contract to satisfy a statute, and filed away. Every one
+    of those agreements is a data point that exists and that nobody outside the two signatories
+    can see.</p>
+  </div>
+
+  <p class="meta"><strong>And a caveat we would rather publish than be corrected on.</strong> A
+  government bill tabled on 16 September 2026 would loosen much of this: the scoping threshold
+  moves from 300 kW of connected load to <strong>500 kW of installed IT load</strong> &mdash; a
+  double loosening, since the number rises and the measured quantity shrinks &mdash; the
+  efficiency ceilings for existing sites relax, and the grace period after commissioning doubles
+  from two years to four. The reuse percentages themselves are unchanged, but internal heat use
+  becomes creditable and the share may be undershot where a heat-network connection exists. It
+  is a bill, not law, and we will report what passes.<sup id="r10"><a href="#s10">10</a></sup></p>
+
+  <h2>Retired chips: the stream that just showed up in a filing</h2>
+
+  <p>The second stream has a published release schedule, and it is hiding in plain sight in
+  annual reports.</p>
+
+  <p>Microsoft extended the useful life of its server and network equipment from
+  <strong>four years to six</strong> beginning in its 2023 financial year, worth about
+  <strong>$3.7bn</strong> of operating income that year.<sup id="r3"><a href="#s3">3</a></sup>
+  Alphabet did the same thing in January 2023, expecting to cut depreciation by about
+  <strong>$3.4bn</strong> and eventually reporting <strong>$3.9bn</strong>.<sup id="r4"><a href="#s4">4</a></sup></p>
+
+  <p>Those disclosures are the closest thing that exists to a schedule for the world's future
+  supply of second-hand accelerators. If a machine is written down over six years, the company
+  is telling you when it expects to stop wanting it.</p>
+
+  <h3>Then Amazon went the other way</h3>
+
+  <div class="box">
+    <p>In its annual report filed in February 2025, Amazon disclosed that it was
+    <strong>changing the useful lives of a subset of its servers and networking equipment,
+    effective 1 January 2025, from six years to five</strong>. In the same filing it recorded
+    about <strong>$920m of accelerated depreciation</strong> on equipment it had decided to
+    retire early.<sup id="r5"><a href="#s5">5</a></sup></p>
+    <p>Amazon's own stated reason: <em>"an increased pace of technology development,
+    particularly in the area of artificial intelligence and machine learning."</em></p>
+    <p>The realised effect the following year was <strong>$1.4bn more depreciation and $1.0bn
+    less net income</strong>, primarily at AWS.<sup id="r6"><a href="#s6">6</a></sup></p>
+  </div>
+
+  <p>Thirteen months earlier, the same company had <em>lengthened</em> the life of the same
+  asset class to six years. Every other lengthening in this industry has been justified by
+  hardware lasting longer. Amazon's shortening is justified by technology moving faster.</p>
+
+  <p>It is also worth noting what Amazon has <em>not</em> disclosed: which subset, or how large
+  it is. Not as a dollar figure, not as a share of the fleet.</p>
+
+  <h2>Why this is the best test on our scoreboard</h2>
+
+  <p>The accounting cannot move. It is a straight line committed to in a filing, fixed for
+  years. The second-hand market re-prices every week. <strong>The gap between those two is the
+  cleanest available test of whether the compute shortage is real.</strong></p>
+
+  <p>If demand is genuine, obsolete chips keep clearing near what the books say they are worth,
+  because there is more work than hardware. If it is not, <strong>the resale price cracks
+  first</strong> &mdash; before any income statement can show it, because the depreciation
+  schedule is frozen and the bid is not.</p>
+
+  <p>We added this as the fifth test on our weekly scoreboard. The rule was written on
+  20&nbsp;September, before we had looked at any of the data, and we wrote down what we
+  expected to find: strengthening, because the loudest available evidence pointed that way.
+  <strong>We were wrong.</strong> Amazon had already shortened, in a filing from February 2025,
+  and our own rule marked the cell against the answer we anticipated.</p>
+
+  <p class="meta"><strong>What we are not printing, and why.</strong> Two independent research
+  passes gave us used-H100 price ranges of $6,000&ndash;22,000 and $15,000&ndash;28,000 &mdash;
+  a factor of two apart, for the same part, in the same month, neither sourced to a completed
+  transaction. When two careful sources disagree that much, the honest conclusion is not to
+  average them. It is that no public price discovery exists, and anyone quoting a band is
+  quoting an estimate of an estimate. We have also left out revenue figures for the listed
+  hardware-recycling firms until we have reconciled them directly from filings, and
+  CoreWeave's reported contract rebookings, which reach us through trade press rather than a
+  filing.</p>
+
+  <h2>The two we cut, and why the cuts matter</h2>
+
+  <p>This piece began as four streams. Two did not survive contact with the sources, and saying
+  so is more useful than quietly publishing the two that did.</p>
+
+  <h3>Transformer oil</h3>
+  <p>The volume is real &mdash; every gigawatt sits behind oil-filled transformers, and
+  dielectric fluid is reclaimable rather than consumable, which is exactly the condition under
+  which a market should form. Two things killed it.</p>
+  <p>First, and decisively: <strong>there is no published price series for reclaimed transformer
+  oil anywhere.</strong> There are quality standards that define what the reclaimed product must
+  be, and there are trading-site listings carrying seller-quoted asks. There is no index, no
+  assessment, no series. The price is not merely low; it is not published. That absence is
+  itself the finding, and the route to a number would be a utility rate case rather than a
+  market data vendor.</p>
+  <p>Second, the volume does not scale with compute the way the premise assumed. Indoor halls
+  increasingly use dry-type transformers because fire codes and insurers dislike oil indoors, so
+  the oil lives at the campus substation rather than beside the rack.</p>
+
+  <h3>Water</h3>
+  <p>American data centres consumed an estimated <strong>66 billion litres</strong> of water
+  directly in 2023, with hyperscale and colocation facilities accounting for 84% of it, and
+  average site water-use effectiveness staying <strong>just over 0.36 litres per
+  kilowatt-hour</strong> through that year.<sup id="r7"><a href="#s7">7</a></sup></p>
+  <p>But water is not a waste stream you can sell. It is a <strong>priced liability</strong>,
+  and the industry is designing it out: closed-loop cooling with dry coolers drives on-site
+  consumption toward zero. Water use therefore scales with the share of the fleet still on open
+  evaporative towers &mdash; a share that is falling &mdash; not with installed compute. The
+  genuinely interesting object here is the inverse of the premise: treated municipal waste water
+  sold <em>as an input</em>, which is a water utility's product with a data centre as the
+  customer.</p>
+  <p class="meta">Two precision points on that 66 billion litres, because they are usually
+  dropped: it is direct, on-site consumption only, excluding the water used to generate the
+  electricity, which is the larger number. And although the report is a primary source, the
+  figures inside it are the authors' modelled estimates, not metered national totals. The report
+  estimates; it does not measure.</p>
+
+  <h2>What to watch</h2>
+
+  <p>Heat is real, physically guaranteed the moment a hall is switched on, geographically
+  stranded, and &mdash; outside one Swedish scheme &mdash; unpriced in public even where the law
+  requires a price to be written down. The thing to watch is announced gigawatts in a city that
+  has a heat network, with no thermal connection filed within eighteen months of switch-on. If
+  heat were valuable, the pipes would get poured where pipes are possible.</p>
+
+  <p>There is also a specific document worth asking for. Any German data centre relying on a
+  heat-offtake agreement to satisfy its reuse obligation is holding a contract that states a
+  heat price. A municipality is a public body. Someone will eventually publish one of those
+  numbers, and when they do, the first real price outside Stockholm will exist.</p>
+
+  <p>Retired silicon is real, dated years in advance by depreciation policy, and it has already
+  started talking. The thing to watch is simple and it sits in annual reports: <strong>does any
+  other large buyer shorten the life it expects from its own servers?</strong> Microsoft,
+  Alphabet, Meta and the specialist clouds have so far only lengthened. Amazon went the other
+  way and said why.</p>
+
+  <p>The hyperscalers have told their auditors these machines last six years. The second-hand
+  market gets to vote every week. <strong>Watch the gap.</strong></p>
+
+  <h2>Sources</h2>
+  <ol class="srclist">
+    <li id="s1">Stockholm Exergi, heat recovery (Oppen Fjarrvarme) &mdash;
+      <a href="https://www.stockholmexergi.se/foretag/fjarrvarme-for-foretag/varmeatervinning/" rel="nofollow">stockholmexergi.se</a>.
+      <span class="meta">Figure refers to: current tariff, page dated 4 September 2026. Checked
+      21 September 2026.</span> <a href="#r1" class="back">&#8617;</a></li>
+    <li id="s2">Meta, Odense data centre factsheet &mdash;
+      <a href="https://datacenters.atmeta.com/" rel="nofollow">datacenters.atmeta.com</a>.
+      <span class="meta">Figure refers to: an annual volume; the factsheet states no year.
+      Checked 21 September 2026. Corroborated by the International District Energy Association,
+      24 August 2026.</span> <a href="#r2" class="back">&#8617;</a></li>
+    <li id="s3">Microsoft, Form 10-K &mdash; change in estimated useful life of server and
+      network equipment from four to six years, effective FY2023.
+      <span class="meta">Figure refers to: FY2023. Checked 21 September 2026.</span>
+      <a href="#r3" class="back">&#8617;</a></li>
+    <li id="s4">Alphabet, Form 10-K &mdash; useful life of servers extended to six years
+      effective January 2023; expected reduction in depreciation about $3.4bn, realised about
+      $3.9bn. <span class="meta">Figure refers to: FY2023. Checked 21 September 2026. Alphabet
+      disclosed a depreciation effect, not a net-income effect.</span>
+      <a href="#r4" class="back">&#8617;</a></li>
+    <li id="s5">Amazon, Form 10-K for the year ended 31 December 2024, filed February 2025 &mdash;
+      <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm" rel="nofollow">EDGAR, CIK 1018724</a>.
+      <span class="meta">Figure refers to: 1 January 2025 (effective). Filed February 2025.
+      Checked 21 September 2026.</span> <a href="#r5" class="back">&#8617;</a></li>
+    <li id="s6">Amazon, Form 10-K for the year ended 31 December 2025 &mdash;
+      <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" rel="nofollow">EDGAR, CIK 1018724</a>.
+      <span class="meta">Figure refers to: FY2025 realised effect. Checked 21 September 2026.</span>
+      <a href="#r6" class="back">&#8617;</a></li>
+    <li id="s8">Energieeffizienzgesetz (EnEfG), 13 November 2023, &sect;&nbsp;11(2) and
+      &sect;&nbsp;3 Nr.&nbsp;24 &mdash;
+      <a href="https://www.gesetze-im-internet.de/enefg/" rel="nofollow">gesetze-im-internet.de</a>,
+      the consolidated official text. Reuse shares are defined by reference to DIN EN 50600-4-6
+      (November 2020 edition); the two-year grace period is &sect;&nbsp;11(2) sentence 2.
+      <span class="meta">Figures refer to: law in force. Enacted 13 November 2023. Checked
+      21 September 2026. Official text is German only.</span>
+      <a href="#r8" class="back">&#8617;</a></li>
+    <li id="s9">EnEfG &sect;&nbsp;11(3) Nr.&nbsp;2 &mdash; the waste-heat agreement that
+      disapplies the reuse obligation "muss einen Investitionsplan sowie eine Regelung zur
+      Tragung der Kosten der Anbindungsleitung sowie zum Preis der Abgabe der Abwaerme
+      enthalten" (must contain an investment plan, a provision on bearing the cost of the
+      connection line, and a provision on the price at which the waste heat is supplied).
+      <span class="meta">Checked 21 September 2026. The statute requires the price to exist in
+      the agreement. It does not require publication.</span>
+      <a href="#r9" class="back">&#8617;</a></li>
+    <li id="s10">Bundestag Drucksache 21/8027, Gesetzentwurf der Bundesregierung, 16 September
+      2026 &mdash; a bill, not law. Changes the scoping threshold to 500 kW of installed IT
+      load, relaxes the efficiency ceilings for existing sites, and extends the grace period
+      after commissioning from two years to four.
+      <span class="meta">Status at time of writing: government bill before the Bundestag.
+      Checked 21 September 2026.</span>
+      <a href="#r10" class="back">&#8617;</a></li>
+    <li id="s7">Lawrence Berkeley National Laboratory, <em>2024 United States Data Center Energy
+      Usage Report</em> (LBNL-2001637), December 2024 &mdash;
+      <a href="https://eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf" rel="nofollow">eta-publications.lbl.gov</a>.
+      <span class="meta">Figures refer to: 2023. Published December 2024. Checked 21 September
+      2026. Modelled estimates, not metered totals.</span>
+      <a href="#r7" class="back">&#8617;</a></li>
+  </ol>
+
+  <p class="meta" style="margin-top:26px;">Nothing here is investment advice. We publish what
+  would prove us wrong alongside what we think, and when we get something wrong we correct it in
+  our <a href="/learn/corrections.html">corrections log</a> and leave the original visible.</p>
+</div>
+</body>
+</html>
