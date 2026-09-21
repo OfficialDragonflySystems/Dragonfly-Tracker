@@ -66,6 +66,8 @@
   .selrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:.6em 0;}
   select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:14px;}
   #tv-chart{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);min-height:430px;}
+  .upd{border-left:4px solid #fbbf24;background:rgba(251,191,36,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;}
+  .upd b{color:#fbbf24;} .upd del{color:#8a97a8;} .upd ins{color:#6ee7a8;text-decoration:none;font-weight:700;}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
@@ -82,17 +84,19 @@
   <div class="kick">Dragonfly Lens &middot; Live Tracker</div>
   <h1>The AI IPO Wave</h1>
   <p class="sub">The biggest cluster of mega-cap listings in history just formed. How they actually stack up &mdash; with candlesticks, the cycle overlay, and the historically-best way to get an entry.</p>
-  <div class="note" id="asof">Figures as of June 2026. Lockup countdowns + charts update live in your browser. Hover any <span class="lens-term">dotted term<span class="tip">Like this &mdash; hover any dotted term for a plain-English definition and why it matters.</span></span> for a plain-English explanation.</div>
+  <div class="note" id="asof">Figures as of June 2026, with the SpaceX, OpenAI, Anthropic and Cerebras rows corrected 21 September 2026 (see note below). Lockup countdowns + charts update live in your browser. Hover any <span class="lens-term">dotted term<span class="tip">Like this &mdash; hover any dotted term for a plain-English definition and why it matters.</span></span> for a plain-English explanation.</div>
 
   <h2>How they stack up</h2>
+  <div class="upd"><b>Corrections, 21 September 2026.</b> An outside review found four stale or mislabelled cells in the table above, all now fixed. <b>(1)</b> The revenue column was headed <del>&ldquo;Revenue (2025)&rdquo;</del> while Anthropic's cell held <b>~$45B run-rate</b> &mdash; a <b>May 2026</b> figure in a 2025 column, with no caveat. Anthropic's 2025 exit run-rate was about <b>$9B</b>; Sacra put the run-rate near $65B by July 2026. The ~20&times; multiple was computed off the hybrid. <b>(2)</b> SpaceX read <del>&ldquo;Debuts Jun 12 2026&rdquo;</del> &rarr; it <ins>listed</ins> that day and has traded for three months. <b>(3)</b> OpenAI read <del>&ldquo;Q4 target&rdquo;</del>; Sam Altman told Fortune on <b>12 September 2026</b> that a 2026 listing would be &ldquo;ill-advised&rdquo; and said &ldquo;I would say not 2026,&rdquo; with 2027 now the target. <b>(4)</b> Cerebras showed a <del>~$23B</del> valuation, which was the <i>pre-IPO target</i>; it priced at $185 on 14 May 2026, raised $5.5B, and closed day one at $311 for about <ins>$66B</ins>. All four are the same failure: a real number kept past the date it described. <a href="corrections.html">Corrections log &rarr;</a></div>
+
   <table>
-    <thead><tr><th>Company</th><th>Revenue (2025)</th><th>Profitable?</th><th>Valuation</th><th><span class="lens-term">P/Rev<span class="tip">Price-to-revenue: the company's value divided by a year of sales &mdash; how many years of revenue you're paying up front. Higher = pricier / more speculative.</span></span></th><th>Status</th></tr></thead>
+    <thead><tr><th>Company</th><th>Revenue <small>(basis stated per row)</small></th><th>Profitable?</th><th>Valuation</th><th><span class="lens-term">P/Rev<span class="tip">Price-to-revenue: the company's value divided by a year of sales &mdash; how many years of revenue you're paying up front. Higher = pricier / more speculative.</span></span></th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td><span class="tk">SpaceX</span> <small>SPCX</small></td><td>~$18.7B <small>(+33%) + ~$26B/yr AI-compute signed (Anthropic $1.25B/mo, Google $920M/mo &mdash; ramps late 2026)</small></td><td class="bad">No <small>(only Starlink profitable)</small></td><td>~$1.8T</td><td>~100&times;</td><td>Debuts Jun 12 2026</td></tr>
-      <tr><td><span class="tk">OpenAI</span></td><td>~$25&ndash;30B <span class="lens-term">run-rate<span class="tip">The latest month's sales &times; 12 &mdash; an optimistic annual snapshot that can overstate a fast-moving figure.</span></span></td><td class="bad">No &mdash; loses ~$1.22 per $1</td><td>$850B&ndash;$1T</td><td>~38&times;</td><td>Filed May 22 &middot; Q4 target</td></tr>
-      <tr><td><span class="tk">Anthropic</span></td><td>~$45B run-rate</td><td class="bad">No <small>(70% inference margin)</small></td><td>~$965B</td><td>~20&times;</td><td>Filed Jun 1 &middot; ~Oct target</td></tr>
+      <tr><td><span class="tk">SpaceX</span> <small>SPCX</small></td><td>~$18.7B <small>(+33%) + ~$26B/yr AI-compute signed (Anthropic $1.25B/mo, Google $920M/mo &mdash; ramps late 2026)</small></td><td class="bad">No <small>(only Starlink profitable)</small></td><td>~$1.8T at listing</td><td>~100&times;</td><td><b>Listed 12 Jun 2026</b> &middot; $152.05 on 21 Sep</td></tr>
+      <tr><td><span class="tk">OpenAI</span></td><td>~$25&ndash;30B <span class="lens-term">run-rate<span class="tip">The latest month's sales &times; 12 &mdash; an optimistic annual snapshot that can overstate a fast-moving figure.</span></span></td><td class="bad">No &mdash; loses ~$1.22 per $1</td><td>$850B&ndash;$1T</td><td>~38&times;</td><td>Filed May 22 &middot; <b>not 2026</b> &mdash; Altman, 12 Sep 2026; now targeting 2027</td></tr>
+      <tr><td><span class="tk">Anthropic</span></td><td>~$9B <small>2025 exit run-rate; the ~$45&ndash;47B figure we previously showed here was a <b>May 2026</b> run-rate, and Sacra put it near $65B by July 2026</small></td><td class="bad">No <small>(70% inference margin)</small></td><td>~$965B</td><td>~107&times; <small>on 2025; ~15&times; on the mid-2026 run-rate</small></td><td>Filed Jun 1 &middot; ~Oct target</td></tr>
       <tr><td><span class="tk">CoreWeave</span> <small>CRWV</small></td><td>$5.13B <small>(+170%)</small></td><td class="bad">No &mdash; $1.17B loss</td><td>public</td><td>~10&times;</td><td>IPO'd Mar 2025</td></tr>
-      <tr><td><span class="tk">Cerebras</span> <small>CBRS</small></td><td>$510M <small>(+76%)</small></td><td class="bad">No &mdash; $76M loss*</td><td>~$23B</td><td>~45&times;</td><td>Priced ~May 2026</td></tr>
+      <tr><td><span class="tk">Cerebras</span> <small>CBRS</small></td><td>$510M <small>(+76%)</small></td><td class="bad">No &mdash; $76M loss*</td><td>~$66B <small>day-one close; ~$44B at the 21 Sep close of $208.71. ~$23B was the pre-IPO target.</small></td><td>~129&times; <small>at day one; ~87&times; now</small></td><td><b>Priced 14 May 2026</b> at $185, raised $5.5B</td></tr>
       <tr><td><span class="tk">Quantinuum</span> <small>QNT</small></td><td>$30.9M <small>(+34%)</small></td><td class="bad">No &mdash; $193M loss</td><td>~$13B</td><td class="warn">~400&times;</td><td>IPO'd Jun 4 2026</td></tr>
     </tbody>
   </table>
@@ -220,11 +224,11 @@
 
   // --- lockup countdowns ---
   var lockups = [
-    {name:"SpaceX (SPCX)",    ipo:"2026-06-12", note:"Debuts Jun 12 2026"},
+    {name:"SpaceX (SPCX)",    ipo:"2026-06-12", note:"Listed Jun 12 2026"},
     {name:"Quantinuum (QNT)", ipo:"2026-06-04", note:"IPO'd Jun 4 2026"},
     {name:"Cerebras (CBRS)",  ipo:"2026-05-15", note:"Priced ~May 2026"},
     {name:"CoreWeave (CRWV)", ipo:"2025-03-28", note:"Lockup already expired (-33%)"},
-    {name:"OpenAI",           ipo:null,         note:"Not priced yet - Q4 target"},
+    {name:"OpenAI",           ipo:null,         note:"Not priced - Altman ruled out 2026 on Sep 12; targeting 2027"},
     {name:"Anthropic",        ipo:null,         note:"Not priced yet - ~Oct target"}
   ];
   var box = document.getElementById("lockups"), now = new Date();
