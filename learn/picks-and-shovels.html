@@ -102,13 +102,24 @@
     <p>We were using one word for two different things, across several pages, and an outside
     review caught it in September 2026. The distinction we now hold to everywhere:</p>
     <p><b>BINDING</b> &mdash; what limits the next megawatt actually energised <i>this year</i>.
-    Today that is <b>power delivery</b>: transformers on four-year lead times, interconnect
-    queues, substations, and the trades who build them. A binding constraint is slow, not rare,
-    and it sets <b>the pace</b> of the buildout.</p>
-    <p><b>FRAGILE</b> &mdash; a single point of failure. Low probability of stopping, severe if it
-    does. <b>EUV lithography</b> (one maker on Earth), photomask inspection, HBM, advanced
-    substrates, rare-earth separation. A fragile node is rare, not slow, and it sets
-    <b>the tail risk</b>. Everything tagged SPOF on this page is of this kind.</p>
+    Today that is <b>power delivery</b>: grid transformers averaging about <b>128 weeks</b>
+    &mdash; roughly 2.5 years, with four years the tail for the largest custom units &mdash;
+    plus interconnect queues, substations, and the trades who build them. A binding constraint
+    is slow, not rare, and it sets <b>the pace</b> of the buildout.</p>
+    <p><b>FRAGILE</b> &mdash; a single point of failure: one supplier, one process, no
+    substitute. <b>EUV lithography</b> (one maker on Earth), EUV photomask inspection,
+    rare-earth separation. A fragile node is rare, not slow, and it sets <b>the tail risk</b>.
+    Everything tagged SPOF on this page is of this kind.</p>
+    <p><b>CONCENTRATED</b> &mdash; few suppliers, but more than one: advanced substrates,
+    HBM, dielectric fluids, precision reducers. These are usually <i>capacity</i>-constrained,
+    which puts them closer to binding than to fragile.</p>
+    <p><b>We got this wrong inside this very box, on the day we wrote it.</b> The first draft
+    defined &ldquo;binding&rdquo; using transformers on <i>four-year</i> lead times &mdash; the
+    tail figure we had corrected to a 128-week average on the same morning, in the same commit
+    &mdash; and listed HBM and advanced substrates as fragile while simultaneously demoting
+    Ibiden to CONCENTRATED for having three named peers. A reviewer caught both on
+    22 September 2026. We are leaving this paragraph here because a rule that cannot survive
+    its own author is worth less than one that admits where it failed.</p>
     <p>Both claims were true; printing them as the same claim was not. They are different
     questions with different trades: you own the binding constraint for the grind, and you watch
     the fragile node for the break.</p>
@@ -126,7 +137,7 @@
     <tr><td><b>Inspect the masks</b></td><td>&mdash;</td><td><b>Lasertec</b> <span class="tag t-spof">SPOF</span> &mdash; near-monopoly on EUV photomask inspection. A tool the whole industry needs and almost nobody names.</td></tr>
     <tr><td><b>Cut &amp; stack the wafers</b></td><td>&mdash;</td><td><b>Disco</b> (dicing/grinding &mdash; gates HBM and advanced packaging), <b>Advantest</b> (HBM/memory-test leader, with Teradyne), <b>Besi</b> (hybrid bonding; AMAT owns a ~9% stake).</td></tr>
     <tr><td><b>The board under the chip</b></td><td>&mdash;</td><td><b>Ibiden</b> <span class="tag t-conc">CONCENTRATED</span> &mdash; the &ldquo;hidden CoWoS,&rdquo; an advanced-substrate maker most investors have never heard of; Shinko, Unimicron, AT&amp;S alongside. Named peers exist, so this is a capacity constraint rather than a single point of failure.</td></tr>
-    <tr><td><b>The raw wafer &amp; the resist</b></td><td>&mdash;</td><td>Shin-Etsu / SUMCO (the two largest of ~five wafer makers), JSR/Inpria + <b>TOK</b> + Shin-Etsu (EUV photoresist &mdash; Japan ~95% <span class="tag t-spof">SPOF</span>) &mdash; the chemicals without which the machines print nothing.</td></tr>
+    <tr><td><b>The raw wafer &amp; the resist</b></td><td>&mdash;</td><td>Shin-Etsu / SUMCO (the two largest of ~five wafer makers), JSR/Inpria + <b>TOK</b> + Shin-Etsu <span class="tag t-conc">CONCENTRATED</span> (EUV photoresist &mdash; three named firms, but <b>Japan ~95%</b>, so the <i>geography</i> is <span class="tag t-spof">SPOF</span> even though the makers are not) &mdash; the chemicals without which the machines print nothing.</td></tr>
   </table></div>
   <div class="flag"><b>The honest read on the GPU challengers:</b> the &ldquo;NVIDIA killers&rdquo; are mostly a graveyard with a few survivors. <b>Cerebras</b> <span class="tag t-emerg">Emerging</span> is public with real revenue but dangerously concentrated in one customer. <b>Tenstorrent</b> <span class="tag t-priv">Private</span> (led by legendary chip architect <b>Jim Keller</b>) and <b>d-Matrix</b> (Microsoft-backed) are the credible privates. <b>Etched</b> <span class="tag t-hype">Hype</span> raised billions on a transformer-only chip with little shipped. Groq got absorbed; SambaNova did a down-round. The pattern: <b>a famous founder buys survival, not success.</b></div>
 
@@ -171,7 +182,7 @@
     <tr><th>The part</th><th>Who makes it</th><th>Why it's the real pick</th></tr>
     <tr><td><b>Precision reducers</b> (the joint gearbox)</td><td>Harmonic Drive (~strain-wave leader), Nabtesco <span class="tag t-conc">CONCENTRATED</span></td><td>Two firms dominate the gears every robot arm needs. Hard to replicate, decades of know-how.</td></tr>
     <tr><td><b>Roller screws</b> (linear muscle)</td><td>GSA + Rollvis &mdash; Swiss-built, now Schaeffler-owned <span class="tag t-conc">CONCENTRATED</span></td><td>Even tighter than reducers. A constraint most investors have never heard of (and the Swiss duopoly has just been rolled up by Germany's Schaeffler).</td></tr>
-    <tr><td><b>NdFeB magnets</b></td><td>China-dominated <span class="tag t-spof">SPOF</span></td><td>Already <i>delayed Tesla's Optimus.</i> The magnet is the bottleneck, not the AI.</td></tr>
+    <tr><td><b>NdFeB magnets</b></td><td>China-dominated <span class="tag t-spof">SPOF</span></td><td>Already <i>delayed Tesla's Optimus.</i> The magnet is the <b>fragile</b> link, not the AI &mdash; China-dominated separation, which is why it keeps its SPOF tag.</td></tr>
     <tr><td><b>The OEMs themselves</b></td><td>Figure <span class="tag t-hype">Hype</span> ($39B+ pre-revenue), Tesla Optimus, Agility, Unitree</td><td>Best-funded OEMs build actuators <i>in-house</i> &mdash; a headwind for merchant suppliers, so read each carefully.</td></tr>
   </table></div>
 
@@ -179,7 +190,7 @@
   <p>Same pattern a third time. Not the rocket, not the satellite &mdash; the obscure component the satellite can't fly without.</p>
   <div class="tw"><table>
     <tr><th>The deep part</th><th>Who / status</th><th>The tell</th></tr>
-    <tr><td><b>Rad-hard chips</b> (survive space radiation)</td><td>BAE, Honeywell, Microchip, Frontgrade <span class="tag t-spof">SPOF</span></td><td>Only ~3 US &ldquo;Trusted Foundry&rdquo; sites, none new since the 1990s. A genuine choke.</td></tr>
+    <tr><td><b>Rad-hard chips</b> (survive space radiation)</td><td>BAE, Honeywell, Microchip, Frontgrade <span class="tag t-conc">CONCENTRATED</span></td><td>Only ~3 US &ldquo;Trusted Foundry&rdquo; sites, none new since the 1990s. Four named suppliers across three sites is a tight oligopoly, not a single point of failure &mdash; the <i>site count</i> is the constraint, not the vendor.</td></tr>
     <tr><td><b>Reaction wheels / star-trackers</b></td><td>Blue Canyon (owned by RTX) <span class="tag t-conc">CONCENTRATED</span></td><td>Capacity expanding +400% &mdash; a constraint that is loosening, which is the opposite of fragile; &mdash; the clearest &ldquo;demand is real&rdquo; signal in the sector.</td></tr>
     <tr><td><b>Launch &amp; imaging</b></td><td>Rocket Lab (RKLB), Planet (PL &mdash; rare positive cash flow) <span class="tag t-lead">Leader</span></td><td>RKLB's Neutron rocket still unflown (debut targeted Q4 2026) &mdash; execution risk priced as certainty.</td></tr>
     <tr><td><b>The hype tier</b></td><td>AST SpaceMobile (ASTS), and a 2021&ndash;24 SPAC graveyard (Virgin Orbit, Momentus, Terran) <span class="tag t-hype">Hype</span></td><td>The cautionary pattern: story-stocks that ran out of runway before revenue.</td></tr>

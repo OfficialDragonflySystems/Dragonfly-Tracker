@@ -130,13 +130,24 @@
     <p>We were using one word for two different things, across several pages, and an outside
     review caught it in September 2026. The distinction we now hold to everywhere:</p>
     <p><b>BINDING</b> &mdash; what limits the next megawatt actually energised <i>this year</i>.
-    Today that is <b>power delivery</b>: transformers on four-year lead times, interconnect
-    queues, substations, and the trades who build them. A binding constraint is slow, not rare,
-    and it sets <b>the pace</b> of the buildout.</p>
-    <p><b>FRAGILE</b> &mdash; a single point of failure. Low probability of stopping, severe if it
-    does. <b>EUV lithography</b> (one maker on Earth), photomask inspection, HBM, advanced
-    substrates, rare-earth separation. A fragile node is rare, not slow, and it sets
-    <b>the tail risk</b>.</p>
+    Today that is <b>power delivery</b>: grid transformers averaging about <b>128 weeks</b>
+    &mdash; roughly 2.5 years, with four years the tail for the largest custom units &mdash;
+    plus interconnect queues, substations, and the trades who build them. A binding constraint
+    is slow, not rare, and it sets <b>the pace</b> of the buildout.</p>
+    <p><b>FRAGILE</b> &mdash; a single point of failure: one supplier, one process, no
+    substitute. <b>EUV lithography</b> (one maker on Earth), EUV photomask inspection,
+    rare-earth separation. A fragile node is rare, not slow, and it sets <b>the tail risk</b>.
+    </p>
+    <p><b>CONCENTRATED</b> &mdash; few suppliers, but more than one: advanced substrates,
+    HBM, dielectric fluids, precision reducers. These are usually <i>capacity</i>-constrained,
+    which puts them closer to binding than to fragile.</p>
+    <p><b>We got this wrong inside this very box, on the day we wrote it.</b> The first draft
+    defined &ldquo;binding&rdquo; using transformers on <i>four-year</i> lead times &mdash; the
+    tail figure we had corrected to a 128-week average on the same morning, in the same commit
+    &mdash; and listed HBM and advanced substrates as fragile while simultaneously demoting
+    Ibiden to CONCENTRATED for having three named peers. A reviewer caught both on
+    22 September 2026. We are leaving this paragraph here because a rule that cannot survive
+    its own author is worth less than one that admits where it failed.</p>
     <p>Both claims were true; printing them as the same claim was not. They are different
     questions with different trades: you own the binding constraint for the grind, and you watch
     the fragile node for the break.</p>

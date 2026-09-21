@@ -107,6 +107,36 @@
   </div>
 
   <div class="entry">
+    <div class="date">2026-09-22 &middot; <span class="tag t-view">Framing</span></div>
+    <h3>The rule we published to stop this error contained the error, twice</h3>
+    <div class="row"><b>What happened:</b> on 21 September we published a distinction between <b>binding</b> and
+    <b>fragile</b> constraints, specifically to stop ourselves moving true numbers into places where they mean something
+    else. A reviewer re-read the live pages the next morning and found that the rule box itself did it twice.</div>
+    <div class="row"><b>One:</b> the definition of &ldquo;binding&rdquo; read <i>&ldquo;transformers on four-year lead
+    times.&rdquo;</i> In the same commit, on the same morning, we corrected exactly that figure on
+    <a href="power-bottleneck.html">the transformer page</a> &mdash; the average is about <b>128 weeks</b>, roughly 2.5
+    years, and four years is the tail. So the number we withdrew from one page was pasted into the definition that two
+    other pages now teach from. Corrected to the average.</div>
+    <div class="row"><b>Two:</b> the definition listed <b>HBM and advanced substrates as fragile</b> &mdash; in the same
+    commit where we demoted Ibiden, an advanced-substrate maker, to CONCENTRATED precisely because three named peers sit
+    alongside it. Our own definition contradicted our own reclassification, in the same file. Both moved to
+    CONCENTRATED, and the rule now carries all three words.</div>
+    <div class="row"><b>Two more badges we had not corrected enough:</b> rad-hard chips were tagged SPOF with
+    <i>four</i> suppliers named in the cell (BAE, Honeywell, Microchip, Frontgrade) &mdash; now CONCENTRATED, with the
+    note that the ~3 Trusted Foundry <i>sites</i> are the real constraint, not the vendor. And EUV photoresist was
+    tagged SPOF with three named firms; it is now split, because the <i>geography</i> is the single point of failure
+    (Japan ~95%) while the makers are not. The reviewer explicitly said it would rather tell us we under-corrected than
+    let it stand, and on re-check it confirmed none of the five earlier demotions went too far.</div>
+    <div class="row"><b>And a stale entry on the nuclear page:</b> the 13 August update box still said the fuel chain is
+    &ldquo;the real bottleneck,&rdquo; directly contradicting the 21 September box above it. That is the same failure
+    that left a fixed item under &ldquo;still wrong&rdquo; last week &mdash; an old note left standing. Marked as
+    superseded rather than deleted.</div>
+    <div class="row"><b>Why we are publishing this rather than quietly repairing it:</b> a rule that cannot survive its
+    own author is worth less than one that shows where it failed. The paragraph admitting it now sits inside the rule
+    box on both pages, permanently.</div>
+  </div>
+
+  <div class="entry">
     <div class="date">2026-09-21 &middot; <span class="tag t-data">Data / method</span></div>
     <h3>Four cells in the IPO tracker were real numbers kept past the date they described</h3>
     <div class="row"><b>Anthropic.</b> The column was headed &ldquo;Revenue (2025)&rdquo; and the cell read
@@ -222,7 +252,7 @@
     <div class="row"><b>What we changed:</b> both words are now defined once and used deliberately on every page.
     <b>BINDING</b> is what limits the next megawatt energised this year &mdash; power delivery, transformers,
     interconnect queues. It is slow rather than rare, and it sets the pace. <b>FRAGILE</b> is a single point of failure
-    &mdash; EUV, photomask inspection, HBM, advanced substrates, rare-earth separation. It is rare rather than slow, and
+    &mdash; EUV, photomask inspection, rare-earth separation. It is rare rather than slow, and
     it sets the tail risk. You own the binding constraint for the grind; you watch the fragile node for the break.</div>
     <div class="row"><b>Does it change the conclusion:</b> no, and it makes the map more useful rather than less.
     Nothing is retracted. What changes is that we now say which kind of constraint we mean, every time.</div>
