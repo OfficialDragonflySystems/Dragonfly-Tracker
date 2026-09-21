@@ -57,9 +57,9 @@ take from licensed aggregators are cited, never redistributed.
 
 - [The Agent Economy: Why AI Will Pay On-Chain - Plain English](https://officialdragonflysystems.com/learn/agent-economy.html) - 2026-09-21
 - [The AI Goes Public: What to Read When the S-1 Drops](https://officialdragonflysystems.com/learn/ai-ipo-s1.html) - 2026-09-21
-- [Real Demand or Malinvestment? The Austrian Lens on the $725B AI Build-Out](https://officialdragonflysystems.com/learn/ai-malinvestment.html) - 2026-09-21
+- [Real Demand or Malinvestment? The $725B AI Build-Out](https://officialdragonflysystems.com/learn/ai-malinvestment.html) - 2026-09-21
 - [Intelligence per watt  -  the number that picks the AI winners](https://officialdragonflysystems.com/learn/ai-per-watt.html) - 2026-09-21
-- [The Americas Trade: What the Hemisphere Strategy Is Actually Betting On](https://officialdragonflysystems.com/learn/americas-trade.html) - 2026-09-21
+- [The Americas Trade: What the Hemisphere Strategy Bets On](https://officialdragonflysystems.com/learn/americas-trade.html) - 2026-09-21
 - [What Blockchain Actually Is - No Hype, Plain English](https://officialdragonflysystems.com/learn/blockchain-basics.html) - 2026-09-21
 - [What is a catalyst?](https://officialdragonflysystems.com/learn/catalysts.html) - 2026-09-21
 - [Reading a conviction score](https://officialdragonflysystems.com/learn/conviction.html) - 2026-09-21
@@ -70,43 +70,43 @@ take from licensed aggregators are cited, never redistributed.
 - [How to Read a Dividend Without Getting Trapped](https://officialdragonflysystems.com/learn/dividend-traps.html) - 2026-09-21
 - [Dividends 101 - Getting Paid to Own Stocks (Plain English)](https://officialdragonflysystems.com/learn/dividends-101.html) - 2026-09-21
 - [Buy & hold vs exit strategies](https://officialdragonflysystems.com/learn/exits.html) - 2026-09-21
-- [Geothermal Went Public. Twelve Days Later Its Flagship Well Blew Out.](https://officialdragonflysystems.com/learn/geothermal-heat.html) - 2026-09-21
+- [Geothermal Went Public. 12 Days Later, Its Well Blew Out.](https://officialdragonflysystems.com/learn/geothermal-heat.html) - 2026-09-21
 - [The Data Center That Feeds You: A Practical Blueprint](https://officialdragonflysystems.com/learn/green-data-center.html) - 2026-09-21
-- [The Merge Already Started  -  Artificial Muscles, Brain Interfaces & the Human-Machine Decade](https://officialdragonflysystems.com/learn/human-machine.html) - 2026-09-21
+- [The Merge Already Started: The Human-Machine Decade](https://officialdragonflysystems.com/learn/human-machine.html) - 2026-09-21
 - [Real inflation vs the official 3%](https://officialdragonflysystems.com/learn/inflation.html) - 2026-09-21
 - [How to Read IPO Hype Without Getting Played](https://officialdragonflysystems.com/learn/ipo-hype.html) - 2026-09-21
 - [Kurzweil's Compass, Not His Calendar](https://officialdragonflysystems.com/learn/kurzweil-compass.html) - 2026-09-21
 - [The Next Bottleneck Isn't Silicon. It's Light.](https://officialdragonflysystems.com/learn/light-bottleneck.html) - 2026-09-21
-- [Did AMD Just Kill the AI Subscription? The Honest Version of Local AI](https://officialdragonflysystems.com/learn/local-ai.html) - 2026-09-21
+- [Did AMD Just Kill the AI Subscription? Local AI, Honestly](https://officialdragonflysystems.com/learn/local-ai.html) - 2026-09-21
 - [Elon Solved the Rocket. Here Are the 9 Problems He Hasn't.](https://officialdragonflysystems.com/learn/mars-unsolved.html) - 2026-09-21
-- [The Supervolcano Under the Battery Supply Chain  -  McDermitt, Thacker Pass & America's Lithium Bet](https://officialdragonflysystems.com/learn/mcdermitt-lithium.html) - 2026-09-21
-- [AI's Real Bottleneck Isn't the Chip  -  It's the Wall Behind It](https://officialdragonflysystems.com/learn/memory-wall.html) - 2026-09-21
+- [The Supervolcano Under America's Lithium Bet](https://officialdragonflysystems.com/learn/mcdermitt-lithium.html) - 2026-09-21
+- [AI's Real Bottleneck Isn't the Chip. It's the Memory Wall](https://officialdragonflysystems.com/learn/memory-wall.html) - 2026-09-21
 - [The Miners Quietly Becoming AI Landlords](https://officialdragonflysystems.com/learn/miner-to-ai.html) - 2026-09-21
 - [Money Has Always Been Trust: A 5-Minute History](https://officialdragonflysystems.com/learn/money-history.html) - 2026-09-21
 - [The Musk Playbook: Own the Bottleneck, Don't Rent It](https://officialdragonflysystems.com/learn/musk-bottleneck.html) - 2026-09-21
-- [Nobody Knows the Price: Value, Uncertainty, and Not Fooling Yourself](https://officialdragonflysystems.com/learn/nobody-knows-the-price.html) - 2026-09-21
-- [Big Tech Is Going Nuclear  -  What's Real, What's a Decade Away, and Who Gets Paid](https://officialdragonflysystems.com/learn/nuclear-for-ai.html) - 2026-09-21
+- [Nobody Knows the Price: Valuing Under Uncertainty](https://officialdragonflysystems.com/learn/nobody-knows-the-price.html) - 2026-09-21
+- [Big Tech Is Going Nuclear: What's Real and Who Gets Paid](https://officialdragonflysystems.com/learn/nuclear-for-ai.html) - 2026-09-21
 - [AI Is Reopening Dead Nuclear Plants](https://officialdragonflysystems.com/learn/nuclear-restart.html) - 2026-09-21
 - [Nvidia's Biggest Threat Is Its Own Customers](https://officialdragonflysystems.com/learn/nvidia-custom-silicon.html) - 2026-09-21
 - [The Off-Earth Economy](https://officialdragonflysystems.com/learn/off-earth-economy.html) - 2026-09-21
 - [AI's Next Bottleneck Is the Wire Between the Chips](https://officialdragonflysystems.com/learn/optical-bottleneck.html) - 2026-09-21
-- [AI Picks and Shovels, One Layer Deeper: The Stocks the Whole Buildout Depends On](https://officialdragonflysystems.com/learn/picks-and-shovels.html) - 2026-09-21
+- [AI Picks and Shovels, One Layer Deeper](https://officialdragonflysystems.com/learn/picks-and-shovels.html) - 2026-09-21
 - [The Real AI Bottleneck Isn't Chips  -  It's the Wire](https://officialdragonflysystems.com/learn/power-bottleneck.html) - 2026-09-21
 - [How to Read a Company Before Wall Street Can](https://officialdragonflysystems.com/learn/reading-a-company.html) - 2026-09-21
 - [How market regimes work](https://officialdragonflysystems.com/learn/regimes.html) - 2026-09-21
 - [The Humanoid Robot Race Is Really an Actuator-Cost Race](https://officialdragonflysystems.com/learn/robot-actuators.html) - 2026-09-21
-- [The Robot Decades: An Honest Timeline for When the Machines Actually Arrive](https://officialdragonflysystems.com/learn/robot-decades.html) - 2026-09-21
-- [In June We Wrote Down What Would Settle the AI Bubble Question. Here Is the Score.](https://officialdragonflysystems.com/learn/scorecard-revisited.html) - 2026-09-21
+- [The Robot Decades: An Honest Timeline for the Machines](https://officialdragonflysystems.com/learn/robot-decades.html) - 2026-09-21
+- [The AI Bubble Scorecard: What We Said in June, Scored](https://officialdragonflysystems.com/learn/scorecard-revisited.html) - 2026-09-21
 - [GameStop Wasn't Magic. It Was a Setup You Can Learn to Read.](https://officialdragonflysystems.com/learn/short-squeeze-explained.html) - 2026-09-21
 - [Is Sodium-Ion the End of the Lithium Trade?](https://officialdragonflysystems.com/learn/sodium-ion.html) - 2026-09-21
-- [SpaceX: The Complete Picture  -  Shares, the xAI Merger & Every Lever That Moves SPCX](https://officialdragonflysystems.com/learn/spacex-complete-picture.html) - 2026-09-21
+- [SpaceX After the IPO: Shares, xAI and What Moves SPCX](https://officialdragonflysystems.com/learn/spacex-complete-picture.html) - 2026-09-21
 - [The SpaceX IPO Aftermath: The Mechanics Nobody's Pricing](https://officialdragonflysystems.com/learn/spacex-ipo-aftermath.html) - 2026-09-21
 - [The SpaceX IPO, Explained](https://officialdragonflysystems.com/learn/spacex-ipo.html) - 2026-09-21
 - [Stripe, Tempo & the Stablecoin Land Grab](https://officialdragonflysystems.com/learn/stablecoins.html) - 2026-09-21
 - [Start Early: Why Time Is Your Biggest Edge](https://officialdragonflysystems.com/learn/start-early.html) - 2026-09-21
-- [The Synchronization Problem: Why Announced Gigawatts Aren't Compute](https://officialdragonflysystems.com/learn/synchronization-problem.html) - 2026-09-21
+- [The Synchronization Problem: Gigawatts Aren't Compute](https://officialdragonflysystems.com/learn/synchronization-problem.html) - 2026-09-21
 - [We Published the Wrong Number. Here Is the Right One.](https://officialdragonflysystems.com/learn/the-number-we-got-wrong.html) - 2026-09-21
-- [Tokenization: When Everything Becomes Tradeable - Plain English](https://officialdragonflysystems.com/learn/tokenization.html) - 2026-09-21
+- [Tokenization: When Everything Becomes Tradeable](https://officialdragonflysystems.com/learn/tokenization.html) - 2026-09-21
 - [The AI Build-Out Makes Two Things Nobody Is Bidding For](https://officialdragonflysystems.com/learn/waste-streams.html) - 2026-09-21
 - [Do AI Data Centers Really "Waste" Water? The Honest Map](https://officialdragonflysystems.com/learn/water-cooling.html) - 2026-09-21
 - [What Happens After the SpaceX IPO](https://officialdragonflysystems.com/learn/whats-next.html) - 2026-09-21

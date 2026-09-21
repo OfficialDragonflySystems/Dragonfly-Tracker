@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta property="article:published_time" content="2026-09-21">
+<meta property="article:modified_time" content="2026-09-21">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chip-Tool Tracker: Where Dutch Chipmaking Machines Go &mdash; Dragonfly Lens</title>
+<link rel="canonical" href="https://officialdragonflysystems.com/learn/semicap-exports.html">
+<meta name="description" content="A monthly tracker of where the Netherlands ships chipmaking equipment, built from official Eurostat trade data and checked against ASML's own disclosures.">
+<meta property="og:title" content="Chip-Tool Tracker: Where Dutch Chipmaking Machines Go">
+<meta property="og:description" content="Monthly, from official Eurostat trade data, checked against ASML's own regional disclosures - with every limit of the data stated.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/semicap-exports.html">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,42px);line-height:1.15;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(22px,3.2vw,28px);font-weight:400;margin:42px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  p{margin:13px 0;color:#d7dfea;} b,strong{color:#fff;}
+  .lead{font-size:18px;color:var(--muted);}
+  ul{margin:12px 0;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  .latest{background:var(--panel);border:1px solid var(--line);border-left:4px solid #11a397;border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:16.5px;}
+  .latest .lh{color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 18px 10px;margin:22px 0;position:relative;}
+  .card .ct{font-weight:700;color:var(--ink);font-size:15px;}
+  .card .cs{color:var(--muted);font-size:13px;margin-bottom:6px;}
+  svg{display:block;width:100%;height:auto;overflow:visible;}
+  svg:focus{outline:1px solid var(--line);outline-offset:4px;}
+  .tip{position:absolute;pointer-events:none;background:#0a1118;border:1px solid var(--line);border-radius:8px;padding:8px 11px;font-size:13px;line-height:1.45;opacity:0;transition:opacity .08s;white-space:nowrap;}
+  .tip .tv{font-size:17px;font-weight:700;color:var(--ink);} .tip .tk{display:inline-block;width:14px;height:2px;background:#11a397;vertical-align:middle;margin-right:6px;}
+  .tip .tm{color:var(--muted);}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+  th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;}
+  th:first-child,td:first-child{text-align:left;} th{color:var(--muted);font-weight:600;font-size:12.5px;}
+  .tscroll{overflow-x:auto;}
+  table.v td:nth-child(2),table.v th:nth-child(2){text-align:left;}
+  .note{font-size:13px;color:var(--muted);}
+  .src{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);margin-top:34px;padding-top:14px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">The Lens &middot; Tracker &middot; Updated monthly</div>
+  <h1>Chip-Tool Tracker: where the Netherlands ships chipmaking machines</h1>
+  <p class="lead">The Netherlands is home to ASML, the only company on Earth that makes EUV lithography machines. Official trade data shows where its chipmaking equipment goes, every month &mdash; for free. As far as we have been able to find, nobody publishes it as a running series. So we do, with every limit of the data written down.</p>
+
+  <div class="latest"><div class="lh">Latest reading &middot; data to Jul 2026</div>In the three months to <b>Jul 2026</b>, China took <b>18.2%</b> of the Netherlands&rsquo; exports of chipmaking equipment to countries outside the EU &mdash; against <b>17.7%</b> in the three months to Apr 2026, and a peak of <b>62.6%</b> in the three months to Mar 2024.</div>
+
+  <div class="card" id="chart">
+    <div class="ct">China&rsquo;s share of the Netherlands&rsquo; non-EU exports of chipmaking equipment</div>
+    <div class="cs">Trailing three months, Mar 2017 onward. Hover or use the arrow keys for any month.</div>
+    <svg id="svg" viewBox="0 0 840 330" role="img" tabindex="0" aria-label="Line chart of China's share of Dutch chipmaking-equipment exports; values are in the table below"></svg>
+    <div class="tip" id="tip"></div>
+  </div>
+
+  <h2>The last twelve months, by destination</h2>
+  <div class="tscroll"><table>
+<tr><th>Destination</th><th>Last 3 months</th><th>Last 12 months</th><th>Prior 12 months</th><th>Change</th><th>Share of non-EU, 12m</th></tr>
+<tr><td>South Korea</td><td>&euro;1,590m</td><td>&euro;5.67bn</td><td>&euro;5.56bn</td><td>+2%</td><td>29.0%</td></tr>
+<tr><td>China</td><td>&euro;937m</td><td>&euro;5.54bn</td><td>&euro;7.12bn</td><td>-22%</td><td>28.3%</td></tr>
+<tr><td>Taiwan</td><td>&euro;1,719m</td><td>&euro;5.06bn</td><td>&euro;4.19bn</td><td>+21%</td><td>25.9%</td></tr>
+<tr><td>United States</td><td>&euro;715m</td><td>&euro;2.21bn</td><td>&euro;3.85bn</td><td>-43%</td><td>11.3%</td></tr>
+<tr><td>Japan</td><td>&euro;109m</td><td>&euro;0.60bn</td><td>&euro;0.82bn</td><td>-26%</td><td>3.1%</td></tr>
+<tr><td>Singapore</td><td>&euro;60m</td><td>&euro;0.44bn</td><td>&euro;0.14bn</td><td>+213%</td><td>2.3%</td></tr>
+<tr><td>All other non-EU</td><td>&ndash;</td><td>&euro;0.03bn</td><td>&ndash;</td><td>&ndash;</td><td>0.1%</td></tr>
+<tr><td><b>Total, non-EU</b></td><td>&euro;5,147m</td><td><b>&euro;19.56bn</b></td><td>&euro;21.71bn</td><td>-10%</td><td>100%</td></tr>
+  </table></div>
+  <p class="note">Shares are of Eurostat&rsquo;s own non-EU total, not of the destinations we chose to list, so they cannot be moved by our choice of rows.</p>
+
+  <h2>Does this actually track ASML?</h2>
+  <p>A proxy is only worth publishing if it matches something we can check. ASML reports its sales by region once a year, so we compared. This series is <b>shipments</b>; ASML reports <b>revenue</b>, which is recognised on a different timetable, so a small gap is expected.</p>
+  <div class="tscroll"><table class="v">
+<tr><th>Year</th><th>Destination</th><th>This series</th><th>ASML reported</th><th>Gap</th></tr>
+<tr><td>2024</td><td>China</td><td>45.6%</td><td>41%</td><td>+4.6 pts</td></tr>
+<tr><td>2025</td><td>China</td><td>34.8%</td><td>33%</td><td>+1.8 pts</td></tr>
+<tr><td>2025</td><td>South Korea</td><td>23.4%</td><td>25%</td><td>-1.6 pts</td></tr>
+<tr><td>2025</td><td>Taiwan</td><td>23.7%</td><td>22%</td><td>+1.7 pts</td></tr>
+  </table></div>
+  <p>The largest gap is 1.8 points in 2025, and 4.6 points in 2024. Close enough to use as an early read on what ASML will later report &mdash; the series arrives with about a two-month lag, ASML&rsquo;s regional split once a year.</p>
+
+  <h2>What this data cannot tell you</h2>
+  <ul>
+    <li><b>It does not separate EUV from DUV.</b> The customs code covers all machines for making semiconductors. Any statement about EUV specifically would be inference, and we will not print one as if it were measured.</li>
+    <li><b>It is not ASML alone.</b> ASML dominates Dutch exports of this code, but other Dutch equipment makers ship under it too.</li>
+    <li><b>There is no count of machines.</b> Eurostat records value and weight for this code, not units. We do not publish a &ldquo;price per tool.&rdquo;</li>
+    <li><b>Single months are lumpy.</b> One machine can be worth hundreds of millions of euros; shipments to the US moved from &euro;4m to &euro;400m between October and December 2025. That is why the chart uses three-month sums.</li>
+    <li><b>It is not comparable to ASML&rsquo;s 2026 China guidance.</b> ASML expects China to be about 20% of its <i>total</i> 2026 sales, which includes servicing machines already installed in China. This series counts only <i>new equipment shipped</i>. Setting one against the other would compare two different things &mdash; the exact kind of error we have corrected on this site before &mdash; so we do not.</li>
+  </ul>
+
+  <p class="src"><b>Source:</b> Eurostat, Comext dataset DS-045409, product CN 8486 20 00 (&ldquo;machines and apparatus for the manufacture of semiconductor devices or of electronic integrated circuits&rdquo;), reporter Netherlands, flow export, values in euros. Eurostat data last updated 15/09/26 11:00:00. <b>Modified:</b> aggregated into three- and twelve-month sums and expressed as shares by Dragonfly Lens. Eurostat bears no responsibility for this analysis. Reused under Eurostat&rsquo;s reuse policy, which authorises commercial and non-commercial reuse with acknowledgement. ASML regional figures: ASML full-year results and annual reports, as reported. Page regenerated 2026-09-21.</p>
+</div>
+
+<footer>&#9671; Dragonfly Lens &middot; <a href="/learn/">All explainers</a> &middot; <a href="corrections.html">Corrections log</a> &middot; <a href="/">Home</a></footer>
+
+<script>
+(function(){
+  var D = [{"m": "2017-03", "s": 21.56, "cn": 270.4, "tot": 1254.1}, {"m": "2017-04", "s": 21.07, "cn": 271.3, "tot": 1287.7}, {"m": "2017-05", "s": 8.34, "cn": 114.4, "tot": 1371.4}, {"m": "2017-06", "s": 6.09, "cn": 90.6, "tot": 1487.6}, {"m": "2017-07", "s": 5.75, "cn": 99.3, "tot": 1727.6}, {"m": "2017-08", "s": 4.14, "cn": 70.4, "tot": 1699.5}, {"m": "2017-09", "s": 11.24, "cn": 211.5, "tot": 1881.8}, {"m": "2017-10", "s": 18.21, "cn": 286.9, "tot": 1576.1}, {"m": "2017-11", "s": 29.11, "cn": 322.3, "tot": 1107.3}, {"m": "2017-12", "s": 20.66, "cn": 174.0, "tot": 842.4}, {"m": "2018-01", "s": 16.93, "cn": 221.5, "tot": 1308.6}, {"m": "2018-02", "s": 20.36, "cn": 326.6, "tot": 1603.9}, {"m": "2018-03", "s": 29.23, "cn": 522.9, "tot": 1789.1}, {"m": "2018-04", "s": 24.97, "cn": 415.2, "tot": 1662.9}, {"m": "2018-05", "s": 24.37, "cn": 463.2, "tot": 1901.0}, {"m": "2018-06", "s": 24.39, "cn": 445.1, "tot": 1824.9}, {"m": "2018-07", "s": 28.73, "cn": 482.8, "tot": 1680.5}, {"m": "2018-08", "s": 23.54, "cn": 446.7, "tot": 1897.8}, {"m": "2018-09", "s": 19.74, "cn": 508.4, "tot": 2576.2}, {"m": "2018-10", "s": 18.28, "cn": 451.3, "tot": 2468.3}, {"m": "2018-11", "s": 19.39, "cn": 477.4, "tot": 2462.0}, {"m": "2018-12", "s": 26.74, "cn": 539.4, "tot": 2017.4}, {"m": "2019-01", "s": 24.33, "cn": 522.6, "tot": 2147.9}, {"m": "2019-02", "s": 19.29, "cn": 371.4, "tot": 1925.9}, {"m": "2019-03", "s": 12.45, "cn": 225.2, "tot": 1808.6}, {"m": "2019-04", "s": 17.44, "cn": 313.3, "tot": 1796.9}, {"m": "2019-05", "s": 20.15, "cn": 334.4, "tot": 1659.2}, {"m": "2019-06", "s": 10.96, "cn": 194.1, "tot": 1770.5}, {"m": "2019-07", "s": 8.43, "cn": 135.8, "tot": 1610.6}, {"m": "2019-08", "s": 6.31, "cn": 132.6, "tot": 2100.6}, {"m": "2019-09", "s": 9.61, "cn": 248.7, "tot": 2587.0}, {"m": "2019-10", "s": 11.8, "cn": 347.4, "tot": 2944.7}, {"m": "2019-11", "s": 13.48, "cn": 389.5, "tot": 2888.5}, {"m": "2019-12", "s": 13.95, "cn": 455.0, "tot": 3261.6}, {"m": "2020-01", "s": 14.35, "cn": 440.8, "tot": 3070.9}, {"m": "2020-02", "s": 18.93, "cn": 546.3, "tot": 2885.9}, {"m": "2020-03", "s": 17.98, "cn": 358.0, "tot": 1990.8}, {"m": "2020-04", "s": 19.12, "cn": 415.3, "tot": 2171.6}, {"m": "2020-05", "s": 15.4, "cn": 364.9, "tot": 2369.3}, {"m": "2020-06", "s": 24.25, "cn": 622.8, "tot": 2567.6}, {"m": "2020-07", "s": 28.0, "cn": 715.9, "tot": 2557.2}, {"m": "2020-08", "s": 36.94, "cn": 848.9, "tot": 2298.3}, {"m": "2020-09", "s": 30.31, "cn": 751.0, "tot": 2478.2}, {"m": "2020-10", "s": 20.26, "cn": 519.7, "tot": 2565.4}, {"m": "2020-11", "s": 15.35, "cn": 439.4, "tot": 2863.5}, {"m": "2020-12", "s": 10.96, "cn": 349.8, "tot": 3190.6}, {"m": "2021-01", "s": 15.39, "cn": 519.1, "tot": 3372.7}, {"m": "2021-02", "s": 12.35, "cn": 422.2, "tot": 3417.3}, {"m": "2021-03", "s": 14.58, "cn": 470.1, "tot": 3223.1}, {"m": "2021-04", "s": 9.27, "cn": 310.8, "tot": 3354.7}, {"m": "2021-05", "s": 15.49, "cn": 468.0, "tot": 3021.2}, {"m": "2021-06", "s": 17.49, "cn": 521.3, "tot": 2979.6}, {"m": "2021-07", "s": 19.08, "cn": 609.4, "tot": 3193.0}, {"m": "2021-08", "s": 11.19, "cn": 431.4, "tot": 3856.5}, {"m": "2021-09", "s": 8.52, "cn": 331.1, "tot": 3885.8}, {"m": "2021-10", "s": 8.67, "cn": 308.2, "tot": 3553.6}, {"m": "2021-11", "s": 12.26, "cn": 414.1, "tot": 3377.7}, {"m": "2021-12", "s": 18.18, "cn": 664.2, "tot": 3654.3}, {"m": "2022-01", "s": 18.52, "cn": 655.3, "tot": 3538.8}, {"m": "2022-02", "s": 22.3, "cn": 763.6, "tot": 3424.2}, {"m": "2022-03", "s": 23.79, "cn": 773.9, "tot": 3253.2}, {"m": "2022-04", "s": 23.47, "cn": 802.5, "tot": 3419.7}, {"m": "2022-05", "s": 17.12, "cn": 619.8, "tot": 3619.3}, {"m": "2022-06", "s": 9.73, "cn": 380.8, "tot": 3915.9}, {"m": "2022-07", "s": 9.35, "cn": 364.6, "tot": 3901.3}, {"m": "2022-08", "s": 10.87, "cn": 450.2, "tot": 4142.9}, {"m": "2022-09", "s": 13.78, "cn": 560.5, "tot": 4067.8}, {"m": "2022-10", "s": 14.12, "cn": 595.5, "tot": 4217.1}, {"m": "2022-11", "s": 11.08, "cn": 460.1, "tot": 4154.2}, {"m": "2022-12", "s": 8.0, "cn": 404.9, "tot": 5063.6}, {"m": "2023-01", "s": 7.12, "cn": 328.7, "tot": 4620.1}, {"m": "2023-02", "s": 11.12, "cn": 492.6, "tot": 4429.4}, {"m": "2023-03", "s": 13.55, "cn": 435.4, "tot": 3213.1}, {"m": "2023-04", "s": 13.44, "cn": 493.3, "tot": 3671.6}, {"m": "2023-05", "s": 17.01, "cn": 685.0, "tot": 4026.3}, {"m": "2023-06", "s": 29.47, "cn": 1281.4, "tot": 4347.8}, {"m": "2023-07", "s": 35.69, "cn": 1581.8, "tot": 4431.6}, {"m": "2023-08", "s": 47.16, "cn": 2182.8, "tot": 4628.3}, {"m": "2023-09", "s": 49.77, "cn": 2304.2, "tot": 4629.9}, {"m": "2023-10", "s": 48.23, "cn": 2151.5, "tot": 4460.9}, {"m": "2023-11", "s": 45.31, "cn": 1989.7, "tot": 4391.0}, {"m": "2023-12", "s": 42.92, "cn": 2021.5, "tot": 4709.7}, {"m": "2024-01", "s": 46.05, "cn": 2109.0, "tot": 4579.8}, {"m": "2024-02", "s": 44.28, "cn": 1683.9, "tot": 3803.3}, {"m": "2024-03", "s": 62.59, "cn": 2076.2, "tot": 3317.2}, {"m": "2024-04", "s": 61.47, "cn": 2277.8, "tot": 3705.3}, {"m": "2024-05", "s": 60.04, "cn": 2488.1, "tot": 4144.0}, {"m": "2024-06", "s": 50.62, "cn": 2240.1, "tot": 4425.6}, {"m": "2024-07", "s": 58.29, "cn": 2587.9, "tot": 4439.4}, {"m": "2024-08", "s": 57.28, "cn": 2374.3, "tot": 4145.4}, {"m": "2024-09", "s": 52.84, "cn": 2555.2, "tot": 4836.2}, {"m": "2024-10", "s": 42.34, "cn": 2146.4, "tot": 5069.0}, {"m": "2024-11", "s": 36.78, "cn": 2292.5, "tot": 6233.9}, {"m": "2024-12", "s": 29.52, "cn": 2082.8, "tot": 7055.2}, {"m": "2025-01", "s": 29.85, "cn": 1921.1, "tot": 6435.1}, {"m": "2025-02", "s": 34.47, "cn": 2020.9, "tot": 5862.6}, {"m": "2025-03", "s": 30.65, "cn": 1457.3, "tot": 4755.0}, {"m": "2025-04", "s": 26.09, "cn": 1374.8, "tot": 5269.6}, {"m": "2025-05", "s": 22.56, "cn": 1168.3, "tot": 5179.5}, {"m": "2025-06", "s": 27.65, "cn": 1383.2, "tot": 5002.6}, {"m": "2025-07", "s": 33.91, "cn": 1673.9, "tot": 4936.0}, {"m": "2025-08", "s": 34.1, "cn": 1652.0, "tot": 4844.5}, {"m": "2025-09", "s": 37.63, "cn": 1998.9, "tot": 5312.2}, {"m": "2025-10", "s": 36.07, "cn": 1958.0, "tot": 5428.8}, {"m": "2025-11", "s": 40.04, "cn": 2150.2, "tot": 5369.6}, {"m": "2025-12", "s": 41.71, "cn": 2475.6, "tot": 5935.5}, {"m": "2026-01", "s": 38.17, "cn": 1975.9, "tot": 5176.2}, {"m": "2026-02", "s": 31.71, "cn": 1615.4, "tot": 5094.7}, {"m": "2026-03", "s": 19.78, "cn": 656.8, "tot": 3320.4}, {"m": "2026-04", "s": 17.68, "cn": 672.3, "tot": 3803.5}, {"m": "2026-05", "s": 13.99, "cn": 428.5, "tot": 3061.8}, {"m": "2026-06", "s": 11.5, "cn": 480.3, "tot": 4174.9}, {"m": "2026-07", "s": 18.21, "cn": 937.3, "tot": 5146.9}];
+  var LINE = "#11a397", GRID = "#22303f", MUTED = "#93a3b8", INK = "#e9eef6", SURF = "#0e1620";
+  var W = 840, H = 330, L = 46, R = 70, T = 22, B = 34;
+  var svg = document.getElementById("svg"), tip = document.getElementById("tip"), card = document.getElementById("chart");
+  var NS = "http://www.w3.org/2000/svg";
+  function el(n, a){ var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  var ymax = Math.max(70, Math.ceil(Math.max.apply(null, D.map(function(d){return d.s;})) / 10) * 10);
+  function x(i){ return L + (W - L - R) * i / (D.length - 1); }
+  function y(v){ return T + (H - T - B) * (1 - v / ymax); }
+  for (var g = 0; g <= ymax; g += 20) {
+    svg.appendChild(el("line", {x1:L, x2:W-R, y1:y(g), y2:y(g), stroke:GRID, "stroke-width":1}));
+    var t = el("text", {x:L-8, y:y(g)+4, "text-anchor":"end", "font-size":12, fill:MUTED}); t.textContent = g + "%"; svg.appendChild(t);
+  }
+  D.forEach(function(d, i){
+    if (d.m.slice(5) === "01") {
+      var t = el("text", {x:x(i), y:H-10, "text-anchor":"middle", "font-size":12, fill:MUTED}); t.textContent = d.m.slice(0,4); svg.appendChild(t);
+    }
+  });
+  var pts = D.map(function(d, i){ return x(i).toFixed(1) + "," + y(d.s).toFixed(1); });
+  svg.appendChild(el("path", {d:"M" + x(0) + "," + y(0) + " L" + pts.join(" L") + " L" + x(D.length-1) + "," + y(0) + " Z", fill:LINE, "fill-opacity":0.10}));
+  svg.appendChild(el("polyline", {points:pts.join(" "), fill:"none", stroke:LINE, "stroke-width":2, "stroke-linejoin":"round", "stroke-linecap":"round"}));
+  function fmtM(m){ var p = m.split("-"); return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+p[1]-1] + " " + p[0]; }
+  function mark(i, label, anchor, dy){
+    svg.appendChild(el("circle", {cx:x(i), cy:y(D[i].s), r:4, fill:LINE, stroke:SURF, "stroke-width":2}));
+    var t = el("text", {x:x(i) + (anchor === "start" ? 9 : 0), y:y(D[i].s) + dy, "text-anchor":anchor, "font-size":12.5, fill:INK, "font-weight":600});
+    t.textContent = label; svg.appendChild(t);
+  }
+  var pk = 0; D.forEach(function(d, i){ if (d.s > D[pk].s) pk = i; });
+  mark(pk, D[pk].s.toFixed(1) + "% peak, " + fmtM(D[pk].m), "middle", -12);
+  var last = D.length - 1;
+  mark(last, D[last].s.toFixed(1) + "%", "start", 4);
+  var cross = el("line", {y1:T, y2:H-B, stroke:MUTED, "stroke-width":1, opacity:0});
+  var dot = el("circle", {r:4, fill:LINE, stroke:SURF, "stroke-width":2, opacity:0});
+  svg.appendChild(cross); svg.appendChild(dot);
+  var hit = el("rect", {x:L, y:T, width:W-L-R, height:H-T-B, fill:"transparent"}); svg.appendChild(hit);
+  var cur = last;
+  function show(i){
+    cur = Math.max(0, Math.min(D.length-1, i)); var d = D[cur];
+    cross.setAttribute("x1", x(cur)); cross.setAttribute("x2", x(cur)); cross.setAttribute("opacity", 1);
+    dot.setAttribute("cx", x(cur)); dot.setAttribute("cy", y(d.s)); dot.setAttribute("opacity", 1);
+    tip.textContent = "";
+    var a = document.createElement("div"); a.className = "tm"; a.textContent = "3 months to " + fmtM(d.m);
+    var b = document.createElement("div"); var k = document.createElement("span"); k.className = "tk"; b.appendChild(k);
+    var v = document.createElement("span"); v.className = "tv"; v.textContent = d.s.toFixed(1) + "%"; b.appendChild(v);
+    var c = document.createElement("div"); c.className = "tm"; c.textContent = "China €" + Math.round(d.cn).toLocaleString() + "m of €" + Math.round(d.tot).toLocaleString() + "m non-EU";
+    tip.appendChild(a); tip.appendChild(b); tip.appendChild(c);
+    var box = svg.getBoundingClientRect(), cb = card.getBoundingClientRect();
+    var px = box.left - cb.left + x(cur) / W * box.width, py = box.top - cb.top + y(d.s) / H * box.height;
+    tip.style.opacity = 1;
+    var tw = tip.offsetWidth;
+    tip.style.left = Math.max(6, Math.min(cb.width - tw - 6, px + (px > cb.width / 2 ? -tw - 14 : 14))) + "px";
+    tip.style.top = Math.max(6, py - 30) + "px";
+  }
+  function hide(){ cross.setAttribute("opacity", 0); dot.setAttribute("opacity", 0); tip.style.opacity = 0; }
+  svg.addEventListener("pointermove", function(e){
+    var r = svg.getBoundingClientRect(); var sx = (e.clientX - r.left) / r.width * W;
+    show(Math.round((sx - L) / (W - L - R) * (D.length - 1)));
+  });
+  svg.addEventListener("pointerleave", hide);
+  svg.addEventListener("focus", function(){ show(cur); });
+  svg.addEventListener("blur", hide);
+  svg.addEventListener("keydown", function(e){
+    if (e.key === "ArrowLeft") { show(cur - 1); e.preventDefault(); }
+    if (e.key === "ArrowRight") { show(cur + 1); e.preventDefault(); }
+  });
+})();
+</script>
+</body>
+</html>
