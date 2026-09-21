@@ -53,6 +53,7 @@
   .t-priv{background:rgba(167,139,250,.14);color:var(--purple);border:1px solid rgba(167,139,250,.4);}
   .t-hype{background:rgba(248,113,113,.13);color:var(--bad);border:1px solid rgba(248,113,113,.4);}
   .t-spof{background:rgba(251,191,36,.13);color:var(--gold);border:1px solid rgba(251,191,36,.4);}
+  .t-conc{background:rgba(246,169,107,.13);color:var(--warn);border:1px solid rgba(246,169,107,.4);}
   .stack{counter-reset:step;margin:18px 0;}
   .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
   .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(251,191,36,.14);border:1px solid var(--gold);color:var(--gold);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
@@ -94,7 +95,7 @@
     </ul>
   </div>
 
-  <p style="font-size:13px;color:var(--muted);"><b>Legend:</b> <span class="tag t-lead">Leader</span> established, real revenue &middot; <span class="tag t-emerg">Emerging</span> small-cap / early &middot; <span class="tag t-priv">Private</span> not yet public &middot; <span class="tag t-hype">Hype</span> narrative running ahead of revenue &middot; <span class="tag t-spof">SPOF</span> single point of failure.</p>
+  <p style="font-size:13px;color:var(--muted);"><b>Legend:</b> <span class="tag t-lead">Leader</span> established, real revenue &middot; <span class="tag t-emerg">Emerging</span> small-cap / early &middot; <span class="tag t-priv">Private</span> not yet public &middot; <span class="tag t-hype">Hype</span> narrative running ahead of revenue &middot; <span class="tag t-spof">SPOF</span> single point of failure &mdash; one supplier, one process, no substitute &middot; <span class="tag t-conc">CONCENTRATED</span> a tight oligopoly or duopoly: few suppliers, but more than one. <b>We tagged several of the second kind as the first until 21 September 2026</b>, which made the map look more fragile than it is. A badge sitting next to three named alternatives is not a single point of failure.</p>
 
   <div class="rule">
     <div class="rh">How we use the word &ldquo;bottleneck&rdquo;</div>
@@ -124,7 +125,7 @@
     <tr><td><b>Make the chip</b></td><td>TSMC, Samsung <span class="tag t-lead">Leader</span></td><td>ASML <span class="tag t-spof">SPOF</span> &mdash; the <i>only</i> maker of <span class="def" data-d="Extreme Ultraviolet lithography &mdash; the room-sized machines that print the tiniest chip features. ASML of the Netherlands is the sole maker on Earth. No ASML, no advanced chips.">EUV</span> machines on Earth.</td></tr>
     <tr><td><b>Inspect the masks</b></td><td>&mdash;</td><td><b>Lasertec</b> <span class="tag t-spof">SPOF</span> &mdash; near-monopoly on EUV photomask inspection. A tool the whole industry needs and almost nobody names.</td></tr>
     <tr><td><b>Cut &amp; stack the wafers</b></td><td>&mdash;</td><td><b>Disco</b> (dicing/grinding &mdash; gates HBM and advanced packaging), <b>Advantest</b> (HBM/memory-test leader, with Teradyne), <b>Besi</b> (hybrid bonding; AMAT owns a ~9% stake).</td></tr>
-    <tr><td><b>The board under the chip</b></td><td>&mdash;</td><td><b>Ibiden</b> <span class="tag t-spof">SPOF</span> &mdash; the &ldquo;hidden CoWoS,&rdquo; an advanced-substrate maker most investors have never heard of; Shinko, Unimicron, AT&amp;S alongside.</td></tr>
+    <tr><td><b>The board under the chip</b></td><td>&mdash;</td><td><b>Ibiden</b> <span class="tag t-conc">CONCENTRATED</span> &mdash; the &ldquo;hidden CoWoS,&rdquo; an advanced-substrate maker most investors have never heard of; Shinko, Unimicron, AT&amp;S alongside. Named peers exist, so this is a capacity constraint rather than a single point of failure.</td></tr>
     <tr><td><b>The raw wafer &amp; the resist</b></td><td>&mdash;</td><td>Shin-Etsu / SUMCO (the two largest of ~five wafer makers), JSR/Inpria + <b>TOK</b> + Shin-Etsu (EUV photoresist &mdash; Japan ~95% <span class="tag t-spof">SPOF</span>) &mdash; the chemicals without which the machines print nothing.</td></tr>
   </table></div>
   <div class="flag"><b>The honest read on the GPU challengers:</b> the &ldquo;NVIDIA killers&rdquo; are mostly a graveyard with a few survivors. <b>Cerebras</b> <span class="tag t-emerg">Emerging</span> is public with real revenue but dangerously concentrated in one customer. <b>Tenstorrent</b> <span class="tag t-priv">Private</span> (led by legendary chip architect <b>Jim Keller</b>) and <b>d-Matrix</b> (Microsoft-backed) are the credible privates. <b>Etched</b> <span class="tag t-hype">Hype</span> raised billions on a transformer-only chip with little shipped. Groq got absorbed; SambaNova did a down-round. The pattern: <b>a famous founder buys survival, not success.</b></div>
@@ -146,7 +147,7 @@
   <ul>
     <li><b>Power delivery</b> is the <b>binding</b> constraint &mdash; transformers with 4-year waits, grid interconnect. This is the one layer on this page that is slow rather than fragile, and it is why the buildout runs late rather than stops. Full map: <a href="power-bottleneck.html">The Real AI Bottleneck Isn't Chips, It's the Wire</a> (ETN, PWR, GEV, VRT).</li>
     <li><b>Cooling verdict:</b> <span class="def" data-d="Cooling that pumps liquid through a metal plate sitting directly on the chip &mdash; now the mainstream choice for AI racks. 'Immersion' (dunking whole servers in fluid) turned out to be the niche, not the future.">cold-plate (direct-to-chip)</span> <b>won the AI rack; immersion is a secondary niche.</b> The proof is in the M&amp;A &mdash; every billion-dollar cooling acquisition (Eaton/Boyd, Ecolab/CoolIT, Schneider/Motivair) was cold-plate. Public leaders: <b>Vertiv (VRT)</b>, <b>nVent (NVT)</b>, <b>Modine (MOD)</b>.</li>
-    <li><b>The deepest cooling SPOF:</b> the <span class="def" data-d="Specialized non-conductive coolant fluids used in liquid cooling. A handful of chemical companies make them &mdash; and several are ALSO equity investors in cooling startups, which is the consistent tell.">dielectric-fluid</span> makers (Shell, Castrol, Solvay, Honeywell) <span class="tag t-spof">SPOF</span> &mdash; who are <i>both</i> suppliers and equity backers. And the water angle is mostly a myth: <a href="water-cooling.html">Do data centers really waste water?</a></li>
+    <li><b>The deepest cooling chokepoint:</b> the <span class="def" data-d="Specialized non-conductive coolant fluids used in liquid cooling. A handful of chemical companies make them &mdash; and several are ALSO equity investors in cooling startups, which is the consistent tell.">dielectric-fluid</span> makers (Shell, Castrol, Solvay, Honeywell) <span class="tag t-conc">CONCENTRATED</span> &mdash; who are <i>both</i> suppliers and equity backers. And the water angle is mostly a myth: <a href="water-cooling.html">Do data centers really waste water?</a></li>
   </ul>
 
   <h2>Layer 4 &mdash; the materials, robots &amp; satellites (where the deepest picks hide)</h2>
@@ -168,8 +169,8 @@
   <p>The humanoid-robot OEMs get the headlines and the hype. But every one of them needs precision parts from a tiny set of suppliers &mdash; and that's where the durable scarcity is.</p>
   <div class="tw"><table>
     <tr><th>The part</th><th>Who makes it</th><th>Why it's the real pick</th></tr>
-    <tr><td><b>Precision reducers</b> (the joint gearbox)</td><td>Harmonic Drive (~strain-wave leader), Nabtesco <span class="tag t-spof">SPOF</span></td><td>Two firms dominate the gears every robot arm needs. Hard to replicate, decades of know-how.</td></tr>
-    <tr><td><b>Roller screws</b> (linear muscle)</td><td>GSA + Rollvis &mdash; Swiss-built, now Schaeffler-owned <span class="tag t-spof">SPOF</span></td><td>Even tighter than reducers. A constraint most investors have never heard of (and the Swiss duopoly has just been rolled up by Germany's Schaeffler).</td></tr>
+    <tr><td><b>Precision reducers</b> (the joint gearbox)</td><td>Harmonic Drive (~strain-wave leader), Nabtesco <span class="tag t-conc">CONCENTRATED</span></td><td>Two firms dominate the gears every robot arm needs. Hard to replicate, decades of know-how.</td></tr>
+    <tr><td><b>Roller screws</b> (linear muscle)</td><td>GSA + Rollvis &mdash; Swiss-built, now Schaeffler-owned <span class="tag t-conc">CONCENTRATED</span></td><td>Even tighter than reducers. A constraint most investors have never heard of (and the Swiss duopoly has just been rolled up by Germany's Schaeffler).</td></tr>
     <tr><td><b>NdFeB magnets</b></td><td>China-dominated <span class="tag t-spof">SPOF</span></td><td>Already <i>delayed Tesla's Optimus.</i> The magnet is the bottleneck, not the AI.</td></tr>
     <tr><td><b>The OEMs themselves</b></td><td>Figure <span class="tag t-hype">Hype</span> ($39B+ pre-revenue), Tesla Optimus, Agility, Unitree</td><td>Best-funded OEMs build actuators <i>in-house</i> &mdash; a headwind for merchant suppliers, so read each carefully.</td></tr>
   </table></div>
@@ -179,7 +180,7 @@
   <div class="tw"><table>
     <tr><th>The deep part</th><th>Who / status</th><th>The tell</th></tr>
     <tr><td><b>Rad-hard chips</b> (survive space radiation)</td><td>BAE, Honeywell, Microchip, Frontgrade <span class="tag t-spof">SPOF</span></td><td>Only ~3 US &ldquo;Trusted Foundry&rdquo; sites, none new since the 1990s. A genuine choke.</td></tr>
-    <tr><td><b>Reaction wheels / star-trackers</b></td><td>Blue Canyon (owned by RTX) <span class="tag t-spof">SPOF</span></td><td>Capacity expanding +400% &mdash; the clearest &ldquo;demand is real&rdquo; signal in the sector.</td></tr>
+    <tr><td><b>Reaction wheels / star-trackers</b></td><td>Blue Canyon (owned by RTX) <span class="tag t-conc">CONCENTRATED</span></td><td>Capacity expanding +400% &mdash; a constraint that is loosening, which is the opposite of fragile; &mdash; the clearest &ldquo;demand is real&rdquo; signal in the sector.</td></tr>
     <tr><td><b>Launch &amp; imaging</b></td><td>Rocket Lab (RKLB), Planet (PL &mdash; rare positive cash flow) <span class="tag t-lead">Leader</span></td><td>RKLB's Neutron rocket still unflown (debut targeted Q4 2026) &mdash; execution risk priced as certainty.</td></tr>
     <tr><td><b>The hype tier</b></td><td>AST SpaceMobile (ASTS), and a 2021&ndash;24 SPAC graveyard (Virgin Orbit, Momentus, Terran) <span class="tag t-hype">Hype</span></td><td>The cautionary pattern: story-stocks that ran out of runway before revenue.</td></tr>
   </table></div>

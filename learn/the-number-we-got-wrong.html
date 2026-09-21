@@ -45,6 +45,10 @@
   .old{color:var(--bad);text-decoration:line-through;} .new{color:var(--good);font-weight:800;}
   .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
   footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+  .updates{background:rgba(94,234,212,.05);border:1px solid var(--line,#22303f);border-left:4px solid var(--accent,#5eead4);border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0;}
+  .updates .uh{color:var(--accent,#5eead4);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:4px;}
+  .updates p{margin:5px 0;font-size:13.5px;}
+  .updates del{color:#8a97a8;} .updates ins{color:#6ee7a8;text-decoration:none;font-weight:700;}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
 <script>
@@ -90,7 +94,7 @@
     <tr><td>Annualised return</td><td class="old">not shown</td><td class="new">+21.2% median a year</td><td>Missing entirely</td></tr>
   </table></div>
 
-  <p>The mechanical cause of the first two rows is dull: the figures were computed in June 2026 and the page kept displaying them months later without a date attached. Prices moved. Because they moved <i>down</i>, the stale number flattered us. Had it drifted the other way we would have been understating and would probably never have noticed &mdash; which is its own lesson about which errors get caught.</p>
+  <p>The mechanical cause of the first two rows is dull: the figures were computed in June 2026 and the page kept displaying them months later without a date attached. Prices moved, and our own holdings moved down, which is why our average fell from +380% to +343.5%. <b>That explanation does not cover the benchmark row, and we originally wrote as though it did.</b> The S&amp;P 500 total-return index <i>rose</i> about 2.3% between the end of June 2026 and 11 September 2026, so drift cannot be why the matched-window S&amp;P figure fell from +117% to +109.6%. The two figures were computed on different bases, and we are re-deriving which &mdash; we would rather say that than offer a cause that the price history contradicts. An outside reviewer caught this on 21 September 2026 by checking the index direction, which took them one lookup and us nothing at all, because we never checked.</p>
 
   <h2>2. The error that actually matters</h2>
 
@@ -133,7 +137,7 @@
   <p>This failure mode is not ours alone. It is close to universal in financial marketing, and it survives because it is not a lie &mdash; every number involved is arithmetically true. Three questions catch nearly all of it, and none requires any maths beyond division.</p>
 
   <h3>Question 1: Over what period?</h3>
-  <p>If a return has no time attached, it is a distance, not a speed. Divide mentally: a 400% total over ten years is roughly 17% a year, which is good. The same 400% over two years is about 71% a year, which is extraordinary and probably unrepeatable. <b>The same headline can describe a solid record or a fantasy, depending on a number they did not print.</b></p>
+  <p>If a return has no time attached, it is a distance, not a speed. Divide mentally: a 400% total over ten years is roughly 17% a year, which is good. The same 400% over three years is about 71% a year, which is extraordinary and probably unrepeatable. <b>The same headline can describe a solid record or a fantasy, depending on a number they did not print.</b></p>
 
   <h3>Question 2: Are the positions closed?</h3>
   <p>Open positions are marked at today&rsquo;s price and can drift back. Closed positions are finished facts. A record built entirely of open positions &mdash; ours is &mdash; is a record of decisions that have not fully resolved. Worse, as above, it keeps improving on its own in a rising market. Ask what share of the track record is realised. If the answer is &ldquo;none,&rdquo; the number is a snapshot of an unfinished experiment.</p>
@@ -144,6 +148,14 @@
   <div class="box">
     <h3 style="margin-top:0;">Run it on us</h3>
     <p style="margin-bottom:0;"><b>1. Over what period?</b> 5.13 years average, entries 2013 to 2024. <b>2. Are the positions closed?</b> No &mdash; 87 of 87 are open, so every return quoted is unrealised. <b>3. Compared with what?</b> The S&amp;P 500 over matched windows, +15.0% a year against our +21.2% median. Those are the three worst-sounding honest answers we can give, and we would rather you have them from us than find them yourself.</p>
+  </div>
+
+  <div class="updates">
+    <div class="uh">Updates to this piece</div>
+    <p><b>2026-09-21 (correction):</b> The worked example said <del>&ldquo;the same 400% over <b>two</b> years is about 71% a year&rdquo;</del> &rarr; <ins>over <b>three</b> years</ins>. 400% total is 5x; over two years that is +123.6% a year, and 71.0% is exactly the three-year figure. The rate was right and the period was wrong &mdash; an arithmetic error inside the paragraph that teaches the reader to divide a return by its time, on the page about publishing a return without its time.</p>
+    <p><b>2026-09-21 (correction):</b> We wrote that the stale figures flattered us <del>because prices &ldquo;moved down&rdquo;</del>. That explains our own average falling from +380% to +343.5%. It cannot explain the benchmark row: the S&amp;P 500 total-return index <ins>rose ~2.3%</ins> between end-June and 11 September 2026, so the matched-window S&amp;P figure could not have fallen from +117% to +109.6% through drift. We have said so above rather than leave a tidy cause that the price history contradicts.</p>
+    <p><b>2026-09-21 (fix):</b> The link to the corrections log added earlier today pointed to <code>../corrections.html</code>, which resolves outside this directory and does not exist. Every correction notice we published this morning linked to a dead page. Fixed on all four articles. Found by the same reviewer, in the same pass.</p>
+    <p>All three found during an outside review. <a href="corrections.html">Corrections log &rarr;</a></p>
   </div>
 
   <h2>6. What we changed, and what is still wrong</h2>
@@ -158,7 +170,7 @@
 
   <p>Changed on 20 September 2026 &mdash; this item appeared under &ldquo;still wrong&rdquo; below until 21 September:</p>
   <ul>
-    <li>The per-position table showed a single portfolio-level S&amp;P figure on <i>every</i> row &mdash; all eleven read &ldquo;+110%&rdquo; &mdash; under a footnote claiming the benchmark was matched to each holding period. It was not. Every row is now computed from dividend-adjusted S&amp;P closes over that position&rsquo;s own window, and the column runs from <b>+51%</b> (OKLO, entered May 2024) to <b>+158%</b> (WPM, entered January 2020). Full entry in the <a href="../corrections.html">corrections log</a>.</li>
+    <li>The per-position table showed a single portfolio-level S&amp;P figure on <i>every</i> row &mdash; all eleven read &ldquo;+110%&rdquo; &mdash; under a footnote claiming the benchmark was matched to each holding period. It was not. Every row is now computed from dividend-adjusted S&amp;P closes over that position&rsquo;s own window, and the column runs from <b>+51%</b> (OKLO, entered May 2024) to <b>+158%</b> (WPM, entered January 2020). Full entry in the <a href="corrections.html">corrections log</a>.</li>
   </ul>
 
   <p>Still wrong, and stated here rather than quietly fixed one day:</p>
