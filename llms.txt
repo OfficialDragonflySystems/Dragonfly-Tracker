@@ -1,4 +1,4 @@
-# generated 2026-09-21 from learn_manifest.json (56 articles)
+# generated 2026-09-25 from learn_manifest.json (58 articles)
 # Dragonfly Lens
 
 > Plain-English, source-led research on the AI build-out: the physical chain from raw
@@ -55,6 +55,8 @@ take from licensed aggregators are cited, never redistributed.
 
 ## Articles
 
+- [The Vertical Farm Was Never The Answer. The Boiler Is.](https://officialdragonflysystems.com/learn/cold-city-food.html) - 2026-09-24
+- [Growth Is 3.4% Of The Jobs](https://officialdragonflysystems.com/learn/jobs-openings.html) - 2026-09-24
 - [The Agent Economy: Why AI Will Pay On-Chain - Plain English](https://officialdragonflysystems.com/learn/agent-economy.html) - 2026-09-21
 - [The AI Goes Public: What to Read When the S-1 Drops](https://officialdragonflysystems.com/learn/ai-ipo-s1.html) - 2026-09-21
 - [Real Demand or Malinvestment? The $725B AI Build-Out](https://officialdragonflysystems.com/learn/ai-malinvestment.html) - 2026-09-21
