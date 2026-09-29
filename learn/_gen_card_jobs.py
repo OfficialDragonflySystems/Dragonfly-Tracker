@@ -1,0 +1,75 @@
+"""Generate the 1200x630 og:card for "Growth is 3.4% of the jobs".
+
+House style: near-black #070b10, teal/lime Dragonfly accents, Georgia headline.
+The card carries the comparison the piece is built on - the fastest-growing occupation
+against the one nobody calls a growth industry - with both bars labelled in the SAME unit
+(people needed per year), because a card that mixes units is how a chart lies.
+
+    python Tracker/learn/_gen_card_jobs.py
+"""
+import os
+from PIL import Image, ImageDraw, ImageFont
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+W, H = 1200, 630
+BG = (7, 11, 16)
+INK = (233, 238, 246)
+MUTED = (147, 163, 184)
+TEAL = (94, 234, 212)
+LIME = (74, 222, 128)
+GOLD = (251, 191, 36)
+LINE = (34, 48, 63)
+
+FONTS = "C:/Windows/Fonts/"
+
+
+def font(name, size):
+    for cand in (name, "arial.ttf"):
+        try:
+            return ImageFont.truetype(FONTS + cand, size)
+        except Exception:
+            continue
+    return ImageFont.load_default()
+
+
+GEO = lambda s: font("georgiab.ttf", s)
+ARI = lambda s: font("arialbd.ttf", s)
+ARR = lambda s: font("arial.ttf", s)
+
+
+def main():
+    img = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(img)
+
+    d.text((64, 52), "DRAGONFLY LENS", font=ARI(20), fill=TEAL)
+    d.text((64, 84), "WHERE THE WORK WILL BE", font=ARI(20), fill=MUTED)
+
+    d.text((64, 140), "Growth is 3.4%", font=GEO(76), fill=INK)
+    d.text((64, 226), "of the openings", font=GEO(76), fill=INK)
+
+    d.text((64, 330), "Openings a year, United States, 2025-35 projection",
+           font=ARR(22), fill=MUTED)
+
+    # two bars, same unit: people needed per year
+    bars = [("Solar installers  4,200/yr", 4200, GOLD, "fastest growing"),
+            ("Carpenters  62,800/yr", 62800, LIME, "15x the people needed")]
+    maxv = 62800
+    y = 380
+    for label, val, colour, note in bars:
+        w = int(620 * (val / maxv))
+        d.rounded_rectangle([64, y, 64 + max(w, 8), y + 46], radius=6, fill=colour)
+        d.text((64 + max(w, 8) + 18, y + 12), label, font=ARI(23), fill=INK)
+        d.text((64 + max(w, 8) + 18, y + 12 + 26), note, font=ARR(17), fill=MUTED)
+        y += 96
+
+    d.line([(64, 566), (W - 64, 566)], fill=LINE, width=1)
+    d.text((64, 584), "Source: BLS Employment Projections table 1.10, released 27 Aug 2026",
+           font=ARR(18), fill=MUTED)
+
+    out = os.path.join(HERE, "jobs-openings-card.png")
+    img.save(out, "PNG")
+    print("wrote", out, os.path.getsize(out), "bytes")
+
+
+if __name__ == "__main__":
+    main()
