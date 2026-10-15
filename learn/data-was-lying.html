@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Data Was Lying for Five Months. Every Alarm Said It Was Fine. &mdash; Dragonfly Lens</title>
   <link rel="canonical" href="https://officialdragonflysystems.com/learn/data-was-lying.html">
-<meta name="description" content="A trading strategy we spent months building never worked. The edge was manufactured by a defect in our own price data - two versions of history mixed together, bar by bar, inside the same trading day. Every integrity check we had passed it, because every single price in the file was real. Here is how data lies while looking healthy, and the one test that catches it.">
+<meta name="description" content="One of our internal trading research projects never worked. The edge was manufactured by a defect in our own price data - two versions of history mixed together, bar by bar, inside the same trading day. Every integrity check we had passed it, because every single price in the file was real. Here is how data lies while looking healthy, and the one test that catches it.">
 <meta property="og:title" content="Our Data Was Lying for Five Months. Every Alarm Said It Was Fine.">
 <meta property="og:description" content="The edge was manufactured by our own data. Every integrity check passed, because every price in the file was real. How to catch the errors that look healthy.">
 <meta property="og:type" content="article">
@@ -65,8 +65,8 @@
 <div class="wrap">
   <div class="kick">The Lens &middot; What We Got Wrong</div>
   <h1>Our Data Was Lying for Five Months. Every Alarm Said It Was Fine.</h1>
-  <p class="lead">We spent months building a trading strategy around an edge that did not exist. It was not a bad idea badly tested. The edge was <b>manufactured by a defect in our own price data</b> &mdash; two different versions of history mixed together, bar by bar, inside the same trading day. What makes this worth your time is not that we got it wrong. It is <i>why nothing caught it</i>: every integrity check we had said the data was healthy, and every one of them was right, because <b>every single price in the file was a real price.</b> They were just not all measured from the same place.</p>
-  <p class="byline">Dragonfly Lens &middot; 11 September 2026 &middot; Defect found 1 September 2026; full extent measured 10&ndash;11 September. Every figure below is from our own files.</p>
+  <p class="lead">One of the many research systems we run spent months built around an edge that did not exist. It was an internal project, and none of its conclusions was ever sold or published as a subscriber signal. It was not a bad idea badly tested. The edge was <b>manufactured by a defect in our own price data</b> &mdash; two different versions of history mixed together, bar by bar, inside the same trading day. What makes this worth your time is not that we got it wrong. It is <i>why nothing caught it</i>: every integrity check we had said the data was healthy, and every one of them was right, because <b>every single price in the file was a real price.</b> They were just not all measured from the same place.</p>
+  <p class="byline">Dragonfly Lens &middot; 11 September 2026 &middot; Defect found 1 September 2026; full extent measured 10&ndash;11 September. Every figure below is from our own files. Updated 15 October 2026: see &ldquo;It kept happening&rdquo; near the end.</p>
 
   <div class="box tldr">
     <h3 style="margin-top:0;">The short version</h3>
@@ -189,6 +189,16 @@
       <li>Findings that were produced on the bad data and are still quoted are tracked as debt until re-run, rather than assumed fine because they are old.</li>
     </ul>
   </div>
+
+  <h2>Update, 15 October 2026: it kept happening</h2>
+  <p>Since we wrote this, we have found the same kind of error again in our internal research systems, several times. These are among the many systems we run to test ideas, none of their conclusions was ever published as a subscriber signal, and none of them was caught by a check that looked only at the file itself.</p>
+  <p><b>A wrong multiplier.</b> A Micro Bitcoin contract was valued 50 times too high in our testing code. Our forward tracker showed a loss of $113,913 on it. The real loss was about $2,400.</p>
+  <p><b>A tracker reading frozen data.</b> Our forward test, the one meant to be immune to overfitting, was reading a file that had stopped updating. More than half its open trades could never close, and the scoreboard showed them as pending evidence.</p>
+  <p><b>A stale luck correction.</b> When you try thousands of variations, the best one looks good by chance, so you raise the bar. Ours assumed 26,781 attempts. The real number was 10,428. Fixing that, and the way markets were pooled, moved the bar from 1.18 to 0.82.</p>
+  <p><b>A one-hour clock shift.</b> From 27 May, one source began labelling its timestamps in Central time instead of Eastern. Every calculation that depends on the time of day was an hour off until we compared against the exchange&rsquo;s own session clock.</p>
+  <p><b>An inverted result.</b> A well-documented effect came out with a Sharpe ratio of minus 1.4 on its first run. That is not a null result, it is a bug. 95.6 percent of our monthly returns were not returns at all, but the price gap between one contract month and the next.</p>
+  <p>Each one passed every check that looked only at the data on its own terms, and each one was found by comparing against something outside it. That is the whole lesson of this piece, and it keeps being true.</p>
+  <p>A note for anyone using AI to build or test a strategy: an AI can produce a convincing backtest in minutes. It does nothing to make one true. The checks above do not get cheaper.</p>
 
   <div class="real"><b>Why publish this.</b> Nobody would have known. The defect is invisible from outside, the conclusions it poisoned were never sold to anyone, and quietly fixing it would have been easy and comfortable. We are writing it down because a research operation that only reports its wins is not producing evidence, it is producing advertising &mdash; and because the single most valuable thing we own is not a strategy. It is knowing which of our numbers we are allowed to believe.</div>
 
