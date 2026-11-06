@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta property="article:published_time" content="2026-11-05" data-date-basis="stated-in-article">
+<title>Why Canada's Budget Numbers Do Not Match &mdash; Dragonfly Lens</title>
+<link rel="canonical" href="https://officialdragonflysystems.com/learn/pbo-borrowing.html">
+<meta name="description" content="Posts say Ottawa will borrow $733 billion to cover $333 billion of deficits. We reconciled the PBO's own tables, compared Canada with other countries' debt histories, priced a 10, 15 and 20 year path to a balanced budget, and sized the documented waste and fraud against the deficit.">
+<meta property="og:title" content="Why Canada's Budget Numbers Do Not Match">
+<meta property="og:description" content="Posts say Ottawa will borrow $733 billion to cover $333 billion of deficits. We reconciled the PBO's own tables, compared Canada with other countries' debt histories, priced a 10, 15 and 20 year path to a balanced budget, and sized the documented waste and fraud against the deficit.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/pbo-borrowing.html">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Why Canada's Budget Numbers Do Not Match">
+<meta name="twitter:description" content="Posts say Ottawa will borrow $733 billion to cover $333 billion of deficits. We reconciled the PBO's own tables, compared Canada with other countries' debt histories, priced a 10, 15 and 20 year path to a balanced budget, and sized the documented waste and fraud against the deficit.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .def{border-bottom:1px dashed var(--accent);cursor:help;color:#cfeee7;}
+  #dtip{position:fixed;z-index:99999;max-width:300px;background:#0a1a16;color:#d7f5ee;border:1px solid rgba(94,234,212,.4);border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 26px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .14s;display:none;text-align:left;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .stack{counter-reset:step;margin:18px 0;}
+  .step{position:relative;padding:14px 16px 14px 58px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin:10px 0;}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:rgba(94,234,212,.14);border:1px solid var(--accent);color:var(--accent);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .step b{color:#fff;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+  .srclist{margin:14px 0 0 4px;padding-left:20px;font-size:14px;color:var(--muted);}
+  .srclist li{margin:11px 0;color:var(--muted);}
+  .meta{font-size:13px;color:var(--muted);}
+  sup a{color:var(--accent);text-decoration:none;font-size:11px;}
+  a.back{color:var(--muted);text-decoration:none;}
+  .upd{border-left:4px solid #fbbf24;background:rgba(251,191,36,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;}
+  .upd b{color:#fbbf24;}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TED3ERB140"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TED3ERB140');
+</script>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">Canada Ledger &middot; Federal finances</div>
+  <h1>$333 Billion of Deficits, $733 Billion of Borrowing, $59 Billion of Interest: Why Canada's Budget Numbers Do Not Match, and What It Would Take to Fix Them</h1>
+  <p class="byline">Draft, 5 November 2026 (section 11 was added on 5 November after the budget; the rest was written on 2 to 4 November). Amounts are Canadian dollars, nominal, fiscal years starting 1 April, except where marked: the CRA tax gap is in constant 2022 dollars and the US figures are US dollars. Source for the Canadian projections unless marked: Parliamentary Budget Officer (PBO) Economic and Fiscal Outlook (EFO), October 2026, released 20 October 2026. Written ahead of the federal budget, which was tabled on 5 November 2026; this page stays dated to the PBO release, and section 11 compares the budget's tables with it.</p>
+
+  <p class="lede"><b>The short answer.</b> Posts say Ottawa will "borrow $733 billion to cover $333 billion of deficits" and that the numbers are hidden. They are not hidden, and they are not contradictory: they measure different things. But the PBO itself says the accounting "obscures the realities of cash debt." Below we reconcile the figures, compare Canada with other countries' debt histories, price a 10, 15 and 20 year path to a balanced budget, and size the documented waste and fraud against the deficit.</p>
+
+  <div class="box tldr">
+    <b>In one minute</b>
+    <ol>
+      <li><b>$333.3B vs $732.9B.</b> Deficits (accrual) versus the rise in market debt. The gap, $399.6B, is mostly financing for assets: loans to Crown corporations and other financial assets, which are recorded as assets when made rather than expensed, and capital purchases, which are expensed gradually as they are amortized.</li>
+      <li><b>Public debt charges (interest)</b> are projected at $59.3B this year and $83.0B in 2030-31 (PBO). The $54B and $59B figures in circulation come from different documents; a difference between published totals is not by itself evidence of concealment.</li>
+      <li><b>History:</b> no country is a close match for Canada today (deficit about 2% of GDP, debt mostly in its own currency, independent central bank). The nearest honest comparison is Canada in the 1990s, which started from a deficit near 6% of GDP.</li>
+      <li><b>A balanced budget</b> over 10 to 20 years needs total spending to grow about 0.5 to 1.1 points a year slower than the economy (our approximation), not year-to-year cuts. The current path, on our extrapolation, keeps rising toward about 46% of GDP rather than exploding, but the PBO flags risks our model leaves out. Budget 2026 (5 November) has lower deficits ($288.7B over five years against the PBO's $333.3B) and a larger cash borrowing need ($764.7B); on its numbers the same arithmetic drifts down toward about 36% (section 11).</li>
+      <li><b>Waste and fraud are real and documented, and they are too small to close the gap alone.</b> The audited one-time pools sum to about $8 billion (about $16 billion on the latest Public Accounts COVID figure) against a deficit of about $63 billion, and they are not an estimate of all waste or fraud. Real money sits in the large recurring programs and in policy choices.</li>
+    </ol>
+  </div>
+
+  <h2>1. Deficit, borrowing and debt: three different numbers</h2>
+  <p><b>Deficit:</b> the amount by which a year's expenses exceed its revenue on an accrual basis; qualifying capital assets are generally expensed over their useful lives, not all at once when bought. <b>Borrowing</b>, in this piece: the net increase in market debt, the debt owed to bond and bill holders. <b>Gross borrowing</b> is larger because it also replaces debt that matures: Finance Canada's Spring Economic Update 2026 (Annex 3, Table A3.1) shows for 2026-27 total borrowing sources of $571 billion, of which refinancing is $438 billion and the financial requirement is $133 billion (Treasury bills are counted at the target year-end stock, $268 billion of sources against $286 billion of refinancing, although they are rolled over several times a year; Annex 3 says the 2026-27 change in borrowing needs is absorbed through lower bill issuance). <b>Asset:</b> something the government owns or is owed, like a loan to a Crown corporation.</p>
+  <p>The PBO states both headline numbers in its release: "Cumulative deficits over the next five years are projected to total $333.3 billion" and "Federal borrowing over the next five years is projected to rise by $732.9 billion." In the report text, its explanation of the gap: "The largest source of this gap is loans to Crown corporations and other financial assets, which are financed through borrowing but, under accrual accounting, are recorded as assets rather than expenses, and therefore do not add to the deficit." It then adds: "This obscures the realities of cash debt and raises questions about whether the current fiscal framework provides a complete and transparent picture of Canada's fiscal sustainability." So: published, easy to misread, and the PBO thinks that is a problem.</p>
+  <p>A household version, with its limit: buy a $40,000 truck on a loan. Your yearly expense is a slice of the truck's cost; your cash out the door was $40,000. Both are true, and the truck has a known life. A loan to a Crown corporation is different: whether it is worth its recorded value depends on the borrower. The PBO flags that loans to enterprise Crown corporations "reached $141.5 billion in 2025, nearly triple their 2016 level, exposing the federal balance sheet to credit, market and operational risk."</p>
+
+  <h2>2. The reconciliation</h2>
+  <p>We reconciled the borrowing figure ourselves from the PBO's Appendix G. Market debt goes from $1,584.2 billion at the end of 2025-26 to $2,317.1 billion at the end of 2030-31, a rise of exactly $732.9 billion. We read that as the net increase in market debt, not gross issuance; the PBO text does not define the phrase.</p>
+  <div style="position:relative;overflow:hidden">
+<figure class="lens-chart" style="margin:22px 0;">
+<div class="bcddada43b-title">From five years of deficits to five years of borrowing</div><div class="bcddada43b-sub">All four bars are five-year totals, CAD $ billions, nominal. The third bar is subtracted.</div>
+<svg viewBox="0 0 720 180" width="100%" style="max-width:720px;overflow:visible;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+  <style>
+    .bcddada43b-track { fill: #22303f; opacity: .35; }
+    .bcddada43b-label { fill: #93a3b8; font-size: 13px; }
+    .bcddada43b-value { fill: #e9eef6; font-size: 13px; font-weight: 700; }
+    .bcddada43b-bar { cursor: default; }
+    .bcddada43b-bar rect:not(.bcddada43b-track) { transition: opacity .12s; }
+    .bcddada43b-bar:hover rect:not(.bcddada43b-track) { opacity: .82; }
+  </style>
+  
+    <g class="bcddada43b-bar" data-tip="Cumulative deficits, 2026-27 to 2030-31: 333.3 $bn - PBO EFO Table 3; approximately the rise in federal debt (remeasurements outside the budgetary balance are small here)">
+      <text x="4" y="17" class="bcddada43b-label">Cumulative deficits, 2026-27 to 2030-31</text>
+      <rect x="4" y="22" width="632" height="24" rx="4" class="bcddada43b-track"/>
+      <rect x="4" y="22" width="287.4" height="24" rx="4" fill="#199e70"/>
+      <text x="299.4" y="38" class="bcddada43b-value">333.3 $bn</text>
+    </g>
+    <g class="bcddada43b-bar" data-tip="Plus: growth in assets (loans, other financial, buildings): 513.8 $bn - PBO EFO Appendix G: financial +338.6, non-financial +175.2">
+      <text x="4" y="55" class="bcddada43b-label">Plus: growth in assets (loans, other financial, buildings)</text>
+      <rect x="4" y="60" width="632" height="24" rx="4" class="bcddada43b-track"/>
+      <rect x="4" y="60" width="443.1" height="24" rx="4" fill="#9085e9"/>
+      <text x="455.1" y="76" class="bcddada43b-value">513.8 $bn</text>
+    </g>
+    <g class="bcddada43b-bar" data-tip="Minus: growth in other liabilities (pensions, payables): 114.2 $bn - PBO EFO Appendix G; subtracted">
+      <text x="4" y="93" class="bcddada43b-label">Minus: growth in other liabilities (pensions, payables)</text>
+      <rect x="4" y="98" width="632" height="24" rx="4" class="bcddada43b-track"/>
+      <rect x="4" y="98" width="98.5" height="24" rx="4" fill="#c98500"/>
+      <text x="110.5" y="114" class="bcddada43b-value">114.2 $bn</text>
+    </g>
+    <g class="bcddada43b-bar" data-tip="Equals: rise in market debt (PBO borrowing figure): 732.9 $bn - 1,584.2 to 2,317.1; matches the PBO&#x27;s $732.9 billion">
+      <text x="4" y="131" class="bcddada43b-label">Equals: rise in market debt (PBO borrowing figure)</text>
+      <rect x="4" y="136" width="632" height="24" rx="4" class="bcddada43b-track"/>
+      <rect x="4" y="136" width="632.0" height="24" rx="4" fill="#d55181"/>
+      <text x="644.0" y="152" class="bcddada43b-value">732.9 $bn</text>
+    </g>
+</svg>
+<div class="bcddada43b-src">Source: Parliamentary Budget Officer, Economic and Fiscal Outlook, October 2026 (our arithmetic from Appendix G)</div>
+<div id="bcddada43b-tip" class="lens-chart-tip" style="position:fixed;z-index:99999;max-width:280px;
+  background:#0a1118;color:#e9eef6;border:1px solid #22303f;border-radius:8px;padding:8px 11px;
+  font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.55);pointer-events:none;
+  opacity:0;transition:opacity .12s;display:none;"></div>
+<table class="chart-table" style="position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;">
+  <caption>From five years of deficits to five years of borrowing - All four bars are five-year totals, CAD $ billions, nominal. The third bar is subtracted.</caption>
+  <thead><tr><th>Label</th><th>Value</th><th>Note</th></tr></thead>
+  <tbody><tr><td>Cumulative deficits, 2026-27 to 2030-31</td><td>333.3 $bn</td><td>PBO EFO Table 3; approximately the rise in federal debt (remeasurements outside the budgetary balance are small here)</td></tr><tr><td>Plus: growth in assets (loans, other financial, buildings)</td><td>513.8 $bn</td><td>PBO EFO Appendix G: financial +338.6, non-financial +175.2</td></tr><tr><td>Minus: growth in other liabilities (pensions, payables)</td><td>114.2 $bn</td><td>PBO EFO Appendix G; subtracted</td></tr><tr><td>Equals: rise in market debt (PBO borrowing figure)</td><td>732.9 $bn</td><td>1,584.2 to 2,317.1; matches the PBO&#x27;s $732.9 billion</td></tr></tbody>
+</table>
+<style>
+  .bcddada43b-title { font-weight:800; font-size:15px; color:#e9eef6; margin-bottom:2px; }
+  .bcddada43b-sub { font-size:12.5px; color:#93a3b8; margin-bottom:10px; }
+  .bcddada43b-src { font-size:11.5px; color:#93a3b8; margin-top:6px; }
+</style>
+<script>
+(function(){
+  var root = document.currentScript.closest('figure');
+  var tip = root.querySelector('#bcddada43b-tip');
+  root.querySelectorAll('.bcddada43b-bar').forEach(function(g){
+    g.addEventListener('mouseenter', function(e){
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.display = 'block'; tip.style.opacity = '1';
+    });
+    g.addEventListener('mousemove', function(e){
+      tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px';
+      tip.style.top = (e.clientY + 14) + 'px';
+    });
+    g.addEventListener('mouseleave', function(){
+      tip.style.opacity = '0'; setTimeout(function(){ tip.style.display = 'none'; }, 120);
+    });
+  });
+})();
+</script>
+</figure></div>
+  <div class="tw"><table>
+    <tr><th>Line (five years, CAD $bn)</th><th>Amount</th><th>Type</th></tr>
+    <tr><td>Cumulative deficits</td><td>333.3</td><td>accrual, budgetary</td></tr>
+    <tr><td>+ Growth in financial assets</td><td>338.6</td><td>balance sheet</td></tr>
+    <tr><td>+ Growth in non-financial assets</td><td>175.2</td><td>balance sheet</td></tr>
+    <tr><td>&minus; Growth in non-market liabilities</td><td>114.2</td><td>balance sheet (pensions +48.6, payables +62.5, other)</td></tr>
+    <tr><td><b>= Rise in market debt</b></td><td><b>732.9</b></td><td>the PBO's "borrowing"</td></tr>
+  </table></div>
+  <p>That is a balance-sheet identity from the table's endpoints, not a transaction-by-transaction cash reconciliation. The PBO tables we read do not split the $338.6 billion rise in financial assets, so we cannot say how much is Crown loans. Finance Canada's own projection gives a split on a different baseline (Spring Economic Update 2026, Annex 1, Table A1.10, April 2026). Over 2026-27 to 2030-31 it shows enterprise Crown corporation loans and investments of about $241 billion, other loans and investments of about $36 billion, and purchases of non-financial assets (capital) of about $94 billion, against budgetary deficits of $295.5 billion and a total financial requirement of $672.4 billion, about 2.3 times the deficits. That is the same shape as the PBO's 2.2, from a different forecaster, and it says the gap is mostly Crown lending. It is Finance's April baseline, not the PBO's October one, so we do not use it to allocate the PBO's five-year figure.</p>
+
+  <h2>3. The interest numbers</h2>
+  <div style="position:relative;overflow:hidden">
+<figure class="lens-chart" style="margin:22px 0;">
+<div class="bc49ed0211-title">Public debt charges: five published figures, one year each</div><div class="bc49ed0211-sub">Annual figures, CAD $ billions. Different documents and dates, not one series.</div>
+<svg viewBox="0 0 720 218" width="100%" style="max-width:720px;overflow:visible;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+  <style>
+    .bc49ed0211-track { fill: #22303f; opacity: .35; }
+    .bc49ed0211-label { fill: #93a3b8; font-size: 13px; }
+    .bc49ed0211-value { fill: #e9eef6; font-size: 13px; font-weight: 700; }
+    .bc49ed0211-bar { cursor: default; }
+    .bc49ed0211-bar rect:not(.bc49ed0211-track) { transition: opacity .12s; }
+    .bc49ed0211-bar:hover rect:not(.bc49ed0211-track) { opacity: .82; }
+  </style>
+  
+    <g class="bc49ed0211-bar" data-tip="2025-26 estimate (PBO, October 2026): 53.6 $bn - prior year">
+      <text x="4" y="17" class="bc49ed0211-label">2025-26 estimate (PBO, October 2026)</text>
+      <rect x="4" y="22" width="632" height="24" rx="4" class="bc49ed0211-track"/>
+      <rect x="4" y="22" width="408.1" height="24" rx="4" fill="#199e70"/>
+      <text x="420.1" y="38" class="bc49ed0211-value">53.6 $bn</text>
+    </g>
+    <g class="bc49ed0211-bar" data-tip="2026-27 Main Estimates: 53.7 $bn - forecast statutory authorities for debt servicing">
+      <text x="4" y="55" class="bc49ed0211-label">2026-27 Main Estimates</text>
+      <rect x="4" y="60" width="632" height="24" rx="4" class="bc49ed0211-track"/>
+      <rect x="4" y="60" width="408.9" height="24" rx="4" fill="#9085e9"/>
+      <text x="420.9" y="76" class="bc49ed0211-value">53.7 $bn</text>
+    </g>
+    <g class="bc49ed0211-bar" data-tip="2026-27 Finance Canada, April: 58.7 $bn - projection">
+      <text x="4" y="93" class="bc49ed0211-label">2026-27 Finance Canada, April</text>
+      <rect x="4" y="98" width="632" height="24" rx="4" class="bc49ed0211-track"/>
+      <rect x="4" y="98" width="447.0" height="24" rx="4" fill="#c98500"/>
+      <text x="459.0" y="114" class="bc49ed0211-value">58.7 $bn</text>
+    </g>
+    <g class="bc49ed0211-bar" data-tip="2026-27 PBO (October 2026): 59.3 $bn - projection">
+      <text x="4" y="131" class="bc49ed0211-label">2026-27 PBO (October 2026)</text>
+      <rect x="4" y="136" width="632" height="24" rx="4" class="bc49ed0211-track"/>
+      <rect x="4" y="136" width="451.5" height="24" rx="4" fill="#d55181"/>
+      <text x="463.5" y="152" class="bc49ed0211-value">59.3 $bn</text>
+    </g>
+    <g class="bc49ed0211-bar" data-tip="2030-31 PBO (October 2026): 83.0 $bn - a projection five years out, not a current figure">
+      <text x="4" y="169" class="bc49ed0211-label">2030-31 PBO (October 2026)</text>
+      <rect x="4" y="174" width="632" height="24" rx="4" class="bc49ed0211-track"/>
+      <rect x="4" y="174" width="632.0" height="24" rx="4" fill="#199e70"/>
+      <text x="644.0" y="190" class="bc49ed0211-value">83.0 $bn</text>
+    </g>
+</svg>
+<div class="bc49ed0211-src">Source: PBO Main Estimates review (7 May 2026); Finance Canada; PBO EFO October 2026</div>
+<div id="bc49ed0211-tip" class="lens-chart-tip" style="position:fixed;z-index:99999;max-width:280px;
+  background:#0a1118;color:#e9eef6;border:1px solid #22303f;border-radius:8px;padding:8px 11px;
+  font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.55);pointer-events:none;
+  opacity:0;transition:opacity .12s;display:none;"></div>
+<table class="chart-table" style="position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;">
+  <caption>Public debt charges: five published figures, one year each - Annual figures, CAD $ billions. Different documents and dates, not one series.</caption>
+  <thead><tr><th>Label</th><th>Value</th><th>Note</th></tr></thead>
+  <tbody><tr><td>2025-26 estimate (PBO, October 2026)</td><td>53.6 $bn</td><td>prior year</td></tr><tr><td>2026-27 Main Estimates</td><td>53.7 $bn</td><td>forecast statutory authorities for debt servicing</td></tr><tr><td>2026-27 Finance Canada, April</td><td>58.7 $bn</td><td>projection</td></tr><tr><td>2026-27 PBO (October 2026)</td><td>59.3 $bn</td><td>projection</td></tr><tr><td>2030-31 PBO (October 2026)</td><td>83.0 $bn</td><td>a projection five years out, not a current figure</td></tr></tbody>
+</table>
+<style>
+  .bc49ed0211-title { font-weight:800; font-size:15px; color:#e9eef6; margin-bottom:2px; }
+  .bc49ed0211-sub { font-size:12.5px; color:#93a3b8; margin-bottom:10px; }
+  .bc49ed0211-src { font-size:11.5px; color:#93a3b8; margin-top:6px; }
+</style>
+<script>
+(function(){
+  var root = document.currentScript.closest('figure');
+  var tip = root.querySelector('#bc49ed0211-tip');
+  root.querySelectorAll('.bc49ed0211-bar').forEach(function(g){
+    g.addEventListener('mouseenter', function(e){
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.display = 'block'; tip.style.opacity = '1';
+    });
+    g.addEventListener('mousemove', function(e){
+      tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px';
+      tip.style.top = (e.clientY + 14) + 'px';
+    });
+    g.addEventListener('mouseleave', function(){
+      tip.style.opacity = '0'; setTimeout(function(){ tip.style.display = 'none'; }, 120);
+    });
+  });
+})();
+</script>
+</figure></div>
+  <p>Our arithmetic on published totals: $5.0 billion from the Main Estimates to Finance Canada's April figure, $0.6 billion from April to the PBO. We have not found an itemised bridge, so we do not say what explains each step. Debt service as a share of revenue rises from 10.5% (2025-26) to 13.6% (2030-31), "mainly... growth in interest-bearing debt rather than higher interest rates", "returned to its 2007 level" and "well below its peak in the 1990s" (37.6%, PBO October 2026 outlook, debt service ratio). Interest is also a risk: the PBO says a permanent one-point rise in interest rates would add $5.1 billion to debt charges in the first year and $15.8 billion by the fourth. $59.3 billion divided by 52 is about $1.14 billion a week, an annual projection divided into weeks, not observed weekly payments.</p>
+
+  <h2>4. What the social posts get right and wrong</h2>
+  <ul>
+    <li><b>"$333 billion of deficits":</b> right.</li>
+    <li><b>"$733 billion of borrowing":</b> right as a PBO phrase (on our reading of Appendix G, the net rise in market debt; the PBO text does not define it). The "to cover" framing is wrong: the gap is financing for loans and capital, not deficit financing.</li>
+    <li><b>"Off-books":</b> misleading if it means absent from the accounts; fair to the extent the PBO says the treatment obscures the cash picture.</li>
+    <li><b>"$83 billion a year":</b> a 2030-31 projection.</li>
+    <li><b>"Exceeds the Canada Health Transfer":</b> the PBO's $59.3 billion is higher than the transfer in the Main Estimates ($57.4 billion); the figures come from different documents and dates.</li>
+    <li><b>"Spent more than every other government in history combined":</b> in nominal dollars this is true of most recent governments and says little; in inflation-adjusted or per-capita terms it would need a calculation we have not done.</li>
+  </ul>
+
+  <h2>5. Has any country been here, and what happened?</h2>
+  <p>Honest answer first: none of the cases we examined is a close match. Canada's federal deficit is about 2% of GDP, its federal debt is about 41 to 43% of GDP (the PBO's measure), the debt is mostly in Canadian dollars (Finance Canada also issues foreign-currency debt, used only to fund official reserves: $28 billion of $1,741 billion of market debt at the end of 2026-27, Spring Economic Update 2026, Annex 3), and the central bank is independent. The cases below are the ones people reach for; the table says what was different. Figures are from the documents named in Sources.</p>
+  <div class="tw"><table>
+    <tr><th>Case</th><th>Starting point</th><th>What happened</th><th>Comparable to Canada now?</th></tr>
+    <tr><td><b>Canada, 1990s</b></td><td>Federal deficit $42.0B in 1993-94 (about 5.9% of GDP, as in Budget 1995's own table; figures of that vintage can be restated); federal debt peaked in the mid-1990s at roughly 68 to 74% of GDP depending on whether the accumulated deficit or net debt is used, and on the statistical vintage; debt charges about 39% of revenue in 1990-91 (Finance Canada, Annual Financial Report 2004-05; a different measure from the PBO's 37.6%).</td><td>1995 Budget and Program Review: $16.9B of Program Review savings planned cumulatively over three years; across all the budget measures, expenditure reductions outweighed revenue increases about 7 to 1. First surplus 1997-98 ($3.5B as first reported; later restated). Revenue rose about $37B (to 1997-98) while program spending fell about $15B (to its 1996-97 low); the end years differ, so read it as direction, not a precise split. It was not cuts alone. Both Bank of Canada governors we read credit lower interest rates and falling risk premiums (Dodge was deputy minister of finance at the time of the 1995 budget, so he is not a disinterested witness); unemployment was about 11% in the early 1990s and transfers to provinces were cut ($2.5B in 1996-97 and $4.5B in 1997-98, planned reductions against the previous arrangements, in what became the Canada Health and Social Transfer).</td><td>Closest, but it started from a far worse deficit, and the fix leaned on falling rates and rising revenue.</td></tr>
+    <tr><td><b>Sweden, early 1990s</b></td><td>A banking crisis first: bank loan losses about 12% of GDP.</td><td>Government bond yields rose from just under 7% to over 12% within months in 1994, then consolidation.</td><td>Not closely: a bank and asset bust drove the deficit to 11 to 13% of GDP, largely through automatic stabilisers, followed by a loss of credibility (Riksbank governor, 1997). Canada's starting deficit is under 2%.</td></tr>
+    <tr><td><b>Italy</b></td><td>Debt about 135 to 138% of GDP (IMF 2025).</td><td>Deficit cut from 8.1% (2022) to 3.4% (2024); the IMF release gives two different 2024 growth figures, so we do not quote one. We did not confirm the interest burden or the long-run growth record.</td><td>Not closely: general-government gross debt far above Canada's, in a currency Italy does not control. The measures differ (gross general government against Canada's federal measure), so the ratio is not like for like.</td></tr>
+    <tr><td><b>Japan</b></td><td>Gross debt 206.8% of GDP in 2025 (IMF, April 2026).</td><td>No sovereign default or loss of market access in the sources we read; the Bank of Japan held 46.3% of Japanese government bonds and Treasury bills at the end of December 2024 (Bank of Japan Flow of Funds, as reproduced in the Ministry of Finance's Debt Management Report 2025; bonds at market value, bills at face value). The IMF projects the deficit widening again toward 4.1% by 2029. These features distinguish Japan from foreign-currency debt crises; we have not shown that they explain the absence of a crisis.</td><td>Not a model to copy: low growth in the years the IMF reports, and the central bank is the biggest holder. The IMF's 206.8% is gross general-government debt, not Canada's measure.</td></tr>
+    <tr><td><b>Greece, 2010</b></td><td>2009 deficit estimate revised from 4% to about 15% of GDP; euro-area member with no currency of its own.</td><td>Real GDP in 2012 was 17% below 2009 (the programme had projected a 5.5% fall); unemployment 25% against 15% projected; banks lost 30% of deposits (IMF ex post evaluation).</td><td>Not closely: euro debt without a national currency or monetary policy, plus a hidden deficit. We include it because posts invoke it.</td></tr>
+    <tr><td><b>UK, 2022</b></td><td>A gilt-market shock that followed a September 2022 fiscal announcement (Bank of England).</td><td>Pension-fund leverage set off margin calls and forced gilt sales; the Bank of England bought gilts temporarily (Bank of England, December 2022).</td><td>Not closely: a fiscal-announcement shock amplified by leveraged pension-fund structures, not a sovereign default.</td></tr>
+  </table></div>
+  <div class="flag"><b>What the history actually says.</b> These cases do not show that Canada's present deficit points to an impending crisis. They show several ways that fiscal positions, financing conditions and financial-system weaknesses can interact, and none matches Canada's starting point closely. IMF research (Lian, Presbitero and Wiriadinata, 2020) finds the interest-rate-minus-growth gap is more volatile in high-debt countries, in a sample that includes advanced economies. Separate IMF work (Moreno Badia and others, 2021) finds a low gap does not offset persistent primary deficits or hidden debts; that sample is emerging and developing economies, not the G7. Treat both as warnings, not forecasts. These sources do not support a close Greek analogy.</div>
+
+  <h2>6. What a balanced budget would take: 10, 15 or 20 years</h2>
+  <p>Our extrapolation, not a PBO projection: start from the PBO's 2030-31 deficit of 1.7% of GDP and debt of 42.6% of GDP, assume nominal GDP grows 3.8% a year and revenue stays a constant share of GDP, and shrink the deficit evenly to zero over 10, 15 or 20 years from 2031-32. If nothing changes, debt-to-GDP keeps drifting up toward about 46% (a steady 1.7% deficit at 3.8% growth settles at 1.7 x 1.038 / 0.038 on this page's year-end timing); it is about 44% after 16 years. The shorter plans assume the budget then stays balanced. That is not a safe forecast: it leaves out the aging, health and defence pressures and the interest-rate risk the PBO raises.</p>
+  <div style="position:relative;overflow:hidden">
+<figure class="lens-chart" style="margin:22px 0;">
+<div class="bcb6c7eebf-title">Federal debt-to-GDP at the end of 2046-47 under four paths</div><div class="bcb6c7eebf-sub">% of GDP, starting from the PBO&#x27;s 42.6% in 2030-31. Our assumptions: nominal GDP +3.8% a year, revenue a constant share of GDP, deficit shrinking evenly from 2031-32.</div>
+<svg viewBox="0 0 720 180" width="100%" style="max-width:720px;overflow:visible;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+  <style>
+    .bcb6c7eebf-track { fill: #22303f; opacity: .35; }
+    .bcb6c7eebf-label { fill: #93a3b8; font-size: 13px; }
+    .bcb6c7eebf-value { fill: #e9eef6; font-size: 13px; font-weight: 700; }
+    .bcb6c7eebf-bar { cursor: default; }
+    .bcb6c7eebf-bar rect:not(.bcb6c7eebf-track) { transition: opacity .12s; }
+    .bcb6c7eebf-bar:hover rect:not(.bcb6c7eebf-track) { opacity: .82; }
+  </style>
+  
+    <g class="bcb6c7eebf-bar" data-tip="Keep the deficit at 1.7% of GDP: 44.3 % - our extrapolation; it keeps drifting up toward about 46%">
+      <text x="4" y="17" class="bcb6c7eebf-label">Keep the deficit at 1.7% of GDP</text>
+      <rect x="4" y="22" width="632" height="24" rx="4" class="bcb6c7eebf-track"/>
+      <rect x="4" y="22" width="632.0" height="24" rx="4" fill="#199e70"/>
+      <text x="644.0" y="38" class="bcb6c7eebf-value">44.3 %</text>
+    </g>
+    <g class="bcb6c7eebf-bar" data-tip="Deficit to zero over 20 years: 34.6 % - our extrapolation">
+      <text x="4" y="55" class="bcb6c7eebf-label">Deficit to zero over 20 years</text>
+      <rect x="4" y="60" width="632" height="24" rx="4" class="bcb6c7eebf-track"/>
+      <rect x="4" y="60" width="493.6" height="24" rx="4" fill="#9085e9"/>
+      <text x="505.6" y="76" class="bcb6c7eebf-value">34.6 %</text>
+    </g>
+    <g class="bcb6c7eebf-bar" data-tip="Deficit to zero over 15 years: 31.5 % - our extrapolation">
+      <text x="4" y="93" class="bcb6c7eebf-label">Deficit to zero over 15 years</text>
+      <rect x="4" y="98" width="632" height="24" rx="4" class="bcb6c7eebf-track"/>
+      <rect x="4" y="98" width="449.4" height="24" rx="4" fill="#c98500"/>
+      <text x="461.4" y="114" class="bcb6c7eebf-value">31.5 %</text>
+    </g>
+    <g class="bcb6c7eebf-bar" data-tip="Deficit to zero over 10 years: 28.3 % - our extrapolation">
+      <text x="4" y="131" class="bcb6c7eebf-label">Deficit to zero over 10 years</text>
+      <rect x="4" y="136" width="632" height="24" rx="4" class="bcb6c7eebf-track"/>
+      <rect x="4" y="136" width="403.7" height="24" rx="4" fill="#d55181"/>
+      <text x="415.7" y="152" class="bcb6c7eebf-value">28.3 %</text>
+    </g>
+</svg>
+<div class="bcb6c7eebf-src">Source: Our arithmetic from PBO EFO October 2026 (not a PBO projection beyond 2030-31)</div>
+<div id="bcb6c7eebf-tip" class="lens-chart-tip" style="position:fixed;z-index:99999;max-width:280px;
+  background:#0a1118;color:#e9eef6;border:1px solid #22303f;border-radius:8px;padding:8px 11px;
+  font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.55);pointer-events:none;
+  opacity:0;transition:opacity .12s;display:none;"></div>
+<table class="chart-table" style="position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;">
+  <caption>Federal debt-to-GDP at the end of 2046-47 under four paths - % of GDP, starting from the PBO&#x27;s 42.6% in 2030-31. Our assumptions: nominal GDP +3.8% a year, revenue a constant share of GDP, deficit shrinking evenly from 2031-32.</caption>
+  <thead><tr><th>Label</th><th>Value</th><th>Note</th></tr></thead>
+  <tbody><tr><td>Keep the deficit at 1.7% of GDP</td><td>44.3 %</td><td>our extrapolation; it keeps drifting up toward about 46%</td></tr><tr><td>Deficit to zero over 20 years</td><td>34.6 %</td><td>our extrapolation</td></tr><tr><td>Deficit to zero over 15 years</td><td>31.5 %</td><td>our extrapolation</td></tr><tr><td>Deficit to zero over 10 years</td><td>28.3 %</td><td>our extrapolation</td></tr></tbody>
+</table>
+<style>
+  .bcb6c7eebf-title { font-weight:800; font-size:15px; color:#e9eef6; margin-bottom:2px; }
+  .bcb6c7eebf-sub { font-size:12.5px; color:#93a3b8; margin-bottom:10px; }
+  .bcb6c7eebf-src { font-size:11.5px; color:#93a3b8; margin-top:6px; }
+</style>
+<script>
+(function(){
+  var root = document.currentScript.closest('figure');
+  var tip = root.querySelector('#bcb6c7eebf-tip');
+  root.querySelectorAll('.bcb6c7eebf-bar').forEach(function(g){
+    g.addEventListener('mouseenter', function(e){
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.display = 'block'; tip.style.opacity = '1';
+    });
+    g.addEventListener('mousemove', function(e){
+      tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px';
+      tip.style.top = (e.clientY + 14) + 'px';
+    });
+    g.addEventListener('mouseleave', function(){
+      tip.style.opacity = '0'; setTimeout(function(){ tip.style.display = 'none'; }, 120);
+    });
+  });
+})();
+</script>
+</figure></div>
+  <div class="tw"><table>
+    <tr><th>Plan</th><th>Debt-to-GDP at end of 2046-47</th><th>Total spending growth needed (revenue grows about 3.8%)</th><th>First-year improvement of about</th></tr>
+    <tr><td>No change</td><td>about 44%</td><td>none</td><td>none</td></tr>
+    <tr><td>20 years</td><td>about 35%</td><td>about 3.25% a year</td><td>$3B (then the same share each year)</td></tr>
+    <tr><td>15 years</td><td>about 31%</td><td>about 3.1% a year</td><td>$4B (then the same share each year)</td></tr>
+    <tr><td>10 years</td><td>about 28%</td><td>about 2.7% a year</td><td>$7B (then the same share each year)</td></tr>
+  </table></div>
+  <p>The slow paths are mostly restraint in aggregate nominal spending, not cuts: total spending (including debt charges) keeps growing in dollars, about 0.5 to 1.1 points a year slower than revenue and the economy, on a constant-growth approximation. That avoids cuts in aggregate nominal spending in this simplified calculation; it does not show the paths are politically feasible or what happens to individual services, and they would need rules that last through several governments.</p>
+
+  <h3>If most of the deficit disappeared now</h3>
+  <p>The reader's other question: what if 80 to 100% of the deficit were gone starting in 2026-27? Static arithmetic from the PBO tables, with the interest saving compounding at the implied rate (about 3.6%) and no effect on GDP:</p>
+  <div class="tw"><table>
+    <tr><th></th><th>Federal debt, 2030-31</th><th>Debt-to-GDP</th><th>Debt avoided</th><th>First-year improvement needed, from spending cuts, tax increases or both (it rises with the deficit; full closure needs about $70B in 2027-28)</th></tr>
+    <tr><td>Current path</td><td>$1,668B</td><td>42.6%</td><td>none</td><td>none</td></tr>
+    <tr><td>Close 80%</td><td>about $1,381B</td><td>about 35.3%</td><td>about $287B</td><td>about $51B (9% of program spending)</td></tr>
+    <tr><td>Close 100%</td><td>about $1,309B</td><td>about 33.4%</td><td>about $358B</td><td>about $63B (12% of program spending)</td></tr>
+  </table></div>
+  <p><b>How the totals are built.</b> The PBO's baseline deficits are $63.3, $70.2, $64.2, $67.9 and $67.8 billion for 2026-27 to 2030-31 (Table 3; they sum to $333.4 billion here and $333.3 billion in the PBO's text because of rounding). We close a share s of each year's deficit starting in 2026-27 and let the avoided debt earn 3.6% a year: avoided debt this year = 1.036 x avoided debt last year + s x this year's deficit. Full closure gives $63.3, $135.8, $204.9, $280.1 and $358.0 billion; 80% gives $50.6, $108.6, $163.9, $224.1 and $286.4 billion (unrounded intermediate values). It is a static calculation: it ignores any effect of the cuts on growth or revenue, and 3.6% is our assumption.</p>
+  <p>By 2030-31 that is about $8,400 less federal debt per Canadian for full closure (about $6,700 at 80%) and about $8 to $10 billion less interest in that final year (3.6% on the debt already avoided at the start of that year, about $224 billion at 80% and $280 billion at full closure). Per-person debt figures use the PBO's projected 2030-31 population, about 42.6 million; the first-year figures use about 41.8 million. Against that, the first-year cut of $51 to $63 billion is roughly $1,200 to $1,500 per Canadian, taken from spending or taxes at once. The PBO has the deficit peaking at $70.2 billion in 2027-28 and staying above $63 billion, so the five-year average is $53 to $67 billion a year (roughly $1,250 to $1,570 per Canadian), before interest savings. The 3.6% is our marginal-cost assumption, not a published rate. The IMF's working paper on forecast errors during the euro-area crisis found that each point of planned consolidation left GDP about 1% below forecast early in the crisis, and 0.3 to 0.5% in later estimates; that is a different economy and era, so it is context, not a Canadian forecast. The 1990s record points the same way: the deficit was closed, but alongside falling interest rates, rising revenue, 11% unemployment early on, and cuts to provincial transfers.</p>
+
+  <h3>What it means for society and for future generations</h3>
+  <p>We looked for a PBO generational-accounting analysis and did not find one, and we found no PBO or Finance Canada costing of closing a deficit this size. So we do not claim a number for "future generations". What the sources do support:</p>
+  <ul>
+    <li><b>The gain is concrete but modest at Canada's current debt level:</b> lower interest (about $8 to $10 billion in 2030-31 on our arithmetic, on the debt avoided at the start of that year, against $83.0 billion of projected charges) and more room to respond to the next shock. The PBO's own 2024 Fiscal Sustainability Report put the federal government's long-run room at about 1.5% of GDP, about $46 billion a year, over 75 years, and a later note put the fiscal gap near zero; those are different vintages from the October 2026 numbers and we do not mix them.</li>
+    <li><b>The cost falls on people now:</b> a rapid close means higher taxes, lower transfers to persons or provinces, or both, and the early-1990s record shows what that looked like.</li>
+    <li><b>The slow path spreads the cost,</b> which is the argument for it, and its weakness is that nothing binds a future government to continue.</li>
+  </ul>
+
+  <h2>7. Where could the money come from?</h2>
+  <p>Reader instinct: there must be a lot of waste. There is documented waste, and it is worth fixing, but the verified pools are small next to $63 billion. We sized each against the deficit and against $543.1 billion of 2026-27 program expenses (PBO, October 2026 outlook, Table 3 and Appendix D). They are different kinds of money, so the bars are not additive.</p>
+  <div style="position:relative;overflow:hidden">
+<figure class="lens-chart" style="margin:22px 0;">
+<div class="bcf3a48431-title">How big is documented waste next to the deficit?</div><div class="bcf3a48431-sub">CAD $ billions. Bars are different kinds of money and are not additive; the labels say which is which.</div>
+<svg viewBox="0 0 720 218" width="100%" style="max-width:720px;overflow:visible;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+  <style>
+    .bcf3a48431-track { fill: #22303f; opacity: .35; }
+    .bcf3a48431-label { fill: #93a3b8; font-size: 13px; }
+    .bcf3a48431-value { fill: #e9eef6; font-size: 13px; font-weight: 700; }
+    .bcf3a48431-bar { cursor: default; }
+    .bcf3a48431-bar rect:not(.bcf3a48431-track) { transition: opacity .12s; }
+    .bcf3a48431-bar:hover rect:not(.bcf3a48431-track) { opacity: .82; }
+  </style>
+  
+    <g class="bcf3a48431-bar" data-tip="2026-27 federal deficit (PBO): 63.30 $bn - PBO EFO Table 3">
+      <text x="4" y="17" class="bcf3a48431-label">2026-27 federal deficit (PBO)</text>
+      <rect x="4" y="22" width="632" height="24" rx="4" class="bcf3a48431-track"/>
+      <rect x="4" y="22" width="632.0" height="24" rx="4" fill="#199e70"/>
+      <text x="644.0" y="38" class="bcf3a48431-value">63.30 $bn</text>
+    </g>
+    <g class="bcf3a48431-bar" data-tip="Net tax gap, 2022 tax year, constant 2022 dollars (CRA estimate): 34.70 $bn - CRA 2026 report; an upper-bound estimate, not money that could all be collected">
+      <text x="4" y="55" class="bcf3a48431-label">Net tax gap, 2022 tax year, constant 2022 dollars (CRA estimate)</text>
+      <rect x="4" y="60" width="632" height="24" rx="4" class="bcf3a48431-track"/>
+      <rect x="4" y="60" width="346.5" height="24" rx="4" fill="#9085e9"/>
+      <text x="358.5" y="76" class="bcf3a48431-value">34.70 $bn</text>
+    </g>
+    <g class="bcf3a48431-bar" data-tip="Planned Comprehensive Expenditure Review, ongoing: 12.50 $bn - Budget 2025, Table A3.1; a policy cut, not waste; savings achieved not audited">
+      <text x="4" y="93" class="bcf3a48431-label">Planned Comprehensive Expenditure Review, ongoing</text>
+      <rect x="4" y="98" width="632" height="24" rx="4" class="bcf3a48431-track"/>
+      <rect x="4" y="98" width="124.8" height="24" rx="4" fill="#c98500"/>
+      <text x="136.8" y="114" class="bcf3a48431-value">12.50 $bn</text>
+    </g>
+    <g class="bcf3a48431-bar" data-tip="COVID overpayments and ineligible CEBA loans, one-time: 8.10 $bn - AG Dec 2022 $4.6bn + AG Dec 2024 $3.5bn; one-time, partly recovered; excludes ArriveCAN ($0.06bn)">
+      <text x="4" y="131" class="bcf3a48431-label">COVID overpayments and ineligible CEBA loans, one-time</text>
+      <rect x="4" y="136" width="632" height="24" rx="4" class="bcf3a48431-track"/>
+      <rect x="4" y="136" width="80.9" height="24" rx="4" fill="#d55181"/>
+      <text x="92.9" y="152" class="bcf3a48431-value">8.10 $bn</text>
+    </g>
+    <g class="bcf3a48431-bar" data-tip="ArriveCAN, total cost: 0.06 $bn - AG Feb 2024 about $59.5 million">
+      <text x="4" y="169" class="bcf3a48431-label">ArriveCAN, total cost</text>
+      <rect x="4" y="174" width="632" height="24" rx="4" class="bcf3a48431-track"/>
+      <rect x="4" y="174" width="4.0" height="24" rx="4" fill="#199e70"/>
+      <text x="16.0" y="190" class="bcf3a48431-value">0.06 $bn</text>
+    </g>
+</svg>
+<div class="bcf3a48431-src">Source: PBO; Auditor General of Canada; CRA; Finance Canada (Budget 2025)</div>
+<div id="bcf3a48431-tip" class="lens-chart-tip" style="position:fixed;z-index:99999;max-width:280px;
+  background:#0a1118;color:#e9eef6;border:1px solid #22303f;border-radius:8px;padding:8px 11px;
+  font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.55);pointer-events:none;
+  opacity:0;transition:opacity .12s;display:none;"></div>
+<table class="chart-table" style="position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;">
+  <caption>How big is documented waste next to the deficit? - CAD $ billions. Bars are different kinds of money and are not additive; the labels say which is which.</caption>
+  <thead><tr><th>Label</th><th>Value</th><th>Note</th></tr></thead>
+  <tbody><tr><td>2026-27 federal deficit (PBO)</td><td>63.30 $bn</td><td>PBO EFO Table 3</td></tr><tr><td>Net tax gap, 2022 tax year, constant 2022 dollars (CRA estimate)</td><td>34.70 $bn</td><td>CRA 2026 report; an upper-bound estimate, not money that could all be collected</td></tr><tr><td>Planned Comprehensive Expenditure Review, ongoing</td><td>12.50 $bn</td><td>Budget 2025, Table A3.1; a policy cut, not waste; savings achieved not audited</td></tr><tr><td>COVID overpayments and ineligible CEBA loans, one-time</td><td>8.10 $bn</td><td>AG Dec 2022 $4.6bn + AG Dec 2024 $3.5bn; one-time, partly recovered; excludes ArriveCAN ($0.06bn)</td></tr><tr><td>ArriveCAN, total cost</td><td>0.06 $bn</td><td>AG Feb 2024 about $59.5 million</td></tr></tbody>
+</table>
+<style>
+  .bcf3a48431-title { font-weight:800; font-size:15px; color:#e9eef6; margin-bottom:2px; }
+  .bcf3a48431-sub { font-size:12.5px; color:#93a3b8; margin-bottom:10px; }
+  .bcf3a48431-src { font-size:11.5px; color:#93a3b8; margin-top:6px; }
+</style>
+<script>
+(function(){
+  var root = document.currentScript.closest('figure');
+  var tip = root.querySelector('#bcf3a48431-tip');
+  root.querySelectorAll('.bcf3a48431-bar').forEach(function(g){
+    g.addEventListener('mouseenter', function(e){
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.display = 'block'; tip.style.opacity = '1';
+    });
+    g.addEventListener('mousemove', function(e){
+      tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px';
+      tip.style.top = (e.clientY + 14) + 'px';
+    });
+    g.addEventListener('mouseleave', function(){
+      tip.style.opacity = '0'; setTimeout(function(){ tip.style.display = 'none'; }, 120);
+    });
+  });
+})();
+</script>
+</figure></div>
+  <div class="tw"><table>
+    <tr><th>Item</th><th>Amount</th><th>Share of $63.3B deficit</th><th>Share of $543.1B program expenses</th><th>What it is</th></tr>
+    <tr><td>COVID benefits: overpayments to ineligible individuals (AG, Dec 2022)</td><td>$4.6B</td><td>7%</td><td>0.85%</td><td>One-time; about $2.3B recovered by summer 2022. The AG separately said "at least $27.4B" should be investigated further, which is not a finding of ineligibility or fraud.</td></tr>
+    <tr><td>COVID benefit overpayments identified and still outstanding, March 2025 (Public Accounts 2025, via an ESDC briefing note)</td><td>$12.0B</td><td>19%</td><td>2.2%</td><td>A stock of identified overpayments, not a new loss. $10.0 billion is already allowed for as unlikely to be collected (the allowance includes deceased, insolvent and vulnerable individuals), leaving $2.0 billion net receivable. It overlaps the AG's $4.6 billion and is not additive with it.</td></tr>
+    <tr><td>CEBA loans to ineligible recipients (AG, Dec 2024)</td><td>$3.5B of $49.1B lent</td><td>5.5%</td><td>0.64%</td><td>One-time; about 9% of 898,000 recipients. "Ineligible" is not "fraud"; a Finance briefing (secondary) says about $2B had been identified as ineligible before the audit, and acknowledges there may be more. CEBA was a loan program with partial forgiveness by design.</td></tr>
+    <tr><td>ArriveCAN (AG, Feb 2024)</td><td>about $59.5M</td><td>0.09%</td><td>0.011%</td><td>One-time; the AG says the true cost cannot be precisely determined and could be higher or lower. CBSA has said about $12.2 million of the estimate may be unrelated (secondary; not on the AG's page). Contractors averaged $1,090 a day against $675 for equivalent employees.</td></tr>
+    <tr><td>Professional services (PBO, Jan 2025)</td><td>$18.6B spent in 2022-23</td><td>29%</td><td>3.4%</td><td>Spending, not waste. PBO found task-based IT contractors cost 22 to 26% more than in-house staff at four departments and could not say whether that was justified.</td></tr>
+    <tr><td>Planned Comprehensive Expenditure Review (Budget 2025)</td><td>$9.2B in 2026-27, $12.5B ongoing</td><td>15% / 20%</td><td>1.7% / 2.3%</td><td>A recurring policy cut, not recovered waste, and already in the PBO baseline (the bar below is not a pool against the deficit), so it is not a new pool against the $63.3B. The $12.5B includes $1.1B of CRA revenue gains or lower expenses. PBO (Jan 2026) said it is "difficult&hellip; to assess the fiscal and operational risks"; realised savings are not audited.</td></tr>
+    <tr><td>Net tax gap, 2022 tax year (CRA, 2026)</td><td>$34.7B (gross $59.5B)</td><td>55% (gross 94%)</td><td>6.4%</td><td>An upper-bound estimate that excludes emergency-benefit non-compliance. No tax authority collects the whole gap.</td></tr>
+  </table></div>
+  <p>The verified one-time items (COVID overpayments, CEBA ineligibles, ArriveCAN) sum to about $8.2 billion before recoveries, roughly 13% of one year's deficit. Using the Public Accounts' later $12.0 billion COVID figure in place of the AG's $4.6 billion, the sum is about $15.6 billion, roughly 25%, of which $10.0 billion is already allowed for as unlikely to be collected. They mix overpayments, estimated ineligible lending and a total project cost, so this is not an estimate of recoverable savings and not an estimate of all waste or fraud. None of it closes the gap.</p>
+  <p>Real money sits where the big programs are. Between 2019-20 and 2024-25 (Finance Canada fiscal tables) total program expenses rose from $349.1 billion to $493.9 billion (+41%), direct program expenses from $149.6 billion to $237.6 billion (+59%), elderly benefits +43%, transfers to provinces +33%, and debt charges +118% ($24.4 billion to $53.4 billion). Defence initiatives are 71.1% of the Budget 2025 spending included in the 2026-27 Main Estimates (PBO). Closing $63 billion from program spending alone is about 12% of $543.1 billion. A serious plan therefore has to touch some mix of elderly benefits, health and social transfers, direct operations including defence, or revenue. The tax system also carries large foregone-revenue items (Finance's 2025 report: capital gains inclusion $30.3 billion, registered pension plans $25.2 billion, RRSPs $14.8 billion, principal residence $10.7 billion), but Finance publishes no total and warns repeal would not necessarily yield the full amount.</p>
+
+  <h2>8. Fraud, accountability and who responds how</h2>
+  <p>Fraud and misspending should be reported, recovered where possible and prevented, and the findings above came from the Auditor General's own work. Two cautions the record supports. First, the headline numbers circulating are often a different object: the Auditor General's $27.4 billion is money "to investigate", $4.6 billion is the confirmed overpayment; CEBA's $3.5 billion is ineligible loans, not proven fraud; lapsed funds are unspent authority, often carried forward, not waste; and a summed tax-expenditure figure does not exist. Second, the US numbers that circulate mix proven, charged and merely exposed amounts. The US Justice Department describes the Feeding Our Future case in Minnesota as a "$250 million fraud scheme" (conviction and charge counts differ by outlet and date, so we give none); its Minnesota Medicaid page lists defendants "as alleged"; and the large figures in circulation are not proven losses. The "$9 billion" is a House Oversight Committee estimate (June 2026) of Medicaid money "potentially" lost or placed at serious risk, which appears to rest on remarks reported from a December 2025 press conference, in which a First Assistant US Attorney said (not in the DOJ transcript we read) that "half or more" of the $18 billion billed since 2018 by 14 high-risk Minnesota Medicaid programs was possibly fraudulent; the $18 billion is total billing, not a loss, and state officials are reported to dispute the estimate. We could not find a source for a "$14 billion" figure. GAO's latest improper-payments figure (about $186 billion across 64 US programs for FY2025) is not a fraud figure, and GAO says so.</p>
+  <p>On why some officials push back when fraud is highlighted: we looked for any source documenting officials opposing fraud reporting as such and found none. The disagreements on record are over scale (confirmed versus at risk), definitions (fraud versus error versus eligibility), and who owned oversight, for example Finance and the Auditor General differing on the CEBA ineligible amount, and the Treasury Board and the PBO disagreeing over access to spending-review data (the PBO said the refusal was inconsistent with the Act's free and timely access provision and referred the matter to the Speakers). Those are claims by named parties, not findings. Any of them can look like defensiveness from outside without implying wrongdoing, and we do not infer motives. A documented conflict of interest by a named official would be a separate, sourced story.</p>
+
+  <h2>9. Three fixes, with their record</h2>
+  <div class="stack">
+    <div class="step"><b>A rule that binds, with one reconciliation table.</b> Publish a one-page annual bridge from deficit to market debt with Crown-corporation loans on their own line, and measure the fiscal anchors on borrowing and capital too, extending the PBO's point that the current anchors impose limited discipline on borrowing (the proposal is ours). <i>Record:</i> the PBO's October 2026 outlook projects the deficit-to-GDP ratio rising in 2027-28 and 2029-30, so the declining-ratio anchor is projected to be missed, and says the two anchors have imposed limited fiscal discipline. In June 2026 it put the likelihood of a declining ratio every year at under 1%; in November 2025 it had said the government dropped its debt-to-GDP anchor and put a 7.5% chance on the same test (older baseline). Chile's structural-balance rule and its 2009 escape clause are described in the IMF rules database, but we found no outcome evidence, and we could not verify the records of Sweden's, Switzerland's or the EU's rules. <i>Cost:</i> low. <i>What it does not do:</i> reduce debt by itself.</div>
+    <div class="step"><b>A spending review with audited results.</b> <i>Record:</i> Canada's 1995 Program Review planned $16.9 billion of savings summed over three years (a smaller amount in each year), mostly policy cuts, and the budget worked alongside falling rates and rising revenue. The 2025 Comprehensive Expenditure Review plans $12.5 billion a year ongoing, but there is no audited outturn and the PBO flags it cannot assess the risk. An OECD source we saw (secondary) says reviews without savings targets are inconclusive and blanket cuts degrade services. <i>What it needs:</i> published targets, published realised savings, and PBO access to the data. <i>Scale:</i> the $12.5 billion a year is already netted into the PBO's $63.3 billion (without it the projected deficit would be nearer $75 billion), so a review that under-delivers widens the deficit; it is not an extra pool.</div>
+    <div class="step"><b>Growth.</b> Faster nominal growth helps, but less than a 10-year plan: on the same arithmetic, with the deficit held at 1.7% of GDP, debt-to-GDP at the end of 2046-47 is about 50% at 2.8% growth, 44% at 3.8% and 40% at 4.8%, against 28% for a 10-year path to balance (our arithmetic). Nobody has a reliable way to buy a point of growth; the OECD's productivity concerns for Canada are real but we found no sourced fiscal value of closing the gap. <i>Record:</i> the 1990s, where falling rates and growth did part of the work.</div>
+  </div>
+  <p><b>On inflation.</b> The question is contested, so we give the range. A common view in macroeconomics (we did not source it here) is that with an independent central bank and debt in its own currency, a deficit of this size is not in itself inflationary, and we found no Bank of Canada or PBO statement that Canada's current deficit is inflationary. Views that fiscal policy mattered in 2021-22 exist (a C.D. Howe analysis, secondary; Bank of Canada comments that spending was working against disinflation, secondary). The most contested position, the fiscal theory of the price level, says debt can drive prices on its own. The strongest historical link between deficits and inflation comes from cases where the central bank financed the government or the debt was in foreign currency, which is not Canada's situation. Lowering the deficit reduces pressure on demand at the margin; how much is not something we can source.</p>
+
+  <h2>10. The other side, and the symmetry check</h2>
+  <p>For a government: borrowing to build or lend creates assets, defence capital lasts decades, and debt-to-GDP, which the PBO calls an important benchmark, rises only from 40.8% to 42.6%. Finance Canada's April Spring Economic Update, on a more optimistic baseline, projected the deficit falling every year to $53.2 billion (1.4% of GDP) in 2030-31 and said the government was on track to meet both anchors; the PBO's October outlook has $67.8 billion in that year, and the PBO attributes its rise since its own June outlook to new measures, led by the $36 billion Productivity Mega Deduction, that more than offset stronger revenues; the gap to Finance's April figure also reflects different economic assumptions. For a critic: the anchors "imposed limited discipline," the deficit would miss its own declining-ratio anchor, interest is the fastest-growing expense, borrowing runs about twice the pace of deficits (732.9 / 333.3 is about 2.2), and the accounting "obscures the realities of cash debt." Both can be true. The question is what the borrowed money buys and whether the framework shows it clearly. We aim to apply the same checks to any government and any party, and we have no position on the budget; readers should test that against our choice of examples.</p>
+
+  <h2>Explain it to a friend</h2>
+  <p>Your home budget says you lose $500 a month. But you also took out a loan to lend your brother $20,000 and bought a truck that will last ten years. The bank sees you borrow far more than $500 a month. Nobody is lying. The monthly loss counts running costs; the borrowing counts everything you put on the card. The real questions are whether your brother pays you back, whether you needed the truck, and whether your household statement shows both numbers side by side. And if you wanted to stop adding to the loan, you could cut spending a little every year for a long time, or slam the brakes this month and feel it immediately. Either works. Which one you can actually keep doing is the question.</p>
+
+  <h2>What we could not confirm</h2>
+  <p>The split of the $338.6 billion rise in financial assets between Crown loans and other items; why the Main Estimates, Finance Canada and PBO debt-charge figures differ; any comparison of governments across history; the measured social cost of the 1990s cuts; Sweden's exact peaks; Italy's interest burden; the Bank of Canada's staff view on deficits and inflation; the record of fiscal rules in Sweden, Switzerland and the EU; realised savings from the 2023 and 2025 spending reviews; government-wide write-off totals in the Public Accounts; current conviction counts in the Minnesota cases; and an exact fraud count for any of these programs (the AG's 77,160 ineligible CEBA recipients, about 9%, is a sample-based estimate). Our glide-path and deficit-elimination numbers are our own arithmetic, not PBO projections.</p>
+
+  <div class="box"><b>Our call.</b> About 75 percent: when the Public Accounts of Canada for 2026-27 are tabled, public debt charges for that year will be within 5 percent of $59.3 billion, between $56.3 billion and $62.3 billion. Resolves when they are tabled; if they have not been tabled by 31 December 2027 we record the call as unresolved. Update 5 November: Budget 2026 projects $60.2 billion for 2026-27, inside the window. Starting state, 2 November 2026: PBO October projection $59.3 billion; Finance Canada April projection $58.7 billion; Main Estimates $53.7 billion (outside the window); 2025-26 estimate $53.6 billion.</div>
+
+  <h2>11. Update, 5 November: what Budget 2026 shows</h2>
+  <p>The budget was tabled on 5 November 2026, after the rest of this page was written. The budget also revised the 2025-26 deficit to $39.3 billion from $66.9 billion in April, which it attributes to stronger preliminary results (higher revenue and lower expenses; the budget's components add to a $27.5 billion improvement, and the displayed endpoints differ by $27.6 billion because of rounding). Most of the gap between the PBO's and the budget's five-year deficits starts from this different 2025-26 base, which the table's first column shows; the final figure comes with the Public Accounts, and the PBO's October outlook predates it. We compared its tables (Annex 1, Tables A1.4, A1.8 and A1.11; Annex 2, Table A2.2) with the PBO's October outlook. The two are different baselines: the PBO's excludes Budget 2026's measures, and the budget's carries Finance Canada's own forecast. We have not reconciled them line by line.</p>
+  <div class="tw"><table>
+    <tr><th></th><th>2025-26</th><th>2026-27</th><th>2027-28</th><th>2028-29</th><th>2029-30</th><th>2030-31</th><th>Five years</th></tr>
+    <tr><td><b>Deficit, Spring Update (Apr)</b></td><td>66.9</td><td>65.3</td><td>63.1</td><td>57.7</td><td>56.2</td><td>53.2</td><td>295.5</td></tr>
+    <tr><td><b>Deficit, PBO (Oct)</b></td><td>67.6</td><td>63.3</td><td>70.2</td><td>64.2</td><td>67.9</td><td>67.8</td><td>333.3</td></tr>
+    <tr><td><b>Deficit, Budget 2026</b></td><td>39.3</td><td>62.3</td><td>62.5</td><td>57.6</td><td>53.4</td><td>52.9</td><td>288.7</td></tr>
+    <tr><td><b>Debt charges, PBO</b></td><td>53.6</td><td>59.3</td><td>65.0</td><td>71.1</td><td>76.6</td><td>83.0</td><td></td></tr>
+    <tr><td><b>Debt charges, Budget</b></td><td>53.5</td><td>60.2</td><td>67.3</td><td>73.8</td><td>78.4</td><td>85.5</td><td></td></tr>
+    <tr><td><b>Financial requirement, Budget</b></td><td>103.9</td><td>149.5</td><td>169.0</td><td>168.0</td><td>139.1</td><td>139.1</td><td>764.7</td></tr>
+    <tr><td><b>of which Crown loans, Budget</b></td><td>55.4</td><td>59.1</td><td>66.3</td><td>66.4</td><td>36.3</td><td>32.1</td><td>260.2</td></tr>
+    <tr><td><b>of which capital purchases, Budget</b></td><td>18.5</td><td>26.1</td><td>35.5</td><td>37.9</td><td>39.6</td><td>39.8</td><td>178.9</td></tr>
+  </table></div>
+  <p>Billions of dollars. Sources: PBO October 2026 outlook, Table 3; Budget 2026 Annex 1 and Annex 2.</p>
+  <ul>
+    <li><b>The borrowing gap is in the budget's own tables.</b> Its five-year financial requirement ($764.7 billion) is about 2.6 times its five-year deficits ($288.7 billion), and Crown loans plus capital purchases account for $439 billion of the difference. The measures differ (the budget's is a cash requirement, the PBO's $732.9 billion is the rise in market debt), so the numbers are not interchangeable, but the shape is the same as on this page.</li>
+    <li><b>Deficits are lower than the PBO's, debt charges higher.</b> The budget has a smaller deficit every year ($62.5 billion in 2027-28 against the PBO's $70.2 billion) and debt charges reaching $85.5 billion in 2030-31 against the PBO's $83.0 billion. Its federal debt-to-GDP ratio runs about 40% (39.9% in 2026-27, 40.1% in 2030-31) against the PBO's 40.8% to 42.6%.</li>
+    <li><b>The anchors.</b> The budget says the deficit-to-GDP ratio declines over the planning period (1.8%, 1.8%, 1.6%, 1.4%, 1.3%) and that day-to-day operating spending balances in 2027-28, a year ahead of target (a $11.2 billion surplus in its table; the PBO had a $0.3 billion deficit that year). On the budget's numbers the deficit ratio is flat in 2027-28 at one decimal (1.8%, 1.8%) and declines after that, and it stays above 2025-26's 1.2% throughout. The PBO's test is a decline in every year, so whether a flat year meets the anchor is for the PBO to say, and we have not seen its assessment of the budget. The $11.2 billion operating surplus is measured under the Capital Budgeting Framework, which adds back estimated revenue forgone through capital-related tax measures (the PBO's own Table 9 makes the same adjustment, $15.5 billion in 2027-28); on the PBO's October outlook the same measure was a $0.3 billion deficit that year.</li>
+    <li><b>Our scenario arithmetic on the budget's deficits.</b> Closing all of each year's deficit from 2026-27 would avoid about $311 billion of debt by 2030-31 (about $249 billion at 80%), against $358 billion and $287 billion on the PBO's deficits, and the first-year cut would be $62.3 billion (about $50 billion at 80%). The glide-path charts above start from the PBO's 42.6% ratio and a 1.7% deficit. Re-run with the same method from the budget's 40.1% in 2030-31 and a 1.3% deficit, the end-of-2046-47 ratios are about 38% if nothing changes, 26% on a 10-year path to balance, 28% on 15 years and 31% on 20 years. The no-change path drifts down toward about 36%, not up, because on the budget's numbers the deficit is small enough for growth to outrun it; that depends entirely on the budget's deficits (falling from 1.8% to 1.3%) holding, which the PBO's October outlook did not have.</li>
+    <li><b>Our debt-charge call.</b> The budget projects $60.2 billion for 2026-27, inside the $56.3 to $62.3 billion window we set. It is a projection, not the Public Accounts outcome that resolves the call.</li>
+  </ul>
+  <p>We read these figures from the budget's published tables and have not yet checked them against the PDF.</p>
+
+  <h2>Sources</h2>
+  <ol>
+    <li>Parliamentary Budget Officer, Economic and Fiscal Outlook, October 2026, and news release of 20 October 2026: Table 3, Appendix A, Appendix G, the Crown-corporation paragraph and the $141.5 billion risk sentence. <a href="https://www.pbo-dpb.ca">pbo-dpb.ca</a></li>
+    <li>PBO, review of the 2026-27 Main Estimates, 7 May 2026; PBO on the Comprehensive Expenditure Review, January 2026; PBO on professional services spending, January 2025; PBO fiscal sustainability reporting, August 2024 and November 2025.</li>
+    <li>Finance Canada, Budget 2026 (tabled 5 November 2026), Annex 1 Tables A1.4, A1.8, A1.11 and Annex 2 Table A2.2.</li>
+    <li>Finance Canada, Spring Economic Update, 28 April 2026, Annex 3 and Table A3.1; Budget 2025, Table A3.1; Finance Canada, Fiscal Reference Tables; Finance Canada, Tax Expenditures and Evaluations 2025.</li>
+    <li>Finance Canada, Budget 1995 in Brief and Annual Financial Reports 1998-99 and 2004-05; Bank of Canada governors' speeches (Thiessen 2001, Dodge 2003).</li>
+    <li>Auditor General of Canada: Report 10 (December 2022) on specific COVID-19 benefits; Report 8 (December 2024) on the Canada Emergency Business Account; Report 1 (February 2024) on ArriveCAN. Canada Revenue Agency, tax gap report, 2026.</li>
+    <li>IMF: Greece ex post evaluation (Country Report 13/156); working paper 13/1 on growth forecast errors and fiscal multipliers; Japan and Italy Article IV reviews (2025-26); IMF working papers on debt dynamics and interest-growth differentials (2020, 2021). Japan Ministry of Finance, Debt Management Report 2025. Bank of England remarks, December 2022. Riksbank speech on the Swedish crisis.</li>
+    <li>US Government Accountability Office, improper payments and fraud estimates; US Department of Justice, Minnesota Feeding Our Future and health care fraud pages.</li>
+    <li>Secondary only, read in search results and not verified against the primary document: the Finance Canada CEBA figure near $2 billion, the C.D. Howe and Bank of Canada inflation commentary, the OECD review-effectiveness summary, the $15.5 billion CEWS estimate.</li>
+  </ol>
+  <p class="meta">Figures checked 2 November 2026. The Auditor General and PBO figures above were confirmed against the published reports; items marked secondary were not. Corrections appear in our <a href="corrections.html">corrections log</a>.</p>
+
+  <div class="disc">
+    Dragonfly Lens publishes research, not advice. Nothing here is a recommendation to lend, invest, build or
+    fund anything. The figures describe public records as they stand on the dates shown, and they will change as
+    new data comes out.
+  </div>
+</div>
+
+<footer>&#9671; Dragonfly Lens &middot; <a href="/learn/">all explainers</a></footer>
+<script src="capture.js"></script>
+</body>
+</html>
