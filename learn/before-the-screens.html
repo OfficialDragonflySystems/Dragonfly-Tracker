@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta property="article:published_time" content="2026-11-09" data-date-basis="git-first-commit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before the Screens: Who Got Paid on the Trading Floor &mdash; Dragonfly Lens</title>
+  <link rel="canonical" href="https://officialdragonflysystems.com/learn/before-the-screens.html">
+<meta name="description" content="Nasdaq plans a 9 pm to 4 am session from 6 December. We traced where trading-floor money came from and what screens changed, then tested whether round-the-clock venues shrink market gaps. Two of our guesses failed, and so did one of our own results.">
+<meta property="og:title" content="Before the Screens: Who Got Paid on the Trading Floor">
+<meta property="og:description" content="Nasdaq plans a 9 pm to 4 am session from 6 December. We traced where trading-floor money came from and what screens changed, then tested whether round-the-clock venues shrink market gaps. Two of our guesses failed, and so did one of our own results.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/before-the-screens.html">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Before the Screens: Who Got Paid on the Trading Floor">
+<meta name="twitter:description" content="Nasdaq plans a 9 pm to 4 am session from 6 December. We traced where trading-floor money came from and what screens changed, then tested whether round-the-clock venues shrink market gaps. Two of our guesses failed, and so did one of our own results.">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--panel2:#131e2b;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;--bad:#f87171;--warn:#f6a96b;--good:#6ee7a8;--purple:#a78bfa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(23px,3.4vw,30px);font-weight:400;margin:46px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  h3{font-size:17px;font-weight:800;margin:26px 0 8px;color:#fff;}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .byline{font-size:12.5px;color:var(--muted);margin:18px 0 6px;}
+  ul,ol{margin:12px 0 12px 4px;padding-left:22px;} li{margin:7px 0;color:#d7dfea;}
+  strong,b{color:#fff;}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:20px 0;}
+  .tldr{background:linear-gradient(160deg,#0d1b16,#0a1320);border:1px solid #25463b;}
+  .flag{border-left:4px solid var(--warn);background:rgba(246,169,107,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .flag b{color:var(--warn);}
+  .real{border-left:4px solid var(--good);background:rgba(110,231,168,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .real b{color:var(--good);}
+  .danger{border-left:4px solid var(--bad);background:rgba(248,113,113,.07);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:14.5px;} .danger b{color:var(--bad);}
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px;}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;background:#0c141d;}
+  td b{color:#fff;}
+  .strong-n{color:var(--good);font-weight:800;} .dead-n{color:var(--bad);font-weight:800;} .mid-n{color:var(--gold);font-weight:800;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+  .updates{background:rgba(94,234,212,.05);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0;}
+  .updates .uh{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:4px;}
+  .updates p{margin:5px 0;color:var(--muted);font-size:13.5px;}
+  .updates b{color:#fff;} .updates del{color:#8a97a8;} .updates ins{color:var(--good);text-decoration:none;font-weight:700;}
+</style>
+<style>.wrap li,.wrap p,.wrap div{overflow-wrap:anywhere}.wrap svg{max-width:100%;height:auto}.wrap .tw{position:relative;overflow-x:auto}</style>
+<style>sup+sup{margin-left:.3em}</style></head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">Markets &middot; Market structure</div>
+  <h1>Before the Screens: Who Got Paid on the Trading Floor, and What Changes When the Floor Never Closes</h1>
+  <p class="lead">Nasdaq plans to open a 9 pm to 4 am session on Sunday 6 December. We went looking for where trading-floor money really came from, and what happens when markets run all night. Two of our four starting guesses did not survive the research, and one of our own test results did not survive a check of its data. We say which below.</p>
+  <p class="byline">Published 9 November 2026. Regulatory facts checked 7 November 2026. Test data frozen at 23 October 2026 (cash indices) and 26 May 2026 (futures files). This is research, not advice.</p>
+
+  <div class="box tldr">
+    <b>In one minute</b>
+    <ol>
+      <li><b>Standing ready to trade paid.</b> Scalpers earned the gap between buy and sell prices, and earned more when it was wide and when they held briefly. That comes from one trader&rsquo;s records.<sup><a href="#s1">1</a></sup> It supports the mechanism. We found no study that ranks the sources of floor profit.</li>
+      <li><b>Screens did not uniformly narrow spreads.</b> We guessed they had. On the Bund future, the famous case, measured costs were similar on the pit and the screen.<sup><a href="#s4">4</a></sup><sup><a href="#s5">5</a></sup> Other markets show lower electronic costs.<sup><a href="#s7">7</a></sup><sup><a href="#s8">8</a></sup> What moved the Bund is argued between fees and access.<sup><a href="#s5">5</a></sup><sup><a href="#s6">6</a></sup></li>
+      <li><b>The people did not move with the volume.</b> Of 72 locals two CFTC economists identified in the 10-year Treasury futures pit, 62 disappear from the authors&rsquo; sample after the pits closed, and they found no evidence of pit traders moving to the screen. Some may have changed trader ID.<sup><a href="#s3">3</a></sup><sup><a href="#s33">33</a></sup></li>
+      <li><b>Weekend gaps did not shrink.</b> We guessed venues trading through the weekend would absorb news. The S&amp;P 500 gap was about 1.9 times its prior five years, and it does not line up neatly with the date we tied to those venues. That does not show venues make gaps bigger.</li>
+      <li><b>Our gap-and-overnight-return result is withdrawn.</b> It passed the rule we registered, then we found the opening prices behind it fail a quality check. In our post-hoc vendor-futures re-cut the link is about zero.</li>
+    </ol>
+  </div>
+
+  <div class="box">
+    <b>Our four starting guesses, written down on 24 October before the research</b>
+    <ol>
+      <li>Most pit profit came from standing ready to trade and from seeing order flow, not from reading price patterns. <b>Partly held:</b> the spread-capture part has evidence; order flow we could not size.</li>
+      <li>Screens shrank spreads and competed the pit edge away. <b>Did not survive:</b> on the Bund, costs were similar on pit and screen; elsewhere it depends on the market.</li>
+      <li>What survives for a small account is the floor&rsquo;s discipline, not its edge. <b>An opinion, labelled as one;</b> it could not fail a test.</li>
+      <li>Continuous trading shrinks weekend gaps. <b>Did not survive:</b> gaps did not shrink, and our own linked result was withdrawn.</li>
+    </ol>
+  </div>
+
+  <h2 id="words">Plain words</h2>
+  <p><b>Pit:</b> a ring of steps on an exchange floor where traders shouted and signalled orders. <b>Local or scalper:</b> a floor trader using their own money, buying and selling within minutes, aiming to earn the spread. <b>Spread:</b> the gap between the price you can buy at and the price you can sell at. <b>Perpetual future:</b> a contract with no expiry date, held near the real price by payments between buyers and sellers. <b>Liquidation:</b> the venue forcibly closing your position when your collateral falls too low. <b>Gap:</b> the jump between one session&rsquo;s close and the next session&rsquo;s open.</p>
+
+  <h2 id="floor">Where floor money came from</h2>
+  <p><b>Spread capture: on the record.</b> Silber (1984) studied scalpers as market makers using one representative scalper&rsquo;s transactions. In the abstract, earnings rise with the bid-ask spread and fall with how long a position is held, and scalpers supply liquidity to incoming market orders, &ldquo;thereby facilitating commercial hedging.&rdquo;<sup><a href="#s1">1</a></sup> The counterparty was whoever sent a market order. Whether they could have waited is not tested, so we make no claim on that. Another study, which a reviewer of ours read in abstract and we did not, reports that traders controlled inventory but that their prices did not behave as simple inventory models predict, which the authors read as consistent with active position-taking.<sup><a href="#s2">2</a></sup></p>
+  <p><b>Order-flow information: a hypothesis.</b> The idea is that a broker holding a customer&rsquo;s order saw demand before the price did. We have not read the dual-trading literature, so we state it as a hypothesis and do not size it.</p>
+  <p><b>Knowledge of the physical goods: unverified.</b> Crops, weather, storage. It plausibly survives in commodity trading firms. We read no source on it.</p>
+  <p><b>Who lasted.</b> We hear about winners, and we found no base rate for careers on the floor or for what a seat earned against what it cost. The closest thing we found is a narrow count by two CFTC economists, Eleni Gousgounis (a CFTC consultant, also at Stevens Institute of Technology) and Esen Onur, writing in their official capacities with the regulator&rsquo;s own transaction data; we quote their first draft of April 2016 for the counts, and the published 2018 version for the conclusions.<sup><a href="#s3">3</a></sup><sup><a href="#s33">33</a></sup> Tracking locals through the July 2015 closure: in their preliminary sample, 62 of the 72 locals they identified in the 10-year Treasury futures pit &ldquo;disappear from our sample&rdquo; after it closed; about three quarters in corn; all ten in lumber. Their reading: &ldquo;their skills do not appear to transfer readily to electronic trading on the same futures contracts. Most appear to exit futures trading entirely.&rdquo; The published abstract keeps that finding: no evidence of pit traders moving to the electronic market, though some remain active in options pits.<sup><a href="#s33">33</a></sup> The limits, in their own text: someone who moved firms and started again under a new trader ID cannot be tracked, and they follow traders for only six months after the close. Those who stayed &ldquo;appear to be options traders.&rdquo; This is who was left in 2015, when the floor was about 1 percent of volume, by CME&rsquo;s account; it says nothing about who left earlier.</p>
+
+  <h2 id="screens">What the screens changed</h2>
+  <p><b>Volume went first.</b> CME told the CFTC in June 2015 that floor volumes for futures had been &ldquo;decreasing by 75% and now representing only 1% of the CME Group Exchange&rsquo;s total futures volume.&rdquo;<sup><a href="#s9">9</a></sup> That 75 percent is over &ldquo;the past five years&rdquo;; the 1 percent has no stated measurement window, and it is the exchange&rsquo;s own number in a filing supporting its own decision. The one dated figure is narrower: floor trading was 1.1 percent of Eurodollar futures volume in 2014.<sup><a href="#s9">9</a></sup> The last day moved from 2 July to 6 July pending CFTC review.<sup><a href="#s11">11</a></sup> CME&rsquo;s notice of 6 July then said that &ldquo;Beginning on trade date July 7, 2015, the S&amp;P 500 futures pit will be the only remaining open outcry futures pit on any CME Group trading floor,&rdquo; while options pits stayed open and trades combining an option with a futures leg could still be done there.<sup><a href="#s10">10</a></sup> CME&rsquo;s filing records that &ldquo;certain market participants&rdquo; said they would be harmed by losing the ability to execute user-defined spreads in CBOT Treasury and CME Eurodollar futures by open outcry; CME argued electronic functionality covered it.<sup><a href="#s9">9</a></sup></p>
+  <p><b>After the close, costs moved in different directions.</b> The 2016 draft said &ldquo;we do not observe any definitive effect of the pit closures on execution costs for most commodities in the electronic market,&rdquo; and flagged its numbers as descriptive, not yet tested.<sup><a href="#s3">3</a></sup> The published 2018 version reports a split result: execution costs rose for livestock futures and fell for Treasury futures after the closure.<sup><a href="#s33">33</a></sup> Neither supports a uniform claim about what closing the pits did to costs.</p>
+  <p><b>The Bund is the best case, and it does not say what we guessed.</b> From 1990 the German government bond future traded on both the LIFFE pit in London and the DTB screen in Frankfurt, later Eurex. Two Bank of England economists compared them over 10 April to 2 June 1995 and found &ldquo;variable transaction costs and the contribution to price formation of each market is similar,&rdquo; with &ldquo;the larger trade size on the open outcry market&rdquo; and &ldquo;a tendency for trading to move toward the open outcry market during volatile periods&rdquo; as the main differences.<sup><a href="#s4">4</a></sup> They also say earlier disagreements are &ldquo;largely a product of the price data used.&rdquo; So why did all the volume go to the screen? Two studies give different answers:</p>
+  <ul>
+    <li><b>Fees, running costs and sponsorship.</b> Pirrong (working paper, 8 March 2005) reports that spreads on the two exchanges &ldquo;did not change markedly&rdquo; over the 18 months Eurex took dominance, while &ldquo;a measure of market depth did worsen on LIFFE.&rdquo; He puts LIFFE at about 65 percent of trading &ldquo;at the beginning of 1997&rdquo; and at zero 21 months later. He credits fee cuts, operating costs and support from German banks, and reads the episode as one where cost differences &ldquo;on the order of 3 percent of total costs&rdquo; were enough to tip the market; his cost figure is a Price-Waterhouse estimate, cited through Mehta (1999), that execution on an open-outcry exchange cost about three times as much as on an electronic one.<sup><a href="#s5">5</a></sup> <i>Prior relationship, from his CV:</i> a 1994 report to the Deutsche Terminb&ouml;rse and Catalyst Institute/DTB grants. We have not established whether they funded this paper. We cite the 2005 working paper because that is what we read; his CV lists a 2016 published version we have not read.<sup><a href="#s5">5</a></sup></li>
+    <li><b>Access.</b> Cantillon and Yin (ECB Working Paper 766, June 2007), using which firms joined which exchange from 1990 to 1999, say &ldquo;the main driver was a &lsquo;market coverage&rsquo; effect&rdquo;: the electronic structure plus EU-wide access deregulation brought in firms that had not been exchange members or had used a broker. &ldquo;Differential liquidity and product portfolio strategies by the exchanges played a secondary role.&rdquo; Most new DTB members were &ldquo;newcomers rather than switchers,&rdquo; and German-headquartered groups were no more likely to join DTB once physical presence was controlled for.<sup><a href="#s6">6</a></sup> Their limits: they observe membership, not each firm&rsquo;s volume, call the findings preliminary, and say the liquidity results are sensitive to specification.</li>
+  </ul>
+  <p>These are not fully at odds. They measure different things, volume and fees in one, membership in the other. The membership evidence emphasises who could reach the market; Pirrong emphasises fees, operating costs, depth and early sponsorship. Neither supports the story we started with, a screen winning simply by quoting a tighter spread.</p>
+  <p><b>Elsewhere, the answer depends on the market and the measure.</b> A study of stock-index futures switching from pit to screen in London, Sydney and Hong Kong in 1999-2000 reports in its abstract that spreads fell once volatility and volume are controlled, but also that &ldquo;bid-ask spreads are more sensitive to price volatility in electronically traded markets,&rdquo; so the screen may do worse when news is arriving (Aitken, Frino, Hill and Jarnecic, 2004).<sup><a href="#s7">7</a></sup> That fits the Bund finding that trading moved to the pit in volatile periods. A reviewer pointed us to a study of the UK Long Gilt future reporting spreads widening after automation for the same reason; we could not open it and do not rely on it. A study of US interest-rate futures traded on both pit and screen, which a reviewer read for us, reports lower electronic spreads alongside wider and less stable spreads in the pit once the screen held the liquidity (Cho and Daigler, 2011).<sup><a href="#s8">8</a></sup> We have read none of these three in full. So electronic trading did not uniformly narrow spreads. It depends on market, period and measure.</p>
+
+  <h2 id="dec6">6 December: what is actually scheduled</h2>
+  <p><b>The date.</b> Nasdaq&rsquo;s alert of 17 August: &ldquo;On December 6, 2026, Nasdaq will introduce a new trading session from 9 p.m. to 4 a.m. ET.&rdquo;<sup><a href="#s12">12</a></sup> Its 24 September data notice: &ldquo;expected to launch on Sunday, December 6th, 2026,&rdquo; with a pre-production test phase scheduled from 1 November and weekend tests on 6 and 20 November and 4 December.<sup><a href="#s13">13</a></sup> A 30 October alert still gives 6 December as the effective date and describes a halts file for the new hours as &ldquo;Under Development.&rdquo;<sup><a href="#s32">32</a></sup> Its FAQ is more careful: &ldquo;currently expected to occur on Sunday, December 6, 2026, pending SIP readiness as well as any applicable SEC rule changes.&rdquo;<sup><a href="#s14">14</a></sup> An SEC notice dated 5 October, of a Nasdaq filing made 25 September about reopening after a market-wide halt, says the session &ldquo;will become operative on or about December 6, 2026.&rdquo;<sup><a href="#s16">16</a></sup> So it is scheduled and has not started. Jones Day reports NYSE Arca plans the same date.<sup><a href="#s17">17</a></sup></p>
+  <p><b>The conditions.</b> The SEC approved the framework on 10 April 2026 (Release 34-105199).<sup><a href="#s15">15</a></sup> Nasdaq &ldquo;will not commence operations of the proposed extended hours until the Equity Data Plans are prepared to collect, consolidate, process, and disseminate quotation and transaction information.&rdquo; Before starting, Nasdaq must file a further rule change confirming its own and the data plans&rsquo; readiness, and that change &ldquo;must be filed with the Commission and approved, or otherwise become effective&rdquo; before trading begins; if it is not filed within 18 months of approval, Nasdaq has committed to &ldquo;promptly file a proposed rule change to remove the rules that apply to the Night Session.&rdquo;<sup><a href="#s15">15</a></sup> Checked 7 November: we did not locate that confirming filing in the Federal Register&rsquo;s full-text search, which lags sec.gov by one to two weeks. We have not established that it has not been filed; it is an open step, not a known problem. Other rules are still being filed.<sup><a href="#s17">17</a></sup></p>
+  <p><b>What it is.</b> 23 hours, not 24, five days, not seven. Trading pauses from 8 to 9 pm ET, and the week starts Sunday at 9 pm.<sup><a href="#s15">15</a></sup> Trades from 9 pm to midnight take the next trading day&rsquo;s date, and orders still open at 4 am are cancelled.<sup><a href="#s12">12</a></sup> It is not the first overnight market: the SEC notes some alternative trading systems, such as Blue Ocean, already trade overnight.<sup><a href="#s15">15</a></sup> Nasdaq&rsquo;s alert describes static overnight price bands: an upper band 20 percent above the greater of two reference prices and a lower band 20 percent below the lesser, with minimum widths of $3.00 for stocks at or above $1.00.<sup><a href="#s12">12</a></sup></p>
+  <div class="flag"><b>Do not move our weekend result onto this.</b> Nasdaq&rsquo;s new session runs Sunday to Thursday nights, so it does nothing for Friday night to Sunday night. Our tests below are about weekends. They say nothing direct about what the night session does. A market that trades at 3 am will also move part of the 4 pm to 9:30 am gap into trading hours by definition; that is an accounting change, not less risk.</div>
+
+  <h2 id="elsewhere">Where else the floor has stopped closing</h2>
+  <p><b>CME crypto.</b> CME says 24/7 crypto futures and options &ldquo;went live on Friday, May 29&rdquo; and that &ldquo;more than 7,200&rdquo; contracts traded over the first weekend, &ldquo;~$50 million in notional.&rdquo;<sup><a href="#s18">18</a></sup> That is a company statement. The count includes options and says nothing about spreads or depth.</p>
+  <p><b>The CFTC.</b> The CFTC approved a bitcoin perpetual from KalshiEX, described as cash-settled with a &ldquo;periodic funding mechanism.&rdquo;<sup><a href="#s20">20</a></sup> The accompanying policy statement, adopted 29 May and published 3 June 2026, says perpetuals on other asset classes &ldquo;should be submitted for Commission review and approval pursuant to the voluntary product approval process,&rdquo; that the public interest is &ldquo;best served by requiring&rdquo; that review, and in the same document that it &ldquo;does not impose any obligation on any person.&rdquo;<sup><a href="#s21">21</a></sup> A policy statement that requires nothing is asking for voluntary compliance; we note the tension rather than resolve it. Staff Letter 26-16 on 24/7 trading says it &ldquo;is informational and does not create new obligations,&rdquo; and warns that auto-liquidation &ldquo;could trigger numerous simultaneous, same-direction orders, and result in further liquidations,&rdquo; made worse by &ldquo;an inability of customers to deposit additional margin during non-banking hours.&rdquo;<sup><a href="#s19">19</a></sup> That is a regulator describing a mechanism. It is not evidence that continuous trading makes cascades faster.</p>
+  <p><b>The courts.</b> CME is suing the CFTC, arguing crypto perpetuals are swaps rather than futures (case 1:26-cv-02157, D.D.C., filed 18 June 2026). According to a public docket mirror read for us by a reviewer, entries ran to 23 October with no merits ruling and cross-motions set for 20 November, with a pending motion to change that.<sup><a href="#s22">22</a></sup> We could not open the docket ourselves, so we cannot certify the status after 23 October.</p>
+
+  <h2 id="perp">How a perpetual works</h2>
+  <p>An illustration, not a quote. You put up USD 1,000 and buy USD 10,000 of an index contract: 10x leverage. A 10 percent fall would cost all your collateral, ignoring fees. In practice you are closed out earlier. On Hyperliquid, &ldquo;the maintenance margin is currently set to half of the initial margin at max leverage,&rdquo;<sup><a href="#s23">23</a></sup> so on a market whose maximum is 10x, that is a fall of about 5 percent, not 10. Other venues and markets differ. Funding keeps the price near the index: on Hyperliquid it &ldquo;is paid every hour,&rdquo; by one side to the other.<sup><a href="#s24">24</a></sup> There is no expiry. Trading continuously removes the scheduled close, but a venue can still pause.</p>
+  <p><b>A dated failure, with disputed cause.</b> On 10 to 11 October 2025, after a tariff threat, about USD 19 billion of crypto position value was reported liquidated across about 1.6 to 1.7 million accounts or traders (CoinGlass figures through trade press, whose counts differ).<sup><a href="#s26">26</a></sup><sup><a href="#s27">27</a></sup> That is position value, not money lost, and accounts, not people. Trade press reports Hyperliquid&rsquo;s auto-deleveraging closing some profitable positions.<sup><a href="#s27">27</a></sup> Binance&rsquo;s own notice acknowledges &ldquo;recent market volatility and platform-related issues,&rdquo; compensates users hit by three collateral tokens&rsquo; depegs in a 40-minute window, and changes how those tokens are priced.<sup><a href="#s25">25</a></sup> That does not settle responsibility for the crash. We use it only to show that speed and leverage can combine.</p>
+
+  <h2 id="tests">What we tested</h2>
+  <p>We registered three tests on 24 October 2026, before running them, though we already knew the overnight series from earlier work.<sup><a href="#s28">28</a></sup><sup><a href="#s29">29</a></sup> The file&rsquo;s hash went into our own log, which still matches, but the log is self-attested, not independently timestamped. We never registered a test of whether leverage and continuous trading speed up forced selling, so we make no claim.</p>
+  <div class="tw"><table>
+    <tr><th>Test</th><th>Result</th><th>What it means</th></tr>
+    <tr><td><b>H-A.</b> Weekend gaps shrink in the HIP-3 era (cash indices, from 15 Oct 2025)</td><td><b>Not supported, opposite sign.</b> S&amp;P 500 median 0.60 vs 0.31, ratio 1.92. Russell 2000 0.35 vs 0.17, ratio 2.07. 46 new-era weekends.</td><td>A failure to find shrinkage on a blunt measure. See below on why the Russell ratio is overstated.</td></tr>
+    <tr><td><b>H-A2.</b> Same on S&amp;P 500 futures, Friday to the Sunday open (registered 31 Oct, after seeing H-A)</td><td><b>Not testable.</b> Our vendor file has Sunday evening bars on 52 Sundays in 2024, 10 in 2025 and 1 in 2026.</td><td>One new-era weekend. The printed ratio means nothing.</td></tr>
+    <tr><td><b>H-A2b.</b> Friday to first price after midnight Monday (post-hoc, not registered)</td><td>0.51 vs 0.33, ratio 1.54, 32 weekends to 22 May 2026.</td><td>Same direction. Exploratory. The vendor file switched from a Sunday-evening to a Monday-midnight session start in March 2025, seven months before our era boundary; we checked bar density around Monday midnight for 2023-2026 and found it stable (the first bar is at 00:00 on all 173 weekends), which rules out one data explanation, not every one.</td></tr>
+    <tr><td><b>H-B.</b> Bigger-gap years have higher overnight returns (Russell 2000, 1990-2025)</td><td><b>Passed the rule; withdrawn.</b> Spearman rho +0.329, p 0.0497, 36 years.</td><td>The data fails a quality check. See below.</td></tr>
+    <tr><td><b>H-C.</b> Off-hours spreads are wider</td><td><b>Not testable.</b> Our recorder held about 240 rows on 6 Nov; the bar is 2,000 valid quotes.</td><td>Thin off-hours liquidity remains untested by us.</td></tr>
+  </table></div>
+  <p>A gap reading of 0.60 means the gap was 0.6 times the average absolute daily move over the prior 60 trading days. About the 46 weekends: an earlier note of ours had 47. Re-running the script on data cut at 23 October gives 46 for both indices, which is 53 Mondays less 7 holiday weekends. The same script on data through 6 November gives 48, so 47 looks like a later re-run that picked up 26 October. We keep 46, the count at the frozen date.</p>
+  <div style="position:relative;overflow:hidden">
+<figure class="lens-chart" style="margin:22px 0;">
+<div class="bcf58a37c4-title">S&amp;P 500 weekend gaps did not shrink</div><div class="bcf58a37c4-sub">Median weekend gap, Friday cash close to Monday cash open, as a multiple of the average daily move over the prior 60 trading days.</div>
+<svg viewBox="0 0 720 340" width="100%" style="max-width:720px;overflow:visible;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+  <style>
+    .bcf58a37c4-track { fill: #22303f; opacity: .35; }
+    .bcf58a37c4-label { fill: #93a3b8; font-size: 13px; }
+    .bcf58a37c4-value { fill: #e9eef6; font-size: 13px; font-weight: 700; }
+    .bcf58a37c4-bar { cursor: default; }
+    .bcf58a37c4-bar rect:not(.bcf58a37c4-track) { transition: opacity .12s; }
+    .bcf58a37c4-bar:hover rect:not(.bcf58a37c4-track) { opacity: .82; }
+  </style>
+  
+    <g class="bcf58a37c4-bar" data-tip="2021: 0.27 x - 44 weekends">
+      <text x="4" y="17" class="bcf58a37c4-label">2021</text>
+      <rect x="4" y="22" width="632" height="24" rx="4" class="bcf58a37c4-track"/>
+      <rect x="4" y="22" width="274.0" height="24" rx="4" fill="#199e70"/>
+      <text x="286.0" y="38" class="bcf58a37c4-value">0.27 x</text>
+    </g>
+    <g class="bcf58a37c4-bar" data-tip="2022: 0.30 x - 44 weekends">
+      <text x="4" y="69" class="bcf58a37c4-label">2022</text>
+      <rect x="4" y="74" width="632" height="24" rx="4" class="bcf58a37c4-track"/>
+      <rect x="4" y="74" width="299.0" height="24" rx="4" fill="#9085e9"/>
+      <text x="311.0" y="90" class="bcf58a37c4-value">0.30 x</text>
+    </g>
+    <g class="bcf58a37c4-bar" data-tip="2023: 0.23 x - 44 weekends">
+      <text x="4" y="121" class="bcf58a37c4-label">2023</text>
+      <rect x="4" y="126" width="632" height="24" rx="4" class="bcf58a37c4-track"/>
+      <rect x="4" y="126" width="234.0" height="24" rx="4" fill="#c98500"/>
+      <text x="246.0" y="142" class="bcf58a37c4-value">0.23 x</text>
+    </g>
+    <g class="bcf58a37c4-bar" data-tip="2024: 0.29 x - 47 weekends">
+      <text x="4" y="173" class="bcf58a37c4-label">2024</text>
+      <rect x="4" y="178" width="632" height="24" rx="4" class="bcf58a37c4-track"/>
+      <rect x="4" y="178" width="294.0" height="24" rx="4" fill="#d55181"/>
+      <text x="306.0" y="194" class="bcf58a37c4-value">0.29 x</text>
+    </g>
+    <g class="bcf58a37c4-bar" data-tip="2025: 0.63 x - 46 weekends; 35 of them before the HIP-3 era starts on 15 Oct">
+      <text x="4" y="225" class="bcf58a37c4-label">2025</text>
+      <rect x="4" y="230" width="632" height="24" rx="4" class="bcf58a37c4-track"/>
+      <rect x="4" y="230" width="632.0" height="24" rx="4" fill="#199e70"/>
+      <text x="644.0" y="246" class="bcf58a37c4-value">0.63 x</text>
+    </g>
+    <g class="bcf58a37c4-bar" data-tip="2026, to 19 October: 0.51 x - 35 weekends, a part year">
+      <text x="4" y="277" class="bcf58a37c4-label">2026, to 19 October</text>
+      <rect x="4" y="282" width="632" height="24" rx="4" class="bcf58a37c4-track"/>
+      <rect x="4" y="282" width="506.0" height="24" rx="4" fill="#9085e9"/>
+      <text x="518.0" y="298" class="bcf58a37c4-value">0.51 x</text>
+    </g>
+</svg>
+<div class="bcf58a37c4-src">Source: Our calculation from Yahoo Finance ^GSPC daily bars, data to 23 Oct 2026</div>
+<div id="bcf58a37c4-tip" class="lens-chart-tip" style="position:fixed;z-index:99999;max-width:280px;
+  background:#0a1118;color:#e9eef6;border:1px solid #22303f;border-radius:8px;padding:8px 11px;
+  font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.55);pointer-events:none;
+  opacity:0;transition:opacity .12s;display:none;"></div>
+<table class="chart-table" style="position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;">
+  <caption>S&amp;P 500 weekend gaps did not shrink - Median weekend gap, Friday cash close to Monday cash open, as a multiple of the average daily move over the prior 60 trading days.</caption>
+  <thead><tr><th>Label</th><th>Value</th><th>Note</th></tr></thead>
+  <tbody><tr><td>2021</td><td>0.27 x</td><td>44 weekends</td></tr><tr><td>2022</td><td>0.30 x</td><td>44 weekends</td></tr><tr><td>2023</td><td>0.23 x</td><td>44 weekends</td></tr><tr><td>2024</td><td>0.29 x</td><td>47 weekends</td></tr><tr><td>2025</td><td>0.63 x</td><td>46 weekends; 35 of them before the HIP-3 era starts on 15 Oct</td></tr><tr><td>2026, to 19 October</td><td>0.51 x</td><td>35 weekends, a part year</td></tr></tbody>
+</table>
+<style>
+  .bcf58a37c4-title { font-weight:800; font-size:15px; color:#e9eef6; margin-bottom:2px; }
+  .bcf58a37c4-sub { font-size:12.5px; color:#93a3b8; margin-bottom:10px; }
+  .bcf58a37c4-src { font-size:11.5px; color:#93a3b8; margin-top:6px; }
+</style>
+<script>
+(function(){
+  var root = document.currentScript.closest('figure');
+  var tip = root.querySelector('#bcf58a37c4-tip');
+  root.querySelectorAll('.bcf58a37c4-bar').forEach(function(g){
+    g.addEventListener('mouseenter', function(e){
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.display = 'block'; tip.style.opacity = '1';
+    });
+    g.addEventListener('mousemove', function(e){
+      tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px';
+      tip.style.top = (e.clientY + 14) + 'px';
+    });
+    g.addEventListener('mouseleave', function(){
+      tip.style.opacity = '0'; setTimeout(function(){ tip.style.display = 'none'; }, 120);
+    });
+  });
+})();
+</script>
+</figure></div>
+  <p><b>Why the gaps test was the wrong tool.</b> S&amp;P futures have traded on Sunday evenings for decades, so weekend news is in futures before the cash open. A perfect weekend market would not shrink the Friday-to-Monday move, only change when it happens. Our own cut, after the fact, adds a second problem: 2025 before our start date already had a median of 0.53 (35 weekends), against 0.27 for 2021 to 2024. That splits into 1.16 for January to March (11 weekends) and 0.37 for April to mid-October (24 weekends), so the series is noisy and the rise does not line up neatly with the date we tied to the venues. Possible reasons, none tested: news-heavy weekends, calm periods shrinking the denominator, stale closing prices.</p>
+  <p><b>About the date.</b> We call the later period the HIP-3 era after Hyperliquid&rsquo;s upgrade that let anyone deploy new perpetual markets, which trade press reported as scheduled for 13 October 2025, with Hyperliquid saying there was &ldquo;no immediate change for users&rdquo; and that deployers could launch markets &ldquo;once ready.&rdquo;<sup><a href="#s34">34</a></sup> So the boundary marks a protocol switch, and the equity perpetuals built on it came later. We registered 15 October before running anything and keep it; moving it now would be a post-hoc choice. The era therefore means &ldquo;larger on-chain venues,&rdquo; not &ldquo;the first weekend market.&rdquo;</p>
+  <div style="position:relative;overflow:hidden">
+<figure class="lens-chart" style="margin:22px 0;">
+<div class="bce46eb190-title">S&amp;P 500 futures show the same direction, on a measure we chose after the fact</div><div class="bce46eb190-sub">Median gap, Friday 5 pm ET to the first price at or after midnight Monday ET, same volatility scale. Post-hoc and exploratory: the test we registered could not be run.</div>
+<svg viewBox="0 0 720 340" width="100%" style="max-width:720px;overflow:visible;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+  <style>
+    .bce46eb190-track { fill: #22303f; opacity: .35; }
+    .bce46eb190-label { fill: #93a3b8; font-size: 13px; }
+    .bce46eb190-value { fill: #e9eef6; font-size: 13px; font-weight: 700; }
+    .bce46eb190-bar { cursor: default; }
+    .bce46eb190-bar rect:not(.bce46eb190-track) { transition: opacity .12s; }
+    .bce46eb190-bar:hover rect:not(.bce46eb190-track) { opacity: .82; }
+  </style>
+  
+    <g class="bce46eb190-bar" data-tip="2021: 0.36 x - full year">
+      <text x="4" y="17" class="bce46eb190-label">2021</text>
+      <rect x="4" y="22" width="632" height="24" rx="4" class="bce46eb190-track"/>
+      <rect x="4" y="22" width="272.9" height="24" rx="4" fill="#199e70"/>
+      <text x="284.9" y="38" class="bce46eb190-value">0.36 x</text>
+    </g>
+    <g class="bce46eb190-bar" data-tip="2022: 0.31 x - full year">
+      <text x="4" y="69" class="bce46eb190-label">2022</text>
+      <rect x="4" y="74" width="632" height="24" rx="4" class="bce46eb190-track"/>
+      <rect x="4" y="74" width="235.6" height="24" rx="4" fill="#9085e9"/>
+      <text x="247.6" y="90" class="bce46eb190-value">0.31 x</text>
+    </g>
+    <g class="bce46eb190-bar" data-tip="2023: 0.29 x - full year">
+      <text x="4" y="121" class="bce46eb190-label">2023</text>
+      <rect x="4" y="126" width="632" height="24" rx="4" class="bce46eb190-track"/>
+      <rect x="4" y="126" width="219.6" height="24" rx="4" fill="#c98500"/>
+      <text x="231.6" y="142" class="bce46eb190-value">0.29 x</text>
+    </g>
+    <g class="bce46eb190-bar" data-tip="2024: 0.25 x - full year">
+      <text x="4" y="173" class="bce46eb190-label">2024</text>
+      <rect x="4" y="178" width="632" height="24" rx="4" class="bce46eb190-track"/>
+      <rect x="4" y="178" width="189.8" height="24" rx="4" fill="#d55181"/>
+      <text x="201.8" y="194" class="bce46eb190-value">0.25 x</text>
+    </g>
+    <g class="bce46eb190-bar" data-tip="2025: 0.44 x - full year">
+      <text x="4" y="225" class="bce46eb190-label">2025</text>
+      <rect x="4" y="230" width="632" height="24" rx="4" class="bce46eb190-track"/>
+      <rect x="4" y="230" width="334.7" height="24" rx="4" fill="#199e70"/>
+      <text x="346.7" y="246" class="bce46eb190-value">0.44 x</text>
+    </g>
+    <g class="bce46eb190-bar" data-tip="2026, to 22 May: 0.83 x - about 20 weekends, a part year">
+      <text x="4" y="277" class="bce46eb190-label">2026, to 22 May</text>
+      <rect x="4" y="282" width="632" height="24" rx="4" class="bce46eb190-track"/>
+      <rect x="4" y="282" width="632.0" height="24" rx="4" fill="#9085e9"/>
+      <text x="644.0" y="298" class="bce46eb190-value">0.83 x</text>
+    </g>
+</svg>
+<div class="bce46eb190-src">Source: Our calculation from FirstRate Data ES 1-minute futures, file ends 26 May 2026</div>
+<div id="bce46eb190-tip" class="lens-chart-tip" style="position:fixed;z-index:99999;max-width:280px;
+  background:#0a1118;color:#e9eef6;border:1px solid #22303f;border-radius:8px;padding:8px 11px;
+  font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.55);pointer-events:none;
+  opacity:0;transition:opacity .12s;display:none;"></div>
+<table class="chart-table" style="position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;">
+  <caption>S&amp;P 500 futures show the same direction, on a measure we chose after the fact - Median gap, Friday 5 pm ET to the first price at or after midnight Monday ET, same volatility scale. Post-hoc and exploratory: the test we registered could not be run.</caption>
+  <thead><tr><th>Label</th><th>Value</th><th>Note</th></tr></thead>
+  <tbody><tr><td>2021</td><td>0.36 x</td><td>full year</td></tr><tr><td>2022</td><td>0.31 x</td><td>full year</td></tr><tr><td>2023</td><td>0.29 x</td><td>full year</td></tr><tr><td>2024</td><td>0.25 x</td><td>full year</td></tr><tr><td>2025</td><td>0.44 x</td><td>full year</td></tr><tr><td>2026, to 22 May</td><td>0.83 x</td><td>about 20 weekends, a part year</td></tr></tbody>
+</table>
+<style>
+  .bce46eb190-title { font-weight:800; font-size:15px; color:#e9eef6; margin-bottom:2px; }
+  .bce46eb190-sub { font-size:12.5px; color:#93a3b8; margin-bottom:10px; }
+  .bce46eb190-src { font-size:11.5px; color:#93a3b8; margin-top:6px; }
+</style>
+<script>
+(function(){
+  var root = document.currentScript.closest('figure');
+  var tip = root.querySelector('#bce46eb190-tip');
+  root.querySelectorAll('.bce46eb190-bar').forEach(function(g){
+    g.addEventListener('mouseenter', function(e){
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.display = 'block'; tip.style.opacity = '1';
+    });
+    g.addEventListener('mousemove', function(e){
+      tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px';
+      tip.style.top = (e.clientY + 14) + 'px';
+    });
+    g.addEventListener('mouseleave', function(){
+      tip.style.opacity = '0'; setTimeout(function(){ tip.style.display = 'none'; }, 120);
+    });
+  });
+})();
+</script>
+</figure></div>
+  <h3>The result we withdrew</h3>
+  <p>H-B was the link to our own overnight-return test, and it passed: years with bigger Russell 2000 gaps had higher overnight returns. Writing this page, we looked at the years one by one. In every year from 1990 to 2006, at least 83 percent of days in the Yahoo ^RUT file show an open within 0.01 percent of the previous close. The mean absolute overnight move in that stretch is 0.49 basis points, against 27 in 2007 to 2025 and 57 on Russell futures. Those fields do not provide a valid measure of the opening gap we meant to test; how they were constructed is unresolved. Seventeen of the 36 yearly data points rest on them. The positive result appears only when those years are pooled with the later ones; inside each stretch the correlation is about zero, which describes the re-cuts and does not by itself prove what produced the pooled result. One more caution: the test correlates the mean of a return series with the mean of its absolute values, two numbers from the same data, so even a clean positive result would not have shown that the premium is payment for gap risk.</p>
+  <div style="position:relative;overflow:hidden">
+<figure class="lens-chart" style="margin:22px 0;">
+<div class="bce29357ea-title">Why our Russell 2000 result failed: the early data has almost no gaps in it</div><div class="bce29357ea-sub">Average absolute close-to-open move, basis points (1 bp = 0.01%). A real index does not move 0.5 bp overnight for 17 years.</div>
+<svg viewBox="0 0 720 184" width="100%" style="max-width:720px;overflow:visible;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+  <style>
+    .bce29357ea-track { fill: #22303f; opacity: .35; }
+    .bce29357ea-label { fill: #93a3b8; font-size: 13px; }
+    .bce29357ea-value { fill: #e9eef6; font-size: 13px; font-weight: 700; }
+    .bce29357ea-bar { cursor: default; }
+    .bce29357ea-bar rect:not(.bce29357ea-track) { transition: opacity .12s; }
+    .bce29357ea-bar:hover rect:not(.bce29357ea-track) { opacity: .82; }
+  </style>
+  
+    <g class="bce29357ea-bar" data-tip="Yahoo ^RUT daily, 1990 to 2006: 0.5  bp - about 95% of days show an open within 0.01% of the prior close">
+      <text x="4" y="17" class="bce29357ea-label">Yahoo ^RUT daily, 1990 to 2006</text>
+      <rect x="4" y="22" width="632" height="24" rx="4" class="bce29357ea-track"/>
+      <rect x="4" y="22" width="5.5" height="24" rx="4" fill="#199e70"/>
+      <text x="17.5" y="38" class="bce29357ea-value">0.5  bp</text>
+    </g>
+    <g class="bce29357ea-bar" data-tip="Yahoo ^RUT daily, 2007 to 2025: 27.1  bp - about 2 to 19% of days each year">
+      <text x="4" y="69" class="bce29357ea-label">Yahoo ^RUT daily, 2007 to 2025</text>
+      <rect x="4" y="74" width="632" height="24" rx="4" class="bce29357ea-track"/>
+      <rect x="4" y="74" width="301.5" height="24" rx="4" fill="#9085e9"/>
+      <text x="313.5" y="90" class="bce29357ea-value">27.1  bp</text>
+    </g>
+    <g class="bce29357ea-bar" data-tip="RTY futures 1-minute, 2008 to 2025: 56.8  bp - 4 pm to 9:30 am ET; about 1.6% of days">
+      <text x="4" y="121" class="bce29357ea-label">RTY futures 1-minute, 2008 to 2025</text>
+      <rect x="4" y="126" width="632" height="24" rx="4" class="bce29357ea-track"/>
+      <rect x="4" y="126" width="632.0" height="24" rx="4" fill="#c98500"/>
+      <text x="644.0" y="142" class="bce29357ea-value">56.8  bp</text>
+    </g>
+</svg>
+<div class="bce29357ea-src">Source: Our calculation from Yahoo Finance ^RUT and FirstRate Data RTY</div>
+<div id="bce29357ea-tip" class="lens-chart-tip" style="position:fixed;z-index:99999;max-width:280px;
+  background:#0a1118;color:#e9eef6;border:1px solid #22303f;border-radius:8px;padding:8px 11px;
+  font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.55);pointer-events:none;
+  opacity:0;transition:opacity .12s;display:none;"></div>
+<table class="chart-table" style="position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;">
+  <caption>Why our Russell 2000 result failed: the early data has almost no gaps in it - Average absolute close-to-open move, basis points (1 bp = 0.01%). A real index does not move 0.5 bp overnight for 17 years.</caption>
+  <thead><tr><th>Label</th><th>Value</th><th>Note</th></tr></thead>
+  <tbody><tr><td>Yahoo ^RUT daily, 1990 to 2006</td><td>0.5  bp</td><td>about 95% of days show an open within 0.01% of the prior close</td></tr><tr><td>Yahoo ^RUT daily, 2007 to 2025</td><td>27.1  bp</td><td>about 2 to 19% of days each year</td></tr><tr><td>RTY futures 1-minute, 2008 to 2025</td><td>56.8  bp</td><td>4 pm to 9:30 am ET; about 1.6% of days</td></tr></tbody>
+</table>
+<style>
+  .bce29357ea-title { font-weight:800; font-size:15px; color:#e9eef6; margin-bottom:2px; }
+  .bce29357ea-sub { font-size:12.5px; color:#93a3b8; margin-bottom:10px; }
+  .bce29357ea-src { font-size:11.5px; color:#93a3b8; margin-top:6px; }
+</style>
+<script>
+(function(){
+  var root = document.currentScript.closest('figure');
+  var tip = root.querySelector('#bce29357ea-tip');
+  root.querySelectorAll('.bce29357ea-bar').forEach(function(g){
+    g.addEventListener('mouseenter', function(e){
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.display = 'block'; tip.style.opacity = '1';
+    });
+    g.addEventListener('mousemove', function(e){
+      tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px';
+      tip.style.top = (e.clientY + 14) + 'px';
+    });
+    g.addEventListener('mouseleave', function(){
+      tip.style.opacity = '0'; setTimeout(function(){ tip.style.display = 'none'; }, 120);
+    });
+  });
+})();
+</script>
+</figure></div>
+  <div class="tw"><table>
+    <tr><th>Sample (gap size vs overnight return, by year)</th><th>Years</th><th>Spearman rho</th><th>p, two-sided</th></tr>
+    <tr><td>As registered, Yahoo ^RUT 1990-2025</td><td>36</td><td>+0.329</td><td>0.0497</td></tr>
+    <tr><td>Post-hoc: Yahoo ^RUT 1990-2006 (the stale stretch)</td><td>17</td><td>&minus;0.076</td><td>0.77</td></tr>
+    <tr><td>Post-hoc: Yahoo ^RUT 2007-2025 (better, still thin in 2016 to 2019 and 2021)</td><td>19</td><td>&minus;0.056</td><td>0.82</td></tr>
+    <tr><td>Post-hoc: RTY futures 2008-2025 (futures return between the cash close and the next cash open, ET)</td><td>18</td><td>&minus;0.015</td><td>0.95</td></tr>
+  </table></div>
+  <p>The registered result stands in the record as what the rule said, and we do not rely on it. The re-cuts are after the fact, with few years and low power, so they do not prove there is no link. They mean we cannot claim one. An earlier draft of this piece said our overnight strategy &ldquo;depends on gaps.&rdquo; We no longer say that.</p>
+  <p>The same flaw touches H-A for the Russell only. Its comparison period includes 2021, when that file&rsquo;s weekend median is 0.04. Leaving 2021 out gives a ratio of about 1.43, not 2.07 (post-hoc). We did not observe the same concentration of near-zero opens in the S&amp;P 500 file in those years.</p>
+  <p>We will re-run the weekend tests after April 2027, on the frozen definitions, with more CME and Nasdaq history. Russell results will be reported on our vendor-futures re-cut beside the registered version, once we have confirmed with the vendor how its early history was built.</p>
+
+  <h2 id="screen">Who is forced to trade?</h2>
+  <p>A liquidated leveraged trader has the position closed and cannot choose when. A funding-rate arbitrageur chooses when. So in a cascade the forced side bears the cost, and in principle those standing ready with cash can earn, the same service the pit scalper sold. That is a plausible mechanism, not a measured split of who won: liquidity suppliers can also withdraw or lose.</p>
+  <p><b>Our interests, declared:</b> we run a research shadow test on Hyperliquid and an overnight-hold strategy test. Neither uses real money. We may also trade equity-index futures (micro S&amp;P 500, Russell 2000 and Nasdaq-100 contracts) for our own account and may hold them overnight, so we could gain or lose from the overnight-session changes described here. The overnight test would look worse if gaps stopped paying, and we just removed the evidence that they do.</p>
+
+  <h2 id="both">Both ways</h2>
+  <p><b>Claimed benefits, not measured by us:</b> price discovery at more hours, trading on news when it arrives, access for people outside US time zones. Nasdaq&rsquo;s stated reason is &ldquo;rising demand for U.S. equities across the globe.&rdquo;<sup><a href="#s12">12</a></sup> Tokenised ownership, synthetic exposure, longer hours and settlement plumbing are different things, and each needs its own evidence. <b>Against, also not measured by us:</b> leverage, thinner off-hours liquidity, custody and counterparty risk, changing rules, tax and legal questions. <b>In Ontario,</b> a 2022 settlement approved by the Capital Markets Tribunal had Bybit undertake to stop Ontario retail customers opening positions in &ldquo;perpetual swaps and futures&rdquo; and &ldquo;any contracts that involve leverage, margin, or the extension of credit.&rdquo;<sup><a href="#s30">30</a></sup> That is a settlement with an undertaking, not a ruling on what these products are. Press reports say Canadian regulators bar crypto platforms from offering margin or leverage to Canadian clients;<sup><a href="#s31">31</a></sup> we have not read the regulators&rsquo; own notice, and this is not legal advice.</p>
+  <p><b>If-then, a scenario and not a forecast.</b> If equity-index perpetuals grow, some price discovery moves partly offshore or on-chain. If regulators cap leverage, retail growth reverses. What would change our mind on gaps (H-A): shrinking gaps in 2027 across both indices on data that passes our quality checks. On off-hours liquidity (H-C), a different question: spreads by hour on our recorder, sampled across instruments and independent days, matching daytime spreads.</p>
+
+  <h2 id="friend">Explain it to a friend</h2>
+  <p>Imagine a market stall that used to close at 5. A few traders made a living standing there, ready to buy from or sell to anyone who needed a quick deal, pocketing a small gap each time. When the stall went online, most of those traders did not make the move. Now it is staying open most of the night. More people can trade, but at 3 am few are around, and if you borrowed to buy, nobody waits for your bank to open before your goods get sold.</p>
+  <p>The one number to keep: in our own count, the S&amp;P 500&rsquo;s Friday-to-Monday move has not shrunk since mid-October 2025. Its median is about 0.6 of a typical day&rsquo;s move, against about 0.3 over the five years before, the comparison window we registered. But it was already rising before that date, so we cannot tie the change to the new venues, and this blunt measure cannot tell whether weekends got riskier or prices simply adjust at different hours now. One thing you can check yourself: on Monday 7 December, look for a Nasdaq Trader notice saying the Night Session ran, or for a trade in an ordinary stock marked as executed on Nasdaq between 9 pm and 4 am ET.<sup><a href="#s12">12</a></sup> Overnight prints on other venues prove nothing; alternative trading systems already trade at night.<sup><a href="#s15">15</a></sup></p>
+
+  <h2 id="fix">What this means, and where we would spend the next dollar</h2>
+  <p><b>The short version.</b> Markets being open at night is not the problem. The problem is that there is no routine public table of spread and depth by hour for the new overnight equity sessions and the perpetual venues, so nobody outside them can say what trading at 3 am costs there, and that leverage turns a thin hour into a forced sale. No fix below makes thin hours deep: overnight volume is set by who wants to trade then, and no rule creates those traders. What the fixes can do is make the cost visible and stop the forced seller from being the one who pays for everyone else&rsquo;s convenience.</p>
+  <p><b>What it costs, and which requirement drops.</b> The first fix is cheap but not free: top-of-book quotes and trades already have to reach the public feeds under the SEC&rsquo;s condition,<sup><a href="#s15">15</a></sup> so the spread part is a table; depth is not on those feeds and would have to be published by the venues. The second costs venues some leverage business, which is the point. The requirement to drop is the pretence that a 24-hour price is a 24-hour market; a published cost-by-hour makes the thin hours look thin, which is what they are.</p>
+  <p>Ranked by benefit for the money, with who can act. All three are our judgment, not tested results.</p>
+  <ul>
+    <li><b>1. Publish cost by the hour.</b> <i>Who:</i> the exchanges and the data plans; the SEC can require it. <i>Bottleneck: measurement.</i> What is missing is a routine public table of spread and depth by hour, by venue. <i>Record:</i> our own attempt has about 240 rows and cannot answer it yet, and floor-versus-screen studies disagreed for years because of the price data used.<sup><a href="#s4">4</a></sup> <i>Where first:</i> regulated US venues, since on-chain venues&rsquo; data is public in a different way and not comparable.</li>
+    <li><b>2. Margin rules that fit the hours.</b> <i>Who:</i> the CFTC and the venues it oversees. <i>Bottleneck: forced selling when you cannot fund.</i> CFTC staff already name the weekend problem, in an advisory that creates no obligations.<sup><a href="#s19">19</a></sup> <i>Record:</i> October 2025 shows venues changing price and index rules after the damage.<sup><a href="#s25">25</a></sup> <i>Limit:</i> a regulated contract does nothing for an offshore one.</li>
+    <li><b>3. For an individual, a short ladder.</b> <i>Who:</i> you. Now: count the spread and any leverage cost before any edge; thin edges of ours were eaten by exactly those costs. Know your venue&rsquo;s maintenance rule, not only the headline multiple. Next: ask who is on the other side and whether they can choose when to trade. Later: if you cannot explain a product to a friend, leave it. This narrows risk and does not create an edge.</li>
+  </ul>
+
+  <h2 id="unconfirmed">What we could not confirm</h2>
+  <p>A ranking of floor profit sources; any size for order-flow profit; career or seat-value base rates; the full texts of Silber, Manaster and Mann, Aitken et al., and Cho and Daigler; Pirrong&rsquo;s 2016 published version and the body of his 2005 paper beyond its abstract, introduction and closing discussion; whether the 2018 published version of the CFTC paper kept the 2016 draft&rsquo;s trader counts (its abstract keeps the conclusion; its tables are behind a paywall); Nasdaq&rsquo;s required readiness filing, and whether the data plans have told it they are ready; the CME v. Selig status after 23 October; CoinGlass&rsquo;s original data; the Canadian regulators&rsquo; own text on leverage; the Long Gilt study a reviewer pointed us to; and whether Hyperliquid&rsquo;s HIP-3 upgrade went live on 13 October 2025 as scheduled (we read the pre-activation report, not a confirmation).</p>
+
+  <h2 id="call">Our call</h2>
+  <div class="box"><b>About 60 percent, our subjective probability:</b> Nasdaq will conduct live production trading in its Night Session (9 pm to 4 am ET) beginning Sunday 6 December 2026, its announced date. <b>Baseline, 30 percent:</b> what a reader with no judgment would say using our fixed rule for &ldquo;something changes by a date.&rdquo; What we know that the rule does not: the date has been announced three times, a test phase and three weekend tests are scheduled, and the SEC&rsquo;s October notice says &ldquo;on or about December 6.&rdquo; <b>Starting state, 7 November 2026:</b> not started; scheduled for Sunday 6 December 2026, pending SIP readiness and any applicable SEC rule changes; pre-production testing scheduled from 1 November (we have not observed it); the required confirming rule filing not located by us. <b>Resolves:</b> 8 December 2026. <b>Rule:</b> yes if at least one non-cancelled production trade in an ordinary symbol is executed on Nasdaq in the session that runs from 9 pm ET Sunday 6 December to 4 am ET Monday 7 December, or Nasdaq publishes a notice that the session operated; test, pre-production and user-acceptance traffic, quotes without trades, and trades on other venues do not count; a start limited to some symbols, or a delayed opening within that first session, counts; a first session on any later night is a no; if the evidence cannot be obtained, the call stays unresolved rather than becoming a no. <b>Resolution source:</b> Nasdaq Trader notices, then Nasdaq&rsquo;s own trade data for the 7 December trade date. <b>Why not higher:</b> the launch depends on outside data plans and a further rule filing that must be approved or effective first,<sup><a href="#s15">15</a></sup> the SEC notice says &ldquo;on or about,&rdquo;<sup><a href="#s16">16</a></sup> and the SEC noted in April that exchanges approved earlier for overnight hours had not begun.<sup><a href="#s15">15</a></sup> <b>Why this high:</b> the date is announced and testing is scheduled.<sup><a href="#s12">12</a></sup><sup><a href="#s13">13</a></sup><sup><a href="#s32">32</a></sup> This call tests the date this page reports, in about a month. We will publish the result either way.</div>
+
+  <h2 id="sources">Sources</h2>
+  <p class="meta">Each group links back to its section. Web sources read or re-read 6 and 7 November 2026 unless noted. Dates in each entry are the document&rsquo;s own.</p>
+  <h3><a href="#floor">Where floor money came from</a></h3>
+  <ol style="margin-left:22px;font-size:14px;color:var(--muted);">
+    <li id="s1" value="1">Silber, &ldquo;Marketmaker Behavior in an Auction Market: An Analysis of Scalpers in Futures Markets,&rdquo; <i>Journal of Finance</i> 39(4), 1984, 937-953 &mdash; <a href="https://doi.org/10.1111/j.1540-6261.1984.tb03886.x">doi.org</a>. Abstract only.</li>
+    <li id="s2" value="2">Manaster and Mann, &ldquo;Life in the Pits,&rdquo; <i>Review of Financial Studies</i> 9(3), 1996, 953-975 &mdash; <a href="https://doi.org/10.1093/rfs/9.3.953">doi.org</a>. Abstract as reported by a reviewer; not read by us.</li>
+    <li id="s3" value="3">Gousgounis and Onur, &ldquo;The Effect of Pit Closure on Futures Trading,&rdquo; CFTC Office of the Chief Economist, first draft 13 April 2016, tables 1 to 4 and section 4.4 &mdash; <a href="https://www.cftc.gov/sites/default/files/idc/groups/public/@economicanalysis/documents/file/oce_effectofpitclosure.pdf">cftc.gov (PDF)</a>. The authors&rsquo; views, not the Commission&rsquo;s. Used for the trader counts only; see 33 for the published findings.</li>
+  </ol>
+  <h3><a href="#screens">What the screens changed</a></h3>
+  <ol style="margin-left:22px;font-size:14px;color:var(--muted);">
+    <li id="s4" value="4">Breedon and Holland, &ldquo;Electronic versus open outcry markets: the case of the Bund futures contract,&rdquo; Bank of England Working Paper 76; the Bank&rsquo;s web page dates it 30 January 1998, the PDF itself carries no date &mdash; <a href="https://www.bankofengland.co.uk/-/media/boe/files/working-paper/1998/electronic-versus-open-outcry-markets.pdf">bankofengland.co.uk (PDF)</a>. Abstract and data section read 7 November 2026; sample 10 April to 2 June 1995, June 1995 contract.</li>
+    <li id="s5" value="5">Pirrong, &ldquo;Bund for Glory, or It&rsquo;s a Long Way to Tip a Market,&rdquo; working paper, 8 March 2005 &mdash; <a href="https://www.bauer.uh.edu/spirrong/dtbtip2.pdf">bauer.uh.edu (PDF)</a>. Abstract, introduction, cost footnotes and closing discussion read; the one-third cost figure is attributed there to Price-Waterhouse via Mehta (1999). Prior relationship and later version (<i>Journal of Applied Corporate Finance</i>, 2016, unread): <a href="https://www.bauer.uh.edu/spirrong/SCPvit1021.pdf">his CV (PDF)</a>.</li>
+    <li id="s6" value="6">Cantillon and Yin, &ldquo;How and when do markets tip? Lessons from the Battle of the Bund,&rdquo; ECB Working Paper 766, June 2007 &mdash; <a href="https://www.ecb.europa.eu/pub/pdf/scpwps/ecbwp766.pdf">ecb.europa.eu (PDF)</a>. Abstract, summary, sections 1 and 2 and conclusions read.</li>
+    <li id="s7" value="7">Aitken, Frino, Hill and Jarnecic, &ldquo;The impact of electronic trading on bid-ask spreads: Evidence from futures markets in Hong Kong, London, and Sydney,&rdquo; <i>Journal of Futures Markets</i> 24(7), 2004, 675-696 &mdash; <a href="https://doi.org/10.1002/fut.20106">doi.org</a>. Abstract read via the RePEc listing, 7 November 2026; paper not read.</li>
+    <li id="s8" value="8">Cho and Daigler, &ldquo;Derivatives pricing and liquidity dominance in alternative trading venues,&rdquo; <i>Journal of Derivatives &amp; Hedge Funds</i> 17, 2011, 198-218 &mdash; <a href="https://doi.org/10.1057/jdhf.2011.10">doi.org</a>. Citation from a secondary listing; the publisher page is paywalled to us. Findings as reported by a reviewer who opened it; not read by us.</li>
+    <li id="s9" value="9">CME, CFTC Regulation 40.6(a) certification, Submission 15-248R, dated 10 June 2015 &mdash; <a href="https://www.cftc.gov/filings/orgrules/rule062615cmedcm001.pdf">cftc.gov (PDF)</a>. Written before the delay, so it still names 2 July.</li>
+    <li id="s10" value="10">CME Group, Special Executive Report SER-7416, 6 July 2015 &mdash; <a href="https://www.cmegroup.com/tools-information/lookups/advisories/ser/SER-7416.html">cmegroup.com</a>. Read through a web archive copy dated 11 October 2026; a reviewer confirmed the live page on 7 November.</li>
+    <li id="s11" value="11">CME Group release, &ldquo;CME Group Delays Closure of Open Outcry Futures Trading in Chicago and New York,&rdquo; 23 June 2015 &mdash; <a href="https://www.cmegroup.com/media-room/press-releases/2015/6/23/cme_group_delaysclosureofopenoutcryfuturestradinginchicagoandnew.html">cmegroup.com</a>. Read in October 2026.</li>
+  </ol>
+  <h3><a href="#dec6">6 December</a> and <a href="#elsewhere">where else</a></h3>
+  <ol style="margin-left:22px;font-size:14px;color:var(--muted);">
+    <li id="s12" value="12">Nasdaq, Equity Trader Alert 2026-46, 17 August 2026 &mdash; <a href="https://www.nasdaqtrader.com/TraderNews.aspx?id=ETA2026-46">nasdaqtrader.com</a>.</li>
+    <li id="s13" value="13">Nasdaq, Data News 2026-8, 24 September 2026 &mdash; <a href="https://www.nasdaqtrader.com/TraderNews.aspx?id=DN2026-8">nasdaqtrader.com</a>.</li>
+    <li id="s14" value="14">Nasdaq, 23/5 Trading Information Hub and FAQ, page as fetched 6 November 2026 &mdash; <a href="https://www.nasdaq.com/23-5-trading">nasdaq.com</a>.</li>
+    <li id="s15" value="15">SEC, Release 34-105199, File SR-Nasdaq-2025-109, 10 April 2026 &mdash; <a href="https://www.sec.gov/files/rules/sro/nasdaq/2026/34-105199.pdf">sec.gov (PDF)</a>.</li>
+    <li id="s16" value="16">SEC, Release 34-106586, File SR-NASDAQ-2026-080, 5 October 2026 &mdash; <a href="https://www.sec.gov/files/rules/sro/nasdaq/2026/34-106586.pdf">sec.gov (PDF)</a>.</li>
+    <li id="s17" value="17">Jones Day, &ldquo;NYSE and Nasdaq Move to 23-Hour Trading Day,&rdquo; September 2026 &mdash; <a href="https://www.jonesday.com/en/insights/2026/09/nyse-and-nasdaq-move-to-23hour-trading-day-overnight-session-is-an-evolution-but-not-yet-a-revolution">jonesday.com</a>. A law-firm summary.</li>
+    <li id="s18" value="18">CME Group release, 1 June 2026 &mdash; <a href="https://www.cmegroup.com/media-room/press-releases/2026/6/01/cme_group_announceslaunchof247cryptocurrencyfuturesandoptionstra.html">cmegroup.com</a>. Read through a web archive copy; a company statement.</li>
+    <li id="s19" value="19">CFTC staff, Letter 26-16, 29 May 2026 &mdash; <a href="https://www.cftc.gov/csl/26-16/download">cftc.gov (PDF)</a>.</li>
+    <li id="s20" value="20">CFTC, Order Approving KalshiEX LLC BTCPERP Futures Contract &mdash; <a href="https://www.cftc.gov/filings/documents/2026/orgdcmkexbtxperporder26601.pdf">cftc.gov (PDF)</a>. Our copy shows no issue date in the text; Kalshi&rsquo;s filings date it 29 May 2026.</li>
+    <li id="s21" value="21">CFTC, &ldquo;Policy Statement Concerning the Listing of Perpetual Contracts,&rdquo; adopted 29 May 2026, 91 Fed. Reg. 33,160-33,162, 3 June 2026 &mdash; <a href="https://www.govinfo.gov/content/pkg/FR-2026-06-03/pdf/2026-11020.pdf">govinfo.gov (PDF)</a>. Read 7 November 2026. Kalshi&rsquo;s filings also quote it: <a href="https://www.cftc.gov/filings/ptc/ptc09182627458.pdf">cftc.gov (PDF)</a>.</li>
+    <li id="s22" value="22">Chicago Mercantile Exchange v. Selig, D.D.C. 1:26-cv-02157, through the CourtListener mirror, which warns it may be out of date. Read for us in October 2026 by a reviewer, not by us; we could not open it on 6 or 7 November.</li>
+  </ol>
+  <h3><a href="#perp">How a perpetual works</a></h3>
+  <ol style="margin-left:22px;font-size:14px;color:var(--muted);">
+    <li id="s23" value="23">Hyperliquid docs, Margining &mdash; <a href="https://hyperliquid.gitbook.io/hyperliquid-docs/trading/margining">gitbook.io</a>.</li>
+    <li id="s24" value="24">Hyperliquid docs, Funding &mdash; <a href="https://hyperliquid.gitbook.io/hyperliquid-docs/trading/funding">gitbook.io</a>.</li>
+    <li id="s25" value="25">Binance, &ldquo;Resolution of USDE, BNSOL, and WBETH Price Depeg and Risk Control Enhancements,&rdquo; 11 October 2025 &mdash; <a href="https://www.binance.com/en/support/announcement/detail/0989d6c7f32545bfb019e3249eaabc3f">binance.com</a>. A company statement.</li>
+    <li id="s26" value="26">The Block, Binance compensation report &mdash; <a href="https://www.theblock.co/post/374278/binance-to-compensate-some-users-after-several-markets-depeg-there-are-no-excuses">theblock.co</a>. CoinGlass figures, second-hand: over USD 19.3 billion, about 1.7 million traders in its text, more than 1.6 million in its summary.</li>
+    <li id="s27" value="27">The Defiant, &ldquo;The Ultimate 10/10 Crash Autopsy,&rdquo; October 2025 &mdash; <a href="https://thedefiant.io/newsletter/defi-daily/the-ultimate-10-10-crash-autopsy">thedefiant.io</a>. Trade press.</li>
+  </ol>
+  <h3><a href="#tests">What we tested</a></h3>
+  <ol style="margin-left:22px;font-size:14px;color:var(--muted);">
+    <li id="s28" value="28">Our pre-registrations of 24 and 31 October 2026 (hashes in our own log), results and check scripts. Internal files.</li>
+    <li id="s29" value="29">Data: Yahoo Finance daily ^GSPC and ^RUT, 1990 to 23 October 2026. FirstRate Data 1-minute ES and RTY continuous ratio-adjusted futures, files ending 26 May 2026. Only our derived statistics are shown.</li>
+  </ol>
+  <h3><a href="#both">Both ways</a></h3>
+  <ol style="margin-left:22px;font-size:14px;color:var(--muted);">
+    <li id="s30" value="30">Capital Markets Tribunal (Ontario), Order in the Matter of Bybit Fintech Limited, 22 June 2022, approving a settlement agreement, with the undertaking&rsquo;s &ldquo;Restricted Products&rdquo; definition &mdash; <a href="https://www.capitalmarketstribunal.ca/en/proceedings/bybit-fintech-limited-re/order-matter-bybit-fintech-limited-5">capitalmarketstribunal.ca</a>. Read 7 November 2026.</li>
+    <li id="s31" value="31">Press report of the Canadian Securities Administrators&rsquo; position &mdash; <a href="https://ca.finance.yahoo.com/news/canadian-securities-regulators-tighten-rules-204144810.html">Yahoo Finance Canada</a>. Second-hand, read in a search extract only; the CSA staff notice itself (21-332, 22 February 2023) would not open for us on 7 November.</li>
+  </ol>
+  <h3>Added after review, 7 November 2026</h3>
+  <ol style="margin-left:22px;font-size:14px;color:var(--muted);">
+    <li id="s32" value="32">Nasdaq, Equity Trader Alert 2026-64, &ldquo;Nasdaq Global Trading Hours: Nasdaqtrader.com Files,&rdquo; 30 October 2026 &mdash; <a href="https://www.nasdaqtrader.com/TraderNews.aspx?id=ETA2026-64">nasdaqtrader.com</a>.</li>
+    <li id="s33" value="33">Gousgounis and Onur, &ldquo;The effect of pit closure on futures trading,&rdquo; <i>Journal of Commodity Markets</i> 10, 2018, 69-90 &mdash; <a href="https://doi.org/10.1016/j.jcomm.2017.11.002">doi.org</a>. Abstract read via the RePEc listing, 7 November 2026; the publisher page and the CFTC summary page would not load for us; tables not read.</li>
+    <li id="s34" value="34">The Block, &ldquo;Hyperliquid to activate HIP-3 upgrade enabling permissionless perp market creation,&rdquo; 13 October 2025 &mdash; <a href="https://www.theblock.co/post/374306">theblock.co</a>. Trade press, written before the activation; quotes a Hyperliquid administrator.</li>
+  </ol>
+
+  <p class="disc">Dragonfly Lens publishes research, not advice. Leveraged products can lose more quickly than you can respond. Figures are the sources&rsquo; own unless marked as our calculation. Corrections appear in our <a href="corrections.html">corrections log</a>.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+
+<script src="listen.js"></script>
+<script src="share.js"></script>
+<script src="capture.js"></script>
+</body>
+</html>
