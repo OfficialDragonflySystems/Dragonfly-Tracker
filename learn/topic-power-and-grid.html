@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power and the grid &mdash; Dragonfly Lens</title>
+<link rel="icon" type="image/png" href="https://officialdragonflysystems.com/learn/favicon.png">
+<link rel="canonical" href="https://officialdragonflysystems.com/learn/topic-power-and-grid.html">
+<meta property="og:title" content="Power and the grid">
+<meta property="og:description" content="The AI build-out is announced in gigawatts, but a data centre can only use power it can actually connect to. These pieces follow the physical chain: the generation that exists, the transformers and switchgear that deliver it, and the long waits in between.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://officialdragonflysystems.com/learn/topic-power-and-grid.html">
+<meta property="og:site_name" content="Dragonfly Lens">
+<meta property="og:image" content="https://officialdragonflysystems.com/learn/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Power and the grid">
+<meta name="twitter:description" content="The AI build-out is announced in gigawatts, but a data centre can only use power it can actually connect to. These pieces follow the physical chain: the generation that exists, the transformers and switchgear that deliver it, and the long waits in between.">
+<meta name="twitter:image" content="https://officialdragonflysystems.com/learn/og-default.png">
+<link rel="alternate" type="application/rss+xml" title="Dragonfly Lens - new research" href="https://officialdragonflysystems.com/learn/feed.xml">
+<script type="application/ld+json" id="seo-jsonld">{"@context": "https://schema.org", "@type": "Article", "headline": "Power and the grid", "description": "The AI build-out is announced in gigawatts, but a data centre can only use power it can actually connect to. These pieces follow the physical chain: the generation that exists, the transformers and switchgear that deliver it, and the long waits in between.", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://officialdragonflysystems.com/learn/topic-power-and-grid.html"}, "author": {"@type": "Organization", "name": "Dragonfly Lens", "url": "https://officialdragonflysystems.com/"}, "publisher": {"@type": "Organization", "name": "Dragonfly Lens", "url": "https://officialdragonflysystems.com/"}, "image": "https://officialdragonflysystems.com/learn/og-default.png"}</script>
+<meta name="description" content="The AI build-out is announced in gigawatts, but a data centre can only use power it can actually connect to. These pieces follow the physical chain: the generation that exists, the transformers and switchgear that deliver it, and the long waits in between.">
+<style>
+  :root{--bg:#070b10;--panel:#0e1620;--ink:#e9eef6;--muted:#93a3b8;--line:#22303f;--accent:#5eead4;--lime:#4ade80;--gold:#fbbf24;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:#0a1118;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  nav.top .logo{font-family:Georgia,serif;font-weight:800;color:var(--lime);letter-spacing:.03em;font-size:17px;}
+  nav.top a.back{font-size:12.5px;color:var(--muted);}
+  .wrap{max-width:880px;margin:0 auto;padding:34px 20px 90px;}
+  .kick{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px;}
+  h1{font-family:Georgia,serif;font-size:clamp(29px,5vw,44px);line-height:1.13;font-weight:400;margin:12px 0 14px;}
+  h2{font-family:Georgia,serif;font-size:clamp(22px,3.4vw,28px);font-weight:400;margin:42px 0 12px;padding-top:14px;border-top:1px solid var(--line);}
+  p{margin:13px 0;color:#d7dfea;}
+  .lead{font-size:18px;color:var(--muted);margin:14px 0 6px;}
+  .art{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin:12px 0;color:var(--ink);}
+  .art:hover{border-color:#25463b;text-decoration:none;}
+  .art .n{color:var(--lime);font-weight:800;font-size:12px;letter-spacing:.08em;}
+  .art h3{font-size:18px;margin:2px 0 4px;color:#fff;font-weight:700;}
+  .art p{margin:4px 0 0;color:var(--muted);font-size:14.5px;}
+  .art .d{color:var(--muted);font-size:12px;margin-top:6px;}
+  dl.g{margin:12px 0;} dl.g dt{color:#fff;font-weight:800;margin-top:14px;} dl.g dd{color:#d7dfea;margin:2px 0 0;font-size:15px;}
+  .open{border-left:4px solid var(--gold);background:rgba(251,191,36,.06);border-radius:0 10px 10px 0;padding:13px 16px;margin:18px 0;font-size:15px;}
+  .open b{color:var(--gold);}
+  .also a{display:inline-block;margin:4px 14px 4px 0;}
+  .disc{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:46px;padding-top:18px;}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="/" class="logo">&#9671; Dragonfly Lens</a>
+  <a href="/learn/" class="back">&larr; all explainers</a>
+</nav>
+
+<div class="wrap">
+  <div class="kick">Topic &middot; Power and grid</div>
+  <h1>Power and the grid</h1>
+  <p class="lead">The AI build-out is announced in gigawatts, but a data centre can only use power it can actually connect to. These pieces follow the physical chain: the generation that exists, the transformers and switchgear that deliver it, and the long waits in between. The recurring finding is that delivery, not generation, sets the date.</p>
+
+  <h2>Read in this order</h2>
+  <a class="art" href="/learn/power-bottleneck.html"><span class="n">01</span><h3>The Real AI Bottleneck Isn&#x27;t Chips — It&#x27;s the Wire</h3><p>Everyone&#x27;s crowded into AI power generation. The real chokepoint is delivery: transformers, grid interconnect, switchgear. The contrarian map — plain English.</p><div class="d">8 Jun 2026</div></a>
+  <a class="art" href="/learn/synchronization-problem.html"><span class="n">02</span><h3>The Synchronization Problem: Gigawatts Aren’t Compute</h3><p>Announced gigawatts aren&#x27;t compute. GPUs arrive in weeks; the grid connection can take seven years. The slowest input sets the date - and that gap is the whole story of the AI build-out.</p><div class="d">1 Aug 2026</div></a>
+  <a class="art" href="/learn/ai-per-watt.html"><span class="n">03</span><h3>Intelligence per watt — the number that picks the AI winners</h3><p>The AI race won&#x27;t be won by the smartest model — it&#x27;ll be won by whoever delivers intelligence the cheapest, and that comes down to energy. Here&#x27;s the one metric that quietly reorders who makes money from the AI buildout.</p><div class="d">4 Jun 2026</div></a>
+  <a class="art" href="/learn/nuclear-for-ai.html"><span class="n">04</span><h3>Big Tech Is Going Nuclear: What’s Real and Who Gets Paid</h3><p>The real AI-power megawatts come from restarting old reactors. Small reactors and fusion are targets, not plants — and the fuel bottleneck is owned by rivals. What&#x27;s real vs. what&#x27;s a press release.</p><div class="d">12 Aug 2026</div></a>
+  <a class="art" href="/learn/nuclear-restart.html"><span class="n">05</span><h3>AI Is Reopening Dead Nuclear Plants</h3><p>A reactor that shut in 2019 is restarting to power Microsoft&#x27;s AI. Canada refurbished one 7 months early. AI&#x27;s power hunger is reviving nuclear — who profits, and the honest timelines.</p><div class="d">19 Jun 2026</div></a>
+  <a class="art" href="/learn/geothermal-heat.html"><span class="n">06</span><h3>Geothermal Went Public. 12 Days Later, Its Well Blew Out.</h3><p>The $1.9B IPO, the blowout, the 70% drilling-cost collapse, and the heat batteries scaling beside it - the honest promise-and-setback read on 24/7 power from the ground.</p><div class="d">27 Aug 2026</div></a>
+  <a class="art" href="/learn/waste-streams.html"><span class="n">07</span><h3>The AI Build-Out Makes Two Things Nobody Is Bidding For</h3><p>Data centres produce waste heat continuously and retired hardware on a schedule set by depreciation policy. One has a price in exactly one city. The other just showed up in Amazon&#x27;s accounts.</p><div class="d">21 Sep 2026</div></a>
+  <a class="art" href="/learn/miner-to-ai.html"><span class="n">08</span><h3>The Miners Quietly Becoming AI Landlords</h3><p>A bitcoin miner just signed a $220M deal to run AI for Bell + Cohere. The quiet rotation from hash machines to AI compute landlords — who&#x27;s really pivoting, and the honest risks.</p><div class="d">19 Jun 2026</div></a>
+
+  <h2>Plain-English glossary</h2>
+  <dl class="g">
+    <dt>Transformer</dt><dd>Equipment that steps voltage up or down so electricity can move across the grid. Large power transformers take years to order and deliver.</dd>
+    <dt>Switchgear</dt><dd>Equipment that connects, protects and isolates electrical circuits in a substation or inside a data centre.</dd>
+    <dt>Interconnection queue</dt><dd>The waiting list of power plants and large users asking to connect to the grid.</dd>
+    <dt>Power purchase agreement (PPA)</dt><dd>A long-term contract to buy electricity at an agreed price.</dd>
+    <dt>Restart and uprate</dt><dd>Bringing a shut-down reactor back into service, and raising the output of one that is already running.</dd>
+    <dt>HALEU</dt><dd>High-assay low-enriched uranium, a fuel many next-generation reactor designs need.</dd>
+    <dt>Critical path</dt><dd>The longest chain of dependent steps in a project. It sets the finish date, whatever the other steps are doing.</dd>
+  </dl>
+
+  <h2>The question still open</h2>
+  <div class="open"><b>Unresolved.</b> Do announced power deals turn into delivered megawatts on the announced dates, given how long the grid connection takes? We track the evidence on the weekly scoreboard (transformer lead times, data-centre starts).</div>
+  <p style="font-size:13.5px;color:var(--muted);">Newest article in this collection: 21 Sep 2026. Every line above is the article's own published description; this page adds the glossary and the open question only.</p>
+
+  <h2>More topics</h2>
+  <p class="also"><a href="/learn/topic-memory-and-chips.html">Memory and chips &rarr;</a> <a href="/learn/topic-cooling-and-water.html">Cooling and water &rarr;</a> <a href="/learn/">All explainers &rarr;</a></p>
+
+  <p class="disc">Educational research, not personalised investment advice. Dragonfly Lens is not a registered investment advisor. Companies are named to explain the framework, not as buy or sell recommendations.</p>
+</div>
+
+<footer>
+  <a href="/learn/">&larr; More plain-English explainers</a> &middot; <a href="/">Dragonfly Lens</a> &middot; Built on signals. Not opinions.
+</footer>
+</body>
+</html>
