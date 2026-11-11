@@ -1,4 +1,4 @@
-# generated 2026-11-10 from learn_manifest.json (65 articles)
+# generated 2026-11-11 from learn_manifest.json (65 articles)
 # Dragonfly Lens
 
 > Plain-English, source-led research on the AI build-out: the physical chain from raw

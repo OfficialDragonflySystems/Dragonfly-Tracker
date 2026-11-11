@@ -7,6 +7,7 @@
    - SOFT METER: inline signup boxes on every article from the first visit. After the
      reader's 3rd distinct article in this browser, a full-screen signup asks for an email
      before continuing (newspaper-style). Crawlers never reach it (no localStorage history).
+   - The meter overlay has a 'Not now - keep reading' button (and Esc); it stays away for 3 days after.
    - HARD GATE: interactive tools (the slugs in HARD below) ask for the email up front.
    - If the signup endpoint is unreachable, the reader is NEVER locked out - a dead server
      must not wall the site. The overlay stands down for that session and we try again later.
@@ -35,6 +36,8 @@
                 set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} } };
 
   if (store.get('df_sub') === '1') return;             // already subscribed in this browser: nothing to show
+  var SNOOZE_MS = 3 * 24 * 3600 * 1000;                // after "Not now" the full-screen ask stays away this long
+  var snoozed = (Date.now() - (parseInt(store.get('df_snooze') || '0', 10) || 0)) < SNOOZE_MS;
 
   // Distinct-article count for the meter (deduped by slug).
   var seen = [];
@@ -119,6 +122,15 @@
     box.style.margin = '0';
     box.style.boxShadow = '0 18px 60px rgba(0,0,0,.6)';
     card.appendChild(box);
+    if (trigger !== 'hard') {
+      var later = el('button', 'display:block;margin:12px auto 0;background:none;border:0;color:' + MUTED + ';font:600 14px/1.3 system-ui,Arial,sans-serif;text-decoration:underline;cursor:pointer;padding:8px 12px;', 'Not now - keep reading');
+      later.type = 'button';
+      var onKey = function (e) { if (e.key === 'Escape') dismiss(); };
+      var dismiss = function () { store.set('df_snooze', String(Date.now())); removeOverlay(); document.removeEventListener('keydown', onKey); ga('learn_meter_dismissed'); };
+      later.addEventListener('click', dismiss);
+      document.addEventListener('keydown', onKey);
+      card.appendChild(later);
+    }
     overlay.appendChild(card);
     document.body.appendChild(overlay);
     document.documentElement.style.overflow = 'hidden';
@@ -142,7 +154,7 @@
   function init() {
     placeInline();
     if (hard) showOverlay('hard');
-    else if (metered) showOverlay('meter');
+    else if (metered && !snoozed) showOverlay('meter');
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
