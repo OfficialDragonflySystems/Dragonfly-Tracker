@@ -1,0 +1,93 @@
+{
+  "about": "Dragonfly Lens forward calls. Each call is one checkable sentence, published and frozen before the outcome was known, with our stated probability and a no-judgement baseline. Resolved from the named source only. Misses are kept. These are calls on public facts, not investment advice.",
+  "how_to_cite": "Dragonfly Lens forward call '<id>', published <published>, https://officialdragonflysystems.com/learn/calls.json",
+  "human_page": "https://tracker.officialdragonflysystems.com/decision-ledger",
+  "summary": {
+    "calls": 5,
+    "open": 3,
+    "hits": 2,
+    "misses": 0,
+    "void": 0,
+    "brier_ours": 0.276,
+    "brier_baseline": 0.37,
+    "edge_vs_baseline": 0.094,
+    "note": "Brier score: 0 is perfect, 0.25 is what always saying 50% earns; lower is better. With this few resolved calls the score shows nothing yet."
+  },
+  "calls": [
+    {
+      "id": "gac-ukraine-evaluation",
+      "published": "2026-10-08",
+      "claim": "Global Affairs Canada will not publish a new evaluation report covering its Ukraine programming before 1 April 2028.",
+      "probability": 0.9,
+      "resolve_on": "2028-04-01",
+      "resolution_source": "Global Affairs Canada evaluations page (international.canada.ca/en/global-affairs/corporate/transparency/evaluations) and its five-year evaluation plan",
+      "piece_url": "https://officialdragonflysystems.com/learn/foreign-aid-ukraine.html",
+      "status": "open",
+      "resolution_note": "",
+      "resolved_on": null,
+      "baseline_method": "status-quo: no GAC evaluation of Ukraine programming exists today and the claim is that none appears by 1 April 2028 (nothing changes) -> 0.70",
+      "baseline_probability": 0.7,
+      "baseline_set_on": "2026-11-07 (after publication, before resolution)"
+    },
+    {
+      "id": "coreweave-q3-2026-revenue",
+      "published": "2026-11-07",
+      "claim": "CoreWeave's reported revenue for the third quarter of 2026 will be at least $3.65 billion.",
+      "probability": 0.5,
+      "resolve_on": "2026-11-12",
+      "resolution_source": "CoreWeave's Q3 2026 results press release (Form 8-K, Exhibit 99.1) on EDGAR, CIK 1769628 (sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1769628&type=8-K). Results are due Tuesday 10 November 2026 after the close.",
+      "piece_url": "https://officialdragonflysystems.com/scoreboard.html",
+      "status": "hit",
+      "resolution_note": "Reported third-quarter 2026 revenue was $3,661 million, against a threshold of $3,650 million: a hit by $11 million, about 0.3%. Source: CoreWeave Form 8-K filed 10 November 2026, Exhibit 99.1 (press release, unaudited), EDGAR accession 0001769628-26-000461, https://www.sec.gov/Archives/edgar/data/1769628/000176962826000461/coreweave3q26earningspress.htm. Read by us 11 November 2026.",
+      "resolved_on": "2026-11-11",
+      "baseline_method": "base-rate: quarters in which CoreWeave's reported revenue exceeded the top of its own guidance, over the two most recent quarters we verified (Q1 2026 yes, $2.078bn vs $1.9-2.0bn; Q2 2026 no, $2.575bn vs $2.45-2.60bn): k/n = 1/2 -> 0.50. Analyst consensus on 7 Nov 2026 was about $3.50bn (Zacks), below the threshold.",
+      "baseline_probability": 0.5,
+      "baseline_set_on": "2026-11-07"
+    },
+    {
+      "id": "coreweave-q3-2026-total-debt",
+      "published": "2026-11-07",
+      "claim": "In CoreWeave's Form 10-Q for the quarter ended 30 September 2026, the debt note's table of future principal payments for the company's total debt will show a Total of at least $41,000 million.",
+      "probability": 0.6,
+      "resolve_on": "2026-11-20",
+      "resolution_source": "CoreWeave Form 10-Q for Q3 2026 on EDGAR, CIK 1769628, the Debt note (Note 10 in the Q2 filing), the table headed 'future principal payments for the Company's total debt', line 'Total'. Carrying value and the debt-obligations table above it do not count.",
+      "piece_url": "https://officialdragonflysystems.com/scoreboard.html",
+      "status": "open",
+      "resolution_note": "",
+      "resolved_on": null,
+      "baseline_method": "naive-trend: total principal went from about $21.6bn (31 Dec 2025) to $35,551m (30 Jun 2026), an average of about $7.0bn a quarter; projection for 30 Sep 2026 about $42.5bn, which clears $41,000m -> 0.70",
+      "baseline_probability": 0.7,
+      "baseline_set_on": "2026-11-07"
+    },
+    {
+      "id": "cpi-electricity-oct-2026",
+      "published": "2026-11-07",
+      "claim": "The US Consumer Price Index for electricity, U.S. city average, not seasonally adjusted (BLS series CUUR0000SEHF01), for October 2026 will be at least 307.000.",
+      "probability": 0.45,
+      "resolve_on": "2026-11-20",
+      "resolution_source": "BLS series CUUR0000SEHF01 (data.bls.gov/timeseries/CUUR0000SEHF01; API api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SEHF01). The October 2026 CPI is scheduled for release on 10 November 2026 at 8:30 am ET. If BLS does not publish an October 2026 value, the call is void.",
+      "piece_url": "",
+      "status": "hit",
+      "resolution_note": "BLS series CUUR0000SEHF01 for October 2026 is 307.673, against a threshold of 307.000 (September 2026: 309.852, a fall of 0.70%). We had given this 45%, so it happened although we leaned slightly against it. Source: BLS API, api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SEHF01, read by us 11 November 2026.",
+      "resolved_on": "2026-11-11",
+      "baseline_method": "naive-trend: average September-to-October change in the series over 2022-2024 = (-1.3% -1.5% -0.5%)/3 = -1.1%; 309.852 x 0.989 = 306.4, which does not clear 307.000 -> 0.30",
+      "baseline_probability": 0.3,
+      "baseline_set_on": "2026-11-07"
+    },
+    {
+      "id": "nasdaq-night-session-opens-dec-6",
+      "published": "2026-11-09",
+      "claim": "Nasdaq will conduct live production trading in its Night Session (9 pm to 4 am ET) beginning Sunday 6 December 2026, its announced date.",
+      "probability": 0.6,
+      "resolve_on": "2026-12-08",
+      "resolution_source": "Deciding evidence, in this order: (1) a Nasdaq Trader notice (nasdaqtrader.com Equity Trader Alerts) stating that the Night Session operated, or was postponed; (2) Nasdaq's own trade data for the 7 December 2026 trade date showing at least one non-cancelled production execution in an ordinary (non-test) symbol identified as executed on The Nasdaq Stock Market between 9 pm ET Sunday 6 December and 4 am ET Monday 7 December. Rule: YES if either (1) confirms operation or (2) is found. Test, pre-production and user-acceptance traffic (UAT covers all eligible symbols, so symbol identity alone proves nothing), quotations without executions, and executions on other venues or ATSs do not count. A production launch limited to some symbols counts, and so does a delayed opening within that first session. A first production session on any later night is NO. If neither kind of evidence can be obtained by the resolve date, the call is marked unresolved, not NO.",
+      "piece_url": "https://officialdragonflysystems.com/learn/before-the-screens.html",
+      "status": "open",
+      "resolution_note": "",
+      "resolved_on": null,
+      "baseline_method": "status-quo: the Night Session is not operating today and the claim is that it starts on a specific night (something changes) -> 0.30. What we know that the baseline does not: the date has been announced three times by Nasdaq (17 Aug alert, 24 Sep data notice, 30 Oct alert) and the 23/5 FAQ repeats it; a pre-production phase from 1 Nov and weekend user tests on 6 Nov, 20 Nov and 4 Dec are scheduled (scheduled, not observed by us); the SEC's October notice says 'on or about December 6'. That is why we sit above the baseline; the confirming SEC filing, which must be approved or effective before trading, has not been located by us, which is why we are not higher.",
+      "baseline_probability": 0.3,
+      "baseline_set_on": "2026-11-09"
+    }
+  ]
+}

@@ -28,6 +28,7 @@
   original or corrected, as performance. See https://officialdragonflysystems.com/track_record.html
 - Our record counts only calls dated before the outcome and scored in public. It is young.
   Forward calls: https://tracker.officialdragonflysystems.com/decision-ledger
+  Forward calls as data (JSON, with dates, probabilities, baselines, sources, outcomes): https://officialdragonflysystems.com/learn/calls.json
   Signed signals: https://tracker.officialdragonflysystems.com/verify
 
 ## Start here: the weekly scoreboard
