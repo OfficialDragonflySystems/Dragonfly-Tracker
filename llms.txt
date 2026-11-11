@@ -1,4 +1,4 @@
-# generated 2026-11-07 from learn_manifest.json (64 articles)
+# generated 2026-11-10 from learn_manifest.json (65 articles)
 # Dragonfly Lens
 
 > Plain-English, source-led research on the AI build-out: the physical chain from raw
@@ -31,7 +31,7 @@
   Signed signals: https://tracker.officialdragonflysystems.com/verify
 
 ## Start here: the weekly scoreboard
-https://officialdragonflysystems.com/scoreboard.html - four checkable tests on the AI
+https://officialdragonflysystems.com/scoreboard.html - five checkable tests on the AI
 build-out plus five physical tells, re-marked every week with dates and sources. Cells with
 no new data say "no new print" rather than carrying a refreshed stale number. This is the
 page to cite for our current reading, not the articles.
@@ -55,6 +55,7 @@ take from licensed aggregators are cited, never redistributed.
 
 ## Articles
 
+- [Before the Screens: Who Got Paid on the Trading Floor](https://officialdragonflysystems.com/learn/before-the-screens.html) - 2026-11-09
 - [Why Canada's Budget Numbers Do Not Match](https://officialdragonflysystems.com/learn/pbo-borrowing.html) - 2026-11-05
 - [Data Centres Use Water. So Does Your Lawn. Compared to What?](https://officialdragonflysystems.com/learn/water-compared.html) - 2026-10-27
 - [A Viral Post Says Plasma Can Turn CO2 Into Fuel. Here Is What the Yale Paper Says.](https://officialdragonflysystems.com/learn/yale-plasma-co2.html) - 2026-10-27
