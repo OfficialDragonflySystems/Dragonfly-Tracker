@@ -4,13 +4,13 @@
   "human_page": "https://tracker.officialdragonflysystems.com/decision-ledger",
   "summary": {
     "calls": 5,
-    "open": 3,
-    "hits": 2,
+    "open": 2,
+    "hits": 3,
     "misses": 0,
     "void": 0,
-    "brier_ours": 0.276,
-    "brier_baseline": 0.37,
-    "edge_vs_baseline": 0.094,
+    "brier_ours": 0.238,
+    "brier_baseline": 0.277,
+    "edge_vs_baseline": 0.039,
     "note": "Brier score: 0 is perfect, 0.25 is what always saying 50% earns; lower is better. With this few resolved calls the score shows nothing yet."
   },
   "calls": [
@@ -52,9 +52,9 @@
       "resolve_on": "2026-11-20",
       "resolution_source": "CoreWeave Form 10-Q for Q3 2026 on EDGAR, CIK 1769628, the Debt note (Note 10 in the Q2 filing), the table headed 'future principal payments for the Company's total debt', line 'Total'. Carrying value and the debt-obligations table above it do not count.",
       "piece_url": "https://officialdragonflysystems.com/scoreboard.html",
-      "status": "open",
-      "resolution_note": "",
-      "resolved_on": null,
+      "status": "hit",
+      "resolution_note": "CoreWeave Form 10-Q for the quarter ended 30 September 2026, filed 12 November 2026 (EDGAR accession 0001769628-26-000465), Note 10 Debt: \"As of September 30, 2026, the future principal payments for the Company's total debt were as follows (in millions)\" ... \"Total $ 47,505\". Threshold $41,000 million: a hit by $6,505 million. Principal rose $11,954 million in the quarter from $35,551 million at 30 June. Source: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000465/crwv-20260930.htm, read by us 12 November 2026.",
+      "resolved_on": "2026-11-12",
       "baseline_method": "naive-trend: total principal went from about $21.6bn (31 Dec 2025) to $35,551m (30 Jun 2026), an average of about $7.0bn a quarter; projection for 30 Sep 2026 about $42.5bn, which clears $41,000m -> 0.70",
       "baseline_probability": 0.7,
       "baseline_set_on": "2026-11-07"
