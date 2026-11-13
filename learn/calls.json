@@ -3,8 +3,8 @@
   "how_to_cite": "Dragonfly Lens forward call '<id>', published <published>, https://officialdragonflysystems.com/learn/calls.json",
   "human_page": "https://tracker.officialdragonflysystems.com/decision-ledger",
   "summary": {
-    "calls": 5,
-    "open": 2,
+    "calls": 6,
+    "open": 3,
     "hits": 3,
     "misses": 0,
     "void": 0,
@@ -28,6 +28,21 @@
       "baseline_method": "status-quo: no GAC evaluation of Ukraine programming exists today and the claim is that none appears by 1 April 2028 (nothing changes) -> 0.70",
       "baseline_probability": 0.7,
       "baseline_set_on": "2026-11-07 (after publication, before resolution)"
+    },
+    {
+      "id": "arb-index-pairs-real-fills",
+      "published": "2026-11-13",
+      "claim": "By 31 March 2027 (4:00 pm Eastern), using our quote-based shadow records for the three pairs of micro and E-mini index futures that we have been recording (MES with ES, MNQ with NQ, and M2K with RTY, on the same contract month in each leg and in the ten-to-one ratio of micro to E-mini), at least one pair with 30 or more completed round trips will show a profit on model prices that is greater than zero and, for the same trades at the same size, keep at least half of that profit when each fill is instead charged at the real bid (for sells) and real ask (for buys) recorded at that moment. Both measures charge the same commission, 0.85 dollars per micro contract and 2.50 dollars per E-mini contract per side, and neither includes any assumed slippage. Only round trips entered at or after 9:00 am Eastern on 13 November 2026 count; a round trip is complete when both legs are closed. Positions open at the deadline do not count toward the 30 but are valued at the quote that would close them for the profit test. Every qualifying round trip counts; none is dropped for being a loser. A quote older than 5 seconds, or a missing bid or ask on either leg, makes that round trip not qualify and it is listed. The result is evaluated once, after the deadline, on all qualifying round trips. If no pair has 30 qualifying round trips, the call is unresolved.",
+      "probability": 0.25,
+      "resolve_on": "2027-03-31",
+      "resolution_source": "Our own recorded quotes (Arb/arb_quote_capture.csv) summarized by research/arb_quote_audit.py, published in a public update either way",
+      "piece_url": "https://officialdragonflysystems.com/learn/backtest-audit.html",
+      "status": "open",
+      "resolution_note": "",
+      "resolved_on": null,
+      "baseline_method": "none: the claim resolves on our own recorded quotes, which no outside reader can compute a baseline from (the register convention names exactly this case). The call therefore earns no edge either way.",
+      "baseline_probability": null,
+      "baseline_set_on": "2026-11-07 (before publication)"
     },
     {
       "id": "coreweave-q3-2026-revenue",

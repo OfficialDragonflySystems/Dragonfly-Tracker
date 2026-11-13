@@ -1,4 +1,4 @@
-# generated 2026-11-11 from learn_manifest.json (65 articles)
+# generated 2026-11-13 from learn_manifest.json (66 articles)
 # Dragonfly Lens
 
 > Plain-English, source-led research on the AI build-out: the physical chain from raw
@@ -56,6 +56,7 @@ take from licensed aggregators are cited, never redistributed.
 
 ## Articles
 
+- [Is Your Backtest Lying To You?](https://officialdragonflysystems.com/learn/backtest-audit.html) - 2026-11-13
 - [Before the Screens: Who Got Paid on the Trading Floor](https://officialdragonflysystems.com/learn/before-the-screens.html) - 2026-11-09
 - [Why Canada's Budget Numbers Do Not Match](https://officialdragonflysystems.com/learn/pbo-borrowing.html) - 2026-11-05
 - [Data Centres Use Water. So Does Your Lawn. Compared to What?](https://officialdragonflysystems.com/learn/water-compared.html) - 2026-10-28

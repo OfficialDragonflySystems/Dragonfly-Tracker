@@ -5,8 +5,15 @@
 <link>https://officialdragonflysystems.com/learn/</link>
 <description>Plain-English, source-led research on the physical AI build-out. Independent; every figure dated and sourced; corrections logged, never deleted.</description>
 <language>en</language>
-<lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0000</lastBuildDate>
+<lastBuildDate>Fri, 13 Nov 2026 12:00:00 +0000</lastBuildDate>
 <atom:link href="https://officialdragonflysystems.com/learn/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Is Your Backtest Lying To You?</title>
+<link>https://officialdragonflysystems.com/learn/backtest-audit.html</link>
+<guid isPermaLink="true">https://officialdragonflysystems.com/learn/backtest-audit.html</guid>
+<pubDate>Fri, 13 Nov 2026 12:00:00 +0000</pubDate>
+<description>Nine ways our own backtests lied, nine checks that would have caught most of them, what those checks still miss, and how the ideas did once the tests were fixed.</description>
+</item>
 <item>
 <title>Before the Screens: Who Got Paid on the Trading Floor</title>
 <link>https://officialdragonflysystems.com/learn/before-the-screens.html</link>
@@ -279,13 +286,6 @@
 <guid isPermaLink="true">https://officialdragonflysystems.com/learn/nuclear-restart.html</guid>
 <pubDate>Fri, 19 Jun 2026 12:00:00 +0000</pubDate>
 <description>A nuclear reactor that shut down in 2019 is being brought back to life — specifically to power AI data centers. Canada just finished a major reactor refurb seven months early and under budget. The 'nuclear is dead' consensus is reversing in real time, and AI's bottomless power demand is the reason. Who profits, plain English, every number sourced.</description>
-</item>
-<item>
-<title>Is Sodium-Ion the End of the Lithium Trade?</title>
-<link>https://officialdragonflysystems.com/learn/sodium-ion.html</link>
-<guid isPermaLink="true">https://officialdragonflysystems.com/learn/sodium-ion.html</guid>
-<pubDate>Fri, 19 Jun 2026 12:00:00 +0000</pubDate>
-<description>CATL just called sodium batteries 'mainstream-ready,' signed a 60 GWh deal, and watched material costs halve. Sodium is 300x cheaper than lithium and 1,000x more abundant — so the 'lithium is doomed' takes wrote themselves. The honest version is more precise and more useful: it's the end of lithium's grip on grid storage, not the end of lithium. Who wins, who loses, plain English, sourced.</description>
 </item>
 </channel>
 </rss>
